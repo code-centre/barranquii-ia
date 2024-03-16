@@ -2,7 +2,7 @@ import Image from "next/image";
 import Wrapper from "./components/Wrapper";
 import Hero from "./sections/Hero";
 import Sponsors from "./sections/Sponsors";
-import DescriptionEvent from "./sections/DescriptionEvent";
+import WhatIs from "./sections/WhatIs";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       <Wrapper styles="flex flex-col gap-20 px-5">
           <Hero />
           <Sponsors />
-          <DescriptionEvent />
+          <WhatIs />
       </Wrapper>
     </main>
   );

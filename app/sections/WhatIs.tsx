@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-export default function DescriptionEvent() {
+export default function WhatIs() {
   return (
     <section className="relative flex flex-col gap-10 text-left">
       <div>
