@@ -5,9 +5,9 @@ export default function DescriptionEvent() {
   return (
     <section className="relative flex flex-col gap-10 text-left">
       <div>
-        <h2 className="font-medium text-4xl md:text-6xl">Primer Hackaton</h2>
+        <h2 className="font-medium text-4xl md:text-6xl">Hackaton</h2>
         <h3 className="text-2xl md:text-4xl">
-          de Inteligencia artificial <br /> en el Caribe
+          Barranqui-IA
         </h3>
         <span className="flex items-center gap-1 mt-2 font-semibold text-gray-400 uppercase">
           <div className="bg-principleViolet rounded-full w-1 h-1"></div>
