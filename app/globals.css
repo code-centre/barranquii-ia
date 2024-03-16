@@ -8,6 +8,27 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Plus Jakarta Sans", sans-serif;;
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite; /* Adjust animation duration, timing, etc. */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);  /* Adjust scrolling distance */
+  }
+}
+
+.mask {
+  mask-image: linear-gradient(to left, black 85%, transparent);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
