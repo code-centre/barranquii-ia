@@ -15,7 +15,7 @@ export default function Hero() {
           </h1>
         </div>
         <h2 className="mx-auto md:max-w-lg xl:max-w-4xl text-center text-xl md:text-3xl lg:text-4xl xl:text-5xl">
-          Primer Hackaton de inteligencia artificial en el Caribe
+          Primer Hackaton de inteligencia <br /> artificial en el Caribe
         </h2>
         <p className="text-sm xl:text-base">
           Un evento de +30 horas sobre inteligencia artificial.
@@ -25,7 +25,7 @@ export default function Hero() {
         className="hover:brightness-110 bg-principleViolet mx-auto px-5 xl:px-10 py-2 xl:py-3 rounded-lg w-fit text-[13px] xl:text-base uppercase"
         href=""
       >
-        Adquirir boletos
+        La venta de boletos se abre el 1ro de Abril
       </a>
     </section>
   );
