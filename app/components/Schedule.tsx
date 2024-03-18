@@ -3,17 +3,17 @@ import React, { useState } from "react";
 
 const DAYS_EVENT = [
   {
-    title: "Primer día",
+    title: "Inauguración",
     number: "03",
     day: "Mayo, viernes",
   },
   {
-    title: "Segundo día",
+    title: "Primer Día",
     number: "04",
     day: "Mayo, Sábado",
   },
   {
-    title: "Tercer día",
+    title: "Segundo Día",
     number: "05",
     day: "Mayo, Domingo",
   },
@@ -22,68 +22,89 @@ const DAYS_EVENT = [
 const SCHEDULE_EVENT = [
   [
     {
-      time: "07:00 AM - 09:00 AM",
-      title: "Talleres y Charlas",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
-    },
-    {
-      time: "09:00 AM - 11:00 AM",
+      time: "07:00 PM - 10:00 PM",
       title: "Meet & Greet",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
+      description:
+        "Evento de pre-inauguración del hackatón donde tendremos la oportunidad de conocer a los mentores y compartir un rato con ellos mientras disfrutamos de música en vivo y una divertida velada. *Entrada con el paquete Full Access",
     },
   ],
   [
     {
       time: "08:00 AM - 09:00 AM",
       title: "Open Doors",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
+      description:
+        "Se abren las puertas para este increible evento. Llega temprano para registrarte y disfrutar de un rico cafe para despertar completamente.",
     },
     {
       time: "09:00 AM - 10:00 AM",
       title: "Bienvenida",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
+      description:
+        "Les daremos la bienvenida, repasaremos el código de conducta, las reglas, los retos de nuestros patrocinadores, resolveremos cualquier duda. que pueda surgir.",
     },
     {
       time: "10:00 AM - 11:00 AM",
       title: "Formación de Equipos",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
+      description:
+        "Es el momento de hacer equipo, ya sea que vengas con amigos o pienses formar un equipo con personas nueva,s haremos dinámicas de integración y una ronda ideas para que puedas participar en un proyecto que te llame la atención y con un equipo emocionante.",
     },
     {
-      time: "11:00 AM - 12:30 PM",
+      time: "12:30 PM - 2:00 PM",
       title: "Almuerzo",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
+      description: "¡Hora de comer!",
     },
     {
-      time: "12:30 PM - 04:00 PM",
-      title: "Ronda de Talleres",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
+      time: "4:00 PM - 06:00 PM",
+      title: "Build with IA - Ronda de Talleres",
+      description:
+        "Tendremos una ronda de talleres sobre inteligencia artificial a manos del Google Developer Group Barranquilla y expertos en inteligencia artificial de parte de Google",
     },
     {
-      time: "04:00 PM - 08:00 PM",
+      time: "8:00 PM - 10:00 PM",
       title: "Cena",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
+      description: "Ya hace hambre, ¿cierto?",
+    },
+    {
+      time: "10:00 PM",
+      title: "Cierre de puertas",
+      description:
+        "Puedes quedarte a dormir para seguir trabajando o ir a tu casa a descansar. Pero es mut importante que tengas claro que por seguridad no se podrá ingresar ni salir de la sede del hackatón después de las 10pm y hasta las 6am del día siguiente.  ",
     },
   ],
   [
     {
-      time: "07:00 AM - 08:00 AM",
+      time: "06:00 AM",
+      title: "Puertas abiertas",
+      description:
+        "Habilitamos de nuevo el acceso y salida del recinto. ¡Espero hayas avanzado durante la noche!",
+    },
+    {
+      time: "07:00 AM - 09:00 AM",
       title: "Desayuno",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
+      description: "¡Vamos a comer!",
     },
     {
-      time: "08:00 AM - 10:30 AM",
-      title: "Ronda de Talleres",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
+      time: "10:00 AM - 12:00 AM",
+      title: "Build with IA - Ronda de Talleres",
+      description:
+        "Tendremos una ronda de talleres sobre inteligencia artificial a manos del Google Developer Group Barranquilla y expertos en inteligencia artificial de parte de Google",
     },
     {
-      time: "10:30 AM - 12:30 PM",
+      time: "12:30 AM - 2:00 PM",
       title: "Almuerzo",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
+      description:
+        "Nuestra última comida del hackatón... ¡Que rápido pasa el tiempo!",
     },
     {
-      time: "12:30 PM - 04:00 PM",
+      time: "4:00 PM - 6:00 PM",
       title: "Presentaciones",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
+      description:
+        "¡Llegó el momento, registra tu demo, practica tu pitch e impresiona a los jueces para llevarte los premios a casa!",
+    },
+    {
+      time: "6:00 PM",
+      title: "Premiación",
+      description:
+        "Felicidades por haber sobrevivido al hackatón, esperamos sea un experiencia inolvidable y que le des provecho a todo lo que aprendiste en estos dos días",
     },
   ],
 ];

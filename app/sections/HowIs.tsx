@@ -6,15 +6,18 @@ export default function HowIs() {
     <section className="flex flex-col gap-5">
       <div className="flex flex-col gap-5 bg-gray-900/60 p-4 rounded-lg">
         <h2 className="border-principleViolet pl-2 border-l-4 text-lg lg:text-4xl uppercase">
-          ¿Cómo es?
+          ¿Cómo funciona?
         </h2>
         <p className="text-gray-300">
-          Aprovecha este espacio para aprender y conocer gente de distintos
-          perfiles apasionada por la inteligencia artificial. Durante más de 24
-          horas continuas los participantes se enfocan en construir soluciones
-          con inteligencia artificial para finalmente ser evaluados por expertos
-          de la industria tecnológica, resultando ganadores las mejores
-          propuestas funcionales.
+          El desafío es claro: en equipo y en solo 30 horas, tendrás que dar
+          vida a un producto que utilice la inteligencia artificial para
+          resolver desafíos reales.
+        </p>
+        <p>
+          Al final, un jurado de expertos evaluará los proyectos, y los
+          ganadores recibirán premios espectaculares, celebrando la complejidad
+          técnica, la innovación, el esfuerzo y el potencial de impacto de sus
+          ideas.
         </p>
       </div>
       <div className="gap-4 grid grid-cols-1 md:grid-cols-3">

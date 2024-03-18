@@ -8,18 +8,22 @@ export default function BeASponsor() {
         ¿Quieres ser un patrocinador?
       </h2>
       <p className="text-gray-300">
-        Aprovecha este espacio para aprender y conocer gente de distintos
-        perfiles apasionada por la inteligencia artificial. Durante más de 24
-        horas continuas los participantes se enfocan en construir soluciones con
-        inteligencia artificial para finalmente ser evaluados por expertos de la
-        industria tecnológica, resultando ganadores las mejores propuestas
-        funcionales.
+        ¡Únete como patrocinador a nuestro emocionante evento! Como
+        patrocinador, obtendrás una destacada visibilidad de marca en nuestros
+        materiales promocionales, la oportunidad de interactuar con talentos
+        tecnológicos regionales y el posicionamiento como líder en el impulso
+        del progreso tecnológico. Tu apoyo no solo contribuirá al desarrollo de
+        la comunidad tecnológica local, sino que también te brindará
+        oportunidades estratégicas para colaboraciones futuras. ¡Contáctanos
+        para obtener más información sobre cómo participar y únete al movimiento
+        que está transformando Barranquilla!
       </p>
       <a
         className="hover:brightness-110 bg-principleViolet px-5 xl:px-10 py-2 xl:py-3 rounded-lg w-fit text-[13px] xl:text-base uppercase"
-        href=""
+        href="https://calendly.com/barranqui-ia/patrocinadores"
+        target="_blank"
       >
-        Inscripción
+        Contáctanos
       </a>
 
       <Sponsors title="Nuestros patrocinadores" />

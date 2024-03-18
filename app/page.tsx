@@ -36,7 +36,7 @@ export default function Home() {
         </Wrapper>
       </div>
       <Wrapper styles=" flex flex-col gap-20 pt-12 px-5 lg:pb-32">
-        <Location />
+        {/* <Location /> */}
         {/* <Tickets /> */}
         <BeASponsor />
       </Wrapper>
