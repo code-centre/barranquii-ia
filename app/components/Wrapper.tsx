@@ -7,7 +7,7 @@ interface Props {
 
 function Wrapper({children, styles}: Props) {
   return (
-    <div className={`mx-auto max-w-2xl lg:max-w-3xl ${styles}`}>
+    <div className={`mx-auto max-w-2xl lg:max-w-4xl ${styles}`}>
         {children}
     </div>
   )
