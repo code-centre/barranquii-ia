@@ -5,10 +5,8 @@ export default function WhatIs() {
   return (
     <section className="relative flex flex-col gap-10 text-left">
       <div>
-        <h2 className="font-medium text-4xl md:text-6xl">Hackaton</h2>
-        <h3 className="text-2xl md:text-4xl">
-          Barranqui-IA
-        </h3>
+        <h2 className="font-medium text-4xl md:text-6xl">Hackatón</h2>
+        <h3 className="text-2xl md:text-4xl">Barranqui-IA</h3>
         <span className="flex items-center gap-1 mt-2 font-semibold text-gray-400 uppercase">
           <div className="bg-principleViolet rounded-full w-1 h-1"></div>
           Evento
@@ -16,18 +14,25 @@ export default function WhatIs() {
       </div>
       <div className="flex">
         <div className="flex flex-col gap-4 xl:max-w-md">
-          <h2 className="border- border-principleViolet pl-2 border-l-4 text-lg lg:text-5xl">
+          <h2 className="border-principleViolet pl-2 border-l-4 text-lg lg:text-4xl uppercase">
             ¿Qué es?
           </h2>
           <p className="lg:max-w-md text-gray-300">
-            Este evento no es solo una aventura tecnológica; es una misión para
-            convertir a Barranquilla en el epicentro de la revolución de la
-            inteligencia artificial en Colombia.
+            Es mucho más que un simple concurso de programación. Es una
+            oportunidad para demostrar tus habilidades, aprender y crear
+            proyectos innovadores que podrían cambiar el mundo.
           </p>
           <p className="lg:max-w-md text-gray-300">
-            Sumérgete en un espacio lleno de creatividad, innovación y
-            colaboración, donde explorarás el vasto universo de la IA,
-            independientemente de tu nivel de experiencia.
+            Pero este hackatón es aún más especial. No se trata solo de una
+            aventura tecnológica; es una misión para hacer de Barranquilla el
+            epicentro de la revolución de la inteligencia artificial en
+            Colombia.
+          </p>
+          <p className="lg:max-w-md text-gray-300">
+            Únete a nosotros en esta emocionante aventura. Demuestra tu talento,
+            trabaja en soluciones innovadoras y sé parte de la revolución
+            tecnológica que está transformando el mundo. ¡Te esperamos para
+            hacer historia juntos!
           </p>
         </div>
         <div className="lg:block relative hidden lg:w-[200px] xl:w-[500px]">

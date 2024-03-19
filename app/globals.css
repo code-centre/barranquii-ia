@@ -13,16 +13,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .animate-marquee {
-  animation: marquee 20s linear infinite; /* Adjust animation duration, timing, etc. */
+  animation: marquee 30s linear infinite; /* Adjust animation duration, timing, etc. */
 }
 
 @keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translateX(-30%);
   }
   100% {
     transform: translateX(100%);  /* Adjust scrolling distance */
   }
+}
+
+.bg-image {
+  background-image: url('../public/lines-bg-2.webp');
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gradient {
+  background: rgb(63,94,251);
+  background: radial-gradient(circle, rgba(63,94,251,0.7539390756302521) 0%, rgba(0,0,0,1) 65%);
+  /* position: absolute; */
+  /* left: 0;
+  right: 0;
+  margin: 0 auto; */
+  /* height: 100px; */
+  /* z-index: -20; */
+  background-size: contain;
 }
 
 .mask {
