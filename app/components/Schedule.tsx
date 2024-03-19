@@ -112,7 +112,7 @@ const SCHEDULE_EVENT = [
 export default function Schedule() {
   const [daySchedule, setDaySchedule] = useState(0);
   return (
-    <div className="md:flex-1 w-full">
+    <div className="md:flex-1 w-full min-h-[80vh]">
       <header className="border-gray-500 grid grid-cols-3 border-b-6">
         {DAYS_EVENT.map((day, i) => (
           <div
@@ -139,7 +139,7 @@ export default function Schedule() {
             <div className="relative border-principleViolet border-l">
               <div className="-left-[10px] absolute bg-principleViolet mx-auto rounded-full w-5 h-5"></div>
             </div>
-            <div>
+            <div className="w-[80%]">
               <h3 className="font-bold">{schedule.title}</h3>
               <p className="pb-7 text-gray-300">{schedule.description}</p>
             </div>
