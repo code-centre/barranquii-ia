@@ -19,7 +19,7 @@ export default function BeASponsor() {
         que está transformando Barranquilla!
       </p>
       <a
-        className="hover:brightness-110 bg-principleViolet px-5 xl:px-10 py-2 xl:py-3 rounded-lg w-fit text-[13px] xl:text-base uppercase"
+        className="hover:brightness-110 bg-principleViolet mx-auto px-5 xl:px-10 py-2 xl:py-3 rounded-lg w-fit text-[13px] xl:text-base uppercase"
         href="https://calendly.com/barranqui-ia/patrocinadores"
         target="_blank"
       >
