@@ -8,17 +8,17 @@ export default function BackgroundImages() {
         <Image
           width={400}
           height={400}
-          className="w-[200px] md:w-[400px] lg:w-[500px] xl:w-[700px]"
+          className="w-[200px] md:w-[400px] lg:w-[500px] xl:w-[800px]"
           src="/square-r.webp"
           alt="square-bg"
         />
         <div className="top-20 right-[10%] md:right-[10%] bottom-0 absolute bg-greenApp/55 opacity-70 blur-md lg:blur-2xl my-auto rounded-full w-10 md:w-32 h-10 md:h-32"></div>
       </div>
-      <div className="-right-20 md:-right-36 -z-10 absolute overflow-hidden">
+      <div className="md:-top-32 -right-20 md:-right-64 -z-10 absolute overflow-hidden">
         <Image
           width={700}
           height={700}
-          className="w-[200px] md:w-[400px] lg:w-[500px] xl:w-[700px]"
+          className="w-[200px] md:w-[400px] lg:w-[500px] xl:w-[900px]"
           src="/square-l.webp"
           alt="square-bg"
         />
