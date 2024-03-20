@@ -16,110 +16,115 @@ export default function Sponsors({ title }: Props) {
       <p className="text-center text-secondaryText text-sm md:text-[15px] uppercase">
         {title}
       </p>
-      {/* <div className="flex justify-center items-center gap-3 lg:gap-10 animate-marquee overflow-hidden">
-        <Image
-          className="mx-auto"
-          src="/uni-norte.png"
-          height={47}
-          width={150}
-          alt="Logo de la universidad de la norte"
-        />
-        <Image
-          className="mx-auto"
-          src="/google.png"
-          height={47}
-          width={150}
-          alt="Logo de Google"
-        />
-        <Image
-          className="mx-auto"
-          src="/i-city.webp"
-          height={47}
-          width={150}
-          alt="Logo de Google"
-        />
-        <figure className="flex justify-center items-center gap-2">
+      <div className="overflow-hidden">
+        <div className="flex items-center gap-3 animate-sponsors">
           <Image
-            className="w-12 object-contain"
+            className="w-[150px]"
+            src="/uni-norte.png"
+            height={47}
+            width={150}
+            alt="Logo de la universidad de la norte"
+          />
+          <Image
+            className="w-[150px]"
+            src="/google.png"
+            height={47}
+            width={150}
+            alt="Logo de Google"
+          />
+          <Image
+            className="w-[150px]"
+            src="/i-city.webp"
+            height={47}
+            width={150}
+            alt="Logo de Google"
+          />
+          <Image
+            className="flex-1 ml-5 w-12"
             src="/logo-cc.webp"
             height={100}
             width={150}
             alt="Logo de Code Centre"
           />
           <Image
-            className="object-contain"
+            className="w-[150px]"
             src="/cc.webp"
             height={19}
             width={150}
             alt="Logo de Code Centre"
           />
-        </figure>
-      </div> */}
-      <Swiper
-        slidesPerView="auto"
-        // breakpoints={{
-        //   375: {
-        //     slidesPerView: 'auto',
-        //     spaceBetween: 20,
-        //   },
-        //   768: {
-        //     slidesPerView: 3,
-        //     spaceBetween: 40,
-        //   },
-        // }}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          {/* <Image
-            className="mx-auto"
+          <Image
+            className="w-[150px]"
             src="/uni-norte.png"
             height={47}
             width={150}
             alt="Logo de la universidad de la norte"
-          /> */}
-        </SwiperSlide>
-        <SwiperSlide>
+          />
           <Image
-            className="mx-auto"
+            className="w-[150px]"
             src="/google.png"
             height={47}
             width={150}
             alt="Logo de Google"
           />
-        </SwiperSlide>
-        <SwiperSlide>
           <Image
-            className="mx-auto"
+            className="w-[150px]"
             src="/i-city.webp"
             height={47}
             width={150}
             alt="Logo de Google"
           />
-        </SwiperSlide>
-        <SwiperSlide>
-          <figure className="flex justify-center items-center gap-2">
-            <Image
-              className="w-12 object-contain"
-              src="/logo-cc.webp"
-              height={100}
-              width={150}
-              alt="Logo de Code Centre"
-            />
-            <Image
-              className="object-contain"
-              src="/cc.webp"
-              height={19}
-              width={150}
-              alt="Logo de Code Centre"
-            />
-          </figure>
-        </SwiperSlide>
-      </Swiper>
+          <Image
+            className="flex-1 ml-5 w-12"
+            src="/logo-cc.webp"
+            height={100}
+            width={150}
+            alt="Logo de Code Centre"
+          />
+          <Image
+            className="w-[150px]"
+            src="/cc.webp"
+            height={19}
+            width={150}
+            alt="Logo de Code Centre"
+          />
+          <Image
+            className="w-[150px]"
+            src="/uni-norte.png"
+            height={47}
+            width={150}
+            alt="Logo de la universidad de la norte"
+          />
+          <Image
+            className="w-[150px]"
+            src="/google.png"
+            height={47}
+            width={150}
+            alt="Logo de Google"
+          />
+          <Image
+            className="w-[150px]"
+            src="/i-city.webp"
+            height={47}
+            width={150}
+            alt="Logo de Google"
+          />
+          <Image
+            className="flex-1 ml-5 w-12"
+            src="/logo-cc.webp"
+            height={100}
+            width={150}
+            alt="Logo de Code Centre"
+          />
+          <Image
+            className="w-[150px]"
+            src="/cc.webp"
+            height={19}
+            width={150}
+            alt="Logo de Code Centre"
+          />
+        </div>
+      </div>
     </section>
   );
 }
