@@ -5,7 +5,7 @@ export default function WhatIs() {
   return (
     <section className="relative flex flex-col gap-10 text-left">
       <div>
-        <h2 className="font-medium text-4xl md:text-6xl">Hackatón</h2>
+        <h2 className="font-bold text-4xl md:text-6xl">Hackatón</h2>
         <h3 className="text-2xl md:text-4xl">Barranqui-IA</h3>
         <span className="flex items-center gap-1 mt-2 font-semibold text-gray-400 uppercase">
           <div className="bg-principleViolet rounded-full w-1 h-1"></div>
@@ -14,7 +14,7 @@ export default function WhatIs() {
       </div>
       <div className="flex">
         <div className="flex flex-col gap-4 xl:max-w-md">
-          <h2 className="border-principleViolet pl-2 border-l-4 text-lg lg:text-4xl uppercase">
+          <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
             ¿Qué es?
           </h2>
           <p className="lg:max-w-md text-gray-300">

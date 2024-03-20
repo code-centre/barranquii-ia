@@ -10,12 +10,12 @@ const DAYS_EVENT = [
   {
     title: "Primer Día",
     number: "04",
-    day: "Mayo, Sábado",
+    day: "Mayo, sábado",
   },
   {
     title: "Segundo Día",
     number: "05",
-    day: "Mayo, Domingo",
+    day: "Mayo, domingo",
   },
 ];
 
@@ -127,7 +127,7 @@ export default function Schedule() {
             className={`${
               daySchedule === i
                 ? "text-principleViolet border-b-4 pb-4"
-                : "text-gray-300"
+                : "text-gray-400"
             } cursor-pointer text-center md:text-left`}
           >
             <p className="font-medium">{day.title}</p>
@@ -141,13 +141,13 @@ export default function Schedule() {
       <main className="flex flex-col mt-10">
         {SCHEDULE_EVENT[daySchedule]?.map((schedule, i) => (
           <div key={i} className="flex gap-5 md:gap-5">
-            <p className="w-[50%] md:w-[40%]">{schedule.time}</p>
+            <p className="w-[50%] md:w-[40%] text-gray-400">{schedule.time}</p>
             <div className="relative border-principleViolet border-l">
               <div className="-left-[10px] absolute bg-principleViolet mx-auto rounded-full w-5 h-5"></div>
             </div>
             <div className="w-[80%]">
               <h3 className="font-bold">{schedule.title}</h3>
-              <p className="pb-7 text-gray-300">{schedule.description}</p>
+              <p className="pb-7 text-gray-400">{schedule.description}</p>
             </div>
           </div>
         ))}
