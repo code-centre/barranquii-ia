@@ -5,9 +5,18 @@ export default function Location() {
   return (
     <section className="flex flex-col gap-5">
       <div>
-        <h2 className="border- border-principleViolet pl-2 border-l-4 text-lg lg:text-4xl uppercase">
-          ¿Cómo llegar?
-        </h2>
+        <div className="flex justify-between md:justify-start items-center md:gap-14">
+          <h2 className="border- border-principleViolet pl-2 border-l-4 text-lg lg:text-4xl uppercase">
+            ¿Cómo llegar?
+          </h2>
+          <Image
+            className="md:w-[230px]"
+            src="/uni-norte.png"
+            height={47}
+            width={230}
+            alt="Logo de la universidad de la norte"
+          />
+        </div>
         <span className="flex items-center gap-1 mt-2 font-semibold text-gray-400 uppercase">
           <div className="bg-principleViolet rounded-full w-1 h-1"></div>
           Ubicación
@@ -17,12 +26,6 @@ export default function Location() {
           Atlántico
         </p>
       </div>
-      <Image
-        src="/uni-norte.png"
-        height={47}
-        width={150}
-        alt="Logo de la universidad de la norte"
-      />
       <div className="rounded-lg overflow-hidden">
         <iframe
           className="w-full"
