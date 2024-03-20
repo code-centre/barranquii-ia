@@ -75,13 +75,13 @@ export default function Sponsors({ title }: Props) {
         className="mySwiper"
       >
         <SwiperSlide>
-          <Image
+          {/* <Image
             className="mx-auto"
             src="/uni-norte.png"
             height={47}
             width={150}
             alt="Logo de la universidad de la norte"
-          />
+          /> */}
         </SwiperSlide>
         <SwiperSlide>
           <Image

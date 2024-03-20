@@ -23,10 +23,12 @@ export default function Hero() {
       </div>
       <a
         className="hover:brightness-110 bg-principleViolet mx-auto px-5 xl:px-10 py-2 xl:py-3 rounded-lg w-fit text-[13px] xl:text-base uppercase"
-        href=""
+        href="https://forms.gle/q1V2AdY1ZetQ9Yre8"
+        target="_blank"
       >
-        La venta de boletos se abre el 1ro de Abril
+        Pre-registro
       </a>
+      <p>La venta de boletos se abre el 1ro de Abril</p>
     </section>
   );
 }
