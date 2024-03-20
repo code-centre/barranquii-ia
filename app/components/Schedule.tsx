@@ -31,7 +31,8 @@ const SCHEDULE_EVENT = [
       time: "09:00 PM - 10:00 PM",
       title: "Show Musical",
       description:
-        "Disfrutaremos escuchando a la revelación Barranquillera con su nueva propuesta que combina Funk y Soul, Grace Torres!"
+        "Disfrutaremos escuchando a la revelación Barranquillera con su nueva propuesta que combina Funk y Soul, Grace Torres!",
+    },
   ],
   [
     {
