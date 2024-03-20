@@ -10,7 +10,7 @@ export default function Hero() {
             src="/bwai.webp"
             alt="Build with AI"
           />
-          <h1 className="font-medium text-5xl md:text-6xl xl:text-8xl">
+          <h1 className="font-bold text-5xl md:text-6xl xl:text-8xl">
             Barranqui-IA
           </h1>
         </div>

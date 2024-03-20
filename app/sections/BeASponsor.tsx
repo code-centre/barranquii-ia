@@ -4,7 +4,7 @@ import Sponsors from "../components/Sponsors";
 export default function BeASponsor() {
   return (
     <section className="flex flex-col gap-7">
-      <h2 className="border- border-principleViolet pl-2 border-l-4 text-lg lg:text-4xl uppercase">
+      <h2 className="border- border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
         ¿Quieres ser un patrocinador?
       </h2>
       <p className="text-gray-300">
@@ -19,7 +19,7 @@ export default function BeASponsor() {
         que está transformando Barranquilla!
       </p>
       <a
-        className="hover:brightness-110 bg-principleViolet mx-auto px-5 xl:px-10 py-2 xl:py-3 rounded-lg w-fit text-[13px] xl:text-base uppercase"
+        className="hover:brightness-110 bg-principleViolet px-5 xl:px-10 py-2 xl:py-3 rounded-lg w-fit text-[13px] xl:text-base uppercase"
         href="https://calendly.com/barranqui-ia/patrocinadores"
         target="_blank"
       >

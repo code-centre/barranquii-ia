@@ -6,7 +6,7 @@ export default function Location() {
     <section className="flex flex-col gap-5">
       <div>
         <div className="flex justify-between md:justify-start items-center md:gap-14">
-          <h2 className="border- border-principleViolet pl-2 border-l-4 text-lg lg:text-4xl uppercase">
+          <h2 className="border- border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
             ¿Cómo llegar?
           </h2>
           <Image
