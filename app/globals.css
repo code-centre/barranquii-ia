@@ -8,8 +8,13 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Plus Jakarta Sans", sans-serif;;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .animate-marquee {
@@ -21,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(-30%);
   }
   100% {
-    transform: translateX(100%);  /* Adjust scrolling distance */
+    transform: translateX(100%); /* Adjust scrolling distance */
   }
 }
 
@@ -36,10 +41,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .animate-grid {
-    animation: grid 50s linear infinite; /* Adjust animation duration, timing, etc. */
+    animation: grid 75s linear infinite; /* Adjust animation duration, timing, etc. */
   }
 }
-
 
 @media (min-width: 768px) {
   @keyframes sponsors {
@@ -53,10 +57,10 @@ h1, h2, h3, h4, h5, h6 {
 
   @keyframes grid {
     0% {
-      transform: translateX(-100%);
+      transform: translateX(0%);
     }
     100% {
-      transform: translateX(10%); /* Adjust scrolling distance */
+      transform: translateX(-100%); /* Adjust scrolling distance */
     }
   }
 
@@ -65,10 +69,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .animate-grid {
-    animation: grid 20s linear infinite; /* Adjust animation duration, timing, etc. */
+    animation: grid 45s linear infinite; /* Adjust animation duration, timing, etc. */
   }
 }
-
 
 @media (600px <= width <= 768px) {
   @keyframes sponsors {
@@ -99,9 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .grid-events {
-  display: grid;
-  grid-template-columns: repeat(14, 250px);
-  grid-template-rows: repeat(2, 200px);
+  display: flex;
   gap: 12px;
 }
 
@@ -113,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-image {
-  background-image: url('../public/lines-bg-2.webp');
+  background-image: url("../public/lines-bg-2.webp");
   height: 100%;
   background-position: center;
   background-size: cover;
@@ -128,8 +129,12 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
 }
 .gradient {
-  background: rgb(63,94,251);
-  background: radial-gradient(circle, rgba(63,94,251,0.7539390756302521) 0%, rgba(0,0,0,1) 65%);
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 0.7539390756302521) 0%,
+    rgba(0, 0, 0, 1) 65%
+  );
   /* position: absolute; */
   /* left: 0;
   right: 0;
