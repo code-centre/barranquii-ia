@@ -35,11 +35,38 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
   
+  @keyframes grid {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(10%); /* Adjust scrolling distance */
+    }
+  }
+
   .animate-sponsors {
     animation: sponsors 20s linear infinite; /* Adjust animation duration, timing, etc. */
   }
+
+  .animate-grid {
+    animation: grid 20s linear infinite; /* Adjust animation duration, timing, etc. */
+  }
 }
 
+@media (max-width: 425px) {
+  @keyframes grid {
+    0% {
+      transform: translateX(-500%);
+    }
+    100% {
+      transform: translateX(80%); /* Adjust scrolling distance */
+    }
+  }
+
+  .animate-grid {
+    animation: grid 40s linear infinite; /* Adjust animation duration, timing, etc. */
+  }
+}
 
 @media (max-width: 768px) {
   @keyframes sponsors {
@@ -50,10 +77,37 @@ h1, h2, h3, h4, h5, h6 {
       transform: translateX(20%); /* Adjust scrolling distance */
     }
   }
-  
+
+  @keyframes grid {
+    0% {
+      transform: translateX(-500%);
+    }
+    100% {
+      transform: translateX(30%); /* Adjust scrolling distance */
+    }
+  }
+
   .animate-sponsors {
     animation: sponsors 10s linear infinite; /* Adjust animation duration, timing, etc. */
   }
+
+  .animate-grid {
+    animation: grid 40s linear infinite; /* Adjust animation duration, timing, etc. */
+  }
+}
+
+.grid-events {
+  display: grid;
+  grid-template-columns: repeat(14, 250px);
+  grid-template-rows: repeat(2, 200px);
+  gap: 12px;
+}
+
+.sub-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 250px);
+  gap: 12px;
+  grid-template-rows: repeat(2, 200px);
 }
 
 .bg-image {
@@ -64,6 +118,13 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
 }
 
+.bg-image-learn-in-community {
+  background-image: url("../public/lines-1.webp");
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .gradient {
   background: rgb(63,94,251);
   background: radial-gradient(circle, rgba(63,94,251,0.7539390756302521) 0%, rgba(0,0,0,1) 65%);
@@ -77,15 +138,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mask {
-  mask-image: linear-gradient(to left, black 85%, transparent);
+  mask-image: linear-gradient(to bottom, black 90%, transparent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 body {
