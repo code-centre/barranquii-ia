@@ -10,6 +10,7 @@ import Tickets from "./sections/Tickets";
 import ScheduleSection from "./sections/ScheduleSection";
 import "./globals.css";
 import BeASponsor from "./sections/BeASponsor";
+import LearnInCommunity from "./sections/LearnInCommunity";
 
 export default function Home() {
   return (
@@ -35,9 +36,12 @@ export default function Home() {
           <ScheduleSection />
         </Wrapper>
       </div>
-      <Wrapper styles=" flex flex-col gap-20 pt-12 px-5 lg:pb-32">
+      <Wrapper styles=" flex flex-col gap-20 pt-12 px-5 lg:pb-10 w-full">
         <Location />
         {/* <Tickets /> */}
+      </Wrapper>
+      <LearnInCommunity />
+      <Wrapper styles=" flex flex-col gap-20 pt-12 px-5 lg:pb-32">
         <BeASponsor />
       </Wrapper>
     </main>
