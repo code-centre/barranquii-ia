@@ -7,18 +7,12 @@ interface Props {
   href?: string;
 }
 
-export default function InfoEventGrid({ date, time, location, href }: Props) {
+export default function InfoEventGrid({ date, time, location }: Props) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      className="flex flex-col justify-center items-center bg-[#19161c] rounded-md"
-    >
-      <ul className="flex flex-col gap-2 text-center">
-        <li className="uppercase">{date}</li>
-        <li className="uppercase">{time}</li>
-        <li className="text-sm uppercase">{location}</li>
-      </ul>
-    </a>
+    <ul className="flex flex-col gap-2 text-center">
+      <li className="uppercase">{date}</li>
+      <li className="uppercase">{time}</li>
+      <li className="text-sm uppercase">{location}</li>
+    </ul>
   );
 }

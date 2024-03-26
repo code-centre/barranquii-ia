@@ -7,175 +7,181 @@ import ImageCommunityGrid from "../components/ImageCommunityGrid";
 
 export default function LearnInCommunity() {
   return (
-    <section className="flex flex-col px-1 lg:h-screen">
+    <section className="flex flex-col px-1 bg-image-learn-in-community py-20">
       <Wrapper styles="w-full mb-10">
         <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
           Aprende en comunidad
         </h2>
       </Wrapper>
 
-      <div className="grid-events w-full animate-grid">
-        <a
-          href="https://gdg.community.dev/e/m6jq7d/"
-          target="_blank"
-          className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
-        >
-          <ImageCommunityGrid
-            name="GDG Barranquilla"
-            image="gdg-logo.png"
-            styles="bg-[#fff]"
-          />
-          <InfoEventGrid
-            date="20 de Abril"
-            time="6:45 p.m."
-            location="Music Centre"
-          />
-        </a>
+      <div className="w-full overflow-x-scroll">
+        <div className="grid-events animate-grid w-full">
+          <a
+            href="https://gdg.community.dev/e/m6jq7d/"
+            target="_blank"
+            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+          >
+            <ImageCommunityGrid
+              name="GDG Barranquilla"
+              image="gdg-logo.png"
+              styles="bg-[#fff]"
+            />
+            <InfoEventGrid
+              date="20 de Abril"
+              time="6:45 p.m."
+              location="Music Centre"
+            />
+          </a>
 
-        <Image
-          className="col-span-2 row-span-2 rounded-md w-full h-full object-cover"
-          src="/image-grid.webp"
-          alt="Imagen de evento"
-          height={400}
-          width={400}
-        />
-
-        <a
-          href="https://barranquillajs.org/"
-          target="_blank"
-          className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
-        >
-          <InfoEventGrid date="" time="" location="" />
-          <ImageCommunityGrid
-            name="Js Barranquilla"
-            styles=" bg-[#fcc72d] text-black"
-            image="/baqjs.svg"
+          <Image
+            className="col-span-2 row-span-2 rounded-md object-cover"
+            src="/image-grid.webp"
+            alt="Imagen de evento"
+            height={400}
+            width={400}
           />
-        </a>
 
-        <Image
-          className="row-span-2 rounded-md w-full h-full object-cover"
-          src="/de-granda.webp"
-          alt="Imagen de evento"
-          height={400}
-          width={400}
-        />
+          <a
+            href="https://flisol.info/FLISOL2024/Colombia/Barranquilla"
+            target="_blank"
+            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+          >
+            <InfoEventGrid
+              date="27 de Abril"
+              time="9:00 a.m."
+              location="Universidad de la Costa"
+            />
+            <ImageCommunityGrid
+              name="Linux BQ"
+              styles=" bg-[#fcc72d] text-black"
+              image="/linux.jpg"
+            />
+          </a>
 
-        <a
-          href="https://www.meetup.com/pythonbaq/events/299958884/"
-          target="_blank"
-          className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
-        >
-          <ImageCommunityGrid
-            name="Python Barranquilla"
-            styles="bg-gradient-to-b from-[#1e415e] to-[#2b5b84] text-black"
-            image="pybaq-logo.png"
+          <Image
+            className="row-span-2 rounded-md object-cover"
+            src="/de-granda.webp"
+            alt="Imagen de evento"
+            height={400}
+            width={400}
           />
-          <InfoEventGrid
-            date="11 de abril"
-            time="7:00 p.m."
-            location="Koombea"
-          />
-        </a>
 
-        <Image
-          className="col-span-2 row-span-2 rounded-md w-full h-full object-cover"
-          src="/anuar-harb.webp"
-          alt="Imagen de evento"
-          height={400}
-          width={400}
-        />
+          <a
+            href="https://www.meetup.com/pythonbaq/events/299958884/"
+            target="_blank"
+            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+          >
+            <ImageCommunityGrid
+              name="Python Barranquilla"
+              styles="bg-gradient-to-b from-[#1e415e] to-[#2b5b84] text-black"
+              image="pybaq-logo.png"
+            />
+            <InfoEventGrid
+              date="11 de abril"
+              time="7:00 p.m."
+              location="Koombea"
+            />
+          </a>
 
-        <a
-          href="https://www.meetup.com/aws-barranquilla/events/299991701/"
-          target="_blank"
-          className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
-        >
-          <ImageCommunityGrid name="GDG" image="aws.png" styles="bg-[#fff]" />
-          <InfoEventGrid
-            date="18 de abril"
-            time="7:00 p.m."
-            location="Universidad Simón Bolívar"
+          <Image
+            className="col-span-2 row-span-2 rounded-md object-cover"
+            src="/anuar-harb.webp"
+            alt="Imagen de evento"
+            height={400}
+            width={400}
           />
-        </a>
 
-        <Image
-          className="col-span-2 row-span-2 rounded-md w-full h-full object-cover"
-          src="/image-grid.webp"
-          alt="Imagen de evento"
-          height={400}
-          width={400}
-        />
+          <a
+            href="https://www.meetup.com/aws-barranquilla/events/299991701/"
+            target="_blank"
+            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+          >
+            <ImageCommunityGrid name="GDG" image="aws.png" styles="bg-[#fff]" />
+            <InfoEventGrid
+              date="18 de abril"
+              time="7:00 p.m."
+              location="Universidad Simón Bolívar"
+            />
+          </a>
 
-        <a
-          href="https://gdg.community.dev/e/m6jq7d/"
-          target="_blank"
-          className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
-        >
-          <ImageCommunityGrid
-            name="GDG"
-            image="gdg-logo.png"
-            styles="bg-[#fff]"
+          <Image
+            className="col-span-2 row-span-2 rounded-md object-cover"
+            src="/image-grid.webp"
+            alt="Imagen de evento"
+            height={400}
+            width={400}
           />
-          <InfoEventGrid
-            date="20 de Abril"
-            time="6:45 p.m."
-            location="Music Centre"
-          />
-        </a>
 
-        <Image
-          className="col-span-2 row-span-2 rounded-md w-full h-full object-cover"
-          src="/image-grid.webp"
-          alt="Imagen de evento"
-          height={400}
-          width={400}
-        />
+          <a
+            href="https://gdg.community.dev/e/m6jq7d/"
+            target="_blank"
+            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+          >
+            <ImageCommunityGrid
+              name="GDG"
+              image="gdg-logo.png"
+              styles="bg-[#fff]"
+            />
+            <InfoEventGrid
+              date="20 de Abril"
+              time="6:45 p.m."
+              location="Music Centre"
+            />
+          </a>
 
-        <a
-          href="https://barranquillajs.org/"
-          target="_blank"
-          className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
-        >
-          <InfoEventGrid
-            // href=""
-            date=""
-            time=""
-            location=""
+          <Image
+            className="col-span-2 row-span-2 rounded-md object-cover"
+            src="/image-grid.webp"
+            alt="Imagen de evento"
+            height={400}
+            width={400}
           />
-          <ImageCommunityGrid
-            name="Js Barranquilla"
-            styles=" bg-[#fcc72d] text-black"
-            image="/baqjs.svg"
-          />
-        </a>
 
-        <Image
-          className="row-span-2 rounded-md w-full h-full object-cover"
-          src="/de-granda.webp"
-          alt="Imagen de evento"
-          height={400}
-          width={400}
-        />
+          {/* <a
+            href="https://barranquillajs.org/"
+            target="_blank"
+            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+          >
+            <InfoEventGrid
+              // href=""
+              date=""
+              time=""
+              location=""
+            />
+            <ImageCommunityGrid
+              name="Js Barranquilla"
+              styles=" bg-[#fcc72d] text-black"
+              image="/baqjs.svg"
+            />
+          </a>
 
-        <a
-          href="https://www.meetup.com/pythonbaq/events/299958884/"
-          target="_blank"
-          className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
-        >
-          <ImageCommunityGrid
-            name="Python Barranquilla"
-            styles="bg-gradient-to-b from-[#1e415e] to-[#2b5b84] text-black"
-            image="pybaq-logo.png"
-          />
-          <InfoEventGrid
-            date="11 de abril"
-            time="7:00 p.m."
-            location="Koombea"
-          />
-        </a>
+          <Image
+            className="row-span-2 rounded-md object-cover"
+            src="/de-granda.webp"
+            alt="Imagen de evento"
+            height={400}
+            width={400}
+          /> */}
+
+          <a
+            href="https://www.meetup.com/pythonbaq/events/299958884/"
+            target="_blank"
+            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+          >
+            <ImageCommunityGrid
+              name="Python Barranquilla"
+              styles="bg-gradient-to-b from-[#1e415e] to-[#2b5b84] text-black"
+              image="pybaq-logo.png"
+            />
+            <InfoEventGrid
+              date="11 de abril"
+              time="7:00 p.m."
+              location="Koombea"
+            />
+          </a>
+        </div>
       </div>
-      <Wrapper styles="w-full flex flex-col gap-5 relative bg-image-learn-in-community mask pt-10">
+      <Wrapper styles="w-full flex flex-col gap-5 relative mask pt-10">
         <p className="text-center text-gray-300">
           Durante Abril y hasta el 3 de Mayo las comunidades de Barranquilla nos
           unimos para organizar talleres, platicas y eventos especiales para que

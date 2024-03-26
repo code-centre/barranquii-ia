@@ -11,7 +11,7 @@ export default function ImageCommunityGrid({ name, styles, image }: Props) {
     <div
       className={`flex flex-col overflow-hidden justify-center ${styles}  px-4 rounded-md h-full`}
     >
-      <img src={image} alt={name} />
+      <img src={`logos/${image}`} alt={name} />
       {/* <p className="mb-2 font-semibold text-4xl">{name}</p> */}
     </div>
   );

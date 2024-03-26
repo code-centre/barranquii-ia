@@ -65,7 +65,7 @@ h6 {
   }
 
   .animate-sponsors {
-    animation: sponsors 20s linear infinite; /* Adjust animation duration, timing, etc. */
+    animation: sponsors 40s linear infinite; /* Adjust animation duration, timing, etc. */
   }
 
   .animate-grid {
@@ -93,7 +93,7 @@ h6 {
   }
 
   .animate-sponsors {
-    animation: sponsors 10s linear infinite; /* Adjust animation duration, timing, etc. */
+    animation: sponsors 30s linear infinite; /* Adjust animation duration, timing, etc. */
   }
 
   .animate-grid {

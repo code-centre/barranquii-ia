@@ -4,7 +4,7 @@ import faqs from "../utils/FAQ.json";
 
 export default function FAQ() {
   return (
-    <div className="pt-20 min-h-screen">
+    <div className="py-20">
       <div>
         <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
           FAQs

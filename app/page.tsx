@@ -42,7 +42,7 @@ export default function Home() {
         {/* <Tickets /> */}
       </Wrapper>
       <LearnInCommunity />
-      <Wrapper styles=" flex flex-col gap-20 pt-12 px-5 lg:pb-32">
+      <Wrapper styles=" flex flex-col gap-20 pt-12 px-5">
         <BeASponsor />
         <FAQ />
       </Wrapper>
