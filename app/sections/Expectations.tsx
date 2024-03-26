@@ -15,7 +15,7 @@ export default function Expectations() {
           height={300}
           alt=""
         />
-        <div className="flex flex-col gap-4 bg-[#1a1a1a] p-6 md:rounded-tr-md md:rounded-br-md">
+        <div className="flex flex-col gap-4 bg-[#1a1a1a] p-6 md:rounded-tr-md md:rounded-br-md text-gray-300">
           {/* <p>
             Más allá de los premios, Barranqui-IA es tu oportunidad para ser
             parte de un movimiento que busca transformar Barranquilla y
