@@ -4,7 +4,7 @@ interface Props {
     date: string,
     time: string,
     location: string
-    href: string
+    href?: string
 }
 
 

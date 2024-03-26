@@ -23,7 +23,7 @@ export default function LearnInCommunity() {
           />
           <InfoEventGrid
             href="https://gdg.community.dev/e/m6jq7d/"
-            date="20 de abril"
+            date=""
             time="7:00 p.m."
             location="Music Centre"
           />
@@ -39,10 +39,10 @@ export default function LearnInCommunity() {
 
         <div className="sub-grid">
           <InfoEventGrid
-            href=""
-            date="20 de abril"
-            time="7:00 p.m."
-            location="Universidad Simón Bolivar"
+            // href=""
+            date=""
+            time=""
+            location=""
           />
           <ImageCommunityGrid
             name="Js Barranquilla"
@@ -101,10 +101,10 @@ export default function LearnInCommunity() {
 
         <div className="sub-grid">
           <InfoEventGrid
-            href=""
-            date="20 de abril"
-            time="7:00 p.m."
-            location="Universidad Simón Bolivar"
+            // href=""
+            date=""
+            time=""
+            location=""
           />
           <ImageCommunityGrid
             name="Js Barranquilla"
@@ -137,7 +137,7 @@ export default function LearnInCommunity() {
       </div>
       <Wrapper styles="w-full flex flex-col gap-5 relative bg-image-learn-in-community mask pt-10">
         <p className="text-center text-gray-300">
-          Desde el 20 de Abril hasta el 3 de Mayo las comunidades de
+          Desde el  hasta el 3 de Mayo las comunidades de
           Barranquilla nos unimos para organizar talleres, platicas y eventos
           especiales para que pueda aprender sobre inteligencia artificial y
           llegues preparando al hackatón.
