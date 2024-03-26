@@ -11,6 +11,7 @@ import ScheduleSection from "./sections/ScheduleSection";
 import "./globals.css";
 import BeASponsor from "./sections/BeASponsor";
 import LearnInCommunity from "./sections/LearnInCommunity";
+import FAQ from "./sections/FAQ";
 
 export default function Home() {
   return (
@@ -43,6 +44,7 @@ export default function Home() {
       <LearnInCommunity />
       <Wrapper styles=" flex flex-col gap-20 pt-12 px-5 lg:pb-32">
         <BeASponsor />
+        <FAQ />
       </Wrapper>
     </main>
   );
