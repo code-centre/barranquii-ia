@@ -84,6 +84,10 @@ h6 {
   .animate-grid {
     animation: grid 45s linear infinite; /* Adjust animation duration, timing, etc. */
   }
+
+  .animate-grid {
+    animation: grid 20s linear infinite; /* Adjust animation duration, timing, etc. */
+  }
 }
 
 @media (600px <= width <= 768px) {
@@ -112,6 +116,24 @@ h6 {
   .animate-grid {
     animation: grid 50s linear infinite; /* Adjust animation duration, timing, etc. */
   }
+
+  .animate-grid {
+    animation: grid 40s linear infinite; /* Adjust animation duration, timing, etc. */
+  }
+}
+
+.grid-events {
+  display: grid;
+  grid-template-columns: repeat(14, 250px);
+  grid-template-rows: repeat(2, 200px);
+  gap: 12px;
+}
+
+.sub-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 250px);
+  gap: 12px;
+  grid-template-rows: repeat(2, 200px);
 }
 
 .grid-events {
@@ -124,7 +146,6 @@ h6 {
   scrollbar-width: thin;
   scrollbar-color: rgba(65, 64, 64, 0.87) rgba(0, 0, 0, 0);
 }
-
 
 .sub-grid {
   display: grid;
