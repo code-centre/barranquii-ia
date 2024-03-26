@@ -22,10 +22,16 @@ const DAYS_EVENT = [
 const SCHEDULE_EVENT = [
   [
     {
-      time: "07:00 PM - 10:00 PM",
+      time: "07:00 PM - 9:00 PM",
       title: "Meet & Greet",
       description:
         "Evento de pre-inauguración del hackatón donde tendremos la oportunidad de conocer a los mentores y compartir un rato con ellos mientras disfrutamos de música en vivo y una divertida velada. *Entrada con el paquete Full Access",
+    },
+    {
+      time: "09:00 PM - 10:00 PM",
+      title: "Show Musical",
+      description:
+        "Disfrutaremos escuchando a la revelación Barranquillera con su nueva propuesta que combina Funk y Soul, Grace Torres!",
     },
   ],
   [
