@@ -22,6 +22,7 @@ export default function LearnInCommunity() {
             styles="bg-[#fff]"
           />
           <InfoEventGrid
+            href="https://gdg.community.dev/e/m6jq7d/"
             date="20 de abril"
             time="7:00 p.m."
             location="Music Centre"
@@ -38,6 +39,7 @@ export default function LearnInCommunity() {
 
         <div className="sub-grid">
           <InfoEventGrid
+            href=""
             date="20 de abril"
             time="7:00 p.m."
             location="Universidad Simón Bolivar"
@@ -64,6 +66,7 @@ export default function LearnInCommunity() {
             image="pybaq-logo.png"
           />
           <InfoEventGrid
+            href="https://www.meetup.com/pythonbaq/events/299958884/"
             date="11 de abril"
             time="7:00 p.m."
             location="Koombea"
@@ -79,15 +82,12 @@ export default function LearnInCommunity() {
         />
 
         <div className="sub-grid">
-          <ImageCommunityGrid
-            name="GDG"
-            image="gdg-logo.png"
-            styles="bg-[#fff]"
-          />
+          <ImageCommunityGrid name="GDG" image="aws.png" styles="bg-[#fff]" />
           <InfoEventGrid
-            date="20 de abril"
+            href="https://www.meetup.com/aws-barranquilla/events/299991701/"
+            date="18 de abril"
             time="7:00 p.m."
-            location="Music Centre"
+            location="Universidad Simón Bolívar"
           />
         </div>
 
@@ -101,6 +101,7 @@ export default function LearnInCommunity() {
 
         <div className="sub-grid">
           <InfoEventGrid
+            href=""
             date="20 de abril"
             time="7:00 p.m."
             location="Universidad Simón Bolivar"
@@ -127,6 +128,7 @@ export default function LearnInCommunity() {
             image="pybaq-logo.png"
           />
           <InfoEventGrid
+            href="https://www.meetup.com/pythonbaq/events/299958884/"
             date="11 de abril"
             time="7:00 p.m."
             location="Koombea"
