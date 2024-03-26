@@ -69,7 +69,7 @@ h6 {
   }
 
   .animate-grid {
-    animation: grid 50s linear infinite; /* Adjust animation duration, timing, etc. */
+    animation: grid 75s linear infinite; /* Adjust animation duration, timing, etc. */
   }
 }
 
@@ -101,7 +101,7 @@ h6 {
   }
 
   .animate-grid {
-    animation: grid 20s linear infinite; /* Adjust animation duration, timing, etc. */
+    animation: grid 45s linear infinite; /* Adjust animation duration, timing, etc. */
   }
 }
 
@@ -138,9 +138,7 @@ h6 {
 }
 
 .grid-events {
-  display: grid;
-  grid-template-columns: repeat(14, 250px);
-  grid-template-rows: repeat(2, 200px);
+  display: flex;
   gap: 12px;
 }
 
