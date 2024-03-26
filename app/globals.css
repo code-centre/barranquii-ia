@@ -25,6 +25,22 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (max-width: 600px) {
+  @keyframes grid {
+    0% {
+      transform: translateX(-800%);
+    }
+    100% {
+      transform: translateX(10%); /* Adjust scrolling distance */
+    }
+  }
+
+  .animate-grid {
+    animation: grid 50s linear infinite; /* Adjust animation duration, timing, etc. */
+  }
+}
+
+
 @media (min-width: 768px) {
   @keyframes sponsors {
     0% {
@@ -34,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
       transform: translateX(0%); /* Adjust scrolling distance */
     }
   }
-  
+
   @keyframes grid {
     0% {
       transform: translateX(-100%);
@@ -53,22 +69,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media (max-width: 425px) {
-  @keyframes grid {
-    0% {
-      transform: translateX(-500%);
-    }
-    100% {
-      transform: translateX(80%); /* Adjust scrolling distance */
-    }
-  }
 
-  .animate-grid {
-    animation: grid 40s linear infinite; /* Adjust animation duration, timing, etc. */
-  }
-}
-
-@media (max-width: 768px) {
+@media (600px <= width <= 768px) {
   @keyframes sponsors {
     0% {
       transform: translateX(-100%);
@@ -80,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 
   @keyframes grid {
     0% {
-      transform: translateX(-500%);
+      transform: translateX(-400%);
     }
     100% {
       transform: translateX(30%); /* Adjust scrolling distance */
@@ -92,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .animate-grid {
-    animation: grid 40s linear infinite; /* Adjust animation duration, timing, etc. */
+    animation: grid 50s linear infinite; /* Adjust animation duration, timing, etc. */
   }
 }
 
