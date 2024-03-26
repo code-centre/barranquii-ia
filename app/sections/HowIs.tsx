@@ -13,7 +13,7 @@ export default function HowIs() {
           vida a un producto que utilice la inteligencia artificial para
           resolver desafíos reales.
         </p>
-        <p>
+        <p className="text-gray-300">
           Al final, un jurado de expertos evaluará los proyectos, y los
           ganadores recibirán premios espectaculares, celebrando la complejidad
           técnica, la innovación, el esfuerzo y el potencial de impacto de sus

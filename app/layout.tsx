@@ -24,7 +24,7 @@ export default function RootLayout({
         className={`${jakarta.className} ${noto.className} relative overflow-hidden `}
       >
         <BackgroundImages />
-        <Banner />
+        {/* <Banner /> */}
         {children}
         <Footer />
       </body>

@@ -19,14 +19,14 @@ export default function Sponsors({ title }: Props) {
       <div className="overflow-hidden">
         <div className="flex items-center gap-3 animate-sponsors">
           <Image
-            className="w-[150px]"
+            className="w-[150px] h-[47px] object-cover"
             src="/uni-norte.png"
             height={47}
             width={150}
             alt="Logo de la universidad de la norte"
           />
           <Image
-            className="w-[150px]"
+            className="w-[150px] h-[47px]"
             src="/google.png"
             height={47}
             width={150}
