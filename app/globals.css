@@ -31,6 +31,15 @@ h6 {
 }
 
 @media (max-width: 600px) {
+  @keyframes grid {
+    0% {
+      transform: translateX(-800%);
+    }
+    100% {
+      transform: translateX(10%); /* Adjust scrolling distance */
+    }
+  }
+
   .animate-grid {
     animation: grid 75s linear infinite; /* Adjust animation duration, timing, etc. */
   }
@@ -43,6 +52,15 @@ h6 {
     }
     100% {
       transform: translateX(0%); /* Adjust scrolling distance */
+    }
+  }
+
+  @keyframes grid {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%); /* Adjust scrolling distance */
     }
   }
 
@@ -65,6 +83,15 @@ h6 {
     }
   }
 
+  @keyframes grid {
+    0% {
+      transform: translateX(-400%);
+    }
+    100% {
+      transform: translateX(30%); /* Adjust scrolling distance */
+    }
+  }
+
   .animate-sponsors {
     animation: sponsors 30s linear infinite; /* Adjust animation duration, timing, etc. */
   }
@@ -74,19 +101,17 @@ h6 {
   }
 }
 
-@keyframes grid {
-  0% {
-    margin-left: 0%;
-  }
-  100% {
-    margin-left: -100%;
-  }
-}
-
 .grid-events {
   display: flex;
+  height: 400px;
   gap: 12px;
 }
+
+.scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(65, 64, 64, 0.87) rgba(0, 0, 0, 0);
+}
+
 
 .sub-grid {
   display: grid;
@@ -127,9 +152,9 @@ h6 {
   background-size: contain;
 }
 
-.mask {
+/* .mask {
   mask-image: linear-gradient(to bottom, black 90%, transparent);
-}
+} */
 
 :root {
   --foreground-rgb: 255, 255, 255;

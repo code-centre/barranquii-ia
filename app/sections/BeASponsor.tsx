@@ -1,5 +1,6 @@
 import React from "react";
 import Sponsors from "../components/Sponsors";
+import Image from "next/image";
 
 export default function BeASponsor() {
   return (
@@ -26,7 +27,45 @@ export default function BeASponsor() {
         Contáctanos
       </a>
 
-      <Sponsors title="Nuestros patrocinadores" />
+      <div className="flex flex-wrap gap-6  flex-row items-center justify-center lg:justify-between">
+        <Image
+          className="w-[150px] h-[47px] object-cover"
+          src="/uni-norte.png"
+          height={47}
+          width={150}
+          alt="Logo de la universidad de la norte"
+        />
+        <Image
+          className="w-[150px] h-[47px]"
+          src="/google.png"
+          height={47}
+          width={150}
+          alt="Logo de Google"
+        />
+        <Image
+          className="w-[150px]"
+          src="/i-city.webp"
+          height={47}
+          width={150}
+          alt="Logo de Google"
+        />
+        <figure className="flex items-center justify-center gap-x-2">
+          <Image
+            className=" w-12"
+            src="/logo-cc.webp"
+            height={100}
+            width={150}
+            alt="Logo de Code Centre"
+          />
+          <Image
+            className="w-[150px]"
+            src="/cc.webp"
+            height={19}
+            width={150}
+            alt="Logo de Code Centre"
+          />
+        </figure>
+      </div>
     </section>
   );
 }

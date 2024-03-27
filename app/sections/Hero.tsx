@@ -5,11 +5,7 @@ export default function Hero() {
     <section className="flex flex-col gap-7 md:gap-10 text-center">
       <div className="flex flex-col gap-3 md:gap-2">
         <div>
-          <img
-            className="mx-auto h-[100px] lg:h-[150px]"
-            src="/bwai.webp"
-            alt="Build with AI"
-          />
+          <h4 className="font-bold text-2xl font-mono uppercase tracking-widest">Código abierto</h4>
           <h1 className="font-bold text-5xl md:text-6xl xl:text-8xl">
             Barranqui-IA
           </h1>
