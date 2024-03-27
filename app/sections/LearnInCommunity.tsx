@@ -96,12 +96,12 @@ export default function LearnInCommunity() {
             target="_blank"
             className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
           >
-            <ImageCommunityGrid name="GDG" image="aws.png" styles="bg-[#fff]" />
             <InfoEventGrid
               date="18 de abril"
               time="7:00 p.m."
               location="Universidad Simón Bolívar"
             />
+            <ImageCommunityGrid name="GDG" image="aws.png" styles="bg-[#fff]" />
           </a>
 
           <Image
