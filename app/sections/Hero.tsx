@@ -30,7 +30,9 @@ export default function Hero() {
       >
         Pre-registro
       </a>
-      <p className="font-semibold text-xl">El evento se llevará acabo el 4 y 5 de mayo.</p>
+      <p className="font-semibold text-xl">
+        El evento se llevará acabo el 4 y 5 de mayo.
+      </p>
     </section>
   );
 }
