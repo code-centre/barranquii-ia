@@ -14,12 +14,12 @@ export default function LearnInCommunity() {
         </h2>
       </Wrapper>
 
-      <div className="w-full overflow-x-scroll">
+      <div className="w-full overflow-x-scroll pb-4 scroll">
         <div className="grid-events animate-grid w-full">
           <a
             href="https://gdg.community.dev/e/m6jq7d/"
             target="_blank"
-            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+            className="flex flex-col justify-center items-center  rounded-md sub-grid hover:brightness-150 overflow-hidden"
           >
             <ImageCommunityGrid
               name="GDG Barranquilla"
@@ -44,7 +44,7 @@ export default function LearnInCommunity() {
           <a
             href="https://flisol.info/FLISOL2024/Colombia/Barranquilla"
             target="_blank"
-            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+            className="flex flex-col justify-center items-center  rounded-md sub-grid hover:brightness-150"
           >
             <InfoEventGrid
               date="27 de Abril"
@@ -69,7 +69,7 @@ export default function LearnInCommunity() {
           <a
             href="https://www.meetup.com/pythonbaq/events/299958884/"
             target="_blank"
-            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+            className="flex flex-col justify-center items-center  rounded-md sub-grid hover:brightness-150"
           >
             <ImageCommunityGrid
               name="Python Barranquilla"
@@ -94,7 +94,7 @@ export default function LearnInCommunity() {
           <a
             href="https://www.meetup.com/aws-barranquilla/events/299991701/"
             target="_blank"
-            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+            className="flex flex-col justify-center items-center  rounded-md sub-grid hover:brightness-150"
           >
             <ImageCommunityGrid name="GDG" image="aws.png" styles="bg-[#fff]" />
             <InfoEventGrid
@@ -115,7 +115,7 @@ export default function LearnInCommunity() {
           <a
             href="https://gdg.community.dev/e/m6jq7d/"
             target="_blank"
-            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+            className="flex flex-col justify-center items-center  rounded-md sub-grid hover:brightness-150"
           >
             <ImageCommunityGrid
               name="GDG"
@@ -140,7 +140,7 @@ export default function LearnInCommunity() {
           {/* <a
             href="https://barranquillajs.org/"
             target="_blank"
-            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+            className="flex flex-col justify-center items-center  rounded-md sub-grid hover:brightness-100"
           >
             <InfoEventGrid
               // href=""
@@ -166,7 +166,7 @@ export default function LearnInCommunity() {
           <a
             href="https://www.meetup.com/pythonbaq/events/299958884/"
             target="_blank"
-            className="flex flex-col justify-center items-center bg-[#19161c] rounded-md sub-grid hover:brightness-100 hover:border-blue-400"
+            className="flex flex-col justify-center items-center  rounded-md sub-grid hover:brightness-150"
           >
             <ImageCommunityGrid
               name="Python Barranquilla"

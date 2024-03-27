@@ -103,8 +103,15 @@ h6 {
 
 .grid-events {
   display: flex;
+  height: 400px;
   gap: 12px;
 }
+
+.scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(65, 64, 64, 0.87) rgba(0, 0, 0, 0);
+}
+
 
 .sub-grid {
   display: grid;
@@ -144,9 +151,9 @@ h6 {
   background-size: contain;
 }
 
-.mask {
+/* .mask {
   mask-image: linear-gradient(to bottom, black 90%, transparent);
-}
+} */
 
 :root {
   --foreground-rgb: 255, 255, 255;
