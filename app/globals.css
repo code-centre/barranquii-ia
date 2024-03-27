@@ -33,10 +33,10 @@ h6 {
 @media (max-width: 600px) {
   @keyframes grid {
     0% {
-      transform: translateX(-800%);
+      transform: translateX(0%);
     }
     100% {
-      transform: translateX(10%); /* Adjust scrolling distance */
+      transform: translateX(-100%); /* Adjust scrolling distance */
     }
   }
 
@@ -85,10 +85,10 @@ h6 {
 
   @keyframes grid {
     0% {
-      transform: translateX(-400%);
+      transform: translateX(0%);
     }
     100% {
-      transform: translateX(30%); /* Adjust scrolling distance */
+      transform: translateX(-100%); /* Adjust scrolling distance */
     }
   }
 
