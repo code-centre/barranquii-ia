@@ -31,15 +31,6 @@ h6 {
 }
 
 @media (max-width: 600px) {
-  @keyframes grid {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%); /* Adjust scrolling distance */
-    }
-  }
-
   .animate-grid {
     animation: grid 75s linear infinite; /* Adjust animation duration, timing, etc. */
   }
@@ -52,15 +43,6 @@ h6 {
     }
     100% {
       transform: translateX(0%); /* Adjust scrolling distance */
-    }
-  }
-
-  @keyframes grid {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%); /* Adjust scrolling distance */
     }
   }
 
@@ -83,21 +65,21 @@ h6 {
     }
   }
 
-  @keyframes grid {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%); /* Adjust scrolling distance */
-    }
-  }
-
   .animate-sponsors {
     animation: sponsors 30s linear infinite; /* Adjust animation duration, timing, etc. */
   }
 
   .animate-grid {
     animation: grid 50s linear infinite; /* Adjust animation duration, timing, etc. */
+  }
+}
+
+@keyframes grid {
+  0% {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: -100%;
   }
 }
 
@@ -111,6 +93,7 @@ h6 {
   grid-template-columns: repeat(1, 250px);
   gap: 12px;
   grid-template-rows: repeat(2, 200px);
+  scroll-behavior: smooth;
 }
 
 .bg-image {
