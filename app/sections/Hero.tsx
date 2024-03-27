@@ -18,7 +18,7 @@ export default function Hero() {
           Primer Hackatón de inteligencia <br /> artificial en el Caribe
         </h2>
         <p className="text-sm xl:text-base">
-          Un evento de +30 horas sobre inteligencia artificial.
+          Un evento de 48 horas sobre inteligencia artificial.
         </p>
       </div>
       <a
