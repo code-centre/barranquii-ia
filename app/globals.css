@@ -118,6 +118,7 @@ h6 {
   grid-template-columns: repeat(1, 250px);
   gap: 12px;
   grid-template-rows: repeat(2, 200px);
+  scroll-behavior: smooth;
 }
 
 .bg-image {
