@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 export default function Hero() {
   return (
@@ -24,6 +26,7 @@ export default function Hero() {
         className="hover:brightness-110 bg-principleViolet mx-auto px-5 xl:px-10 py-2 xl:py-3 rounded-lg w-fit text-[13px] xl:text-base uppercase"
         href="https://forms.gle/q1V2AdY1ZetQ9Yre8"
         target="_blank"
+        onClick={() => sendGTMEvent({ event: "purchase", value: 1 })}
       >
         Pre-registro
       </a>
