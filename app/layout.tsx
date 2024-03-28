@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="overflow-x-hidden">
-      <GoogleTagManager gtmId={process.env.GTM_KEY || ""} />
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_KEY || ""} />
       <body
         className={`${jakarta.className} ${noto.className} relative overflow-hidden `}
       >
