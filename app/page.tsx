@@ -12,6 +12,7 @@ import "./globals.css";
 import BeASponsor from "./sections/BeASponsor";
 import LearnInCommunity from "./sections/LearnInCommunity";
 import FAQ from "./sections/FAQ";
+import Topics from "./sections/Topics";
 
 export default function Home() {
   return (
@@ -29,6 +30,9 @@ export default function Home() {
           <HowIs />
         </Wrapper>
       </div>
+      <Wrapper styles="px-5">
+          <Topics />
+      </Wrapper>
       <Wrapper styles="flex flex-col gap-20 px-5 pb-10">
         <Expectations />
       </Wrapper>
