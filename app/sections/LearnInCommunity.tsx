@@ -7,8 +7,8 @@ import ImageCommunityGrid from "../components/ImageCommunityGrid";
 
 export default function LearnInCommunity() {
   return (
-    <section className="flex flex-col px-1 bg-image-learn-in-community py-20">
-      <Wrapper styles="w-full mb-10">
+    <section className="flex flex-col px-1 bg-image-learn-in-community pb-20">
+      <Wrapper styles="w-full mb-10 px-5">
         <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
           Aprende en comunidad
         </h2>
