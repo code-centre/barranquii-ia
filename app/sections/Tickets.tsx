@@ -15,14 +15,14 @@ export default function Tickets() {
           Ingresos
         </span>
       </div>
-      <div className="flex md:flex-row flex-col gap-5">
-        <CardTicket title="General" subTitle="Entrada general" amount="50,000">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5">
+        <CardTicket mode="general" title="General" subTitle="Entrada general" amount="50,000">
           <ul className="mt-3 ml-5 marker:text-principleViolet list-disc">
             <li>Ingreso a instalaciones</li>
             <li>Participación en charlas</li>
           </ul>
         </CardTicket>
-        <CardTicket title="Full access" subTitle="Paquete conmemorativo" amount="100,000">
+        <CardTicket mode="full" styles="col-span-2 flex overflow-hidden" title="Full access" subTitle="Paquete conmemorativo" amount="100,000">
           <ul className="mt-3 ml-5 marker:text-principleViolet list-disc">
             <li>Ingreso a instalaciones</li>
             <li>Participación en charlas</li>

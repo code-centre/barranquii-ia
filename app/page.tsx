@@ -39,7 +39,7 @@ export default function Home() {
       </div>
       <Wrapper styles=" flex flex-col gap-20 pt-12 px-5 lg:pb-10 w-full">
         <Location />
-        {/* <Tickets /> */}
+        <Tickets />
       </Wrapper>
       <LearnInCommunity />
       <Wrapper styles=" flex flex-col gap-20 pt-12 px-5">
