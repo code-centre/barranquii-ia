@@ -37,7 +37,7 @@ export default function wCardTicket({
         </div>
         <div className="flex justify-center mt-14">
           <a
-            href={`/form?mode=${mode}`}
+            href={`/tickets/form?mode=${mode}`}
             className="hover:brightness-110 bg-principleViolet px-5 xl:px-5 py-2 xl:py-3 rounded-lg text-[13px] xl:text-sm uppercase"
           >
             Comprar
@@ -46,8 +46,8 @@ export default function wCardTicket({
       </div>
       {styles && (
         <img
-          src="/anuar-harb.webp"
-          className="w-[200px] object-cover flex-1 h-[300px] ml-5"
+          src="/swags.jpeg"
+          className="flex-1 ml-5 rounded-md w-[200px] h-[300px] object-cover"
         />
       )}
     </div>
