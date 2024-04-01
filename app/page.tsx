@@ -12,6 +12,7 @@ import "./globals.css";
 import BeASponsor from "./sections/BeASponsor";
 import LearnInCommunity from "./sections/LearnInCommunity";
 import FAQ from "./sections/FAQ";
+import Topics from "./sections/Topics";
 
 export default function Home() {
   return (
@@ -24,12 +25,15 @@ export default function Home() {
         />
       </Wrapper>
       <div className="bg-image">
-        <Wrapper styles="flex flex-col gap-20 lg:gap-32 px-5 pb-10">
+        <Wrapper styles="flex flex-col gap-20 lg:gap-32 px-5 md:pb-10">
           <WhatIs />
           <HowIs />
         </Wrapper>
       </div>
-      <Wrapper styles="flex flex-col gap-20 px-5 pb-10">
+      <Wrapper styles="px-5">
+          <Topics />
+      </Wrapper>
+      <Wrapper styles="flex flex-col gap-20 px-5 md:pb-10">
         <Expectations />
       </Wrapper>
       <div className="bg-[#1a1a1a]">

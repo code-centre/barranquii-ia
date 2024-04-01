@@ -1,11 +1,16 @@
+"use client";
 import React from "react";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 export default function Hero() {
   return (
     <section className="flex flex-col gap-7 md:gap-10 text-center">
       <div className="flex flex-col gap-3 md:gap-2">
         <div>
-          <h4 className="font-bold text-2xl font-mono uppercase tracking-widest">Código abierto</h4>
+          <h4 className="font-bold text-2xl font-mono uppercase tracking-widest my-20">
+            Fundación <br />
+            Código abierto
+          </h4>
           <h1 className="font-bold text-5xl md:text-6xl xl:text-8xl">
             Barranqui-IA
           </h1>
@@ -21,6 +26,7 @@ export default function Hero() {
         className="hover:brightness-110 bg-principleViolet mx-auto px-5 xl:px-10 py-2 xl:py-3 rounded-lg w-fit text-[13px] xl:text-base uppercase"
         href="https://forms.gle/q1V2AdY1ZetQ9Yre8"
         target="_blank"
+        onClick={() => sendGTMEvent({ event: "purchase", value: 1 })}
       >
         Pre-registro
       </a>
