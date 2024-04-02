@@ -31,6 +31,15 @@ h6 {
 }
 
 @media (max-width: 600px) {
+  @keyframes sponsors {
+    0% {
+      transform: translateX(-120%);
+    }
+    100% {
+      transform: translateX(10%); /* Adjust scrolling distance */
+    }
+  }
+
   @keyframes grid {
     0% {
       transform: translateX(-800%);
@@ -38,6 +47,10 @@ h6 {
     100% {
       transform: translateX(10%); /* Adjust scrolling distance */
     }
+  }
+
+  .animate-sponsors {
+    animation: sponsors 30s linear infinite; /* Adjust animation duration, timing, etc. */
   }
 
   .animate-grid {
