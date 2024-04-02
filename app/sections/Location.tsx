@@ -15,6 +15,7 @@ export default function Location() {
             height={47}
             width={230}
             alt="Logo de la universidad de la norte"
+            loading="lazy"
           />
         </div>
         <span className="flex items-center gap-1 mt-2 font-semibold text-gray-400 uppercase">

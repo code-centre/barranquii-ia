@@ -39,6 +39,7 @@ export default function LearnInCommunity() {
             alt="Imagen de evento"
             height={400}
             width={400}
+            loading="lazy"
           />
 
           <a
@@ -64,6 +65,7 @@ export default function LearnInCommunity() {
             alt="Imagen de evento"
             height={400}
             width={400}
+            loading="lazy"
           />
 
           <a
@@ -89,6 +91,7 @@ export default function LearnInCommunity() {
             alt="Imagen de evento"
             height={400}
             width={400}
+            loading="lazy"
           />
 
           <a
@@ -110,6 +113,7 @@ export default function LearnInCommunity() {
             alt="Imagen de evento"
             height={400}
             width={400}
+            loading="lazy"
           />
 
           <a
@@ -135,6 +139,7 @@ export default function LearnInCommunity() {
             alt="Imagen de evento"
             height={400}
             width={400}
+            loading="lazy"
           />
 
           {/* <a
@@ -161,6 +166,7 @@ export default function LearnInCommunity() {
             alt="Imagen de evento"
             height={400}
             width={400}
+            loading="lazy"
           /> */}
 
           <a

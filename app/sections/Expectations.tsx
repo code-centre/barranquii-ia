@@ -13,7 +13,8 @@ export default function Expectations() {
           src="/expectation-image.webp"
           width={300}
           height={300}
-          alt=""
+          alt="Amigos hechos en eventos de tecnología"
+          loading="lazy"
         />
         <div className="flex flex-col gap-4 bg-[#1a1a1a] p-6 md:rounded-tr-md md:rounded-br-md text-gray-300">
           {/* <p>
