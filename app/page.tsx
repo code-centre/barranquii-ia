@@ -16,7 +16,7 @@ import Topics from "./sections/Topics";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-20 py-10 min-h-screen">
+    <main className="flex flex-col py-10 min-h-screen">
       <Wrapper styles="flex flex-col gap-20 px-5 pb-10">
         <Hero />
         <Sponsors
@@ -33,20 +33,20 @@ export default function Home() {
       <Wrapper styles="px-5">
           <Topics />
       </Wrapper>
-      <Wrapper styles="flex flex-col gap-20 px-5 md:pb-10">
+      <Wrapper styles="flex flex-col gap-20 pb-20 px-5 md:pb-10">
         <Expectations />
       </Wrapper>
       <div className="bg-[#1a1a1a]">
-        <Wrapper styles=" py-12 lg:py-24 px-5">
+        <Wrapper styles=" pb-12 lg:pb-24 px-5">
           <ScheduleSection />
         </Wrapper>
       </div>
-      <Wrapper styles=" flex flex-col gap-20 pt-12 px-5 lg:pb-10 w-full">
+      <Wrapper styles=" flex flex-col gap-20 px-5 lg:pb-10 w-full">
         <Location />
         <Tickets />
       </Wrapper>
       <LearnInCommunity />
-      <Wrapper styles=" flex flex-col gap-20 pt-12 px-5">
+      <Wrapper styles=" flex flex-col gap-20 px-5">
         <BeASponsor />
         <FAQ />
       </Wrapper>

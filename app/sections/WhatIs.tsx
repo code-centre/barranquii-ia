@@ -3,7 +3,7 @@ import React from "react";
 
 export default function WhatIs() {
   return (
-    <section className="relative flex flex-col gap-10 text-left">
+    <section id="what-is" className="relative flex flex-col gap-10 pt-32 text-left">
       <div>
         <h2 className="font-bold text-4xl md:text-6xl">Hackatón</h2>
         <h3 className="text-2xl md:text-4xl">Barranqui-IA</h3>

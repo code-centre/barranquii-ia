@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Location() {
   return (
-    <section className="flex flex-col gap-5">
+    <section id="location" className="flex flex-col gap-5 pt-32">
       <div>
         <div className="flex justify-between md:justify-start items-center md:gap-14">
           <h2 className="border- border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
@@ -15,6 +15,7 @@ export default function Location() {
             height={47}
             width={230}
             alt="Logo de la universidad de la norte"
+            loading="lazy"
           />
         </div>
         <span className="flex items-center gap-1 mt-2 font-semibold text-gray-400 uppercase">

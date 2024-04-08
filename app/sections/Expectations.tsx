@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Expectations() {
   return (
-    <section className="flex flex-col gap-5">
+    <section className="flex flex-col gap-5 mt-32">
       <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
         ¿Qué esperar en el evento?
       </h2>
@@ -13,7 +13,8 @@ export default function Expectations() {
           src="/expectation-image.webp"
           width={300}
           height={300}
-          alt=""
+          alt="Amigos hechos en eventos de tecnología"
+          loading="lazy"
         />
         <div className="flex flex-col gap-4 bg-[#1a1a1a] p-6 md:rounded-tr-md md:rounded-br-md text-gray-300">
           {/* <p>

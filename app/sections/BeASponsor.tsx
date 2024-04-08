@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function BeASponsor() {
   return (
-    <section className="flex flex-col gap-7">
+    <section id="sponsors" className="flex flex-col gap-7 pt-32">
       <h2 className="border- border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
         ¿Quieres ser un patrocinador?
       </h2>
@@ -34,6 +34,7 @@ export default function BeASponsor() {
           height={47}
           width={150}
           alt="Logo de la universidad de la norte"
+          loading="lazy"
         />
         <Image
           className="w-[150px] h-[47px]"
@@ -41,6 +42,7 @@ export default function BeASponsor() {
           height={47}
           width={150}
           alt="Logo de Google"
+          loading="lazy"
         />
         <Image
           className="w-[150px]"
@@ -48,14 +50,16 @@ export default function BeASponsor() {
           height={47}
           width={150}
           alt="Logo de Google"
+          loading="lazy"
         />
         <figure className="flex items-center justify-center gap-x-2">
           <Image
-            className=" w-12"
+            className="w-12"
             src="/logo-cc.webp"
             height={100}
             width={150}
             alt="Logo de Code Centre"
+            loading="lazy"
           />
           <Image
             className="w-[150px]"
@@ -63,6 +67,7 @@ export default function BeASponsor() {
             height={19}
             width={150}
             alt="Logo de Code Centre"
+            loading="lazy"
           />
         </figure>
       </div>

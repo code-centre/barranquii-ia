@@ -1,0 +1,30 @@
+[
+    {
+        "id": "what-is",
+        "name": "¿Qué es?"
+    }, 
+    {
+        "id": "topics",
+        "name": "Lineas temáticas"
+    },
+    {
+        "id": "schedule",
+        "name": "Horario"
+    },
+    {
+        "id": "location",
+        "name": "Ubicación"
+    },
+    {
+        "id": "learn-in-community",
+        "name": "Talleres"
+    },
+    {
+        "id": "sponsors",
+        "name": "Patrocinadores"
+    },
+    {
+        "id": "faqs",
+        "name": "FAQs"
+    }
+]
