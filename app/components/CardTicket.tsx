@@ -20,12 +20,14 @@ export default function wCardTicket({
 }: Props) {
   return (
     <div
-      className={`hover:brightness-125 hover:border-principleViolet bg-[#1a1a1a] hover:shadow-2xl hover:shadow-principleViolet py-10 px-5 border border-transparent rounded-md text-gray-300 ${styles}`}
+      className={`hover:brightness-125 hover:border-principleViolet bg-[#1a1a1a] hover:shadow-2xl hover:shadow-principleViolet py-10 px-5 border border-transparent rounded-md text-gray-300 flex flex-col justify-between ${styles}`}
     >
       <div>
         <h3 className="text-principleViolet text-xl uppercase">{title}</h3>
         <p>{subTitle}</p>
         {children}
+      </div>
+      <div className="h-52">
         <div className="border-principleViolet border-y mt-6 py-5 text-center">
           <h3 className="font-medium text-2xl text-center text-white">
             ${amount} COP
@@ -44,12 +46,6 @@ export default function wCardTicket({
           </a>
         </div>
       </div>
-      {styles && (
-        <img
-          src="/swags.jpeg"
-          className="flex-1 ml-5 rounded-md w-[200px] h-[300px] object-cover"
-        />
-      )}
     </div>
   );
 }
