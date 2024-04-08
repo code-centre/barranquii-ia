@@ -10,7 +10,7 @@ export default function Topic({ img, title }: Props) {
   return (
     <div>
         <Image 
-            src='/question-mark.webp' 
+            src={img} 
             alt={title} 
             height={160} 
             width={160}  
