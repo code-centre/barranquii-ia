@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="flex flex-col gap-7 md:gap-10 text-center">
       <div className="flex flex-col gap-3 md:gap-2">
         <div>
-          <h4 className="font-bold text-2xl font-mono uppercase tracking-widest my-20">
+          <h4 className="my-20 font-bold font-mono text-2xl uppercase tracking-widest">
             Fundación <br />
             Código abierto
           </h4>
@@ -30,7 +30,7 @@ export default function Hero() {
       >
         Pre-registro
       </a>
-      <p>La venta de boletos se abre el 3ro de Abril</p>
+      <p className="font-semibold text-xl">El evento se llevará acabo el 4 y 5 de mayo.</p>
     </section>
   );
 }
