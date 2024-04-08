@@ -10,7 +10,9 @@ export default function Topics() {
       </h2>
 
       <p className="mt-3 text-gray-300">
-      Barranqui-IA contará con 7 lineas temáticas para guiar a lo participantes a resolver problemas relevantes con inteligencia artificial. 
+        Barranqui-IA contará con 7 lineas temáticas para guiar a lo
+        participantes a resolver problemas relevantes con inteligencia
+        artificial. Las lineas temáticas se revelarán próximamente.
       </p>
 
       <div className="flex flex-wrap justify-center items-center gap-5 md:gap-10 mt-10">

@@ -30,7 +30,7 @@ export default function Hero() {
       >
         Pre-registro
       </a>
-      <p>La venta de boletos se abre el 1ro de Abril</p>
+      <p>La venta de boletos se abre el 3ro de Abril</p>
     </section>
   );
 }
