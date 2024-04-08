@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function BeASponsor() {
   return (
-    <section className="flex flex-col gap-7">
+    <section id="sponsors" className="flex flex-col gap-7 pt-32">
       <h2 className="border- border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
         ¿Quieres ser un patrocinador?
       </h2>
