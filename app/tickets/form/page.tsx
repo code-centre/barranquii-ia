@@ -4,7 +4,6 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import Wrapper from "../../components/Wrapper";
 import { useSearchParams } from "next/navigation";
-import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 enum sizesEnum {
@@ -15,11 +14,22 @@ enum sizesEnum {
   xxl = "xxl",
 }
 
+enum YES_NO {
+  yes = "yes",
+  no = "no",
+}
+
 type Inputs = {
   name: string;
   lastName: string;
+  cedula: number;
+  phone: number;
   email: string;
   size: sizesEnum;
+  nameEmergency: string;
+  phoneEmergency: string;
+  sleepAtPlace: YES_NO;
+  terms: boolean;
 };
 
 export default function Form() {
@@ -28,18 +38,17 @@ export default function Form() {
     register,
     handleSubmit,
     watch,
-    formState,
-    formState: { errors, isValid },
-  } = useForm();
+    formState: { errors, isSubmitSuccessful, isValid },
+  } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
-    console.log(errors);
-
-    if (formState.isSubmitSuccessful) {
-      router.push("/tickets/thank-you");
+    if (mode === "general") {
+      router.push("https://checkout.wompi.co/l/test_SAT8ud");
+    } else {
+      router.push("https://checkout.wompi.co/l/test_XH9ufN");
     }
   };
+
   const searchParams = useSearchParams();
 
   const mode = searchParams.get("mode");
@@ -93,14 +102,14 @@ export default function Form() {
             <label className="flex flex-col gap-2 md:w-1/2 font-semibold text-gray-300">
               Cédula
               <input
-                {...register("name", {
+                {...register("cedula", {
                   required: true,
                 })}
                 placeholder="Cédula"
                 type="text"
                 className="px-2 py-2 rounded-md font-normal text-black"
               />
-              {errors.name?.type === "required" && (
+              {errors.cedula?.type === "required" && (
                 <p className="text-[13px] text-red-600">
                   No puede estar vacío.
                 </p>
@@ -109,14 +118,14 @@ export default function Form() {
             <label className="flex flex-col gap-2 md:w-1/2 font-semibold text-gray-300">
               Teléfono
               <input
-                {...register("lastName", {
+                {...register("phone", {
                   required: true,
                 })}
                 placeholder="Teléfono"
                 type="text"
                 className="px-2 py-2 rounded-md font-normal text-black"
               />
-              {errors.lastName?.type === "required" && (
+              {errors.phone?.type === "required" && (
                 <p className="text-[13px] text-red-600">
                   No puede estar vacío.
                 </p>
@@ -129,7 +138,6 @@ export default function Form() {
               {...register("email", {
                 required: true,
               })}
-              required
               placeholder="Correo@gmail.com"
               type="email"
               className="px-2 py-2 rounded-md font-normal text-black"
@@ -168,74 +176,96 @@ export default function Form() {
               <option value="vegano">Vegano</option>
             </select>
           </label>
+          <div className="my-4 border-b border-dashed"></div>
 
-          <h2 className="mt-6 font-bold text-3xl">Contacto de emergencia</h2>
+          <h2 className="font-bold text-3xl">Contacto de emergencia</h2>
           <div className="flex md:flex-row flex-col justify-between gap-6">
             <label className="flex flex-col gap-2 md:w-1/2 font-semibold text-gray-300">
-              Nombre
+              Nombre completo
               <input
-                {...register("name", {
+                {...register("nameEmergency", {
                   required: true,
                 })}
                 placeholder="Nombre"
                 type="text"
                 className="px-2 py-2 rounded-md font-normal text-black"
               />
-              {errors.name?.type === "required" && (
+              {errors.nameEmergency?.type === "required" && (
                 <p className="text-[13px] text-red-600">
                   No puede estar vacío.
                 </p>
               )}
             </label>
             <label className="flex flex-col gap-2 md:w-1/2 font-semibold text-gray-300">
-              Apellido
+              Teléfono
               <input
-                {...register("lastName", {
+                {...register("phoneEmergency", {
                   required: true,
                 })}
-                placeholder="Apellido"
+                placeholder="Teléfono"
                 type="text"
                 className="px-2 py-2 rounded-md font-normal text-black"
               />
-              {errors.lastName?.type === "required" && (
+              {errors.phoneEmergency?.type === "required" && (
                 <p className="text-[13px] text-red-600">
                   No puede estar vacío.
                 </p>
               )}
             </label>
           </div>
+          <div className="my-4 border-b border-dashed"></div>
           <div>
             <p className="max-w-2xl text-gray-300">
               Para poder trabajar en el proyecto, podrás quedarte trabajando la
               noche del sábado en la universidad, tendremos cafe, comida, agua y
               habrá espacios donde puedas tomar una siesta, pero el espació no
               estará habilitado para dormir.
-              <span className="block mt-2 font-bold">¿Te quedarás a trabajar durante la noche?</span>
+              <span className="block mt-2 font-bold">
+                ¿Te quedarás a trabajar durante la noche?
+              </span>
             </p>
             <div className="flex gap-6 mt-2 text-gray-300">
               <label className="flex items-center gap-2">
                 SÍ
-                <input type="checkbox" />
+                <input
+                  {...register("sleepAtPlace", {
+                    required: true,
+                  })}
+                  name="response"
+                  type="radio"
+                  value="yes"
+                />
               </label>
               <label className="flex items-center gap-2">
                 NO
-                <input type="checkbox" />
+                <input
+                  {...register("sleepAtPlace", {
+                    required: true,
+                  })}
+                  name="response"
+                  type="radio"
+                  value="no"
+                  defaultChecked
+                />
               </label>
             </div>
           </div>
+          <div className="my-4 border-b border-dashed"></div>
 
           <label className="flex items-center gap-2 text-gray-300">
             He leído y acepto los términos y condiciones
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              {...register("terms", {
+                required: true,
+              })}
+            />
+            {errors.terms?.type === "required" && (
+              <p className="text-[13px] text-red-600">No puede estar vacío.</p>
+            )}
           </label>
           <button
-            // disabled={!isValid}
-            // href=""
-            // href={
-            //   mode === "general"
-            //     ? "https://checkout.wompi.co/l/test_7bBufv"
-            //     : "https://checkout.wompi.co/l/test_wtdSx4"
-            // }
+            disabled={!isValid}
             className={`hover:brightness-110 bg-principleViolet px-5 xl:px-5 py-2 xl:py-3 rounded-md text-[13px] text-center xl:text-base uppercase disabled:bg-gray-400 disabled:brightness-100`}
           >
             Continuar con el pago
