@@ -22,7 +22,8 @@ enum YES_NO {
 type Inputs = {
   name: string;
   lastName: string;
-  cedula: number;
+  typeOfDocument: string;
+  document: number;
   phone: number;
   email: string;
   size: sizesEnum;
@@ -99,22 +100,39 @@ export default function Form() {
             </label>
           </div>
           <div className="flex md:flex-row flex-col justify-between gap-6">
-            <label className="flex flex-col gap-2 md:w-1/2 font-semibold text-gray-300">
-              Cédula
-              <input
-                {...register("cedula", {
-                  required: true,
-                })}
-                placeholder="Cédula"
-                type="text"
-                className="px-2 py-2 rounded-md font-normal text-black"
-              />
-              {errors.cedula?.type === "required" && (
-                <p className="text-[13px] text-red-600">
-                  No puede estar vacío.
-                </p>
-              )}
-            </label>
+            <div className="w-1/2 flex items-center gap-2">
+              <label className="flex flex-col w-[100px] gap-2 font-semibold text-gray-300">
+                Tipo de ID
+                <select
+                  {...register("typeOfDocument", {})}
+                  className="px-2 py-2 rounded-md text-black"
+                  defaultValue="C.C"
+                  name=""
+                  id=""
+                >
+                  <option value="C.C">C.C</option>
+                  <option value="C.E">C.E</option>
+                  <option value="T.I">T.I</option>
+                  <option value="Pasaporte">Pasaporte</option>
+                </select>
+              </label>
+              <label className="flex flex-col gap-2 w-full font-semibold text-gray-300">
+                Número de documento
+                <input
+                  {...register("document", {
+                    required: true,
+                  })}
+                  placeholder="Documento"
+                  type="text"
+                  className="px-2 py-2 rounded-md font-normal text-black"
+                />
+                {errors.document?.type === "required" && (
+                  <p className="text-[13px] text-red-600">
+                    No puede estar vacío.
+                  </p>
+                )}
+              </label>
+            </div>
             <label className="flex flex-col gap-2 md:w-1/2 font-semibold text-gray-300">
               Teléfono
               <input
@@ -251,19 +269,29 @@ export default function Form() {
             </div>
           </div>
           <div className="my-4 border-b border-dashed"></div>
-
-          <label className="flex items-center gap-2 text-gray-300">
-            He leído y acepto los términos y condiciones
-            <input
-              type="checkbox"
-              {...register("terms", {
-                required: true,
-              })}
-            />
-            {errors.terms?.type === "required" && (
-              <p className="text-[13px] text-red-600">No puede estar vacío.</p>
-            )}
-          </label>
+          <div>
+            <label className="flex items-center gap-2 text-gray-300">
+              He leído y acepto los términos y condiciones
+              <input
+                type="checkbox"
+                {...register("terms", {
+                  required: true,
+                })}
+              />
+              {errors.terms?.type === "required" && (
+                <p className="text-[13px] text-red-600">
+                  No puede estar vacío.
+                </p>
+              )}
+            </label>
+            <a
+              target="_blank"
+              className="underline text-gray-300 mt-4 hover:text-principleViolet"
+              href="/tickets/terminos-y-condiciones"
+            >
+              Ver términos y condiciones
+            </a>
+          </div>
           <button
             disabled={!isValid}
             className={`hover:brightness-110 bg-principleViolet px-5 xl:px-5 py-2 xl:py-3 rounded-md text-[13px] text-center xl:text-base uppercase disabled:bg-gray-400 disabled:brightness-100`}
