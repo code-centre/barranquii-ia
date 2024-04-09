@@ -3,7 +3,7 @@ import Schedule from "../components/Schedule";
 
 export default function ScheduleSection() {
   return (
-    <section className="flex md:flex-row flex-col gap-10">
+    <section id="schedule" className="flex md:flex-row flex-col gap-10 pt-32">
       <div className="flex flex-col gap-5 md:gap-10 md:w-[25%]">
         <div>
           <h2 className="border- border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-3xl uppercase">

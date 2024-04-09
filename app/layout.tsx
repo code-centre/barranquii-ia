@@ -5,6 +5,7 @@ import "./globals.css";
 import Banner from "./components/Banner";
 import BackgroundImages from "./components/BackgroundImages";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 const noto = Noto_Sans({ subsets: ["latin"] });
@@ -20,13 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="overflow-x-hidden">
+    <html lang="es" className="overflow-x-hidden scroll-smooth">
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_KEY || ""} />
       <body
         className={`${jakarta.className} ${noto.className} relative overflow-hidden `}
       >
         <BackgroundImages />
         {/* <Banner /> */}
+        <Navbar />
         {children}
         <Footer />
       </body>
