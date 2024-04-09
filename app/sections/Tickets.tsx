@@ -1,6 +1,6 @@
 import React from "react";
 import CardTicket from "../components/CardTicket";
-import '../globals.css'
+import "../globals.css";
 
 export default function Tickets() {
   return (
@@ -16,13 +16,17 @@ export default function Tickets() {
         </span>
       </div>
       <div className="flex md:flex-row flex-col gap-5">
-        <CardTicket title="General" subTitle="Entrada general" amount="50,000">
+        <CardTicket title="General" subTitle="Entrada general" amount="100,000">
           <ul className="mt-3 ml-5 marker:text-principleViolet list-disc">
             <li>Ingreso a instalaciones</li>
             <li>Participación en charlas</li>
           </ul>
         </CardTicket>
-        <CardTicket title="Full access" subTitle="Paquete conmemorativo" amount="100,000">
+        <CardTicket
+          title="Full access"
+          subTitle="Paquete conmemorativo"
+          amount="200,000"
+        >
           <ul className="mt-3 ml-5 marker:text-principleViolet list-disc">
             <li>Ingreso a instalaciones</li>
             <li>Participación en charlas</li>

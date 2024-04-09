@@ -1,38 +1,38 @@
 [
-    {
-        "question": "¿Quién puede participar en 'Barranqui-IA'?",
-        "answer": "El hackathon está enfocado a ingenieros de software, programadores, y diseñadores de productos digitales, pero todos los entusiastas por la inteligencia artificial son invitados a participar, independientemente de su nivel de experiencia. Valoramos la diversidad y creemos que la variedad de perspectivas enriquece el evento."
-    },
-    {
-        "question": "¿Hay algún costo de inscripción para el evento?",
-        "answer": "Si, el costo del boleto será de $50,000 COP e incluirá el acceso, las 4 comidas y la camiseta del evento. Habrá un tipo de boleto de $100,000 COP que incluye más SWAG."
-    },
-    {
-        "question": "¿Necesito tener experiencia previa en inteligencia artificial para participar?",
-        "answer": "No es necesario tener experiencia previa en IA, pero te invitamos a participar en los eventos de Pre-Hackatón donde las distintas comunidades de tecnología en Barranquilla dictarán talleres para que llegues preparado al hackatón.  El evento está diseñado para fomentar el aprendizaje y la experimentación en todos los niveles, con talleres y mentorías que te ayudarán a ponerte al día."
-    },
-    {
-        "question": "¿Puedo participar individualmente o necesito formar un equipo?",
-        "answer": "Puedes inscribirte individualmente, pero el hackatón se basa en el trabajo en equipo. Si no tienes un equipo, te ayudaremos a encontrar uno basado en tus intereses y habilidades antes del inicio del evento."
-    },
-    {
-        "question": "¿Qué tipo de proyectos se espera que desarrollemos?",
-        "answer": "Los proyectos deben utilizar la inteligencia artificial para abordar o resolver un desafío real. Estamos buscando soluciones innovadoras que puedan tener un impacto positivo en alguna de las lineas temáticas del evento."
-    },
-    {
-        "question": "¿Qué sucede si necesito ayuda durante el hackatón?",
-        "answer": " Contarás con la mentoría de expertos en IA y Google Developer Experts, quienes estarán disponibles para ofrecer orientación, resolver dudas y apoyarte en el desarrollo de tu proyecto."
-    },
-    {
-        "question": "¿Qué criterios utilizará el jurado para evaluar los proyectos?",
-        "answer": "Los proyectos serán evaluados basándose en la innovación, implementación técnica, aplicación práctica de la IA y la presentación del proyecto. La claridad en la explicación del problema abordado y la solución propuesta también será considerada."
-    },
-    {
-        "question": " ¿Qué premios se otorgarán?",
-        "answer": "Los premios serán anunciados en la página web del evento próximamente y durante la ceremonia de apertura. Los ganadores recibirán premios que no solo reconocen su innovación y esfuerzo sino que también un seguimiento para continuar con su proyecto."
-    },
-    {
-        "question": "¿Cómo puedo mantenerme informado sobre las actualizaciones del evento?",
-        "answer": "Después de registrarte, recibirás actualizaciones por correo electrónico. También puedes seguirnos en nuestras redes sociales para las últimas noticias y anuncios relacionados con el evento."
-    }
+  {
+    "question": "¿Quién puede participar en 'Barranqui-IA'?",
+    "answer": "El hackathon está enfocado a ingenieros de software, programadores, y diseñadores de productos digitales, pero todos los entusiastas por la inteligencia artificial son invitados a participar, independientemente de su nivel de experiencia. Valoramos la diversidad y creemos que la variedad de perspectivas enriquece el evento."
+  },
+  {
+    "question": "¿Hay algún costo de inscripción para el evento?",
+    "answer": "Si, el costo del boleto será de $100,000 COP e incluirá el acceso, las 4 comidas y la camiseta del evento. Para los que se registren en preventa recibirán un código para compar su boleto a un precio especial. "
+  },
+  {
+    "question": "¿Necesito tener experiencia previa en inteligencia artificial para participar?",
+    "answer": "No es necesario tener experiencia previa en IA, pero te invitamos a participar en los eventos de Pre-Hackatón donde las distintas comunidades de tecnología en Barranquilla dictarán talleres para que llegues preparado al hackatón.  El evento está diseñado para fomentar el aprendizaje y la experimentación en todos los niveles, con talleres y mentorías que te ayudarán a ponerte al día."
+  },
+  {
+    "question": "¿Puedo participar individualmente o necesito formar un equipo?",
+    "answer": "Puedes inscribirte individualmente, pero el hackatón se basa en el trabajo en equipo. Si no tienes un equipo, te ayudaremos a encontrar uno basado en tus intereses y habilidades antes del inicio del evento."
+  },
+  {
+    "question": "¿Qué tipo de proyectos se espera que desarrollemos?",
+    "answer": "Los proyectos deben utilizar la inteligencia artificial para abordar o resolver un desafío real. Estamos buscando soluciones innovadoras que puedan tener un impacto positivo en alguna de las lineas temáticas del evento."
+  },
+  {
+    "question": "¿Qué sucede si necesito ayuda durante el hackatón?",
+    "answer": " Contarás con la mentoría de expertos en IA y Google Developer Experts, quienes estarán disponibles para ofrecer orientación, resolver dudas y apoyarte en el desarrollo de tu proyecto."
+  },
+  {
+    "question": "¿Qué criterios utilizará el jurado para evaluar los proyectos?",
+    "answer": "Los proyectos serán evaluados basándose en la innovación, implementación técnica, aplicación práctica de la IA y la presentación del proyecto. La claridad en la explicación del problema abordado y la solución propuesta también será considerada."
+  },
+  {
+    "question": " ¿Qué premios se otorgarán?",
+    "answer": "Los premios serán anunciados en la página web del evento próximamente y durante la ceremonia de apertura. Los ganadores recibirán premios que no solo reconocen su innovación y esfuerzo sino que también un seguimiento para continuar con su proyecto."
+  },
+  {
+    "question": "¿Cómo puedo mantenerme informado sobre las actualizaciones del evento?",
+    "answer": "Después de registrarte, recibirás actualizaciones por correo electrónico. También puedes seguirnos en nuestras redes sociales para las últimas noticias y anuncios relacionados con el evento."
+  }
 ]
