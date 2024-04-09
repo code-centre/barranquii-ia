@@ -30,7 +30,7 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
-      <Menu openMenu={openMenu} />
+      <Menu setOpenMenu={setOpenMenu} openMenu={openMenu} />
     </header>
   );
 }
