@@ -2,10 +2,11 @@ import React from "react";
 import sectionsPage from "../utils/sections.json";
 
 interface Props {
-    openMenu: boolean
+    openMenu: boolean;
+    setOpenMenu: (state: boolean) => void;
 }
 
-export default function Menu({ openMenu }: Props) {
+export default function Menu({ openMenu, setOpenMenu }: Props) {
   const stylesLi =
     "text-white hover: cursor-pointer hover:underline font-semibold";
 
@@ -15,7 +16,7 @@ export default function Menu({ openMenu }: Props) {
       <nav className="">
         <ul className="flex flex-col gap-10 py-4">
           {sectionsPage.map((section) => (
-            <li key={section.id} className={`${stylesLi}`}>
+            <li onClick={() => setOpenMenu(false)} key={section.id} className={`${stylesLi}`}>
               <a href={`#${section.id}`}>{section.name}</a>
             </li>
           ))}
