@@ -21,7 +21,10 @@ export default function Topics() {
         <Topic img="/education.webp" title="Educación personalizada" />
         <Topic img="/environment.webp" title="Sostenibilidad ambiental" />
         <Topic img="/assistant.webp" title="Asistente virtual" />
-        <Topic img="/entertainment.webp" title="Entretenimiento y creatividad" />
+        <Topic
+          img="/entertainment.webp"
+          title="Entretenimiento y creatividad"
+        />
         <Topic img="/security.webp" title="Seguridad y privacidad" />
       </div>
     </section>

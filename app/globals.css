@@ -58,6 +58,25 @@ h6 {
   }
 }
 
+@media (max-width: 600px) {
+  @keyframes grid {
+    0% {
+      transform: translateX(-800%);
+    }
+    100% {
+      transform: translateX(10%); /* Adjust scrolling distance */
+    }
+  }
+
+  .animate-sponsors {
+    animation: sponsors 30s linear infinite; /* Adjust animation duration, timing, etc. */
+  }
+
+  .animate-grid {
+    animation: grid 75s linear infinite; /* Adjust animation duration, timing, etc. */
+  }
+}
+
 @media (min-width: 768px) {
   @keyframes sponsors {
     0% {
@@ -79,6 +98,10 @@ h6 {
 
   .animate-sponsors {
     animation: sponsors 40s linear infinite; /* Adjust animation duration, timing, etc. */
+  }
+
+  .animate-grid {
+    animation: grid 45s linear infinite; /* Adjust animation duration, timing, etc. */
   }
 
   .animate-grid {
@@ -112,6 +135,10 @@ h6 {
   .animate-grid {
     animation: grid 50s linear infinite; /* Adjust animation duration, timing, etc. */
   }
+
+  .animate-grid {
+    animation: grid 50s linear infinite; /* Adjust animation duration, timing, etc. */
+  }
 }
 
 .grid-events {
@@ -125,6 +152,23 @@ h6 {
   scrollbar-color: rgba(65, 64, 64, 0.87) rgba(0, 0, 0, 0);
 }
 
+.sub-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 250px);
+  gap: 12px;
+  grid-template-rows: repeat(2, 200px);
+}
+
+.grid-events {
+  display: flex;
+  height: 400px;
+  gap: 12px;
+}
+
+.scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(65, 64, 64, 0.87) rgba(0, 0, 0, 0);
+}
 
 .sub-grid {
   display: grid;
