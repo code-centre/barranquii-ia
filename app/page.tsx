@@ -31,7 +31,7 @@ export default function Home() {
         </Wrapper>
       </div>
       <Wrapper styles="px-5">
-          <Topics />
+        <Topics />
       </Wrapper>
       <Wrapper styles="flex flex-col gap-20 pb-20 px-5 md:pb-10">
         <Expectations />
@@ -41,10 +41,10 @@ export default function Home() {
           <ScheduleSection />
         </Wrapper>
       </div>
-      <Wrapper styles=" flex flex-col gap-20 px-5 lg:pb-10 w-full">
+      {/* <Wrapper styles=" flex flex-col gap-20 px-5 lg:pb-10 w-full">
         <Location />
-        {/* <Tickets /> */}
-      </Wrapper>
+        <Tickets />
+      </Wrapper> */}
       <LearnInCommunity />
       <Wrapper styles=" flex flex-col gap-20 px-5">
         <BeASponsor />
