@@ -39,14 +39,16 @@ export default function Form() {
     register,
     handleSubmit,
     watch,
-    formState: { errors, isSubmitSuccessful, isValid },
+    formState: { errors, isValid },
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     if (mode === "general") {
-      router.push("https://checkout.wompi.co/l/test_SAT8ud");
+      // Update link
+      // router.push(/*Link to general ticket*/);
     } else {
-      router.push("https://checkout.wompi.co/l/test_XH9ufN");
+      // Update link
+      // router.push(/*Link to full ticket*/);
     }
   };
 
