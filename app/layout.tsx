@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Noto_Sans } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
-import Banner from "./components/Banner";
 import BackgroundImages from "./components/BackgroundImages";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -27,7 +26,6 @@ export default function RootLayout({
         className={`${jakarta.className} ${noto.className} relative overflow-hidden `}
       >
         <BackgroundImages />
-        {/* <Banner /> */}
         <Navbar />
         {children}
         <Footer />

@@ -57,7 +57,7 @@ export default function Form() {
   const mode = searchParams.get("mode");
 
   return (
-    <main className="flex flex-col gap-20 mx-5 py-10 min-h-screen">
+    <main className="flex flex-col gap-20 mx-5 py-20 min-h-screen">
       <Wrapper styles="flex flex-col gap-2">
         <h1 className="font-bold text-6xl">¡Ya casi!</h1>
         <p className="text-gray-300 text-lg">

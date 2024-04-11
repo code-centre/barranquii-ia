@@ -4,7 +4,10 @@ import "../globals.css";
 
 export default function Tickets() {
   return (
-    <section className="relative flex flex-col gap-6 py-10 gradient">
+    <section
+      id="boleta"
+      className="relative flex flex-col gap-6 py-10 gradient"
+    >
       {/* <div className="gradient"></div> */}
       <div>
         <h2 className="border- border-principleViolet pl-2 border-l-4 text-lg lg:text-4xl uppercase">
