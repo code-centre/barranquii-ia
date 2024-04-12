@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 interface Props {
   title: string;
@@ -41,12 +42,13 @@ export default function wCardTicket({
           </p>
         </div>
         <div className="flex justify-center mt-7">
-          <a
+          <Link
             href={`/tickets/form?mode=${mode}`}
             className="hover:brightness-110 bg-principleViolet px-5 xl:px-5 py-2 xl:py-3 rounded-lg text-[13px] xl:text-sm uppercase"
+            onClick={() => sendGTMEvent({ event: "purchase", value: 1 })}
           >
             Comprar
-          </a>
+          </Link>
         </div>
       </div>
     </div>

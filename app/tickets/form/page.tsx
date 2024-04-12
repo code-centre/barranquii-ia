@@ -292,7 +292,7 @@ export default function Form() {
                   })}
                   name="response"
                   type="radio"
-                  value={true}
+                  value="SI"
                 />
               </label>
               <label className="flex items-center gap-2">
@@ -303,7 +303,7 @@ export default function Form() {
                   })}
                   name="response"
                   type="radio"
-                  value={false}
+                  value="NO"
                   defaultChecked
                 />
               </label>
