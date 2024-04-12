@@ -57,7 +57,7 @@ export default function Form() {
       paymentAmount: 80000,
       ticketType: "GENERAL",
     });
-    router.push("https://checkout.wompi.co/l/test_KODedc");
+    router.push(`${process.env.NEXT_PUBLIC_LINK_TEST_WOMPI}`);
   };
 
   return (
@@ -352,10 +352,13 @@ export default function Form() {
 
 const createUser = async (body: any) => {
   try {
-    const resp = await fetch(`/api/users`, {
+    const resp = await fetch  (`/api/users`, {
       method: "POST",
       body: JSON.stringify(body),
     });
+    const user = await resp.json();
+
+    localStorage.setItem("Id_user", JSON.stringify(user.newUser.id));
   } catch (err) {
     console.log(err);
   }
