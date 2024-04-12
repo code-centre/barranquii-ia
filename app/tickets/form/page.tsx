@@ -57,7 +57,7 @@ export default function Form() {
       paymentAmount: 80000,
       ticketType: "GENERAL",
     });
-    router.push(`${process.env.NEXT_PUBLIC_LINK_TEST_WOMPI}`);
+    router.push(`${process.env.NEXT_PUBLIC_LINK_WOMPI}`);
   };
 
   return (
@@ -352,7 +352,7 @@ export default function Form() {
 
 const createUser = async (body: any) => {
   try {
-    const resp = await fetch  (`/api/users`, {
+    const resp = await fetch(`/api/users`, {
       method: "POST",
       body: JSON.stringify(body),
     });

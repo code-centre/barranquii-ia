@@ -19,13 +19,6 @@ export default function Sponsors({ title }: Props) {
       <div className="overflow-hidden">
         <div className="flex items-center gap-3 animate-sponsors">
           <Image
-            className="w-[150px] h-[47px] object-cover"
-            src="/uni-norte.png"
-            height={47}
-            width={150}
-            alt="Logo de la universidad de la norte"
-          />
-          <Image
             className="w-[150px] h-[47px]"
             src="/google.png"
             height={47}
@@ -55,13 +48,6 @@ export default function Sponsors({ title }: Props) {
           />
           <Image
             className="w-[150px]"
-            src="/uni-norte.png"
-            height={47}
-            width={150}
-            alt="Logo de la universidad de la norte"
-          />
-          <Image
-            className="w-[150px]"
             src="/google.png"
             height={47}
             width={150}
@@ -87,13 +73,6 @@ export default function Sponsors({ title }: Props) {
             height={19}
             width={150}
             alt="Logo de Code Centre"
-          />
-          <Image
-            className="w-[150px]"
-            src="/uni-norte.png"
-            height={47}
-            width={150}
-            alt="Logo de la universidad de la norte"
           />
           <Image
             className="w-[150px]"
