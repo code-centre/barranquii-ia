@@ -19,10 +19,8 @@ export async function POST(request: Request) {
     const newUser = await prisma.user.create({
       data: body,
     });
-    console.log("back", newUser);
     return NextResponse.json({ newUser }, { status: 200 });
   } catch (error) {
-    console.log("back", error);
     if (error instanceof Error) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }

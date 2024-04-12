@@ -38,13 +38,7 @@ export async function PUT(request: Request, { params }: Params) {
 
     return NextResponse.json(updatedUser, { status: 200 });
   } catch (error) {
-    if (error instanceof Prisma.PrismaClientKnownRequestError) {
-      if (error.code === "P2025") {
-        return NextResponse.json({ error: "User not found" }, { status: 404 });
-      }
-
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
+    return NextResponse.json({ error }, { status: 500 });
   }
 }
 
@@ -58,12 +52,6 @@ export async function DELETE(request: Request, { params }: Params) {
 
     return NextResponse.json(deletedUser, { status: 200 });
   } catch (error) {
-    if (error instanceof Prisma.PrismaClientKnownRequestError) {
-      if (error.code === "P2025") {
-        return NextResponse.json({ error: "User not found" }, { status: 404 });
-      }
-
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
+    return NextResponse.json({ error: error }, { status: 500 });
   }
 }
