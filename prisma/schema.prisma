@@ -14,11 +14,50 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name      String   @db.VarChar(255)
-  lastName  String   @db.VarChar(255)
-  content   String?
-  published Boolean  @default(false)
+  id             Int             @id @default(autoincrement())
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  name           String          @db.VarChar(255)
+  lastName       String          @db.VarChar(255)
+  idType         IdType
+  idNumber       String          @db.VarChar(255)
+  phone          String          @db.VarChar(255)
+  email          String          @db.VarChar(255)
+  profile        String          @db.VarChar(255)
+  work           String          @db.VarChar(255)
+  shirtSize      ShirtSize
+  food           FoodRestriction
+  emergencyName  String          @db.VarChar(255)
+  emergencyPhone String          @db.VarChar(255)
+  isStaying      String
+  paymentId      String?         @db.VarChar(255)
+  paymentAmount  Int
+  ticketType     TicketType
+}
+
+enum TicketType {
+  GENERAL
+  COMPLETO
+}
+
+enum IdType {
+  CC
+  CE
+  TI
+  PASSPORT
+}
+
+enum FoodRestriction {
+  VEGAN
+  VEGETARIAN
+  KOSHER
+  NONE
+}
+
+enum ShirtSize {
+  XS
+  S
+  M
+  L
+  XL
 }

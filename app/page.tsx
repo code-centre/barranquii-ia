@@ -41,10 +41,10 @@ export default function Home() {
           <ScheduleSection />
         </Wrapper>
       </div>
-      {/* <Wrapper styles=" flex flex-col gap-20 px-5 lg:pb-10 w-full">
-        <Location />
+      <Wrapper styles=" flex flex-col gap-20 px-5 lg:pb-10 w-full">
+        {/* <Location /> */}
         <Tickets />
-      </Wrapper> */}
+      </Wrapper>
       <LearnInCommunity />
       <Wrapper styles=" flex flex-col gap-20 px-5">
         <BeASponsor />

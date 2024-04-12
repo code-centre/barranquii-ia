@@ -12,16 +12,12 @@
     "name": "Horario"
   },
   {
-    "id": "location",
-    "name": "Ubicación"
+    "id": "boleta",
+    "name": "Boletos"
   },
   {
     "id": "learn-in-community",
     "name": "Talleres"
-  },
-  {
-    "id": "boleta",
-    "name": "Boletos"
   },
   {
     "id": "sponsors",

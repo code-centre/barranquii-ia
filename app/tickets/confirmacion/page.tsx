@@ -16,7 +16,7 @@ import {
 } from "react-share";
 
 export default function ThankYouPage() {
-  const router = useRouter()
+  const router = useRouter();
   const shareUrl = "https://lgn440nz-3000.use2.devtunnels.ms/";
   const handleSendEmail = async () => {
     const res = await fetch("/api/send", {
@@ -25,11 +25,11 @@ export default function ThankYouPage() {
     const data = await res.json();
     console.log(data);
 
-    router.push('/')
+    router.push("/");
   };
 
   return (
-    <main className="flex flex-col justify-center gap-20 mx-5 min-h-screen">
+    <main className="flex flex-col justify-center gap-20 mx-5 py-20 min-h-screen">
       <Wrapper styles="flex flex-col justify-center  gap-6   ">
         <h1 className="font-bold text-5xl md:text-7xl tracking-tighter">
           ¡Gracias!
@@ -39,8 +39,12 @@ export default function ThankYouPage() {
           habilidades con inteligencia artificial asistiendo a alguno de los
           talleres de Pre-Hackatón y prepárate para una experiencia inolvidable.
         </p>
+
+        <p>
+          En un máximo de 24 horas recibirás un correo electónico con tu boleto.
+        </p>
         <Boleta />
-        <div>
+        {/* <div>
           <h3 className="font-bold text-lg">
             Comparte tu boleta en tu red social favorita
           </h3>
@@ -67,22 +71,25 @@ export default function ThankYouPage() {
               <LinkedinIcon size={32} round />
             </LinkedinShareButton>
           </div>
-        </div>
+        </div> */}
 
         <div className="flex items-center gap-5">
-          <button
-            onClick={handleSendEmail}
-            className="inline-flex hover:brightness-110 justify-center items-center bg-principleViolet disabled:opacity-50 shadow-sm px-8 rounded-md h-10 font-medium text-sm disabled:pointer-events-none"
-          >
-            Ir al inicio
-          </button>
+          <Link href="/">
+            <button className="inline-flex hover:brightness-110 justify-center items-center bg-principleViolet disabled:opacity-50 shadow-sm px-8 rounded-md h-10 font-medium text-sm disabled:pointer-events-none">
+              Ir al inicio
+            </button>
+          </Link>
           <a
-            href=""
+            href="https://caribedev.org"
             className="inline-flex hover:brightness-110 justify-center items-center bg-green-500 disabled:opacity-50 shadow-sm px-8 rounded-md h-10 font-medium text-sm disabled:pointer-events-none"
           >
             Ver eventos Pre-Hackatón
           </a>
         </div>
+        <p>
+          Cualquier duda puedes escribirnos a
+          contacto@fundacioncodigoabierto.com
+        </p>
       </Wrapper>
     </main>
   );

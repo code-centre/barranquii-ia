@@ -24,7 +24,7 @@ export default function Hero() {
       </div>
       <a
         className="hover:brightness-110 bg-principleViolet mx-auto px-5 xl:px-10 py-2 xl:py-3 rounded-lg w-fit text-[13px] xl:text-base uppercase"
-        href="#boleta"
+        href="/tickets/form"
         onClick={() => sendGTMEvent({ event: "purchase", value: 1 })}
       >
         Compra tu boleto

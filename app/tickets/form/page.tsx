@@ -3,7 +3,6 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import Wrapper from "../../components/Wrapper";
-import { useSearchParams } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 enum sizesEnum {
@@ -14,11 +13,6 @@ enum sizesEnum {
   xxl = "xxl",
 }
 
-enum YES_NO {
-  yes = "yes",
-  no = "no",
-}
-
 type Inputs = {
   name: string;
   lastName: string;
@@ -26,10 +20,13 @@ type Inputs = {
   document: number;
   phone: number;
   email: string;
+  occupation: string;
+  company: string;
   size: sizesEnum;
+  food: string;
   nameEmergency: string;
   phoneEmergency: string;
-  sleepAtPlace: YES_NO;
+  sleepAtPlace: boolean;
   terms: boolean;
 };
 
@@ -42,22 +39,29 @@ export default function Form() {
     formState: { errors, isValid },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    if (mode === "general") {
-      // Update link
-      // router.push(/*Link to general ticket*/);
-    } else {
-      // Update link
-      // router.push(/*Link to full ticket*/);
-    }
+  const onSubmit: SubmitHandler<Inputs> = async (data: Inputs) => {
+    await createUser({
+      name: data.name,
+      lastName: data.lastName,
+      idType: data.typeOfDocument,
+      idNumber: data.document,
+      phone: data.phone,
+      email: data.email,
+      profile: data.occupation,
+      work: data.company,
+      shirtSize: data.size,
+      food: data.food,
+      emergencyName: data.nameEmergency,
+      emergencyPhone: data.phoneEmergency,
+      isStaying: data.sleepAtPlace,
+      paymentAmount: 80000,
+      ticketType: "GENERAL",
+    });
+    router.push("https://checkout.wompi.co/l/B02OkO");
   };
 
-  const searchParams = useSearchParams();
-
-  const mode = searchParams.get("mode");
-
   return (
-    <main className="flex flex-col gap-20 mx-5 py-20 min-h-screen">
+    <section className="flex flex-col gap-20 mx-5 py-20 min-h-screen">
       <Wrapper styles="flex flex-col gap-2">
         <h1 className="font-bold text-6xl">¡Ya casi!</h1>
         <p className="text-gray-300 text-lg">
@@ -74,7 +78,7 @@ export default function Form() {
                 {...register("name", {
                   required: true,
                 })}
-                placeholder="Nombre"
+                placeholder="Elon"
                 type="text"
                 className="px-2 py-2 rounded-md font-normal text-black"
               />
@@ -90,7 +94,7 @@ export default function Form() {
                 {...register("lastName", {
                   required: true,
                 })}
-                placeholder="Apellido"
+                placeholder="Musk"
                 type="text"
                 className="px-2 py-2 rounded-md font-normal text-black"
               />
@@ -112,10 +116,10 @@ export default function Form() {
                   name=""
                   id=""
                 >
-                  <option value="C.C">C.C</option>
-                  <option value="C.E">C.E</option>
-                  <option value="T.I">T.I</option>
-                  <option value="Pasaporte">Pasaporte</option>
+                  <option value="CC">C.C</option>
+                  <option value="CE">C.E</option>
+                  <option value="TI">T.I</option>
+                  <option value="PASSPORT">Pasaporte</option>
                 </select>
               </label>
               <label className="flex flex-col gap-2 w-full font-semibold text-gray-300">
@@ -158,7 +162,7 @@ export default function Form() {
               {...register("email", {
                 required: true,
               })}
-              placeholder="Correo@gmail.com"
+              placeholder="genio.tech@gmail.com"
               type="email"
               className="px-2 py-2 rounded-md font-normal text-black"
             />
@@ -166,34 +170,69 @@ export default function Form() {
               <p className="text-[13px] text-red-600">No puede estar vacío.</p>
             )}
           </label>
+          <div className="flex md:flex-row flex-col justify-between gap-6">
+            <label className="flex flex-col gap-2 md:w-1/2 font-semibold text-gray-300">
+              Ocupación
+              <input
+                {...register("occupation", {
+                  required: true,
+                })}
+                placeholder="CEO"
+                type="text"
+                className="px-2 py-2 rounded-md font-normal text-black"
+              />
+              {errors.phone?.type === "required" && (
+                <p className="text-[13px] text-red-600">
+                  No puede estar vacío.
+                </p>
+              )}
+            </label>
+            <label className="flex flex-col gap-2 md:w-1/2 font-semibold text-gray-300">
+              Compañia o Universidad
+              <input
+                {...register("company", {
+                  required: true,
+                })}
+                placeholder="Tesla"
+                type="text"
+                className="px-2 py-2 rounded-md font-normal text-black"
+              />
+              {errors.phone?.type === "required" && (
+                <p className="text-[13px] text-red-600">
+                  No puede estar vacío.
+                </p>
+              )}
+            </label>
+          </div>
           <label className="flex flex-col gap-2 font-semibold text-gray-300">
             Talla de camisa
             <select
               {...register("size", {
-                // required: true,
+                required: true,
               })}
               className="px-2 py-2 rounded-md text-black"
-              defaultValue="S"
-              name=""
-              id=""
+              defaultValue="M"
             >
               <option value="XS">XS</option>
               <option value="S">S</option>
               <option value="M">M</option>
               <option value="L">L</option>
               <option value="XL">XL</option>
-              <option value="XXL">XXL</option>
             </select>
           </label>
           <label className="flex flex-col gap-2 font-semibold text-gray-300">
             ¿Tienes alguna restricción alimenticia?
             <select
-              defaultValue="ninguna"
+              {...register("food", {
+                required: true,
+              })}
+              defaultValue="NONE"
               className="px-2 py-2 rounded-md text-black"
             >
-              <option value="ninguna">Ninguna</option>
-              <option value="vegetariano">Vegetariano</option>
-              <option value="vegano">Vegano</option>
+              <option value="NONE">Ninguna</option>
+              <option value="VEGETARIANO">Vegetariano</option>
+              <option value="VEGANO">Vegano</option>
+              <option value="KOSHER">Kosher</option>
             </select>
           </label>
           <div className="my-4 border-b border-dashed"></div>
@@ -237,11 +276,11 @@ export default function Form() {
           <div>
             <p className="max-w-2xl text-gray-300">
               Para poder trabajar en el proyecto, podrás quedarte trabajando la
-              noche del sábado en la universidad, tendremos cafe, comida, agua y
-              habrá espacios donde puedas tomar una siesta, pero el espació no
-              estará habilitado para dormir.
+              noche del sábado en el lugar del evento, tendremos cafe, comida,
+              agua y habrá espacios donde puedas tomar una siesta, pero el
+              espació no estará habilitado para dormir.
               <span className="block mt-2 font-bold">
-                ¿Te quedarás a trabajar durante la noche?
+                ¿Te quedarás a trabajar durante la noche?*
               </span>
             </p>
             <div className="flex gap-6 mt-2 text-gray-300">
@@ -253,7 +292,7 @@ export default function Form() {
                   })}
                   name="response"
                   type="radio"
-                  value="yes"
+                  value={true}
                 />
               </label>
               <label className="flex items-center gap-2">
@@ -264,11 +303,16 @@ export default function Form() {
                   })}
                   name="response"
                   type="radio"
-                  value="no"
+                  value={false}
                   defaultChecked
                 />
               </label>
             </div>
+            <p className="pt-5 max-w-2xl text-gray-300">
+              *Después de las 10pm se cerrarán las puertas y por seguridad nadie
+              podrá salir o entrar al espacio del evento hasta las 6am del día
+              siguiente.{" "}
+            </p>
           </div>
           <div className="my-4 border-b border-dashed"></div>
           <div>
@@ -296,12 +340,23 @@ export default function Form() {
           </div>
           <button
             disabled={!isValid}
-            className={`hover:brightness-110 bg-principleViolet px-5 xl:px-5 py-2 xl:py-3 rounded-md text-[13px] text-center xl:text-base uppercase disabled:bg-gray-400 disabled:brightness-100`}
+            className={`hover:brightness-110 bg-principleViolet px-5 xl:px-5 my-5 py-2 xl:py-3 rounded-md text-[13px] text-center xl:text-base uppercase disabled:bg-gray-400 disabled:brightness-100`}
           >
             Continuar con el pago
           </button>
         </form>
       </Wrapper>
-    </main>
+    </section>
   );
 }
+
+const createUser = async (body: any) => {
+  try {
+    const resp = await fetch(`/api/users`, {
+      method: "POST",
+      body: JSON.stringify(body),
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

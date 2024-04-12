@@ -29,15 +29,18 @@ export default function wCardTicket({
       </div>
       <div className="h-52">
         <div className="border-principleViolet border-y mt-6 py-5 text-center">
+          <h3 className="font-medium text-2xl text-center text-white line-through">
+            $100,000 COP
+          </h3>
           <h3 className="font-medium text-2xl text-center text-white">
             ${amount} COP
           </h3>
           <p className="flex justify-center items-center gap-2">
             <div className="bg-principleViolet rounded-full w-[6px] h-[6px]"></div>
-            Valor
+            <p>Descuento hasta el 20 de Abril</p>
           </p>
         </div>
-        <div className="flex justify-center mt-14">
+        <div className="flex justify-center mt-7">
           <a
             href={`/tickets/form?mode=${mode}`}
             className="hover:brightness-110 bg-principleViolet px-5 xl:px-5 py-2 xl:py-3 rounded-lg text-[13px] xl:text-sm uppercase"

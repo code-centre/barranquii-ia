@@ -24,11 +24,12 @@ export default function Boleta() {
         {/* <p className="text-gray-300">04 de abril de 2024 a las 08:00</p> */}
       </header>
       <section className="flex flex-col gap-1">
-        <h2 className="max-w-md font-bold">
+        {/* <h2 className="max-w-md font-bold">
           Área metropolitana de, Kilómetro 5, vía Puerto Colombia, Barranquilla,
           Atlántico
-        </h2>
-        <p className="text-gray-300">04 de abril de 2024 a las 08:00 a.m.</p>
+        </h2> */}
+        <p className="text-gray-300">04 y 05 de abril de 2024</p>
+        <p>Empezamos 08:00 a.m.</p>
 
         {/* <div className="flex items-center space-x-4 mb-4">
             <div className="w-1/2">
@@ -58,7 +59,7 @@ export default function Boleta() {
         <div className="gap-4 grid grid-cols-2">
           <div>
             <h2 className="font-bold text-lg">Participante</h2>
-            <p className="text-gray-300 text-sm">David Aragón</p>
+            {/* <p className="text-gray-300 text-sm">David Aragón</p> */}
           </div>
           <div className="text-right">
             <h2 className="font-bold text-lg">Evento</h2>
