@@ -8,7 +8,6 @@ import Link from "next/link";
 
 export default function Navbar() {
   const pathname = usePathname();
-  console.log(pathname);
   const [openMenu, setOpenMenu] = useState(false);
   const stylesLi =
     "text-black hover:text-white cursor-pointer hover:underline font-semibold";
@@ -21,7 +20,7 @@ export default function Navbar() {
             <Link href="/">Barranqui-IA</Link>
           </li>
         </ul>
-        {pathname !== "/tickets/form" && (
+        {!pathname.includes("/tickets") && (
           <ul className="lg:flex justify-center lg:gap-5 xl:gap-10 hidden">
             {sectionsPage.map((section) => (
               <li key={section.id} className={`${stylesLi}`}>
