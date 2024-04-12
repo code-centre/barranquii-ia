@@ -51,7 +51,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         Hackatón - Barranqui-IA
       </h2>
     </header>
-    <h2
+    {/* <h2
       style={{
         maxWidth: "28rem",
         fontWeight: 700,
@@ -62,7 +62,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
     >
       Área metropolitana de, Kilómetro 5, vía Puerto Colombia, Barranquilla,
       Atlántico
-    </h2>
+    </h2> */}
     <p style={{ color: "#D1D5DB", display: "block", marginTop: 5 }}>
       04 de abril de 2024 a las 08:00 a.m.
     </p>

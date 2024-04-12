@@ -57,7 +57,7 @@ export default function Form() {
       paymentAmount: 80000,
       ticketType: "GENERAL",
     });
-    router.push("https://checkout.wompi.co/l/B02OkO");
+    router.push("https://checkout.wompi.co/l/test_KODedc");
   };
 
   return (
