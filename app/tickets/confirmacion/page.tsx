@@ -2,18 +2,18 @@
 import Boleta from "@/app/components/Boleta";
 import Wrapper from "@/app/components/Wrapper";
 import Link from "next/link";
-import { ImageResponse } from "next/og";
+// import { ImageResponse } from "next/og";
 import { useRouter } from "next/navigation";
 
 import React from "react";
-import {
-  FacebookIcon,
-  FacebookShareButton,
-  LinkedinIcon,
-  LinkedinShareButton,
-  TwitterShareButton,
-  XIcon,
-} from "react-share";
+// import {
+//   FacebookIcon,
+//   FacebookShareButton,
+//   LinkedinIcon,
+//   LinkedinShareButton,
+//   TwitterShareButton,
+//   XIcon,
+// } from "react-share";
 
 export default function ThankYouPage() {
   const router = useRouter();
