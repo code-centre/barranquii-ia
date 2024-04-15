@@ -29,11 +29,13 @@ export default function Navbar() {
             ))}
           </ul>
         )}
-        <ul className="lg:hidden">
-          <li onClick={() => setOpenMenu(!openMenu)}>
-            {openMenu ? <CloseIcon /> : <MenuIcon />}
-          </li>
-        </ul>
+        {!pathname.includes("/tickets") && (
+          <ul className="lg:hidden">
+            <li onClick={() => setOpenMenu(!openMenu)}>
+              {openMenu ? <CloseIcon /> : <MenuIcon />}
+            </li>
+          </ul>
+        )}
       </nav>
       <Menu setOpenMenu={setOpenMenu} openMenu={openMenu} />
     </header>
