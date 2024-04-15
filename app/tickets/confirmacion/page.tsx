@@ -5,7 +5,7 @@ import Link from "next/link";
 import { User } from "@/lib/types";
 import { useRouter, useSearchParams } from "next/navigation";
 
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
 export default function ThankYouPage() {
   const router = useRouter();
@@ -47,13 +47,14 @@ export default function ThankYouPage() {
       const data = await res.json();
       console.log(data);
     };
+
     updateUser();
     handleSendEmail();
-    localStorage.removeItem('Id_user')
+    localStorage.removeItem("Id_user");
   }, [id, user?.id]);
 
   return (
-    <main className="flex flex-col justify-center gap-20 mx-5 py-20 min-h-screen">
+    <section className="flex flex-col justify-center gap-20 mx-5 py-20 min-h-screen">
       <Wrapper
         styles={`flex flex-col justify-center  gap-6   ${!id && "hidden"}`}
       >
@@ -110,6 +111,6 @@ export default function ThankYouPage() {
           <span className="sr-only">Loading...</span>
         </div>
       )}
-    </main>
+    </section>
   );
 }
