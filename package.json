@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "prisma generate && next dev",
+    "build": "prisma generate && prisma db push && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -15,6 +15,7 @@
     "@next/third-parties": "^14.1.4",
     "@prisma/client": "5.12.1",
     "next": "14.1.4",
+    "prisma": "^5.12.1",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.2",

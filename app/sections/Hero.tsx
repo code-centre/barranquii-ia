@@ -11,7 +11,7 @@ export default function Hero() {
             Fundación <br />
             Código abierto
           </h4>
-          <h1 className="font-bold text-5xl md:text-6xl xl:text-8xl">
+          <h1 className="font-bold text-5xl md:text-6xl xl:text-8xl bg-gradient-to-r from-[#fe44fd] via-[#eabbbe] to-[#8731ef] inline-block text-transparent bg-clip-text">
             Barranqui-IA
           </h1>
         </div>

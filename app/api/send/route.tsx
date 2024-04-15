@@ -6,18 +6,20 @@ interface Params {
   params: { id: string };
 }
 
-const resend = new Resend("re_fJc91nyU_Hjipwd4C1ntb9nqM1DH54s2u");
+const resend = new Resend(process.env.API_KEY_RESEND);
 
 export async function POST(request: Request, { params }: Params) {
+  const id = await request.json();
+
   const singleUser = await prisma.user.findFirst({
     where: {
-      id: Number(params.id),
+      id: Number(id),
     },
   });
 
   try {
     const data = await resend.emails.send({
-      from: "Barranqui-IA <onboarding@resend.dev>",
+      from: "Barranqui-IA <contacto@fundacioncodigoabierto.com>",
       to: [`${singleUser?.email}`],
       subject: "Boleta de la Hackatón - Barranqui-IA ",
       react: EmailTemplate({
@@ -25,8 +27,6 @@ export async function POST(request: Request, { params }: Params) {
       }),
       text: "",
     });
-    // console.log(data);
-
     return Response.json(data);
   } catch (error) {
     return Response.json({ error });

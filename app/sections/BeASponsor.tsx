@@ -29,14 +29,6 @@ export default function BeASponsor() {
 
       <div className="flex flex-wrap gap-6  flex-row items-center justify-center lg:justify-between">
         <Image
-          className="w-[150px] h-[47px] object-cover"
-          src="/uni-norte.png"
-          height={47}
-          width={150}
-          alt="Logo de la universidad de la norte"
-          loading="lazy"
-        />
-        <Image
           className="w-[150px] h-[47px]"
           src="/google.png"
           height={47}
