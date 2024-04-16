@@ -106,7 +106,7 @@ export default function Form() {
             </label>
           </div>
           <div className="flex md:flex-row flex-col justify-between gap-6">
-            <div className="w-1/2 flex items-center gap-2">
+            <div className="w-full flex items-center gap-2">
               <label className="flex flex-col w-[100px] gap-2 font-semibold text-gray-300">
                 Tipo de ID
                 <select
