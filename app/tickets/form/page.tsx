@@ -55,11 +55,11 @@ export default function Form() {
       emergencyName: data.nameEmergency,
       emergencyPhone: data.phoneEmergency,
       isStaying: data.sleepAtPlace,
-      paymentAmount: discountCoupon.toLowerCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ? 50000 : 80000,
+      paymentAmount: discountCoupon.toUpperCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ? 50000 : 80000,
       ticketType: "GENERAL",
     });
     
-    if (discountCoupon.toLowerCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON) {
+    if (discountCoupon.toUpperCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON) {
       router.push(`${process.env.NEXT_PUBLIC_LINK_PREVENTA_WOMPI}`);
     } else {
       router.push(`${process.env.NEXT_PUBLIC_LINK_WOMPI}`);
@@ -327,12 +327,12 @@ export default function Form() {
               onChange={(e) => setDiscountCoupon(e.target.value)}
               placeholder="Tu cupón"
               type="text"
-              className={`px-2 py-2 rounded-md font-normal text-black  w-1/2 ${
-                discountCoupon.toLowerCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON &&
+              className={`px-2 py-2 rounded-md font-normal placeholder:capitalize  uppercase text-black  w-1/2 ${
+                discountCoupon.toUpperCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON &&
                 "border-green-500 border-2 shadow-2xl shadow-green-500"
               }`}
             />
-          <p className="mt-2">Valor a pagar: { discountCoupon.toLowerCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ? '$50.000' : '$80.000'}</p>
+          <p className="mt-2">Valor a pagar: { discountCoupon.toUpperCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ? '$50.000' : '$80.000'}</p>
           </label>
           <div className="my-4 border-b border-dashed"></div>
           <div>
