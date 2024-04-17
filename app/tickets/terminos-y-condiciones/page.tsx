@@ -56,7 +56,7 @@ export default function TermsAndConditions() {
             trabajando en sus proyectos durante la noche del sábado 4 de mayo
             hasta el domingo 5 de mayo , aceptan y se ajustan a la delimitación
             espacial del evento y a la condición de no salir ni ingresar a la
-            Universidad del Norte a partir de 9:00 pm y hasta las 6:00 am del
+            Universidad del Norte a partir de 10:00 pm y hasta las 6:00 am del
             dia siguiente
           </li>
           <li className="text-gray-300">
