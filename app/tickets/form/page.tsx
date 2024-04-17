@@ -315,7 +315,7 @@ export default function Form() {
               </label>
             </div>
             <p className="pt-5 max-w-2xl text-gray-300">
-              *Después de las 10pm se cerrarán las puertas y por seguridad nadie
+              *Después de las 9:00 pm se cerrarán las puertas y por seguridad nadie
               podrá salir o entrar al espacio del evento hasta las 6am del día
               siguiente.{" "}
             </p>
