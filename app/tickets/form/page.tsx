@@ -58,7 +58,7 @@ export default function Form() {
       paymentAmount: discountCoupon.toLowerCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ? 50000 : 80000,
       ticketType: "GENERAL",
     });
-
+    
     if (discountCoupon.toLowerCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON) {
       router.push(`${process.env.NEXT_PUBLIC_LINK_PREVENTA_WOMPI}`);
     } else {
