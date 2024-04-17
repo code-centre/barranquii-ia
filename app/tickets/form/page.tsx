@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Wrapper from "../../components/Wrapper";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -31,6 +31,7 @@ type Inputs = {
 };
 
 export default function Form() {
+  const [discountCoupon, setDiscountCoupon] = useState("");
   const router = useRouter();
   const {
     register,
@@ -54,10 +55,15 @@ export default function Form() {
       emergencyName: data.nameEmergency,
       emergencyPhone: data.phoneEmergency,
       isStaying: data.sleepAtPlace,
-      paymentAmount: 80000,
+      paymentAmount: discountCoupon.toLowerCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ? 50000 : 80000,
       ticketType: "GENERAL",
     });
-    router.push(`${process.env.NEXT_PUBLIC_LINK_WOMPI}`);
+    
+    if (discountCoupon.toLowerCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON) {
+      router.push(`${process.env.NEXT_PUBLIC_LINK_PREVENTA_WOMPI}`);
+    } else {
+      router.push(`${process.env.NEXT_PUBLIC_LINK_WOMPI}`);
+    }
   };
 
   return (
@@ -314,6 +320,20 @@ export default function Form() {
               siguiente.{" "}
             </p>
           </div>
+          <div className="my-4 border-b border-dashed"></div>
+          <label className="flex flex-col gap-2 text-gray-300 ">
+            ¿Tienes un cupón de descuento?
+            <input
+              onChange={(e) => setDiscountCoupon(e.target.value)}
+              placeholder="Tu cupón"
+              type="text"
+              className={`px-2 py-2 rounded-md font-normal text-black  w-1/2 ${
+                discountCoupon.toLowerCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON &&
+                "border-green-500 border-2 shadow-2xl shadow-green-500"
+              }`}
+            />
+          <p className="mt-2">Valor a pagar: { discountCoupon.toLowerCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ? '$50.000' : '$80.000'}</p>
+          </label>
           <div className="my-4 border-b border-dashed"></div>
           <div>
             <label className="flex items-center gap-2 text-gray-300">
