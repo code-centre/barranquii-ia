@@ -26,7 +26,7 @@ export default function LearnInCommunity() {
           >
             <ImageCommunityGrid
               name="GDG Barranquilla"
-              image="gdg-logo.png"
+              image="gdg-logo.webp"
               styles="bg-[#fff]"
             />
             <InfoEventGrid
@@ -79,7 +79,7 @@ export default function LearnInCommunity() {
             <ImageCommunityGrid
               name="Python Barranquilla"
               styles="bg-gradient-to-b from-[#1e415e] to-[#2b5b84] text-black"
-              image="pybaq-logo.png"
+              image="pybaq-logo.webp"
             />
             <InfoEventGrid
               date="11 de abril"
@@ -102,7 +102,7 @@ export default function LearnInCommunity() {
             target="_blank"
             className="flex flex-col justify-center items-center  rounded-md sub-grid hover:brightness-150"
           >
-            <ImageCommunityGrid name="GDG" image="aws.png" styles="bg-[#fff]" />
+            <ImageCommunityGrid name="GDG" image="aws.webp" styles="bg-[#fff]" />
             <InfoEventGrid
               date="18 de abril"
               time="7:00 p.m."
@@ -126,7 +126,7 @@ export default function LearnInCommunity() {
           >
             <ImageCommunityGrid
               name="GDG"
-              image="gdg-logo.png"
+              image="gdg-logo.webp"
               styles="bg-[#fff]"
             />
             <InfoEventGrid
@@ -180,7 +180,7 @@ export default function LearnInCommunity() {
             <ImageCommunityGrid
               name="Python Barranquilla"
               styles="bg-gradient-to-b from-[#1e415e] to-[#2b5b84] text-black"
-              image="pybaq-logo.png"
+              image="pybaq-logo.webp"
             />
             <InfoEventGrid
               date="11 de abril"

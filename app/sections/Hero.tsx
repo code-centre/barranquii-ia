@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { sendGTMEvent } from "@next/third-parties/google";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -22,13 +23,13 @@ export default function Hero() {
           Un evento de 48 horas sobre inteligencia artificial.
         </p>
       </div>
-      <a
+      <Link
         className="hover:brightness-110 bg-principleViolet mx-auto px-5 xl:px-10 py-2 xl:py-3 rounded-lg w-fit text-[13px] xl:text-base uppercase"
         href="/tickets/form"
         onClick={() => sendGTMEvent({ event: "purchase", value: 1 })}
       >
         Compra tu boleto
-      </a>
+      </Link>
       <p className="font-semibold text-xl">
         El evento se llevará acabo el 4 y 5 de mayo.
       </p>
