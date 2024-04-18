@@ -37,19 +37,19 @@ export default function wCardTicket({
           <h3 className="font-medium text-2xl text-center text-white">
             ${amount} COP
           </h3>
-          <p className="flex justify-center items-center gap-2">
+          <div className="flex justify-center items-center gap-2">
             <div className="bg-principleViolet rounded-full w-[6px] h-[6px]"></div>
             <p>Descuento hasta el 20 de Abril</p>
-          </p>
+          </div>
         </div>
         <div className="flex justify-center mt-7">
-          <a
+          <Link
             href={`/tickets/form?mode=${mode}`}
             className="hover:brightness-110 bg-principleViolet px-5 xl:px-5 py-2 xl:py-3 rounded-lg text-[13px] xl:text-sm uppercase"
             onClick={() => sendGTMEvent({ event: "purchase", value: 1 })}
           >
             Comprar
-          </a>
+          </Link>
         </div>
       </div>
     </div>
