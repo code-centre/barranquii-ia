@@ -58,7 +58,7 @@ export default function LearnInCommunity() {
             <ImageCommunityGrid
               name="Linux BQ"
               styles=" bg-[#fcc72d] text-black"
-              image="/linux.jpg"
+              image="/linux.webp"
             />
           </a>
 
