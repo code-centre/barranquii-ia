@@ -12,7 +12,7 @@ export default function UsersTable() {
 
   const getUsers = async () => {
     try {
-      const resp = await fetch("http://localhost:3000/api/users", {
+      const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/users`, {
         next: { tags: ["users"] },
       });
       const { users } = await resp.json();
@@ -42,7 +42,7 @@ export default function UsersTable() {
         confirmButtonColor: "red",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:3000/api/users/${id}`, {
+          fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/users/${id}`, {
             method: "DELETE",
           }).then(() => {
             getUsers();
@@ -58,7 +58,7 @@ export default function UsersTable() {
   const handleUpdateUser = async (id: number) => {
     try {
       if (paymentId !== "") {
-        await fetch(`http://localhost:3000/api/users/${id}`, {
+        await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/users/${id}`, {
           method: "PUT",
           body: JSON.stringify({
             paymentId: paymentId,
