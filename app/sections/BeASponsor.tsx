@@ -29,7 +29,7 @@ export default function BeASponsor() {
 
       <div className="flex flex-wrap gap-6  flex-row items-center justify-center lg:justify-between">
         <Image
-          className="w-[150px] h-[47px]"
+          className="w-[200px] h-[60px]"
           src="/google.png"
           height={47}
           width={150}

@@ -19,7 +19,7 @@ export default function Sponsors({ title }: Props) {
       <div className="overflow-hidden">
         <div className="flex items-center gap-3 animate-sponsors">
           <Image
-            className="w-[150px] h-[47px]"
+            className="w-[200px] h-[60px]"
             src="/google.png"
             height={47}
             width={150}
@@ -47,7 +47,7 @@ export default function Sponsors({ title }: Props) {
             alt="Logo de Code Centre"
           />
           <Image
-            className="w-[150px]"
+            className="w-[250px] h-[60px]"
             src="/google.png"
             height={47}
             width={150}
@@ -75,7 +75,7 @@ export default function Sponsors({ title }: Props) {
             alt="Logo de Code Centre"
           />
           <Image
-            className="w-[150px]"
+            className="w-[200px] h-[60px]"
             src="/google.png"
             height={47}
             width={150}
