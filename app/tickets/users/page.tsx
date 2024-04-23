@@ -127,7 +127,7 @@ export default function UsersTable() {
         </select>
       </header>
       <div className="mx-20">
-        <div className="shadow-md overflow-hidden rounded-lg">
+        <div className="shadow-md overflow-x-scroll rounded-lg">
           <table className="w-full text-sm text-left bg-gray-800 rtl:text-right text-gray-400 ">
             <thead className="text-xs text-white uppercase">
               <tr>
@@ -142,6 +142,12 @@ export default function UsersTable() {
                 </th>
                 <th scope="col" className="px-6 py-3 ">
                   Correo
+                </th>
+                <th scope="col" className="px-6 py-3 ">
+                  Empresa
+                </th>
+                <th scope="col" className="px-6 py-3 ">
+                  Ocupación
                 </th>
                 <th scope="col" className="px-6 py-3">
                   Teléfono
@@ -187,6 +193,12 @@ export default function UsersTable() {
                     </td>
                     <td className="px-6 py-4 bg-gray-50 dark:bg-gray-800">
                       {user.email}
+                    </td>
+                    <td className="px-6 py-4 bg-gray-50 dark:bg-gray-800">
+                      {user.work}
+                    </td>
+                    <td className="px-6 py-4 bg-gray-50 dark:bg-gray-800">
+                      {user.profile}
                     </td>
                     <td className="px-6 py-4">{user.phone}</td>
                     <td className="px-2 py-4  text-center">
