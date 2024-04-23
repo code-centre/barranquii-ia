@@ -30,7 +30,7 @@ export default function Tickets() {
           title="General"
           styles="col-span-2"
           subTitle="Entrada general"
-          amount="80,000"
+          amount="100,000"
         >
           <ul className="mt-3 ml-5 marker:text-principleViolet list-disc">
             <li>Entrada al Hackatón</li>

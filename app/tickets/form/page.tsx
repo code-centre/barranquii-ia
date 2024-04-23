@@ -332,7 +332,7 @@ export default function Form() {
                 "border-green-500 border-2 shadow-2xl shadow-green-500"
               }`}
             />
-          <p className="mt-2">Valor a pagar: { discountCoupon.toUpperCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ? '$50.000' : '$80.000'}</p>
+          <p className="mt-2">Valor a pagar: { discountCoupon.toUpperCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ? '$50.000' : '$100.000'}</p>
           </label>
           <div className="my-4 border-b border-dashed"></div>
           <div>
