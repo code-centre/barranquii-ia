@@ -38,19 +38,8 @@ export default function ThankYouPage() {
         console.log(err);
       }
     };
-
-    const handleSendEmail = async () => {
-      const res = await fetch(`/api/send`, {
-        method: "POST",
-        body: JSON.stringify(user?.id),
-      });
-      const data = await res.json();
-      console.log(data);
-    };
-
+    
     updateUser();
-    handleSendEmail();
-    localStorage.removeItem("Id_user");
   }, [id, user?.id]);
 
   return (
