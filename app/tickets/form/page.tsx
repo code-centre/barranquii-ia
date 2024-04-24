@@ -55,7 +55,7 @@ export default function Form() {
       emergencyName: data.nameEmergency,
       emergencyPhone: data.phoneEmergency,
       isStaying: data.sleepAtPlace,
-      paymentAmount: discountCoupon.toUpperCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ? 50000 : 80000,
+      paymentAmount: discountCoupon.toUpperCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ? 50000 : 100000,
       ticketType: "GENERAL",
     });
     

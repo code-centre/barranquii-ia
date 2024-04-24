@@ -13,16 +13,17 @@ import BeASponsor from "./sections/BeASponsor";
 import LearnInCommunity from "./sections/LearnInCommunity";
 import FAQ from "./sections/FAQ";
 import Topics from "./sections/Topics";
+import Allies from "./sections/Allies";
+import SponsorsSection from "./sections/SponsorsSection";
 
 export default function Home() {
   return (
     <main className="flex flex-col py-10 min-h-screen">
-      <Wrapper styles="flex flex-col gap-20 px-5 pb-10">
+      <Wrapper styles="flex flex-col gap-20 px-5">
         <Hero />
-        <Sponsors
-          title="Integrando conocimientos, herramientas y esfuerzos de diferentes
-        patrocinadores"
-        />
+      </Wrapper>
+      <Wrapper styles="px-5 w-full">
+        <Sponsors />
       </Wrapper>
       <div className="bg-image">
         <Wrapper styles="flex flex-col gap-20 lg:gap-32 px-5 md:pb-10">
@@ -42,13 +43,19 @@ export default function Home() {
         </Wrapper>
       </div>
       <Wrapper styles=" flex flex-col gap-20 px-5 lg:pb-10 w-full">
-        {/* <Location /> */}
+        <Location />
         <Tickets />
       </Wrapper>
       <LearnInCommunity />
-      <Wrapper styles=" flex flex-col gap-20 px-5">
+      <Wrapper styles="px-5 w-full">
+        <SponsorsSection />
+      </Wrapper>
+      <Wrapper styles=" flex flex-col px-5">
         <BeASponsor />
         <FAQ />
+      </Wrapper>
+      <Wrapper styles="px-5 w-full">
+        <Allies />
       </Wrapper>
     </main>
   );

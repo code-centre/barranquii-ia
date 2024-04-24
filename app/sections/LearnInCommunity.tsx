@@ -4,6 +4,7 @@ import Wrapper from "../components/Wrapper";
 import Image from "next/image";
 import InfoEventGrid from "../components/InfoEventGrid";
 import ImageCommunityGrid from "../components/ImageCommunityGrid";
+import { InfiniteMovingCards } from "../components/InfiniteMovingCards";
 
 export default function LearnInCommunity() {
   return (
@@ -17,8 +18,9 @@ export default function LearnInCommunity() {
         </h2>
       </Wrapper>
 
-      <div className="w-full overflow-x-scroll pb-4 scroll">
-        <div className="grid-events animate-grid w-full">
+      {/* <div className="w-full overflow-x-scroll pb-4 scroll"> */}
+      <InfiniteMovingCards>
+        <div className="grid-events w-full">
           <a
             href="https://gdg.community.dev/e/m6jq7d/"
             target="_blank"
@@ -102,7 +104,11 @@ export default function LearnInCommunity() {
             target="_blank"
             className="flex flex-col justify-center items-center  rounded-md sub-grid hover:brightness-150"
           >
-            <ImageCommunityGrid name="GDG" image="aws.webp" styles="bg-[#fff]" />
+            <ImageCommunityGrid
+              name="GDG"
+              image="aws.webp"
+              styles="bg-[#fff]"
+            />
             <InfoEventGrid
               date="18 de abril"
               time="7:00 p.m."
@@ -119,7 +125,7 @@ export default function LearnInCommunity() {
             loading="lazy"
           />
 
-          <a
+          {/* <a
             href="https://gdg.community.dev/e/m6jq7d/"
             target="_blank"
             className="flex flex-col justify-center items-center  rounded-md sub-grid hover:brightness-150"
@@ -145,7 +151,26 @@ export default function LearnInCommunity() {
             loading="lazy"
           />
 
-          {/* <a
+          <a
+            href="https://www.meetup.com/pythonbaq/events/299958884/"
+            target="_blank"
+            className="flex flex-col justify-center items-center  rounded-md sub-grid hover:brightness-150"
+          >
+            <ImageCommunityGrid
+              name="Python Barranquilla"
+              styles="bg-gradient-to-b from-[#1e415e] to-[#2b5b84] text-black"
+              image="pybaq-logo.webp"
+            />
+            <InfoEventGrid
+              date="11 de abril"
+              time="7:00 p.m."
+              location="Koombea"
+            />
+          </a> */}
+        </div>
+      </InfiniteMovingCards>
+
+      {/* <a
             href="https://barranquillajs.org/"
             target="_blank"
             className="flex flex-col justify-center items-center  rounded-md sub-grid hover:brightness-100"
@@ -172,24 +197,8 @@ export default function LearnInCommunity() {
             loading="lazy"
           /> */}
 
-          <a
-            href="https://www.meetup.com/pythonbaq/events/299958884/"
-            target="_blank"
-            className="flex flex-col justify-center items-center  rounded-md sub-grid hover:brightness-150"
-          >
-            <ImageCommunityGrid
-              name="Python Barranquilla"
-              styles="bg-gradient-to-b from-[#1e415e] to-[#2b5b84] text-black"
-              image="pybaq-logo.webp"
-            />
-            <InfoEventGrid
-              date="11 de abril"
-              time="7:00 p.m."
-              location="Koombea"
-            />
-          </a>
-        </div>
-      </div>
+      {/* 
+      </div> */}
       <Wrapper styles="w-full flex flex-col gap-5 relative mask pt-10">
         <p className="text-center text-gray-300">
           Durante Abril y hasta el 3 de Mayo las comunidades de Barranquilla nos

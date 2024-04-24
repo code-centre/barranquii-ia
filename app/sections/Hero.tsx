@@ -33,6 +33,10 @@ export default function Hero() {
       <p className="font-semibold text-xl">
         El evento se llevará acabo el 4 y 5 de mayo.
       </p>
+      <p className="text-center text-secondaryText text-sm md:text-[15px] uppercase mt-10">
+        Integrando conocimientos, herramientas y esfuerzos de diferentes
+        patrocinadores
+      </p>
     </section>
   );
 }
