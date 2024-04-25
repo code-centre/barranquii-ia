@@ -32,7 +32,7 @@ export default function Allies() {
           src="/logos/fof.webp"
           height={47}
           width={150}
-          alt="Logo de Google"
+          alt="Logo de Friends of Figma - Barranquilla"
           loading="lazy"
         />
         <Image
@@ -82,6 +82,22 @@ export default function Allies() {
           height={47}
           width={150}
           alt="Logo de Python Barranquilla"
+          loading="lazy"
+        />
+        <Image
+          className=" rounded-full"
+          src="/logos/51-labs.webp"
+          height={47}
+          width={150}
+          alt="Logo de 51 Labs"
+          loading="lazy"
+        />
+        <Image
+          className=""
+          src="/logos/innflue.webp"
+          height={47}
+          width={150}
+          alt="Logo de 51 Labs"
           loading="lazy"
         />
       </div>
