@@ -209,9 +209,9 @@ h6 {
   background-size: contain;
 }
 
-/* .mask {
-  mask-image: linear-gradient(to bottom, black 90%, transparent);
-} */
+.mask {
+  mask-image: linear-gradient( black 90%, transparent);
+}
 
 :root {
   --foreground-rgb: 255, 255, 255;
@@ -233,4 +233,27 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
 }

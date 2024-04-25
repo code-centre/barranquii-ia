@@ -15,6 +15,7 @@ import FAQ from "./sections/FAQ";
 import Topics from "./sections/Topics";
 import Allies from "./sections/Allies";
 import SponsorsSection from "./sections/SponsorsSection";
+import Mentors from "./sections/Mentors";
 
 export default function Home() {
   return (
@@ -33,6 +34,9 @@ export default function Home() {
       </div>
       <Wrapper styles="px-5">
         <Topics />
+      </Wrapper>
+      <Wrapper styles="px-5 w-full">
+        <Mentors />
       </Wrapper>
       <Wrapper styles="flex flex-col gap-20 pb-20 px-5 md:pb-10">
         <Expectations />
