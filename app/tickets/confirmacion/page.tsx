@@ -10,6 +10,7 @@ import React, { Suspense, useEffect, useState } from "react";
 export default function ThankYouPage() {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
+  const [ticketType, setTicketType] = useState('')
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
 
@@ -19,6 +20,12 @@ export default function ThankYouPage() {
       return;
     }
 
+    const ticketTypeFromStorage = localStorage.getItem('ticketType')
+    
+    if (ticketTypeFromStorage) {
+      setTicketType(ticketTypeFromStorage)
+    }
+    
     const updateUser = async () => {
       try {
         const resp = await fetch(
@@ -60,7 +67,7 @@ export default function ThankYouPage() {
           En un máximo de 24 horas recibirás un correo electrónico con tu
           boleto.
         </p>
-        <Boleta nameUser={`${user?.name} ${user?.lastName}`} />
+        <Boleta nameUser={`${user?.name} ${user?.lastName}`} ticketType={ticketType} />
         <div className="flex items-center gap-5">
           <Link href="/">
             <button className="inline-flex hover:brightness-110 justify-center items-center bg-principleViolet disabled:opacity-50 shadow-sm px-8 rounded-md h-10 font-medium text-sm disabled:pointer-events-none">

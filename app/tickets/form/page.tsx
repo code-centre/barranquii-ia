@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import React, { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Wrapper from "../../components/Wrapper";
 import { useForm, SubmitHandler } from "react-hook-form";
 
@@ -31,8 +31,14 @@ type Inputs = {
 };
 
 export default function Form() {
+  const [sleepAtPlace, setSleepAtPlace] = useState("NO");
   const [discountCoupon, setDiscountCoupon] = useState("");
+  const [price, setPrice] = useState(100000);
   const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const ticketType = searchParams.get("mode");
+
   const {
     register,
     handleSubmit,
@@ -40,29 +46,59 @@ export default function Form() {
     formState: { errors, isValid },
   } = useForm<Inputs>();
 
+  useEffect(() => {
+    const calculatePrice = () => {
+      switch (discountCoupon.toUpperCase()) {
+        case process.env.NEXT_PUBLIC_DiSCOUNT_COUPON_UNINORTE:
+          setPrice(60000);
+          break;
+        case process.env.NEXT_PUBLIC_DiSCOUNT_COUPON:
+          setPrice(80000);
+          break;
+        default:
+          setPrice(100000);
+      }
+    };
+
+    calculatePrice();
+  }, [discountCoupon]);
+
   const onSubmit: SubmitHandler<Inputs> = async (data: Inputs) => {
-    await createUser({
-      name: data.name,
-      lastName: data.lastName,
-      idType: data.typeOfDocument,
-      idNumber: data.document,
-      phone: data.phone,
-      email: data.email,
-      profile: data.occupation,
-      work: data.company,
-      shirtSize: data.size,
-      food: data.food,
-      emergencyName: data.nameEmergency,
-      emergencyPhone: data.phoneEmergency,
-      isStaying: data.sleepAtPlace,
-      paymentAmount: discountCoupon.toUpperCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ? 50000 : 100000,
-      ticketType: "GENERAL",
-    });
-    
-    if (discountCoupon.toUpperCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON) {
-      router.push(`${process.env.NEXT_PUBLIC_LINK_PREVENTA_WOMPI}`);
-    } else {
-      router.push(`${process.env.NEXT_PUBLIC_LINK_WOMPI}`);
+    await createUser(
+      {
+        name: data.name,
+        lastName: data.lastName,
+        idType: data.typeOfDocument,
+        idNumber: data.document,
+        phone: data.phone,
+        email: data.email,
+        profile: data.occupation,
+        work: data.company,
+        shirtSize: ticketType !== "taller" ? data.size : "M",
+        food: ticketType !== "taller" ? data.food : "NONE",
+        emergencyName: data.nameEmergency,
+        emergencyPhone: data.phoneEmergency,
+        isStaying: sleepAtPlace,
+        paymentAmount: ticketType !== "taller" ? price : 40000,
+        ticketType: "GENERAL",
+      },
+      ticketType
+    );
+
+    if (ticketType === "taller") {
+      router.push(`${process.env.NEXT_PUBLIC_LINK_TALLERES_WOMPI}`);
+      return;
+    }
+
+    switch (discountCoupon.toUpperCase()) {
+      case process.env.NEXT_PUBLIC_DiSCOUNT_COUPON_UNINORTE:
+        router.push(`${process.env.NEXT_PUBLIC_LINK_UNINORTE_WOMPI}`);
+        break;
+      case process.env.NEXT_PUBLIC_DiSCOUNT_COUPON:
+        router.push(`${process.env.NEXT_PUBLIC_LINK_PREVENTA_WOMPI}`);
+        break;
+      default:
+        router.push(`${process.env.NEXT_PUBLIC_LINK_WOMPI}`);
     }
   };
 
@@ -210,37 +246,41 @@ export default function Form() {
               )}
             </label>
           </div>
-          <label className="flex flex-col gap-2 font-semibold text-gray-300">
-            Talla de camisa
-            <select
-              {...register("size", {
-                required: true,
-              })}
-              className="px-2 py-2 rounded-md text-black"
-              defaultValue="M"
-            >
-              <option value="XS">XS</option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
-            </select>
-          </label>
-          <label className="flex flex-col gap-2 font-semibold text-gray-300">
-            ¿Tienes alguna restricción alimenticia?
-            <select
-              {...register("food", {
-                required: true,
-              })}
-              defaultValue="NONE"
-              className="px-2 py-2 rounded-md text-black"
-            >
-              <option value="NONE">Ninguna</option>
-              <option value="VEGETARIANO">Vegetariano</option>
-              <option value="VEGANO">Vegano</option>
-              <option value="KOSHER">Kosher</option>
-            </select>
-          </label>
+          {ticketType !== "taller" && (
+            <>
+              <label className="flex flex-col gap-2 font-semibold text-gray-300">
+                Talla de camisa
+                <select
+                  {...register("size", {
+                    required: true,
+                  })}
+                  className="px-2 py-2 rounded-md text-black"
+                  defaultValue="M"
+                >
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                </select>
+              </label>
+              <label className="flex flex-col gap-2 font-semibold text-gray-300">
+                ¿Tienes alguna restricción alimenticia?
+                <select
+                  {...register("food", {
+                    required: true,
+                  })}
+                  defaultValue="NONE"
+                  className="px-2 py-2 rounded-md text-black"
+                >
+                  <option value="NONE">Ninguna</option>
+                  <option value="VEGETARIANO">Vegetariano</option>
+                  <option value="VEGANO">Vegano</option>
+                  <option value="KOSHER">Kosher</option>
+                </select>
+              </label>
+            </>
+          )}
           <div className="my-4 border-b border-dashed"></div>
 
           <h2 className="font-bold text-3xl">Contacto de emergencia</h2>
@@ -279,62 +319,66 @@ export default function Form() {
             </label>
           </div>
           <div className="my-4 border-b border-dashed"></div>
-          <div>
-            <p className="max-w-2xl text-gray-300">
-              Para poder trabajar en el proyecto, podrás quedarte trabajando la
-              noche del sábado en el lugar del evento, tendremos cafe, comida,
-              agua y habrá espacios donde puedas tomar una siesta, pero el
-              espació no estará habilitado para dormir.
-              <span className="block mt-2 font-bold">
-                ¿Te quedarás a trabajar durante la noche?*
-              </span>
-            </p>
-            <div className="flex gap-6 mt-2 text-gray-300">
-              <label className="flex items-center gap-2">
-                SÍ
+          {ticketType !== "taller" && (
+            <>
+              <div>
+                <p className="max-w-2xl text-gray-300">
+                  Para poder trabajar en el proyecto, podrás quedarte trabajando
+                  la noche del sábado en el lugar del evento, tendremos cafe,
+                  comida, agua y habrá espacios donde puedas tomar una siesta,
+                  pero el espació no estará habilitado para dormir.
+                  <span className="block mt-2 font-bold">
+                    ¿Te quedarás a trabajar durante la noche?*
+                  </span>
+                </p>
+                <div className="flex gap-6 mt-2 text-gray-300">
+                  <label className="flex items-center gap-2">
+                    SÍ
+                    <input
+                      onChange={() => setSleepAtPlace("SI")}
+                      name="response"
+                      type="radio"
+                      value="SI"
+                    />
+                  </label>
+                  <label className="flex items-center gap-2">
+                    NO
+                    <input
+                      onChange={() => setSleepAtPlace("NO")}
+                      name="response"
+                      type="radio"
+                      value="NO"
+                      defaultChecked
+                    />
+                  </label>
+                </div>
+                <p className="pt-5 max-w-2xl text-gray-300">
+                  *Después de las 9:00 pm se cerrarán las puertas y por
+                  seguridad nadie podrá salir o entrar al espacio del evento
+                  hasta las 6am del día siguiente.{" "}
+                </p>
+              </div>
+              <div className="my-4 border-b border-dashed"></div>
+
+              <label className="flex flex-col gap-2 text-gray-300 ">
+                ¿Tienes un cupón de descuento?
                 <input
-                  {...register("sleepAtPlace", {
-                    required: true,
-                  })}
-                  name="response"
-                  type="radio"
-                  value="SI"
+                  onChange={(e) => setDiscountCoupon(e.target.value)}
+                  placeholder="Tu cupón"
+                  type="text"
+                  className={`px-2 py-2 rounded-md font-normal placeholder:capitalize  uppercase text-black  w-1/2 ${
+                    (discountCoupon.toUpperCase() ===
+                      process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ||
+                      discountCoupon.toUpperCase() ===
+                        process.env.NEXT_PUBLIC_DiSCOUNT_COUPON_UNINORTE) &&
+                    "border-green-500 border-2 shadow-2xl shadow-green-500"
+                  }`}
                 />
+                <p className="mt-2">Valor a pagar: ${price.toLocaleString()}</p>
               </label>
-              <label className="flex items-center gap-2">
-                NO
-                <input
-                  {...register("sleepAtPlace", {
-                    required: true,
-                  })}
-                  name="response"
-                  type="radio"
-                  value="NO"
-                  defaultChecked
-                />
-              </label>
-            </div>
-            <p className="pt-5 max-w-2xl text-gray-300">
-              *Después de las 9:00 pm se cerrarán las puertas y por seguridad nadie
-              podrá salir o entrar al espacio del evento hasta las 6am del día
-              siguiente.{" "}
-            </p>
-          </div>
-          <div className="my-4 border-b border-dashed"></div>
-          <label className="flex flex-col gap-2 text-gray-300 ">
-            ¿Tienes un cupón de descuento?
-            <input
-              onChange={(e) => setDiscountCoupon(e.target.value)}
-              placeholder="Tu cupón"
-              type="text"
-              className={`px-2 py-2 rounded-md font-normal placeholder:capitalize  uppercase text-black  w-1/2 ${
-                discountCoupon.toUpperCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON &&
-                "border-green-500 border-2 shadow-2xl shadow-green-500"
-              }`}
-            />
-          <p className="mt-2">Valor a pagar: { discountCoupon.toUpperCase() === process.env.NEXT_PUBLIC_DiSCOUNT_COUPON ? '$50.000' : '$100.000'}</p>
-          </label>
-          <div className="my-4 border-b border-dashed"></div>
+              <div className="my-4 border-b border-dashed"></div>
+            </>
+          )}
           <div>
             <label className="flex items-center gap-2 text-gray-300">
               He leído y acepto los términos y condiciones
@@ -370,7 +414,9 @@ export default function Form() {
   );
 }
 
-const createUser = async (body: any) => {
+const createUser = async (body: any, ticketType: string | null) => {
+  console.log(body);
+
   try {
     const resp = await fetch(`/api/users`, {
       method: "POST",
@@ -379,6 +425,7 @@ const createUser = async (body: any) => {
     const user = await resp.json();
 
     localStorage.setItem("Id_user", JSON.stringify(user.newUser.id));
+    localStorage.setItem("ticketType", JSON.stringify(ticketType));
   } catch (err) {
     console.log(err);
   }
