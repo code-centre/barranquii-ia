@@ -3,9 +3,12 @@ import React from "react";
 
 interface Props {
   nameUser: string;
+  ticketType: string;
 }
 
-export default function Boleta({ nameUser }: Props) {
+export default function Boleta({ nameUser, ticketType }: Props) {
+  console.log(ticketType);
+
   return (
     <div className="relative flex flex-col justify-between gap-6 p-6 border border-dashed rounded-md w-full overflow-hidden">
       <Image
@@ -17,16 +20,28 @@ export default function Boleta({ nameUser }: Props) {
       />
 
       <header className="z-20">
-        <h2 className="font-bold text-3xl">Hackatón - Barranqui-IA</h2>
+        <h2 className={`font-bold text-3xl ${ticketType === '' && 'animate-pulse bg-gray-300 text-gray-300'}`}>
+          
+          {ticketType === '"taller"' && "Talleres - "}Hackatón - Barranqui-IA
+        </h2>
         {/* <p className="text-gray-300">04 de abril de 2024 a las 08:00</p> */}
       </header>
-      <section className="flex flex-col gap-1">
+      <section className={`flex flex-col gap-1 ${ticketType === '' && 'animate-pulse bg-gray-300 text-gray-300 w-32 '}`}>
         {/* <h2 className="max-w-md font-bold">
           Área metropolitana de, Kilómetro 5, vía Puerto Colombia, Barranquilla,
           Atlántico
         </h2> */}
-        <p className="text-gray-300">04 y 05 de abril de 2024</p>
-        <p>Empezamos 08:00 a.m.</p>
+        {ticketType === '"taller"' ? (
+          <>
+            <p className="text-gray-300">04 de Mayo de 2024</p>
+            <p>Empezamos 02:00 p.m.</p>
+          </>
+        ) : (
+          <>
+            <p className="text-gray-300">04 y 05 de Mayo de 2024</p>
+            <p>Empezamos 08:00 a.m.</p>
+          </>
+        )}
       </section>
       <footer className="">
         <div className="gap-4 grid grid-cols-2">
