@@ -41,41 +41,19 @@ export default function Tickets() {
             <li>Almuerzo del domingo 5 de mayo</li>
           </ul>
         </CardTicket>
-        {/* <CardTicket
-          mode="full"
-          styles="overflow-hidden gap-2 col-span-3"
-          title="Full access"
-          subTitle="Paquete conmemorativo"
-          amount="150,000"
+        <CardTicket
+          mode="taller"
+          title="Talleres"
+          styles="col-span-2"
+          subTitle="Entrada para talleres"
+          amount="40,000"
         >
-          <div className="flex gap-2 fle">
-            <ul className="mt-3 mr-3 ml-5 pb-10 lg:h-32 marker:text-principleViolet list-disc">
-              <li>Todo lo que tiene el boleto general </li>
-              <div className="my-2 border-b border-dashed h-1"></div>
-              <li>
-                Acceso al coctel de pre-inauguración el viernes 3 de Mayo en las
-                oficinas de Code Centre. <br />{" "}
-              </li>
-            </ul>
-            <img
-              src="/coctel.jpeg"
-              className="lg:block flex-1 hidden rounded-md h-[200px] object-cover"
-            />
-            {styles && (
-              <div className="flex flex-col flex-1 justify-center gap-7">
-                <img
-                  src="/swags.jpeg"
-                  className="flex-1 rounded-md h-[150px] object-cover"
-                />
-              </div>
-            )}
-          </div>
-          <p className="lg:mt-6 ml-5">
-            Es la oportunidad perfecta para conocer a los mentores y expertos
-            internacionales que nos acompañaras además de disfrutar de un
-            inperdible show musical.
-          </p>
-        </CardTicket> */}
+          <ul className="mt-3 ml-5 marker:text-principleViolet list-disc">
+            <li>Talleres exclusivos con nuestros expertos nacionales e internacionales</li>
+            <li>Hidratación y café ilimitado</li>
+            <li>Certificación de participación</li>
+          </ul>
+        </CardTicket>
       </div>
     </section>
   );
