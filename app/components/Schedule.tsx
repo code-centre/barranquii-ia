@@ -59,32 +59,31 @@ const SCHEDULE_EVENT = [
       description: "¡Hora de comer!",
     },
     {
-      time: "4:00 PM - 06:00 PM",
+      time: "2:00 PM - 07:00 PM",
       title: "Build with IA - Ronda de Talleres",
       description:
         "Tendremos una ronda de talleres sobre inteligencia artificial a manos del Google Developer Group Barranquilla y expertos en inteligencia artificial de parte de Google",
     },
     {
-      time: "8:00 PM - 10:00 PM",
+      time: "8:00 PM - 9:00 PM",
       title: "Cena",
       description: "Ya hace hambre, ¿cierto?",
     },
     {
-      time: "10:00 PM",
+      time: "9:00 PM",
       title: "Cierre de puertas",
       description:
-        "Puedes quedarte a dormir para seguir trabajando o ir a tu casa a descansar. Pero es mut importante que tengas claro que por seguridad no se podrá ingresar ni salir de la sede del hackatón después de las 10pm y hasta las 6am del día siguiente.  ",
+        "En esta ocasión no podrémos quedarnos a trabajar en la universidad, pero puedes coordinar con tu equipo para trabajar desde tu casa y avanzar en tu proyecto",
     },
   ],
   [
     {
-      time: "06:00 AM",
+      time: "07:00 AM",
       title: "Puertas abiertas",
-      description:
-        "Habilitamos de nuevo el acceso y salida del recinto. ¡Espero hayas avanzado durante la noche!",
+      description: "¡Espero hayas avanzado durante la noche!",
     },
     {
-      time: "07:00 AM - 09:00 AM",
+      time: "08:00 AM - 09:00 AM",
       title: "Desayuno",
       description: "¡Vamos a comer!",
     },

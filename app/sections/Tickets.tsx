@@ -15,7 +15,7 @@ export default function Tickets() {
         </h2>
         <span className="flex items-center gap-1 mt-2 font-semibold text-gray-400 uppercase">
           <div className="bg-principleViolet rounded-full w-1 h-1"></div>
-          Participa en el Hackatón
+          Participa
         </span>
       </div>
       <p className="text-gray-300">
@@ -27,7 +27,7 @@ export default function Tickets() {
       <div className="gap-x-3 gap-y-10 grid grid-cols-1 md:grid-cols-5">
         <CardTicket
           mode="taller"
-          title="Talleres"
+          title="Entrada Limitada"
           styles="col-span-2"
           subTitle="Aprende sobre Inteligencia Artificial"
           amount="40,000"

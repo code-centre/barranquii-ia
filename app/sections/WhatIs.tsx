@@ -30,11 +30,12 @@ export default function WhatIs() {
             Participar en Barranqui-IA es una forma increíble de entrar en la
             comunidad de tecnología y para aprender nuevas habilidades,
             construir proyectos increíbles y compartir ideas. Un hackatón se
-            describe mejor como un "maratón de invención". Cualquiera que tenga
-            interés en la tecnología asiste a un hackatón para aprender,
-            construir y compartir sus creaciones durante un fin de semana en un
-            ambiente relajado y acogedor. ¡No tienes que ser programador ni un
-            experto en inteligencia artificial.
+            describe mejor como un
+            <span className="font-bold"> maratón de invención. </span>{" "}
+            Cualquiera que tenga interés en la tecnología asiste a un hackatón
+            para aprender, construir y compartir sus creaciones durante un fin
+            de semana en un ambiente relajado y acogedor. ¡No tienes que ser
+            programador ni un experto en inteligencia artificial.
           </p>
           <p className="lg:max-w-md text-gray-300">
             ¡Únete a nosotros para demostrar que en Barranquilla también creamos
