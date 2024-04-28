@@ -24,8 +24,11 @@ export default function Location() {
         </span>
         <p className="mt-5 max-w-xs text-gray-300">
           Área metropolitana de, Kilómetro 5, vía Puerto Colombia, Barranquilla,
-          Atlántico
+          Atlántico.
         </p>
+        <span className="flex items-center gap-1 mt-2 font-semibold text-gray-400 uppercase">
+          Salon 31k, Edificio de Ingenierías
+        </span>
       </div>
       <div className="rounded-lg overflow-hidden">
         <iframe
