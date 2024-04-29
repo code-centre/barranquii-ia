@@ -27,7 +27,7 @@ export default function Sponsors() {
       <li>
         <Image
           className="w-[230px]"
-          src="/uni-norte.png"
+          src="/uninorte.webp"
           height={47}
           width={230}
           alt="Logo de la universidad de la norte"

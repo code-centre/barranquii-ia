@@ -11,7 +11,7 @@ export default function Location() {
           </h2>
           <Image
             className="md:w-[230px]"
-            src="/uni-norte.png"
+            src="/uninorte.webp"
             height={47}
             width={230}
             alt="Logo de la universidad de la norte"
