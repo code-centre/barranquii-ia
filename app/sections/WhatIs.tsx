@@ -3,7 +3,10 @@ import React from "react";
 
 export default function WhatIs() {
   return (
-    <section id="what-is" className="relative flex flex-col gap-10 pt-32 text-left">
+    <section
+      id="what-is"
+      className="relative flex flex-col gap-10 pt-32 text-left"
+    >
       <div>
         <h2 className="font-bold text-4xl md:text-6xl">Hackatón</h2>
         <h3 className="text-2xl md:text-4xl">Barranqui-IA</h3>
@@ -18,21 +21,26 @@ export default function WhatIs() {
             ¿Qué es?
           </h2>
           <p className="lg:max-w-md text-gray-300">
-            Es mucho más que un simple concurso de programación. Es una
-            oportunidad para demostrar tus habilidades, aprender y crear
-            proyectos innovadores que podrían cambiar el mundo.
+            Un hackatón es un evento de innovación donde diferentes personas se
+            reúnen para crear, diseñar y programar soluciones a una o más
+            problemáticas que existen en la sociedad. En este caso, utilizando
+            inteligencia artificial.
           </p>
           <p className="lg:max-w-md text-gray-300">
-            Pero este hackatón es aún más especial. No se trata solo de una
-            aventura tecnológica; es una misión para hacer de Barranquilla el
-            epicentro de la revolución de la inteligencia artificial en
-            Colombia.
+            Participar en Barranqui-IA es una forma increíble de entrar en la
+            comunidad de tecnología y para aprender nuevas habilidades,
+            construir proyectos increíbles y compartir ideas. Un hackatón se
+            describe mejor como un
+            <span className="font-bold"> maratón de invención. </span>{" "}
+            Cualquiera que tenga interés en la tecnología asiste a un hackatón
+            para aprender, construir y compartir sus creaciones durante un fin
+            de semana en un ambiente relajado y acogedor. ¡No tienes que ser
+            programador ni un experto en inteligencia artificial.
           </p>
           <p className="lg:max-w-md text-gray-300">
-            Únete a nosotros en esta emocionante aventura. Demuestra tu talento,
-            trabaja en soluciones innovadoras y sé parte de la revolución
-            tecnológica que está transformando el mundo. ¡Te esperamos para
-            hacer historia juntos!
+            ¡Únete a nosotros para demostrar que en Barranquilla también creamos
+            cosas increibles! Sé parte de la revolución tecnológica que está
+            transformando el mundo. ¡Te esperamos para hacer historia juntos!
           </p>
         </div>
         <div className="lg:block relative hidden lg:w-[200px] xl:w-[500px]">

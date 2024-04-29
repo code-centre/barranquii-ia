@@ -49,14 +49,14 @@ export default function Home() {
       <Wrapper styles=" flex flex-col gap-20 px-5 lg:pb-10 w-full">
         <Location />
         <Tickets />
+        <FAQ />
       </Wrapper>
-      <LearnInCommunity />
+      {/* <LearnInCommunity /> */}
       <Wrapper styles="px-5 w-full">
         <SponsorsSection />
       </Wrapper>
       <Wrapper styles=" flex flex-col px-5">
         <BeASponsor />
-        <FAQ />
       </Wrapper>
       <Wrapper styles="px-5 w-full">
         <Allies />

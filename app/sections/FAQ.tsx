@@ -7,7 +7,7 @@ export default function FAQ() {
     <div id="faqs" className="py-20">
       <div>
         <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
-          FAQs
+          Preguntas Frecuentes
         </h2>
       </div>
 

@@ -20,17 +20,24 @@ export default function Boleta({ nameUser, ticketType }: Props) {
       />
 
       <header className="z-20">
-        <h2 className={`font-bold text-3xl ${ticketType === '' && 'animate-pulse bg-gray-300 text-gray-300'}`}>
-          
+        <h2
+          className={`font-bold text-3xl ${
+            ticketType === "" && "animate-pulse bg-gray-300 text-gray-300"
+          }`}
+        >
           {ticketType === '"taller"' && "Talleres - "}Hackatón - Barranqui-IA
         </h2>
-        {/* <p className="text-gray-300">04 de abril de 2024 a las 08:00</p> */}
+        <p className="text-gray-300">04 de abril de 2024 a las 08:00</p>
       </header>
-      <section className={`flex flex-col gap-1 ${ticketType === '' && 'animate-pulse bg-gray-300 text-gray-300 w-32 '}`}>
-        {/* <h2 className="max-w-md font-bold">
+      <section
+        className={`flex flex-col gap-1 ${
+          ticketType === "" && "animate-pulse bg-gray-300 text-gray-300 w-32 "
+        }`}
+      >
+        <h2 className="max-w-md font-bold">
           Área metropolitana de, Kilómetro 5, vía Puerto Colombia, Barranquilla,
           Atlántico
-        </h2> */}
+        </h2>
         {ticketType === '"taller"' ? (
           <>
             <p className="text-gray-300">04 de Mayo de 2024</p>

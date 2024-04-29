@@ -9,28 +9,29 @@ export default function HowIs() {
           ¿Cómo funciona?
         </h2>
         <p className="text-gray-300">
-          El desafío es claro: en equipo y en solo 30 horas, tendrás que dar
-          vida a un producto que utilice la inteligencia artificial para
-          resolver desafíos reales.
+          El desafío es claro: en equipo, asesorado por más de 20 expertos en
+          tecnología, diseño y negocios y en solo 48 horas, tendrás que idear y
+          construir el demo de un producto que utilice la inteligencia
+          artificial.
         </p>
         <p className="text-gray-300">
-          Al final, un jurado de expertos evaluará los proyectos, y los
-          ganadores recibirán premios espectaculares, celebrando la complejidad
-          técnica, la innovación, el esfuerzo y el potencial de impacto de sus
-          ideas.
+          El último día presentaras tu proyecto ante un jurado de expertos que
+          evaluará los proyectos según su implementación técnica y el uso de la
+          inteligencia artificial. Los mejores 3 equipos serán nombrados
+          ganadores y ¡Recibirán premios espectaculares!
         </p>
       </div>
       <div className="gap-4 grid grid-cols-1 md:grid-cols-3">
         <CardHowIs
           icon="/icon-team.png"
           title="Equipos"
-          description="Arma un equipo de máximo 5 personas y elijan un reto."
+          description="Arma un equipo de máximo 5 personas y desarrolla una idea con inteligencia artificial."
         />
         <CardHowIs
           icon="/icon-challenge.png"
           shadow={true}
           title="Reto"
-          description="Construye tu proyecto con IA durante 30 horas con ayuda de mentores expertos."
+          description="Construye tu proyecto con IA durante 48 horas con ayuda de mentores expertos."
         />
         <CardHowIs
           icon="/icon-presentation.png"

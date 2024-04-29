@@ -15,7 +15,7 @@ export default function Tickets() {
         </h2>
         <span className="flex items-center gap-1 mt-2 font-semibold text-gray-400 uppercase">
           <div className="bg-principleViolet rounded-full w-1 h-1"></div>
-          Participa en el Hackatón
+          Participa
         </span>
       </div>
       <p className="text-gray-300">
@@ -26,30 +26,33 @@ export default function Tickets() {
       <ul className="flex flex-col gap-1 ml-10 text-gray-300 marker:text-principleViolet list-disc"></ul>
       <div className="gap-x-3 gap-y-10 grid grid-cols-1 md:grid-cols-5">
         <CardTicket
-          mode="general"
-          title="General"
-          styles="col-span-2"
-          subTitle="Entrada general"
-          amount="100,000"
-        >
-          <ul className="mt-3 ml-5 marker:text-principleViolet list-disc">
-            <li>Entrada al Hackatón</li>
-            <li>Camiseta oficial</li>
-            <li>Almuerzo del sábado 4 de mayo</li>
-            <li>Cena del sábado 4 de mayo</li>
-            <li>Desayuno del domingo 5 de mayo</li>
-            <li>Almuerzo del domingo 5 de mayo</li>
-          </ul>
-        </CardTicket>
-        <CardTicket
           mode="taller"
-          title="Talleres"
+          title="Entrada Limitada"
           styles="col-span-2"
-          subTitle="Entrada para talleres"
+          subTitle="Aprende sobre Inteligencia Artificial"
           amount="40,000"
         >
           <ul className="mt-3 ml-5 marker:text-principleViolet list-disc">
-            <li>Talleres exclusivos con nuestros expertos nacionales e internacionales</li>
+            <li>Acceso a 6 talleres exclusivos sobre IA</li>
+            <li>Hidratación y café ilimitado</li>
+            <li>Certificación de participación</li>
+          </ul>
+        </CardTicket>
+        <CardTicket
+          mode="general"
+          title="Entrada General"
+          styles="col-span-2"
+          subTitle="Vive la experiencia completa"
+          amount="100,000"
+        >
+          <ul className="mt-3 ml-5 marker:text-principleViolet list-disc">
+            <li>Participación en el Hackatón</li>
+            <li>Camiseta oficial</li>
+            <li>Alimentación durante el evento</li>
+            <li>
+              Talleres exclusivos con nuestros expertos nacionales e
+              internacionales
+            </li>
             <li>Hidratación y café ilimitado</li>
             <li>Certificación de participación</li>
           </ul>
