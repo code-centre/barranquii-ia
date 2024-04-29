@@ -33,9 +33,7 @@ export default function Tickets() {
           amount="40,000"
         >
           <ul className="mt-3 ml-5 marker:text-principleViolet list-disc">
-            <li>
-              Acceso a 6 talleres exclusivos sobre IA esté sábado 4 de Mayo
-            </li>
+            <li>Acceso a 6 talleres exclusivos sobre IA</li>
             <li>Hidratación y café ilimitado</li>
             <li>Certificación de participación</li>
           </ul>
