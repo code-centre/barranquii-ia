@@ -12,6 +12,10 @@
     "name": "Mentores"
   },
   {
+    "id": "talleres",
+    "name": "Talleres"
+  },
+  {
     "id": "schedule",
     "name": "Horario"
   },
@@ -20,16 +24,12 @@
     "name": "Boletos"
   },
   {
-    "id": "learn-in-community",
-    "name": "Talleres"
+    "id": "faqs",
+    "name": "FAQs"
   },
   {
     "id": "sponsors",
     "name": "Patrocinadores"
-  },
-  {
-    "id": "faqs",
-    "name": "FAQs"
   },
   {
     "id": "allies",

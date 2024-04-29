@@ -4,7 +4,7 @@ import MentorsCard from "../components/MentorsCard";
 
 export default function Mentors() {
   return (
-    <section id="mentors" className="flex flex-col gap-10 py-20">
+    <section id="mentors" className="flex flex-col gap-10 pt-32">
       <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
         Mentores
       </h2>

@@ -10,8 +10,12 @@ moment.locale("es");
 
 export default function UsersTable() {
   const [edit, setEdit] = useState(false);
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<User[]>([]);
   const [idUser, setIdUser] = useState<null | number>(null);
+  const [generalTicketsPaid, SetGeneralTicketsPaid] = useState(0);
+  const [talleresTicketsPaid, setTalleresTicketsPaid] = useState(0);
+  const [totalPayments, setTotalPayments] = useState(0);
+
   const [paymentId, setPaymentId] = useState("");
 
   const getUsers = async () => {
@@ -24,7 +28,28 @@ export default function UsersTable() {
       );
       const { users } = await resp.json();
 
-      setUsers(users);
+      let sortedUsers = users?.sort(
+        (a: User, b: User) =>
+          new Date(a.createdAt).valueOf() - new Date(b.createdAt).valueOf()
+      );
+
+      let totalTicketsPaid = users
+        ?.filter((user: User) => user.paymentId !== null)
+        ?.reduce((acc: any, cur: any) => acc + cur.paymentAmount, 0);
+
+      setTotalPayments(totalTicketsPaid);
+
+      let totalGeneralTicketsPaid = users?.filter(
+        (user: User) => user.paymentId !== null && user.paymentAmount > 40000
+      );
+
+      let totalTicketsTalleresPaid = users?.filter(
+        (user: User) => user.paymentId !== null && user.paymentAmount === 40000
+      );
+
+      SetGeneralTicketsPaid(totalGeneralTicketsPaid.length);
+      setTalleresTicketsPaid(totalTicketsTalleresPaid.length);
+      setUsers(sortedUsers);
     } catch (error) {
       console.error(error);
       return [];
@@ -88,15 +113,16 @@ export default function UsersTable() {
 
     if (typeSort === "date") {
       let sortedUsers = [...users].sort(
-        (a: User, b: User) => new Date(a.createdAt).valueOf() - new Date(b.createdAt).valueOf()
+        (a: User, b: User) =>
+          new Date(a.createdAt).valueOf() - new Date(b.createdAt).valueOf()
       );
       setUsers(sortedUsers);
     }
 
     if (typeSort === "name") {
       let sortedUsers = [...users].sort((a: User, b: User) => {
-        const nameA = a.name.toUpperCase()
-        const nameB = b.name.toUpperCase()
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
         if (nameA < nameB) {
           return -1;
         }
@@ -107,15 +133,42 @@ export default function UsersTable() {
         return 0;
       });
       setUsers(sortedUsers);
-
     }
   };
 
   return (
     <main className="min-h-screen pt-32 pb-10 ">
-      <header className="mx-20 flex justify-end mb-5">
+      <header className="mx-20 flex justify-between rounded-lg  bg-gray-800 py-2 px-10  mb-5">
+        <div className="relative group">
+          <p className="cursor-pointer">
+            Total de boletos pagados:{" "}
+            <span className="font-bold">
+              {generalTicketsPaid + talleresTicketsPaid}
+            </span>
+          </p>
+          <div className="absolute hidden group-hover:block  bg-gray-800 w-[200px] py-2 px-4 border border-gray-500 rounded-md mt-2">
+            <p>
+              Generales: <span className="font-bold">{generalTicketsPaid}</span>
+            </p>
+            <p>
+              Talleres: <span className="font-bold">{talleresTicketsPaid}</span>
+            </p>
+          </div>
+        </div>
+        <p>
+          Registros sin pago:{" "}
+          <span className="font-bold">
+            {users.length - (generalTicketsPaid + talleresTicketsPaid)}
+          </span>
+        </p>
+        <p>
+          Total recaudado:{" "}
+          <span className="font-bold">
+            ${totalPayments.toLocaleString()}
+          </span>
+        </p>
         <select
-          className="bg-gray-800 px-4 py-2 rounded-lg cursor-pointer"
+          className="bg-gray-800 px-4  rounded-lg cursor-pointer"
           onChange={(e) => {
             handleSortTable(e.target.value);
           }}
@@ -127,12 +180,15 @@ export default function UsersTable() {
         </select>
       </header>
       <div className="mx-20">
-        <div className="shadow-md overflow-x-scroll rounded-lg">
+        <div className="shadow-md overflow-x-auto rounded-lg">
           <table className="w-full text-sm text-left bg-gray-800 rtl:text-right text-gray-400 ">
             <thead className="text-xs text-white uppercase">
               <tr>
                 <th scope="col" className="px-6 py-3">
                   #
+                </th>
+                <th scope="col" className="px-6 py-3 w-[350px] text-center">
+                  Creación
                 </th>
                 <th scope="col" className="px-6 py-3">
                   Nombre
@@ -149,14 +205,14 @@ export default function UsersTable() {
                 <th scope="col" className="px-6 py-3 ">
                   Ocupación
                 </th>
+                <th scope="col" className="px-6 py-3 ">
+                  Talla
+                </th>
                 <th scope="col" className="px-6 py-3">
                   Teléfono
                 </th>
                 <th scope="col" className="px-6 py-3 w-[350px] text-center">
                   ID de pago
-                </th>
-                <th scope="col" className="px-6 py-3 w-[350px] text-center">
-                  Creación
                 </th>
                 <th scope="col" className="px-6 py-3">
                   Monto
@@ -172,34 +228,27 @@ export default function UsersTable() {
             <tbody>
               {users &&
                 users?.map((user: User, i: number) => (
-                  <tr
-                    key={user.id}
-                    className="border-b border-gray-200 dark:border-gray-700"
-                  >
+                  <tr key={user.id} className="border-b border-gray-700">
                     <th
                       scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+                      className="px-6 py-4 font-medium whitespace-nowrap text-white bg-gray-800"
                     >
                       {i + 1}
                     </th>
+                    <td className="px-6 py-4 text-center">
+                      {moment(user.createdAt).format("L")}
+                    </td>
                     <th
                       scope="row"
-                      className="px-6 py-4 font-medium capitalize text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+                      className="px-6 py-4 font-medium capitalize w-[500px] text-white "
                     >
                       {user.name} {user.lastName}
                     </th>
-                    <td className="px-6 py-4 w-[200px]">
-                      {user.idType} - {user.idNumber}
-                    </td>
-                    <td className="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                      {user.email}
-                    </td>
-                    <td className="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                      {user.work}
-                    </td>
-                    <td className="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                      {user.profile}
-                    </td>
+                    <td className="px-6 py-4">{user.idNumber}</td>
+                    <td className="px-6 py-4 bg-gray-800">{user.email}</td>
+                    <td className="px-6 py-4 bg-gray-800">{user.work}</td>
+                    <td className="px-6 py-4 bg-gray-800">{user.profile}</td>
+                    <td className="px-6 py-4 bg-gray-800">{user.shirtSize}</td>
                     <td className="px-6 py-4">{user.phone}</td>
                     <td className="px-2 py-4  text-center">
                       {edit && idUser === user.id ? (
@@ -237,9 +286,6 @@ export default function UsersTable() {
                       ) : (
                         <span>{user.paymentId}</span>
                       )}
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      {moment(user.createdAt).format("ll")}
                     </td>
                     <td className="px-6 py-4">
                       ${user.paymentAmount.toLocaleString()}
