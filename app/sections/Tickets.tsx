@@ -6,11 +6,11 @@ export default function Tickets() {
   return (
     <section
       id="boleta"
-      className="relative flex flex-col gap-6 py-20 gradient"
+      className="relative flex flex-col gap-6 pt-20 gradient"
     >
       {/* <div className="gradient"></div> */}
       <div>
-        <h2 className="border- border-principleViolet pl-2 border-l-4 text-lg lg:text-4xl uppercase">
+        <h2 className="border- border-principleViolet pl-2 font-bold border-l-4 text-lg lg:text-4xl uppercase">
           Adquiere tu boleto
         </h2>
         <span className="flex items-center gap-1 mt-2 font-semibold text-gray-400 uppercase">
