@@ -16,6 +16,7 @@ import Topics from "./sections/Topics";
 import Allies from "./sections/Allies";
 import SponsorsSection from "./sections/SponsorsSection";
 import Mentors from "./sections/Mentors";
+import Talleres from "./sections/Talleres";
 
 export default function Home() {
   return (
@@ -38,6 +39,9 @@ export default function Home() {
       <Wrapper styles="px-5 w-full">
         <Mentors />
       </Wrapper>
+      <Wrapper styles="px-5 w-full">
+        <Talleres />
+      </Wrapper>
       <Wrapper styles="flex flex-col gap-20 pb-20 px-5 md:pb-10">
         <Expectations />
       </Wrapper>
@@ -46,7 +50,7 @@ export default function Home() {
           <ScheduleSection />
         </Wrapper>
       </div>
-      <Wrapper styles=" flex flex-col gap-20 px-5 lg:pb-10 w-full">
+      <Wrapper styles=" flex flex-col gap-20 px-5  w-full">
         <Location />
         <Tickets />
         <FAQ />
