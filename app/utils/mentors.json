@@ -160,5 +160,23 @@
     "genre": "male",
     "description": "Con experiencia backend en Python & Go, Data Science y Data Engineering, Airflow Certified. Especialidad en deployment de modelos de Personalization & Search y Computer Vision. Experiencia compañías tecnológicas como Mercado Libre, Simetrik y Rappi."
 
+  },
+  {
+    "id": 20,
+    "name": "Winston",
+    "lastName": "Percybrooks",
+    "image": "winston.webp",
+    "genre": "male",
+    "description": "Ing. Electrónico de Universidad del Norte, con Maestría y Doctorado en Ingeniería Eléctrica y de Computación del Georgia Institute of Technology, Atlanta, USA. 12+ años de experiencia como docente e investigador, especialmente en Machine Learning, procesamiento de señales y robótica. Actualmente líder de Machine Learning en la startup de biodiversidad Pivotal Future de Cambridge, UK y co-fundador de la consultora de IA Dattain en Barranquilla, participando en el diseño, entrenamiento y despligue de modelos de deep learning para la identificación de patrones en señales de audio e imágenes."
+
+  },
+  {
+    "id": 21,
+    "name": "Ricardo",
+    "lastName": "Torres",
+    "image": "torres.webp",
+    "genre": "male",
+    "description": "Soy arquitecto que migró a tech y un apasionado de la tecnología, con más de 5 años de experiencia en diseño de experiencias de usuario e interfaces, y 2 años liderando procesos de diseño para startups."
+
   }
 ]

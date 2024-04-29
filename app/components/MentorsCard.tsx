@@ -27,7 +27,7 @@ export default function MentorsCard({
               Barranqui-IA
             </span>
 
-            <h2 className="font-bold text-center mx-auto uppercase text-2xl text-white relative z-10">
+            <h2 className="font-bold text-center mx-auto uppercase text-xl text-white relative z-10">
               {name} <br /> {lastName}
             </h2>
 
@@ -47,7 +47,7 @@ export default function MentorsCard({
           <p className="text-lg text-center uppercase font-semibold border-b pb-4">
             {genre === "female" ? "Mentora" : "Mentor"}
           </p>
-          <p className="text-xs overflow-y-scroll">{description}</p>
+          <p className="text-xs overflow-y-auto scroll">{description}</p>
           <span className="bg-gradient-to-r from-[#fe44fd] via-[#eabbbe] to-[#8731ef] inline-block text-transparent font-semibold bg-clip-text text-right pt-4 bottom-4 right-4"></span>
           <span className="bg-gradient-to-r from-[#fe44fd] via-[#eabbbe] to-[#8731ef] inline-block text-transparent font-semibold bg-clip-text text-right absolute bottom-4 right-4">
             4 y 5 de mayo
