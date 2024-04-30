@@ -1,7 +1,6 @@
 import { EmailTemplate } from "../../components/emailTemplate";
 import { Resend } from "resend";
 import prisma from "@/lib/prisma";
-import { User } from "@/lib/types";
 
 interface Params {
   params: { id: string };
@@ -28,7 +27,7 @@ export async function POST(request: Request, { params }: Params) {
   }
 }
 
-export async function sendMail(user: User, type: string) {
+export async function sendMail(user: any, type: string) {
   const data = await resend.emails.send({
     from: "Barranqui-IA <contacto@fundacioncodigoabierto.com>",
     to: [`${user?.email}`],

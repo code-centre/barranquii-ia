@@ -5,21 +5,28 @@ import { sendMail } from "@/app/api/send/route";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
+    const transaction = body.data.transaction;
 
     switch (body.event) {
       case "transaction.updated":
-        const paymentLinkId = body.payment_link_id;
+        const paymentLinkId = transaction.payment_link_id;
 
-        const updatedUser = await prisma.user.update({
+        const user = await prisma.user.findFirst({
           where: {
             paymentLinkId: paymentLinkId,
           },
+        });
+
+        const updatedUser = await prisma.user.update({
+          where: {
+            id: user?.id,
+          },
           data: {
-            paymentId: body.data.transaction.id,
+            paymentId: transaction.id,
           },
         });
 
-        if (updatedUser) {
+        if (updatedUser && transaction.status === "APPROVED") {
           await sendMail(updatedUser, updatedUser.ticketType);
         }
 
