@@ -27,7 +27,7 @@ export async function POST(request: Request, { params }: Params) {
   }
 }
 
-export async function sendMail(user: any, type: string) {
+async function sendMail(user: any, type: string) {
   const data = await resend.emails.send({
     from: "Barranqui-IA <contacto@fundacioncodigoabierto.com>",
     to: [`${user?.email}`],

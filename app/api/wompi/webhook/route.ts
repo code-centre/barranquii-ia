@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
 import prisma from "@/lib/prisma";
-import { sendMail } from "@/app/api/send/route";
+import { EmailTemplate } from "../../../components/emailTemplate";
+
+const resend = new Resend(process.env.API_KEY_RESEND);
 
 export async function POST(request: Request) {
   try {
@@ -44,4 +47,20 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
   }
+}
+
+async function sendMail(user: any, type: string) {
+  const data = await resend.emails.send({
+    from: "Barranqui-IA <contacto@fundacioncodigoabierto.com>",
+    to: [`${user?.email}`],
+    subject:
+      type === "TALLER"
+        ? "Boleto Limitado - Hackatón Barranqui-IA"
+        : "Boleta General - Hackatón Barranqui-IA",
+    react: EmailTemplate({
+      name: `${user?.name} ${user?.lastName}`,
+      type,
+    }),
+    text: "",
+  });
 }
