@@ -44,8 +44,8 @@ export default function Allies() {
           loading="lazy"
         />
         <Image
-          className="w-[200px] object-contain"
-          src="/logos/feanware.webp"
+          className="w-[250px] object-contain"
+          src="/logos/feanware.png"
           height={47}
           width={150}
           alt="Logo de Feanware"
@@ -70,6 +70,14 @@ export default function Allies() {
         <Image
           className="rounded-full"
           src="/logos/js-community.webp"
+          height={47}
+          width={150}
+          alt="Logo de JS Barranquilla"
+          loading="lazy"
+        />
+        <Image
+          className="rounded-full"
+          src="/logos/aws.png"
           height={47}
           width={150}
           alt="Logo de JS Barranquilla"
@@ -119,6 +127,14 @@ export default function Allies() {
         <Image
           className=""
           src="/logos/innflue.webp"
+          height={47}
+          width={150}
+          alt="Logo de 51 Labs"
+          loading="lazy"
+        />
+        <Image
+          className=""
+          src="/logos/rtb.jpg"
           height={47}
           width={150}
           alt="Logo de 51 Labs"
