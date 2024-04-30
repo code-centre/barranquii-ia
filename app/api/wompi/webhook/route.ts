@@ -17,20 +17,24 @@ export async function POST(request: Request) {
           },
         });
 
-        const updatedUser = await prisma.user.update({
-          where: {
-            id: user?.id,
-          },
-          data: {
-            paymentId: transaction.id,
-          },
-        });
+        if (transaction.status === "APPROVED" && user) {
+          const updatedUser = await prisma.user.update({
+            where: {
+              id: user?.id,
+            },
+            data: {
+              paymentId: transaction.id,
+            },
+          });
 
-        if (updatedUser && transaction.status === "APPROVED") {
-          await sendMail(updatedUser, updatedUser.ticketType);
+          if (updatedUser) {
+            await sendMail(updatedUser, updatedUser.ticketType);
+          }
+
+          return NextResponse.json({ updatedUser }, { status: 200 });
         }
 
-        return NextResponse.json({ updatedUser }, { status: 200 });
+        return NextResponse.json({ status: 404 });
 
       default:
         return NextResponse.json({ status: 200 });
