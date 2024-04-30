@@ -15,6 +15,7 @@ export default function UsersTable() {
   const [generalTicketsPaid, SetGeneralTicketsPaid] = useState(0);
   const [talleresTicketsPaid, setTalleresTicketsPaid] = useState(0);
   const [totalPayments, setTotalPayments] = useState(0);
+  const [totalShirtSize, setTotalShirtSize] = useState([]);
 
   const [paymentId, setPaymentId] = useState("");
 
@@ -47,6 +48,26 @@ export default function UsersTable() {
         (user: User) => user.paymentId !== null && user.paymentAmount === 40000
       );
 
+      let arrayOfSizes: any = [];
+
+      users
+        ?.filter(
+          (user: User) => user.paymentId !== null && user.paymentAmount > 40000
+        )
+        ?.forEach((user: User) => {
+          if (
+            !arrayOfSizes.find((objeto: any) => objeto.size === user.shirtSize)
+          ) {
+            arrayOfSizes.push({ size: user.shirtSize, count: 1 });
+          } else {
+            let update = arrayOfSizes.find(
+              (objeto: any) => objeto.size === user.shirtSize
+            );
+            update.count += 1;
+          }
+        });
+
+      setTotalShirtSize(arrayOfSizes);
       SetGeneralTicketsPaid(totalGeneralTicketsPaid.length);
       setTalleresTicketsPaid(totalTicketsTalleresPaid.length);
       setUsers(sortedUsers);
@@ -163,10 +184,20 @@ export default function UsersTable() {
         </p>
         <p>
           Total recaudado:{" "}
-          <span className="font-bold">
-            ${totalPayments.toLocaleString()}
-          </span>
+          <span className="font-bold">${totalPayments.toLocaleString()}</span>
         </p>
+        <div className="relative group">
+          <p className="cursor-pointer">
+            Tallas: <span className="font-bold">{generalTicketsPaid}</span>
+          </p>
+          <div className="absolute hidden group-hover:block  bg-gray-800 w-[200px] py-2 px-4 border border-gray-500 rounded-md mt-2">
+            {totalShirtSize.map((size: any) => (
+              <p key={size.size}>
+                {size.size}: {size.count}
+              </p>
+            ))}
+          </div>
+        </div>
         <select
           className="bg-gray-800 px-4  rounded-lg cursor-pointer"
           onChange={(e) => {
