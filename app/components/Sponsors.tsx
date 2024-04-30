@@ -17,7 +17,17 @@ export default function Sponsors() {
       <li>
         <Image
           className="w-[150px]"
-          src="/i-city.webp"
+          src="/logos/ultracem.webp"
+          height={47}
+          width={150}
+          alt="Logo de Immersive city"
+          loading="lazy"
+        />
+      </li>
+      <li>
+        <Image
+          className="w-[150px] img"
+          src="/logos/atlanticonnect.png"
           height={47}
           width={150}
           alt="Logo de Immersive city"

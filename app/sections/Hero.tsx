@@ -9,11 +9,19 @@ export default function Hero() {
     <section className="flex flex-col gap-7 md:gap-10 text-center">
       <div className="flex flex-col gap-3 md:gap-2">
         <div>
-          {/* <h4 className="my-20 font-bold font-mono text-2xl uppercase tracking-widest">
-            Fundación <br />
-            Código abierto
-          </h4> */}
-          <Image className="my-20 mx-auto" height={150} width={200} src="/bwai.png" alt="Logo del Build With AI" />
+          <div className="flex my-20 items-center justify-center gap-6 md:gap-10 flex-wrap">
+            <h4 className=" font-bold font-mono text-2xl uppercase tracking-widest">
+              Fundación <br />
+              Código abierto
+            </h4>
+            <Image
+              className=""
+              height={150}
+              width={200}
+              src="/bwai.webp"
+              alt="Logo del Build With AI"
+            />
+          </div>
           <h1 className="font-bold text-5xl md:text-6xl xl:text-8xl bg-gradient-to-r from-[#fe44fd] via-[#eabbbe] to-[#8731ef] inline-block text-transparent bg-clip-text">
             Barranqui-IA
           </h1>

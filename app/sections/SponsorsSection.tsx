@@ -13,7 +13,7 @@ export default function SponsorsSection() {
       <ul className="flex flex-col items-center justify-center mt-10 md:flex-wrap md:flex-row gap-10 md:gap-20">
         <li>
           <Image
-            className="w-[200px] h-[60px]"
+            className="w-[150px] h-[80px] object-contain"
             src="/google.png"
             height={47}
             width={150}
@@ -23,7 +23,17 @@ export default function SponsorsSection() {
         <li>
           <Image
             className="w-[150px]"
-            src="/i-city.webp"
+            src="/logos/ultracem.webp"
+            height={47}
+            width={150}
+            alt="Logo de Immersive city"
+            loading="lazy"
+          />
+        </li>
+        <li>
+          <Image
+            className="w-[180px] img"
+            src="/logos/atlanticonnect.png"
             height={47}
             width={150}
             alt="Logo de Immersive city"

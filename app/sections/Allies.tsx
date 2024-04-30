@@ -44,6 +44,30 @@ export default function Allies() {
           loading="lazy"
         />
         <Image
+          className="w-[200px] object-contain"
+          src="/logos/feanware.webp"
+          height={47}
+          width={150}
+          alt="Logo de Feanware"
+          loading="lazy"
+        />
+        <Image
+          className="w-[200px] object-contain"
+          src="/logos/mangus.webp"
+          height={47}
+          width={150}
+          alt="Logo de Mangus"
+          loading="lazy"
+        />
+        <Image
+          className="w-[200px] object-contain"
+          src="/logos/caribe-dev.svg"
+          height={47}
+          width={150}
+          alt="Logo de Caribe Dev"
+          loading="lazy"
+        />
+        <Image
           className="rounded-full"
           src="/logos/js-community.webp"
           height={47}
