@@ -3,13 +3,15 @@ import * as React from "react";
 
 interface EmailTemplateProps {
   name: string;
+  type: string;
 }
 
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   name,
+  type,
 }) => (
   <>
-    <div style={{ width: 650, marginBottom: 50, fontSize: 16, color: '#000'}}>
+    <div style={{ width: 650, marginBottom: 50, fontSize: 16, color: "#000" }}>
       <h1>¡Hola, {name}!</h1>
       <p>
         Estamos emocionados de darte la bienvenida a Barranqui-IA, el espacio
@@ -30,9 +32,9 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         llevar tus habilidades al próximo nivel.
       </p>
       <p>
-        El evento tendrá lugar el 4 y 5 de mayo y comenzará a las 8:00 AM.
-        Asegúrate de llegar a tiempo para aprovechar cada minuto de esta
-        experiencia enriquecedora.
+        {type === "TALLER"
+          ? "El Hackatón tendrá lugar el 4 y 5 de mayo, con tu boleto tienes acceso para los talleres del 4 de mayo desde las 2 pm hasta las 7 pm. Asegúrate de llegar a tiempo para aprovechar cada minuto de esta experiencia enriquecedora."
+          : "El evento tendrá lugar el 4 y 5 de mayo y comenzará a las 8:00 AM. Asegúrate de llegar a tiempo para aprovechar cada minuto de esta experiencia enriquecedora."}
       </p>
       <p>
         Adjunto a este correo encontrarás tu boleto para el evento. Guarda este
@@ -46,8 +48,11 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
       </p>
       <p>Saludos cordiales,</p>
       <div>
-        <p style={{margin: 0}}>Anuar Harb</p>
-        <p style={{marginTop: 0}}>Organizador de <span style={{ fontWeight: "bold"}}>Barranqui-IA</span></p>
+        <p style={{ margin: 0 }}>Anuar Harb</p>
+        <p style={{ marginTop: 0 }}>
+          Organizador de{" "}
+          <span style={{ fontWeight: "bold" }}>Barranqui-IA</span>
+        </p>
       </div>
     </div>
     <div
@@ -124,7 +129,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
             fontSize: 16,
           }}
         >
-          Empezamos 08:00 a.m.
+          {type === "TALLER" ? "Empezamos 2pm" : "Empezamos 08:00 am"}
         </p>
       </section>
       <footer>
@@ -172,7 +177,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
                 margin: 0,
               }}
             >
-              Evento
+              {type === "TALLER" ? "Entrada Limitada" : "Entrada General"}
             </h2>
             <p
               style={{

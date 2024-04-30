@@ -10,14 +10,15 @@ export interface User {
   email: String;
   profile: String;
   work: String;
-  shirtSize: ShirtSize;
-  food: FoodRestriction;
-  emergencyName: String;
-  emergencyPhone: String;
-  isStaying: String;
+  shirtSize?: ShirtSize;
+  food?: FoodRestriction;
+  emergencyName?: String;
+  emergencyPhone?: String;
+  isStaying?: String;
   paymentId?: String;
   paymentAmount: number;
   ticketType: TicketType;
+  paymentLinkId?: String;
 }
 
 export enum IdType {

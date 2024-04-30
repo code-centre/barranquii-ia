@@ -64,6 +64,12 @@ export default function Form() {
   }, [discountCoupon]);
 
   const onSubmit: SubmitHandler<Inputs> = async (data: Inputs) => {
+    let paymentLink;
+    if (ticketType === "taller") {
+      paymentLink = await createPaymentId("taller", 40000);
+    } else {
+      paymentLink = await createPaymentId("general", price);
+    }
     await createUser(
       {
         name: data.name,
@@ -80,26 +86,13 @@ export default function Form() {
         emergencyPhone: data.phoneEmergency,
         isStaying: sleepAtPlace,
         paymentAmount: ticketType !== "taller" ? price : 40000,
-        ticketType: "GENERAL",
+        ticketType: ticketType !== "taller" ? "GENERAL" : "TALLER",
+        paymentLinkId: paymentLink.id,
       },
       ticketType
     );
 
-    if (ticketType === "taller") {
-      router.push(`${process.env.NEXT_PUBLIC_LINK_TALLERES_WOMPI}`);
-      return;
-    }
-
-    switch (discountCoupon.toUpperCase()) {
-      case process.env.NEXT_PUBLIC_DiSCOUNT_COUPON_UNINORTE:
-        router.push(`${process.env.NEXT_PUBLIC_LINK_UNINORTE_WOMPI}`);
-        break;
-      case process.env.NEXT_PUBLIC_DiSCOUNT_COUPON:
-        router.push(`${process.env.NEXT_PUBLIC_LINK_PREVENTA_WOMPI}`);
-        break;
-      default:
-        router.push(`${process.env.NEXT_PUBLIC_LINK_WOMPI}`);
-    }
+    router.push(`https://checkout.wompi.co/l/${paymentLink.id}`);
   };
 
   return (
@@ -426,6 +419,36 @@ const createUser = async (body: any, ticketType: string | null) => {
 
     localStorage.setItem("Id_user", JSON.stringify(user.newUser.id));
     localStorage.setItem("ticketType", JSON.stringify(ticketType));
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const createPaymentId = async (type: string, amount: number) => {
+  try {
+    const resp = await fetch(`https://production.wompi.co/v1/payment_links`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_WOMPI_SECRET_KEY}`,
+      },
+      body: JSON.stringify({
+        name:
+          type === "taller"
+            ? "Entrada Limitada - Hackatón Barranqui-IA"
+            : "Entrada General - Hackatón Barranqui-IA",
+        description:
+          type === "taller"
+            ? "Entrada a los 6 talleres especializados de Barranqui-IA, dictados por Google Developer Experts, el sábado 4 de 2pm a 7pm."
+            : "Entrada General para participar en Barranqui-IA, el primer hackatón de inteligencia a artificial en el Caribe. ¡Esta es tu oportunidad para retarte a ti mismo y mostrarle al mundo lo que puedes crear!",
+        single_use: true,
+        collect_shipping: false,
+        amount_in_cents: amount * 100,
+        currency: "COP",
+        redirect_url: "http://barranquiia.com/tickets/confirmacion",
+      }),
+    });
+    const createdLink = await resp.json();
+    return createdLink.data;
   } catch (err) {
     console.log(err);
   }

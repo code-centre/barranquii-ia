@@ -14,23 +14,24 @@ datasource db {
 }
 
 model User {
-  id             Int             @id @default(autoincrement())
-  createdAt      DateTime        @default(now())
-  updatedAt      DateTime        @updatedAt
-  name           String          @db.VarChar(255)
-  lastName       String          @db.VarChar(255)
+  id             Int              @id @default(autoincrement())
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  name           String           @db.VarChar(255)
+  lastName       String           @db.VarChar(255)
   idType         IdType
-  idNumber       String          @db.VarChar(255)
-  phone          String          @db.VarChar(255)
-  email          String          @db.VarChar(255)
-  profile        String          @db.VarChar(255)
-  work           String          @db.VarChar(255)
-  shirtSize      ShirtSize
-  food           FoodRestriction
-  emergencyName  String          @db.VarChar(255)
-  emergencyPhone String          @db.VarChar(255)
-  isStaying      String
-  paymentId      String?         @db.VarChar(255)
+  idNumber       String           @db.VarChar(255)
+  phone          String           @db.VarChar(255)
+  email          String           @db.VarChar(255)
+  profile        String           @db.VarChar(255)
+  work           String           @db.VarChar(255)
+  shirtSize      ShirtSize?
+  food           FoodRestriction?
+  emergencyName  String?          @db.VarChar(255)
+  emergencyPhone String?          @db.VarChar(255)
+  isStaying      String?
+  paymentId      String?          @db.VarChar(255)
+  paymentLinkId  String?          @db.VarChar(255)
   paymentAmount  Int
   ticketType     TicketType
 }
@@ -38,6 +39,7 @@ model User {
 enum TicketType {
   GENERAL
   COMPLETO
+  TALLER
 }
 
 enum IdType {
