@@ -27,6 +27,24 @@ export default function Allies() {
           alt="Logo de Gobernación del Atlántico"
           loading="lazy"
         />
+        <div className="bg-white px-3 py-2 rounded-md">
+          <Image
+            className=""
+            src="/logos/logo_python_colombia.jpg"
+            height={47}
+            width={150}
+            alt="Logo de Python Colombia"
+            loading="lazy"
+          />
+        </div>
+        <Image
+          className=""
+          src="/logos/pybaq-logo.webp"
+          height={47}
+          width={150}
+          alt="Logo de Python Barranquilla"
+          loading="lazy"
+        />
         <Image
           className=" rounded-full"
           src="/logos/fof.webp"
@@ -109,14 +127,6 @@ export default function Allies() {
           loading="lazy"
         />
         <Image
-          className=""
-          src="/logos/pybaq-logo.webp"
-          height={47}
-          width={150}
-          alt="Logo de Python Barranquilla"
-          loading="lazy"
-        />
-        <Image
           className=" rounded-full"
           src="/logos/51-labs.webp"
           height={47}
@@ -129,7 +139,7 @@ export default function Allies() {
           src="/logos/innflue.webp"
           height={47}
           width={150}
-          alt="Logo de 51 Labs"
+          alt="Logo de Innflue"
           loading="lazy"
         />
         <Image
@@ -137,7 +147,7 @@ export default function Allies() {
           src="/logos/rtb.jpg"
           height={47}
           width={150}
-          alt="Logo de 51 Labs"
+          alt="Logo RTB"
           loading="lazy"
         />
       </div>
