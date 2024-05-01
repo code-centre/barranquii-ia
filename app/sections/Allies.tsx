@@ -95,6 +95,14 @@ export default function Allies() {
         />
         <Image
           className="rounded-full"
+          src="/logos/life-your-coaching.jpg"
+          height={47}
+          width={150}
+          alt="Logo de Life Your Coaching"
+          loading="lazy"
+        />
+        <Image
+          className="rounded-full"
           src="/logos/aws.png"
           height={47}
           width={150}
