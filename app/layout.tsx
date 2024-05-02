@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "Participa en el principal evento de tecnología e inteligencia artificial en Barranquilla. Talleres, hackatón y mucho más.",
     siteName: "Barranqui-IA",
     images: [{
-      url: "http://www.barranquiia.com/opengraph-image.jpg",
+      url: "https://www.barranquiia.com/opengraph-image.jpg",
     }],
     locale: "es_ES"
   }
