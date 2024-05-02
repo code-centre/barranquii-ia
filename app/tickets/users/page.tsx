@@ -155,6 +155,15 @@ export default function UsersTable() {
       });
       setUsers(sortedUsers);
     }
+
+    if (typeSort === "withoutPaymentId") {
+      let sortedUsers = [...users].filter((user) => user.paymentId === null);
+      setUsers(sortedUsers);
+    }
+
+    if (typeSort === "none") {
+      getUsers()
+    }
   };
 
   return (
@@ -208,6 +217,7 @@ export default function UsersTable() {
           <option value="date">Fecha</option>
           <option value="amount">Monto</option>
           <option value="name">Nombre</option>
+          <option value="withoutPaymentId">Sin id de pago</option>
         </select>
       </header>
       <div className="mx-20">
