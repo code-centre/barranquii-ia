@@ -178,5 +178,22 @@
     "genre": "male",
     "description": "Soy arquitecto que migró a tech y un apasionado de la tecnología, con más de 5 años de experiencia en diseño de experiencias de usuario e interfaces, y 2 años liderando procesos de diseño para startups."
 
+  },
+  {
+    "id": 22,
+    "name": "Dayan",
+    "lastName": "Mendez",
+    "image": "dayan.webp",
+    "genre": "male",
+    "description": "Desarrollador Python con experiencia en proyectos de Inteligencia artificial, computer vision y AWS hace más de 5 años. Ingeniero electrónico y Magister de la universidad del Norte."
+
+  },
+  {
+    "id": 23,
+    "name": "Hec",
+    "lastName": "Ter",
+    "image": "hecter.webp",
+    "genre": "male",
+    "description": "Ingeniero de Sistemas con una Maestría en Gestión de Proyectos, con experiencia en el desarrollo de software y en la enseñanza en la Universidad Simón Bolívar. Posee certificaciones internacionales, incluyendo KMP, TKP, CAPM®, GPM-b™, DASM® y PMP®. Es voluntario fundador del Capítulo PMI Caribe y actualmente se desempeña como secretario en la sección de IEEE Caribbean Colombia Section, además de ejercer como presidente del capítulo IEEE de Computer Society en la misma sección."
   }
 ]
