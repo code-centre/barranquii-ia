@@ -15,6 +15,7 @@ export default function UsersTable() {
   const [generalTicketsPaid, SetGeneralTicketsPaid] = useState(0);
   const [talleresTicketsPaid, setTalleresTicketsPaid] = useState(0);
   const [totalPayments, setTotalPayments] = useState(0);
+  const [usersWithoutPaymentId, setUsersWithoutPaymentId] = useState(0)
   const [totalShirtSize, setTotalShirtSize] = useState([]);
 
   const [paymentId, setPaymentId] = useState("");
@@ -28,6 +29,10 @@ export default function UsersTable() {
         }
       );
       const { users } = await resp.json();
+
+      let getUsersWithoutPaymentId = users.filter((user: User) => user.paymentId === null).length
+      setUsersWithoutPaymentId(getUsersWithoutPaymentId)
+      
 
       let sortedUsers = users?.sort(
         (a: User, b: User) =>
@@ -188,7 +193,7 @@ export default function UsersTable() {
         <p>
           Registros sin pago:{" "}
           <span className="font-bold">
-            {users.length - (generalTicketsPaid + talleresTicketsPaid)}
+            {usersWithoutPaymentId}
           </span>
         </p>
         <p>
