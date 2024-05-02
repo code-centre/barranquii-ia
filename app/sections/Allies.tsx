@@ -38,6 +38,41 @@ export default function Allies() {
           loading="lazy"
         />
         <Image
+          className=""
+          src="/logos/innflue.webp"
+          height={47}
+          width={150}
+          alt="Logo de Innflue"
+          loading="lazy"
+        />
+        <div className="bg-white px-3 py-2 rounded-md">
+          <Image
+            className="w-[200px]"
+            src="/logos/startup-huddle.webp"
+            height={47}
+            width={150}
+            alt="Logo de Startup Huddle"
+            loading="lazy"
+          />
+        </div>
+        <Image
+          className="w-[200px] object-contain"
+          src="/logos/caribe-dev.svg"
+          height={47}
+          width={150}
+          alt="Logo de Caribe Dev"
+          loading="lazy"
+        />
+        <Image
+          className=" rounded-full"
+          src="/logos/51-labs.webp"
+          height={47}
+          width={150}
+          alt="Logo de 51 Labs"
+          loading="lazy"
+        />
+
+        <Image
           className=" object-cover "
           src="/logos/cs-blanco.webp"
           height={47}
@@ -62,11 +97,11 @@ export default function Allies() {
           loading="lazy"
         />
         <Image
-          className="w-[250px] object-contain"
-          src="/logos/feanware.png"
+          className="rounded-full"
+          src="/logos/js-community.webp"
           height={47}
           width={150}
-          alt="Logo de Feanware"
+          alt="Logo de JS Barranquilla"
           loading="lazy"
         />
         <Image
@@ -78,21 +113,14 @@ export default function Allies() {
           loading="lazy"
         />
         <Image
-          className="w-[200px] object-contain"
-          src="/logos/caribe-dev.svg"
+          className="w-[250px] object-contain"
+          src="/logos/feanware.png"
           height={47}
           width={150}
-          alt="Logo de Caribe Dev"
+          alt="Logo de Feanware"
           loading="lazy"
         />
-        <Image
-          className="rounded-full"
-          src="/logos/js-community.webp"
-          height={47}
-          width={150}
-          alt="Logo de JS Barranquilla"
-          loading="lazy"
-        />
+        
         <Image
           className="rounded-full"
           src="/logos/life-your-coaching.jpg"
@@ -119,35 +147,11 @@ export default function Allies() {
           loading="lazy"
         />
         <Image
-          className="w-[200px]"
-          src="/logos/startup-huddle.webp"
-          height={47}
-          width={150}
-          alt="Logo de Startup Huddle"
-          loading="lazy"
-        />
-        <Image
           className=" rounded-full"
           src="/logos/wie_group.webp"
           height={47}
           width={150}
           alt="Logo de Wie Group"
-          loading="lazy"
-        />
-        <Image
-          className=" rounded-full"
-          src="/logos/51-labs.webp"
-          height={47}
-          width={150}
-          alt="Logo de 51 Labs"
-          loading="lazy"
-        />
-        <Image
-          className=""
-          src="/logos/innflue.webp"
-          height={47}
-          width={150}
-          alt="Logo de Innflue"
           loading="lazy"
         />
         <Image

@@ -10,39 +10,10 @@ export default function SponsorsSection() {
       <h2 className="border- border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
         Patrocinadores
       </h2>
-      <ul className="flex flex-col items-center justify-center mt-10 md:flex-wrap md:flex-row gap-10 md:gap-20">
+      <ul className="flex flex-col items-center justify-center mt-10 md:flex-wrap md:flex-row gap-10 md:gap-10">
         <li>
           <Image
-            className="w-[150px] h-[80px] object-contain"
-            src="/google.png"
-            height={47}
-            width={150}
-            alt="Logo de Google"
-          />
-        </li>
-        <li>
-          <Image
-            className="w-[150px]"
-            src="/logos/ultracem.webp"
-            height={47}
-            width={150}
-            alt="Logo de Ultracem city"
-            loading="lazy"
-          />
-        </li>
-        <li>
-          <Image
-            className="w-[180px]"
-            src="/logos/neuron.png"
-            height={47}
-            width={150}
-            alt="Logo de neuron"
-            loading="lazy"
-          />
-        </li>
-        <li>
-          <Image
-            className="w-[180px] img"
+            className="w-[240px] img"
             src="/logos/atlanticonnect.png"
             height={47}
             width={150}
@@ -52,12 +23,31 @@ export default function SponsorsSection() {
         </li>
         <li>
           <Image
-            className="w-[230px]"
+            className="w-[240px]"
+            src="/logos/ultracem.webp"
+            height={47}
+            width={150}
+            alt="Logo de Ultracem city"
+            loading="lazy"
+          />
+        </li>
+        <li>
+          <Image
+            className="w-[240px]"
             src="/uninorte.webp"
             height={47}
             width={230}
             alt="Logo de la universidad de la norte"
             loading="lazy"
+          />
+        </li>
+        <li>
+          <Image
+            className="w-[150px] h-[80px] object-contain"
+            src="/google.png"
+            height={47}
+            width={150}
+            alt="Logo de Google"
           />
         </li>
         <li>
@@ -80,15 +70,39 @@ export default function SponsorsSection() {
             />
           </figure>
         </li>
+
         <li>
           <Image
-            className="w-[250px] h-[60px] object-contain"
-            src="/logos/gorilla.webp"
+            className="w-[200px]"
+            src="/logos/tmt.png"
             height={47}
             width={150}
-            alt="Logo de Gorilla Logic"
+            alt="Logo de TMT"
+            loading="lazy"
           />
         </li>
+        <div className="flex gap-10 items-center">
+          <li>
+            <Image
+              className="w-[180px]"
+              src="/logos/neuron.png"
+              height={47}
+              width={150}
+              alt="Logo de neuron"
+              loading="lazy"
+            />
+          </li>
+
+          <li>
+            <Image
+              className="w-[250px] h-[60px] object-contain"
+              src="/logos/gorilla.webp"
+              height={47}
+              width={150}
+              alt="Logo de Gorilla Logic"
+            />
+          </li>
+        </div>
       </ul>
     </section>
   );
