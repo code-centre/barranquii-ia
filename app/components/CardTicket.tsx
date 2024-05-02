@@ -63,8 +63,16 @@ export default function CardTicket({
           </h3>
         </div>
         <div className="flex flex-col items-center gap-5 justify-center mt-7">
-          {mode === "general" && generalTicketsSold === TOTAL_TICKETS_TO_SELL ? (
-            <button disabled className="xl:px-5 py-2 xl:py-3 rounded-lg text-[13px] xl:text-sm uppercase bg-gray-500">Comprar</button>
+          {mode === "general" ? (
+            <>
+              <button
+                disabled
+                className="xl:px-5 py-2 xl:py-3 rounded-lg text-[13px] xl:text-sm uppercase bg-gray-500"
+              >
+                Comprar
+              </button>
+              <p className="font-bold">¡Entradas agotadas!</p>
+            </>
           ) : (
             <Link
               href={`/tickets/form?mode=${mode}`}
@@ -73,11 +81,6 @@ export default function CardTicket({
             >
               Comprar
             </Link>
-          )}
-
-          {mode === "general" && generalTicketsSold && generalTicketsSold < TOTAL_TICKETS_TO_SELL && <p className="font-bold">¡Solo hay {TOTAL_TICKETS_TO_SELL - generalTicketsSold - 3} boletas disponible!</p>}
-          {mode === "general" && generalTicketsSold === TOTAL_TICKETS_TO_SELL && (
-            <p className="font-bold">¡Entradas agotadas!</p>
           )}
         </div>
       </div>
