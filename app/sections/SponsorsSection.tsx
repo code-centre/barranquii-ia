@@ -26,7 +26,17 @@ export default function SponsorsSection() {
             src="/logos/ultracem.webp"
             height={47}
             width={150}
-            alt="Logo de Immersive city"
+            alt="Logo de Ultracem city"
+            loading="lazy"
+          />
+        </li>
+        <li>
+          <Image
+            className="w-[180px]"
+            src="/logos/neuron.png"
+            height={47}
+            width={150}
+            alt="Logo de neuron"
             loading="lazy"
           />
         </li>
