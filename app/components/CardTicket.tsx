@@ -63,25 +63,13 @@ export default function CardTicket({
           </h3>
         </div>
         <div className="flex flex-col items-center gap-5 justify-center mt-7">
-          {mode === "general" ? (
-            <>
-              <button
-                disabled
-                className="xl:px-5 py-2 xl:py-3 rounded-lg text-[13px] xl:text-sm uppercase bg-gray-500"
-              >
-                Comprar
-              </button>
-              <p className="font-bold">¡Entradas agotadas!</p>
-            </>
-          ) : (
-            <Link
-              href={`/tickets/form?mode=${mode}`}
-              className={`hover:brightness-110 bg-principleViolet px-5 xl:px-5 py-2 xl:py-3 rounded-lg text-[13px] xl:text-sm uppercase`}
-              onClick={() => sendGTMEvent({ event: "purchase", value: 1 })}
-            >
-              Comprar
-            </Link>
-          )}
+          <button
+            disabled
+            className="xl:px-5 py-2 xl:py-3 rounded-lg text-[13px] xl:text-sm uppercase bg-gray-500"
+          >
+            Comprar
+          </button>
+          <p className="font-bold">¡Entradas agotadas!</p>
         </div>
       </div>
     </div>

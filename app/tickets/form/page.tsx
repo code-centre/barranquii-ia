@@ -63,6 +63,10 @@ export default function Form() {
     calculatePrice();
   }, [discountCoupon]);
 
+  useEffect(() => {
+    router.push('/')
+  }, [])
+
   const onSubmit: SubmitHandler<Inputs> = async (data: Inputs) => {
     let paymentLink = await createPaymentId("taller", 40000);
     await createUser(
