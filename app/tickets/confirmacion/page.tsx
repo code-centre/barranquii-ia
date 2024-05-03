@@ -10,7 +10,7 @@ import React, { Suspense, useEffect, useState } from "react";
 export default function ThankYouPage() {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
-  const [ticketType, setTicketType] = useState("");
+  const [ticketType, setTicketType] = useState("taller");
   const [statusTransaction, setStatusTransaction] = useState("APPROVED");
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(true);
@@ -36,12 +36,6 @@ export default function ThankYouPage() {
 
   useEffect(() => {
     if (statusTransaction === "APPROVED") {
-      const ticketTypeFromStorage = localStorage.getItem("ticketType");
-
-      if (ticketTypeFromStorage) {
-        setTicketType(ticketTypeFromStorage);
-      }
-
       const updateUser = async () => {
         try {
           const resp = await fetch(
