@@ -22,12 +22,13 @@ export default function Ganadores() {
                     />
                 </div>
 
-                <Link
+                <a target="_blank"
                     href="https://barranquiia.devpost.com/project-gallery"
-                    className="text-purple-500 hover:text-purple-700 transition"
-                >
+                    className="text-purple-500 hover:text-purple-700 transition">
+
                     ¿Quieres ver todos los proyectos? Da click aquí
-                </Link>
+                </a>
+
 
             </div>
         </section>
