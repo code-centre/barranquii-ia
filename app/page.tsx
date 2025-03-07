@@ -17,54 +17,25 @@ import Allies from "./sections/Allies";
 import SponsorsSection from "./sections/SponsorsSection";
 import Mentors from "./sections/Mentors";
 import Talleres from "./sections/Talleres";
+import Hero2 from "./sections/Hero2";
+import Testimonios from "./sections/Testimonios";
+import Preinscribete from "./sections/Preinscribete";
+import Ganadores from "./sections/Ganadores";
 
 export default function Home() {
   return (
-    <main className="flex flex-col py-10 min-h-screen">
-      <Wrapper styles="flex flex-col gap-20 px-5">
+    <main className="gap-20 flex flex-col py-10 min-h-screen">
+      <div>
         <Hero />
-      </Wrapper>
-      <Wrapper styles="px-5 w-full">
         <Sponsors />
-      </Wrapper>
-      <div className="bg-image">
-        <Wrapper styles="flex flex-col gap-20 lg:gap-32 px-5 md:pb-10">
-          <WhatIs />
-          <HowIs />
-        </Wrapper>
       </div>
-      <Wrapper styles="px-5">
-        <Topics />
-      </Wrapper>
-      <Wrapper styles="px-5 w-full">
-        <Mentors />
-      </Wrapper>
-      <Wrapper styles="px-5 w-full">
-        <Talleres />
-      </Wrapper>
-      <Wrapper styles="flex flex-col gap-20 pb-20 px-5 md:pb-10">
-        <Expectations />
-      </Wrapper>
-      <div className="bg-[#1a1a1a]">
-        <Wrapper styles=" pb-12 lg:pb-24 px-5">
-          <ScheduleSection />
-        </Wrapper>
-      </div>
-      <Wrapper styles=" flex flex-col gap-20 px-5  w-full">
-        <Location />
-        <Tickets />
-        <FAQ />
-      </Wrapper>
-      {/* <LearnInCommunity /> */}
-      <Wrapper styles="px-5 w-full">
-        <SponsorsSection />
-      </Wrapper>
-      <Wrapper styles=" flex flex-col px-5">
-        <BeASponsor />
-      </Wrapper>
-      <Wrapper styles="px-5 w-full">
-        <Allies />
-      </Wrapper>
+      <Hero2 />
+      <Testimonios />
+      <Talleres />
+      <Ganadores />
+      <Preinscribete />
+      <Mentors />
+      <Allies />
     </main>
   );
 }

@@ -1,31 +1,98 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import mentors from "../utils/mentors.json";
 import MentorsCard from "../components/MentorsCard";
 
 export default function Mentors() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [mentorsPerPage, setMentorsPerPage] = useState(12); // Default para desktop
+
+  useEffect(() => {
+    const updateMentorsPerPage = () => {
+      if (window.innerWidth < 640) {
+        setMentorsPerPage(4); // Móviles (2 columnas x 2 filas)
+      } else if (window.innerWidth < 1024) {
+        setMentorsPerPage(6); // Tablets (3 columnas x 2 filas)
+      } else {
+        setMentorsPerPage(12); // Escritorio (4 o 6 columnas x 2 filas)
+      }
+    };
+
+    updateMentorsPerPage();
+    window.addEventListener("resize", updateMentorsPerPage);
+    return () => window.removeEventListener("resize", updateMentorsPerPage);
+  }, []);
+
+  const totalSlides = Math.ceil(mentors.length / mentorsPerPage);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? totalSlides - 1 : prevIndex - 1
+    );
+  };
+
   return (
-    <section id="mentors" className="flex flex-col gap-10 pt-32">
-      <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
+    <section id="mentors" className="flex flex-col w-full gap-10 pt-32 px-4 md:px-10 lg:px-20">
+      <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-lg md:text-2xl lg:text-4xl uppercase">
         Mentores
       </h2>
-      <p className="text-gray-300">
-        Estos son los increibles mentores que tendrás a tu disposición para
-        ayudarte a construir tu proyecto y guiarte en el mundo de la
-        inteligencia artificial, el diseño yu los negocios.
+      <p className="text-2xl md:text-xl lg:text-3xl text-gray-300">
+        Estos son los increíbles mentores que estuvieron a disposición de los participantes para
+        ayudarlos a construir su proyecto y guiarlos en el mundo de la
+        inteligencia artificial, el diseño y los negocios.
       </p>
-      <ul className="flex flex-col md:flex-row md:flex-wrap justify-between gap-y-10">
-        {mentors.map((mentor, i) => (
-          <li key={i}>
-            <MentorsCard
-              description={mentor.description}
-              genre={mentor.genre}
-              image={mentor.image}
-              name={mentor.name}
-              lastName={mentor.lastName}
-            />
-          </li>
-        ))}
-      </ul>
+
+      <div className="relative overflow-hidden w-full mx-auto">
+        {/* Contenedor del slider */}
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+         <ul
+         key={slideIndex}
+         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-5 w-full min-w-full flex-shrink-0 justify-items-center"
+       >
+         {mentors
+           .slice(slideIndex * mentorsPerPage, (slideIndex + 1) * mentorsPerPage)
+           .map((mentor, i) => (
+             <li key={i} className="w-full flex justify-center">
+               <MentorsCard
+                 description={mentor.description}
+                 genre={mentor.genre}
+                 image={mentor.image}
+                 name={mentor.name}
+                 lastName={mentor.lastName}
+                 className="h-full text-sm sm:text-base"
+               />
+             </li>
+           ))}
+       </ul>
+       
+        
+          ))}
+        </div>
+
+        {/* Botones de navegación */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+        >
+          &#10094;
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+        >
+          &#10095;
+        </button>
+      </div>
     </section>
   );
 }

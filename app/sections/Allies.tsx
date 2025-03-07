@@ -6,7 +6,7 @@ import Wrapper from "../components/Wrapper";
 
 export default function Allies() {
   return (
-    <section id="allies" className="pt-20 pb-10">
+    <section id="allies" className="pt-32 pb-10 px-20">
       <h2 className="border- border-principleViolet mb-10 pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
         Aliados
       </h2>
