@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-export default function hero2 () {
+export default function HeroTwo () {
     const [mounted, setMounted] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -26,8 +26,8 @@ export default function hero2 () {
     };
 
     return (
-        <section id="Hero2" className=" scroll-m-18 bg-black text-white py-5">
-            <div className="container mx-auto text-center px-4 pt-32">
+        <section id="Hero2" className=" scroll-m-36 bg-black text-white py-5">
+            <div className="container mx-auto text-center px-4">
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">
                     El pasado <span className="text-purple-500">4 y 5 de Mayo del 2024,</span> la costa se llenó de inteligencia artificial
                 </h2>

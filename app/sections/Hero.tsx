@@ -3,10 +3,10 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section id="Hero" className="flex flex-col gap-7 md:gap-10 text-center relative pt-5 w-full">
+    <section id="Hero" className="flex flex-col gap-7 md:gap-10 text-center relative scroll-m-10 pt-5 w-full">
       {/* Contenedor del video de portada */}
       <div
-        className="relative w-full h-[250px] sm:h-[400px] md:h-[500px] lg:h-[700px] xl:h-[900px] cursor-pointer"
+        className="relative w-full h-[250px] sm:h-[400px] md:h-[500px] lg:h-[700px] xl:h-screen cursor-pointer"
       >
         <iframe
           className="w-full h-full z-10"

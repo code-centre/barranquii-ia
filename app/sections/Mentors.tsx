@@ -37,7 +37,7 @@ export default function Mentors() {
   };
 
   return (
-    <section id="mentors" className="flex flex-col w-full gap-10 pt-32 px-4 md:px-10 lg:px-20">
+    <section id="mentors" className="scroll-m-24 flex flex-col w-full gap-10 px-4 md:px-10 lg:px-20">
       <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-lg md:text-2xl lg:text-4xl uppercase">
         Mentores
       </h2>
@@ -68,7 +68,7 @@ export default function Mentors() {
                  image={mentor.image}
                  name={mentor.name}
                  lastName={mentor.lastName}
-                 className="h-full text-sm sm:text-base"
+                //  className="h-full text-sm sm:text-base"
                />
              </li>
            ))}

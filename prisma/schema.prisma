@@ -36,6 +36,12 @@ model User {
   ticketType     TicketType
 }
 
+model Testimonials {
+  id          Int    @id @default(autoincrement())
+  nameUser    String @db.VarChar(255)
+  description String @db.VarChar(255)
+}
+
 enum TicketType {
   GENERAL
   COMPLETO
