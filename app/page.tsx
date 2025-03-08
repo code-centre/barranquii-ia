@@ -21,15 +21,16 @@ import Hero2 from "./sections/Hero2";
 import Testimonios from "./sections/Testimonios";
 import Preinscribete from "./sections/Preinscribete";
 import Ganadores from "./sections/Ganadores";
+import HeroTwo from "./sections/Hero2";
 
 export default function Home() {
   return (
-    <main className="gap-20 flex flex-col py-10 min-h-screen">
+    <main className="gap-32 xl:gap-44 flex flex-col py-10 min-h-screen">
       <div>
         <Hero />
         <Sponsors />
       </div>
-      <Hero2 />
+      <HeroTwo />
       <Testimonios />
       <Talleres />
       <Ganadores />

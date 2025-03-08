@@ -13,7 +13,7 @@ export default function Talleres() {
   ];
 
   return (
-    <section id="talleres" className="flex flex-col items-center gap-16 pt-40 bg-black text-white w-full px-6 sm:px-10">
+    <section id="talleres" className="flex flex-col scroll-m-32 items-center gap-16 bg-black text-white w-full px-6 sm:px-10">
       {/* Título */}
       <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-2xl md:text-2xl lg:text-4xl uppercase self-start">
         Talleres
