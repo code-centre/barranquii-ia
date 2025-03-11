@@ -1,5 +1,5 @@
 import React from "react";
-import CrearTestimonio from "../components/Creartestimonio";
+import CrearTestimonio from "../components/CrearTestimonio";
 
 interface Testimonials {
   id: number
