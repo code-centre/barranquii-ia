@@ -6,10 +6,10 @@ export default function Hero() {
     <section id="Hero" className="flex flex-col gap-7 md:gap-10 text-center relative scroll-m-10 pt-5 w-full">
       {/* Contenedor del video de portada */}
       <div
-        className="relative w-full h-[250px] sm:h-[400px] md:h-[500px] lg:h-[700px] xl:h-screen cursor-pointer"
+        className="relative w-full h-[250px] sm:h-[400px] md:h-[600px] lg:h-[800px] xl:h-[85vh] cursor-pointer"
       >
         <iframe
-          className="w-full h-full z-10"
+          className="w-full h-full	 z-10"
           src="https://www.youtube.com/embed/NjJJ0h7WhPY?rel=0"
           title="Video de portada"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

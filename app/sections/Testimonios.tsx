@@ -1,4 +1,5 @@
 import React from "react";
+import CrearTestimonio from "../components/Creartestimonio";
 
 interface Testimonials {
   id: number
@@ -33,9 +34,10 @@ export default async function Testimonios() {
               </p>
             </div>
           </div>
+          
         ))}
       </div>
-
+        <CrearTestimonio/>
       {/* Segunda fila con video y testimonio adicional */}
       {/* <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-6 ">
         Último testimonio
