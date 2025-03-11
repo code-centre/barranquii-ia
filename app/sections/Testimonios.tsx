@@ -1,5 +1,6 @@
-import React from "react";
-import CrearTestimonio from "../components/Creartestimonio";
+'use client'
+import React, { useEffect, useState } from "react";
+import CrearTestimonio from "../components/CrearTestimonio";
 
 interface Testimonials {
   id: number
@@ -7,10 +8,26 @@ interface Testimonials {
   description: string
 }
 
-export default async function Testimonios() {
-  const response = await fetch('http://localhost:3000/api/testimonials', { next: { revalidate: 60 } });
-  // console.log(response);
-  const { testimonials } = await response.json();
+export default function Testimonios() {
+  const [testimonials, setTestimonials] = useState([])
+  const [copyTestimonials, setCopyTestimonials] = useState([])
+  // Crear un useState que se llame "loading" y por defecto va a estar en true
+  // Cuando ya tengamos los testimonios lo vamos a setear en false
+  // En el JSX toca hacer una validación de que sí está loading en true vamos a mostar el skeleton si no vamos a mostar los testimonios
+
+
+
+  const getTestimonials = async () => {
+    const data = await fetch('http://localhost:3001/api/testimonials')
+    const { testimonials } = await data.json()
+    setTestimonials(testimonials)
+    setCopyTestimonials(testimonials.slice(0, 6))
+  }
+
+  useEffect(() => {
+    getTestimonials()
+  }, [])
+
 
   return (
     <section id="Testimonios" className="gap-16  scroll-m-32 bg-black text-white w-full px-6 sm:px-10">
@@ -19,9 +36,13 @@ export default async function Testimonios() {
         Testimonios
       </h2>
 
+      {
+        // Aqui va la validación!!!
+      }
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center max-w-6xl mx-auto">
         {/* Primera fila de testimonios */}
-        {testimonials.map((testimonial: Testimonials, i: number) => (
+        {copyTestimonials.map((testimonial: Testimonials, i: number) => (
           <div
             key={i}
             className="bg-gradient-to-r from-blue-700 to-purple-500 px-6 py-4 rounded-2xl flex items-center gap-4 w-full max-w-[350px] mx-auto"
@@ -34,10 +55,17 @@ export default async function Testimonios() {
               </p>
             </div>
           </div>
-          
+
         ))}
       </div>
-        <CrearTestimonio/>
+      {
+        copyTestimonials.length <= 6
+          ? <button onClick={() => setCopyTestimonials(testimonials)} className=" text-lg text-black block mt-10 w-fit bg-blue-400 mx-auto py-2 px-6 rounded-md">< strong > Ver más </strong ></button >
+          : <button onClick={() => setCopyTestimonials(testimonials.slice(0, 6))} className=" text-lg text-black block mt-10 w-fit bg-blue-400 mx-auto py-2 px-6 rounded-md">< strong > Ver menos </strong ></button >
+      }
+      
+
+      <CrearTestimonio getTestimonials={getTestimonials} />
       {/* Segunda fila con video y testimonio adicional */}
       {/* <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-6 ">
         Último testimonio
