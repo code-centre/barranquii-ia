@@ -14,7 +14,7 @@ export default function Testimonios() {
   // Crear un useState que se llame "loading" y por defecto va a estar en true
   // Cuando ya tengamos los testimonios lo vamos a setear en false
   // En el JSX toca hacer una validación de que sí está loading en true vamos a mostar el skeleton si no vamos a mostar los testimonios
-
+  //
 
 
   const getTestimonials = async () => {
