@@ -41,7 +41,7 @@ export default function Mentors() {
       <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-lg md:text-2xl lg:text-4xl uppercase">
         Mentores
       </h2>
-      <p className="text-2xl md:text-xl lg:text-3xl text-gray-300">
+      <p className="text-1xl md:text-xl lg:text-2xl text-gray-300">
         Estos son los increíbles mentores que estuvieron a disposición de los participantes para
         ayudarlos a construir su proyecto y guiarlos en el mundo de la
         inteligencia artificial, el diseño y los negocios.

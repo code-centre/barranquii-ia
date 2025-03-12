@@ -11,7 +11,7 @@ export default function CrearTestimonio({ getTestimonials }: Props) {
     const [testimonial, setTestimonial] = useState("")
 
     const handleSendData = async () => {
-        const data = await fetch('http://localhost:3001/api/testimonials', {
+        const data = await fetch('http://localhost:3000/api/testimonials', {
             method: 'POST',
             body: JSON.stringify({ nameUser, description: testimonial })
         })
