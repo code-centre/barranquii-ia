@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section id="Hero" className="relative flex flex-col gap-7 md:gap-10 text-center scroll-m-10 pt-5 w-full">
+    <section id="Hero" className="relative flex flex-col gap-7 md:gap-10 text-center scroll-m-10 pt-3 w-full">
       {/* Contenedor del video */}
       <div className="relative w-full h-[350px] md:h-[400px] lg:h-[500px] xl:h-[80vh] mask">
         <iframe
