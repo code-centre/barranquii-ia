@@ -25,7 +25,7 @@ import HeroTwo from "./sections/Hero2";
 
 export default function Home() {
   return (
-    <main className="gap-32 xl:gap-44 flex flex-col py-10 min-h-screen">
+    <main className="gap-32 xl:gap-44 flex flex-col py-10 min-h-screen overflow-hidden">
       <div>
         <Hero />
         <Sponsors />
