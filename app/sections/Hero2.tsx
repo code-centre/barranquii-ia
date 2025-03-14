@@ -26,8 +26,8 @@ export default function HeroTwo() {
     };
 
     return (
-        <section id="Hero2" className="scroll-m-36 bg-black text-white py-5">
-            <div className="container mx-auto text-center px-4">
+        <section id="Hero2" className="scroll-m-36 bg-black text-white">
+            <div className="container mx-auto text-center px-4 max-w-6xl">
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">
                     El pasado <span className="text-purple-500">4 y 5 de Mayo del 2024,</span> la costa se llenó de inteligencia artificial
                 </h2>
@@ -42,7 +42,7 @@ export default function HeroTwo() {
             </div>
 
             {/* Carrusel de imágenes responsive */}
-            <div className="relative w-screen overflow-hidden mt-8 flex justify-center items-center">
+            <div className="relative w-screen overflow-hidden  mt-8 flex justify-center items-center">
                 <button
                     onClick={prevSlide}
                     className="absolute left-4 z-10 text-white text-3xl bg-black bg-opacity-50 px-3 py-1 rounded-full"
@@ -62,7 +62,7 @@ export default function HeroTwo() {
                             {images
                                 .slice(slideIndex * imagesPerSlide, (slideIndex + 1) * imagesPerSlide)
                                 .map((src, index) => (
-                                    <div key={index} className="relative w-full h-58 sm:h-44 md:h-86 rounded-lg overflow-hidden lg:mb-32">
+                                    <div key={index} className="relative w-full lg:h-58 h-44 md:h-86 rounded-lg overflow-hidden">
                                         <Image
                                             src={src}
                                             alt={`Hackathon Imagen ${index + 1}`}

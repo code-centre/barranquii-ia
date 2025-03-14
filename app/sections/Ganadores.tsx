@@ -5,18 +5,18 @@ import Link from "next/link";
 
 export default function Ganadores() {
     return (
-        <section id="Ganadores" className="flex flex-col w-full gap-10 scroll-m-36 px-4 md:px-10 lg:px-20">
+        <section id="Ganadores" className="flex flex-col w-full gap-10 scroll-m-36 px-10">
             <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-lg md:text-2xl lg:text-4xl uppercase">
                 Ganadores
             </h2>
 
             <div className="flex flex-col items-center text-center">
-                <div className="relative w-full max-w-[900px] h-auto max-h-[900]">
+                <div className="relative w-full max-w-[700px] h-auto max-h-[900]">
                     <Image
                         src="/FOTOSBARRANQUI-IA/ganadores.png"
                         alt="Ganadores del evento"
                         layout="responsive"
-                        width={1200}
+                        width={800}
                         height={800}
                         className="rounded-lg object-contain"
                     />

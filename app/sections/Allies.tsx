@@ -6,8 +6,8 @@ import Wrapper from "../components/Wrapper";
 
 export default function Allies() {
   return (
-    <section id="allies" className="scroll-m-24 pb-10 px-20">
-      <h2 className="border- border-principleViolet mb-10 pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
+    <section id="allies" className="scroll-m-32 pb-10 px-10">
+      <h2 className="border- border-principleViolet mb-10 pl-2 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
         Aliados
       </h2>
       <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-14 md:gap-10">

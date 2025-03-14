@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Wrapper from "../../components/Wrapper";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -30,7 +30,17 @@ type Inputs = {
   terms: boolean;
 };
 
-export default function Form() {
+export default function FormContentPage() {
+  return (
+    <main className='relative'>
+      <Suspense fallback={<div className="loader"></div>}>
+        <FormContent />
+      </Suspense>
+    </main>
+  );
+}
+
+function FormContent() {
   const [sleepAtPlace, setSleepAtPlace] = useState("NO");
   const [discountCoupon, setDiscountCoupon] = useState("");
   const [price, setPrice] = useState(100000);

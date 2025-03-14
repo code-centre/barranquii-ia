@@ -13,14 +13,14 @@ export default function Talleres() {
   ];
 
   return (
-    <section id="talleres" className="flex flex-col items-center gap-12 bg-black text-white w-full px-4 sm:px-8 lg:px-16 py-16">
+    <section id="talleres" className="flex flex-col scroll-mt-32 items-center gap-12 bg-black text-white w-full px-10">
       {/* Título */}
-      <h2 className="border-l-4 border-principleViolet pl-4 font-bold text-3xl sm:text-4xl lg:text-5xl uppercase self-start">
+      <h2 className="border-l-4 border-principleViolet pl-4 font-bold text-2xl lg:text-4xl uppercase self-start">
         Talleres
       </h2>
 
       {/* Contenedor principal */}
-      <div className="w-full max-w-7xl mx-auto grid gap-12">
+      <div className="w-full max-w-5xl mx-auto grid gap-12">
         {/* Primera fila: 2 imágenes con texto en el centro */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {/* Imagen izquierda */}
@@ -58,7 +58,7 @@ export default function Talleres() {
         </div>
 
         {/* Segunda fila: 4 imágenes más grandes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {talleres.slice(2).map((taller, index) => (
             <div key={index} className="flex flex-col items-center text-center">
               <Image
