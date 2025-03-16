@@ -11,7 +11,7 @@ interface Testimonials {
 export default function Testimonios() {
   const [testimonials, setTestimonials] = useState<Testimonials[]>([]);
   const [visibleTestimonials, setVisibleTestimonials] = useState<Testimonials[]>([]);
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(9);
   const [loading, setLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -78,7 +78,7 @@ export default function Testimonios() {
                 Ver más
               </button>
             )}
-            {visibleCount > 3 && (
+            {visibleCount > 9 && (
               <button
                 onClick={() => setVisibleCount((prevCount) => prevCount - 3)}
                 className="bg-principleViolet text-white px-4 py-2 rounded-lg font-semibold hover:bg-purple-700 transition"

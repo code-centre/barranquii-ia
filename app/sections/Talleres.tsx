@@ -32,8 +32,13 @@ export default function Talleres() {
               width={400}
               height={350}
             />
-            <a href={talleres[0].link} target="_blank" rel="noopener noreferrer" className="text-purple-500 mt-4 text-lg">Ver curso</a>
+            <a href={talleres[0].link} target="_blank" rel="noopener noreferrer">
+              <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-all duration-300 mt-4 text-lg">
+                Ver curso
+              </button>
+            </a>
           </div>
+
 
           {/* Texto en el medio */}
           <div className="text-center px-4">
@@ -50,11 +55,16 @@ export default function Talleres() {
               className="w-full max-w-xs sm:max-w-sm h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
               src={talleres[1].src}
               alt={talleres[1].alt}
-              width={400}
+              width={500}
               height={350}
             />
-            <a href={talleres[1].link} target="_blank" rel="noopener noreferrer" className="text-purple-500 mt-4 text-lg">Ver curso</a>
+            <a href={talleres[0].link} target="_blank" rel="noopener noreferrer">
+              <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-all duration-300 mt-4 text-lg">
+                Ver curso
+              </button>
+            </a>
           </div>
+
         </div>
 
         {/* Segunda fila: 4 imágenes más grandes */}
@@ -68,8 +78,14 @@ export default function Talleres() {
                 width={500}
                 height={350}
               />
-              <a href={taller.link} target="_blank" rel="noopener noreferrer" className="text-purple-500 mt-4 text-lg">Ver curso</a>
+              <a href={talleres[0].link} target="_blank" rel="noopener noreferrer">
+                <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-all duration-300 mt-4 text-lg">
+                  Ver curso
+                </button>
+              </a>
             </div>
+
+
           ))}
         </div>
       </div>
