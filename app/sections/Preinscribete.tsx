@@ -17,15 +17,15 @@ export default function Preinscribete() {
       <h2 className="text-[80px] md:text-[150px] font-extrabold">2025</h2>
       <p className="text-lg md:text-xl font-bold mt-2">
         <span className="text-white text-3xl md:text-5xl">3 Y 4 </span>
-        <span className="text-purple-400 text-3xl md:text-4xl">DE MAYO</span>
+        <span className="text-purple-400 text-3xl md:text-5xl">DE MAYO</span>
       </p>
       <a
         href="https://www.codigoabierto.tech/eventos"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-2xl md:text-4xl mt-10 px-6 py-3 font-semibold rounded-full bg-gradient-to-r from-blue-600 to-purple-500 shadow-lg"
+        className="text-2xl md:text-4xl mt-10 px-6 py-3 font-extrabold rounded-full bg-gradient-to-r from-blue-600 to-purple-500 shadow-lg"
       >
-        Preinscríbete
+        PREINSCRÍBETE
       </a>
     </section>
   );

@@ -39,12 +39,10 @@ export default function Mentors() {
   return (
     <section id="mentors" className="scroll-m-32 flex flex-col w-full gap-10 px-10">
       <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
-        Mentores
+        Mentores 
       </h2>
-      <p className="text-xl text-gray-300">
-        Estos son los increíbles mentores que estuvieron a disposición de los participantes para
-        ayudarlos a construir su proyecto y guiarlos en el mundo de la
-        inteligencia artificial, el diseño y los negocios.
+      <p className="text-2xl text-gray-300">
+        Estos fueron los <strong>increíbles mentores</strong> que acompañaron a los participantes, guiándolos en la <strong>creación de sus proyectos</strong> y en el <strong>mundo de la inteligencia artificial,</strong> el diseño y los negocios.
       </p>
 
       <div className="relative overflow-hidden w-full mx-auto">
@@ -54,27 +52,27 @@ export default function Mentors() {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-         <ul
-         key={slideIndex}
-         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-5 w-full min-w-full flex-shrink-0 justify-items-center"
-       >
-         {mentors
-           .slice(slideIndex * mentorsPerPage, (slideIndex + 1) * mentorsPerPage)
-           .map((mentor, i) => (
-             <li key={i} className="w-full flex justify-center">
-               <MentorsCard
-                 description={mentor.description}
-                 genre={mentor.genre}
-                 image={mentor.image}
-                 name={mentor.name}
-                 lastName={mentor.lastName}
-                //  className="h-full text-sm sm:text-base"
-               />
-             </li>
-           ))}
-       </ul>
-       
-        
+            <ul
+              key={slideIndex}
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-5 w-full min-w-full flex-shrink-0 justify-items-center"
+            >
+              {mentors
+                .slice(slideIndex * mentorsPerPage, (slideIndex + 1) * mentorsPerPage)
+                .map((mentor, i) => (
+                  <li key={i} className="w-full flex justify-center">
+                    <MentorsCard
+                      description={mentor.description}
+                      genre={mentor.genre}
+                      image={mentor.image}
+                      name={mentor.name}
+                      lastName={mentor.lastName}
+                    //  className="h-full text-sm sm:text-base"
+                    />
+                  </li>
+                ))}
+            </ul>
+
+
           ))}
         </div>
 

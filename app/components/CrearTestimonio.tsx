@@ -24,7 +24,7 @@ export default function CrearTestimonio({ getTestimonials }: Props) {
         <>
             {
                 !isCreatingTestimonial
-                    ? <button onClick={() => setIsCreatingTestimonial(true)} className=" text-lg text-black block mt-10 w-fit bg-blue-400 mx-auto py-2 px-6 rounded-md">< strong > Crear Testimonio</strong ></button >
+                    ? <button onClick={() => setIsCreatingTestimonial(true)} className=" text-lg text-white block mt-10 w-fit bg-principleViolet mx-auto py-2 px-6 rounded-md">< strong > Crear Testimonio</strong ></button >
                     : <form onSubmit={(e) => {
                         e.preventDefault()
                         handleSendData()
@@ -35,9 +35,9 @@ export default function CrearTestimonio({ getTestimonials }: Props) {
                         </label>
                         <label >
                             ¿Qué tal fue tu experiencia?
-                            <textarea placeholder='Mi experiencia fue...' className='w-full rounded-md px-4 py-2 text-black' onChange={(e) => setTestimonial(e.target.value)} name="" id="" />
+                            <textarea placeholder='Mi experiencia fue...' className='w-full rounded-md px-4 py-2 text-white' onChange={(e) => setTestimonial(e.target.value)} name="" id="" />
                         </label>
-                        <button className='text-lg text-black block w-fit bg-blue-400 mx-auto py-2 px-6 rounded-md'>Compartir testimonio</button>
+                        <button className='text-lg text-white block w-fit bg-principleViolet mx-auto py-2 px-6 rounded-md'>Compartir testimonio</button>
                     </form>
             }
         </>

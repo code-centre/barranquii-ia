@@ -10,8 +10,8 @@ export default function Ganadores() {
                 Ganadores
             </h2>
 
-            <div className="flex flex-col items-center text-center ">
-                <div className="relative md:w-[600px] w-[300px] ">
+            <div className="flex flex-col items-center text-center">
+                <div className="relative w-full max-w-[800px] sm:max-w-[700px] md:max-w-[900px] lg:max-w-[1000px] xl:max-w-[1000px]">
                     <Image
                         src="/FOTOSBARRANQUI-IA/ganadores.png"
                         alt="Ganadores del evento"

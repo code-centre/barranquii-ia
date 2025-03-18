@@ -28,7 +28,7 @@ export default function HeroTwo() {
         setCurrentIndex((prevIndex) => (prevIndex === 0 ? totalSlides - 1 : prevIndex - 1));
     };
 
-    const openModal = (index: number) => {
+    const openModal = (index) => {
         setModalIndex(index);
         setIsModalOpen(true);
     };
@@ -47,21 +47,22 @@ export default function HeroTwo() {
 
     return (
         <section id="Hero2" className="scroll-m-36 bg-black text-white">
-            <div className="container mx-auto text-center px-4 max-w-6xl">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                    El pasado <span className="text-purple-500">4 y 5 de Mayo del 2024,</span> la costa se llenó de inteligencia artificial
+            <div className="container mx-auto text-center px-4 max-w-7xl">
+                <h2 className="text-4xl md:text-6xl font-bold mb-4">
+                    El pasado <span className="text-purple-500">4 y 5 de mayo de 2024,</span> la costa brilló con inteligencia artificial
                 </h2>
-                <div className="bg-black text-white p-4 mx-auto max-w-1xl">
-                    <p className="text-lg md:text-1xl">
-                        Barranqui-IA fue un éxito rotundo, reuniendo a más de 150 personas que formaron 21 equipos para crear soluciones innovadoras con inteligencia artificial. Durante este hackatón, participantes de todos los niveles aprendieron, diseñaron y compartieron ideas en un ambiente inclusivo y creativo.
+                <div className="bg-black text-white p-4 mx-auto max-w-6xl">
+                    <p className="text-lg md:text-2xl">
+                        <strong>Barranqui-IA</strong> dejó huella en la innovación del Caribe. Más de <strong>150 mentes brillantes</strong>, en <strong>21 equipos</strong>, dieron vida a soluciones con inteligencia artificial en un ambiente dinámico y colaborativo.
                     </p>
-                    <p className="mt-2 text-lg md:text-1xl">
-                        El evento destacó como un maratón de invención donde no se necesitaba ser experto para brillar. Barranquilla demostró que aquí también se crean cosas increíbles, dejando claro que el Caribe es un epicentro de talento y transformación tecnológica. ¡Juntos hicimos historia!
+                    <p className="mt-2 text-lg md:text-2xl pb-0">
+                        Más que una competencia, fue un <strong>maratón de creatividad y aprendizaje</strong>, donde la pasión demostró que no hay barreras para innovar.
+                        Barranquilla reafirmó su lugar como epicentro tecnológico, impulsando talento y transformación.
                     </p>
+                    <p className="font-bold text-2xl mt-2">¡Juntos convertimos ideas en futuro!</p>
                 </div>
             </div>
 
-           
             <div className="relative w-screen overflow-hidden mt-8 flex justify-center items-center">
                 <button
                     onClick={prevSlide}
@@ -81,16 +82,12 @@ export default function HeroTwo() {
                                 .slice(slideIndex * imagesPerSlide, (slideIndex + 1) * imagesPerSlide)
                                 .map((src, index) => (
                                     <div key={index} className="relative w-full lg:h-68 h-56 md:h-86 rounded-lg overflow-hidden">
-                                        {isLoading && (
-                                            <div className="w-full h-full bg-gray-800 animate-pulse rounded-lg"></div>
-                                        )}
                                         <Image
                                             src={src}
                                             alt={`Hackathon Imagen ${index + 1}`}
                                             fill
-                                            className={`object-cover rounded-lg cursor-pointer transition-opacity ${isLoading ? "opacity-0" : "opacity-100"}`}
+                                            className="object-cover rounded-lg cursor-pointer"
                                             onClick={() => openModal(slideIndex * imagesPerSlide + index)}
-                                            onLoadingComplete={() => setIsLoading(false)}
                                         />
                                     </div>
                                 ))}
@@ -111,15 +108,11 @@ export default function HeroTwo() {
                     <button onClick={closeModal} className="absolute top-4 right-4 text-white text-3xl">&times;</button>
                     <button onClick={prevImage} className="absolute left-4 text-white text-3xl">&#10094;</button>
                     <div className="relative w-3/4 h-3/4">
-                        {isLoading && (
-                            <div className="w-full h-full bg-gray-800 animate-pulse rounded-lg"></div>
-                        )}
                         <Image
                             src={images[modalIndex]}
                             alt="Imagen en grande"
                             fill
-                            className={`object-contain rounded-lg transition-opacity ${isLoading ? "opacity-0" : "opacity-100"}`}
-                            onLoadingComplete={() => setIsLoading(false)}
+                            className="object-contain rounded-lg"
                         />
                     </div>
                     <button onClick={nextImage} className="absolute right-4 text-white text-3xl">&#10095;</button>
@@ -127,4 +120,4 @@ export default function HeroTwo() {
             )}
         </section>
     );
-};
+}
