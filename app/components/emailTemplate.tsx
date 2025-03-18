@@ -119,7 +119,8 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
             fontSize: 16,
           }}
         >
-          04 y 05 de abril de 2024
+          {type === "TALLER" ? "04 de abril de 2024" : "04 y 05 de abril de 2024"}
+          
         </p>
         <p
           style={{

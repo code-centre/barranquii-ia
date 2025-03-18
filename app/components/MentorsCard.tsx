@@ -50,7 +50,7 @@ export default function MentorsCard({
           <p className="text-xs overflow-y-auto scroll">{description}</p>
           <span className="bg-gradient-to-r from-[#fe44fd] via-[#eabbbe] to-[#8731ef] inline-block text-transparent font-semibold bg-clip-text text-right pt-4 bottom-4 right-4"></span>
           <span className="bg-gradient-to-r from-[#fe44fd] via-[#eabbbe] to-[#8731ef] inline-block text-transparent font-semibold bg-clip-text text-right absolute bottom-4 right-4">
-            4 y 5 de mayo
+           
           </span>
         </div>
       </div>

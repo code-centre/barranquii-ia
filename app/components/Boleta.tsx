@@ -7,7 +7,6 @@ interface Props {
 }
 
 export default function Boleta({ nameUser, ticketType }: Props) {
-  console.log(ticketType);
 
   return (
     <div className="relative flex flex-col justify-between gap-6 p-6 border border-dashed rounded-md w-full overflow-hidden">
@@ -25,7 +24,7 @@ export default function Boleta({ nameUser, ticketType }: Props) {
             ticketType === "" && "animate-pulse bg-gray-300 text-gray-300"
           }`}
         >
-          {ticketType === '"taller"' && "Talleres - "}Hackatón - Barranqui-IA
+          {ticketType === "taller" && "Talleres - "}Hackatón - Barranqui-IA
         </h2>
         <p className="text-gray-300">04 de abril de 2024 a las 08:00</p>
       </header>
@@ -38,7 +37,7 @@ export default function Boleta({ nameUser, ticketType }: Props) {
           Área metropolitana de, Kilómetro 5, vía Puerto Colombia, Barranquilla,
           Atlántico
         </h2>
-        {ticketType === '"taller"' ? (
+        {ticketType === "taller" ? (
           <>
             <p className="text-gray-300">04 de Mayo de 2024</p>
             <p>Empezamos 02:00 p.m.</p>

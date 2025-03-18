@@ -20,7 +20,17 @@ export default function Sponsors() {
           src="/logos/ultracem.webp"
           height={47}
           width={150}
-          alt="Logo de Immersive city"
+          alt="Logo de Ultracem"
+          loading="lazy"
+        />
+      </li>
+      <li>
+        <Image
+          className="w-[180px]"
+          src="/logos/neuron.png"
+          height={47}
+          width={150}
+          alt="Logo de neuron"
           loading="lazy"
         />
       </li>
@@ -30,7 +40,7 @@ export default function Sponsors() {
           src="/logos/atlanticonnect.png"
           height={47}
           width={150}
-          alt="Logo de Immersive city"
+          alt="Logo de Atlanti Connect city"
           loading="lazy"
         />
       </li>
@@ -44,6 +54,16 @@ export default function Sponsors() {
           loading="lazy"
         />
       </li>
+      <li>
+          <Image
+            className="w-[180px]"
+            src="/logos/tmt.png"
+            height={47}
+            width={150}
+            alt="Logo de TMT"
+            loading="lazy"
+          />
+        </li>
       <li>
         <figure className="flex items-center justify-center gap-x-2">
           <Image

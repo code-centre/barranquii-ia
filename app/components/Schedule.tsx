@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 
 const DAYS_EVENT = [
-  {
-    title: "Inauguración",
-    number: "03",
-    day: "Mayo, viernes",
-  },
+  // {
+  //   title: "Inauguración",
+  //   number: "03",
+  //   day: "Mayo, viernes",
+  // },
   {
     title: "Primer Día",
     number: "04",
@@ -20,20 +20,20 @@ const DAYS_EVENT = [
 ];
 
 const SCHEDULE_EVENT = [
-  [
-    {
-      time: "07:00 PM - 9:00 PM",
-      title: "Meet & Greet",
-      description:
-        "Evento de pre-inauguración del hackatón donde tendremos la oportunidad de conocer a los mentores y compartir un rato con ellos mientras disfrutamos de música en vivo y una divertida velada. *Entrada con el paquete Full Access",
-    },
-    {
-      time: "09:00 PM - 10:00 PM",
-      title: "Show Musical",
-      description:
-        "Disfrutaremos escuchando a la revelación Barranquillera con su nueva propuesta que combina Funk y Soul, Grace Torres!",
-    },
-  ],
+  // [
+  //   {
+  //     time: "07:00 PM - 9:00 PM",
+  //     title: "Meet & Greet",
+  //     description:
+  //       "Evento de pre-inauguración del hackatón donde tendremos la oportunidad de conocer a los mentores y compartir un rato con ellos mientras disfrutamos de música en vivo y una divertida velada. *Entrada con el paquete Full Access",
+  //   },
+  //   {
+  //     time: "09:00 PM - 10:00 PM",
+  //     title: "Show Musical",
+  //     description:
+  //       "Disfrutaremos escuchando a la revelación Barranquillera con su nueva propuesta que combina Funk y Soul, Grace Torres!",
+  //   },
+  // ],
   [
     {
       time: "08:00 AM - 09:00 AM",
@@ -118,7 +118,7 @@ export default function Schedule() {
   const [daySchedule, setDaySchedule] = useState(0);
   return (
     <div className="md:flex-1 w-full min-h-[80vh]">
-      <header className="border-gray-500 grid grid-cols-3 border-b-6">
+      <header className="border-gray-500 grid grid-cols-2 border-b-6">
         {DAYS_EVENT.map((day, i) => (
           <div
             key={day.title}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Wrapper from "../../components/Wrapper";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -30,7 +30,17 @@ type Inputs = {
   terms: boolean;
 };
 
-export default function Form() {
+export default function FormContentPage() {
+  return (
+    <main className='relative'>
+      <Suspense fallback={<div className="loader"></div>}>
+        <FormContent />
+      </Suspense>
+    </main>
+  );
+}
+
+function FormContent() {
   const [sleepAtPlace, setSleepAtPlace] = useState("NO");
   const [discountCoupon, setDiscountCoupon] = useState("");
   const [price, setPrice] = useState(100000);
@@ -63,13 +73,12 @@ export default function Form() {
     calculatePrice();
   }, [discountCoupon]);
 
+  useEffect(() => {
+    router.push('/')
+  }, [])
+
   const onSubmit: SubmitHandler<Inputs> = async (data: Inputs) => {
-    let paymentLink;
-    if (ticketType === "taller") {
-      paymentLink = await createPaymentId("taller", 40000);
-    } else {
-      paymentLink = await createPaymentId("general", price);
-    }
+    let paymentLink = await createPaymentId("taller", 40000);
     await createUser(
       {
         name: data.name,
@@ -80,16 +89,15 @@ export default function Form() {
         email: data.email,
         profile: data.occupation,
         work: data.company,
-        shirtSize: ticketType !== "taller" ? data.size : "M",
-        food: ticketType !== "taller" ? data.food : "NONE",
+        // shirtSize: "NONE",
+        // food: "NONE",
         emergencyName: data.nameEmergency,
         emergencyPhone: data.phoneEmergency,
         isStaying: sleepAtPlace,
-        paymentAmount: ticketType !== "taller" ? price : 40000,
-        ticketType: ticketType !== "taller" ? "GENERAL" : "TALLER",
+        paymentAmount: 40000,
+        ticketType: "TALLER",
         paymentLinkId: paymentLink.id,
-      },
-      ticketType
+      }
     );
 
     router.push(`https://checkout.wompi.co/l/${paymentLink.id}`);
@@ -239,7 +247,7 @@ export default function Form() {
               )}
             </label>
           </div>
-          {ticketType !== "taller" && (
+          {/* {ticketType !== "taller" && (
             <>
               <label className="flex flex-col gap-2 font-semibold text-gray-300">
                 Talla de camisa
@@ -273,7 +281,7 @@ export default function Form() {
                 </select>
               </label>
             </>
-          )}
+          )} */}
           <div className="my-4 border-b border-dashed"></div>
 
           <h2 className="font-bold text-3xl">Contacto de emergencia</h2>
@@ -312,7 +320,7 @@ export default function Form() {
             </label>
           </div>
           <div className="my-4 border-b border-dashed"></div>
-          {ticketType !== "taller" && (
+          {/* {ticketType !== "taller" && (
             <>
               <div>
                 <p className="max-w-2xl text-gray-300">
@@ -371,7 +379,7 @@ export default function Form() {
               </label>
               <div className="my-4 border-b border-dashed"></div>
             </>
-          )}
+          )} */}
           <div>
             <label className="flex items-center gap-2 text-gray-300">
               He leído y acepto los términos y condiciones
@@ -407,8 +415,7 @@ export default function Form() {
   );
 }
 
-const createUser = async (body: any, ticketType: string | null) => {
-  console.log(body);
+const createUser = async (body: any) => {
 
   try {
     const resp = await fetch(`/api/users`, {
@@ -418,7 +425,6 @@ const createUser = async (body: any, ticketType: string | null) => {
     const user = await resp.json();
 
     localStorage.setItem("Id_user", JSON.stringify(user.newUser.id));
-    localStorage.setItem("ticketType", JSON.stringify(ticketType));
   } catch (err) {
     console.log(err);
   }
@@ -432,14 +438,8 @@ const createPaymentId = async (type: string, amount: number) => {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_WOMPI_SECRET_KEY}`,
       },
       body: JSON.stringify({
-        name:
-          type === "taller"
-            ? "Entrada Limitada - Hackatón Barranqui-IA"
-            : "Entrada General - Hackatón Barranqui-IA",
-        description:
-          type === "taller"
-            ? "Entrada a los 6 talleres especializados de Barranqui-IA, dictados por Google Developer Experts, el sábado 4 de 2pm a 7pm."
-            : "Entrada General para participar en Barranqui-IA, el primer hackatón de inteligencia a artificial en el Caribe. ¡Esta es tu oportunidad para retarte a ti mismo y mostrarle al mundo lo que puedes crear!",
+        name: "Entrada Limitada - Hackatón Barranqui-IA",
+        description: "Entrada a los 6 talleres especializados de Barranqui-IA, dictados por Google Developer Experts, el sábado 4 de 2pm a 7pm.",
         single_use: true,
         collect_shipping: false,
         amount_in_cents: amount * 100,

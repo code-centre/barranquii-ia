@@ -1,36 +1,32 @@
-[
-  {
-    "id": "what-is",
-    "name": "¿Qué es?"
-  },
-  {
-    "id": "topics",
-    "name": "Lineas temáticas"
-  },
+[   {
+  "id": "Hero",
+  "name": "Así se vivió"
+},
+{
+  "id": "Hero2",
+  "name": "Hackaton 2024"
+},
+{
+  "id": "Testimonios",
+  "name": "Testimonios"
+},
+{
+  "id": "talleres",
+  "name": "Talleres"
+},
+{
+  "id": "Ganadores",
+  "name": "Ganadores"
+},
+{
+  "id": "Preinscribete",
+  "name": "2025"
+},
   {
     "id": "mentors",
     "name": "Mentores"
   },
-  {
-    "id": "talleres",
-    "name": "Talleres"
-  },
-  {
-    "id": "schedule",
-    "name": "Horario"
-  },
-  {
-    "id": "boleta",
-    "name": "Boletos"
-  },
-  {
-    "id": "faqs",
-    "name": "FAQs"
-  },
-  {
-    "id": "sponsors",
-    "name": "Patrocinadores"
-  },
+ 
   {
     "id": "allies",
     "name": "Aliados"
