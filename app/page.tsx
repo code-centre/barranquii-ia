@@ -33,10 +33,11 @@ export default function Home() {
       <HeroTwo />
       <Testimonios />
       <Talleres />
-      <Ganadores />
-      <Preinscribete />
       <Mentors />
+      <Ganadores />
       <Allies />
+      <Preinscribete />
+
     </main>
   );
 }

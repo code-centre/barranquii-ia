@@ -4,7 +4,7 @@ import { Facebook, Instagram, Twitter } from "./Icons";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-gradientBannerPurple to-gradientBannerBlue py-20">
+    <footer className="bg-gradient-to-r from-gradientBannerPurple to-gradientBannerBlue py-6">
       <Wrapper styles="flex flex-col  px-5">
         <ul className="flex gap-2">
           <li>

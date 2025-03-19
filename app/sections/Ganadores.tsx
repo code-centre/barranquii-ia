@@ -24,9 +24,9 @@ export default function Ganadores() {
 
                 <a target="_blank"
                     href="https://barranquiia.devpost.com/project-gallery"
-                    className="text-purple-500 hover:text-purple-700 transition">
+                    className="text-purple-500 hover:text-purple-700 transition text-2xl">
 
-                    ¿Quieres ver todos los proyectos? Da click aquí
+                  ¡Haz click aquí para ver todos los proyectos!
                 </a>
 
 

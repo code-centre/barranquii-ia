@@ -27,7 +27,7 @@ export default function Navbar() {
       <nav className="flex justify-between items-center px-5 lg:px-16 py-6">
         {/* Logo */}
         <Link href="/" className="font-mono font-bold text-3xl text-white">
-          Barranqui-IA 2024
+          Barranqui-IA 
         </Link>
 
         {/* Menú solo en escritorio */}

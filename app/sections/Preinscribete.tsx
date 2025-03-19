@@ -4,9 +4,9 @@ import React from "react";
 
 export default function Preinscribete() {
   return (
-    <section id="Preinscribete" className="text-white scroll-m-24 text-center flex flex-col items-center bg-black px-4">
+    <section id="Preinscribete" className="text-white scroll-m-24 text-center flex flex-col items-center bg-black px-4 pb-32">
       <p className="text-3xl md:text-4xl font-extrabold tracking-wider">
-        <strong>ESTE FUE SOLO EL INICIO</strong>
+        <strong>ESTE FUÉ SOLO EL INICIO</strong>
       </p>
       <h1 className="text-6xl md:text-8xl font-extrabold mt-4">
         <span className="font-bold bg-gradient-to-r from-pink-400 via-pink-50 via-purple-600 to-pink-400 bg-clip-text text-transparent">
@@ -23,7 +23,7 @@ export default function Preinscribete() {
         href="https://www.codigoabierto.tech/eventos"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-2xl md:text-4xl mt-10 px-6 py-3 font-extrabold rounded-full bg-gradient-to-r from-blue-600 to-purple-500 shadow-lg"
+        className="text-2xl md:text-4xl mt-10 px-6 py-3 font-extrabold rounded-full bg-gradient-to-r from-blue-600 to-purple-500 shadow-lg pb-20px"
       >
         PREINSCRÍBETE
       </a>

@@ -15,20 +15,23 @@
   "name": "Talleres"
 },
 {
+  "id": "mentors",
+  "name": "Mentores"
+},
+
+{
   "id": "Ganadores",
   "name": "Ganadores"
+  
+},
+{
+  "id": "allies",
+  "name": "Aliados"
 },
 {
   "id": "Preinscribete",
   "name": "2025"
-},
-  {
-    "id": "mentors",
-    "name": "Mentores"
-  },
+}
  
-  {
-    "id": "allies",
-    "name": "Aliados"
-  }
+
 ]
