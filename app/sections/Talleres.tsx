@@ -17,6 +17,9 @@ export default function Talleres() {
       <h2 className="border-l-4 border-principleViolet pl-4 font-bold text-2xl md:text-3xl lg:text-4xl uppercase self-start">
         Talleres
       </h2>
+      <p className="text-l md:text-l leading-relaxed">
+        Tuvimos el privilegio de contar con <strong>6 expertos</strong> que compartieron su conocimiento a través de talleres exclusivos, brindando herramientas clave para aprovechar al máximo la inteligencia artificial. De la mano de <strong>Google y Python Colombia,</strong> los participantes exploraron el poder de la IA, aprendiendo de manera práctica y guiada por referentes de la industria.
+      </p>
 
       <div className="w-full max-w-9xl mx-auto grid gap-12">
         {/* Primera fila */}
@@ -26,8 +29,8 @@ export default function Talleres() {
               className="w-full max-w-sm md:max-w-lg h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
               src={talleres[0].src}
               alt={talleres[0].alt}
-              width={500}
-              height={350}
+              width={300}
+              height={300}
             />
             <a href={talleres[0].link} target="_blank" rel="noopener noreferrer">
               <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 mt-4 text-lg">
@@ -37,7 +40,7 @@ export default function Talleres() {
           </div>
 
           <div className="flex flex-col text-center px-4 md:max-w-2xl">
-            <h2 className="text-3xl md:text-6xl font-extrabold">Potenciado por</h2>
+            <h2 className="text-l md:text-l font-extrabold">Potenciado por</h2>
             <div className="flex justify-center mt-4 ">
               <Image
                 src="/logos/build.jpg"
@@ -47,9 +50,6 @@ export default function Talleres() {
                 className="h-auto rounded-25px"
               />
             </div>
-            <p className="mt-6 text-3xl md:text-2xl leading-relaxed">
-              Tuvimos el privilegio de contar con <strong>6 expertos</strong> que compartieron su conocimiento a través de talleres exclusivos, brindando herramientas clave para aprovechar al máximo la inteligencia artificial. De la mano de <strong>Google y Python Colombia,</strong> los participantes exploraron el poder de la IA, aprendiendo de manera práctica y guiada por referentes de la industria.
-            </p>
           </div>
 
 
@@ -58,8 +58,8 @@ export default function Talleres() {
               className="w-full max-w-sm md:max-w-lg h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
               src={talleres[1].src}
               alt={talleres[1].alt}
-              width={500}
-              height={350}
+              width={300}
+              height={300}
             />
             <a href={talleres[1].link} target="_blank" rel="noopener noreferrer">
               <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 mt-4 text-lg">
@@ -77,8 +77,8 @@ export default function Talleres() {
                 className="w-full max-w-sm md:max-w-lg h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
                 src={taller.src}
                 alt={taller.alt}
-                width={500}
-                height={350}
+                width={300}
+                height={300}
               />
               <a href={taller.link} target="_blank" rel="noopener noreferrer">
                 <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 mt-4 text-lg">

@@ -30,13 +30,15 @@ export default function Home() {
         <Hero />
         <Sponsors />
       </div>
-      <HeroTwo />
-      <Testimonios />
-      <Talleres />
-      <Mentors />
-      <Ganadores />
-      <Allies />
-      <Preinscribete />
+      <div className="container mx-auto gap-20 flex flex-col">
+        <HeroTwo />
+        <Testimonios />
+        <Talleres />
+        <Mentors />
+        <Ganadores />
+        <Allies />
+        <Preinscribete />
+      </div>
 
     </main>
   );

@@ -58,16 +58,16 @@ export default function HeroTwo() {
         <h2 className="text-4xl md:text-6xl font-bold mb-4">
           El pasado{" "}
           <span className="text-purple-500">4 y 5 de mayo de 2024,</span> la
-          costa brilló con inteligencia artificial
+          costa vibró con inteligencia artificial
         </h2>
         <div className="bg-black text-white p-4 mx-auto max-w-6xl">
-          <p className="text-lg md:text-2xl">
+          <p className="text-lg md:text-lg">
             <strong>Barranqui-IA</strong> dejó huella en la innovación del
             Caribe. Más de <strong>150 mentes brillantes</strong>, en{" "}
             <strong>21 equipos</strong>, dieron vida a soluciones con
             inteligencia artificial en un ambiente dinámico y colaborativo.
           </p>
-          <p className="mt-2 text-lg md:text-2xl pb-0">
+          <p className="mt-2 text-lg md:text-lg pb-0">
             Más que una competencia, fue un{" "}
             <strong>maratón de creatividad y aprendizaje</strong>, donde la
             pasión demostró que no hay barreras para innovar. Barranquilla

@@ -9,16 +9,17 @@ export default function CrearTestimonio({ getTestimonials }: Props) {
   const [isCreatingTestimonial, setIsCreatingTestimonial] = useState(false);
   const [nameUser, setNameUser] = useState("");
   const [testimonial, setTestimonial] = useState("");
+  const [role, setRole] = useState("");
 
   const handleSendData = async () => {
     const data = await fetch(
       `${process.env.NEXT_PUBLIC_URL_TESTIMONIALS}/api/testimonials`,
       {
         method: "POST",
-        body: JSON.stringify({ nameUser, description: testimonial }),
+        body: JSON.stringify({ nameUser, description: testimonial, role }),
       }
     );
-    const resp = await data.json();
+    await data.json();
     setIsCreatingTestimonial(false);
     getTestimonials();
   };
@@ -60,6 +61,17 @@ export default function CrearTestimonio({ getTestimonials }: Props) {
               name=""
               id=""
             />
+          </label>
+          <label>
+            Como participaste en el hackatón
+            <select
+              className="w-full rounded-md px-4 py-2 text-black"
+              onChange={(e) => setRole(e.target.value)}>
+              <option value="">Selecciona un rol</option>
+              <option value="mentor">Mentor</option>
+              <option value="participante">Participante</option>
+              <option value="staff">Staff</option>
+            </select>
           </label>
           <button className="text-lg text-white block w-fit bg-principleViolet mx-auto py-2 px-6 rounded-md">
             Compartir testimonio
