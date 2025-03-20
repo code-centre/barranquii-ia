@@ -23,9 +23,10 @@ export default function Preinscribete() {
         href="https://www.codigoabierto.tech/eventos"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-2xl md:text-4xl mt-10 px-6 py-3 font-extrabold rounded-full bg-gradient-to-r from-blue-600 to-purple-500 shadow-lg pb-20px"
+        className="text-lg md:text-4xl mt-10 px-8 py-4 font-extrabold rounded-lg bg-gradient-to-r from-principleViolet via-purple-600 to-blue-600 hover:from-blue-600 hover:to-principleViolet text-white shadow-lg shadow-purple-500/30 transition-all duration-300 transform hover:scale-105 hover:shadow-purple-500/50 relative overflow-hidden group"
       >
-        PREINSCRÍBETE
+        <span className="relative z-10">INSCRÍBETE</span>
+        <span className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
       </a>
     </section>
   );

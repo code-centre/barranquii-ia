@@ -34,7 +34,7 @@ export default function Talleres() {
             />
             <a href={talleres[0].link} target="_blank" rel="noopener noreferrer">
               <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 mt-4 text-lg">
-                Ver curso
+                Ver grabación
               </button>
             </a>
           </div>
@@ -63,7 +63,7 @@ export default function Talleres() {
             />
             <a href={talleres[1].link} target="_blank" rel="noopener noreferrer">
               <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 mt-4 text-lg">
-                Ver curso
+                Ver grabación
               </button>
             </a>
           </div>
@@ -82,7 +82,7 @@ export default function Talleres() {
               />
               <a href={taller.link} target="_blank" rel="noopener noreferrer">
                 <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 mt-4 text-lg">
-                  Ver curso
+                  Ver grabación
                 </button>
               </a>
             </div>

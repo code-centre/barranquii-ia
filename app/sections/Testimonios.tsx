@@ -10,30 +10,7 @@ interface Testimonials {
 }
 
 export default function Testimonios() {
-  const [testimonials, setTestimonials] = useState<Testimonials[]>([{
-    id: 5,
-    nameUser: "Anuar Harb",
-    description: "¡Fue un evento increíble! Me encantó ver a todos tan emocionados con sus proyectos y esforzandose por sacarlos adelante. Sin duda una experiencia que vale la pena vivir al menos una vez en la vida.",
-    role: "mentor"
-  },
-  {
-    id: 6,
-    nameUser: "Anuar Harb",
-    description: "¡Fue un evento increíble! Me encantó ver a todos tan emocionados con sus proyectos y esforzandose por sacarlos adelante. Sin duda una experiencia que vale la pena vivir al menos una vez en la vida.",
-    role: "mentor"
-  },
-  {
-    id: 7,
-    nameUser: "Anuar Harb",
-    description: "¡Fue un evento increíble! Me encantó ver a todos tan emocionados con sus proyectos y esforzandose por sacarlos adelante. Sin duda una experiencia que vale la pena vivir al menos una vez en la vida.",
-    role: "mentor"
-  },
-  {
-    id: 8,
-    nameUser: "Anuar Harb",
-    description: "¡Fue un evento increíble! Me encantó ver a todos tan emocionados con sus proyectos y esforzandose por sacarlos adelante. Sin duda una experiencia que vale la pena vivir al menos una vez en la vida.",
-    role: "mentor"
-  }]);
+  const [testimonials, setTestimonials] = useState<Testimonials[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoplay, setAutoplay] = useState(true);

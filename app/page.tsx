@@ -22,6 +22,7 @@ import Testimonios from "./sections/Testimonios";
 import Preinscribete from "./sections/Preinscribete";
 import Ganadores from "./sections/Ganadores";
 import HeroTwo from "./sections/Hero2";
+import PromoBar from "./components/PromoBar";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       <div>
         <Hero />
         <Sponsors />
+        <PromoBar />
       </div>
       <div className="container mx-auto gap-20 flex flex-col">
         <HeroTwo />
