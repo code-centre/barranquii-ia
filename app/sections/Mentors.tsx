@@ -41,8 +41,8 @@ export default function Mentors() {
       <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
         Mentores 
       </h2>
-      <p className="text-2xl text-gray-300">
-        Estos fueron los <strong>increíbles mentores</strong> que acompañaron a los participantes, guiándolos en la <strong>creación de sus proyectos</strong> y en el <strong>mundo de la inteligencia artificial,</strong> el diseño y los negocios.
+      <p className="text-l text-white">
+        Estos fueron los <strong  className="text-purple-500">increíbles mentores</strong> que acompañaron a los participantes, guiándolos en la <strong  className="text-purple-500">creación de sus proyectos</strong > y en el <strong className="text-purple-500">mundo de la inteligencia artificial,</strong> el diseño y los negocios.
       </p>
 
       <div className="relative overflow-hidden w-full mx-auto">
@@ -79,14 +79,14 @@ export default function Mentors() {
         {/* Botones de navegación */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+          className="absolute left-6 top-1/2 transform -translate-y-1/2 -translate-x-1/2 bg-purple-600 hover:bg-purple-400 text-white  w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shadow-lg z-10 transition-all duration-300"
         >
           &#10094;
         </button>
 
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+          className="absolute right-6 top-1/2 transform -translate-y-1/2 translate-x-1/2 bg-purple-600 hover:bg-purple-00 text-white  w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shadow-lg z-10 transition-all duration-300"
         >
           &#10095;
         </button>

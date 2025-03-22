@@ -9,7 +9,7 @@ export default function Preinscribete() {
         <strong>ESTE FUÉ SOLO EL INICIO</strong>
       </p>
       <h1 className="text-6xl md:text-8xl font-extrabold mt-4">
-        <span className="font-bold bg-gradient-to-r from-pink-400 via-pink-50 via-purple-600 to-pink-400 bg-clip-text text-transparent">
+        <span className="font-bold bg-gradient-to-r from-pink-400 via-pink-50 to-pink-400 bg-clip-text text-transparent">
           Barranqui-IA
         </span>
       </h1>
@@ -20,7 +20,7 @@ export default function Preinscribete() {
         <span className="text-purple-400 text-3xl md:text-5xl">DE MAYO</span>
       </p>
       <a
-        href="https://www.codigoabierto.tech/eventos"
+        href="https://www.codigoabierto.tech/eventos/barranqui-ia"
         target="_blank"
         rel="noopener noreferrer"
         className="text-lg md:text-4xl mt-10 px-8 py-4 font-extrabold rounded-lg bg-gradient-to-r from-principleViolet via-purple-600 to-blue-600 hover:from-blue-600 hover:to-principleViolet text-white shadow-lg shadow-purple-500/30 transition-all duration-300 transform hover:scale-105 hover:shadow-purple-500/50 relative overflow-hidden group"

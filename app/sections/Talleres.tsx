@@ -18,7 +18,7 @@ export default function Talleres() {
         Talleres
       </h2>
       <p className="text-l md:text-l leading-relaxed">
-        Tuvimos el privilegio de contar con <strong>6 expertos</strong> que compartieron su conocimiento a través de talleres exclusivos, brindando herramientas clave para aprovechar al máximo la inteligencia artificial. De la mano de <strong>Google y Python Colombia,</strong> los participantes exploraron el poder de la IA, aprendiendo de manera práctica y guiada por referentes de la industria.
+        Tuvimos el privilegio de contar con <strong  className="text-purple-500">6 expertos</strong> que compartieron su conocimiento a través de talleres exclusivos, brindando herramientas clave para aprovechar al máximo la inteligencia artificial. De la mano de <strong  className="text-purple-500">Google y Python Colombia,</strong> los participantes exploraron el poder de la IA, aprendiendo de manera práctica y guiada por referentes de la industria.
       </p>
 
       <div className="w-full max-w-9xl mx-auto grid gap-12">

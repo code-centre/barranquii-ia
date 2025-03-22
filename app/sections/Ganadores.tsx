@@ -11,12 +11,12 @@ export default function Ganadores() {
             </h2>
 
             <div className="flex flex-col items-center text-center">
-                <div className="relative w-full max-w-[800px] sm:max-w-[700px] md:max-w-[900px] lg:max-w-[1000px] xl:max-w-[1000px]">
+                <div className="relative w-full max-w-[800px] sm:max-w-[700px] md:max-w-[600px] lg:max-w-[700px] xl:max-w-[700px]">
                     <Image
                         src="/FOTOSBARRANQUI-IA/ganadores.png"
                         alt="Ganadores del evento"
                         layout="responsive"
-                        width={800}
+                        width={500}
                         height={800}
                         className="rounded-lg object-contain"
                     />
@@ -26,7 +26,7 @@ export default function Ganadores() {
                     href="https://barranquiia.devpost.com/project-gallery"
                     className="text-purple-500 hover:text-purple-700 transition text-2xl">
 
-                  ¡Haz click aquí para ver todos los proyectos!
+                    ¡Dá click aquí para ver todos los proyectos!
                 </a>
 
 
