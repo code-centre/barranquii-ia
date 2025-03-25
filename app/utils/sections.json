@@ -1,36 +1,15 @@
 [   {
   "id": "Hero",
-  "name": "Así se vivió"
+  "name": "Inicio"
 },
 {
   "id": "Hero2",
-  "name": "Hackaton 2024"
-},
-{
-  "id": "Testimonios",
-  "name": "Testimonios"
-},
-{
-  "id": "talleres",
-  "name": "Talleres"
-},
-{
-  "id": "mentors",
-  "name": "Mentores"
-},
-
-{
-  "id": "Ganadores",
-  "name": "Ganadores"
-  
-},
-{
-  "id": "allies",
-  "name": "Aliados"
+  "name": "Hackaton 2024",
+  "url": "ediciones-anteriores"
 },
 {
   "id": "Preinscribete",
-  "name": "2025"
+  "name": "Inscripciones 2025"
 }
  
 

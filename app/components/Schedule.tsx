@@ -2,38 +2,38 @@
 import React, { useState } from "react";
 
 const DAYS_EVENT = [
-  // {
-  //   title: "Inauguración",
-  //   number: "03",
-  //   day: "Mayo, viernes",
-  // },
+  {
+    title: "Inauguración",
+    number: "02",
+    day: "Mayo, viernes",
+  },
   {
     title: "Primer Día",
-    number: "04",
+    number: "03",
     day: "Mayo, sábado",
   },
   {
     title: "Segundo Día",
-    number: "05",
+    number: "04",
     day: "Mayo, domingo",
   },
 ];
 
 const SCHEDULE_EVENT = [
-  // [
-  //   {
-  //     time: "07:00 PM - 9:00 PM",
-  //     title: "Meet & Greet",
-  //     description:
-  //       "Evento de pre-inauguración del hackatón donde tendremos la oportunidad de conocer a los mentores y compartir un rato con ellos mientras disfrutamos de música en vivo y una divertida velada. *Entrada con el paquete Full Access",
-  //   },
-  //   {
-  //     time: "09:00 PM - 10:00 PM",
-  //     title: "Show Musical",
-  //     description:
-  //       "Disfrutaremos escuchando a la revelación Barranquillera con su nueva propuesta que combina Funk y Soul, Grace Torres!",
-  //   },
-  // ],
+  [
+    {
+      time: "07:00 PM - 9:00 PM",
+      title: "Meet & Greet",
+      description:
+        "Evento de pre-inauguración del hackatón donde tendremos la oportunidad de conocer a los mentores y compartir un rato con ellos mientras disfrutamos de música en vivo y una divertida velada. *Entrada con el paquete de meet & greet",
+    },
+    {
+      time: "09:00 PM - 10:00 PM",
+      title: "Show Musical",
+      description:
+        "Disfrutaremos escuchando a la revelación Barranquillera con su nueva propuesta que combina Funk y Soul, GRACE!",
+    },
+  ],
   [
     {
       time: "08:00 AM - 09:00 AM",
