@@ -40,7 +40,7 @@ export default function Home() {
           <Location />
         </div>
         <ScheduleSection />
-        {/* <LearnInCommunity /> */}
+        <LearnInCommunity />
         <BeASponsor />
         <Preinscribete />
       </div>
