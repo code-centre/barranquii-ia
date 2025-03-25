@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Location() {
   return (
-    <section id="location" className="flex flex-col gap-5 pt-32">
+    <section id="location" className="flex flex-col gap-5 pt-8">
       <div>
         <div className="flex justify-between md:justify-start items-center md:gap-14">
           <h2 className="border- border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
