@@ -1,5 +1,5 @@
 import { tree } from "next/dist/build/templates/app-page";
-import { Title } from "../components/hero/Title";
+import { Title } from "../components/hero/HeroTitle";
 
 export default function Test() {
     return (
