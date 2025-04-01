@@ -49,11 +49,11 @@ const TEXTS: Record<string, (string | { text: string, items: string[] })[]> = {
 
 export default function Summary({ landing }: Props) {
 	return (
-		<section>
+		<section className='flex flex-col gap-4'>
 			<Title title={`¿Qué es ${TITLES[landing]}?`} landing={landing} />
-			<div className='flex gap-3 lg:gap-5 mt-6'>
+			<div className='grid grid-cols-[3px_1fr] gap-3 lg:gap-10'>
 				<Border landing={landing} />
-				<div className='flex-col flex gap-3 text-lg'>
+				<div className='flex-col flex gap-7 text-lg'>
 					{
 						TEXTS[landing].map((text: string | { text: string, items: string[] }, index: number) => (
 							<>
