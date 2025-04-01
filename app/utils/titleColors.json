@@ -1,0 +1,45 @@
+{
+    "themes": {
+        "default": {
+            "title": {
+                "gradient": true,
+                "from": "from-pink-500",
+                "via": "via-purple-500",
+                "to": "to-indigo-500",
+                "solid": "text-pink-500"
+            }
+        },
+        "caribeia": {
+            "title": {
+                "gradient": true,
+                "from": "from-fuchsia-400",
+                "via": "via-pink-200",
+                "to": "to-purple-700"
+            }
+        },
+        "barranquiia": {
+            "title": {
+                "gradient": true,
+                "from": "from-fuchsia-400",
+                "via": "via-pink-200",
+                "to": "to-purple-700"
+            }
+        },
+        "samaria": {
+            "title": {
+                "gradient": true,
+                "from": "from-amber-400",
+                "via": "via-yellow-300",
+                "to": "to-yellow-800"
+            }
+        },
+        "cartagenia": {
+            "title": {
+                "gradient": true,
+                "from": "from-teal-400",
+                "via": "via-cyan-200",
+                "to": "to-pink-400"
+            }
+        }
+    }
+}

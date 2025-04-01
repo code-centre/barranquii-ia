@@ -2,38 +2,38 @@
 import React, { useState } from "react";
 
 const DAYS_EVENT = [
-  // {
-  //   title: "Inauguración",
-  //   number: "03",
-  //   day: "Mayo, viernes",
-  // },
+  {
+    title: "Inauguración",
+    number: "02",
+    day: "Mayo, viernes",
+  },
   {
     title: "Primer Día",
-    number: "04",
+    number: "03",
     day: "Mayo, sábado",
   },
   {
     title: "Segundo Día",
-    number: "05",
+    number: "04",
     day: "Mayo, domingo",
   },
 ];
 
 const SCHEDULE_EVENT = [
-  // [
-  //   {
-  //     time: "07:00 PM - 9:00 PM",
-  //     title: "Meet & Greet",
-  //     description:
-  //       "Evento de pre-inauguración del hackatón donde tendremos la oportunidad de conocer a los mentores y compartir un rato con ellos mientras disfrutamos de música en vivo y una divertida velada. *Entrada con el paquete Full Access",
-  //   },
-  //   {
-  //     time: "09:00 PM - 10:00 PM",
-  //     title: "Show Musical",
-  //     description:
-  //       "Disfrutaremos escuchando a la revelación Barranquillera con su nueva propuesta que combina Funk y Soul, Grace Torres!",
-  //   },
-  // ],
+  [
+    {
+      time: "07:00 PM - 9:00 PM",
+      title: "Meet & Greet",
+      description:
+        "Evento de pre-inauguración del hackatón donde tendremos la oportunidad de conocer a los mentores y compartir un rato con ellos mientras disfrutamos de música en vivo y una divertida velada. *Entrada con el paquete de meet & greet",
+    },
+    {
+      time: "09:00 PM - 10:00 PM",
+      title: "Show Musical",
+      description:
+        "Disfrutaremos escuchando a la revelación Barranquillera con su nueva propuesta que combina Funk y Soul, GRACE!",
+    },
+  ],
   [
     {
       time: "08:00 AM - 09:00 AM",
@@ -117,17 +117,16 @@ const SCHEDULE_EVENT = [
 export default function Schedule() {
   const [daySchedule, setDaySchedule] = useState(0);
   return (
-    <div className="md:flex-1 w-full min-h-[80vh]">
-      <header className="border-gray-500 grid grid-cols-2 border-b-6">
+    <div className="md:flex-1 w-full">
+      <header className="flex justify-center lg:justify-evenly border-gray-500 border-b-6 grid-cols-1 gap-5 md:grid-cols-3 md:gap-20">
         {DAYS_EVENT.map((day, i) => (
           <div
             key={day.title}
             onClick={() => setDaySchedule(i)}
-            className={`${
-              daySchedule === i
-                ? "text-principleViolet border-b-4 pb-4"
-                : "text-gray-400"
-            } cursor-pointer text-center md:text-left`}
+            className={`${daySchedule === i
+              ? "text-principleViolet border-b-4 pb-4"
+              : "text-gray-400"
+              } cursor-pointer text-center md:text-left hover:transition-colors duration-100`}
           >
             <p className="font-medium">{day.title}</p>
             <p className="mt-1">
@@ -137,12 +136,16 @@ export default function Schedule() {
           </div>
         ))}
       </header>
-      <main className="flex flex-col mt-10">
-        {SCHEDULE_EVENT[daySchedule]?.map((schedule, i) => (
+      <main className="flex flex-col mt-10 px-5">
+        {SCHEDULE_EVENT[daySchedule]?.map((schedule, i, arr) => (
           <div key={i} className="flex gap-5 md:gap-5">
             <p className="w-[50%] md:w-[40%] text-gray-400">{schedule.time}</p>
-            <div className="relative border-principleViolet border-l">
-              <div className="-left-[10px] absolute bg-principleViolet mx-auto rounded-full w-5 h-5"></div>
+            <div className={`relative ${i !== arr.length - 1 ? 'border-principleViolet border-l' : ''}`}>
+              <div className="-left-[12px] absolute bg-principleViolet mx-auto rounded-full w-6 h-6">
+                <div className="flex justify-center items-center">
+                  {i + 1}
+                </div>
+              </div>
             </div>
             <div className="w-[80%]">
               <h3 className="font-bold">{schedule.title}</h3>

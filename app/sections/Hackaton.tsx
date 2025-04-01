@@ -20,7 +20,6 @@ export default function Hackathon() {
            desarrollar prototipos funcionales</strong>  Las temáticas pueden ir desde la inteligencia artificial hasta el desarrollo 
           de aplicaciones para solucionar problemas específicos de la sociedad.
         </p>
-      
       </div>
  
       {/* CONTENEDOR DE IMAGEN */}

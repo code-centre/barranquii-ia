@@ -96,14 +96,14 @@ export default function Navbar() {
         </button>
         <ul className="flex flex-col items-start pt-20 pl-6 space-y-6 text-lg sm:text-xl">
           {sectionsPage.map((section) => (
-            <li key={section.id} className="text-white">
-              <a
-                href={`#${section.id}`}
-                onClick={() => setOpenMenu(false)} // Cierra el menú al hacer clic
-                className="block py-2 hover:text-gray-300 transition-colors"
-              >
-                {section.name}
-              </a>
+
+            <li key={section.id} className={stylesLi}>
+            {section.url ? (
+              <Link href={section.url}>{section.name}</Link>
+            ) : (
+              <a href={`#${section.id}`} onClick={() => setOpenMenu(false)} // Cierra el menú al hacer clic
+              className="block py-2 hover:text-gray-300 transition-colors">{section.name}</a>
+            )}
             </li>
           ))}
         </ul>
