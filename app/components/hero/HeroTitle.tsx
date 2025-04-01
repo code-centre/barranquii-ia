@@ -25,6 +25,12 @@ const SUBTITLES: Record<string, string> = {
   'cartagen-ia': 'El primer hackatón de inteligencia artificial en el Caribe | Edición Cartagena'
 }
 
+const DATES: Record<string, string> = {
+  'barranqui-ia': '3 y 4 de Mayo',
+  'samar-ia': '23 y 24 de Mayo',
+  'cartagen-ia': 'Próximamente',
+}
+
 export default function HeroTitle({
   landing,
   size,
@@ -92,6 +98,7 @@ export default function HeroTitle({
         <Border landing={landing || 'default'} />
         {subtitle && <p className={`pl-5 text-2xl max-w-2xl`}>{SUBTITLES[landing]}</p>}
       </div>
+      <p className='ml-5 mt-5 bg-blue-600 w-36 text-center rounded-full'>{DATES[landing]}</p>
     </>
 
   )
