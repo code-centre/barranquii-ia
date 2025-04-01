@@ -7,7 +7,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ landing }: HeroSectionProps) {
     return (
-        <div className="flex">
+        <div className="flex justify-between mt-20">
             <div className="mb-10 lg:mb-16 xl:mb-20">
                 <HeroTitle
                     landing={landing}
@@ -15,8 +15,8 @@ export default function HeroSection({ landing }: HeroSectionProps) {
                     align="left"
                     subtitle="Transformando ideas en startups de alto impacto con base en inteligencia artificial. "
                 />
+                <HeroFigure landing={landing} />
             </div>
-            <HeroFigure landing={landing} />
         </div>
     );
 }
