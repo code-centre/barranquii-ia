@@ -10,7 +10,6 @@ export default function Home() {
         <Summary landing="default" />
       </div>
       <PromoBar />
-    <main className="py-20 lg:py-28 xl:py-32 min-h-screen max-w-6xl mx-auto px-5">
       <HeroSection landing="default"/>
       <Summary landing="default" />
     </main>
