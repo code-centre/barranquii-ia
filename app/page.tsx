@@ -35,14 +35,14 @@ export default function Home() {
       <div className="container mx-auto gap-20 flex flex-col">
         <Hackathon />
         <HowIs />
-        <div className="flex gap-8">
-          <FAQ />
-          <Location />
-        </div>
+        <div className="">
         <ScheduleSection />
+        </div>
         <LearnInCommunity />
         <BeASponsor />
         <Preinscribete />
+        <Location />
+        <FAQ />
       </div>
 
     </main>
