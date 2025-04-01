@@ -24,6 +24,7 @@ import Ganadores from "./sections/Ganadores";
 import HeroTwo from "./sections/Hero2";
 import PromoBar from "./components/PromoBar";
 import Hackathon from "./sections/Hackaton";
+import { Title } from "./components/hero/Title";
 
 export default function Home() {
   return (
@@ -36,13 +37,23 @@ export default function Home() {
         <Hackathon />
         <HowIs />
         <div className="">
-        <ScheduleSection />
+          <ScheduleSection />
         </div>
         <LearnInCommunity />
         <BeASponsor />
         <Preinscribete />
         <Location />
         <FAQ />
+        <div className="w-full flex flex-col gap-10 ">
+          <Title
+            title="Barranqui-IA"
+            theme="barranquiia"
+            size="xxxxl"
+            align="left"
+            gradient={true}
+          />
+
+        </div>
       </div>
 
     </main>
