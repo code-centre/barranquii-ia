@@ -13,6 +13,12 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        sans: ['var(--font-poppins)'],
+        mono: ['var(--font-league_spartan)'],
+        // jakarta: ['var(--font-plus_jakarta_sans)'],
+        // noto: ['var(--font-noto_sans)']
+      },
       colors: {
         principleViolet: '#0C6BFA',
         gradientBannerPurple: '#963CF2',

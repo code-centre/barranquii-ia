@@ -4,12 +4,19 @@ import sectionsPage from "../utils/sections.json";
 import { CloseIcon, MenuIcon } from "./Icons";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { THEME_LANDINGS } from "../utils/theme";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(0);
+  const [landing, setLanding] = useState("default");
+  console.log(landing);
 
+  useEffect(() => {
+    setLanding(pathname.split("/")[1]);
+  }, [pathname]);
+  
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
@@ -32,15 +39,20 @@ export default function Navbar() {
     "text-black hover:text-white cursor-pointer hover:underline font-semibold transition-all duration-300";
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-gradient-to-r from-gradientBannerPurple to-gradientBannerBlue shadow-lg">
+    <header 
+      style={{ 
+        background: `linear-gradient(to right, ${THEME_LANDINGS[landing !== '' ? landing : 'default'].gradient.from}, ${THEME_LANDINGS[landing !== '' ? landing : 'default'].gradient.via}, ${THEME_LANDINGS[landing !== '' ? landing : 'default'].gradient.to})`,
+
+      }}
+      className="fixed w-full top-0 z-50  shadow-lg">
       <nav
         className={`flex justify-between items-center px-5 ${
           isSmallDesktop ? "md:px-6 lg:px-8" : "md:px-8 lg:px-10"
-        } py-4 md:py-5`}
+        } py-3`}
       >
         {/* Logo */}
         <Link href="/" className="font-mono font-bold text-xl md:text-2xl text-white">
-          Barranqui-IA
+          Caribe-IA
         </Link>
 
         {/* Menú en escritorio */}
@@ -52,11 +64,7 @@ export default function Navbar() {
           >
             {sectionsPage.map((section) => (
               <li key={section.id} className={stylesLi}>
-                {section.url ? (
-                  <Link href={section.url}>{section.name}</Link>
-                ) : (
-                  <a href={`#${section.id}`}>{section.name}</a>
-                )}
+                <Link className={`${pathname === `/${section.id}` ? 'text-white' : ''}`} href={`/${section.id}`}>{section.name}</Link>
               </li>
             ))}
           </ul>

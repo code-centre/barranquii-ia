@@ -1,16 +1,14 @@
-[   {
-  "id": "Hero",
-  "name": "Inicio"
-},
-{
-  "id": "Hero2",
-  "name": "Hackaton 2024",
-  "url": "ediciones-anteriores"
-},
-{
-  "id": "Preinscribete",
-  "name": "Inscripciones 2025"
-}
- 
-
+[
+  {
+    "id": "barranqui-ia",
+    "name": "Barranqui-IA"
+  },
+  {
+    "id": "samar-ia",
+    "name": "Samari-IA"
+  },
+  {
+    "id": "cartagen-ia",
+    "name": "Cartagen-IA"
+  }
 ]
