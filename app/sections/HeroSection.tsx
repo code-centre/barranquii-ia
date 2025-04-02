@@ -7,8 +7,8 @@ interface HeroSectionProps {
 
 export default function HeroSection({ landing }: HeroSectionProps) {
     return (
-        <div className="flex mt-20">
-            <div className="mb-10 lg:mb-16 xl:mb-20">
+        <div className="flex mt-16">
+            <div className="mb-10 lg:mb-16 xl:mb-10">
                 <HeroTitle
                     landing={landing}
                     size="xxxxl"
