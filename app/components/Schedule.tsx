@@ -1,5 +1,8 @@
 "use client";
 import React, { useState } from "react";
+import Title from "./Title";
+import Border from "./Border";
+import { THEME_LANDINGS } from "../utils/theme";
 
 const DAYS_EVENT = [
   {
@@ -114,46 +117,55 @@ const SCHEDULE_EVENT = [
   ],
 ];
 
-export default function Schedule() {
+export default function Schedule({ landing }: { landing: string }) {
   const [daySchedule, setDaySchedule] = useState(0);
   return (
-    <div className="md:flex-1 w-full">
-      <header className="flex justify-center lg:justify-evenly border-gray-500 border-b-6 grid-cols-1 gap-5 md:grid-cols-3 md:gap-20">
-        {DAYS_EVENT.map((day, i) => (
-          <div
-            key={day.title}
-            onClick={() => setDaySchedule(i)}
-            className={`${daySchedule === i
-              ? "text-principleViolet border-b-4 pb-4"
-              : "text-gray-400"
-              } cursor-pointer text-center md:text-left hover:transition-colors duration-100`}
-          >
-            <p className="font-medium">{day.title}</p>
-            <p className="mt-1">
-              <span className="mr-1 font-bold md:text-2xl">{day.number}</span>
-              {day.day}
-            </p>
-          </div>
-        ))}
-      </header>
-      <main className="flex flex-col mt-10 px-5">
-        {SCHEDULE_EVENT[daySchedule]?.map((schedule, i, arr) => (
-          <div key={i} className="flex gap-5 md:gap-5">
-            <p className="w-[50%] md:w-[40%] text-gray-400">{schedule.time}</p>
-            <div className={`relative ${i !== arr.length - 1 ? 'border-principleViolet border-l' : ''}`}>
-              <div className="-left-[12px] absolute bg-principleViolet mx-auto rounded-full w-6 h-6">
-                <div className="flex justify-center items-center">
-                  {i + 1}
+    <div className="flex flex-col gap-10 w-full max-w-6xl mx-auto px-5">
+      <Title title="Cronograma" landing={landing} />
+      <div className="grid grid-cols-[auto_1fr] gap-10">
+        <Border landing={landing} />
+        <div>
+          <header className="border-gray-500 border-b-6 grid gap-5 grid-cols-3 md:gap-20">
+            {DAYS_EVENT.map((day, i) => (
+              <div
+                style={{
+                  paddingBottom: daySchedule === i ? "16px" : "0px",
+                  color: daySchedule === i ? THEME_LANDINGS[landing].principal : "#9ca3af",
+                  borderBottomWidth: daySchedule === i ? "4px" : "0px",
+                  borderColor: daySchedule === i ? THEME_LANDINGS[landing].principal : "#9ca3af",
+                }}
+                key={day.title}
+                onClick={() => setDaySchedule(i)}
+                className={`cursor-pointer text-center md:text-left hover:transition-colors duration-100`}
+              >
+                <p className="font-medium">{day.title}</p>
+                <p className="mt-1">
+                  <span className="mr-1 font-bold md:text-2xl">{day.number}</span>
+                  {day.day}
+                </p>
+              </div>
+            ))}
+          </header>
+          <main className="flex flex-col mt-10">
+            {SCHEDULE_EVENT[daySchedule]?.map((schedule, i, arr) => (
+              <div key={i} className="flex gap-5 md:gap-5">
+                <p className="w-[50%] md:w-[20%] text-gray-400">{schedule.time}</p>
+                <div style={{ borderColor: THEME_LANDINGS[landing].principal }} className={`relative ${i !== arr.length - 1 ? ' border-l' : ''}`}>
+                  <div style={{ backgroundColor: THEME_LANDINGS[landing].principal }} className="-left-[12px] absolute mx-auto rounded-full w-6 h-6">
+                    <div className="flex justify-center items-center">
+                      {i + 1}
+                    </div>
+                  </div>
+                </div>
+                <div className="w-[80%]">
+                  <h3 className="font-bold">{schedule.title}</h3>
+                  <p className="pb-7 text-gray-400">{schedule.description}</p>
                 </div>
               </div>
-            </div>
-            <div className="w-[80%]">
-              <h3 className="font-bold">{schedule.title}</h3>
-              <p className="pb-7 text-gray-400">{schedule.description}</p>
-            </div>
-          </div>
-        ))}
-      </main>
+            ))}
+          </main>
+        </div>
+      </div>
     </div>
   );
 }

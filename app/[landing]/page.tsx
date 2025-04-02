@@ -7,6 +7,7 @@ import Workshops from '../sections/Workshops'
 import Sponsors from '../components/Sponsors'
 import Mentors from '../sections/Mentors'
 import FAQ from '../sections/FAQ'
+import Schedule from '../components/Schedule'
 
 export default function LandingPage({ params }: { params: { landing: string } }) {
 	return (
@@ -21,6 +22,7 @@ export default function LandingPage({ params }: { params: { landing: string } })
 			<div className='max-w-6xl mx-auto px-5 w-full'>
 				<Expectations landing={params.landing} />
 			</div>
+			<Schedule landing={params.landing} />
 			<Mentors landing={params.landing} />
 			<div className='max-w-6xl mx-auto px-5 w-full'>
 				<Workshops landing={params.landing} />
