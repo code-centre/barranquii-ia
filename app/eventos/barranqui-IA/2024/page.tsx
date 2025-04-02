@@ -38,7 +38,7 @@ export default function PastEvent() {
 				<HeroTwo />
 				<Testimonios />
 				<Talleres />
-				<Mentors />
+				<Mentors landing="barranqui-ia"  />
 				<Ganadores />
 				<Allies />
 				<Preinscribete />

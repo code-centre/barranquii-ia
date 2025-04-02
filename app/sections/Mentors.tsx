@@ -3,93 +3,77 @@
 import React, { useState, useEffect } from "react";
 import mentors from "../utils/mentors.json";
 import MentorsCard from "../components/MentorsCard";
+import Title from "../components/Title";
+import { InfiniteMovingCards } from "../components/InfiniteMovingCards";
 
-export default function Mentors() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [mentorsPerPage, setMentorsPerPage] = useState(12); // Default para desktop
+interface Props {
+  landing: string
+}
+export default function Mentors({ landing }: Props) {
+  const [firstRowOfMentors, setFirstRowOfMentors] = useState(mentors.slice(0, 11));
+  const [secondRowOfMentors, setSecondRowOfMentors] = useState(mentors.slice(12));
+  //   const updateMentorsPerPage = () => {
+  //     if (window.innerWidth < 640) {
+  //       setMentorsPerPage(4); // Móviles (2 columnas x 2 filas)
+  //     } else if (window.innerWidth < 1024) {
+  //       setMentorsPerPage(6); // Tablets (3 columnas x 2 filas)
+  //     } else {
+  //       setMentorsPerPage(16); // Escritorio (4 o 6 columnas x 2 filas)
+  //     }
+  //   };
 
-  useEffect(() => {
-    const updateMentorsPerPage = () => {
-      if (window.innerWidth < 640) {
-        setMentorsPerPage(4); // Móviles (2 columnas x 2 filas)
-      } else if (window.innerWidth < 1024) {
-        setMentorsPerPage(6); // Tablets (3 columnas x 2 filas)
-      } else {
-        setMentorsPerPage(12); // Escritorio (4 o 6 columnas x 2 filas)
-      }
-    };
+  //   updateMentorsPerPage();
+  //   window.addEventListener("resize", updateMentorsPerPage);
+  //   return () => window.removeEventListener("resize", updateMentorsPerPage);
+  // }, []);
 
-    updateMentorsPerPage();
-    window.addEventListener("resize", updateMentorsPerPage);
-    return () => window.removeEventListener("resize", updateMentorsPerPage);
-  }, []);
+  // const totalSlides = Math.ceil(mentors.length / mentorsPerPage);
 
-  const totalSlides = Math.ceil(mentors.length / mentorsPerPage);
+  // const nextSlide = () => {
+  //   setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+  // };
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? totalSlides - 1 : prevIndex - 1
-    );
-  };
+  // const prevSlide = () => {
+  //   setCurrentIndex((prevIndex) =>
+  //     prevIndex === 0 ? totalSlides - 1 : prevIndex - 1
+  //   );
+  // };
 
   return (
-    <section id="mentors" className="scroll-m-32 flex flex-col w-full gap-10 px-10">
-      <h2 className="border-principleViolet pl-2 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
-        Mentores 
-      </h2>
-      <p className="text-l text-white">
-        Estos fueron los <strong  className="text-purple-500">increíbles mentores</strong> que acompañaron a los participantes, guiándolos en la <strong  className="text-purple-500">creación de sus proyectos</strong > y en el <strong className="text-purple-500">mundo de la inteligencia artificial,</strong> el diseño y los negocios.
-      </p>
-
+    <section id="mentors" className="scroll-m-32 flex flex-col w-full gap-10">
+      <div className="max-w-6xl mx-auto w-full px-5">
+        <Title title="Mentores 2025" landing={landing} />
+      </div>
       <div className="relative overflow-hidden w-full mx-auto">
-        {/* Contenedor del slider */}
-        <div
-          className="flex transition-transform duration-700 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-            <ul
-              key={slideIndex}
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-5 w-full min-w-full flex-shrink-0 justify-items-center"
-            >
-              {mentors
-                .slice(slideIndex * mentorsPerPage, (slideIndex + 1) * mentorsPerPage)
-                .map((mentor, i) => (
-                  <li key={i} className="w-full flex justify-center">
-                    <MentorsCard
-                      description={mentor.description}
-                      genre={mentor.genre}
-                      image={mentor.image}
-                      name={mentor.name}
-                      lastName={mentor.lastName}
-                    //  className="h-full text-sm sm:text-base"
-                    />
-                  </li>
-                ))}
-            </ul>
 
-
+        <InfiniteMovingCards direction="right" speed="slow" pauseOnHover={true}>
+          {firstRowOfMentors.map((mentor, i) => (
+            <li key={i} className="w-full flex justify-center">
+              <MentorsCard
+                landing={landing}
+                description={mentor.description}
+                genre={mentor.genre}
+                image={mentor.image}
+                name={mentor.name}
+                lastName={mentor.lastName}
+              />
+            </li>
           ))}
-        </div>
-
-        {/* Botones de navegación */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-6 top-1/2 transform -translate-y-1/2 -translate-x-1/2 bg-purple-600 hover:bg-purple-400 text-white  w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shadow-lg z-10 transition-all duration-300"
-        >
-          &#10094;
-        </button>
-
-        <button
-          onClick={nextSlide}
-          className="absolute right-6 top-1/2 transform -translate-y-1/2 translate-x-1/2 bg-purple-600 hover:bg-purple-00 text-white  w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shadow-lg z-10 transition-all duration-300"
-        >
-          &#10095;
-        </button>
+        </InfiniteMovingCards>
+        <InfiniteMovingCards direction="left" speed="slow" pauseOnHover={true}>
+          {secondRowOfMentors.map((mentor, i) => (
+            <li key={i} className="w-full flex justify-center">
+              <MentorsCard
+                description={mentor.description}
+                genre={mentor.genre}
+                image={mentor.image}
+                name={mentor.name}
+                lastName={mentor.lastName}
+                landing={landing}
+              />
+            </li>
+          ))}
+        </InfiniteMovingCards>
       </div>
     </section>
   );
