@@ -2,7 +2,7 @@ import Summary from "./sections/Summary";
 import PromoBar from "./components/PromoBar";
 import HeroSection from "./sections/HeroSection";
 import Expectations from "./sections/Expectations";
-
+import Phases from "./sections/Phases";
 
 export default function Home() {
   return (
@@ -14,9 +14,7 @@ export default function Home() {
         <Summary landing='default' />
       </div>
       <PromoBar />
-      <div className='max-w-6xl mx-auto px-5 w-full'>
-        <Expectations landing='default' />
-      </div>
+      <Phases />
     </main>
   );
 }
