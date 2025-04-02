@@ -3,6 +3,7 @@ import Summary from '../sections/Summary'
 import PromoBar from '../components/PromoBar'
 import Expectations from '../sections/Expectations'
 import HeroSection from '../sections/HeroSection'
+import Workshops from '../sections/Workshops'
 
 export default function LandingPage({ params }: { params: { landing: string } }) {
 	return (
@@ -16,6 +17,9 @@ export default function LandingPage({ params }: { params: { landing: string } })
 			<PromoBar />
 			<div className='max-w-6xl mx-auto px-5 w-full'>
 				<Expectations landing={params.landing} />
+			</div>
+			<div className='max-w-6xl mx-auto px-5 w-full'>
+				<Workshops landing={params.landing} />
 			</div>
 		</main>
 	)

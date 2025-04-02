@@ -94,11 +94,15 @@ export default function HeroTitle({
           }}
           className={`font-bold font-mono ${sizeClass}`}>{TITLES[landing]}</h2>
       </div>
-      <div className='flex mt-6'>
+      <div className='grid grid-cols-[6px_1fr] gap-5'>
         <Border landing={landing || 'default'} />
-        {subtitle && <p className={`pl-5 text-2xl max-w-2xl`}>{SUBTITLES[landing]}</p>}
+        {subtitle &&
+          <div>
+            <p className={`text-2xl max-w-2xl`}>{SUBTITLES[landing]}</p>
+            <p className='mt-2 bg-blue-600 w-36 text-center rounded-full'>{DATES[landing]}</p>
+          </div>
+        }
       </div>
-      <p className='ml-5 mt-5 bg-blue-600 w-36 text-center rounded-full'>{DATES[landing]}</p>
     </>
 
   )

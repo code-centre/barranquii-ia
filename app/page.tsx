@@ -14,6 +14,9 @@ export default function Home() {
         <Summary landing='default' />
       </div>
       <PromoBar />
+      {/* <div className='max-w-6xl mx-auto px-5 w-full'>
+        <Expectations landing='default' />
+      </div> */}
       <Phases />
     </main>
   );
