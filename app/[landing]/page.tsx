@@ -6,6 +6,7 @@ import HeroSection from '../sections/HeroSection'
 import Workshops from '../sections/Workshops'
 import Sponsors from '../components/Sponsors'
 import Mentors from '../sections/Mentors'
+import FAQ from '../sections/FAQ'
 
 export default function LandingPage({ params }: { params: { landing: string } }) {
 	return (
@@ -24,7 +25,8 @@ export default function LandingPage({ params }: { params: { landing: string } })
 			<div className='max-w-6xl mx-auto px-5 w-full'>
 				<Workshops landing={params.landing} />
 			</div>
-			<Sponsors />
+			<Sponsors landing={params.landing} />
+			<FAQ landing={params.landing} />
 		</main>
 	)
 }
