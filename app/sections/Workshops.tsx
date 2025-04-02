@@ -164,7 +164,7 @@ export default function Workshops({ landing }: Props) {
 				</div>
 				<div className='h-full bg-gray-300 rounded-3xl'></div>
 			</div>
-			<Image src="/3DFigures/glass-3d.png" alt="3D glass" width={500} height={400} className="absolute -bottom-32 -right-56" />
+			<Image src="/3DFigures/glass-3d.png" alt="3D glass" width={500} height={400} className="absolute -bottom-32 -right-60" />
 		</section>
 	)
 }
