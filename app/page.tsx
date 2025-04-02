@@ -3,6 +3,8 @@ import PromoBar from "./components/PromoBar";
 import HeroSection from "./sections/HeroSection";
 import Expectations from "./sections/Expectations";
 import Phases from "./sections/Phases";
+import Sponsors from "./components/Sponsors";
+import Title from "./components/Title";
 
 export default function Home() {
   return (
@@ -17,7 +19,20 @@ export default function Home() {
       {/* <div className='max-w-6xl mx-auto px-5 w-full'>
         <Expectations landing='default' />
       </div> */}
-        <Phases />
+      <Phases />
+
+      <div className='max-w-6xl mx-auto px-5 w-full'>
+        <Title
+          title="Aliados"
+           />
+      </div>
+      <Sponsors />
+
+      <div className='max-w-6xl mx-auto px-5 w-full'>
+        <Title
+          title="Participa en los eventos de Caribe-IA"
+           />
+      </div>
     </main>
   );
 }

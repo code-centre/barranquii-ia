@@ -1,4 +1,5 @@
 import PhasesSeason from "../components/phases/PhasesSeason";
+import Image from "next/image";
 
 export default function Phases() {
     return (
