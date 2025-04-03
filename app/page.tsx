@@ -20,8 +20,13 @@ export default function Home() {
       <PromoBar />
       <Phases />
       <Sponsors landing='default' />
-      <EventsSection />
-      <FAQ landing='default' />
+      <div className='max-w-6xl mx-auto px-5 w-full'>
+        <Title
+          title="Participa en los eventos de Caribe-IA"
+        />
+        <EventsSection />
+      </div>
+        <FAQ landing='default' />
     </main>
   );
 }

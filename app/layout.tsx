@@ -56,7 +56,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{ children: React.ReactNode}>) {
   return (
     <html lang="es" className="overflow-x-hidden scroll-smooth">
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_KEY || ""} />
