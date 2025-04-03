@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import animations from '@midudev/tailwind-animations'
+
 
 const config: Config = {
   content: [
@@ -30,7 +32,7 @@ const config: Config = {
       animation: {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
-          "meteor-effect": "meteor 5s linear infinite",
+        "meteor-effect": "meteor 5s linear infinite",
       },
       keyframes: {
         scroll: {
@@ -49,6 +51,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [animations],
 };
 export default config;

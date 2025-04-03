@@ -172,7 +172,7 @@ interface EventData {
 
 interface CardEventProps {
   eventData: EventData;
-  landing?: string;
+  landing: string;
 }
 
 export default function CardEvent({ eventData, landing }: CardEventProps) {
@@ -204,7 +204,7 @@ export default function CardEvent({ eventData, landing }: CardEventProps) {
 
   return (
     <div className="flex">
-      <article className="w-[350px] h-[400px] rounded-xl shadow-sm overflow-hidden group border hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+      <article className="w-[350px] h-[400px] rounded-xl shadow-sm overflow-hidden group border border-gray-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
         <div className="h-1/2 relative">
           <Image
             src={eventData?.heroImage || "/default-hero-image.jpg"}
@@ -228,8 +228,8 @@ export default function CardEvent({ eventData, landing }: CardEventProps) {
 
         <div className="h-1/2 bg-white flex flex-col p-3">
           {/* Título del evento */}
-          <div className="mb-2">
-            <p className="text-lg text-black font-semibold font-[League Spartan] line-clamp-2">
+          <div className="">
+            <p className="text-2xl text-black font-semibold font-mono line-clamp-2">
               {eventData?.title ? HTMLReactParser(eventData.title) : ""}
             </p>
           </div>

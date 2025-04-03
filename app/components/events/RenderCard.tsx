@@ -6,6 +6,7 @@ import CardEvent from "./CardEvent"
 import { useCollection } from "react-firebase-hooks/firestore"
 import Link from "next/link"
 import { InfiniteMovingCards } from "../../components/InfiniteMovingCards"
+import SkeletonCard from "./SkeletonCard"
 import { THEME_LANDINGS } from "@/app/utils/theme"
 import { getCityKeywords, shouldApplyCityFiltering, getCityDisplayName } from "@/app/utils/citys"
 
@@ -185,6 +186,47 @@ export default function RenderCard({
                     </div>
                 </Link>
             )}
+        <>
+            {
+                loading && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                        <SkeletonCard />
+                        <SkeletonCard />
+                        <SkeletonCard />
+                    </div>
+                )
+            }
+
+            {data.length >= 4 ? (
+                <InfiniteMovingCards direction="left" speed="slow" pauseOnHover={true}>
+                    {type === "events" && (
+                        <div className="flex justify-center px-5 gap-10 w-full">
+                            {data.map((item) => (
+                                <Link key={item.id} href='https://www.codigoabierto.tech/eventos'>
+                                    <CardEvent landing={landing} eventData={item} />
+                                </Link>
+                            ))}
+                        </div>
+                    )}
+                </InfiniteMovingCards>
+            ) : (
+                type === "events" && (
+                    <div className="flex justify-center px-5 gap-10 w-full">
+                        {data.map((item) => (
+                            <Link key={item.id} href='https://www.codigoabierto.tech/eventos'>
+                                <CardEvent landing={landing} eventData={item} />
+                            </Link>
+                        ))}
+                    </div>
+                )
+            )}
+            <Link target="_blank" href="https://www.codigoabierto.tech/eventos">
+                <div className="flex justify-center mt-10">
+                    <button className="bg-purple-600 text-white font-bold py-2 px-4 rounded-full hover:opacity-80 transition duration-300 ease-in-out">
+                        Ver todos
+                    </button>
+                </div>
+            </Link>
         </>
     )
 }

@@ -49,7 +49,7 @@ const TEXTS: Record<string, (string | { text: string, items: string[] })[]> = {
 
 export default function Summary({ landing }: Props) {
 	return (
-		<section className='flex flex-col gap-4'>
+		<section className='flex flex-col gap-4 animate-fade-in-up animate-delay-400'>
 			<Title title={`¿Qué es ${TITLES[landing]}?`} landing={landing} />
 			<div className='grid grid-cols-[3px_1fr] gap-3 lg:gap-10'>
 				<Border landing={landing} />
