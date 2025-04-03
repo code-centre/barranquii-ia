@@ -32,11 +32,13 @@ export default function LandingPage({ params }: { params: { landing: string } })
 				<Workshops landing={params.landing} />
 			</div>
 			<Sponsors landing={params.landing} />
-			<div className='max-w-6xl mx-auto px-5 w-full'>
-				<Title
-					title="Participa en los eventos de Pre-hackatón"
-					landing={params.landing}
-				/>
+			<div className="w-full flex flex-col gap-10">
+				<div className='max-w-6xl mx-auto px-5 w-full'>
+					<Title
+						title="Participa en los eventos de Pre-Hackatón"
+						landing={params.landing}
+					/>
+				</div>
 				<EventsSection landing={params.landing} />
 			</div>
 			<FAQ landing={params.landing} />

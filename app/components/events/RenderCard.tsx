@@ -41,7 +41,7 @@ interface TicketProps {
     }
     startHour?: string
     data?: EventData[]
-    landing?: string
+    landing: string
 }
 
 export default function RenderCard({
@@ -128,65 +128,6 @@ export default function RenderCard({
 
     return (
         <>
-            {data.length > 0 ? (
-                data.length > 5 ? (
-                    <InfiniteMovingCards direction="left" speed="fast" pauseOnHover={true}>
-                        {type === "events" && (
-                            <div className="flex justify-center px-5 gap-10 w-full">
-                                {data.map((item) => (
-                                    <Link key={item.id} href="https://www.codigoabierto.tech/eventos">
-                                        <CardEvent eventData={item} landing={landing} />
-                                    </Link>
-                                ))}
-                            </div>
-                        )}
-                    </InfiniteMovingCards>
-                ) : (
-                    type === "events" && (
-                        <div className="flex justify-center px-5 gap-10 w-full">
-                            {data.map((item) => (
-                                <Link key={item.id} href="https://www.codigoabierto.tech/eventos">
-                                    <CardEvent eventData={item} landing={landing} />
-                                </Link>
-                            ))}
-                        </div>
-                    )
-                )
-            ) : (
-                <>
-                    <div className="flex flex-col justify-center items-center h-64 text-gray-500">
-                        <p className="mb-4">No hay eventos disponibles en {getCityDisplayName(landing)} en este momento.</p>
-                        {loading ? <p>Cargando eventos...</p> :
-                            <>
-                                <p className="text-gray-400">¡Pero no te desanimes!</p>
-                                <p className="text-gray-400">Pronto tendremos eventos dispinibles en {getCityDisplayName(landing)}.</p>
-                            </>
-                        }
-                    </div>
-                    <Link href="https://www.codigoabierto.tech/eventos">
-                        <div className="flex justify-center mt-10 mb-20">
-                            <button
-                                className="text-white text-lg py-2 px-4 rounded-full hover:opacity-80 transition duration-300 ease-in-out hover:-translate-y-1 w-1/3"
-                                style={{ backgroundColor: THEME_LANDINGS[landing || "default"].principal + "80" }}>
-                                Ver eventos en otros lugares</button>
-                        </div>
-                    </Link>
-                </>
-            )}
-
-            {data.length > 0 && (
-                <Link href="https://www.codigoabierto.tech/eventos">
-                    <div className="flex justify-center mt-10 mb-20">
-                        <button
-                            className="text-white text-lg py-2 px-4 rounded-full hover:opacity-80 transition duration-300 ease-in-out hover:-translate-y-1 w-1/4"
-                            style={{ backgroundColor: THEME_LANDINGS[landing || "default"].principal + "80" }}
-                        >
-                            Ver todos
-                        </button>
-                    </div>
-                </Link>
-            )}
-        <>
             {
                 loading && (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
@@ -196,37 +137,52 @@ export default function RenderCard({
                     </div>
                 )
             }
+            <>
 
+            </>
             {data.length >= 4 ? (
-                <InfiniteMovingCards direction="left" speed="slow" pauseOnHover={true}>
-                    {type === "events" && (
-                        <div className="flex justify-center px-5 gap-10 w-full">
-                            {data.map((item) => (
-                                <Link key={item.id} href='https://www.codigoabierto.tech/eventos'>
-                                    <CardEvent landing={landing} eventData={item} />
-                                </Link>
-                            ))}
+                <>
+                    <InfiniteMovingCards direction="left" speed="slow" pauseOnHover={true}>
+                        {type === "events" && (
+                            <div className="flex justify-center px-5 gap-10 w-full">
+                                {data.map((item) => (
+                                    <Link key={item.id} href='https://www.codigoabierto.tech/eventos'>
+                                        <CardEvent landing={landing} eventData={item} />
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
+                    </InfiniteMovingCards>
+                    <Link href="https://www.codigoabierto.tech/eventos">
+                        <div className="flex justify-center mt-10 mb-20">
+                            <button
+                                className="text-white text-lg py-2 px-4 rounded-full hover:opacity-80 transition duration-300 ease-in-out hover:-translate-y-1 w-1/5"
+                                style={{ backgroundColor: THEME_LANDINGS[landing || "default"].principal + "80" }}>
+                                Ver todos</button>
                         </div>
-                    )}
-                </InfiniteMovingCards>
+                    </Link>
+                </>
             ) : (
-                type === "events" && (
-                    <div className="flex justify-center px-5 gap-10 w-full">
-                        {data.map((item) => (
-                            <Link key={item.id} href='https://www.codigoabierto.tech/eventos'>
-                                <CardEvent landing={landing} eventData={item} />
-                            </Link>
-                        ))}
+                <>
+                    <div className="flex flex-col justify-center items-center h-64 text-gray-500">
+                        <p className="mb-4">No hay eventos disponibles en {getCityDisplayName(landing)} en este momento.</p>
+                        {loading ? <p>Cargando eventos...</p> :
+                            <>
+                                <p className="text-gray-400">¡Pero no te desanimes!</p>
+                                <p className="text-gray-400">Pronto tendremos eventos disponibles en {getCityDisplayName(landing)}.</p>
+                            </>
+                        }
                     </div>
-                )
+                    <Link href="https://www.codigoabierto.tech/eventos">
+                        <div className="flex justify-center mt-10 mb-20">
+                            <button
+                                className="text-white text-lg py-2 px-4 rounded-full hover:opacity-80 transition duration-300 ease-in-out hover:-translate-y-1 w-1/5"
+                                style={{ backgroundColor: THEME_LANDINGS[landing || "default"].principal + "80" }}>
+                                Ver eventos en otros lugares</button>
+                        </div>
+                    </Link>
+                </>
             )}
-            <Link target="_blank" href="https://www.codigoabierto.tech/eventos">
-                <div className="flex justify-center mt-10">
-                    <button className="bg-purple-600 text-white font-bold py-2 px-4 rounded-full hover:opacity-80 transition duration-300 ease-in-out">
-                        Ver todos
-                    </button>
-                </div>
-            </Link>
         </>
     )
 }
