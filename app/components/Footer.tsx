@@ -1,12 +1,35 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Wrapper from "./Wrapper";
 import { Facebook, Instagram, Twitter } from "./Icons";
 import Link from "next/link";
+import { THEME_LANDINGS } from "../utils/theme";
+import { usePathname } from "next/navigation";
 
-export default function Footer() {
+interface FooterProps {
+  landing?: string;
+}
+
+export default function Footer({ landing: propLanding }: FooterProps) {
+  const pathname = usePathname();
+  const [landing, setLanding] = useState("default");
+
+  useEffect(() => {
+    if (propLanding) {
+      setLanding(propLanding);
+    } else {
+      const pathSegment = pathname.split("/")[1];
+      setLanding(pathSegment || "default");
+    }
+  }, [pathname, propLanding]);
+
+  const themeColors = THEME_LANDINGS[landing] || THEME_LANDINGS['default'];
+
   return (
-    <footer className="bg-gradient-to-r from-gradientBannerPurple to-gradientBannerBlue py-12">
-      <Wrapper styles="flex flex-col md:flex-row justify-between px-5 gap-8 container">
+    <footer style={{
+      background: `linear-gradient(to right, ${themeColors.gradient.from}, ${themeColors.gradient.via}, ${themeColors.gradient.to})`
+    }}>
+      <Wrapper styles="flex flex-col md:flex-row justify-between px-5 gap-8 container py-10">
         {/* Columna 1: Información de contacto */}
         <div className="flex flex-col space-y-4 max-w-xs">
           <h3 className="text-white font-bold text-xl">Fundación Código Abierto</h3>
@@ -29,7 +52,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        
+
         {/* Columna 2: Enlaces rápidos */}
         <div className="flex flex-col space-y-4">
           <h3 className="text-white font-bold text-xl">Enlaces rápidos</h3>
@@ -48,7 +71,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        
+
         {/* Columna 3: Redes sociales */}
         <div className="flex flex-col space-y-4">
           <h3 className="text-white font-bold text-xl">Síguenos</h3>
@@ -89,14 +112,14 @@ export default function Footer() {
           </ul>
         </div>
       </Wrapper>
-      
+
       {/* Línea divisoria */}
       <div className="border-t border-gray-600 mt-8 mx-5"></div>
-      
+
       {/* Copyright */}
       <Wrapper styles="pt-6 px-5 text-center">
-        <p className="text-gray-300 text-sm"> Fundación Código Abierto 2025. Todos los derechos reservados.</p>
+        <p className="text-gray-300 text-sm pb-10"> Fundación Código Abierto 2025. Todos los derechos reservados.</p>
       </Wrapper>
-    </footer>
+    </footer >
   );
 }

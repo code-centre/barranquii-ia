@@ -20,7 +20,14 @@ export default function Home() {
       <PromoBar />
       <Phases />
       <Sponsors landing='default' />
-      <EventsSection landing='default' />
+      <div className="w-full flex flex-col gap-10">
+        <div className='max-w-6xl mx-auto px-5 w-full'>
+          <Title
+            title="Participa en los eventos de Caribe-IA"
+          />
+        </div>
+        <EventsSection landing="default" />
+      </div>
       <FAQ landing='default' />
     </main>
   );

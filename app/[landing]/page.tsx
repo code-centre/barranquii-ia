@@ -3,6 +3,7 @@ import Summary from '../sections/Summary'
 import PromoBar from '../components/PromoBar'
 import Expectations from '../sections/Expectations'
 import HeroSection from '../sections/HeroSection'
+import Title from '../components/Title'
 import Workshops from '../sections/Workshops'
 import Sponsors from '../components/Sponsors'
 import Mentors from '../sections/Mentors'
@@ -31,7 +32,15 @@ export default function LandingPage({ params }: { params: { landing: string } })
 				<Workshops landing={params.landing} />
 			</div>
 			<Sponsors landing={params.landing} />
-			<EventsSection landing={params.landing} />
+			<div className="w-full flex flex-col gap-10">
+				<div className='max-w-6xl mx-auto px-5 w-full'>
+					<Title
+						title="Participa en los eventos de Pre-Hackatón"
+						landing={params.landing}
+					/>
+				</div>
+				<EventsSection landing={params.landing} />
+			</div>
 			<FAQ landing={params.landing} />
 		</main>
 	)

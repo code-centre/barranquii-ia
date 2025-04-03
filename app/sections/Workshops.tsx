@@ -34,7 +34,7 @@ let THEME_WORKSHOPS: Record<string, { selected: { background: string; border: st
 	}
 }
 
-const WORKSHOPS: Record<string, { title: string; name: string; role: string, selected: boolean }[]> = {
+const WORKSHOPS: Record<string, { title: string; name: string; role: string, selected: boolean, confirmed?: boolean }[]> = {
 	'barranqui-ia': [
 		{
 			title: '2:00pm - Construye tu MVP con las bases',
@@ -98,7 +98,8 @@ const WORKSHOPS: Record<string, { title: string; name: string; role: string, sel
 			title: '2:30pm - Construye tu MVP con las bases',
 			name: 'David Aragón',
 			role: 'Google Developer Expert en IA',
-			selected: true
+			selected: true,
+			confirmed: true,
 		},
 		{
 			title: '3:00pm - Construye tu MVP con las bases',
@@ -135,13 +136,16 @@ export default function Workshops({ landing }: Props) {
 
 	const handleWorkshopSwitchSelected = (workshopSelected: { title: string; name: string; role: string, selected: boolean }) => {
 		setWorkshops((prevWorkshops) =>
-      prevWorkshops.map(
-        (workshop) =>
-          workshop.title === workshopSelected.title
-            ? { ...workshop, selected: true } // Establece highlight en true para el video seleccionado
-            : { ...workshop, selected: false } // Establece highlight en false para todos los demás
-      )
-    );
+			prevWorkshops.map(
+				(workshop) =>
+					workshop.title === workshopSelected.title
+						? { ...workshop, selected: true } // Establece highlight en true para el video seleccionado
+						: { ...workshop, selected: false } // Establece highlight en false para todos los demás
+			)
+		);
+
+		// Update the selected workshop
+		setSelectedWorkshop(workshopSelected);
 	};
 
 	return (
@@ -151,18 +155,65 @@ export default function Workshops({ landing }: Props) {
 				<div className='grid grid-cols-[3px_1fr] gap-3 lg:gap-10'>
 					<Border landing={landing} />
 					<div className='flex flex-col gap-3'>
-						{
-							workshops.map((workshop, index) => (
-								<div onClick={() => handleWorkshopSwitchSelected(workshop)} style={{ backgroundColor: workshop.selected ? THEME_WORKSHOPS[landing].selected.background : THEME_WORKSHOPS[landing].unselected, border: `2px solid ${THEME_LANDINGS[landing].principal}`}} key={index} className='cursor-pointer rounded-3xl p-4 text-black flex flex-col '>
-									<p className="">{workshop.title}</p>
-									<h3 className="font-bold font-mono text-xl">{workshop.name}</h3>
-									<p style={{ backgroundColor: workshop.selected ? THEME_WORKSHOPS[landing].selected.border : '#4285f4' }} className='p-1 px-3 rounded-3xl text-sm w-fit'>{workshop.role}</p>
-								</div>
-							))
-						}
+						{workshops.map((workshop, index) => (
+							<div
+								onClick={() => handleWorkshopSwitchSelected(workshop)}
+								style={{
+									backgroundColor: workshop.selected ? THEME_WORKSHOPS[landing].selected.background : THEME_WORKSHOPS[landing].unselected,
+									border: `2px solid ${THEME_LANDINGS[landing].principal}`
+								}}
+								key={index}
+								className='cursor-pointer rounded-3xl p-4 text-black flex flex-col'
+							>
+								{workshop.confirmed ? (
+									<>
+										<p className="">{workshop.title}</p>
+										<h3 className="font-bold font-mono text-xl">{workshop.name}</h3>
+										<p
+											style={{
+												backgroundColor: workshop.selected ? THEME_WORKSHOPS[landing].selected.border : '#4285f4'
+											}}
+											className='p-1 px-3 rounded-3xl text-sm w-fit'
+										>
+											{workshop.role}
+										</p>
+									</>
+								) : (
+									<>
+										<p className="">Próximamente</p>
+										<h3 className="font-bold font-mono text-xl">Por confirmar</h3>
+										<p
+											style={{
+												backgroundColor: workshop.selected ? THEME_WORKSHOPS[landing].selected.border : '#4285f4'
+											}}
+											className='p-1 px-3 rounded-3xl text-sm w-fit'
+										>
+											Próximamente
+										</p>
+									</>
+								)}
+							</div>
+						))}
 					</div>
 				</div>
-				<div className='h-full bg-gray-300 rounded-3xl'></div>
+
+				<div className='h-full bg-gray-300 rounded-3xl flex flex-col justify-center items-center p-6'>
+					{selectedWorkshop && (
+						selectedWorkshop.confirmed ? (
+							<div className="text-center">
+								<h2 className="text-2xl font-bold mb-4">{selectedWorkshop.title}</h2>
+								<p className="text-lg mb-2">Impartido por: {selectedWorkshop.name}</p>
+								<p className="text-md">{selectedWorkshop.role}</p>
+							</div>
+						) : (
+							<div className="text-center">
+								<h2 className="text-2xl font-bold mb-4">Taller por confirmar</h2>
+								<p className="text-lg">Estamos preparando un increíble taller para ti.</p>
+								<p className="text-lg mt-4">¡Mantente atento para más detalles!</p>
+							</div>
+						)
+					)}
+				</div>
 			</div>
 			<Image src="/3DFigures/glass-3d.png" alt="3D glass" width={500} height={400} className="absolute -bottom-32 -right-60" />
 		</section>

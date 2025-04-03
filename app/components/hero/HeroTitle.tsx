@@ -9,6 +9,7 @@ interface Props {
   size?: "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl" | "xxxxl" | "xxxxxl"
   align?: "left" | "center" | "right"
   subtitle?: string
+  title?: string
 }
 
 export const TITLES: Record<string, string> = {
@@ -35,7 +36,8 @@ export default function HeroTitle({
   landing,
   size,
   align,
-  subtitle
+  subtitle,
+  title,
 }: Props) {
   let sizeClass = ""
   switch (size) {

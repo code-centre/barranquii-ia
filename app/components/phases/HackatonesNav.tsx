@@ -1,4 +1,4 @@
-import Title from "../Title"
+import HeroTitle from "./../hero/HeroTitle"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -12,10 +12,10 @@ export default function HackatonesNav({ landing }: Props) {
         <div className="flex justify-between w-full items-center gap-5 lg:gap-7 flex-wrap">
 
             <Link href={`/cartagen-ia`} className="flex flex-col items-center justify-center mt-7">
-                <div className="flex flex-col">
-                    <Title
+                <div className="flex flex-col ">
+                    <HeroTitle
                         title="Cartagen-IA"
-                        landing="cartagen-ia"
+                        landing="cartagen-ia"                      
                         size="xl" />
                     <div className="items-center justify-center flex pt-1">
                         <Image
@@ -29,7 +29,7 @@ export default function HackatonesNav({ landing }: Props) {
 
             <Link href={`/barranqui-ia`} className="flex flex-col items-center justify-center pt-5">
                 <div className="flex flex-col">
-                    <Title
+                    <HeroTitle
                         title="Barranqui-IA"
                         landing="barranqui-ia"
                         size="xl" />
@@ -45,7 +45,7 @@ export default function HackatonesNav({ landing }: Props) {
 
             <Link href={`/samar-ia`} className="flex flex-col items-center justify-center pt-5">
                 <div className="flex flex-col items-center justify-center pt-5">
-                    <Title
+                    <HeroTitle
                         title="Samar-IA"
                         landing="samar-ia"
                         size="xl" />

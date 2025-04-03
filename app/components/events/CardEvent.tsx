@@ -176,11 +176,6 @@ interface CardEventProps {
 }
 
 export default function CardEvent({ eventData, landing }: CardEventProps) {
-  // Get the theme colors for the current landing
-  const themeColors = THEME_LANDINGS[landing];
-
-  // Use the principal color instead of gradient
-  const primaryColor = themeColors.principal;
 
   const getPriceDisplay = () => {
     if (
@@ -224,7 +219,7 @@ export default function CardEvent({ eventData, landing }: CardEventProps) {
             </p>
             <p
               className="text-black font-semibold backdrop-blur-md px-4 py-1 rounded-lg text-sm"
-              style={{ backgroundColor: primaryColor }}
+              style={{ backgroundColor: THEME_LANDINGS[landing || 'default'].principal }} // Add 40 for 25% opacity
             >
               {getPriceDisplay()}
             </p>
@@ -254,11 +249,11 @@ export default function CardEvent({ eventData, landing }: CardEventProps) {
           </div>
 
           <div className="grid gap-2 grid-cols-[1fr_2fr] mt-auto">
-            <div className="w-24 h-20 flex flex-col items-center justify-center text-center font-bold relative rounded-lg overflow-hidden" style={{ border: `3px solid ${primaryColor}` }}>
+            <div className="w-24 h-20 flex flex-col items-center justify-center text-center font-bold relative rounded-lg overflow-hidden" style={{ border: `3px solid ${THEME_LANDINGS[landing || 'default'].principal}` }}>
               <div className="absolute inset-0 ">
                 <div
                   className="w-full text-black text-xs font-semibold"
-                  style={{ backgroundColor: primaryColor }}
+                  style={{ backgroundColor: THEME_LANDINGS[landing || 'default'].principal }} 
                 >
                   {new Date(eventData?.date).toLocaleDateString("es-ES", {
                     month: "long",
