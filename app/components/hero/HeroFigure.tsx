@@ -14,8 +14,8 @@ const THEME_FIGURE_MAP: Record<string, string> = {
 export default function HeroFigure({ landing }: HeroFigureProps) {
 
   return (
-    <div className="absolute -top-20 right-28  lg:block xl:pl-20 -z-10 mt-24">
-      <div className="relative">
+    <div className="absolute -top-40 -right-20 lg:block xl:pl-20 -z-10 animate-fade-in-left animate-delay-300">
+      <div className="">
         <Image
           src={THEME_FIGURE_MAP[landing]}
           width={600}

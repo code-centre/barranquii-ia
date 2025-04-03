@@ -13,7 +13,7 @@ interface Props {
 }
 
 const HACKATHON: Record<string, string> = {
-  'baranqui-ia': 'Barranqui-IA',
+  'barranqui-ia': 'Barranqui-IA',
   'samar-ia': 'Samar-IA',
   'cartagen-ia': 'Cartagena-IA'
 }

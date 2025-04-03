@@ -8,6 +8,8 @@ import Sponsors from '../components/Sponsors'
 import Mentors from '../sections/Mentors'
 import FAQ from '../sections/FAQ'
 import Schedule from '../components/Schedule'
+import EventsSection from '../sections/EventsSection'
+import Location from '../sections/Location'
 
 export default function LandingPage({ params }: { params: { landing: string } }) {
 	return (
@@ -22,12 +24,14 @@ export default function LandingPage({ params }: { params: { landing: string } })
 			<div className='max-w-6xl mx-auto px-5 w-full'>
 				<Expectations landing={params.landing} />
 			</div>
+			<Location landing={params.landing} />
 			<Schedule landing={params.landing} />
 			<Mentors landing={params.landing} />
 			<div className='max-w-6xl mx-auto px-5 w-full'>
 				<Workshops landing={params.landing} />
 			</div>
 			<Sponsors landing={params.landing} />
+			<EventsSection landing={params.landing} />
 			<FAQ landing={params.landing} />
 		</main>
 	)

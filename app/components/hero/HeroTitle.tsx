@@ -82,7 +82,7 @@ export default function HeroTitle({
       alignClass = "text-left"
   }
   return (
-    <>
+    <div className="animate-fade-in-up animate-delay-150">
       <div className={`${alignClass} flex flex-col`}>
         <h2
           // style={{ color: THEME_LANDINGS[landing ?? 'default'].principal }}
@@ -103,7 +103,7 @@ export default function HeroTitle({
           </div>
         }
       </div>
-    </>
+    </div>
 
   )
 }

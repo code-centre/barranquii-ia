@@ -5,6 +5,7 @@ import mentors from "../utils/mentors.json";
 import MentorsCard from "../components/MentorsCard";
 import Title from "../components/Title";
 import { InfiniteMovingCards } from "../components/InfiniteMovingCards";
+import { THEME_LANDINGS } from "../utils/theme";
 
 interface Props {
   landing: string
@@ -40,7 +41,9 @@ export default function Mentors({ landing }: Props) {
   // };
 
   return (
-    <section id="mentors" className="scroll-m-32 flex flex-col w-full gap-10">
+    <section id="mentors" className="scroll-m-32 flex flex-col w-full gap-10 relative">
+      <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-56 -z-20 -left-36 w-[600px] h-[600px] rounded-full blur-3xl"></div>
+
       <div className="max-w-6xl mx-auto w-full px-5">
         <Title title="Mentores 2025" landing={landing} />
       </div>

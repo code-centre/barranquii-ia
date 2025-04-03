@@ -20,7 +20,7 @@ export default function Home() {
       <PromoBar />
       <Phases />
       <Sponsors landing='default' />
-      <EventsSection />
+      <EventsSection landing='default' />
       <FAQ landing='default' />
     </main>
   );
