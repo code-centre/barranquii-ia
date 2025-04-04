@@ -122,21 +122,21 @@ export default function Schedule({ landing }: { landing: string }) {
   return (
     <div className="flex flex-col gap-10 w-full max-w-6xl mx-auto px-5">
       <Title title="Cronograma" landing={landing} />
-      <div className="grid grid-cols-[auto_1fr] gap-10">
+      <div className="grid grid-cols-[auto_1fr] gap-2 lg:gap-9">
         <Border landing={landing} />
         <div>
-          <header className="border-gray-500 border-b-6 grid gap-5 grid-cols-3 md:gap-20">
+          <header className="border-gray-500 border-b-6 grid gap-5 grid-cols-1 lg:grid-cols-3 md:gap-20">
             {DAYS_EVENT.map((day, i) => (
               <div
                 style={{
                   paddingBottom: daySchedule === i ? "16px" : "0px",
                   color: daySchedule === i ? THEME_LANDINGS[landing].principal : "#9ca3af",
-                  borderBottomWidth: daySchedule === i ? "4px" : "0px",
+                  borderBottomWidth: daySchedule === i ? "3px" : "0px",
                   borderColor: daySchedule === i ? THEME_LANDINGS[landing].principal : "#9ca3af",
                 }}
                 key={day.title}
                 onClick={() => setDaySchedule(i)}
-                className={`cursor-pointer text-center md:text-left hover:transition-colors duration-100`}
+                className={`cursor-pointer text-center md:text-left hover:transition-colors duration-100 py-5 `}
               >
                 <p className="font-medium">{day.title}</p>
                 <p className="mt-1">

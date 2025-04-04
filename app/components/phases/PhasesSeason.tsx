@@ -30,7 +30,7 @@ export default function PhasesSeason({ landing }: Props) {
                 </div>
 
                 {/* Columna del contenido */}
-                <div className="flex flex-col gap-10">
+                <div className="flex flex-col gap-10 text-justify">
                     {/* Sección 1: Temporada de Hackatones */}
                     <div>
                         <h2 className="text-2xl font-bold">1.- Temporada de Hackatones</h2>
