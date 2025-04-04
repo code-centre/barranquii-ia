@@ -206,7 +206,7 @@ export default function Workshops({ landing }: Props) {
 								<p className="text-md">{selectedWorkshop.role}</p>
 							</div>
 						) : (
-							<div className="text-center">
+							<div className="text-center text-black">
 								<h2 className="text-2xl font-bold mb-4">Taller por confirmar</h2>
 								<p className="text-lg">Estamos preparando un increíble taller para ti.</p>
 								<p className="text-lg mt-4">¡Mantente atento para más detalles!</p>

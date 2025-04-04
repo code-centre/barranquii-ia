@@ -140,29 +140,41 @@ export default function Schedule({ landing }: { landing: string }) {
               >
                 <p className="font-medium">{day.title}</p>
                 <p className="mt-1">
-                  <span className="mr-1 font-bold md:text-2xl">{day.number}</span>
-                  {day.day}
+                  {
+                    landing === 'barranqui-ia' && (
+                      <>
+                        <span className="mr-1 font-bold md:text-2xl">{day.number}</span>
+                        {day.day}
+                      </>
+                    )
+                  }
+                  {
+                    landing !== 'barranqui-ia' && <span className="capitalize">{day.day.split(',')[1]}</span>
+                  }
                 </p>
               </div>
             ))}
           </header>
           <main className="flex flex-col mt-10">
-            {SCHEDULE_EVENT[daySchedule]?.map((schedule, i, arr) => (
-              <div key={i} className="flex gap-5 md:gap-5">
-                <p className="w-[50%] md:w-[20%] text-gray-400">{schedule.time}</p>
-                <div style={{ borderColor: THEME_LANDINGS[landing].principal }} className={`relative ${i !== arr.length - 1 ? ' border-l' : ''}`}>
-                  <div style={{ backgroundColor: THEME_LANDINGS[landing].principal }} className="-left-[12px] absolute mx-auto rounded-full w-6 h-6">
-                    <div className="flex justify-center items-center">
-                      {i + 1}
+            {/* {
+              landing === 'barranqui-ia' ? SCHEDULE_EVENT[daySchedule]?.map((schedule, i, arr) => (
+                <div key={i} className="flex gap-5 md:gap-5">
+                  <p className="w-[50%] md:w-[20%] text-gray-400">{schedule.time}</p>
+                  <div style={{ borderColor: THEME_LANDINGS[landing].principal }} className={`relative ${i !== arr.length - 1 ? ' border-l' : ''}`}>
+                    <div style={{ backgroundColor: THEME_LANDINGS[landing].principal }} className="-left-[12px] absolute mx-auto rounded-full w-6 h-6">
+                      <div className="flex justify-center items-center">
+                        {i + 1}
+                      </div>
                     </div>
                   </div>
+                  <div className="w-[80%]">
+                    <h3 className="font-bold">{schedule.title}</h3>
+                    <p className="pb-7 text-gray-400">{schedule.description}</p>
+                  </div>
                 </div>
-                <div className="w-[80%]">
-                  <h3 className="font-bold">{schedule.title}</h3>
-                  <p className="pb-7 text-gray-400">{schedule.description}</p>
-                </div>
-              </div>
-            ))}
+            }
+          )) :  */}
+          <p className="text-gray-400 text-center text-5xl">Próximamente</p>
           </main>
         </div>
       </div>

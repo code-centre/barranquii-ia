@@ -11,17 +11,27 @@ import FAQ from '../sections/FAQ'
 import Schedule from '../components/Schedule'
 import EventsSection from '../sections/EventsSection'
 import Location from '../sections/Location'
+import { FAQS_HACKATHONES } from '../utils/FAQS_HACKATHONES'
+import { redirect } from 'next/navigation'
 
 export default function LandingPage({ params }: { params: { landing: string } }) {
+	if (params.landing !== 'barranqui-ia') {
+		return redirect('/')
+	} 
+
+
 	return (
-		<main className="py-20 lg:py-28 xl:py-32 min-h-screen flex flex-col gap-28">
+		<main className="py-20 lg:py-28 xl:py-32 min-h-screen flex flex-col gap-40">
 			<div className='max-w-6xl mx-auto px-5 w-full mb-20'>
 				<HeroSection landing={params.landing} />
 			</div>
 			<div className='max-w-6xl mx-auto px-5 w-full'>
 				<Summary landing={params.landing} />
 			</div>
-			<PromoBar />
+			{
+				params.landing === 'barranqui-ia' &&
+				<PromoBar />
+			}
 			<div className='max-w-6xl mx-auto px-5 w-full'>
 				<Expectations landing={params.landing} />
 			</div>
@@ -32,7 +42,7 @@ export default function LandingPage({ params }: { params: { landing: string } })
 				<Workshops landing={params.landing} />
 			</div>
 			<Sponsors landing={params.landing} />
-			<div className="w-full flex flex-col gap-10">
+			<div className='flex flex-col gap-10'>
 				<div className='max-w-6xl mx-auto px-5 w-full'>
 					<Title
 						title="Participa en los eventos de Pre-Hackatón"
@@ -41,7 +51,7 @@ export default function LandingPage({ params }: { params: { landing: string } })
 				</div>
 				<EventsSection landing={params.landing} />
 			</div>
-			<FAQ landing={params.landing} />
+			<FAQ data={FAQS_HACKATHONES} landing={params.landing} />
 		</main>
 	)
 }

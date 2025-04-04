@@ -60,8 +60,9 @@ export default function Navbar() {
               }`}
           >
             {sectionsPage.map((section) => (
-              <li key={section.id} className={stylesLi}>
-                <Link className={`${pathname === `/${section.id}` ? 'text-white' : ''} text-lg`} href={`/${section.id}`}>{section.name}</Link>
+              <li key={section.id} className={`flex flex-col items-center`}>
+                <Link className={`${pathname === `/${section.id}` ? 'text-white' : ''} text-lg${stylesLi} text-base  ${!section.active && 'text-gray-400 opacity-80 line-through cursor-not-allowed hover:text-gray-400 hover:line-through'}`} href={`${section.active ? `/${section.id}` : ''}`}>{section.name}</Link>
+                {!section.active && <span className="text-white px-3 text-sm border border-blue-500 bg-blue-500 rounded-full">Próximamente</span>}
               </li>
             ))}
           </ul>
@@ -93,7 +94,7 @@ export default function Navbar() {
         <ul className="flex flex-col items-start pt-20 pl-6 space-y-6 text-lg sm:text-xl">
           {sectionsPage.map((section) => (
 
-            <li key={section.id} className={stylesLi}>
+            <li key={section.id} className={`${stylesLi} text-white`}>
               <Link href={`/${section.id}`}>{section.name}</Link>
             </li>
           ))}

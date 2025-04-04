@@ -1,14 +1,17 @@
 [
   {
     "id": "barranqui-ia",
-    "name": "Barranqui-IA"
+    "name": "Barranqui-IA",
+    "active": true
   },
   {
     "id": "samar-ia",
-    "name": "Samari-IA"
+    "name": "Samar-IA",
+    "active": false
   },
   {
     "id": "cartagen-ia",
-    "name": "Cartagen-IA"
+    "name": "Cartagen-IA",
+    "active": false
   }
 ]

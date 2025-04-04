@@ -7,6 +7,7 @@ import Sponsors from "./components/Sponsors";
 import Title from "./components/Title";
 import FAQ from "./sections/FAQ";
 import EventsSection from "./sections/EventsSection";
+import { FAQS_CARIBE_IA } from "./utils/FAQS_CARIBE_IA";
 
 export default function Home() {
   return (
@@ -28,7 +29,7 @@ export default function Home() {
         </div>
         <EventsSection landing="default" />
       </div>
-      <FAQ landing='default' />
+      <FAQ data={FAQS_CARIBE_IA}  landing='default' />
     </main>
   );
 }

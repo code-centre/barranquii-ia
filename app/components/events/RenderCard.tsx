@@ -164,7 +164,7 @@ export default function RenderCard({
                 </>
             ) : (
                 <>
-                    <div className="flex flex-col justify-center items-center h-64 text-gray-500">
+                    <div className="flex flex-col justify-center items-center mt-10 text-gray-500">
                         <p className="mb-4">No hay eventos disponibles en {getCityDisplayName(landing)} en este momento.</p>
                         {loading ? <p>Cargando eventos...</p> :
                             <>
