@@ -13,17 +13,67 @@ export default function Sponsors({ landing }: Props) {
       <div className="max-w-6xl mx-auto px-5 w-full">
         <Title landing={landing} title="Aliados" />
       </div>
-        <InfiniteMovingCards>
-          <li>
-            <Image
-              className="w-[200px] h-[60px]"
+      <InfiniteMovingCards>
+        <li>
+          <Image
+            className="w-[200px] h-[60px]"
             src="/google.png"
             height={47}
             width={150}
             alt="Logo de Google"
           />
         </li>
-        <li>
+        <li className="flex items-center justify-center">
+          <Image
+            className="w-[150px] h-auto object-contain"
+            src="/logos/gobernacion.webp"
+            height={47}
+            width={150}
+            alt="Logo de Gobernación del Atlántico"
+            loading="lazy"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            className="w-[150px] h-auto object-contain rounded-full"
+            src="/logos/51-labs.webp"
+            height={47}
+            width={150}
+            alt="Logo de 51 Labs"
+            loading="lazy"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            className="w-[150px] h-auto object-contain"
+            src="/logos/feanware.png"
+            height={47}
+            width={150}
+            alt="Logo de Feanware"
+            loading="lazy"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            className="w-[150px] h-auto object-contain rounded-full"
+            src="/logos/life-your-coaching.jpg"
+            height={47}
+            width={150}
+            alt="Logo de Life Your Coaching"
+            loading="lazy"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            className="w-[150px] h-auto object-contain rounded-full"
+            src="/logos/aws.png"
+            height={47}
+            width={150}
+            alt="Logo de AWS"
+            loading="lazy"
+          />
+        </li>
+        {/* <li>
           <Image
             className="w-[150px]"
             src="/logos/ultracem.webp"
@@ -32,8 +82,8 @@ export default function Sponsors({ landing }: Props) {
             alt="Logo de Ultracem"
             loading="lazy"
           />
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <Image
             className="w-[180px]"
             src="/logos/neuron.png"
@@ -42,7 +92,7 @@ export default function Sponsors({ landing }: Props) {
             alt="Logo de neuron"
             loading="lazy"
           />
-        </li>
+        </li> */}
         <li>
           <Image
             className="w-[150px] img"
@@ -60,16 +110,6 @@ export default function Sponsors({ landing }: Props) {
             height={47}
             width={230}
             alt="Logo de la universidad de la norte"
-            loading="lazy"
-          />
-        </li>
-        <li>
-          <Image
-            className="w-[180px]"
-            src="/logos/tmt.png"
-            height={47}
-            width={150}
-            alt="Logo de TMT"
             loading="lazy"
           />
         </li>
@@ -93,16 +133,7 @@ export default function Sponsors({ landing }: Props) {
             />
           </figure>
         </li>
-        <li>
-          <Image
-            className="w-[250px] h-[60px] object-contain"
-            src="/logos/gorilla.webp"
-            height={47}
-            width={150}
-            alt="Logo de Gorilla Logic"
-          />
-        </li>
       </InfiniteMovingCards>
-      </div>
+    </div>
   );
 }

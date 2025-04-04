@@ -149,9 +149,9 @@ export default function Workshops({ landing }: Props) {
 	};
 
 	return (
-		<section className='flex flex-col gap-10 relative'>
+		<section className='flex flex-col gap-5 lg:gap-10 relative px-4 lg:px-0'>
 			<Title landing={landing} title='Talleres con Google Developer Experts' />
-			<div className='grid grid-cols-2 gap-3 lg:gap-10'>
+			<div className='grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10'>
 				<div className='grid grid-cols-[3px_1fr] gap-3 lg:gap-10'>
 					<Border landing={landing} />
 					<div className='flex flex-col gap-3'>
@@ -163,30 +163,30 @@ export default function Workshops({ landing }: Props) {
 									border: `2px solid ${THEME_LANDINGS[landing].principal}`
 								}}
 								key={index}
-								className='cursor-pointer rounded-3xl p-4 text-black flex flex-col'
+								className='cursor-pointer rounded-3xl p-4 lg:p-6 text-black flex flex-col gap-2 hover:shadow-lg transition-all duration-200'
 							>
 								{workshop.confirmed ? (
 									<>
-										<p className="">{workshop.title}</p>
-										<h3 className="font-bold font-mono text-xl">{workshop.name}</h3>
+										<p className="text-sm lg:text-base">{workshop.title}</p>
+										<h3 className="font-bold font-mono text-lg lg:text-xl">{workshop.name}</h3>
 										<p
 											style={{
 												backgroundColor: workshop.selected ? THEME_WORKSHOPS[landing].selected.border : '#4285f4'
 											}}
-											className='p-1 px-3 rounded-3xl text-sm w-fit'
+											className='p-1 px-3 rounded-3xl text-sm w-fit text-white'
 										>
 											{workshop.role}
 										</p>
 									</>
 								) : (
 									<>
-										<p className="">Próximamente</p>
-										<h3 className="font-bold font-mono text-xl">Por confirmar</h3>
+										<p className="text-sm lg:text-base">Próximamente</p>
+										<h3 className="font-bold font-mono text-lg lg:text-xl">Por confirmar</h3>
 										<p
 											style={{
 												backgroundColor: workshop.selected ? THEME_WORKSHOPS[landing].selected.border : '#4285f4'
 											}}
-											className='p-1 px-3 rounded-3xl text-sm w-fit'
+											className='p-1 px-3 rounded-3xl text-sm w-fit text-white'
 										>
 											Próximamente
 										</p>
@@ -197,25 +197,31 @@ export default function Workshops({ landing }: Props) {
 					</div>
 				</div>
 
-				<div className='h-full bg-gray-300 rounded-3xl flex flex-col justify-center items-center p-6'>
+				<div className='h-full min-h-[200px] bg-gray-300 rounded-3xl flex flex-col justify-center items-center p-4 lg:p-8'>
 					{selectedWorkshop && (
 						selectedWorkshop.confirmed ? (
 							<div className="text-center">
-								<h2 className="text-2xl font-bold mb-4">{selectedWorkshop.title}</h2>
-								<p className="text-lg mb-2">Impartido por: {selectedWorkshop.name}</p>
-								<p className="text-md">{selectedWorkshop.role}</p>
+								<h2 className="text-xl lg:text-2xl font-bold mb-4">{selectedWorkshop.title}</h2>
+								<p className="text-base lg:text-lg mb-2">Impartido por: {selectedWorkshop.name}</p>
+								<p className="text-sm lg:text-base">{selectedWorkshop.role}</p>
 							</div>
 						) : (
 							<div className="text-center text-black">
-								<h2 className="text-2xl font-bold mb-4">Taller por confirmar</h2>
-								<p className="text-lg">Estamos preparando un increíble taller para ti.</p>
-								<p className="text-lg mt-4">¡Mantente atento para más detalles!</p>
+								<h2 className="text-xl lg:text-2xl font-bold mb-4">Taller por confirmar</h2>
+								<p className="text-base lg:text-lg">Estamos preparando un increíble taller para ti.</p>
+								<p className="text-base lg:text-lg mt-4">¡Mantente atento para más detalles!</p>
 							</div>
 						)
 					)}
 				</div>
 			</div>
-			<Image src="/3DFigures/glass-3d.png" alt="3D glass" width={500} height={400} className="absolute -bottom-32 -right-60" />
+			<Image 
+				src="/3DFigures/glass-3d.png" 
+				alt="3D glass" 
+				width={500} 
+				height={400} 
+				className="absolute -bottom-32 -right-60 hidden lg:block" 
+			/>
 		</section>
 	)
 }

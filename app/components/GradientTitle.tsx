@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { THEME_LANDINGS } from '@/app/utils/theme'
-import Border from '../Border'
+import Border from './Border'
 
 
 interface Props {
@@ -60,7 +60,7 @@ export default function HeroTitle({
       sizeClass = "text-7xl md:text-8xl"
       break
     case "xxxxl":
-      sizeClass = "text-7xl md:text-9xl lg:text-9xl"
+      sizeClass = "text-8xl md:text-9xl"
       break
     case "xxxxxl":
       sizeClass = "text-9xl md:text-10xl"
@@ -94,7 +94,7 @@ export default function HeroTitle({
             WebkitBackgroundClip: 'text',
             color: 'transparent'
           }}
-          className={`font-bold font-mono ${sizeClass}`}>{TITLES[landing]}</h2>
+          className={`font-bold font-mono ${sizeClass}`}>{title}</h2>
       </div>
       <div className='grid grid-cols-[6px_1fr] gap-5'>
         <Border landing={landing || 'default'} />
