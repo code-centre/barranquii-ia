@@ -156,8 +156,8 @@ export default function Schedule({ landing }: { landing: string }) {
             ))}
           </header>
           <main className="flex flex-col mt-10">
-            {/* {
-              landing === 'barranqui-ia' ? SCHEDULE_EVENT[daySchedule]?.map((schedule, i, arr) => (
+            {
+              SCHEDULE_EVENT[daySchedule]?.map((schedule, i, arr) => (
                 <div key={i} className="flex gap-5 md:gap-5">
                   <p className="w-[50%] md:w-[20%] text-gray-400">{schedule.time}</p>
                   <div style={{ borderColor: THEME_LANDINGS[landing].principal }} className={`relative ${i !== arr.length - 1 ? ' border-l' : ''}`}>
@@ -172,9 +172,7 @@ export default function Schedule({ landing }: { landing: string }) {
                     <p className="pb-7 text-gray-400">{schedule.description}</p>
                   </div>
                 </div>
-            }
-          )) :  */}
-          <p className="text-gray-400 text-center text-2xl lg:text-5xl">Próximamente</p>
+          ))}
           </main>
         </div>
       </div>
