@@ -145,7 +145,7 @@ export default function RenderCard({
                 <>
                     <InfiniteMovingCards direction="left" speed="slow" pauseOnHover={true}>
                         {type === "events" && (
-                            <div className="flex justify-center px-5 gap-10 w-full">
+                            <div className="flex justify-center gap-10 w-full">
                                 {data.map((item) => (
                                     <Link key={item.id} href='https://www.codigoabierto.tech/eventos'>
                                         <CardEvent landing={landing} eventData={item} />
@@ -165,7 +165,7 @@ export default function RenderCard({
                 </>
             ) : data.length > 0 ? (
                 <>
-                    <div className="flex justify-center gap-10 px-5 flex-wrap lg:flex-nowrap max-w-6xl mx-auto">
+                    <div className="flex justify-center gap-10 flex-wrap lg:flex-nowrap max-w-6xl mx-auto">
                         {type === "events" && data.map((item) => (
                             <Link key={item.id} href='https://www.codigoabierto.tech/eventos'>
                                 <CardEvent landing={landing} eventData={item} />
