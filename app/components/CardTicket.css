@@ -1,0 +1,13 @@
+.card-ticket {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.card-ticket:hover {
+  box-shadow: 0 0 20px var(--theme-color);
+  border: 1px solid var(--theme-color);
+}
+
+.card-ticket ul li::marker {
+  color: var(--theme-color);
+}

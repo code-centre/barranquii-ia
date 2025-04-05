@@ -13,6 +13,7 @@ import EventsSection from '../sections/EventsSection'
 import Location from '../sections/Location'
 import { FAQS_HACKATHONES } from '../utils/FAQS_HACKATHONES'
 import { redirect } from 'next/navigation'
+import Tickets from '../sections/Tickets'
 
 export default function LandingPage({ params }: { params: { landing: string } }) {
 	if (params.landing !== 'barranqui-ia') {
@@ -41,6 +42,7 @@ export default function LandingPage({ params }: { params: { landing: string } })
 			<div className='max-w-6xl mx-auto w-full'>
 				<Workshops landing={params.landing} />
 			</div>
+			<Tickets landing={params.landing} />
 			<Sponsors landing={params.landing} />
 			<div className='flex flex-col gap-10'>
 				<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
