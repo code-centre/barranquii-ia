@@ -214,7 +214,7 @@ export default function Workshops({ landing }: Props) {
 				</div>
 			</div>
 			<Image 
-				src="/3DFigures/glass-3d.png" 
+				src="/3DFigures/glass-3d.webp" 
 				alt="3D glass" 
 				width={500} 
 				height={400} 
