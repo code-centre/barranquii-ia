@@ -28,8 +28,8 @@ const BACKGROUND_FAQ: Record<string, string> = {
 
 export default function FAQ({ landing, data }: Props) {
   return (
-    <div id="faqs" className="max-w-6xl mx-auto px-5 w-full flex flex-col gap-10 relative">
-      <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-20 -z-10 -left-36 w-[600px] h-[600px] rounded-full blur-3xl"></div>
+    <div id="faqs" className="max-w-6xl mx-auto px-5 lg:px-10 w-full flex flex-col gap-10 relative">
+      <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-20 -z-10 -left-36 w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] rounded-full blur-3xl"></div>
 
       <Title
         title="Preguntas Frecuentes"

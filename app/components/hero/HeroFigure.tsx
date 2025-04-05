@@ -14,14 +14,14 @@ const THEME_FIGURE_MAP: Record<string, string> = {
 export default function HeroFigure({ landing }: HeroFigureProps) {
 
   return (
-    <div className="absolute -top-40 -right-20 lg:block xl:pl-20 -z-10 animate-fade-in-left animate-delay-300">
+    <div className="absolute hidden -top-40 -right-20 xl:-right-28 lg:block xl:pl-20 -z-10 animate-fade-in-left animate-delay-300">
       <div className="">
         <Image
           src={THEME_FIGURE_MAP[landing]}
           width={600}
           height={600}
           alt='Imagen 3D de Caribe-IA'
-          className="w-[670px] h-[650px] object-cover"
+          className="w-[570px] h-[550px] xl:w-[670px] xl:h-[650px] object-cover"
         />
       </div>
     </div>

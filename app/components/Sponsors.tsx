@@ -10,7 +10,7 @@ interface Props {
 export default function Sponsors({ landing }: Props) {
   return (
     <div className="flex flex-col gap-10">
-      <div className="max-w-6xl mx-auto px-5 w-full">
+      <div className="max-w-6xl mx-auto px-5 lg:px-10 w-full">
         <Title landing={landing} title="Aliados" />
       </div>
       <InfiniteMovingCards>

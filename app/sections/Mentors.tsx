@@ -33,7 +33,7 @@ export default function Mentors({ landing }: Props) {
 
   return (
     <section id="mentors" className="scroll-m-32 flex flex-col w-full gap-10 relative">
-      <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-56 -z-20 -left-36 w-[600px] h-[600px] rounded-full blur-3xl"></div>
+      <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-56 -z-20 -left-36 w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] rounded-full blur-3xl"></div>
 
       <div className="max-w-6xl mx-auto w-full px-5">
         <Title title="Mentores 2025" landing={landing} />

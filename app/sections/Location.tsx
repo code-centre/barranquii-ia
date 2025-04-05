@@ -9,11 +9,11 @@ interface Props {
 
 export default function Location({ landing }: Props) {
   return (
-    <section id="location" className="flex max-w-6xl mx-auto w-full flex-col gap-10 px-5">
+    <section id="location" className="flex max-w-6xl mx-auto w-full flex-col gap-10 px-5 lg:px-10">
       <Title title="¿Dónde será el hackathon?" landing={landing} />
       <div className="grid grid-cols-[auto_1fr] gap-3 lg:gap-9">
         <Border landing={landing} />
-        <div className="flex flex-col gap-6 text-justify">
+        <div className="flex flex-col gap-6">
           <p className="text-lg">El hackatón Barranqui-IA se llevará a cabo en dos espacios increíbles que combinan lo mejor del ecosistema tech del Caribe:</p>
           <div className="rounded-lg overflow-hidden">
             <iframe

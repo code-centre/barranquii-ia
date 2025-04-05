@@ -20,7 +20,7 @@ const programBenefits = [
 export default function PhasesSeason({ landing }: Props) {
     return (
         <div className="flex flex-col gap-10 relative">
-            <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-56 -z-10 -right-44 w-[600px] h-[600px] rounded-full blur-3xl"></div>
+            <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-56 -z-10 -left-44 -lg:right-44  lg:w-[600px] w-[300px] h-[300px] lg:h-[600px] rounded-full blur-3xl"></div>
             <Title title="Etapas" />
             {/* Estructura principal con el Border a la izquierda */}
             <div className="grid grid-cols-[auto_1fr]">
@@ -30,7 +30,7 @@ export default function PhasesSeason({ landing }: Props) {
                 </div>
 
                 {/* Columna del contenido */}
-                <div className="flex flex-col gap-10 text-justify">
+                <div className="flex flex-col gap-10">
                     {/* Sección 1: Temporada de Hackatones */}
                     <div>
                         <h2 className="text-2xl font-bold">1.- Temporada de Hackatones</h2>
@@ -104,7 +104,7 @@ export default function PhasesSeason({ landing }: Props) {
                                 </p>
                             </div>
                         </div>
-                        <Image src="/3DFigures/glass-3d.png" alt="3D glass" width={500} height={400} className="absolute -z-10 -right-60 -bottom-32" />
+                        <Image src="/3DFigures/glass-3d.png" alt="3D glass" width={500} height={400} className="absolute hidden lg:block -z-10 -right-60 -bottom-32" />
                         {/* <div className="relative">
                         </div> */}
                     </div>

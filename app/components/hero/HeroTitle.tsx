@@ -100,7 +100,7 @@ export default function HeroTitle({
         <Border landing={landing || 'default'} />
         {subtitle &&
           <div>
-            <p className={`text-2xl max-w-2xl`}>{SUBTITLES[landing]}</p>
+            <p className={`text-xl md:text-2xl max-w-2xl`}>{SUBTITLES[landing]}</p>
             <p className='mt-2 bg-blue-600 w-36 text-center rounded-full'>{DATES[landing]}</p>
           </div>
         }

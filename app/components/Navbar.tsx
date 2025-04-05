@@ -48,15 +48,12 @@ export default function Navbar() {
         className={`flex justify-between items-center px-5 ${isSmallDesktop ? "md:px-6 lg:px-8" : "md:px-8 lg:px-10"
           } py-3`}
       >
-        {/* Logo */}
         <Link href="/" className="font-mono font-bold text-xl md:text-2xl text-white">
           Caribe-IA
         </Link>
 
-        {/* Menú en escritorio */}
-        {!isMobile && !pathname.includes("/tickets") && (
-          <ul
-            className={`hidden lg:flex justify-center gap-4 ${isSmallDesktop ? "xl:gap-6 text-lg" : "xl:gap-10 text-xl"
+        <ul
+            className={`hidden lg:flex justify-center items-center gap-4 ${isSmallDesktop ? "xl:gap-6 text-lg" : "xl:gap-10 text-xl"
               }`}
           >
             {sectionsPage.map((section) => (
@@ -66,23 +63,25 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-        )}
+        {/* {!isMobile && !pathname.includes("/tickets") && (
+          
+        )} */}
 
         {/* Botón de menú móvil */}
-        {isMobile && (
+        {/* {isMobile && ( */}
           <button
             onClick={() => setOpenMenu(!openMenu)}
-            className="text-white text-2xl focus:outline-none"
+            className="text-white text-2xl focus:outline-none block lg:hidden"
           >
             {openMenu ? <CloseIcon /> : <MenuIcon />}
           </button>
-        )}
+        {/* // )} */}
       </nav>
 
       {/* Menú móvil: mejor adaptación a pantallas pequeñas */}
       <div
         className={`fixed top-0 right-0 ${screenWidth < 400 ? "w-4/5" : "w-3/4 sm:w-2/3"
-          } h-full bg-black/95 backdrop-blur-md shadow-lg lg:hidden z-50 
+          } h-full bg-black/40  backdrop-blur-lg shadow-lg lg:hidden z-50 
         transform ${openMenu ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 ease-in-out`}
       >
         <button
@@ -91,11 +90,12 @@ export default function Navbar() {
         >
           <CloseIcon />
         </button>
-        <ul className="flex flex-col items-start pt-20 pl-6 space-y-6 text-lg sm:text-xl">
+        <ul className="flex flex-col items-start pt-16 pl-6 space-y-6 text-lg sm:text-xl">
           {sectionsPage.map((section) => (
 
-            <li key={section.id} className={`${stylesLi} text-white`}>
-              <Link href={`/${section.id}`}>{section.name}</Link>
+            <li onClick={() => setOpenMenu(false)} key={section.id} className={`${stylesLi} text-white flex flex-col items-center`}>
+              <Link className={`${pathname === `/${section.id}` ? 'text-white' : ''} text-lg${stylesLi} text-base  ${!section.active && 'text-gray-400 opacity-80 line-through cursor-not-allowed hover:text-gray-400 hover:line-through'}`} href={`${section.active ? `/${section.id}` : ''}`}>{section.name}</Link>
+              {!section.active && <span className="text-white px-3 text-sm border border-blue-500 bg-blue-500 rounded-full">Próximamente</span>}
             </li>
           ))}
         </ul>

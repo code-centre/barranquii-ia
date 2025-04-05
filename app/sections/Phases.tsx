@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Phases() {
     return (
-        <div className="max-w-6xl mx-auto px-5 w-full mb-10">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 w-full mb-10">
             <PhasesSeason landing="default" />
         </div>
     );

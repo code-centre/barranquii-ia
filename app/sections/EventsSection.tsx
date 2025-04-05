@@ -7,7 +7,7 @@ interface EventsSectionProps {
 
 export default function EventsSection({ landing }: EventsSectionProps) {
     return (
-        <div className='w-full flex flex-col gap-10'>
+        <div className='w-full flex flex-col gap-10 px-5 lg:px-10'>
             <div className="w-full">
                 <RenderCard
                     landing={landing}
