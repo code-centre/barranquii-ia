@@ -1,3 +1,5 @@
+declare module '@midudev/tailwind-animations';
+
 interface Program {
   id: string;
   name: string;
@@ -34,6 +36,8 @@ enum LevelProgram {
   Intermedio = 'Intermedio',
   Experto = 'Experto'
 }
+
+
 
 enum StatusProgram {
   Borrador = 'Borrador',

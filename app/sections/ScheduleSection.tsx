@@ -25,7 +25,7 @@ export default function ScheduleSection() {
           </button>
         </div> */}
       </div>
-      <Schedule />
+      <Schedule landing="barranqui-ia" />
     </section>
   );
 }
