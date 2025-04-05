@@ -37,7 +37,7 @@ export default function Expectations({ landing }: Props) {
   return (
     <section className="flex flex-col gap-10">
       <Title title="¿Qué esperar durante el evento?" landing={landing} />
-      <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4">
         <div className="grid grid-cols-[3px_1fr] gap-3 lg:gap-10">
           <Border landing={landing} />
           <div className="flex flex-col justify-between gap-7">
@@ -49,7 +49,7 @@ export default function Expectations({ landing }: Props) {
             ))}
           </div>
         </div>
-        <div className="hidden md:block relative">
+        <div className="hidden lg:block relative">
           <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-56 -z-10 -left-44 w-[600px] h-[600px] rounded-full blur-3xl"></div> 
           <div style={{ border: `4px solid ${THEME_LANDINGS[landing].principal}` }} className="rounded-3xl w-full h-full  md:object-cover object-contain z-10 bg-gray-400"></div>
         </div>

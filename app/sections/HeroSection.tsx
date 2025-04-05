@@ -10,7 +10,7 @@ export default function HeroSection({ landing }: HeroSectionProps) {
     return (
         <div className="flex mt-16 relative">
             <div className="mb-10 lg:mb-16 xl:mb-10 relative">
-            <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute bottom-0 -z-10 -left-36 w-[600px] h-[600px] rounded-full blur-3xl"></div> 
+            <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute bottom-0 -z-10 -left-36 lg:w-[600px] lg:h-[600px] rounded-full w-[300px] h-[300px] blur-3xl "></div> 
                 <HeroTitle
                     landing={landing}
                     size="xxxxl"

@@ -132,7 +132,6 @@ export default function Workshops({ landing }: Props) {
 	const [workshops, setWorkshops] = useState(WORKSHOPS[landing]);
 	const [selectedWorkshop, setSelectedWorkshop] = useState(WORKSHOPS[landing].filter(workshop => workshop.selected === true)[0]);
 
-	console.log(workshops);
 
 	const handleWorkshopSwitchSelected = (workshopSelected: { title: string; name: string; role: string, selected: boolean }) => {
 		setWorkshops((prevWorkshops) =>
@@ -147,9 +146,8 @@ export default function Workshops({ landing }: Props) {
 		// Update the selected workshop
 		setSelectedWorkshop(workshopSelected);
 	};
-
 	return (
-		<section className='flex flex-col gap-5 lg:gap-10 relative px-4 lg:px-0'>
+		<section className='flex flex-col gap-5 lg:gap-10 relative px-5 lg:px-10'>
 			<Title landing={landing} title='Talleres con Google Developer Experts' />
 			<div className='grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10'>
 				<div className='grid grid-cols-[3px_1fr] gap-3 lg:gap-10'>

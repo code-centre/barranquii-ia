@@ -183,7 +183,7 @@ export default function RenderCard({
                 </>
             ) : (
                 <>
-                    <div className="flex flex-col justify-center items-center mt-10 text-gray-500">
+                    <div className="flex flex-col justify-center items-center mt-5 md:mt-10 text-gray-500 text-center">
                         <p className="mb-4">No hay eventos disponibles en {getCityDisplayName(landing)} en este momento.</p>
                         {loading ? <p>Cargando eventos...</p> :
                             <>
@@ -195,7 +195,7 @@ export default function RenderCard({
                     <Link href="https://www.codigoabierto.tech/eventos">
                         <div className="flex justify-center mt-10 mb-20">
                             <button
-                                className="text-white text-lg py-2 px-4 rounded-full hover:opacity-80 transition duration-300 ease-in-out hover:-translate-y-1 w-1/2 lg:w-1/5"
+                                className="text-white text-base md:text-lg py-2 px-4 rounded-full hover:opacity-80 transition duration-300 ease-in-out hover:-translate-y-1 w-fit"
                                 style={{ backgroundColor: THEME_LANDINGS[landing || "default"].principal + "80" }}>
                                 Ver eventos en otros lugares</button>
                         </div>

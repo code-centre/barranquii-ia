@@ -61,7 +61,7 @@ export default function RootLayout({
     <html lang="es" className="overflow-x-hidden scroll-smooth">
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_KEY || ""} />
       <body
-        className={`${poppins.variable} ${leagueSpartan.variable} font-sans relative w-full`}
+        className={`${poppins.variable} ${leagueSpartan.variable} font-sans relative w-full overflow-hidden`}
       >
         <Navbar />
         {children}

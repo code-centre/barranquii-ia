@@ -43,7 +43,7 @@ export default function Title({
 			sizeClass = "text-9xl md:text-10xl"
 			break
 		default:
-			sizeClass = "text-4xl md:text-5xl"
+			sizeClass = "text-3xl md:text-5xl"
 	}
 
 	let alignClass = ""

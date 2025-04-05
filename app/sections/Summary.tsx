@@ -53,7 +53,7 @@ export default function Summary({ landing }: Props) {
 			<Title title={`¿Qué es ${TITLES[landing]}?`} landing={landing} />
 			<div className='grid grid-cols-[3px_1fr] gap-3 lg:gap-10'>
 				<Border landing={landing} />
-				<div className='flex-col flex gap-7 text-lg text-justify'>
+				<div className='flex-col flex gap-7 text-base lg:text-lg'>
 					{
 						TEXTS[landing].map((text: string | { text: string, items: string[] }, index: number) => (
 							<>
@@ -63,9 +63,9 @@ export default function Summary({ landing }: Props) {
 								{typeof text === 'object' && (
 									<div key={index}>
 										<p className='mb-2'>{text.text}</p>
-										<ul className={`list-disc list-inside flex flex-col gap-1 marker:text-[#C663EA]`}>
+										<ul className={`list-disc list-inside flex flex-col gap-3 md:gap-1 marker:text-[#C663EA]`}>
 											{text.items.map((item: string, index: number) => (
-												<li className='pl-5' key={index}>{item}</li>
+												<li className='pl-2 md:pl-5' key={index}>{item}</li>
 											))}
 										</ul>
 									</div>

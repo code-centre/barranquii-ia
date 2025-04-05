@@ -120,12 +120,12 @@ const SCHEDULE_EVENT = [
 export default function Schedule({ landing }: { landing: string }) {
   const [daySchedule, setDaySchedule] = useState(0);
   return (
-    <div className="flex flex-col gap-10 w-full max-w-6xl mx-auto px-5">
+    <div className="flex flex-col gap-10 w-full max-w-6xl mx-auto px-5 lg:px-10">
       <Title title="Cronograma" landing={landing} />
       <div className="grid grid-cols-[auto_1fr] gap-2 lg:gap-9">
         <Border landing={landing} />
         <div>
-          <header className="border-gray-500 border-b-6 grid gap-5 grid-cols-1 lg:grid-cols-3 md:gap-20">
+          <header className="border-gray-500 border-b-6 grid gap-5 grid-cols-1 md:grid-cols-3 md:gap-20">
             {DAYS_EVENT.map((day, i) => (
               <div
                 style={{
@@ -174,7 +174,7 @@ export default function Schedule({ landing }: { landing: string }) {
                 </div>
             }
           )) :  */}
-          <p className="text-gray-400 text-center text-5xl">Próximamente</p>
+          <p className="text-gray-400 text-center text-2xl lg:text-5xl">Próximamente</p>
           </main>
         </div>
       </div>
