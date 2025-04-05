@@ -192,7 +192,7 @@ export default function RenderCard({
                             </>
                         }
                     </div>
-                    <Link href="https://www.codigoabierto.tech/eventos">
+                    <Link target="_blank" href="https://www.codigoabierto.tech/eventos">
                         <div className="flex justify-center mt-10 mb-20">
                             <button
                                 className="text-white text-base md:text-lg py-2 px-4 rounded-full hover:opacity-80 transition duration-300 ease-in-out hover:-translate-y-1 w-fit"
