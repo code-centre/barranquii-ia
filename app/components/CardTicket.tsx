@@ -52,7 +52,7 @@ export default function CardTicket({
 
             }}
             // disabled
-            className="xl:px-5 py-2 xl:py-3 text-black rounded-lg text-[13px] xl:text-sm uppercase"
+            className="px-5 py-2 xl:py-3 text-black rounded-lg text-[13px] xl:text-sm uppercase"
           >
             Comprar
           </Link>
