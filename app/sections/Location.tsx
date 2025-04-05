@@ -9,7 +9,7 @@ interface Props {
 
 export default function Location({ landing }: Props) {
   return (
-    <section id="location" className="flex max-w-6xl mx-auto w-full flex-col gap-10 px-5 lg:px-10">
+    <section id="location" className="flex max-w-6xl mx-auto w-full flex-col gap-10 px-5 lg:px-10  lg:pt-24">
       <Title title="¿Dónde será el hackathon?" landing={landing} />
       <div className="grid grid-cols-[auto_1fr] gap-3 lg:gap-9">
         <Border landing={landing} />

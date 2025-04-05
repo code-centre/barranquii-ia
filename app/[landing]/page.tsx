@@ -39,12 +39,12 @@ export default function LandingPage({ params }: { params: { landing: string } })
 			<Location landing={params.landing} />
 			<Schedule landing={params.landing} />
 			<Mentors landing={params.landing} />
-			<div className='max-w-6xl mx-auto w-full'>
+			<div className='max-w-6xl mx-auto w-full  lg:pt-24'>
 				<Workshops landing={params.landing} />
 			</div>
 			<Tickets landing={params.landing} />
 			<Sponsors landing={params.landing} />
-			<div className='flex flex-col gap-10'>
+			<div className='flex flex-col gap-10  lg:pt-24'>
 				<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 					<Title
 						title="Participa en los eventos de Pre-Hackatón"

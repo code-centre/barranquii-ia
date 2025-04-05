@@ -59,7 +59,7 @@ export default function Tickets({ landing }: Props) {
   return (
     <section
       id="boleta"
-      className="relative flex flex-col gap-10 pt-10 px-5 lg:px-10 max-w-6xl mx-auto w-full"
+      className="relative flex flex-col gap-10 pt-10 px-5 lg:px-10 max-w-6xl mx-auto w-full  lg:pt-24"
     >
       {/* <div className="gradient"></div> */}
       <Title title="Boletos" landing={landing} />
