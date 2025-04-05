@@ -5,10 +5,10 @@ interface HeroFigureProps {
 }
 
 const THEME_FIGURE_MAP: Record<string, string> = {
-    'default': '/3DFigures/caribeia.png',
-    'barranqui-ia': '/3DFigures/barranquiia.png',
-    'samar-ia': '/3DFigures/samaria.png',
-    'cartagen-ia': '/3DFigures/cartagenia.png'
+    'default': '/3DFigures/caribeia.webp',
+    'barranqui-ia': '/3DFigures/barranquiia.webp',
+    'samar-ia': '/3DFigures/samaria.webp',
+    'cartagen-ia': '/3DFigures/cartagenia.webp'
 };
 
 export default function HeroFigure({ landing }: HeroFigureProps) {

@@ -25,7 +25,7 @@ export default function Hackathon() {
       {/* CONTENEDOR DE IMAGEN */}
       <div className="lg:w-1/2 h-full flex justify-center items-start">
         <img 
-          src="/FOTOSBARRANQUI-IA/6.jpg"
+          src="/FOTOSBARRANQUI-IA/6.webp"
           alt="Hackatón en acción"
           className="rounded-lg shadow-lg w-full h-full object-cover"
         />
