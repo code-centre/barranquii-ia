@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import mentors from "../utils/mentors.json";
+import mentors from "../utils/mentors-b-2025.json";
 import MentorsCard from "../components/MentorsCard";
 import Title from "../components/Title";
 import { InfiniteMovingCards } from "../components/InfiniteMovingCards";

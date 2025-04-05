@@ -25,9 +25,9 @@ export default function HackatonesNav({ landing }: Props) {
                         size="lg" />
                     <div className="flex items-center justify-center mt-2">
                         <div className="flex flex-col items-center pt-2">
-                            <h2 className="text-sm lg:text-4xl text-white font-medium">
+                            {/* <h2 className="text-sm lg:text-4xl text-white font-medium">
                                 Por confirmar
-                            </h2>
+                            </h2> */}
                         </div>
                         {/* <Image
                             src={"/logo_uniandes_w.png"}
