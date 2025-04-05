@@ -16,7 +16,7 @@ const nextConfig = {
               value: 'barranquiia.com',
             },
           ],
-          destination: '/barranqui-ia',
+          destination: '/app/barranqui-ia',
         },
       ]
     }
