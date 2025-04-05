@@ -9,6 +9,7 @@ import { InfiniteMovingCards } from "../../components/InfiniteMovingCards"
 import SkeletonCard from "./SkeletonCard"
 import { THEME_LANDINGS } from "@/app/utils/theme"
 import { getCityKeywords, shouldApplyCityFiltering, getCityDisplayName } from "@/app/utils/citys"
+import { log } from "console"
 
 interface EventData {
     id: string
@@ -93,9 +94,12 @@ export default function RenderCard({
 
             if (showOnlyFuture) {
                 const today = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Bogota" }))
+                today.setHours(0, 0, 0, 0)
+
                 filteredData = filteredData.filter((item) => {
                     const eventDate = new Date(item.date)
-                    return eventDate > today
+                    eventDate.setHours(0, 0, 0, 0)
+                    return eventDate >= today
                 })
             }
 
@@ -137,9 +141,6 @@ export default function RenderCard({
                     </div>
                 )
             }
-            <>
-
-            </>
             {data.length >= 4 ? (
                 <>
                     <InfiniteMovingCards direction="left" speed="slow" pauseOnHover={true}>
@@ -153,6 +154,24 @@ export default function RenderCard({
                             </div>
                         )}
                     </InfiniteMovingCards>
+                    <Link href="https://www.codigoabierto.tech/eventos">
+                        <div className="flex justify-center mt-10 mb-20">
+                            <button
+                                className="text-white text-lg py-2 px-4 rounded-full hover:opacity-80 transition duration-300 ease-in-out hover:-translate-y-1 w-1/2 lg:w-1/5"
+                                style={{ backgroundColor: THEME_LANDINGS[landing || "default"].principal + "80" }}>
+                                Ver todos</button>
+                        </div>
+                    </Link>
+                </>
+            ) : data.length > 0 ? (
+                <>
+                    <div className="flex justify-center gap-10 px-5 flex-wrap lg:flex-nowrap max-w-6xl mx-auto">
+                        {type === "events" && data.map((item) => (
+                            <Link key={item.id} href='https://www.codigoabierto.tech/eventos'>
+                                <CardEvent landing={landing} eventData={item} />
+                            </Link>
+                        ))}
+                    </div>
                     <Link href="https://www.codigoabierto.tech/eventos">
                         <div className="flex justify-center mt-10 mb-20">
                             <button
