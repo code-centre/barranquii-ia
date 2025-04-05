@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Noto_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Noto_Sans, Poppins, League_Spartan } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import BackgroundImages from "./components/BackgroundImages";
@@ -7,6 +7,17 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 // Definimos los pesos para las fuentes
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+});
+
+const leagueSpartan = League_Spartan({
+  subsets: ["latin"],
+  variable: "--font-league_spartan",
+});
+
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ['400', '700'] });
 const noto = Noto_Sans({ subsets: ["latin"], weight: ['400', '700'] });
 
@@ -45,12 +56,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{ children: React.ReactNode}>) {
   return (
     <html lang="es" className="overflow-x-hidden scroll-smooth">
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_KEY || ""} />
       <body
-        className={`${jakarta.className} ${noto.className} relative w-full`}
+        className={`${poppins.variable} ${leagueSpartan.variable} font-sans relative w-full overflow-hidden`}
       >
         <Navbar />
         {children}

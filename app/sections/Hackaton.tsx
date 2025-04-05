@@ -20,13 +20,12 @@ export default function Hackathon() {
            desarrollar prototipos funcionales</strong>  Las temáticas pueden ir desde la inteligencia artificial hasta el desarrollo 
           de aplicaciones para solucionar problemas específicos de la sociedad.
         </p>
-      
       </div>
  
       {/* CONTENEDOR DE IMAGEN */}
       <div className="lg:w-1/2 h-full flex justify-center items-start">
         <img 
-          src="/FOTOSBARRANQUI-IA/6.jpg"
+          src="/FOTOSBARRANQUI-IA/6.webp"
           alt="Hackatón en acción"
           className="rounded-lg shadow-lg w-full h-full object-cover"
         />

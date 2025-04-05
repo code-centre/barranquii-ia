@@ -1,49 +1,35 @@
-import Image from "next/image";
-import Wrapper from "./components/Wrapper";
-import Hero from "./sections/Hero";
-import Sponsors from "./components/Sponsors";
-import WhatIs from "./sections/WhatIs";
-import HowIs from "./sections/HowIs";
-import Expectations from "./sections/Expectations";
-import Location from "./sections/Location";
-import Tickets from "./sections/Tickets";
-import ScheduleSection from "./sections/ScheduleSection";
-import "./globals.css";
-import BeASponsor from "./sections/BeASponsor";
-import LearnInCommunity from "./sections/LearnInCommunity";
-import FAQ from "./sections/FAQ";
-import Topics from "./sections/Topics";
-import Allies from "./sections/Allies";
-import SponsorsSection from "./sections/SponsorsSection";
-import Mentors from "./sections/Mentors";
-import Talleres from "./sections/Talleres";
-import Hero2 from "./sections/Hero2";
-import Testimonios from "./sections/Testimonios";
-import Preinscribete from "./sections/Preinscribete";
-import Ganadores from "./sections/Ganadores";
-import HeroTwo from "./sections/Hero2";
+import Summary from "./sections/Summary";
 import PromoBar from "./components/PromoBar";
-import Hackathon from "./sections/Hackaton";
+import HeroSection from "./sections/HeroSection";
+import Expectations from "./sections/Expectations";
+import Phases from "./sections/Phases";
+import Sponsors from "./components/Sponsors";
+import Title from "./components/Title";
+import FAQ from "./sections/FAQ";
+import EventsSection from "./sections/EventsSection";
+import { FAQS_CARIBE_IA } from "./utils/FAQS_CARIBE_IA";
 
 export default function Home() {
   return (
-    <main className="gap-32 xl:gap-44 flex flex-col py-10 min-h-screen overflow-hidden">
-      <div>
-        <Hero />
-        <Sponsors />
-        <PromoBar />
+    <main className="py-20 lg:py-28 xl:py-32 min-h-screen flex flex-col gap-10 md:gap-28">
+      <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full mb-10'>
+        <HeroSection landing='default' />
       </div>
-      <div className="container mx-auto gap-20 flex flex-col">
-        <Hackathon/>
-        <HeroTwo />
-        <Testimonios />
-        <Talleres />
-        <Mentors />
-        <Ganadores />
-        <Allies />
-        <Preinscribete />
+      <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+        <Summary landing='default' />
       </div>
-
+      <PromoBar />
+      <Phases />
+      <Sponsors landing='default' />
+      <div className="w-full flex flex-col gap-10">
+        <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+          <Title
+            title="Participa en los eventos de Caribe-IA"
+          />
+        </div>
+        <EventsSection landing="default" />
+      </div>
+      <FAQ data={FAQS_CARIBE_IA}  landing='default' />
     </main>
   );
 }

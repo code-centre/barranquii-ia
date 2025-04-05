@@ -1,39 +1,42 @@
 "use client";
 import React, { useState } from "react";
+import Title from "./Title";
+import Border from "./Border";
+import { THEME_LANDINGS } from "../utils/theme";
 
 const DAYS_EVENT = [
-  // {
-  //   title: "Inauguración",
-  //   number: "03",
-  //   day: "Mayo, viernes",
-  // },
+  {
+    title: "Inauguración",
+    number: "02",
+    day: "Mayo, viernes",
+  },
   {
     title: "Primer Día",
-    number: "04",
+    number: "03",
     day: "Mayo, sábado",
   },
   {
     title: "Segundo Día",
-    number: "05",
+    number: "04",
     day: "Mayo, domingo",
   },
 ];
 
 const SCHEDULE_EVENT = [
-  // [
-  //   {
-  //     time: "07:00 PM - 9:00 PM",
-  //     title: "Meet & Greet",
-  //     description:
-  //       "Evento de pre-inauguración del hackatón donde tendremos la oportunidad de conocer a los mentores y compartir un rato con ellos mientras disfrutamos de música en vivo y una divertida velada. *Entrada con el paquete Full Access",
-  //   },
-  //   {
-  //     time: "09:00 PM - 10:00 PM",
-  //     title: "Show Musical",
-  //     description:
-  //       "Disfrutaremos escuchando a la revelación Barranquillera con su nueva propuesta que combina Funk y Soul, Grace Torres!",
-  //   },
-  // ],
+  [
+    {
+      time: "07:00 PM - 9:00 PM",
+      title: "Meet & Greet",
+      description:
+        "Evento de pre-inauguración del hackatón donde tendremos la oportunidad de conocer a los mentores y compartir un rato con ellos mientras disfrutamos de música en vivo y una divertida velada. *Entrada con el paquete de meet & greet",
+    },
+    {
+      time: "09:00 PM - 10:00 PM",
+      title: "Show Musical",
+      description:
+        "Disfrutaremos escuchando a la revelación Barranquillera con su nueva propuesta que combina Funk y Soul, GRACE!",
+    },
+  ],
   [
     {
       time: "08:00 AM - 09:00 AM",
@@ -114,43 +117,65 @@ const SCHEDULE_EVENT = [
   ],
 ];
 
-export default function Schedule() {
+export default function Schedule({ landing }: { landing: string }) {
   const [daySchedule, setDaySchedule] = useState(0);
   return (
-    <div className="md:flex-1 w-full min-h-[80vh]">
-      <header className="border-gray-500 grid grid-cols-2 border-b-6">
-        {DAYS_EVENT.map((day, i) => (
-          <div
-            key={day.title}
-            onClick={() => setDaySchedule(i)}
-            className={`${
-              daySchedule === i
-                ? "text-principleViolet border-b-4 pb-4"
-                : "text-gray-400"
-            } cursor-pointer text-center md:text-left`}
-          >
-            <p className="font-medium">{day.title}</p>
-            <p className="mt-1">
-              <span className="mr-1 font-bold md:text-2xl">{day.number}</span>
-              {day.day}
-            </p>
-          </div>
-        ))}
-      </header>
-      <main className="flex flex-col mt-10">
-        {SCHEDULE_EVENT[daySchedule]?.map((schedule, i) => (
-          <div key={i} className="flex gap-5 md:gap-5">
-            <p className="w-[50%] md:w-[40%] text-gray-400">{schedule.time}</p>
-            <div className="relative border-principleViolet border-l">
-              <div className="-left-[10px] absolute bg-principleViolet mx-auto rounded-full w-5 h-5"></div>
-            </div>
-            <div className="w-[80%]">
-              <h3 className="font-bold">{schedule.title}</h3>
-              <p className="pb-7 text-gray-400">{schedule.description}</p>
-            </div>
-          </div>
-        ))}
-      </main>
+    <div className="flex flex-col gap-10 w-full max-w-6xl mx-auto px-5 lg:px-10">
+      <Title title="Cronograma" landing={landing} />
+      <div className="grid grid-cols-[auto_1fr] gap-2 lg:gap-9">
+        <Border landing={landing} />
+        <div>
+          <header className="border-gray-500 border-b-6 grid gap-5 grid-cols-1 md:grid-cols-3 md:gap-20">
+            {DAYS_EVENT.map((day, i) => (
+              <div
+                style={{
+                  paddingBottom: daySchedule === i ? "16px" : "0px",
+                  color: daySchedule === i ? THEME_LANDINGS[landing].principal : "#9ca3af",
+                  borderBottomWidth: daySchedule === i ? "3px" : "0px",
+                  borderColor: daySchedule === i ? THEME_LANDINGS[landing].principal : "#9ca3af",
+                }}
+                key={day.title}
+                onClick={() => setDaySchedule(i)}
+                className={`cursor-pointer text-center md:text-left hover:transition-colors duration-100 py-5 `}
+              >
+                <p className="font-medium">{day.title}</p>
+                <p className="mt-1">
+                  {
+                    landing === 'barranqui-ia' && (
+                      <>
+                        <span className="mr-1 font-bold md:text-2xl">{day.number}</span>
+                        {day.day}
+                      </>
+                    )
+                  }
+                  {
+                    landing !== 'barranqui-ia' && <span className="capitalize">{day.day.split(',')[1]}</span>
+                  }
+                </p>
+              </div>
+            ))}
+          </header>
+          <main className="flex flex-col mt-10">
+            {
+              SCHEDULE_EVENT[daySchedule]?.map((schedule, i, arr) => (
+                <div key={i} className="flex gap-5 md:gap-5">
+                  <p className="w-[50%] md:w-[20%] text-gray-400">{schedule.time}</p>
+                  <div style={{ borderColor: THEME_LANDINGS[landing].principal }} className={`relative ${i !== arr.length - 1 ? ' border-l' : ''}`}>
+                    <div style={{ backgroundColor: THEME_LANDINGS[landing].principal }} className="-left-[12px] absolute mx-auto rounded-full w-6 h-6">
+                      <div className="flex justify-center items-center">
+                        {i + 1}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-[80%]">
+                    <h3 className="font-bold">{schedule.title}</h3>
+                    <p className="pb-7 text-gray-400">{schedule.description}</p>
+                  </div>
+                </div>
+          ))}
+          </main>
+        </div>
+      </div>
     </div>
   );
 }

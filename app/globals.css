@@ -9,13 +9,20 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Plus Jakarta Sans", sans-serif;
+body {
+  color: rgb(var(--foreground-rgb));
+  font-family: var(--font-poppins);
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-league-spartan);
 }
 
 .loader {
@@ -236,15 +243,6 @@ h6 {
   --background-end-rgb: 0, 0, 0;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 
 @layer utilities {
   .text-balance {

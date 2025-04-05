@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import CrearTestimonio from "../components/CrearTestimonio";
 
 interface Testimonials {
@@ -10,13 +10,79 @@ interface Testimonials {
 }
 
 export default function Testimonios() {
-  const [testimonials, setTestimonials] = useState<Testimonials[]>([]);
+  const [testimonials, setTestimonials] = useState<Testimonials[]>([{
+    nameUser: "Anuar",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    role: "mentor",
+    id: 1
+  }, {
+    nameUser: "Anuar",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    role: "participante",
+    id: 2
+  }, {
+    nameUser: "Anuar",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    role: "staff",
+    id: 3
+  }, {
+    nameUser: "Anuar",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    role: "mentor",
+    id: 4
+  }, {
+    nameUser: "Anuar",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    role: "participante",
+    id: 5
+  }, {
+    nameUser: "Anuar",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    role: "staff",
+    id: 6
+  }, {
+    nameUser: "Anuar",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    role: "mentor",
+    id: 7
+  }, {
+    nameUser: "Anuar",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    role: "participante",
+    id: 8
+  }]);
   const [loading, setLoading] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [autoplay, setAutoplay] = useState(true);
-  const [isPaused, setIsPaused] = useState(false);
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const autoplayIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const [showAllOnMobile, setShowAllOnMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+
+  // Function to get avatar background based on role
+  const getAvatarGradient = (role?: string) => {
+    switch(role) {
+      case "mentor":
+        return "from-indigo-500 to-purple-400";
+      case "participante":
+        return "from-green-500 to-teal-400";
+      case "staff":
+        return "from-orange-500 to-red-400";
+      default:
+        return "from-indigo-500 to-purple-400";
+    }
+  };
+
+  // Function to get badge background based on role
+  const getBadgeBackground = (role?: string) => {
+    switch(role) {
+      case "mentor":
+        return "bg-purple-900 text-purple-200";
+      case "participante":
+        return "bg-teal-900 text-teal-200";
+      case "staff":
+        return "bg-red-900 text-red-200";
+      default:
+        return "bg-purple-900 text-purple-200";
+    }
+  };
 
   const getTestimonials = async () => {
     try {
@@ -34,59 +100,26 @@ export default function Testimonios() {
     getTestimonials();
   }, []);
 
+  // Check if the device is mobile
   useEffect(() => {
-    const startAutoplay = () => {
-      if (autoplayIntervalRef.current) {
-        clearInterval(autoplayIntervalRef.current);
-      }
-
-      if (autoplay && testimonials.length > 1) {
-        autoplayIntervalRef.current = setInterval(() => {
-          if (!isPaused) {
-            nextTestimonial();
-          }
-        }, 5000);
-      }
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 640);
     };
+    
+    // Initial check
+    checkIfMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
 
-    startAutoplay();
-
-    return () => {
-      if (autoplayIntervalRef.current) {
-        clearInterval(autoplayIntervalRef.current);
-      }
-    };
-  }, [autoplay, isPaused, testimonials.length]);
-
-  const scrollToTestimonial = (index: number) => {
-    if (sliderRef.current) {
-      const cardWidth = sliderRef.current.firstChild
-        ? (sliderRef.current.firstChild as HTMLElement).clientWidth + 16
-        : 350;
-      const scrollPosition = index * cardWidth;
-      sliderRef.current.scrollTo({
-        left: scrollPosition,
-        behavior: "smooth",
-      });
-      setCurrentIndex(index);
-    }
-  };
-
-  const nextTestimonial = () => {
-    setCurrentIndex(prevIndex => {
-      const nextIndex = prevIndex + 1 >= testimonials.length ? 0 : prevIndex + 1;
-      scrollToTestimonial(nextIndex);
-      return nextIndex;
-    });
-  };
-
-  const prevTestimonial = () => {
-    setCurrentIndex(prevIndex => {
-      const prevIndexAdjusted = prevIndex - 1 < 0 ? testimonials.length - 1 : prevIndex - 1;
-      scrollToTestimonial(prevIndexAdjusted);
-      return prevIndexAdjusted;
-    });
-  };
+  // Get visible testimonials based on mobile state
+  const visibleTestimonials = isMobile && !showAllOnMobile 
+    ? testimonials.slice(0, 3) 
+    : testimonials;
 
   return (
     <section id="Testimonios" className="gap-16 scroll-m-32 bg-black text-white w-full px-6 md:px-10 py-16">
@@ -96,82 +129,61 @@ export default function Testimonios() {
         </h2>
 
         {loading && (
-          <div className="flex space-x-6 overflow-hidden relative">
-            {Array(3)
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {Array(8)
               .fill(0)
               .map((_, i) => (
                 <div
                   key={i}
-                  className="bg-gray-700 animate-pulse min-h-[200px] md:min-h-[250px] w-full min-w-[300px] md:min-w-[350px] rounded-2xl flex-shrink-0"
+                  className="bg-gray-700 animate-pulse h-[150px] md:h-[180px] rounded-lg"
+                  style={{ height: `${Math.floor(Math.random() * 50) + 150}px` }}
                 ></div>
               ))}
           </div>
         )}
 
         {!loading && testimonials.length > 0 && (
-          <div className="relative">
-            {/* Botón Anterior */}
-            <button
-            onClick={prevTestimonial}
-             className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 bg-purple-600 hover:bg-purple-400 text-white  w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shadow-lg z-10 transition-all duration-300"
-              
-            >
-              &#10094;
-            </button>
-
-            {/* Contenedor del Slider */}
-            <div
-              ref={sliderRef}
-              className="flex overflow-x-auto space-x-6 pb-6 pt-2 scrollbar-hide snap-x snap-mandatory"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-              onTouchStart={() => setIsPaused(true)}
-              onTouchEnd={() => setTimeout(() => setIsPaused(false), 3000)}
-            >
-              {testimonials.map((testimonial, index) => (
+          <>
+            <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+              {visibleTestimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="bg-gradient-to-br from-blue-800 to-purple-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-shrink-0 relative overflow-hidden snap-center
-                  min-w-[90%] sm:min-w-[350px] max-w-[400px] min-h-[250px] md:min-h-[300px] flex flex-col"
+                  className={`bg-gradient-to-br from-blue-800 to-purple-700 p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 break-inside-avoid mb-4`}
                 >
-                  <div className="flex-1">
-                    {/* Avatar */}
-                    <div className="text-left flex gap-4 items-start">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-purple-400 flex items-center justify-center text-white font-bold text-lg shrink-0">
-                        {testimonial.nameUser
-                          .split(" ")
-                          .map(name => name[0])
-                          .join("")
-                          .substring(0, 2)
-                          .toUpperCase()}
-                      </div>
-                      <div className="mb-2">
-                        <h3 className="font-bold text-lg text-white">{testimonial.nameUser}</h3>
-                        {testimonial.role && (
-                          <span className="inline-block bg-purple-900 px-2 py-0.5 rounded-full text-xs text-purple-200 font-medium">
-                            {testimonial.role}
-                          </span>
-                        )}
-                      </div>
+                  <div className="text-left flex gap-3 items-start">
+                    <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${getAvatarGradient(testimonial.role)} flex items-center justify-center text-white font-bold text-sm shrink-0`}>
+                      {testimonial.nameUser
+                        .split(" ")
+                        .map(name => name[0])
+                        .join("")
+                        .substring(0, 2)
+                        .toUpperCase()}
                     </div>
-
-                    <p className="text-gray-100 leading-relaxed relative z-10 mt-4">
-                      {testimonial.description}
-                    </p>
+                    <div className="mb-2">
+                      <h3 className="font-bold text-base text-white">{testimonial.nameUser}</h3>
+                      {testimonial.role && (
+                        <span className={`inline-block ${getBadgeBackground(testimonial.role)} px-2 py-0.5 rounded-full text-xs font-medium`}>
+                          {testimonial.role}
+                        </span>
+                      )}
+                    </div>
                   </div>
+
+                  <p className="text-gray-100 text-sm leading-relaxed mt-3">
+                    {testimonial.description}
+                  </p>
                 </div>
               ))}
             </div>
-
-            {/* Botón Siguiente */}
-            <button
-              className="absolute right-1 top-1/2 transform -translate-y-1/2 translate-x-1/2 bg-purple-600 hover:bg-purple-700 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shadow-lg z-10 transition-all duration-300"
-              onClick={nextTestimonial}
-            >
-              &#10095;
-            </button>
-          </div>
+            {isMobile && testimonials.length > 3 && (
+              <button 
+                onClick={() => setShowAllOnMobile(!showAllOnMobile)}
+                className="mt-4 mx-auto block bg-principleViolet text-white py-2 px-4 rounded-md text-sm font-medium"
+              >
+                {showAllOnMobile ? "Ver menos" : "Ver más"}
+              </button>
+            )}
+          </>
         )}
 
         {!loading && testimonials.length === 0 && (

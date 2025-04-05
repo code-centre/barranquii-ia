@@ -1,37 +1,17 @@
-[   {
-  "id": "Hero",
-  "name": "Así se vivió"
-},
-{
-  "id": "Hero2",
-  "name": "Hackaton 2024"
-},
-{
-  "id": "Testimonios",
-  "name": "Testimonios"
-},
-{
-  "id": "talleres",
-  "name": "Talleres"
-},
-{
-  "id": "mentors",
-  "name": "Mentores"
-},
-
-{
-  "id": "Ganadores",
-  "name": "Ganadores"
-  
-},
-{
-  "id": "allies",
-  "name": "Aliados"
-},
-{
-  "id": "Preinscribete",
-  "name": "2025"
-}
- 
-
+[
+  {
+    "id": "barranqui-ia",
+    "name": "Barranqui-IA",
+    "active": true
+  },
+  {
+    "id": "samar-ia",
+    "name": "Samar-IA",
+    "active": false
+  },
+  {
+    "id": "cartagen-ia",
+    "name": "Cartagen-IA",
+    "active": false
+  }
 ]
