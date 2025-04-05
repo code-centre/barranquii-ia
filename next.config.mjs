@@ -16,7 +16,7 @@ const nextConfig = {
               value: 'barranquiia.com',
             },
           ],
-          destination: '/app/barranqui-ia',
+          destination: 'https://www.caribe-ia.com/barranqui-ia',
         },
       ]
     }
