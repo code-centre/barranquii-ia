@@ -32,7 +32,7 @@ const noto = Noto_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 export const metadata: Metadata = {
   title: "Caribe-IA",
   description:
-    "Caribe-IA 2025: Trnasformando ideas en startups de alto impacto con base en Inteligencia artificial",
+    "Caribe-IA 2025: Transformando ideas en startups de alto impacto con base en Inteligencia artificial",
   authors: [
     {
       name: "Fundación Código Abierto",
@@ -53,11 +53,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.barranquiia.com",
-    title: ": Trnasformando ideas en startups de alto impacto con base en Inteligencia artificial",
-  aut",
+    title: "Caribe-IA 2025",
     description:
-      "Participa en el principal evento de tecnología e inteligencia artificial en Barranquilla. Talleres, hackatón y mucho más.",
-    siteName: "Barranqui-IA",
+      "Participa en el principal evento de tecnología e inteligencia artificial en el Caribe. Talleres, hackatón y mucho más.",
+    siteName: "Caribe-IA 2025",
     images: [
       {
         url: "https://www.barranquiia.com/opengraph-image.jpg",
