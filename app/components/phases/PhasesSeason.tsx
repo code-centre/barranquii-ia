@@ -80,7 +80,7 @@ export default function PhasesSeason({ landing }: Props) {
                         <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-10">
                             <div>
                                 <Image
-                                    src="/FOTOSBARRANQUI-IA/12.jpg"
+                                    src="/FOTOSBARRANQUI-IA/12.webp"
                                     alt="Demo Day"
                                     width={400}
                                     height={450}
@@ -104,7 +104,7 @@ export default function PhasesSeason({ landing }: Props) {
                                 </p>
                             </div>
                         </div>
-                        <Image src="/3DFigures/glass-3d.png" alt="3D glass" width={500} height={400} className="absolute hidden lg:block -z-10 -right-60 -bottom-32" />
+                        <Image src="/3DFigures/glass-3d.webp" alt="3D glass" width={500} height={400} className="absolute hidden lg:block -z-10 -right-60 -bottom-32" />
                         {/* <div className="relative">
                         </div> */}
                     </div>

@@ -11,7 +11,7 @@ interface Props {
 export default function HackatonesNav({ landing }: Props) {
     return (
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <Link href={`/cartagen-ia`} className="w-full flex flex-col items-center justify-start py-5 ">
+            <Link href='' className="w-full flex flex-col items-center justify-start py-5 ">
                 <div className="flex flex-col items-center w-full space-y-2">
                     <div className="flex flex-col items-center">
                         <GradientTitle
@@ -25,9 +25,9 @@ export default function HackatonesNav({ landing }: Props) {
                         size="lg" />
                     <div className="flex items-center justify-center mt-2">
                         <div className="flex flex-col items-center pt-2">
-                            <h2 className="text-sm lg:text-4xl text-white font-medium">
+                            {/* <h2 className="text-sm lg:text-4xl text-white font-medium">
                                 Por confirmar
-                            </h2>
+                            </h2> */}
                         </div>
                         {/* <Image
                             src={"/logo_uniandes_w.png"}
@@ -64,7 +64,7 @@ export default function HackatonesNav({ landing }: Props) {
                 </div>
             </Link>
 
-            <Link href={`/samar-ia`} className="flex-1 xl:min-w-[350px] flex flex-col items-center justify-start py-5 ">
+            <Link href='' className="flex-1 xl:min-w-[350px] flex flex-col items-center justify-start py-5 ">
                 <div className="flex flex-col items-center w-full space-y-2">
                     <div className="flex flex-col items-center">
                         <GradientTitle

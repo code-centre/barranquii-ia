@@ -1,63 +1,105 @@
-import React from "react";
+'use client'
+import React, { useEffect, useState } from "react";
 import CardTicket from "../components/CardTicket";
 import "../globals.css";
+import Title from "../components/Title";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "@/firebase";
+import { THEME_LANDINGS } from "../utils/theme";
+import SkeletonCard from "../components/events/SkeletonCard";
 
-export default function Tickets() {
+interface Props {
+  landing: string;
+}
+
+interface EventData {
+  id: string;
+  date: string | { toDate: () => Date };
+  title: string;
+  details: string;
+  subtitle: string;
+  description?: string;
+  slug: string;
+  heroImage: string | null;
+  type: string;
+  createdAt: string;
+  startHour: string;
+  cost: string;
+  status: string | null;
+  content?: string;
+  speakers?: any[];
+  tickets?: any[];
+}
+
+const EVENTS_ID: Record<string, string> = {
+  'barranqui-ia': '0AV0Wdoz4lj57CbZ94eT',
+  'samar-ia': '0AV0Wdoz4lj57CbZ94eT',
+  'cartagen-ia': '0AV0Wdoz4lj57CbZ94eT'
+}
+
+export default function Tickets({ landing }: Props) {
+  const [eventData, setEventData] = useState<EventData | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function getEventData(): Promise<EventData | null> {
+      const q = query(collection(db, "events"), where("id", "==", EVENTS_ID[landing]))
+      const querySnapshot = await getDocs(q)
+
+      if (!querySnapshot.empty) {
+        setEventData({ id: querySnapshot.docs[0].id, ...querySnapshot.docs[0].data() } as EventData)
+      }
+      setLoading(false)
+      return null
+    }
+
+    getEventData()
+  }, [])
+
   return (
     <section
       id="boleta"
-      className="relative flex flex-col gap-6 pt-20 gradient"
+      className="relative flex flex-col gap-10 pt-10 px-5 lg:px-10 max-w-6xl mx-auto w-full  lg:pt-24"
     >
       {/* <div className="gradient"></div> */}
-      <div>
-        <h2 className="border- border-principleViolet pl-2 font-bold border-l-4 text-lg lg:text-4xl uppercase">
-          Adquiere tu boleto
-        </h2>
-        <span className="flex items-center gap-1 mt-2 font-semibold text-gray-400 uppercase">
-          <div className="bg-principleViolet rounded-full w-1 h-1"></div>
-          Participa
-        </span>
-      </div>
-      <p className="text-gray-300">
-        Adquiere tus boletos para participar en Barranqui-IA, ¡No te quedes
-        fuera!
-      </p>
+      <Title title="Boletos" landing={landing} />
 
-      <ul className="flex flex-col gap-1 ml-10 text-gray-300 marker:text-principleViolet list-disc"></ul>
-      <div className="gap-x-3 gap-y-10 grid grid-cols-1 md:grid-cols-5">
-        <CardTicket
-          mode="taller"
-          title="Entrada Limitada"
-          styles="col-span-2"
-          subTitle="Aprende sobre Inteligencia Artificial"
-          amount="40,000"
-        >
-          <ul className="mt-3 ml-5 marker:text-principleViolet list-disc">
-            <li>Acceso a 6 talleres exclusivos sobre IA, el día sábado 4 de mayo de 2:00 pm a 7:00 pm</li>
-            <li>Hidratación y café ilimitado</li>
-            <li>Certificación de participación</li>
-          </ul>
-        </CardTicket>
-        <CardTicket
-          mode="general"
-          title="Entrada General"
-          styles="col-span-2"
-          subTitle="Vive la experiencia completa"
-          amount="100,000"
-        >
-          <ul className="mt-3 ml-5 marker:text-principleViolet list-disc">
-            <li>Participación en el Hackatón</li>
-            <li>Camiseta oficial</li>
-            <li>Alimentación durante el evento</li>
-            <li>
-              Talleres exclusivos con nuestros expertos nacionales e
-              internacionales
-            </li>
-            <li>Hidratación y café ilimitado</li>
-            <li>Certificación de participación</li>
-          </ul>
-        </CardTicket>
-      </div>
+      {/* <ul className="flex flex-col gap-1 ml-10 text-gray-300 marker:text-principleViolet list-disc"></ul> */}
+      {
+        loading ?
+          <div className="grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+            <SkeletonCard />
+            <SkeletonCard />
+            <SkeletonCard />
+          </div>
+          : <div className="gap-x-3 gap-y-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {
+              eventData?.tickets?.map((ticket: any, i: number) => (
+                <CardTicket key={ticket.id}
+                  title={ticket.ticketName || ticket.type}
+                  styles="col-span-1"
+                  subTitle={ticket.description}
+                  amount={ticket.price}
+                  landing={landing}
+                  idEvent={eventData?.id || ''}
+                  ticketId={i}
+                >
+                  <ul className="mt-6 ml-5 marker:text-[#C663EA] list-disc text-sm">
+                    {ticket.benefits.map((item: string, index: number) => (
+                      <li key={index}
+                        className="pl-2 md:pl-5"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </CardTicket>
+              ))
+            }
+          </div>
+      }
+      <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -bottom-24 -z-10 -right-36 lg:w-[600px] lg:h-[600px] rounded-full w-[300px] h-[300px] blur-3xl "></div>
+
     </section>
   );
 }

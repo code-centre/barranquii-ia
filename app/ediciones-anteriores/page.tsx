@@ -24,7 +24,7 @@ export default function Home() {
         <HeroTwo />
         <Testimonios />
         <Talleres />
-        <Mentors />
+        <Mentors landing="barranqui-ia" />
         <Ganadores />
         <Allies />
         <Preinscribete />

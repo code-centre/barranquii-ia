@@ -4,15 +4,18 @@ import { InfiniteMovingCards } from "./InfiniteMovingCards";
 import Title from "./Title";
 
 interface Props {
-  landing: string;
+  landing?: string;
 }
 
 export default function Sponsors({ landing }: Props) {
   return (
-    <div className="flex flex-col gap-10">
-      <div className="max-w-6xl mx-auto px-5 lg:px-10 w-full">
-        <Title landing={landing} title="Aliados" />
-      </div>
+    <div className={`flex flex-col gap-10 ${landing && ' lg:pt-24'}`}>
+      {
+        landing &&
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 w-full">
+          <Title landing={landing} title="Aliados" />
+        </div>
+      }
       <InfiniteMovingCards>
         <li>
           <Image

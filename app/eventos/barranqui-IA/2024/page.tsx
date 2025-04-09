@@ -8,7 +8,7 @@ import Expectations from "@/app/sections/Expectations";
 import Location from "@/app/sections/Location";
 import Tickets from "@/app/sections/Tickets";
 import ScheduleSection from "@/app/sections/ScheduleSection";
-import "./globals.css";
+import "@/app/globals.css";
 import BeASponsor from "@/app/sections/BeASponsor";
 import LearnInCommunity from "@/app/sections/LearnInCommunity";
 import FAQ from "@/app/sections/FAQ";

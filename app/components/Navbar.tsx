@@ -13,7 +13,12 @@ export default function Navbar() {
   const [landing, setLanding] = useState("default");
 
   useEffect(() => {
-    setLanding(pathname.split("/")[1]);
+    const getPathname = pathname.split("/")[1]
+    if (getPathname === 'samar-ia' || getPathname === 'barranqui-ia' || getPathname === 'cartagen-ia' || getPathname === 'default') {
+      setLanding(getPathname);
+    } else {
+      setLanding('default')
+    }
   }, [pathname]);
 
   useEffect(() => {
@@ -40,7 +45,7 @@ export default function Navbar() {
   return (
     <header
       style={{
-        background: `linear-gradient(to right, ${THEME_LANDINGS[landing !== '' ? landing : 'default'].gradient.from}, ${THEME_LANDINGS[landing !== '' ? landing : 'default'].gradient.via}, ${THEME_LANDINGS[landing !== '' ? landing : 'default'].gradient.to})`,
+        background: `linear-gradient(to right, ${THEME_LANDINGS[landing].gradient.from}, ${THEME_LANDINGS[landing].gradient.via}, ${THEME_LANDINGS[landing !== '' ? landing : 'default'].gradient.to})`,
 
       }}
       className="fixed w-full top-0 z-50  shadow-lg">

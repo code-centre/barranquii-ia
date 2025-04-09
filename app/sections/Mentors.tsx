@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import mentors from "../utils/mentors.json";
+import mentors from "../utils/mentors-b-2025.json";
 import MentorsCard from "../components/MentorsCard";
 import Title from "../components/Title";
 import { InfiniteMovingCards } from "../components/InfiniteMovingCards";
@@ -32,7 +32,7 @@ export default function Mentors({ landing }: Props) {
   // });
 
   return (
-    <section id="mentors" className="scroll-m-32 flex flex-col w-full gap-10 relative">
+    <section id="mentors" className="scroll-m-32 flex flex-col w-full gap-10 relative  lg:pt-24">
       <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-56 -z-20 -left-36 w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] rounded-full blur-3xl"></div>
 
       <div className="max-w-6xl mx-auto w-full px-5">

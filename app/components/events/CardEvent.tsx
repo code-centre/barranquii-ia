@@ -204,7 +204,7 @@ export default function CardEvent({ eventData, landing }: CardEventProps) {
 
   return (
     <div className="flex">
-      <article className="w-[350px] h-[400px] rounded-xl shadow-sm overflow-hidden group border border-gray-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+      <article className="w-full lg:w-[350px] h-[400px] rounded-xl shadow-sm overflow-hidden group border border-gray-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
         <div className="h-1/2 relative">
           <Image
             src={eventData?.heroImage || "/default-hero-image.jpg"}
