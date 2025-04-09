@@ -9,7 +9,6 @@ import { InfiniteMovingCards } from "../../components/InfiniteMovingCards"
 import SkeletonCard from "./SkeletonCard"
 import { THEME_LANDINGS } from "@/app/utils/theme"
 import { getCityKeywords, shouldApplyCityFiltering, getCityDisplayName } from "@/app/utils/citys"
-import { log } from "console"
 
 interface EventData {
     id: string
