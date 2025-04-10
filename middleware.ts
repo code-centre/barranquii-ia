@@ -2,17 +2,21 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(req: NextRequest) {
-  const hostname = req.headers.get('host') || ''
-  const url = req.nextUrl.clone()
+  const { hostname, pathname } = req.nextUrl
 
-  // Para debug: imprime el dominio
-  console.log('hostname:', hostname)
+  // Normalizamos por si viene con www
+  const cleanHost = hostname.replace(/^www\./, '')
 
-  // Redirige solo si accede a la raíz y el dominio es barranquiia.com
-  if (hostname === 'barranquiia.com' && req.nextUrl.pathname === '/') {
+  if (cleanHost === 'barranquiia.com' && pathname === '/') {
+    const url = req.nextUrl.clone()
     url.pathname = '/barranqui-ia'
     return NextResponse.redirect(url)
   }
 
   return NextResponse.next()
+}
+
+// Solo aplicamos el middleware a la raíz "/"
+export const config = {
+  matcher: ['/'],
 }
