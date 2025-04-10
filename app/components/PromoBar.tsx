@@ -18,7 +18,7 @@ export default function PromoBar() {
         </div>
         
         <Link 
-          href="#Preinscribete"
+          href="/barranqui-ia#boleta"
           className="mt-3 md:mt-0 bg-white text-principleViolet hover:bg-opacity-90 px-4 py-1 rounded-md font-bold text-sm transition-all duration-300 transform hover:scale-105 flex items-center group"
         >
           Inscríbete ahora
