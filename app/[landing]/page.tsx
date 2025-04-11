@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import React from 'react'
 import Summary from '../sections/Summary'
 import PromoBar from '../components/PromoBar'
@@ -14,6 +15,43 @@ import Location from '../sections/Location'
 import { FAQS_HACKATHONES } from '../utils/FAQS_HACKATHONES'
 import { redirect } from 'next/navigation'
 import Tickets from '../sections/Tickets'
+
+export const metadata: Metadata = {
+	title: "Barranqui-IA",
+	description:
+	  "Barranqui-IA 2025: Hackatón de inteligencia artificial en el caribe, que no te digan que aquí no se hace tecnología.",
+	authors: [
+	  {
+		name: "Fundación Código Abierto",
+		url: "https://fundacioncodigoabierto.com/",
+	  },
+	],
+	keywords: [
+	  "Caribe-IA",
+	  "Barranqui-IA",
+	  "hackatón en Barranquilla",
+	  "taller de tecnología",
+	  "inteligencia artificial",
+	  "innovación tecnológica",
+	  "evento de TI",
+	  "desarrollo de software",
+	  "comunidad tecnológica",
+	],
+	openGraph: {
+	  type: "website",
+	  url: "https://www.barranquiia.com",
+	  title: "Barranqui-IA 2025",
+	  description:
+		"Participa en el principal Hackatón de inteligencia artificial en el caribe, que no te digan que aquí no se hace tecnología.",
+	  siteName: "Barranqui-IA 2025",
+	  images: [
+		{
+		  url: "https://www.barranquiia.com/poster.jpg",
+		},
+	  ],
+	  locale: "es_ES",
+	},
+};
 
 export default function LandingPage({ params }: { params: { landing: string } }) {
 	if (params.landing !== 'barranqui-ia') {

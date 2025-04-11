@@ -7,9 +7,9 @@ import {
 } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
-import BackgroundImages from "./components/BackgroundImages";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import GalacticCursorEffect from '@/app/cursorEffect';
 
 // Definimos los pesos para las fuentes
 const poppins = Poppins({
@@ -77,6 +77,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        {/* <GalacticCursorEffect /> */}
         <Footer />
       </body>
     </html>
