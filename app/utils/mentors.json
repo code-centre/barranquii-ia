@@ -5,8 +5,8 @@
     "lastName": "Guerrero",
     "image": "aaron.webp",
     "genre": "male",
-    "description": "Startup Developer con fundamentos en Computer Scientist por parte de la UNAM Lead Organizer en la comuinidad de GDG Cloud Mexico City una de las comunidades de Google Developers con mayor presencia en México"
-
+    "description": "Startup Developer con fundamentos en Computer Scientist por parte de la UNAM Lead Organizer en la comuinidad de GDG Cloud Mexico City una de las comunidades de Google Developers con mayor presencia en México",
+    "confirmed": true
   },
   {
     "id": 2,
@@ -14,7 +14,8 @@
     "lastName": "Rodriguez",
     "image": "mayra.webp",
     "genre": "female",
-    "description": "Ingeniera en Computación, con más de 8 años de experiencia. Experta en desarrolladores de Google para la categoría de tecnologías web y angulares, embajadora de Women Techmakers y coorganizadora de GDG Cloud."
+    "description": "Ingeniera en Computación, con más de 8 años de experiencia. Experta en desarrolladores de Google para la categoría de tecnologías web y angulares, embajadora de Women Techmakers y coorganizadora de GDG Cloud.",
+    "confirmed": true
 
   },
   {
@@ -23,7 +24,8 @@
     "lastName": "Carrilo",
     "image": "santiago.webp",
     "genre": "male",
-    "description": "MSc en Ingeniería de Software con más de 13 años de experiencia nacional e internacional en desarrollo de aplicaciones Android. Fundador y organizador de la comunidad Android Meetup Bogotá. Mentor de la acelaradora Google forStartups."
+    "description": "MSc en Ingeniería de Software con más de 13 años de experiencia nacional e internacional en desarrollo de aplicaciones Android. Fundador y organizador de la comunidad Android Meetup Bogotá. Mentor de la acelaradora Google forStartups.",
+    "confirmed": false  
 
   },
   {
@@ -32,7 +34,8 @@
     "lastName": "Aristizabal",
     "image": "vanessa.webp",
     "genre": "female",
-    "description": "Ingeniera de Sistemas con experiencia como Web developer. Github Star. Embajadora de Women Techmaker. Creadora de contenido. Apasionada por la tecnología, los Libros, el código (especialmente JS), el diseño, los Videojuegos y la ilustración."
+    "description": "Ingeniera de Sistemas con experiencia como Web developer. Github Star. Embajadora de Women Techmaker. Creadora de contenido. Apasionada por la tecnología, los Libros, el código (especialmente JS), el diseño, los Videojuegos y la ilustración.",
+    "confirmed": true
 
   },
   {
@@ -41,7 +44,8 @@
     "lastName": "Gomez",
     "image": "juan.webp",
     "genre": "male",
-    "description": "Programador, arquitecto de software, líder tecnológico, profesor universitario y asesor en empresas tecnológicas y departamentos de sistemas."
+    "description": "Programador, arquitecto de software, líder tecnológico, profesor universitario y asesor en empresas tecnológicas y departamentos de sistemas.",
+    "confirmed": true
 
   },
   {
@@ -50,7 +54,8 @@
     "lastName": "Charris",
     "image": "daniela.webp",
     "genre": "female",
-    "description": "Ingeniera Electrónica y Magíster de la Universidad del Norte con más de 4 años de experiencia en investigación y desarrollo de algoritmos de inteligencia artificial, procesamiento de imágenes y visión por computadora."
+    "description": "Ingeniera Electrónica y Magíster de la Universidad del Norte con más de 4 años de experiencia en investigación y desarrollo de algoritmos de inteligencia artificial, procesamiento de imágenes y visión por computadora.",
+    "confirmed": true
 
   },
   {
@@ -59,7 +64,8 @@
     "lastName": "Sierra",
     "image": "carlos.webp",
     "genre": "male",
-    "description": "Ingeniero de Sistemas, Magister en Ing de Sistemas y Computación, experiencia en industria de más de 5 años como Software Engineer, Machine Learning Engineer, Data Scientist, y actualmente como MLOps. forStartups."
+    "description": "Ingeniero de Sistemas, Magister en Ing de Sistemas y Computación, experiencia en industria de más de 5 años como Software Engineer, Machine Learning Engineer, Data Scientist, y actualmente como MLOps. forStartups.",
+    "confirmed": true
 
   },
   {
@@ -68,7 +74,8 @@
     "lastName": "Daza",
     "image": "javier.webp",
     "genre": "male",
-    "description": "Ingeniero Electrónico de la Universidad del Norte y Magister de la Universidad Internacional de la Rioja, colaborador en PyCon Colombia y Python Colombia, profesor de japonés y entusiasta de la inteligencia artificial."
+    "description": "Ingeniero Electrónico de la Universidad del Norte y Magister de la Universidad Internacional de la Rioja, colaborador en PyCon Colombia y Python Colombia, profesor de japonés y entusiasta de la inteligencia artificial.",
+    "confirmed": true
 
   },
   {
@@ -77,7 +84,8 @@
     "lastName": "Gutierrez",
     "image": "gutierrez.webp",
     "genre": "male",
-    "description": "A través de un enfoque de diseño centrado en el ser humano, como Diseñador de Negocios de Impacto: desarrollo, implemento y le doy seguimiento a acciones, estrategias y proyectos que inyectan innovación y eficiencia en las operaciones diarias con el fin de crear y agregar impacto socioeconómico para empresas sociales, Start-ups y pymes."
+    "description": "A través de un enfoque de diseño centrado en el ser humano, como Diseñador de Negocios de Impacto: desarrollo, implemento y le doy seguimiento a acciones, estrategias y proyectos que inyectan innovación y eficiencia en las operaciones diarias con el fin de crear y agregar impacto socioeconómico para empresas sociales, Start-ups y pymes.",
+    "confirmed": true
 
   },
   {
@@ -86,7 +94,8 @@
     "lastName": "Zuñiga",
     "image": "angie.webp",
     "genre": "female",
-    "description": "Con más de 5 años de experiencia trabajando en startups, multinacionales y clientes de diferentes países. Especialista en desarrollo con Python, IA y el modelamiento de los datos en relación a la capa de negocios. Es miembro del GDG Barranquilla y una mujer apasionada por la tecnología y la educación digital. Actualmente socia de una academia digital con mas de 3000 estudiantes de diferentes partes del mundo."
+    "description": "Con más de 5 años de experiencia trabajando en startups, multinacionales y clientes de diferentes países. Especialista en desarrollo con Python, IA y el modelamiento de los datos en relación a la capa de negocios. Es miembro del GDG Barranquilla y una mujer apasionada por la tecnología y la educación digital. Actualmente socia de una academia digital con mas de 3000 estudiantes de diferentes partes del mundo.",
+    "confirmed": true
 
   },
   {
@@ -95,7 +104,8 @@
     "lastName": "Garcia",
     "image": "diego.webp",
     "genre": "male",
-    "description": "Ingeniero de Sistemas, Especialista en Gerencia de Proyectos y coach ontológico con más de 12 años de experiencia en Gestión Administrativa, Compras y Negocios Inmobiliarios."
+    "description": "Ingeniero de Sistemas, Especialista en Gerencia de Proyectos y coach ontológico con más de 12 años de experiencia en Gestión Administrativa, Compras y Negocios Inmobiliarios.",
+    "confirmed": true
 
   },
   {
@@ -104,7 +114,8 @@
     "lastName": "Solorzano",
     "image": "merlys.webp",
     "genre": "female",
-    "description": "Mi enfoque se centra en la gestión del ciclo de vida del empleado y en guiar a las personas para que den un salto profesional y se conviertan en influenciadores en su entorno laboral. Además, colaboro con empresas para promover una cultura laboral extraordinaria y reducir la brecha laboral en países como México, Nicaragua, Colombia, Perú, Argentina y Chile"
+    "description": "Mi enfoque se centra en la gestión del ciclo de vida del empleado y en guiar a las personas para que den un salto profesional y se conviertan en influenciadores en su entorno laboral. Además, colaboro con empresas para promover una cultura laboral extraordinaria y reducir la brecha laboral en países como México, Nicaragua, Colombia, Perú, Argentina y Chile",
+    "confirmed": true
 
   },
   {
@@ -113,7 +124,8 @@
     "lastName": "Peña",
     "image": "ricardo.webp",
     "genre": "male",
-    "description": "Experto en marcos ágiles (scrum, design thinking) y filosofías de mejora continua (manufactura esbelta, six sigma). Enfocado en innovación abierta, compromiso con startups y transferencia tecnológica. Trabaja como Constructor de Ecosistemas para GEN, miembro de la mesa de inclusión socioeconómica de ACNUR, mentor en Innpulsa Colombia y profesor en universidades."
+    "description": "Experto en marcos ágiles (scrum, design thinking) y filosofías de mejora continua (manufactura esbelta, six sigma). Enfocado en innovación abierta, compromiso con startups y transferencia tecnológica. Trabaja como Constructor de Ecosistemas para GEN, miembro de la mesa de inclusión socioeconómica de ACNUR, mentor en Innpulsa Colombia y profesor en universidades.",
+    "confirmed": true
 
   },
   {
@@ -122,7 +134,8 @@
     "lastName": "Gonzales",
     "image": "felipe.webp",
     "genre": "male",
-    "description": "Experiencia sólida en el despliegue de aplicaciones utilizando Docker. Estás especializado en despliegue de aplicaciones en el entorno de AWS y con experiencia en el desarrollo de aplicaciones y servicios en Python, con un enfoque en el BackEnd, utilizando el framework FastAPI."
+    "description": "Experiencia sólida en el despliegue de aplicaciones utilizando Docker. Estás especializado en despliegue de aplicaciones en el entorno de AWS y con experiencia en el desarrollo de aplicaciones y servicios en Python, con un enfoque en el BackEnd, utilizando el framework FastAPI.",
+    "confirmed": true
 
   },
   {
@@ -131,7 +144,8 @@
     "lastName": "Molinares",
     "image": "sergio.webp",
     "genre": "male",
-    "description": "Especializado en Pruebas de penetración, CHFI, Osint y DFIR 🛡️ Anfitrión de las reuniones de Hack the Box Meetup Host 🇨🇴"
+    "description": "Especializado en Pruebas de penetración, CHFI, Osint y DFIR 🛡️ Anfitrión de las reuniones de Hack the Box Meetup Host 🇨🇴",
+    "confirmed": true
 
   },
   {
@@ -140,7 +154,8 @@
     "lastName": "Pineda",
     "image": "gisseell.webp",
     "genre": "female",
-    "description": "Senior Visual Designer con 4 años de experiencia en la creación de sistemas de diseño y productos digitales. Su especialidad: fusionar estética y funcionalidad para crear experiencias visuales impactantes y efectivas."
+    "description": "Senior Visual Designer con 4 años de experiencia en la creación de sistemas de diseño y productos digitales. Su especialidad: fusionar estética y funcionalidad para crear experiencias visuales impactantes y efectivas.",
+    "confirmed": true
 
   },
   {
@@ -149,7 +164,8 @@
     "lastName": "Sierra",
     "image": "jorge.webp",
     "genre": "male",
-    "description": "Con + 5 años de experiencia en desarrollo de software. Especializado en desarrollo e implementación de proyectos y arquitecturas en la nube para analítica de datos, visualización y machine learning. Solutions architect certificado AWS y Marketing Digital por Meta."
+    "description": "Con + 5 años de experiencia en desarrollo de software. Especializado en desarrollo e implementación de proyectos y arquitecturas en la nube para analítica de datos, visualización y machine learning. Solutions architect certificado AWS y Marketing Digital por Meta.",
+    "confirmed": true
 
   },
   {
@@ -158,7 +174,8 @@
     "lastName": "Alvarez",
     "image": "fabio.webp",
     "genre": "male",
-    "description": "Con experiencia backend en Python & Go, Data Science y Data Engineering, Airflow Certified. Especialidad en deployment de modelos de Personalization & Search y Computer Vision. Experiencia compañías tecnológicas como Mercado Libre, Simetrik y Rappi."
+    "description": "Con experiencia backend en Python & Go, Data Science y Data Engineering, Airflow Certified. Especialidad en deployment de modelos de Personalization & Search y Computer Vision. Experiencia compañías tecnológicas como Mercado Libre, Simetrik y Rappi.",
+    "confirmed": true
 
   },
   {
@@ -167,7 +184,8 @@
     "lastName": "Percybrooks",
     "image": "winston.webp",
     "genre": "male",
-    "description": "Ing. Electrónico de Universidad del Norte, con Maestría y Doctorado en Ingeniería Eléctrica y de Computación del Georgia Institute of Technology, Atlanta, USA. 12+ años de experiencia como docente e investigador, especialmente en Machine Learning, procesamiento de señales y robótica. Actualmente líder de Machine Learning en la startup de biodiversidad Pivotal Future de Cambridge, UK y co-fundador de la consultora de IA Dattain en Barranquilla, participando en el diseño, entrenamiento y despligue de modelos de deep learning para la identificación de patrones en señales de audio e imágenes."
+    "description": "Ing. Electrónico de Universidad del Norte, con Maestría y Doctorado en Ingeniería Eléctrica y de Computación del Georgia Institute of Technology, Atlanta, USA. 12+ años de experiencia como docente e investigador, especialmente en Machine Learning, procesamiento de señales y robótica. Actualmente líder de Machine Learning en la startup de biodiversidad Pivotal Future de Cambridge, UK y co-fundador de la consultora de IA Dattain en Barranquilla, participando en el diseño, entrenamiento y despligue de modelos de deep learning para la identificación de patrones en señales de audio e imágenes.",
+    "confirmed": true
 
   },
   {
@@ -176,7 +194,8 @@
     "lastName": "Torres",
     "image": "torres.webp",
     "genre": "male",
-    "description": "Soy arquitecto que migró a tech y un apasionado de la tecnología, con más de 5 años de experiencia en diseño de experiencias de usuario e interfaces, y 2 años liderando procesos de diseño para startups."
+    "description": "Soy arquitecto que migró a tech y un apasionado de la tecnología, con más de 5 años de experiencia en diseño de experiencias de usuario e interfaces, y 2 años liderando procesos de diseño para startups.",
+    "confirmed": true
 
   },
   {
@@ -185,7 +204,8 @@
     "lastName": "Mendez",
     "image": "dayan.webp",
     "genre": "male",
-    "description": "Desarrollador Python con experiencia en proyectos de Inteligencia artificial, computer vision y AWS hace más de 5 años. Ingeniero electrónico y Magister de la universidad del Norte."
+    "description": "Desarrollador Python con experiencia en proyectos de Inteligencia artificial, computer vision y AWS hace más de 5 años. Ingeniero electrónico y Magister de la universidad del Norte.",
+    "confirmed": true
 
   },
   {
@@ -194,6 +214,7 @@
     "lastName": "Terán",
     "image": "hecter.webp",
     "genre": "male",
-    "description": "Ingeniero de Sistemas con una Maestría en Gestión de Proyectos, con experiencia en el desarrollo de software y en la enseñanza en la Universidad Simón Bolívar. Posee certificaciones internacionales, incluyendo KMP, TKP, CAPM®, GPM-b™, DASM® y PMP®. Es voluntario fundador del Capítulo PMI Caribe y actualmente se desempeña como secretario en la sección de IEEE Caribbean Colombia Section, además de ejercer como presidente del capítulo IEEE de Computer Society en la misma sección."
+    "description": "Ingeniero de Sistemas con una Maestría en Gestión de Proyectos, con experiencia en el desarrollo de software y en la enseñanza en la Universidad Simón Bolívar. Posee certificaciones internacionales, incluyendo KMP, TKP, CAPM®, GPM-b™, DASM® y PMP®. Es voluntario fundador del Capítulo PMI Caribe y actualmente se desempeña como secretario en la sección de IEEE Caribbean Colombia Section, además de ejercer como presidente del capítulo IEEE de Computer Society en la misma sección.",
+    "confirmed": true
   }
 ]

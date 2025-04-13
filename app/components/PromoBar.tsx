@@ -7,7 +7,7 @@ export default function PromoBar() {
     <div className="w-full bg-gradient-to-r from-principleViolet via-purple-600 to-blue-600 py-3 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/pattern-dots.svg')] opacity-10"></div>
       
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between px-4">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between max-w-6xl px-4">
         <div className="flex items-center space-x-3">
           <div className="bg-white text-principleViolet font-bold px-3 py-1 rounded-md text-sm animate-pulse">
             NUEVO
@@ -18,7 +18,7 @@ export default function PromoBar() {
         </div>
         
         <Link 
-          href="#Preinscribete"
+          href="/barranqui-ia#boleta"
           className="mt-3 md:mt-0 bg-white text-principleViolet hover:bg-opacity-90 px-4 py-1 rounded-md font-bold text-sm transition-all duration-300 transform hover:scale-105 flex items-center group"
         >
           Inscríbete ahora

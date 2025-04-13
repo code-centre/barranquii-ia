@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Noto_Sans } from "next/font/google";
+import {
+  Plus_Jakarta_Sans,
+  Noto_Sans,
+  Poppins,
+  League_Spartan,
+} from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import BackgroundImages from "./components/BackgroundImages";
@@ -7,17 +12,35 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 // Definimos los pesos para las fuentes
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ['400', '700'] });
-const noto = Noto_Sans({ subsets: ["latin"], weight: ['400', '700'] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+});
+
+const leagueSpartan = League_Spartan({
+  subsets: ["latin"],
+  variable: "--font-league_spartan",
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+const noto = Noto_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
-  title: "Barranqui-IA",
+  title: "Caribe-IA",
   description:
-    "Barranqui-IA 2024: Un evento único en Barranquilla dedicado a la innovación y la tecnología. Únete a nosotros para experimentar talleres interactivos, un emocionante hackatón y la oportunidad de conectar con líderes en inteligencia artificial y desarrollo tecnológico. Aprende, innova y crea con los mejores en el campo.",
+    "Caribe-IA 2025: Transformando ideas en startups de alto impacto con base en Inteligencia artificial",
   authors: [
-    { name: "Fundación Código Abierto", url: "https://fundacioncodigoabierto.com/" },
+    {
+      name: "Fundación Código Abierto",
+      url: "https://fundacioncodigoabierto.com/",
+    },
   ],
   keywords: [
+    "Caribe-IA",
     "Barranqui-IA",
     "hackatón en Barranquilla",
     "taller de tecnología",
@@ -30,10 +53,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.barranquiia.com",
-    title: "Barranqui-IA 2024",
+    title: "Caribe-IA 2025",
     description:
-      "Participa en el principal evento de tecnología e inteligencia artificial en Barranquilla. Talleres, hackatón y mucho más.",
-    siteName: "Barranqui-IA",
+      "Participa en el principal evento de tecnología e inteligencia artificial en el Caribe. Talleres, hackatón y mucho más.",
+    siteName: "Caribe-IA 2025",
     images: [
       {
         url: "https://www.barranquiia.com/opengraph-image.jpg",
@@ -50,7 +73,7 @@ export default function RootLayout({
     <html lang="es" className="overflow-x-hidden scroll-smooth">
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_KEY || ""} />
       <body
-        className={`${jakarta.className} ${noto.className} relative w-full`}
+        className={`${poppins.variable} ${leagueSpartan.variable} font-sans relative w-full overflow-hidden`}
       >
         <Navbar />
         {children}

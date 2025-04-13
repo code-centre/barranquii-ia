@@ -31,7 +31,7 @@ export default function HeroTwo() {
 
   const images = Array.from(
     { length: 12 },
-    (_, i) => `/FOTOSBARRANQUI-IA/${i + 1}.jpg`
+    (_, i) => `/FOTOSBARRANQUI-IA/${i + 1}.webp`
   );
 
   const imagesPerSlide = 4; // Siempre 4 imágenes por slide
