@@ -63,7 +63,7 @@ export default function LandingPage({ params }: { params: { landing: string } })
 
 	return (
 		<main className="py-20 lg:py-28 xl:py-32 min-h-screen flex flex-col gap-20 md:gap-28">
-			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full mb-20'>
+			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<HeroSection landing={params.landing} />
 			</div>
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
@@ -83,12 +83,12 @@ export default function LandingPage({ params }: { params: { landing: string } })
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<SponsorsSection landing={params.landing}/>
 			</div>
-			<div className='max-w-6xl mx-auto w-full'>
+			<div className='max-w-6xl mx-auto w-full  lg:pt-24'>
 				<Workshops landing={params.landing} />
 			</div>
 			<Tickets landing={params.landing} />
 			<Sponsors landing={params.landing} />
-			<div className='flex flex-col gap-10'>
+			<div className='flex flex-col gap-10  lg:pt-24'>
 				<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 					<Title
 						title="Participa en los eventos de Pre-Hackatón"

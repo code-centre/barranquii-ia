@@ -133,7 +133,7 @@ const SCHEDULE_EVENT = [
 export default function Schedule({ landing }: { landing: string }) {
   const [daySchedule, setDaySchedule] = useState(0);
   return (
-    <div className="flex flex-col gap-10 w-full max-w-6xl mx-auto px-5 lg:px-10">
+    <div className="flex flex-col gap-10 w-full max-w-6xl mx-auto px-5 lg:px-10 lg:pt-24">
       <Title title="Cronograma" landing={landing} />
       <div className="grid grid-cols-[auto_1fr] gap-2 lg:gap-9">
         <Border landing={landing} />
