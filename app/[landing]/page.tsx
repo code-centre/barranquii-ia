@@ -15,6 +15,8 @@ import Location from '../sections/Location'
 import { FAQS_HACKATHONES } from '../utils/FAQS_HACKATHONES'
 import { redirect } from 'next/navigation'
 import Tickets from '../sections/Tickets'
+import Topics from '../sections/Topics'
+import SponsorsSection from '../sections/SponsorsSection'
 
 export const metadata: Metadata = {
 	title: "Barranqui-IA",
@@ -73,10 +75,14 @@ export default function LandingPage({ params }: { params: { landing: string } })
 			}
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<Expectations landing={params.landing} />
+				<Topics landing={params.landing}/>
 			</div>
 			<Location landing={params.landing} />
 			<Schedule landing={params.landing} />
 			<Mentors landing={params.landing} />
+			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+				<SponsorsSection landing={params.landing}/>
+			</div>
 			<div className='max-w-6xl mx-auto w-full'>
 				<Workshops landing={params.landing} />
 			</div>

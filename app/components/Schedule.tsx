@@ -73,16 +73,29 @@ const SCHEDULE_EVENT = [
       description: "Ya hace hambre, ¿cierto?",
     },
     {
-      time: "9:00 PM",
-      title: "Cierre de puertas",
+      time: "9:00 PM - 10:00 PM",
+      title: "Translado a Fundación Código Abierto",
       description:
-        "En esta ocasión no podrémos quedarnos a trabajar en la universidad, pero puedes coordinar con tu equipo para trabajar desde tu casa y avanzar en tu proyecto",
-    },
+        "Nos vamos de la universidad a Fundación Código Abierto para continuar trabajando en el hackatón.",
+    }, {
+      time: "10:00 PM - 6:00 AM",
+      title: "Cierre de puertas",
+      description: "Cierre de puertas para nuestra seguridad, No se podrá entrar ni salir de Fundación Código Abierto hasta las 6 de la mañana del día siguiente."
+    }
   ],
   [
     {
-      time: "07:00 AM",
-      title: "Puertas abiertas",
+      time: "2:00 AM - 3:00 AM",
+      title: "Standup Comedy o Karaoke",
+      description: "Tendremos un standup comedy o karaoke para relajarnos y despejar la mente un rato."
+    }, {
+      time: "3:00 AM - 4:00 AM", 
+      title: "Snack de Madrugada",
+      description: "¡Vamos a comer algo para despertar!",
+    },
+    {
+      time: "07:00 AM - 08:00 AM",
+      title: "Translado a la Universidad",
       description: "¡Espero hayas avanzado durante la noche!",
     },
     {
