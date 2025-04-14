@@ -63,7 +63,7 @@ export default function LandingPage({ params }: { params: { landing: string } })
 
 	return (
 		<main className="py-20 lg:py-28 xl:py-32 min-h-screen flex flex-col gap-20 md:gap-28">
-			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full mb-20'>
+			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<HeroSection landing={params.landing} />
 			</div>
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>

@@ -25,7 +25,7 @@ export default function HeroSection({ landing }: HeroSectionProps) {
                     <HeroFigure landing={landing} />
             </div>
             </div>
-            {landing === 'barranqui-ia' && <div className="flex justify-end mt-4 mb-6">
+            {landing === 'barranqui-ia' && <div className="flex justify-end mt-4">
                 <div className="flex items-center animate-fade-in-up animate-delay-150">
                     <span className="text-sm text-gray-600 mr-2">Powered by</span>
                     <Image 
