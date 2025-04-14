@@ -1,13 +1,16 @@
 import React from "react";
 import Topic from "../components/Topic";
 import "../globals.css";
+import Title from "../components/Title";
 
-export default function Topics() {
+interface Props {
+  landing: string;
+}
+
+export default function Topics({ landing }: Props) {
   return (
     <section id="topics" className="pt-32">
-      <h2 className="border- border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
-        Lineas temáticas
-      </h2>
+      <Title landing={landing} title="Lineas temáticas" />
 
       <p className="mt-3 text-gray-300">
         Barranqui-IA contará con 7 lineas temáticas para guiar a lo

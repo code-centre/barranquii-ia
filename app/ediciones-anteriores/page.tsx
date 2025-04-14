@@ -16,7 +16,7 @@ export default function Home() {
     <main className="gap-32 xl:gap-44 flex flex-col py-10 min-h-screen overflow-hidden">
       <div>
         <Hero />
-        <Sponsors landing="barranqui-ia" />
+        <Sponsors />
         <PromoBar />
       </div>
       <div className="container mx-auto gap-20 flex flex-col">

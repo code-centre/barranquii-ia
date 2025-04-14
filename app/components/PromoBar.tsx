@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 
+
 export default function PromoBar() {
   return (
     <div className="w-full bg-gradient-to-r from-principleViolet via-purple-600 to-blue-600 py-3 relative overflow-hidden">
@@ -18,7 +19,7 @@ export default function PromoBar() {
         </div>
         
         <Link 
-          href="/barranqui-ia#boleta"
+          href="/barranqui-ia/#preinscribete"
           className="mt-3 md:mt-0 bg-white text-principleViolet hover:bg-opacity-90 px-4 py-1 rounded-md font-bold text-sm transition-all duration-300 transform hover:scale-105 flex items-center group"
         >
           Inscríbete ahora
