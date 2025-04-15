@@ -50,9 +50,24 @@ export default function Expectations({ landing }: Props) {
           </div>
         </div>
         <div className="hidden lg:block relative">
-          <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-56 -z-10 -left-44 w-[600px] h-[600px] rounded-full blur-3xl"></div> 
-          <Image height={300} width={200} src='/FOTOSBARRANQUI-IA/7.webp' alt="Imagen en la sección de expectativas" style={{ border: `4px solid ${THEME_LANDINGS[landing].principal}` }} className="rounded-3xl w-full h-full  md:object-cover object-contain z-10 bg-gray-400"></Image>
+          <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-56 -z-10 -left-44 w-[600px] h-[600px] rounded-full blur-3xl"></div>
+          {/* <Image height={300} width={200} src='/FOTOSBARRANQUI-IA/7.webp' alt="Imagen en la sección de expectativas" style={{ border: `4px solid ${THEME_LANDINGS[landing].principal}` }} className="rounded-3xl w-full h-full  md:object-cover object-contain z-10 bg-gray-400"></Image> */}
+          <iframe
+            src='https://www.youtube.com/embed/4cmN2hW3HsY'
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+          ></iframe>
         </div>
+
       </div>
     </section>
   );
