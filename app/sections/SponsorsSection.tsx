@@ -51,6 +51,15 @@ export default function SponsorsSection({ landing }: Props) {
           />
         </li>
         <li>
+          <Image
+            className="w-[200px] h-[110px] object-contain"
+            src="/logos/pmi-blanco.webp"
+            height={60}
+            width={200}
+            alt="Logo de PMI"
+          />
+        </li>
+        <li>
           <figure className="flex items-center justify-center gap-x-3">
             <Image
               className="w-16"

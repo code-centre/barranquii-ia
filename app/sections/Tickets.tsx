@@ -59,9 +59,9 @@ export default function Tickets({ landing }: Props) {
   return (
     <section
       id="preinscribete"
-      className="relative flex flex-col gap-10 pt-10 px-5"
+      className="relative flex flex-col gap-10 pt-10 px-5 max-w-6xl mx-auto lg:px-10 w-full"
     >
-      <div id='preinscribete' className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+      {/* <div id='preinscribete' className='max-w-6xl mx-auto px-5 lg:px-10 w-full'> */}
         {/* <div className="gradient"></div> */}
         <Title title="Boletos" landing={landing} />
 
@@ -100,8 +100,8 @@ export default function Tickets({ landing }: Props) {
             </div>
         }
         <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -bottom-24 -z-10 -right-36 lg:w-[600px] lg:h-[600px] rounded-full w-[300px] h-[300px] blur-3xl "></div>
-      </div>
-      <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -bottom-24 -z-10 -right-36 lg:w-[600px] lg:h-[600px] rounded-full w-[300px] h-[300px] blur-3xl "></div>
+      {/* </div> */}
+      {/* <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -bottom-24 -z-10 -right-36 lg:w-[600px] lg:h-[600px] rounded-full w-[300px] h-[300px] blur-3xl "></div> */}
 
     </section>
   );
