@@ -17,48 +17,49 @@ import { redirect } from 'next/navigation'
 import Tickets from '../sections/Tickets'
 import Topics from '../sections/Topics'
 import SponsorsSection from '../sections/SponsorsSection'
+import Organizers from '../sections/Organizers'
 
 export const metadata: Metadata = {
 	title: "Barranqui-IA",
 	description:
-	  "Barranqui-IA 2025: Hackatón de inteligencia artificial en el caribe, que no te digan que aquí no se hace tecnología.",
+		"Barranqui-IA 2025: Hackatón de inteligencia artificial en el caribe, que no te digan que aquí no se hace tecnología.",
 	authors: [
-	  {
-		name: "Fundación Código Abierto",
-		url: "https://fundacioncodigoabierto.com/",
-	  },
+		{
+			name: "Fundación Código Abierto",
+			url: "https://fundacioncodigoabierto.com/",
+		},
 	],
 	keywords: [
-	  "Caribe-IA",
-	  "Barranqui-IA",
-	  "hackatón en Barranquilla",
-	  "taller de tecnología",
-	  "inteligencia artificial",
-	  "innovación tecnológica",
-	  "evento de TI",
-	  "desarrollo de software",
-	  "comunidad tecnológica",
+		"Caribe-IA",
+		"Barranqui-IA",
+		"hackatón en Barranquilla",
+		"taller de tecnología",
+		"inteligencia artificial",
+		"innovación tecnológica",
+		"evento de TI",
+		"desarrollo de software",
+		"comunidad tecnológica",
 	],
 	openGraph: {
-	  type: "website",
-	  url: "https://www.barranquiia.com",
-	  title: "Barranqui-IA 2025",
-	  description:
-		"Participa en el principal Hackatón de inteligencia artificial en el caribe, que no te digan que aquí no se hace tecnología.",
-	  siteName: "Barranqui-IA 2025",
-	  images: [
-		{
-		  url: "https://www.barranquiia.com/poster.jpg",
-		},
-	  ],
-	  locale: "es_ES",
+		type: "website",
+		url: "https://www.barranquiia.com",
+		title: "Barranqui-IA 2025",
+		description:
+			"Participa en el principal Hackatón de inteligencia artificial en el caribe, que no te digan que aquí no se hace tecnología.",
+		siteName: "Barranqui-IA 2025",
+		images: [
+			{
+				url: "https://www.barranquiia.com/poster.jpg",
+			},
+		],
+		locale: "es_ES",
 	},
 };
 
 export default function LandingPage({ params }: { params: { landing: string } }) {
 	if (params.landing !== 'barranqui-ia') {
 		return redirect('/')
-	} 
+	}
 
 
 	return (
@@ -69,19 +70,23 @@ export default function LandingPage({ params }: { params: { landing: string } })
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<Summary landing={params.landing} />
 			</div>
+			<div className='max-w-6xl mx-auto px-5 lg:px-10
+			 w-full'>
+				<Organizers landing={params.landing} />
+			</div>
 			{
 				params.landing === 'barranqui-ia' &&
 				<PromoBar />
 			}
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<Expectations landing={params.landing} />
-				<Topics landing={params.landing}/>
+				<Topics landing={params.landing} />
 			</div>
 			<Location landing={params.landing} />
 			<Schedule landing={params.landing} />
 			<Mentors landing={params.landing} />
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
-				<SponsorsSection landing={params.landing}/>
+				<SponsorsSection landing={params.landing} />
 			</div>
 			<div className='max-w-6xl mx-auto w-full  lg:pt-24'>
 				<Workshops landing={params.landing} />
