@@ -8,6 +8,7 @@ import Title from "./components/Title";
 import FAQ from "./sections/FAQ";
 import EventsSection from "./sections/EventsSection";
 import { FAQS_CARIBE_IA } from "./utils/FAQS_CARIBE_IA";
+import Organizers from "./sections/Organizers";
 
 export default function Home() {
   return (
@@ -17,6 +18,10 @@ export default function Home() {
       </div>
       <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
         <Summary landing='default' />
+      </div>
+      <div className='max-w-6xl mx-auto px-5 lg:px-10
+             w-full'>
+        <Organizers/>
       </div>
       <PromoBar />
       <Phases />
@@ -29,7 +34,7 @@ export default function Home() {
         </div>
         <EventsSection landing="default" />
       </div>
-      <FAQ data={FAQS_CARIBE_IA}  landing='default' />
+      <FAQ data={FAQS_CARIBE_IA} landing='default' />
     </main>
   );
 }

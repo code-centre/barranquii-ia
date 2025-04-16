@@ -57,6 +57,15 @@ export default function Sponsors({ landing }: Props) {
             loading="lazy"
           />
         </li>
+        <li>
+          <Image
+            className="w-[200px] h-[110px] object-contain"
+            src="/logos/pmi-blanco.webp"
+            height={60}
+            width={200}
+            alt="Logo de PMI"
+          />
+        </li>
         {/* <li>
           <Image
             className="w-[150px]"
