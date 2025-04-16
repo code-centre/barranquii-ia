@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Title from "../components/Title";
 import Border from "../components/Border";
+import ImageDivider from "../components/ImageDivider";
 
 interface Props {
   landing: string
@@ -15,6 +16,16 @@ export default function Location({ landing }: Props) {
         <Border landing={landing} />
         <div className="flex flex-col gap-6">
           <p className="text-lg">El hackatón Barranqui-IA se llevará a cabo en dos espacios increíbles que combinan lo mejor del ecosistema tech del Caribe:</p>
+          <ImageDivider
+            rightImage="/WhatsApp Image 2025-03-29 at 12.48.51.jpeg"
+            leftImage="/Acceso-a-bloque-k.png"
+            leftTitle="Universidad del norte"
+            rightTitle="Fundación Código Abierto"
+             />
+          <p>Daremos inicio al hackatón en el campus de Uninorte, con la presentación de retos, formación de equipos, mentorías y la primera parte del desarrollo de los proyectos.</p>
+          <p>Cuando caiga la noche, nos moveremos a la sede de Fundación Código Abierto, donde la energía no se detiene. Continuaremos trabajando toda la madrugada en un espacio cómodo, creativo y lleno de buena vibra.</p>
+          <p>Habrá snacks, café, y dinámicas especiales para mantener la moral en alto. Y sí, si quieres tomar una siesta, puedes traer tu almohada y descansar unas horas.</p>
+          <p>Nos reencontramos en la Universidad del Norte para recargar energías con un desayuno conjunto y preparar los toques finales antes de los pitches y la premiación.</p>
           <div className="rounded-lg overflow-hidden">
             <iframe
               className="w-full"
@@ -25,10 +36,6 @@ export default function Location({ landing }: Props) {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          <p>Daremos inicio al hackatón en el campus de Uninorte, con la presentación de retos, formación de equipos, mentorías y la primera parte del desarrollo de los proyectos.</p>
-          <p>Cuando caiga la noche, nos moveremos a la sede de Fundación Código Abierto, donde la energía no se detiene. Continuaremos trabajando toda la madrugada en un espacio cómodo, creativo y lleno de buena vibra.</p>
-          <p>Habrá snacks, café, y dinámicas especiales para mantener la moral en alto. Y sí, si quieres tomar una siesta, puedes traer tu almohada y descansar unas horas.</p>
-          <p>Nos reencontramos en la Universidad del Norte para recargar energías con un desayuno conjunto y preparar los toques finales antes de los pitches y la premiación.</p>
         </div>
 
       </div>
