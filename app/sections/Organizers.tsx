@@ -8,13 +8,13 @@ interface Props {
 
 export default function Organizers({ landing }: Props) {
   return (
-    <section id="organizers" className="pb-10">
+    <section id="organizers" className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
       <Title landing={landing} title="Organizadores" />
-      <ul className="flex flex-col items-center justify-center mt-10 md:flex-wrap md:flex-row gap-10 md:gap-10">
+      <ul className="flex items-center justify-center md:flex-wrap md:flex-row gap-5 md:gap-10">
         <li className="flex items-center justify-center">
           <Image
-            className="w-[300px] h-auto object-contain"
-            src="/logos/gdg-logo.webp"
+            className="w-[220px] h-auto object-contain"
+            src="/logos/gdg-logo.png"
             height={80}
             width={300}
             alt="Logo de GDG"
@@ -23,10 +23,10 @@ export default function Organizers({ landing }: Props) {
         </li>
         <li>
           <Image
-            className="w-[220px]"
+            className="w-[180px]"
             src="/logos/logo-fca.webp"
             height={60}
-            width={280}
+            width={220}
             alt="Logo de FCA"
             loading="lazy"
           />
