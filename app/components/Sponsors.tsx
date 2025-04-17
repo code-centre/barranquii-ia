@@ -19,80 +19,99 @@ export default function Sponsors({ landing }: Props) {
       <InfiniteMovingCards>
         <li className="flex items-center justify-center">
           <Image
-            className="w-[150px] h-auto object-contain rounded-full"
-            src="/logos/51-labs.webp"
-            height={47}
+            src="/logos/51labs.png"
+            height={100}
             width={150}
             alt="Logo de 51 Labs"
             loading="lazy"
+            className="h-auto object-contain"
           />
         </li>
         <li className="flex items-center justify-center">
           <Image
-            className="w-[150px] h-auto object-contain"
             src="/logos/feanware.png"
-            height={47}
-            width={150}
+            height={100}
+            width={250}
             alt="Logo de Feanware"
             loading="lazy"
+            className="object-contain"
           />
         </li>
         <li className="flex items-center justify-center">
           <Image
-            className="w-[150px] h-auto object-contain rounded-full"
             src="/logos/life-your-coaching.jpg"
             height={47}
             width={150}
             alt="Logo de Life Your Coaching"
             loading="lazy"
+            className="w-[150px] h-auto object-contain rounded-full"
           />
         </li>
         <li className="flex items-center justify-center">
           <Image
-            className="w-[150px] h-auto object-contain rounded-full"
             src="/logos/aws.png"
             height={47}
             width={150}
             alt="Logo de AWS"
             loading="lazy"
+            className="w-[150px] h-auto object-contain rounded-full"
           />
         </li>
-        <li>
+        <li className="flex items-center justify-center">
           <Image
-            className="w-[200px] h-[110px] object-contain"
             src="/logos/pmi-blanco.webp"
             height={60}
             width={200}
             alt="Logo de PMI"
+            loading="lazy"
+            className="w-[200px] h-[110px] object-contain"
           />
         </li>
-        {/* <li>
+        <li className="flex items-center justify-center">
           <Image
-            className="w-[150px]"
-            src="/logos/ultracem.webp"
-            height={47}
-            width={150}
-            alt="Logo de Ultracem"
+            src="/logos/pragma.svg"
+            height={100}
+            width={250}
+            alt="Logo de Pragma"
+            loading="lazy"
+            className="object-contain"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            src="/logos/LOGO-UNISIMON-AUDACIA-V-COLOR.png"
+            height={300}
+            width={500}
+            alt="Logo de unisimón"
+            loading="lazy"
+            className="object-contain"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            src="/logos/caribeconnect.png"
+            height={100}
+            width={200}
+            alt="Logo de Caribe Connect"
             loading="lazy"
           />
-        </li> */}
-        {/* <li>
+        </li>
+        <li className="flex items-center justify-center">
           <Image
-            className="w-[180px]"
-            src="/logos/neuron.png"
-            height={47}
-            width={150}
-            alt="Logo de neuron"
+            src="/logos/logo-synergy-fondo.png"
+            height={100}
+            width={250}
+            alt="Logo de Synergy"
             loading="lazy"
+            className="object-contain"
           />
-        </li> */}
-        <li>
+        </li>
+        <li className="flex items-center justify-center">
           <Image
-            className="w-[150px] img"
-            src="/logos/atlanticonnect.png"
-            height={47}
-            width={150}
-            alt="Logo de Atlanti Connect city"
+            src="/logos/Tribu.png"
+            height={100}
+            width={200}
+            alt="Logo de TribuIA"
             loading="lazy"
           />
         </li>
