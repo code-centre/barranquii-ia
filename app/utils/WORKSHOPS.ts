@@ -7,7 +7,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       selected: true,
       confirmed: true,
       description: 'Aprende a construir un producto mínimo viable utilizando las herramientas de IA más modernas.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/argel_bejarano.webp',
       time: 'Sala A - 2:00pm'
     },
     {
@@ -16,7 +16,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       role: 'Co-founder, director en Fundación Código Abierto y lider en Movimiento Costa Digital',
       selected: false,
       description: 'Descubre cómo utilizar la IA para mejorar tu productividad como desarrollador y potenciar tu código.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/mystery-mentor.png',
       time: 'Sala A - 2:45pm'
     },
     {
@@ -26,7 +26,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       selected: false,
       confirmed: true,
       description: 'Explora las posibilidades de la IA generativa para crear experiencias visuales impactantes.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/angie.webp',
       time: 'Por confirmar'
     },
     {
@@ -36,7 +36,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       selected: false,
       confirmed: true,
       description: 'Aprende a construir aplicaciones fullstack potenciadas por inteligencia artificial usando AWS Amplify y Gemini de Google. Aprende a integrar servicios multi-cloud para crear soluciones inteligentes, escalables y modernas.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/luis-reyes.webp',
       time: 'Sala A - 3:30pm'
     },
     {
@@ -56,7 +56,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       selected: false,
       confirmed: true,
       description: 'Descubre cómo crear agentes autónomos utilizando modelos de lenguaje de gran escala.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/carlos-alarcon.webp',
       time: 'Sala A - 5:00pm'
     },
     {
@@ -66,7 +66,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       confirmed: true,
       selected: false,
       description: 'Aprende a integrar Firebase AI con Flutter para crear aplicaciones con traducción automática.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/brian-castillo.webp',
       time: 'Sala A - 5:45pm'
     },
     {
@@ -75,7 +75,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       role: 'Google Developer Expert en IA',
       selected: true,
       description: 'Aprende a construir un producto mínimo viable utilizando las herramientas de IA más modernas.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/argel_bejarano.webp',
       type: 'no-code',
       time: 'Sala B - 2:00pm'
     },
@@ -85,7 +85,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       role: 'Co-founder y director en Fundación Código Abierto',
       selected: false,
       description: 'Descubre cómo utilizar la IA para mejorar tu productividad como desarrollador y potenciar tu código.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/mystery-mentor.png',
       type: 'no-code',
       time: 'Sala B - 2:45pm'
     },
@@ -95,7 +95,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       role: 'Google Developer Expert en IA',
       selected: false,
       description: 'Explora las posibilidades de la IA generativa para crear experiencias visuales impactantes.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/angie.webp',
       type: 'no-code',
       time: 'Sala B - 3:30pm'
     },
@@ -105,7 +105,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       role: 'Google Developer Expert en IA',
       selected: false,
       description: 'Aprende a construir aplicaciones fullstack potenciadas por inteligencia artificial usando AWS Amplify y Gemini de Google. Aprende a integrar servicios multi-cloud para crear soluciones inteligentes, escalables y modernas.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/luis-reyes.webp',
       type: 'no-code',
       time: 'Sala B - 4:15pm'
     },
@@ -115,7 +115,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       role: 'Google Developer Expert en IA',
       selected: false,
       description: 'Descubre cómo crear agentes autónomos utilizando modelos de lenguaje de gran escala.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/carlos-alarcon.webp',
       type: 'no-code',
       time: 'Sala B - 5:00pm'
     },
@@ -126,7 +126,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       selected: true,
       confirmed: true,
       description: 'En esta charla aprenderás cómo validar tu idea de negocio o proyecto tecnológico en cuestión de horas, no semanas. Usando un funnel simple y accionable, te mostraré cómo atraer interés real, generar confianza y obtener retroalimentación de usuarios (o posibles clientes) sin necesidad de tener el producto terminado. Ideal para equipos en hackatones que quieren validar rápido, enfocar su desarrollo y comunicar su propuesta con claridad.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/viviana-lopez.webp',
       type: 'no-code',
       time: 'Por confirmar'
     },
@@ -137,7 +137,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       selected: false,
       confirmed: true,
       description: 'Como utilizar herramientas de ai + storytelling + herramientas de mkt para crear productos que a las personas se sientas estupidas diciendo que no. Aprenderas en menos de 1 hora como construir agentes para tener una base solidad de marketing de ofertas y narrativa',
-      image: '/mystery-mentor.png',
+      image: '/mentores/daniel-cardona.webp',
       type: 'no-code',
       time: 'Por confirmar'
     },
@@ -148,7 +148,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       selected: false,
       confirmed: true,
       description: 'Abordar negociación, escucha activa, paso a paso para asignar roles y tareas en el equipo de trabajo, presentación del proyecto final.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/diego.webp',
       type: 'no-code',
       time: 'Por confirmar'
     },
@@ -159,7 +159,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       selected: false,
       confirmed: true,
       description: '¿Por qué hablar de IA ahora? La IA ya no es el futuro, es el presente. Hoy no gana quien solo desarrolla tecnología, sino quien la convierte en valor real para las personas y empresas. Las empresas que dominan IA hoy (OpenAI, Anthropic, etc.) no solo tienen tecnología, tienen modelos de negocio sólidos.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/elton-gomez.webp',
       type: 'no-code',
       time: 'Por confirmar'
     },
@@ -181,7 +181,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       selected: false,
       confirmed: true,
       description: 'Cómo buscar de forma activa y pasiva capital para tu startup. Cómo hacer un pitch efectivo y qué buscan los inversionistas.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/jorge-nieto.webp',
       type: 'no-code',
       time: 'Por confirmar'
     },

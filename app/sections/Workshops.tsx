@@ -80,13 +80,13 @@ export default function Workshops({ landing }: Props) {
 									}}>
 									<div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
 										{/* Foto del ponente grande */}
-										<div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-xl shadow-lg flex-shrink-0">
+										<div className="relative w-32 h-32 md:w-32 md:h-32 rounded-xl shadow-lg flex-shrink-0">
 											{selectedWorkshop.image ? (
 												<Image
 													src={selectedWorkshop.image}
 													alt={`Imagen de ${selectedWorkshop.name}`}
 													fill
-													className='object-cover'
+													className='object-contain'
 												/>
 											) : (
 												<div className='w-full h-full bg-gray-200 flex items-center justify-center'>
