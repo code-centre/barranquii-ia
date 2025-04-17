@@ -49,6 +49,36 @@ export default function Sponsors({ landing }: Props) {
         </li>
         <li className="flex items-center justify-center">
           <Image
+            src="/logos/shadai.webp"
+            height={47}
+            width={150}
+            alt="Logo de Shad-ai"
+            loading="lazy"
+            className="w-[150px] h-auto object-contain"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            src="/logos/inside-lab.webp"
+            height={47}
+            width={150}
+            alt="Logo de Inside Lab"
+            loading="lazy"
+            className="w-[150px] h-auto object-contain"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            src="/logos/edtools.webp"
+            height={47}
+            width={150}
+            alt="Logo de Edtools"
+            loading="lazy"
+            className="w-[150px] h-auto object-contain rounded-full"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
             src="/logos/aws.png"
             height={47}
             width={150}
