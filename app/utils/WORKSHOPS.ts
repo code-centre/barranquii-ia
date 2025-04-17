@@ -170,7 +170,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       selected: false,
       confirmed: true,
       description: 'Los datos son el nuevo motor de las empresas. En esta charla descubrirás cómo aprovecharlos para optimizar procesos, identificar oportunidades y tomar decisiones más inteligentes. Ideal para quienes quieren resolver retos reales con soluciones basadas en datos.',
-      image: '/mystery-mentor.png',
+      image: '/mentores/gian-castro.webp',
       type: 'no-code',
       time: 'Sala B - 5:00pm'
     },
