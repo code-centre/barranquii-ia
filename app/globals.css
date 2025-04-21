@@ -198,13 +198,13 @@ h1, h2, h3, h4, h5 {
 	background-color: #fff;
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media (min-width: 360px) and (max-width: 768px) {
   .card-description-topic {
     transform: translateX(-50%);
 
   }
 }
-@media (min-width: 320px) and (max-width: 375px) {
+@media (min-width: 320px) and (max-width: 359px) {
   .card-description-topic-all {
     transform: translateX(-10%);
 
