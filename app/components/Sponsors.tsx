@@ -109,12 +109,42 @@ export default function Sponsors({ landing }: Props) {
         </li>
         <li className="flex items-center justify-center">
           <Image
-            src="/logos/LOGO-UNISIMON-AUDACIA-V-COLOR.png"
+            src="/logos/LOGO-UNISIMON-AUDACIA-BLANCO.webp"
             height={300}
             width={500}
             alt="Logo de unisimón"
             loading="lazy"
             className="object-contain"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            src="/logos/caribe-startup.webp"
+            height={100}
+            width={200}
+            alt="Logo de Caribe Startup"
+            loading="lazy"
+            className="w-[200px] h-[110px] object-contain"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            src="/logos/elia.webp"
+            height={150}
+            width={200}
+            alt="Logo de Elia"
+            loading="lazy"
+            className="object-contain w-[200px] h-[150px]"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            src="/logos/lider-ia.webp"
+            height={150}
+            width={200}
+            alt="Logo de Lider IA"
+            loading="lazy"
+            className="object-contain w-[200px] h-[150px]"
           />
         </li>
         <li className="flex items-center justify-center">
