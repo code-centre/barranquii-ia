@@ -38,7 +38,7 @@ export default function Topic({ img, title, index }: Props) {
 			</p>
 			{
 				showDescription && (
-					<div className={`bg-white p-4 z-10 rounded-md absolute left-0 h-[210px] overflow-y-scroll md:overflow-y-auto md:h-auto top-10 w-[250px] lg:w-[300px] ${index % 2 === 0 ? "-translate-x-1/2 md:translate-x-0" : ""}`}>
+					<div className={`bg-white p-4 z-10 rounded-md absolute left-0 h-[210px] overflow-y-scroll md:overflow-y-auto md:h-auto top-10 w-[250px] lg:w-[300px] ${index % 2 === 0 ? "card-description-topic" : ""}`}>
 						<h2 className="font-medium font-mono text-black mb-2">{title}</h2>
 						<div className="flex flex-col gap-2">
 							{

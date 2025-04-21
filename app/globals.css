@@ -194,6 +194,23 @@ h1, h2, h3, h4, h5 {
   scrollbar-color: rgba(65, 64, 64, 0.87) rgba(0, 0, 0, 0);
 }
 
+.card-description-topic {
+	background-color: #fff;
+}
+
+@media (min-width: 375px) and (max-width: 768px) {
+  .card-description-topic {
+    transform: translateX(-50%);
+
+  }
+}
+@media (min-width: 320px) and (max-width: 375px) {
+  .card-description-topic-all {
+    transform: translateX(-10%);
+
+  }
+}
+
 .sub-grid {
   display: grid;
   grid-template-columns: repeat(1, 250px);
