@@ -139,6 +139,16 @@ export default function Sponsors({ landing }: Props) {
         </li>
         <li className="flex items-center justify-center">
           <Image
+            src="/logos/Logo-ACM-uninorte.webp"
+            height={150}
+            width={200}
+            alt="Logo de ACM Uninorte"
+            loading="lazy"
+            className="object-contain w-[200px] h-[150px]"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
             src="/logos/lider-ia.webp"
             height={150}
             width={200}
