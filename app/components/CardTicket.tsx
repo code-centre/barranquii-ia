@@ -26,6 +26,8 @@ export default function CardTicket({
   ticketId
 }: Props) {
 
+	const newTickectId = ticketId === 1 ? 2 : ticketId === 2 ? 1 : 0
+
   return (
     <div
       style={{
@@ -46,7 +48,7 @@ export default function CardTicket({
         </div>
         <div className="w-fit mx-auto flex flex-col mt-5"> 
 
-          <Link target="_blank" href={`https://www.codigoabierto.tech/checkout?eventId=${idEvent}&ticket=${ticketId}`}
+          <Link target="_blank" href={`https://www.codigoabierto.tech/checkout?eventId=${idEvent}&ticket=${newTickectId}`}
             style={{
               backgroundColor: THEME_LANDINGS[landing].principal,
 

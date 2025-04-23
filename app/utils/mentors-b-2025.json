@@ -1,23 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Angel",
-    "lastName": "Bulnes",
-    "image": "angel-bulnes.webp",
-    "genre": "male",
-    "description": "Soy ingeniero en sistemas / desarrollador de software con 6 años  de experiencia construyendo aplicaciones moviles. Tengo conocimiento en desarrollo de aplicaciones moviles con React Native, Android e iOS.",
-    "confirmed": true
-  },
-  {
-    "id": 2,
-    "name": "Argel",
-    "lastName": "Bejarano",
-    "image": "argel_bejarano.webp",
-    "genre": "male",
-    "description": "Argel Bejarano es Staff Software Engineer y Google Developer Expert en Flutter & Dart con más de 15 años de experiencia. Apasionado por el fintech, el desarrollo móvil y los sistemas de diseño",
-    "confirmed": true
-  },
-  {
     "id": 3,
     "name": "Natalia",
     "lastName": "Avedaño",
