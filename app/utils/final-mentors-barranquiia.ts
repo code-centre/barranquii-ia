@@ -61,7 +61,7 @@ export const FINAL_MENTORS = [
 		id: 7,
 		name: "Anuar",
 		lastName: "Harb",
-		image: "mystery-mentor.png",
+		image: "anuar.webp",
 		genre: "male",
 		description: "",
 		confirmed: true
@@ -111,7 +111,7 @@ export const FINAL_MENTORS = [
 		id: 12,
 		name: "Eduardo",
 		lastName: "Manrique",
-		image: 'mystery-mentor.png',
+		image: 'eduardo.webp',
 		genre: "male",
 		description: "",
 		confirmed: true
