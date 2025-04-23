@@ -124,7 +124,7 @@ export default function Sponsors({ landing }: Props) {
             width={200}
             alt="Logo de Caribe Startup"
             loading="lazy"
-            className="w-[200px] h-[110px] object-contain"
+            className="w-[250px] h-[200px] object-contain"
           />
         </li>
         <li className="flex items-center justify-center">
@@ -182,6 +182,51 @@ export default function Sponsors({ landing }: Props) {
             height={100}
             width={200}
             alt="Logo de TribuIA"
+            loading="lazy"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            src="/logos/Logo_Cooweb_White.webp"
+            height={100}
+            width={200}
+            alt="Logo de CooWeb"
+            loading="lazy"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            src="/logos/Macocndolab.webp"
+            height={300}
+            width={600}
+            alt="Logo de MacondoLAB"
+            loading="lazy"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            src="/logos/Evolutecc_blanco.webp"
+            height={100}
+            width={200}
+            alt="Logo de Evolutec"
+            loading="lazy"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            src="/logos/caribedev-logo.webp"
+            height={200}
+            width={300}
+            alt="Logo de Caribe Dev"
+            loading="lazy"
+          />
+        </li>
+        <li className="flex items-center justify-center">
+          <Image
+            src="/logos/davila.webp"
+            height={200}
+            width={300}
+            alt="Logo de Davila"
             loading="lazy"
           />
         </li>

@@ -234,7 +234,7 @@ export default function Workshops({ landing }: Props) {
 								<div className='flex items-center gap-1 sm:gap-2 bg-gray-100 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm'>
 									<Calendar size={12} className='text-gray-700 sm:hidden' />
 									<Calendar size={14} className='text-gray-700 hidden sm:block' />
-									<span>Sábado 3 de Mayo</span>
+									<span>{selectedWorkshop.day || "Por confirmar"}</span>
 								</div>
 								<div className='flex items-center gap-1 sm:gap-2 bg-gray-100 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm'>
 									<MapPin size={12} className='text-gray-700 sm:hidden' />
