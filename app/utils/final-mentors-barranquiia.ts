@@ -5,7 +5,7 @@ export const FINAL_MENTORS = [
 		lastName: "Reyes",
 		image: 'luis-reyes.webp',
 		genre: "male",
-		description: 'Explora las posibilidades de la IA generativa para crear experiencias visuales impactantes.',
+		description: 'Con 10 años de experiencia, especializado en impulsar la transformación digital a través de soluciones innovadoras. Como cofundador y director de tecnología en EvolutecC SAS, lidero el desarrollo de servicios personalizados y soporte técnico de activos digitales a nivel nacional e internacional .',
 		confirmed: true
 	},
 	{
@@ -14,16 +14,16 @@ export const FINAL_MENTORS = [
 		lastName: "Gonzales",
 		image: "felipe.webp",
 		genre: "male",
-		description: "Experiencia sólida en el despliegue de aplicaciones utilizando Docker. Estás especializado en despliegue de aplicaciones en el entorno de AWS y con experiencia en el desarrollo de aplicaciones y servicios en Python, con un enfoque en el BackEnd, utilizando el framework FastAPI.",
+		description: "Ingeniero en la nube y líder tecnológico con más de 4 años de experiencia impulsando soluciones innovadoras en empresas como Ingeniero Nube y FEANWare",
 		confirmed: true
 	},
 	{
 		id: 3,
 		name: "Jasir",
 		lastName: "Bayuelo",
-		image: "mystery-mentor.png",
+		image: "jasir-bayuelo.webp",
 		genre: "male",
-		description: "",
+		description: "Con más de 7 años de experiencia, especializado en Python, desarrolla soluciones innovadoras utilizando frameworks como Django, FastAPI y Flask.",
 		confirmed: true
 
 	},
@@ -33,208 +33,165 @@ export const FINAL_MENTORS = [
 		lastName: "Castro",
 		image: 'gian-castro.webp',
 		genre: "male",
-		description: "",
+		description: "Especializado en recolección, transformación y visualización de datos con herramientas como Python, Tableau y tecnologías de big data. Experiencia en desarrollo de pipelines automatizados en AWS y migración de datos a la nube, optimizando procesos y mejorando la eficiencia operativa.",
 		confirmed: true
 
 	},
 	{
 		id: 5,
-		name: "Jesus",
-		lastName: "Prieto",
-		image: "mystery-mentor.png",
+		name: "Jorge",
+		lastName: "Aguilar",
+		image: 'jorge-aguilar.webp',
 		genre: "male",
-		description: "",
+		description: "Ingeniero Electrónico. Con experiencia en proyectos de Ingeniería y analítica de datos, asi como en desarrollo backend, la administración servicios en la nube y modelado de datos.",
 		confirmed: true
 
 	},
 	{
 		id: 6,
-		name: "Jorge",
-		lastName: "Aguilar",
-		image: "mystery-mentor.png",
+		name: "Anuar",
+		lastName: "Harb",
+		image: "anuar.webp",
 		genre: "male",
-		description: "",
+		description: "Experiencia en desarrollo de software desde hace más de 10 años trabajando con statups y empresas multinacionales de Estados unidos, México y Colombia.",
 		confirmed: true
 
 	},
 	{
 		id: 7,
-		name: "Anuar",
-		lastName: "Harb",
-		image: "anuar.webp",
+		name: "Andres",
+		lastName: "Duque",
+		image: 'Andres-duque.webp',
 		genre: "male",
-		description: "",
+		description: "Con más de 10 años de experiencia en la industria tech, es experto en microservicios, cloud, DevOps y arquitecturas modernas. Organizador de comunidades como React.js Colombia, Python Colombia y más.",
 		confirmed: true
 
 	},
 	{
 		id: 8,
-		name: "Joel",
-		lastName: "Borrero",
-		image: "mystery-mentor.png",
+		name: "David",
+		lastName: "Aragón",
+		image: 'david-aragon.webp',
 		genre: "male",
-		description: "",
+		description: "Desarrollador Frontend con experiencia en Next.js, React Native y Firebase. Lidera productos web y móviles, integrando tecnología, diseño y estrategia.",
 		confirmed: true
 
 	},
 	{
 		id: 9,
-		name: "Andres",
-		lastName: "Duque",
-		image: 'mystery-mentor.png',
+		name: "Eduardo",
+		lastName: "Manrique",
+		image: 'eduardo.webp',
 		genre: "male",
-		description: "",
+		description: "Apasionado del desarrollo web con skills en React, Next.js, Firebase y Tailwind CSS. Enfocado en crear interfaces que resuelven problemas reales.",
 		confirmed: true
 
 	},
 	{
 		id: 10,
-		name: "Viviana",
-		lastName: "Lopez",
-		image: 'viviana-lopez.webp',
+		name: "Nicolle",
+		lastName: "Fonseca",
+		image: 'nicolle-fonseca.webp',
 		genre: "female",
-		description: "Viviana López es emprendedora, mentora y fundadora de Evolución Emprendedora, una comunidad que impulsa a mujeres a crear negocios con propósito mediante estrategia, tecnología y validación.",
+		description: "Experiencia en la creación y desarrollo de MVPs que combinan diseño, funcionalidad y estrategia para lograr un impacto real. Me apasiona transformar ideas en productos viables, alineando creatividad y análisis de datos para optimizar la experiencia del usuario y la comunicación visual.",
 		confirmed: true
 
 	},
 	{
 		id: 11,
-		name: "David",
-		lastName: "Aragón",
-		image: 'david-aragon.webp',
-		genre: "male",
-		description: "",
+		name: "Angie",
+		lastName: "Zuñiga",
+		image: 'angie.webp',
+		genre: "female",
+		description: "Con más de 6 años de experiencia trabajando en startups, multinacionales y clientes de diferentes países. Especialista en desarrollo con Python, IA y el modelamiento de los datos en relación a la capa de negocios",
 		confirmed: true
 
 	},
 	{
 		id: 12,
-		name: "Eduardo",
-		lastName: "Manrique",
-		image: 'eduardo.webp',
+		name: "Diego",
+		lastName: "Garcia",
+		image: 'diego.webp',
 		genre: "male",
-		description: "",
+		description: "Ingeniero de Sistemas, Especialista en Gerencia de Proyectos y Certificado en Coaching Ontológico, con más de 12 años de experiencia en gestión administrativa, compras, negocios inmobiliarios y aplicación de metodologías PMI.",
 		confirmed: true
 
 	},
 	{
 		id: 13,
-		name: "Nicolle",
-		lastName: "Fonseca",
-		image: 'nicolle-fonseca.webp',
+		name: "Merlys",
+		lastName: "Solorzano",
+		image: 'merlys.webp',
 		genre: "female",
-		description: "Soy Nicolle Fonseca, diseñadora gráfica y estratega de marketing con experiencia en la creación y desarrollo de MVPs que combinan diseño, funcionalidad y estrategia para lograr un impacto real.",
+		description: "Más de 10 años en Recursos Humanos, y 6 de ellos enfocados en el ecosistema tech y Edtech, ha impulsado el crecimiento de startups, equipos de desarrollo y proyectos de talento digital.",
 		confirmed: true
 
 	},
 	{
 		id: 14,
-		name: "Winston",
-		lastName: "Percybrooks",
-		image: 'winston.webp',
-		genre: "male",
-		description: "Ing. Electrónico de Universidad del Norte, con Maestría y Doctorado en Ingeniería Eléctrica y de Computación del Georgia Institute of Technology, Atlanta, USA. 12+ años de experiencia como docente e investigador, especialmente en Machine Learning, procesamiento de señales y robótica. Actualmente líder de Machine Learning en la startup de biodiversidad Pivotal Future de Cambridge, UK y co-fundador de la consultora de IA Dattain en Barranquilla, participando en el diseño, entrenamiento y despligue de modelos de deep learning para la identificación de patrones en señales de audio e imágenes.",
+		name: "Natalia",
+		lastName: "Avedaño",
+		image: 'natalia-avedaño.webp',
+		genre: "female",
+		description: "Tiene experiencia en formulación de proyectos y de desarrollo de productos digitales e investigación de Usuarios. Actualmente soy Founder de Elia y tengo el rol de Product Owner en Lumni Colombia.",
 		confirmed: true
 
 	},
 	{
 		id: 15,
-		name: "Daniela",
-		lastName: "Charris",
-		image: 'daniela.webp',
-		genre: "female",
-		description: "Ingeniera Electrónica y Magíster de la Universidad del Norte con más de 4 años de experiencia en investigación y desarrollo de algoritmos de inteligencia artificial, procesamiento de imágenes y visión por computadora.",
+		name: "Joel",
+		lastName: "Borrero",
+		image: 'joel.webp',
+		genre: "male",
+		description: "Con experiencia en Python, Django y Flutter, es un apasionado del backend, la automatización y el código limpio.",
 		confirmed: true
 
 	},
 	{
 		id: 16,
-		name: "Angie",
-		lastName: "Zuñiga",
-		image: 'angie.webp',
+		name: "Andrea",
+		lastName: "Daguer",
+		image: 'andrea-daguer.webp',
 		genre: "female",
-		description: "Con más de 5 años de experiencia trabajando en startups, multinacionales y clientes de diferentes países. Especialista en desarrollo con Python, IA y el modelamiento de los datos en relación a la capa de negocios. Es miembro del GDG Barranquilla y una mujer apasionada por la tecnología y la educación digital. Actualmente socia de una academia digital con mas de 3000 estudiantes de diferentes partes del mundo.",
+		description: "Diseñadora UX/UI con enfoque en experiencia de usuario y diseño funcional. Con más de 5 años de trayectoria, ha trabajado en proyectos digitales y gráficos para empresas como AudacIA, MacondoLab y Digiprint.",
 		confirmed: true
 
 	},
 	{
 		id: 17,
-		name: "Dayan",
-		lastName: "Mendez",
-		image: 'dayan.webp',
+		name: "Steffen",
+		lastName: "Cantillo",
+		image: 'steffen.webp',
 		genre: "male",
-		description: "Desarrollador Python con experiencia en proyectos de Inteligencia artificial, computer vision y AWS hace más de 5 años. Ingeniero electrónico y Magister de la universidad del Norte.",
+		description: "Ingeniero de desarrollo e investigador en tecnologías emergentes. Con experiencia en IA, desarrollo de software e I+D, ha trabajado en instituciones como la Universidad Simón Bolívar, UFOTECH y Sistra.",
 		confirmed: true
 
 	},
 	{
 		id: 18,
-		name: "Brian",
-		lastName: "Castillo",
-		image: 'brian-castillo.webp',
+		name: "Andres",
+		lastName: "Salcedo",
+		image: 'andres-salcedo.webp',
 		genre: "male",
-		description: "Brian is a senior mobile developer and Google Developer Expert. He founded and was CTO of Wibo, a startup with headquarters in Santiago de Chile that is in charge of improving the shopping experience on the site. Wibo increases efficiency, meaning sales and also uses transactional based data to create engagement.",
+		description: "Se ha desempeñado como Jefe de UX/UI, abogado tecnológico y desarrollador de negocios, ganador del hackathon de LATAM 2021 con una solucion de IA para taxi libres.",
 		confirmed: true
-
 	},
 	{
 		id: 19,
-		name: "Diego",
-		lastName: "Garcia",
-		image: 'diego.webp',
+		name: "Julio",
+		lastName: "Gutierez",
+		image: 'julio.webp',
 		genre: "male",
-		description: "Ingeniero de Sistemas, Especialista en Gerencia de Proyectos y coach ontológico con más de 12 años de experiencia en Gestión Administrativa, Compras y Negocios Inmobiliarios.",
+		description: "Diseñador de Negocios de Impacto, enfocado en innovar y generar valor socioeconómico en startups, pymes y empresas sociales mediante estrategias centradas en las personas.",
 		confirmed: true
-
 	},
 	{
 		id: 20,
-		name: "Merlys",
-		lastName: "Solorzano",
-		image: 'merlys.webp',
-		genre: "female",
-		description: "Mi enfoque se centra en la gestión del ciclo de vida del empleado y en guiar a las personas para que den un salto profesional y se conviertan en influenciadores en su entorno laboral. Además, colaboro con empresas para promover una cultura laboral extraordinaria y reducir la brecha laboral en países como México, Nicaragua, Colombia, Perú, Argentina y Chile",
-		confirmed: true
-
-	},
-	{
-		id: 21,
-		name: "Hector",
-		lastName: "Terán",
-		image: 'hecter.webp',
+		name: "Angel",
+		lastName: "Zambrano",
+		image: 'angel-zambrano.webp',
 		genre: "male",
-		description: "Ingeniero de Sistemas con una Maestría en Gestión de Proyectos, con experiencia en el desarrollo de software y en la enseñanza en la Universidad Simón Bolívar. Posee certificaciones internacionales, incluyendo KMP, TKP, CAPM®, GPM-b™, DASM® y PMP®. Es voluntario fundador del Capítulo PMI Caribe y actualmente se desempeña como secretario en la sección de IEEE Caribbean Colombia Section, además de ejercer como presidente del capítulo IEEE de Computer Society en la misma sección.",
+		description: "Profesional legal con más de 10 años de experiencia, especializado en gestión de proyectos, IA y desarrollo no-code. Fundador de Legal-IA.online, plataforma que transforma los servicios legales con inteligencia artificial.",
 		confirmed: true
-
 	},
-	{
-		id: 22,
-		name: "Natalia",
-		lastName: "Avedaño",
-		image: 'natalia-avedaño.webp',
-		genre: "female",
-		description: "Soy Ingeniera industrial con experiencia en formulación de proyectos y de desarrollo de productos digitales e investigación de Usuarios. Actualmente soy Founder de Elia y tengo el rol de Product Owner en Lumni Colombia. ",
-		confirmed: true
-
-	},
-	{
-		id: 23,
-		name: "Jorge",
-		lastName: "Nieto",
-		image: 'jorge-nieto.webp',
-		genre: "male",
-		description: "100% Emprededor Serial, con más de 30 años de experticia en proyectos de Tecnología y telecomunicaciones.  Experto en Integración de Sistemas de Seguridad y de Protección Patrimonial.",
-		confirmed: true
-
-	},
-	{
-		id: 24,
-		name: "Harold",
-		lastName: "Combita",
-		image: 'mystery-mentor.png',
-		genre: "male",
-		description: "",
-		confirmed: true
-
-	}
 ]
