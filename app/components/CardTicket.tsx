@@ -49,7 +49,6 @@ export default function CardTicket({
           </h3>
         </div>
         <div className="w-fit mx-auto flex flex-col mt-5"> 
-
           <button
             disabled={disabled}
             style={{
@@ -59,9 +58,13 @@ export default function CardTicket({
             }}
             className="px-5 py-2 xl:py-3 text-black rounded-lg text-[13px] xl:text-sm uppercase"
           >
-            <Link href={`https://codigoabierto.tech/checkout?eventId=${idEvent}&ticket=${newTickectId}`}>
-              {disabled ? 'Sold out' : 'Comprar'}
-            </Link>
+            {disabled ? (
+              'Sold out'
+            ) : (
+              <Link target="_blank" href={`https://codigoabierto.tech/checkout?eventId=${idEvent}&ticket=${newTickectId}`}>
+                Comprar
+              </Link>
+            )}
           </button>
         </div>
       </div>
