@@ -84,7 +84,7 @@ export default function Tickets({ landing }: Props) {
                     landing={landing}
                     idEvent={eventData?.id || ''}
                     ticketId={i}
-                    disabled={ticket.price > 100000}
+                    disabled={ticket.price > 0}
                   >
                     <ul className="mt-6 ml-5 marker:text-[#C663EA] list-disc text-sm">
                       {ticket.benefits.map((item: string, index: number) => (
