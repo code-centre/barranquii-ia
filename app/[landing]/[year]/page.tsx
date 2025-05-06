@@ -1,9 +1,27 @@
-import Edition2024 from '@/app/components/ediciones-anteriores/2024'
+import Edition2024 from '@/app/components/ediciones-anteriores/Edition2024'
+import Edition2025 from '@/app/components/ediciones-anteriores/Edition2025';
 import React from 'react'
 
-export default function EditionPerYearPage({ params }: { params: { year: string } }) {
+type Props = {
+  params: { landing: string; year: string };
+};
+
+const LIST_OF_EDITION: {landing: string; editions: { [key: string]: React.ReactNode }}[] = [
+	{
+		landing: 'barranqui-ia',
+		editions: {
+			'2024': <Edition2024 />,
+			'2025': <Edition2025 params={{landing: 'barranqui-ia'}} />,
+		}
+	}
+]
+
+export default function EditionPerYearPage({ params }: Props) {
+	console.log(params)
 	return (
-		<Edition2024 />
+		<>
+		{LIST_OF_EDITION.find((edition) => edition.landing === params.landing)?.editions[params.year]}
+		</>
 	)
 }
  
