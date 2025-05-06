@@ -11,7 +11,7 @@ import HeroTwo from "@/app/sections/Hero2";
 import PromoBar from "@/app/components/PromoBar";
 import Hackathon from "@/app/sections/Hackaton";
 
-export default function Home() {
+export default function Edition2024() {
   return (
     <main className="gap-32 xl:gap-44 flex flex-col py-10 min-h-screen overflow-hidden">
       <div>
