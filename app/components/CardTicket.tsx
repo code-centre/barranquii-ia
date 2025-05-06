@@ -13,6 +13,7 @@ interface Props {
   landing: string;
   idEvent: string;
   ticketId: number;
+  disabled?: boolean;
 }
 
 export default function CardTicket({
@@ -23,8 +24,11 @@ export default function CardTicket({
   children,
   landing,
   idEvent,
-  ticketId
+  ticketId,
+  disabled
 }: Props) {
+
+	const newTickectId = ticketId === 1 ? 2 : ticketId === 2 ? 1 : 0
 
   return (
     <div
@@ -45,17 +49,23 @@ export default function CardTicket({
           </h3>
         </div>
         <div className="w-fit mx-auto flex flex-col mt-5"> 
-
-          <Link target="_blank" href={`https://www.codigoabierto.tech/checkout?eventId=${idEvent}&ticket=${ticketId}`}
+          <button
+            disabled={disabled}
             style={{
               backgroundColor: THEME_LANDINGS[landing].principal,
-
+              opacity: disabled ? 0.6 : 1,
+              cursor: disabled ? 'not-allowed' : 'pointer'
             }}
-            // disabled
             className="px-5 py-2 xl:py-3 text-black rounded-lg text-[13px] xl:text-sm uppercase"
           >
-            Comprar
-          </Link>
+            {disabled ? (
+              'Sold out'
+            ) : (
+              <Link target="_blank" href={`https://codigoabierto.tech/checkout?eventId=${idEvent}&ticket=${newTickectId}`}>
+                Comprar
+              </Link>
+            )}
+          </button>
         </div>
       </div>
     </div>

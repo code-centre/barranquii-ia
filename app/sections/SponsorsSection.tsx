@@ -1,109 +1,86 @@
 import Image from "next/image";
 import React from "react";
-import { InfiniteMovingCards } from "../components/InfiniteMovingCards";
-import Wrapper from "../components/Wrapper";
-import Sponsors from "../components/Sponsors";
+import Title from "../components/Title";
 
-export default function SponsorsSection() {
-  return (
-    <section id="sponsors" className="py-20">
-      <h2 className="border- border-principleViolet pl-2 border-l-4 font-bold text-lg lg:text-4xl uppercase">
-        Patrocinadores
-      </h2>
-      <ul className="flex flex-col items-center justify-center mt-10 md:flex-wrap md:flex-row gap-10 md:gap-10">
-        <li>
+interface Props {
+	landing: string;
+}
+
+export default function SponsorsSection({ landing }: Props) {
+	return (
+		<section id="sponsors" className="pb-10">
+			<Title landing={landing} title="Patrocinadores" />
+			<ul className="flex flex-col items-center justify-center mt-10 md:flex-wrap md:flex-row gap-10 md:gap-10">
+				{/* <li>
           <Image
-            className="w-[240px] img"
-            src="/logos/atlanticonnect.png"
-            height={47}
-            width={150}
-            alt="Logo de Immersive city"
-            loading="lazy"
-          />
-        </li>
-        <li>
-          <Image
-            className="w-[240px]"
+            className="w-[300px]"
             src="/logos/ultracem.webp"
-            height={47}
-            width={150}
+            height={60}
+            width={200}
             alt="Logo de Ultracem city"
             loading="lazy"
           />
-        </li>
-        <li>
-          <Image
-            className="w-[240px]"
-            src="/uninorte.webp"
-            height={47}
-            width={230}
-            alt="Logo de la universidad de la norte"
-            loading="lazy"
-          />
-        </li>
-        <li>
-          <Image
-            className="w-[150px] h-[80px] object-contain"
-            src="/google.png"
-            height={47}
-            width={150}
-            alt="Logo de Google"
-          />
-        </li>
-        <li>
-          <figure className="flex items-center justify-center gap-x-2">
-            <Image
-              className="w-12"
-              src="/logo-cc.webp"
-              height={100}
-              width={150}
-              alt="Logo de Code Centre"
-              loading="lazy"
-            />
-            <Image
-              className="w-[150px]"
-              src="/cc.webp"
-              height={19}
-              width={150}
-              alt="Logo de Code Centre"
-              loading="lazy"
-            />
-          </figure>
-        </li>
-
-        <li>
-          <Image
-            className="w-[200px]"
-            src="/logos/tmt.png"
-            height={47}
-            width={150}
-            alt="Logo de TMT"
-            loading="lazy"
-          />
-        </li>
-        <div className="flex gap-10 items-center">
-          <li>
-            <Image
-              className="w-[180px]"
-              src="/logos/neuron.png"
-              height={47}
-              width={150}
-              alt="Logo de neuron"
-              loading="lazy"
-            />
-          </li>
-
-          <li>
-            <Image
-              className="w-[250px] h-[60px] object-contain"
-              src="/logos/gorilla.webp"
-              height={47}
-              width={150}
-              alt="Logo de Gorilla Logic"
-            />
-          </li>
-        </div>
-      </ul>
-    </section>
-  );
+        </li> */}
+				<li>
+					<Image
+						className="w-[300px] h-auto object-contain"
+						src="/logos/camara-de-comercio.webp"
+						height={80}
+						width={300}
+						alt="Logo de la Camara de Comercio"
+						loading="lazy"
+					/>
+				</li>
+				<li className="flex items-center justify-center">
+					<Image
+						className="w-[300px] h-auto object-contain"
+						src="/logos/gobernacion.webp"
+						height={80}
+						width={300}
+						alt="Logo de Gobernación del Atlántico"
+						loading="lazy"
+					/>
+				</li>
+				<li>
+					<Image
+						className="w-[300px]"
+						src="/uninorte.webp"
+						height={60}
+						width={280}
+						alt="Logo de la universidad de la norte"
+						loading="lazy"
+					/>
+				</li>
+				<li>
+					<Image
+						className="w-[200px] h-[110px] object-contain"
+						src="/logos/google.png"
+						height={60}
+						width={200}
+						alt="Logo de Google"
+					/>
+				</li>
+				<li>
+					<figure className="flex items-center justify-center gap-x-3">
+						<Image
+							className="w-16"
+							src="/logo-cc.webp"
+							height={130}
+							width={180}
+							alt="Logo de Code Centre"
+							loading="lazy"
+						/>
+						<Image
+							className="w-[200px]"
+							src="/cc.webp"
+							height={25}
+							width={200}
+							alt="Logo de Code Centre"
+							loading="lazy"
+						/>
+					</figure>
+				</li>
+			</ul>
+		</section>
+	);
 }

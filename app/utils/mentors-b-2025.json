@@ -1,0 +1,155 @@
+[
+  {
+    "id": 3,
+    "name": "Natalia",
+    "lastName": "Avedaño",
+    "image": "natalia-avedaño.webp",
+    "genre": "female",
+    "description": "Soy Ingeniera industrial con experiencia en formulación de proyectos y de desarrollo de productos digitales e investigación de Usuarios. Actualmente soy Founder de Elia y tengo el rol de Product Owner en Lumni Colombia. ",
+    "confirmed": true
+  },
+  {
+    "id": 4,
+    "name": "Nicolle",
+    "lastName": "Fonseca",
+    "image": "nicolle-fonseca.webp",
+    "genre": "female",
+    "description": "Soy Nicolle Fonseca, diseñadora gráfica y estratega de marketing con experiencia en la creación y desarrollo de MVPs que combinan diseño, funcionalidad y estrategia para lograr un impacto real.",
+    "confirmed": true
+  },
+  {
+    "id": 5,
+    "name": "Viviana",
+    "lastName": "Lopez",
+    "image": "viviana-lopez.webp",
+    "genre": "female",
+    "description": "Viviana López es emprendedora, mentora y fundadora de Evolución Emprendedora, una comunidad que impulsa a mujeres a crear negocios con propósito mediante estrategia, tecnología y validación.",
+    "confirmed": true
+  },
+  {
+    "id": 6,
+    "name": "Jorge",
+    "lastName": "Nieto",
+    "image": "jorge-nieto.webp",
+    "genre": "male",
+    "description": "100% Emprededor Serial, con más de 30 años de experticia en proyectos de Tecnología y telecomunicaciones.  Experto en Integración de Sistemas de Seguridad y de Protección Patrimonial.",
+    "confirmed": true
+  },
+  {
+    "id": 8,
+    "name": "Daniel",
+    "lastName": "Cardona",
+    "image": "daniel-cardona.webp",
+    "genre": "male",
+    "description": "Daniel Cardona es un innovador de marketing con más de 12 años de experiencia transformando negocios convencionales a través de soluciones no convencionales. Descrito por colegas como \"un gran narrador\", \"constructor de relaciones\" y alguien que \"encuentra cosas en lugares donde otros piensan que no existen\", Daniel aporta una energía y perspectiva única a cada rol.",
+    "confirmed": true
+  },
+  {
+    "id": 9,
+    "name": "Elton",
+    "lastName": "Gómez",
+    "image": "elton-gomez.webp",
+    "genre": "male",
+    "description": "Elton J. Gómez es el fundador y CEO de Fontumi, una empresa colombiana especializada en soluciones de comunicación en la nube, automatización de procesos y experiencia del cliente a través de inteligencia artificial.",
+    "confirmed": true
+  },
+  {
+    "id": 10,
+    "name": "Daniel",
+    "lastName": "Acosta",
+    "image": "daniel-acosta.webp",
+    "genre": "male",
+    "description": "Cofundador de Legalnova*, Recu y Quark.i. Profesor en Innovación y Emprendimiento, en Aspectos Legales para Startups y en Innovación legal en Uniandes y otras Universidades. MSc in Innovation Management & Entrepreneurship (U. Manchester). Abogado Especialista en Legislación Financiera. Fundador y Ex-miembro Junta Directiva de la Asociación Colombiana de Legaltech. Mentor Certificado para Startups (Uniandes).",
+    "confirmed": true
+  },
+  {
+    "id": 11,
+    "name": "Brian",
+    "lastName": "Castillo",
+    "image": "brian-castillo.webp",
+    "genre": "male",
+    "description": "Brian is a senior mobile developer and Google Developer Expert. He founded and was CTO of Wibo, a startup with headquarters in Santiago de Chile that is in charge of improving the shopping experience on the site. Wibo increases efficiency, meaning sales and also uses transactional based data to create engagement.",
+    "confirmed": true
+  },
+  {
+    "id": 12,
+    "name": "Daniela",
+    "lastName": "Charris",
+    "image": "daniela.webp",
+    "genre": "female",
+    "description": "Ingeniera Electrónica y Magíster de la Universidad del Norte con más de 4 años de experiencia en investigación y desarrollo de algoritmos de inteligencia artificial, procesamiento de imágenes y visión por computadora.",
+    "confirmed": true
+  },
+  {
+    "id": 13,
+    "name": "Julio ",
+    "lastName": "Gutierrez",
+    "image": "gutierrez.webp",
+    "genre": "male",
+    "description": "A través de un enfoque de diseño centrado en el ser humano, como Diseñador de Negocios de Impacto: desarrollo, implemento y le doy seguimiento a acciones, estrategias y proyectos que inyectan innovación y eficiencia en las operaciones diarias con el fin de crear y agregar impacto socioeconómico para empresas sociales, Start-ups y pymes.",
+    "confirmed": true
+  },
+  {
+    "id": 14,
+    "name": "Angie",
+    "lastName": "Zuñiga",
+    "image": "angie.webp",
+    "genre": "female",
+    "description": "Con más de 5 años de experiencia trabajando en startups, multinacionales y clientes de diferentes países. Especialista en desarrollo con Python, IA y el modelamiento de los datos en relación a la capa de negocios. Es miembro del GDG Barranquilla y una mujer apasionada por la tecnología y la educación digital. Actualmente socia de una academia digital con mas de 3000 estudiantes de diferentes partes del mundo.",
+    "confirmed": true
+  },
+  {
+    "id": 15,
+    "name": "Diego",
+    "lastName": "Garcia",
+    "image": "diego.webp",
+    "genre": "male",
+    "description": "Ingeniero de Sistemas, Especialista en Gerencia de Proyectos y coach ontológico con más de 12 años de experiencia en Gestión Administrativa, Compras y Negocios Inmobiliarios.",
+    "confirmed": true
+  },
+  {
+    "id": 16,
+    "name": "Merlys",
+    "lastName": "Solorzano",
+    "image": "merlys.webp",
+    "genre": "female",
+    "description": "Mi enfoque se centra en la gestión del ciclo de vida del empleado y en guiar a las personas para que den un salto profesional y se conviertan en influenciadores en su entorno laboral. Además, colaboro con empresas para promover una cultura laboral extraordinaria y reducir la brecha laboral en países como México, Nicaragua, Colombia, Perú, Argentina y Chile",
+    "confirmed": true
+  },
+  {
+    "id": 17,
+    "name": "Felipe",
+    "lastName": "Gonzales",
+    "image": "felipe.webp",
+    "genre": "male",
+    "description": "Experiencia sólida en el despliegue de aplicaciones utilizando Docker. Estás especializado en despliegue de aplicaciones en el entorno de AWS y con experiencia en el desarrollo de aplicaciones y servicios en Python, con un enfoque en el BackEnd, utilizando el framework FastAPI.",
+    "confirmed": true
+  },
+  {
+    "id": 18,
+    "name": "Winston",
+    "lastName": "Percybrooks",
+    "image": "winston.webp",
+    "genre": "male",
+    "description": "Ing. Electrónico de Universidad del Norte, con Maestría y Doctorado en Ingeniería Eléctrica y de Computación del Georgia Institute of Technology, Atlanta, USA. 12+ años de experiencia como docente e investigador, especialmente en Machine Learning, procesamiento de señales y robótica. Actualmente líder de Machine Learning en la startup de biodiversidad Pivotal Future de Cambridge, UK y co-fundador de la consultora de IA Dattain en Barranquilla, participando en el diseño, entrenamiento y despligue de modelos de deep learning para la identificación de patrones en señales de audio e imágenes.",
+    "confirmed": true
+  },
+  {
+    "id": 19,
+    "name": "Dayan",
+    "lastName": "Mendez",
+    "image": "dayan.webp",
+    "genre": "male",
+    "description": "Desarrollador Python con experiencia en proyectos de Inteligencia artificial, computer vision y AWS hace más de 5 años. Ingeniero electrónico y Magister de la universidad del Norte.",
+    "confirmed": true
+  },
+  {
+    "id": 20,
+    "name": "Hector",
+    "lastName": "Terán",
+    "image": "hecter.webp",
+    "genre": "male",
+    "description": "Ingeniero de Sistemas con una Maestría en Gestión de Proyectos, con experiencia en el desarrollo de software y en la enseñanza en la Universidad Simón Bolívar. Posee certificaciones internacionales, incluyendo KMP, TKP, CAPM®, GPM-b™, DASM® y PMP®. Es voluntario fundador del Capítulo PMI Caribe y actualmente se desempeña como secretario en la sección de IEEE Caribbean Colombia Section, además de ejercer como presidente del capítulo IEEE de Computer Society en la misma sección.",
+    "confirmed": true
+  }
+]
