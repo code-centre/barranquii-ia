@@ -194,4 +194,43 @@ export const FINAL_MENTORS = [
 		description: "Profesional legal con más de 10 años de experiencia, especializado en gestión de proyectos, IA y desarrollo no-code. Fundador de Legal-IA.online, plataforma que transforma los servicios legales con inteligencia artificial.",
 		confirmed: true
 	},
+	{
+		id: 21,
+		name: "Ricardo",
+		lastName: "Peña",
+		image: 'ricardo.webp',
+		genre: "male",
+		description: "Experto en marcos ágiles (scrum, design thinking) y filosofías de mejora continua (manufactura esbelta, six sigma). Enfocado en innovación abierta, compromiso con startups y transferencia tecnológica. Trabaja como Constructor de Ecosistemas para GEN, miembro de la mesa de inclusión socioeconómica de ACNUR, mentor en Innpulsa Colombia y profesor en universidades.",
+		confirmed: true
+	},
+	{
+		id: 22,
+		name: "Dayán",
+		lastName: "Méndez",
+		image: "dayan.webp",
+		genre: "male",
+		description: "Desarrollador Python con experiencia en proyectos de Inteligencia artificial, computer vision y AWS hace más de 5 años. Ingeniero electrónico y Magister de la universidad del Norte.",
+		confirmed: true
+
+	},
+	{
+		id: 23,
+		name: "Daniela",
+		lastName: "Charris",
+		image: "daniela.webp",
+		genre: "female",
+		description: "Ingeniera Electrónica y Magíster de la Universidad del Norte con más de 4 años de experiencia en investigación y desarrollo de algoritmos de inteligencia artificial, procesamiento de imágenes y visión por computadora.",
+		confirmed: true
+
+	},
+	{
+		id: 24,
+		name: "Natalia",
+		lastName: "Zapata",
+		image: "natalia-zapata.webp",
+		genre: "female",
+		description: "Profesional en Negocios Internacionales con experiencia en marketing, relaciones públicas y atracción de inversión. Ha trabajado en entornos de alto impacto como Five One Labs y ProBarranquilla, impulsando emprendimientos e inversiones en la región.",
+		confirmed: true
+
+	},
 ]
