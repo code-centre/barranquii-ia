@@ -23,7 +23,6 @@ export default function Home() {
              w-full'>
         <Organizers/>
       </div>
-      <PromoBar />
       <Phases />
       <Sponsors landing='default' />
       <div className="w-full flex flex-col gap-10  lg:pt-24">

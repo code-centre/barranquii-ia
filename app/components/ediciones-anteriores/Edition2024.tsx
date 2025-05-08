@@ -8,6 +8,7 @@ import Testimonios from "@/app/sections/Testimonios";
 import Ganadores from "@/app/sections/Ganadores";
 import HeroTwo from "@/app/sections/Hero2";
 import Hackathon from "@/app/sections/Hackaton";
+import { FINAL_MENTORS } from "@/app/utils/final-mentors-barranquiia";
 
 export default function Edition2024() {
   return (
@@ -21,7 +22,7 @@ export default function Edition2024() {
         <HeroTwo />
         <Testimonios />
         <Talleres />
-        <Mentors landing="barranqui-ia" year="2024"/>
+        <Mentors landing="barranqui-ia" year="2024" data = {FINAL_MENTORS} role  = "mentor"/>
         <Ganadores />
         <Allies />
       </div>
