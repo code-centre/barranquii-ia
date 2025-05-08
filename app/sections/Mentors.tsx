@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-// import mentors from "../utils/mentors-b-2025.json";
+// import Persons from "../utils/mentors-b-2025.json";
 import { FINAL_MENTORS } from "../utils/final-mentors-barranquiia";
 import MentorsCard from "../components/MentorsCard";
 import Title from "../components/Title";
@@ -16,7 +16,7 @@ interface Props {
   role: string;
 }
 
-interface Mentor {
+interface Person {
   id: number;
   name: string;
   lastName: string;
@@ -26,10 +26,10 @@ interface Mentor {
   confirmed?: boolean;
 }
 
-export default function Mentors({ landing, year, data, role }: Props) {
-  const mentorsForSelectedYear = (data as any)[year ?? '2025'] || [];
-  const [firstRowOfMentors, setFirstRowOfMentors] = useState<Mentor[]>(mentorsForSelectedYear.slice(0, mentorsForSelectedYear.length / 2));
-  const [secondRowOfMentors, setSecondRowOfMentors] = useState<Mentor[]>(mentorsForSelectedYear.slice(mentorsForSelectedYear.length / 2));
+export default function Persons({ landing, year, data, role }: Props) {
+  const PersonsForSelectedYear = (data as any)[year ?? '2025'] || [];
+  const [firstRowOfPersons, setFirstRowOfPersons] = useState<Person[]>(PersonsForSelectedYear.slice(0, PersonsForSelectedYear.length / 2));
+  const [secondRowOfPersons, setSecondRowOfPersons] = useState<Person[]>(PersonsForSelectedYear.slice(PersonsForSelectedYear.length / 2));
 
   // useEffect(() => { 
   //   const mentorsForSelectedYear = (FINAL_MENTORS as any)[year] || [];
@@ -49,7 +49,7 @@ export default function Mentors({ landing, year, data, role }: Props) {
       </div>
       <div className="relative overflow-hidden w-full mx-auto">
         <InfiniteMovingCards direction="right" speed="slow" pauseOnHover={true}>
-          {firstRowOfMentors.map((mentor, i) => (
+          {firstRowOfPersons.map((mentor, i) => (
             <li key={i} className="w-full flex justify-center">
               {mentor.confirmed ? (
                 // Show confirmed mentor card with actual info
@@ -65,7 +65,7 @@ export default function Mentors({ landing, year, data, role }: Props) {
               ) : (
                 // Show mystery mentor card with some placeholder info
                 <MysteryMentor
-                  description={`Por confirmar (${role === "mentor" ? "Mentor/Mentora" : "Voluntario/Voluntaria"})`}
+                  description={mentor.description}
                   genre={mentor.genre || 'Por confirmar'}
                   image={mentor.image || '/mystery-mentor.png'}
                   name='Por confirmar'
@@ -78,7 +78,7 @@ export default function Mentors({ landing, year, data, role }: Props) {
         </InfiniteMovingCards>
 
         <InfiniteMovingCards direction="left" speed="slow" pauseOnHover={true}>
-          {secondRowOfMentors.map((mentor, i) => (
+          {secondRowOfPersons.map((mentor, i) => (
             <li key={i} className="w-full flex justify-center">
               {mentor.confirmed ? (
                 <MentorsCard
@@ -92,7 +92,7 @@ export default function Mentors({ landing, year, data, role }: Props) {
                 />
               ) : (
                 <MysteryMentor
-                  description={`Por confirmar (${role === "mentor" ? "Mentor/Mentora" : "Voluntario/Voluntaria"})`}
+                  description={mentor.description}
                   genre={mentor.genre || 'Por confirmar'}
                   image={mentor.image || '/mystery-mentor.png'}
                   name='Por confirmar'
