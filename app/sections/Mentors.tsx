@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 // import mentors from "../utils/mentors-b-2025.json";
-import { FINAL_MENTORS as mentors } from "../utils/final-mentors-barranquiia";
+import { FINAL_MENTORS } from "../utils/final-mentors-barranquiia";
 import MentorsCard from "../components/MentorsCard";
 import Title from "../components/Title";
 import { InfiniteMovingCards } from "../components/InfiniteMovingCards";
@@ -11,6 +11,7 @@ import MysteryMentor from "../components/MysteryMentor";
 
 interface Props {
   landing: string
+  year?: string
 }
 
 interface Mentor {
@@ -23,21 +24,26 @@ interface Mentor {
   confirmed?: boolean;
 }
 
-export default function Mentors({ landing }: Props) {
-  const [firstRowOfMentors, setFirstRowOfMentors] = useState<Mentor[]>(mentors.slice(0, 11));
-  const [secondRowOfMentors, setSecondRowOfMentors] = useState<Mentor[]>(mentors.slice(11));
+export default function Mentors({ landing, year }: Props) {
+  const mentorsForSelectedYear = (FINAL_MENTORS as any)[year ?? '2025'] || [];
+  const [firstRowOfMentors, setFirstRowOfMentors] = useState<Mentor[]>(mentorsForSelectedYear.slice(0, mentorsForSelectedYear.length / 2));
+  const [secondRowOfMentors, setSecondRowOfMentors] = useState<Mentor[]>(mentorsForSelectedYear.slice(mentorsForSelectedYear.length / 2));
 
-  // We don't need this global confirmed state anymore, as we'll check each mentor individually
-  // const [confirmed, setConfirmed] = useState(() => {
-  //   return mentors.some(mentor => mentor.confirmed === true);
-  // });
+  // useEffect(() => { 
+  //   const mentorsForSelectedYear = (FINAL_MENTORS as any)[year] || [];
+  //   setMentorsYear(mentorsForSelectedYear);
+
+  //   const splitIndex = Math.ceil(mentorsForSelectedYear.length / 2);
+  //   setFirstRowOfMentors(mentorsForSelectedYear.slice(0, splitIndex));
+  //   setSecondRowOfMentors(mentorsForSelectedYear.slice(splitIndex));
+  // }, [year]);
 
   return (
     <section id="mentors" className="scroll-m-32 flex flex-col w-full gap-10 relative  lg:pt-24">
       <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-56 -z-20 -left-36 w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] rounded-full blur-3xl"></div>
 
       <div className="max-w-6xl mx-auto w-full px-5">
-        <Title title="Mentores 2025" landing={landing} />
+      <Title title={`Mentores ${year}`} landing={landing} />
       </div>
       <div className="relative overflow-hidden w-full mx-auto">
         <InfiniteMovingCards direction="right" speed="slow" pauseOnHover={true}>
