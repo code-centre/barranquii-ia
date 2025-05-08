@@ -13,6 +13,7 @@ export default function Navbar({ }) {
   const [landing, setLanding] = useState("default");
   const [barranquiaDropdownOpen, setBarranquiaDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLUListElement>(null);
+  const dropdownMobileRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     const getPathname = pathname.split("/")[1]
@@ -37,46 +38,16 @@ export default function Navbar({ }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // useEffect(() => {
-  //   function handleClickOutside(event: MouseEvent) {
-  //     let nodes
-  //     if (dropdownRef.current) {
-  //       nodes = Array.from(dropdownRef.current.childNodes);
-  //     }
-
-  //     if (dropdownRef.current && nodes?.forEach((node) => {
-  //       if (!node.contains(event.target as Node)) {
-  //         setBarranquiaDropdownOpen(false);
-  //       }
-  //     }
-  //     ))
-
-  //       if (barranquiaDropdownOpen) {
-  //         document.addEventListener("mousedown", handleClickOutside);
-  //       } else {
-  //         document.removeEventListener("mousedown", handleClickOutside);
-  //       }
-
-  //     return () => {
-  //       document.removeEventListener("mousedown", handleClickOutside);
-  //     };
-  //   }
-  // }, [barranquiaDropdownOpen])
-
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current) {
-        const target = event.target as Node;
-        console.log("Dropdown ref:", dropdownRef.current);
-        console.log("Event target:", target);
-        const isOutside = !dropdownRef.current.contains(target);
-        console.log(isOutside)
-        if (isOutside) {
-          setBarranquiaDropdownOpen(false);
-        }
+      const target = event.target as Node;
+      const clickInsideDesktop = dropdownRef.current?.contains(target) ?? false;
+      const clickInsideMobile = dropdownMobileRef.current?.contains(target) ?? false;
+
+      if (!clickInsideDesktop && !clickInsideMobile) {
+        setBarranquiaDropdownOpen(false);
       }
     }
-
     if (barranquiaDropdownOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
@@ -139,23 +110,24 @@ export default function Navbar({ }) {
                   Próximamente
                 </span>
               )}
-              {/* {!section.active && section.id === "barranqui-ia" && (
-                <span className="text-white px-3 text-sm border border-blue-500 bg-blue-500 rounded-full mt-1">
-                  Próximamente
-                </span>
-              )} */}
               {section.id === "barranqui-ia" && barranquiaDropdownOpen && (
-                <ul ref={dropdownRef} className="absolute top-full z-10 left-1/2 transform -translate-x-1/2 bg-transparent shadow-xl rounded-lg mt-2 min-w-max transition-all duration-300 ease-in-out opacity-100 visible bg-white">
-                  <Link href="/barranqui-ia/2025" className="text-gray-800 hover:text-blue-700 font-medium text-sm whitespace-nowrap">
-                    Barranqui-IA 2025
-                  </Link>
-                  {/* <li className="px-5 py-3 text-white hover:bg-text-gray-500 transition-colors duration-200">
-                  </li> */}
-                  <Link href="/barranqui-ia/2024" className="text-gray-800 hover:text-blue-700 font-medium text-sm whitespace-nowrap" onClick={() => null}>
-                    Barranqui-IA 2024
-                  </Link>
-                  {/* <li className="px-5 py-3 text-white hover:bg-text-gray-500 transition-colors duration-200">
-                  </li> */}
+                <ul ref={dropdownRef} className="absolute top-full z-10 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm shadow-xl rounded-lg mt-2 min-w-max transition-all duration-300 ease-in-out opacity-100 visible">
+                  <div className="py-3 px-5 bg-black/70 rounded-lg shadow-md">
+                    <Link
+                      href="/barranqui-ia/2025"
+                      className="block py-2 px-3 mb-2 text-white hover:text-purple-700 font-medium text-sm rounded-md transition-colors duration-200 whitespace-nowrap"
+                      onClick={() => setBarranquiaDropdownOpen(false)}
+                    >
+                      Barranqui-IA 2025
+                    </Link>
+                    <Link
+                      href="/barranqui-ia/2024"
+                      className="block py-2 px-3 mb-2 text-white hover:text-purple-700 font-medium text-sm rounded-md transition-colors duration-200 whitespace-nowrap"
+                      onClick={() => setBarranquiaDropdownOpen(false)}
+                    >
+                      Barranqui-IA 2024
+                    </Link>
+                  </div>
                 </ul>
               )}
             </li>
@@ -199,10 +171,9 @@ export default function Navbar({ }) {
                 <div className="relative flex flex-col items-center">
                   <button
                     onClick={() => {
-                      // Toggle dropdown and ensure main menu doesn't close immediately if dropdown opens
                       setBarranquiaDropdownOpen(!barranquiaDropdownOpen);
                     }}
-                    className={`${pathname === `/${section.id}` ? 'text-white' : ''} text-lg ${stylesLi} text-base ${!section.active && 'text-gray-400 opacity-80 line-through cursor-not-allowed hover:text-gray-400 hover:line-through'} focus:outline-none`}
+                    className={`text-white text-lg ${stylesLi} text-base ${!section.active && 'text-gray-400 opacity-80 line-through cursor-not-allowed hover:text-gray-400 hover:line-through'} focus:outline-none`}
                     disabled={!section.active}
                   >
                     {section.name}
@@ -213,15 +184,19 @@ export default function Navbar({ }) {
                     </span>
                   )}
                   {barranquiaDropdownOpen && (
-                    <ul className="static left-auto transform-none bg-transparent shadow-none rounded-lg mt-2 border-none min-w-max transition-all duration-300 ease-in-out opacity-100 visible flex flex-col items-start pl-4">
-                      {/* <li className="py-2 hover:bg-gray-700/50 transition-colors duration-200 w-full">
-                      </li> */}
-                      <Link href="/barranqui-ia/2025" className="text-white hover:text-blue-300 font-medium text-sm whitespace-nowrap" onClick={() => { setBarranquiaDropdownOpen(false); setOpenMenu(false); }}>
+                    <ul ref={dropdownMobileRef} className="static left-auto transform-none bg-transparent shadow-none rounded-lg mt-2 min-w-max transition-all duration-300 ease-in-out opacity-100 visible flex flex-col items-start pl-4 gap-2">
+                      <Link
+                        href="/barranqui-ia/2025"
+                        className="text-white hover:text-blue-300 font-medium text-sm whitespace-nowrap transition-colors duration-200"
+                        onClick={() => { setBarranquiaDropdownOpen(false); setOpenMenu(false); }}
+                      >
                         Barranqui-IA 2025
                       </Link>
-                      {/* <li className="py-2 hover:bg-gray-700/50 transition-colors duration-200 w-full">
-                      </li> */}
-                      <Link href="/barranqui-ia/2024" className="text-white hover:text-blue-300 font-medium text-sm whitespace-nowrap" onClick={() => { setBarranquiaDropdownOpen(false); setOpenMenu(false); }}>
+                      <Link
+                        href="/barranqui-ia/2024"
+                        className="text-white hover:text-blue-300 font-medium text-sm whitespace-nowrap transition-colors duration-200"
+                        onClick={() => { setBarranquiaDropdownOpen(false); setOpenMenu(false); }}
+                      >
                         Barranqui-IA 2024
                       </Link>
                     </ul>

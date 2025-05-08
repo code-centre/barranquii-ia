@@ -1,5 +1,6 @@
 import Edition2024 from '@/app/components/ediciones-anteriores/Edition2024'
 import Edition2025 from '@/app/components/ediciones-anteriores/Edition2025';
+import { Miriam_Libre } from 'next/font/google';
 import React from 'react'
 
 type Props = {
