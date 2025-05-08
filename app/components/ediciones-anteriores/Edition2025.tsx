@@ -13,6 +13,8 @@ import Title from '../Title'
 import FAQ from '@/app/sections/FAQ'
 import { AssistantsGraphics } from '../2025/AssistantsGraphics'
 import { FAQS_HACKATHONES } from '@/app/utils/FAQS_HACKATHONES'
+import { voluntarios } from '@/app/utils/voluntarios'
+import { FINAL_MENTORS } from '@/app/utils/final-mentors-barranquiia'
 
 export default function Edition2025({ params }: { params: { landing: string } }) {
 	const images = [
@@ -68,7 +70,7 @@ export default function Edition2025({ params }: { params: { landing: string } })
 				<Topics2025 landing={params.landing} />
 			</div>
 			<Location2025 landing={params.landing} />
-			<Mentors landing={params.landing} year='2025' />
+			<Mentors data={FINAL_MENTORS} landing={params.landing} year='2025' />
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<SponsorsSection landing={params.landing} />
 			</div>
@@ -76,6 +78,7 @@ export default function Edition2025({ params }: { params: { landing: string } })
 				<Workshops landing={params.landing} />
 			</div>
 			<Sponsors landing={params.landing} />
+			<Mentors landing='barranqui-ia' year='2025' data={voluntarios}/>
 			<FAQ data={FAQS_HACKATHONES} landing={params.landing} />
 		</main>
 	)

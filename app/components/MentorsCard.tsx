@@ -49,7 +49,7 @@ export default function MentorsCard({
 
             <Image
               className="mask w-[220px] h-[220px] rounded-md object-contain  mx-auto"
-              src={`/mentores/${image}`}
+              src={`${image}`}
               alt={`Mentor ${name} ${lastName}`}
               width={200}
               height={200}

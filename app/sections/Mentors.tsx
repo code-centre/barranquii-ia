@@ -12,6 +12,7 @@ import MysteryMentor from "../components/MysteryMentor";
 interface Props {
   landing: string
   year?: string
+  data?: any
 }
 
 interface Mentor {
@@ -24,8 +25,8 @@ interface Mentor {
   confirmed?: boolean;
 }
 
-export default function Mentors({ landing, year }: Props) {
-  const mentorsForSelectedYear = (FINAL_MENTORS as any)[year ?? '2025'] || [];
+export default function Mentors({ landing, year, data }: Props) {
+  const mentorsForSelectedYear = (data as any)[year ?? '2025'] || [];
   const [firstRowOfMentors, setFirstRowOfMentors] = useState<Mentor[]>(mentorsForSelectedYear.slice(0, mentorsForSelectedYear.length / 2));
   const [secondRowOfMentors, setSecondRowOfMentors] = useState<Mentor[]>(mentorsForSelectedYear.slice(mentorsForSelectedYear.length / 2));
 
