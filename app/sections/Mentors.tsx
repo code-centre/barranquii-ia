@@ -13,6 +13,7 @@ interface Props {
   landing: string
   year?: string
   data?: any
+  role: string;
 }
 
 interface Mentor {
@@ -25,7 +26,7 @@ interface Mentor {
   confirmed?: boolean;
 }
 
-export default function Mentors({ landing, year, data }: Props) {
+export default function Mentors({ landing, year, data, role }: Props) {
   const mentorsForSelectedYear = (data as any)[year ?? '2025'] || [];
   const [firstRowOfMentors, setFirstRowOfMentors] = useState<Mentor[]>(mentorsForSelectedYear.slice(0, mentorsForSelectedYear.length / 2));
   const [secondRowOfMentors, setSecondRowOfMentors] = useState<Mentor[]>(mentorsForSelectedYear.slice(mentorsForSelectedYear.length / 2));
@@ -44,7 +45,7 @@ export default function Mentors({ landing, year, data }: Props) {
       <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-56 -z-20 -left-36 w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] rounded-full blur-3xl"></div>
 
       <div className="max-w-6xl mx-auto w-full px-5">
-      <Title title={`Mentores ${year}`} landing={landing} />
+        <Title title={`${role === "mentor" ? "Mentores" : "Voluntarios"} ${year}`} landing={landing} />
       </div>
       <div className="relative overflow-hidden w-full mx-auto">
         <InfiniteMovingCards direction="right" speed="slow" pauseOnHover={true}>
@@ -54,16 +55,17 @@ export default function Mentors({ landing, year, data }: Props) {
                 // Show confirmed mentor card with actual info
                 <MentorsCard
                   landing={landing}
-                  description={mentor.description}
+                  description={mentor.description} // Solo muestra la descripción del mentor
                   genre={mentor.genre}
                   image={mentor.image}
                   name={mentor.name}
                   lastName={mentor.lastName}
+                  role={role}
                 />
               ) : (
                 // Show mystery mentor card with some placeholder info
                 <MysteryMentor
-                  description='Por confirmar'
+                  description={`Por confirmar (${role === "mentor" ? "Mentor/Mentora" : "Voluntario/Voluntaria"})`}
                   genre={mentor.genre || 'Por confirmar'}
                   image={mentor.image || '/mystery-mentor.png'}
                   name='Por confirmar'
@@ -81,15 +83,16 @@ export default function Mentors({ landing, year, data }: Props) {
               {mentor.confirmed ? (
                 <MentorsCard
                   landing={landing}
-                  description={mentor.description}
+                  description={mentor.description} // Solo muestra la descripción del mentor
                   genre={mentor.genre}
                   image={mentor.image}
                   name={mentor.name}
                   lastName={mentor.lastName}
+                  role={role}
                 />
               ) : (
                 <MysteryMentor
-                  description='Por confirmar'
+                  description={`Por confirmar (${role === "mentor" ? "Mentor/Mentora" : "Voluntario/Voluntaria"})`}
                   genre={mentor.genre || 'Por confirmar'}
                   image={mentor.image || '/mystery-mentor.png'}
                   name='Por confirmar'

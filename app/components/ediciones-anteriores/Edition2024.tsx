@@ -22,7 +22,7 @@ export default function Edition2024() {
         <HeroTwo />
         <Testimonios />
         <Talleres />
-        <Mentors landing="barranqui-ia" year="2024" data = {FINAL_MENTORS}/>
+        <Mentors landing="barranqui-ia" year="2024" data = {FINAL_MENTORS} role  = "mentor"/>
         <Ganadores />
         <Allies />
       </div>

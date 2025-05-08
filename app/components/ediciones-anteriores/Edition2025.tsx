@@ -70,7 +70,7 @@ export default function Edition2025({ params }: { params: { landing: string } })
 				<Topics2025 landing={params.landing} />
 			</div>
 			<Location2025 landing={params.landing} />
-			<Mentors data={FINAL_MENTORS} landing={params.landing} year='2025' />
+			<Mentors data={FINAL_MENTORS} landing={params.landing} year='2025' role = "mentor" />
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<SponsorsSection landing={params.landing} />
 			</div>
@@ -78,7 +78,7 @@ export default function Edition2025({ params }: { params: { landing: string } })
 				<Workshops landing={params.landing} />
 			</div>
 			<Sponsors landing={params.landing} />
-			<Mentors landing='barranqui-ia' year='2025' data={voluntarios}/>
+			<Mentors landing='barranqui-ia' year='2025' data={voluntarios} role = "voluntario"/>
 			<FAQ data={FAQS_HACKATHONES} landing={params.landing} />
 		</main>
 	)

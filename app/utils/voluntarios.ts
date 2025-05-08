@@ -88,7 +88,7 @@ export const voluntarios: any = {
         "lastName": "Forero",
         "image": "/Voluntarios/CatalinaForero.webp",
         "genre": "female",
-        "description": "Lleno de pasión de pasión y amor por las tecnologías actuales, y gran entusiasmo por aprender más sobre estas. Una persona amable, capaz de llegar al corazón de los demás y guiarlos a ser mucho más.",
+        "description": "Estudiante de Ingeniería de Sistemas y desarrolladora Web Full-Stack. Con experiencia como CTO, fundadora y desarrolladora en empresas tecnológicas, se ha destacado por liderar equipos, implementar soluciones web escalables y promover entornos de aprendizaje en áreas como la programación, diseño 3D, electrónica y realidad virtual. Su enfoque combina creatividad, liderazgo y compromiso con el crecimiento personal y profesional, siempre buscando aportar valor a través de la tecnología.Lleno de pasión de pasión y amor por las tecnologías actuales, y gran entusiasmo por aprender más sobre estas. Una persona amable, capaz de llegar al corazón de los demás y guiarlos a ser mucho más.",
         "confirmed": true
       }
     ]
