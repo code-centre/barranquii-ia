@@ -131,14 +131,13 @@ export const AssistantsGraphics = () => {
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-[#1a103a] p-4 rounded-lg shadow-lg border border-purple-500/20">
+        {/* <div className="bg-[#1a103a] p-4 rounded-lg shadow-lg border border-purple-500/20">
           <Bar options={chartOptions} data={barChartData} />
-        </div>
+        </div> */}
         <div className="bg-[#1a103a] p-4 rounded-lg shadow-lg border border-purple-500/20">
           <Doughnut options={chartOptions} data={doughnutChartData} />
         </div>
-      </div>
-      <div className="bg-[#1a103a] p-4 rounded-lg shadow-lg border border-purple-500/20">
+				<div className="bg-[#1a103a] p-4 rounded-lg shadow-lg border border-purple-500/20">
         <h3 className="text-lg font-medium mb-4 text-purple-300">
           Detalles de Asistencia
         </h3>
@@ -213,6 +212,8 @@ export const AssistantsGraphics = () => {
           </tbody>
         </table>
       </div>
+      </div>
+      
     </div>
   )
 }
