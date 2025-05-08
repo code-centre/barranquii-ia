@@ -13,7 +13,7 @@ import Title from '../Title'
 import FAQ from '@/app/sections/FAQ'
 import { AssistantsGraphics } from '../2025/AssistantsGraphics'
 import { FAQS_HACKATHONES } from '@/app/utils/FAQS_HACKATHONES'
-import { voluntarios } from '@/app/utils/voluntarios'
+import { voluntarios } from '@/app/utils/voluntarios2025'
 import { FINAL_MENTORS } from '@/app/utils/final-mentors-barranquiia'
 
 export default function Edition2025({ params }: { params: { landing: string } }) {

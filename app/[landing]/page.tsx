@@ -84,7 +84,7 @@ export default function LandingPage({ params }: { params: { landing: string } })
 			</div>
 			<Location landing={params.landing} />
 			<Schedule landing={params.landing} />
-			<Mentors landing={params.landing} />
+			<Mentors landing={params.landing} role= "mentors"/>
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<SponsorsSection landing={params.landing} />
 			</div>
