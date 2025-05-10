@@ -15,6 +15,7 @@ import { AssistantsGraphics } from '../2025/AssistantsGraphics'
 import { FAQS_HACKATHONES } from '@/app/utils/FAQS_HACKATHONES'
 import { voluntarios } from '@/app/utils/voluntarios2025'
 import { FINAL_MENTORS } from '@/app/utils/final-mentors-barranquiia'
+import Testimonios from '@/app/sections/Testimonios'
 
 export default function Edition2025({ params }: { params: { landing: string } }) {
 	const images = [
@@ -66,11 +67,27 @@ export default function Edition2025({ params }: { params: { landing: string } })
 			<div className='mx-auto px-5 lg:px-10 w-full'>
 				<Gallery3D autoPlay={true} images={images} />
 			</div>
+			<div className='max-w-6xl mx-auto px-5 w-full'>
+				<Testimonios hackathon="barranqui-ia" year="2025">
+					<Title
+						title="Testimonios"
+
+						landing={params.landing}
+					/>
+				</Testimonios>
+			</div>
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<Topics2025 landing={params.landing} />
 			</div>
 			<Location2025 landing={params.landing} />
-			<Mentors data={FINAL_MENTORS} landing={params.landing} year='2025' role = "mentor" />
+			<Mentors data={FINAL_MENTORS} landing={params.landing} year='2025' role="mentor">
+				<div className='max-w-6xl mx-auto px-5 lg:px-10  w-full'>
+					<Title
+						title="Mentores"
+						landing={params.landing}
+					/>
+				</div>
+			</Mentors>
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<SponsorsSection landing={params.landing} />
 			</div>
@@ -78,7 +95,14 @@ export default function Edition2025({ params }: { params: { landing: string } })
 				<Workshops landing={params.landing} />
 			</div>
 			<Sponsors landing={params.landing} />
-			<Mentors landing='barranqui-ia' year='2025' data={voluntarios} role = "voluntario"/>
+			<Mentors landing='barranqui-ia' year='2025' data={voluntarios} role="voluntario">
+				<div className='max-w-6xl mx-auto px-5 lg:px-10  w-full'>
+					<Title
+						title="Voluntarios"
+						landing={params.landing}
+					/>
+				</div>
+			</Mentors>
 			<FAQ data={FAQS_HACKATHONES} landing={params.landing} />
 		</main>
 	)

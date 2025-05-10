@@ -9,7 +9,14 @@ interface Testimonials {
   role?: string;
 }
 
-export default function Testimonios() {
+interface Props {
+  hackathon: string;
+  year: string;
+	children: React.ReactNode;
+}
+
+
+export default function Testimonios({ hackathon, year, children }: Props) {
   const [testimonials, setTestimonials] = useState<Testimonials[]>([{
     nameUser: "Anuar",
     description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -86,8 +93,12 @@ export default function Testimonios() {
 
   const getTestimonials = async () => {
     try {
-      const data = await fetch(`${process.env.NEXT_PUBLIC_URL_TESTIMONIALS}/api/testimonials`);
+      const data = await fetch(`${process.env.NEXT_PUBLIC_URL_TESTIMONIALS}/api/testimonials?hackathon=${hackathon}&year=${year}`, {
+				method: "GET",
+			});
       const { testimonials } = await data.json();
+			console.log(testimonials);
+      
       setTestimonials(testimonials);
     } catch (error) {
       console.error("Error fetching testimonials:", error);
@@ -122,14 +133,10 @@ export default function Testimonios() {
     : testimonials;
 
   return (
-    <section id="Testimonios" className="gap-16 scroll-m-32 bg-black text-white w-full px-6 md:px-10 py-16">
-      
-        <h2 className="mb-10 border-principleViolet pl-2 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
-          Testimonios
-        </h2>
-
+    <section id="Testimonios" className="gap-16 scroll-m-32 bg-black text-white w-full px-6 py-16">
+			{children}
         {loading && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
             {Array(8)
               .fill(0)
               .map((_, i) => (
@@ -144,7 +151,7 @@ export default function Testimonios() {
 
         {!loading && testimonials.length > 0 && (
           <>
-            <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+            <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4 mt-10">
               {visibleTestimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
@@ -191,7 +198,7 @@ export default function Testimonios() {
         )}
       
 
-      <CrearTestimonio getTestimonials={getTestimonials} />
+      <CrearTestimonio hackathon={hackathon} year={year} getTestimonials={getTestimonials} />
     </section>
   );
 }

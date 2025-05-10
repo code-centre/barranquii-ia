@@ -14,6 +14,7 @@ interface Props {
   year?: string
   data?: any
   role: string;
+	children: React.ReactNode;
 }
 
 interface Person {
@@ -26,7 +27,7 @@ interface Person {
   confirmed?: boolean;
 }
 
-export default function Persons({ landing, year, data, role }: Props) {
+export default function Persons({ landing, year, data, role, children }: Props) {
   const PersonsForSelectedYear = (data as any)[year ?? '2025'] || [];
   const [firstRowOfPersons, setFirstRowOfPersons] = useState<Person[]>(PersonsForSelectedYear.slice(0, PersonsForSelectedYear.length / 2));
   const [secondRowOfPersons, setSecondRowOfPersons] = useState<Person[]>(PersonsForSelectedYear.slice(PersonsForSelectedYear.length / 2));
@@ -44,9 +45,7 @@ export default function Persons({ landing, year, data, role }: Props) {
     <section id="mentors" className="scroll-m-32 flex flex-col w-full gap-10 relative  lg:pt-24">
       <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-56 -z-20 -left-36 w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] rounded-full blur-3xl"></div>
 
-      <div className="max-w-6xl mx-auto w-full px-5">
-        <Title title={`${role === "mentor" ? "Mentores" : "Voluntarios"} ${year}`} landing={landing} />
-      </div>
+      {children}
       <div className="relative overflow-hidden w-full mx-auto">
         <InfiniteMovingCards direction="right" speed="slow" pauseOnHover={true}>
           {firstRowOfPersons.map((mentor, i) => (
