@@ -2,10 +2,12 @@
 import React, { useState } from "react";
 
 interface Props {
+  hackathon: string;
+  year: string;
   getTestimonials: () => void;
 }
 
-export default function CrearTestimonio({ getTestimonials }: Props) {
+export default function CrearTestimonio({ hackathon, year, getTestimonials }: Props) {
   const [isCreatingTestimonial, setIsCreatingTestimonial] = useState(false);
   const [nameUser, setNameUser] = useState("");
   const [testimonial, setTestimonial] = useState("");
@@ -16,7 +18,7 @@ export default function CrearTestimonio({ getTestimonials }: Props) {
       `${process.env.NEXT_PUBLIC_URL_TESTIMONIALS}/api/testimonials`,
       {
         method: "POST",
-        body: JSON.stringify({ nameUser, description: testimonial, role }),
+        body: JSON.stringify({ nameUser, description: testimonial, role, hackathon, year }),
       }
     );
     await data.json();
