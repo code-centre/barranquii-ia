@@ -52,12 +52,12 @@ export default function Edition2025({ params }: { params: { landing: string } })
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 pt-20 w-full'>
 				<div className='mb-4 lg:mb-10'>
 					<Title
-						title="Asistentes"
+						title="Gráficas y Datos del evento"
 						landing={params.landing}
 					/>
 				</div>
 				<p className='text-base lg:text-lg mb-5'>
-					Conoce a detalle la cantidad de asistentes, mentores, participantes y staff, que participaron en la segunda edición de Barranqui-IA, el hackatón de inteligencia artificial más grande de la costa.
+					Conoce a detalle la cantidad de asistentes, participantes y talleristas, que fueron parte de esta segunda edición de Barranqui-IA, el hackatón de inteligencia artificial más grande de la costa.
 				</p>
 				<AssistantsGraphics />
 			</div>
