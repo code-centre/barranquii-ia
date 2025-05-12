@@ -136,14 +136,13 @@ export default function Testimonios({ hackathon, year, children }: Props) {
     <section id="Testimonios" className="gap-16 scroll-m-32 bg-black text-white w-full px-6 py-16">
 			{children}
         {loading && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
-            {Array(8)
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+            {Array(3)
               .fill(0)
               .map((_, i) => (
                 <div
                   key={i}
-                  className="bg-gray-700 animate-pulse h-[150px] md:h-[180px] rounded-lg"
-                  style={{ height: `${Math.floor(Math.random() * 50) + 150}px` }}
+                  className="bg-gray-700 animate-pulse h-full md:h-[180px] rounded-lg"
                 ></div>
               ))}
           </div>
@@ -151,14 +150,14 @@ export default function Testimonios({ hackathon, year, children }: Props) {
 
         {!loading && testimonials.length > 0 && (
           <>
-            <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
               {visibleTestimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className={`bg-gradient-to-br from-blue-800 to-purple-700 p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 break-inside-avoid mb-4`}
+                  className={`bg-gradient-to-br from-blue-800 to-purple-700 p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 break-inside-avoid`}
                 >
                   <div className="text-left flex gap-3 items-start">
-                    <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${getAvatarGradient(testimonial.role)} flex items-center justify-center text-white font-bold text-sm shrink-0`}>
+                    <div className={`w-10 h-10 rounded-full bg-gradient-to-r  ${getAvatarGradient(testimonial.role)} flex items-center justify-center text-white font-bold text-sm shrink-0`}>
                       {testimonial.nameUser
                         .split(" ")
                         .map(name => name[0])
