@@ -17,25 +17,37 @@ export default function Edition2024() {
 				<Hero />
 				<Sponsors2024 />
 			</div>
-			<div className="mx-auto gap-20 flex flex-col max-w-6xl">
-				<Hackathon />
-				<HeroTwo />
-				<Testimonios hackathon="barranqui-ia" year="2024">
-					<h2 className="border-principleViolet pl-2 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
-						Testimonios
-					</h2>
-				</Testimonios>
-				<Talleres />
-				
+			<div className="gap-20 flex flex-col">
+				<div className="max-w-6xl mx-auto w-full">
+					<Hackathon />
+				</div>
+				<div className="max-w-6xl mx-auto w-full">
+					<HeroTwo />
+				</div>
+				<div className=" max-w-6xl mx-auto w-full">
+					<Testimonios hackathon="barranqui-ia" year="2024">
+						<h2 className="border-principleViolet pl-2 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
+							Testimonios
+						</h2>
+					</Testimonios>
+				</div>
+				<div className="max-w-6xl mx-auto">
+					<Talleres />
+				</div>
+
 				<Mentors landing="barranqui-ia" year="2024" data={FINAL_MENTORS} role="mentor">
-					<h2 className="border-principleViolet pl-4 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
-						Mentores
-					</h2>
+					<div className="max-w-6xl mx-auto w-full">
+						<h2 className="border-principleViolet pl-4 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
+							Mentores
+						</h2>
+					</div>
 				</Mentors>
-				<Ganadores />
+				<div className="max-w-6xl mx-auto w-full">
+					<Ganadores />
+				</div>
 				<Allies />
 			</div>
 
-		</main>
+		</main >
 	);
 }

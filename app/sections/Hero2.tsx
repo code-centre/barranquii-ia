@@ -67,7 +67,7 @@ export default function HeroTwo() {
   };
 
   return (
-    <section id="Hero2" className="flex flex-col scroll-mt-32 items-center gap-12 bg-black text-white w-full px-6 sm:px-10">
+    <section id="Hero2" className="flex flex-col scroll-mt-32 items-center gap-12 bg-black text-white w-full px-6 lg:pt-20 sm:px-10">
       <h2 className="border-l-4 border-principleViolet pl-4 font-bold text-2xl md:text-3xl lg:text-4xl uppercase self-start">
         Hackaton 2024
       </h2>
