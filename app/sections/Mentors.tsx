@@ -14,7 +14,7 @@ interface Props {
   year?: string
   data?: any
   role: string;
-	children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 interface Person {
