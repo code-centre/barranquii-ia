@@ -40,7 +40,7 @@ const TOPICS = [
 
 export default function Topics({ landing }: Props) {
   return (
-    <section id="topics" className="pt-32 relative">
+    <section id="topics" className="pt-10 relative">
       <Title landing={landing} title="Lineas temáticas" />
 
     <p className="mt-3 text-gray-300">
@@ -49,7 +49,7 @@ export default function Topics({ landing }: Props) {
       artificial.
     </p>
 
-      <div className="flex flex-wrap justify-center items-center gap-5 md:gap-10 mt-10">
+      <div className="flex flex-wrap justify-center items-center gap-5 md:gap-3 mt-10">
                 {
                     TOPICS.map((topic, i) => (
                         <Topic key={topic.title} img={topic.img} title={topic.title} index={i + 1} />
