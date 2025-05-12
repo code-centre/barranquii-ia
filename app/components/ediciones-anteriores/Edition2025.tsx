@@ -16,6 +16,7 @@ import { FAQS_HACKATHONES } from '@/app/utils/FAQS_HACKATHONES'
 import { voluntarios } from '@/app/utils/voluntarios2025'
 import { FINAL_MENTORS } from '@/app/utils/final-mentors-barranquiia'
 import Testimonios from '@/app/sections/Testimonios'
+import Finalists from '@/app/sections/Finalists'
 
 export default function Edition2025({ params }: { params: { landing: string } }) {
 	const images = [
@@ -41,11 +42,14 @@ export default function Edition2025({ params }: { params: { landing: string } })
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<Summary2025 landing={params.landing} />
 			</div>
+			{/* <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+				<Finalists landing={params.landing} />
+			</div> */}
 			<div className='max-w-6xl mx-auto px-5 lg:px-10
 				 w-full'>
 				<Organizers landing={params.landing} />
 			</div>
-			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+			<div className='max-w-6xl mx-auto px-5 lg:px-10 pt-20 w-full'>
 				<div className='mb-4 lg:mb-10'>
 					<Title
 						title="Asistentes"
@@ -63,8 +67,6 @@ export default function Edition2025({ params }: { params: { landing: string } })
 					landing={params.landing}
 					size='lg'
 				/>
-			</div>
-			<div className='mx-auto px-5 lg:px-10 w-full'>
 				<Gallery3D autoPlay={true} images={images} />
 			</div>
 			<div className='max-w-6xl mx-auto px-5 w-full'>
