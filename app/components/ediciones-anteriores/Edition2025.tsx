@@ -42,9 +42,9 @@ export default function Edition2025({ params }: { params: { landing: string } })
 			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<Summary2025 landing={params.landing} />
 			</div>
-			{/* <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
 				<Finalists landing={params.landing} />
-			</div> */}
+			</div>
 			<div className='max-w-6xl mx-auto px-5 lg:px-10
 				 w-full'>
 				<Organizers landing={params.landing} />
