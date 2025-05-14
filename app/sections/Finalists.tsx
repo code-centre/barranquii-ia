@@ -13,7 +13,7 @@ export default function Finalists({ landing }: Props) {
 		id: 0,
 		show: false
 	})
-	const topSevenFinalistsStyles = 'h-[80px] w-1/2 bg-[#d3a2fb] border-[#fbe4a2] border-2 rounded-md flex items-center justify-center text-black relative'
+	const topSevenFinalistsStyles = 'h-[80px] w-full md:w-1/2 bg-[#d3a2fb] border-[#fbe4a2] border-2 rounded-md flex items-center justify-center text-black relative'
 
 	const topSevenFinalists = [
 		{
@@ -56,7 +56,7 @@ export default function Finalists({ landing }: Props) {
 						<div
 							onMouseEnter={() => setShowDescription({ id: 2, show: true })}
 							onMouseLeave={() => setShowDescription({ id: 2, show: false })}
-							className='h-[280px] text-gray-800 shadow-xl rounded-md flex relative'>
+							className='h-[280px] text-gray-800 shadow-xl rounded-md flex relative order-2 lg:order-1 mt-20 lg:mt-0'>
 							<Image
 								alt='Imagen del ganador del Barranqui-IA edición 2025'
 								src='/ganadores/banner-second-place.png'
@@ -81,7 +81,7 @@ export default function Finalists({ landing }: Props) {
 						<div 
 							onMouseEnter={() => setShowDescription({ id: 1, show: true })}
 							onMouseLeave={() => setShowDescription({ id: 1, show: false })}
-							className='h-[280px] relative text-gray-900 shadow-xl rounded-md -mt-5 '>
+							className='h-[280px] relative text-gray-900 shadow-xl rounded-md lg:-mt-5 mt-20 order-1 lg:order-2'>
 							<Image
 								alt='Imagen del ganador del Barranqui-IA edición 2025'
 								src='/ganadores/banner-first-place.png'
@@ -102,7 +102,7 @@ export default function Finalists({ landing }: Props) {
 						<div
 							onMouseEnter={() => setShowDescription({ id: 3, show: true })}
 							onMouseLeave={() => setShowDescription({ id: 3, show: false })}
-							className='h-[280px] text-black shadow-xl  rounded-md flex relative'>
+							className='h-[280px] text-black shadow-xl  rounded-md flex relative mt-20 lg:mt-0 order-3'>
 							<Image
 								alt='Imagen del ganador del Barranqui-IA edición 2025'
 								src='/ganadores/banner-third-place.png'
@@ -128,39 +128,39 @@ export default function Finalists({ landing }: Props) {
 						</div>
 					</div>
 					<div className='flex flex-wrap justify-center mt-5 gap-5'>
-						<div className='flex w-full gap-4 justify-center'>
+						<div className='flex flex-col md:flex-row w-full gap-4 justify-center'>
 							<div className={topSevenFinalistsStyles}>
 								<span className='absolute top-0 left-2 text-xl font-mono font-bold'>4.</span>
 								<p className='font-medium'>Edunova</p>
 							</div>
 							<div className={topSevenFinalistsStyles}>
 								<span className='absolute top-0 left-2 text-xl font-mono font-bold'>5.</span>
-								<p className='font-medium'>FlowSync</p>
+								<p className='font-medium'>Mirai</p>
 							</div>
 						</div>
-						<div className='flex w-full gap-4 justify-center'>
+						<div className='flex flex-col md:flex-row w-full gap-4 justify-center'>
 							<div className={topSevenFinalistsStyles}>
 								<span className='absolute top-0 left-2 text-xl font-mono font-bold'>6.</span>
-								<p className='font-medium'>Liendra AI</p>
+								<p className='font-medium'>Triasure</p>
 							</div>
 							<div className={topSevenFinalistsStyles}>
 								<span className='absolute top-0 left-2 text-xl font-mono font-bold'>7.</span>
-								<p className='font-medium'>Circula</p>
+								<p className='font-medium'>Botania</p>
 							</div>
 						</div>
-						<div className='flex w-full gap-4 justify-center'>
+						<div className='flex flex-col md:flex-row w-full gap-4 justify-center'>
 							<div className={topSevenFinalistsStyles}>
 								<span className='absolute top-0 left-2 text-xl font-mono font-bold'>8.</span>
-								<p className='font-medium'>PIA-SS</p>
+							<p className='font-medium'>El viaje del chigüiero</p>
 							</div>
 							<div className={topSevenFinalistsStyles}>
 								<span className='absolute top-0 left-2 text-xl font-mono font-bold'>9.</span>
-								<p className='font-medium'>Hands 2 Voice</p>
+								<p className='font-medium'>Signus</p>
 							</div>
 						</div>
 						<div className={topSevenFinalistsStyles}>
 							<span className='absolute top-0 left-2 text-xl font-mono font-bold'>10.</span>
-							<p className='font-medium'>El viaje del chigüiero</p>
+								<p className='font-medium'>FlowSync</p>
 						</div>
 					</div>
 				</div>
