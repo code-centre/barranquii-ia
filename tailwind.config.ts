@@ -16,7 +16,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        sans: ['var(--font-poppins)'],
+        sans: ['var(--font-poppinss)'],
         mono: ['var(--font-league_spartan)'],
         // jakarta: ['var(--font-plus_jakarta_sans)'],
         // noto: ['var(--font-noto_sans)']

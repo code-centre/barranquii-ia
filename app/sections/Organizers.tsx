@@ -8,7 +8,7 @@ interface Props {
 
 export default function Organizers({ landing }: Props) {
 	return (
-		<section id="organizers" className="flex flex-col gap-10 lg:gap-20">
+		<section id="organizers" className="flex flex-col">
 			<Title landing={landing} title="Organizadores" />
 			<ul className="flex items-center justify-center flex-wrap lg:justify-start md:flex-wrap md:flex-row gap-5 md:gap-10">
 				<li>

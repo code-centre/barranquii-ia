@@ -27,7 +27,6 @@ const SUBTITLES: Record<string, string> = {
 }
 
 const DATES: Record<string, string> = {
-  'barranqui-ia': '3 y 4 de Mayo',
   'samar-ia': 'Próximamente',
   'cartagen-ia': 'Próximamente',
 }

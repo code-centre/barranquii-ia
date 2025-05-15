@@ -29,11 +29,11 @@ export default function Topic({ img, title, index }: Props) {
 			<Image
 				src={img}
 				alt={title}
-				height={160}
-				width={160}
-				className="mx-auto w-28 md:w-40 h-28 md:h-40 object-cover"
+				height={80}
+				width={80}
+				className="mx-auto w-20 md:w-20 h-20 md:h-20 object-cover"
 			/>
-			<p className="mx-auto w-[150px] font-medium font-mono text-center text-gray-300">
+			<p className="mx-auto w-[120px] font-medium text-sm font-mono text-center text-gray-300">
 				{title}
 			</p>
 			{

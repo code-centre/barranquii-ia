@@ -34,10 +34,10 @@ export default function SponsorsSection({ landing }: Props) {
 				<li className="flex items-center justify-center">
 					<Image
 						className="w-[300px] h-auto object-contain"
-						src="/logos/gobernacion.webp"
+						src="/logos/alcaldia-baq-logo.png"
 						height={80}
 						width={300}
-						alt="Logo de Gobernación del Atlántico"
+						alt="Logo de la Alcaldía de Barranquilla"
 						loading="lazy"
 					/>
 				</li>

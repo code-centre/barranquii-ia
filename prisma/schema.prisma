@@ -41,6 +41,8 @@ model Testimonials {
   nameUser    String @db.VarChar(255)
   description String @db.VarChar(255)
   role        String @db.VarChar(255)
+  hackathon   String @default("barranqui-ia")
+  year        Int    @default(2024)
 }
 
 enum TicketType {

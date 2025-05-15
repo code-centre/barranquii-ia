@@ -24,6 +24,7 @@ import Ganadores from "@/app/sections/Ganadores";
 import HeroTwo from "@/app/sections/Hero2";
 import PromoBar from "@/app/components/PromoBar";
 import Hackathon from "@/app/sections/Hackaton";
+import {FINAL_MENTORS} from "@/app/utils/final-mentors-barranquiia";
 
 export default function PastEvent() {
 	return (
@@ -36,9 +37,17 @@ export default function PastEvent() {
 			<div className="container mx-auto gap-20 flex flex-col">
 				<Hackathon />
 				<HeroTwo />
-				<Testimonios />
+				<Testimonios hackathon="barranqui-ia" year="2024">
+					<h2 className="border-l-4 border-principleViolet pl-4 font-bold text-2xl md:text-3xl lg:text-4xl uppercase self-start">
+						Talleres
+					</h2>
+				</Testimonios>
 				<Talleres />
-				<Mentors landing="barranqui-ia"  />
+				<Mentors data={FINAL_MENTORS} landing="barranqui-ia" role="mentors" year="2024">
+					<h2 className="border-l-4 border-principleViolet pl-4 font-bold text-2xl md:text-3xl lg:text-4xl uppercase self-start">
+						Mentores
+					</h2>
+				</Mentors>
 				<Ganadores />
 				<Allies />
 				<Preinscribete />

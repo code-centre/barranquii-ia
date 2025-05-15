@@ -6,7 +6,7 @@ import { InfiniteMovingCards } from "../components/InfiniteMovingCards";
 export default function Allies() {
   return (
     <section id="allies" className="scroll-m-32 pb-10 px-10">
-      <h2 className="border- border-principleViolet mb-10 pl-2 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
+      <h2 className="border- max-w-6xl mx-auto w-full border-principleViolet mb-10 pl-2 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
         Aliados 2024
       </h2>
       <InfiniteMovingCards direction="left" speed="slow" pauseOnHover={true}>
