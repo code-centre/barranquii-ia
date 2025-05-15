@@ -112,7 +112,7 @@ export default function Finalists({ landing }: Props) {
 							/>
 							<Image
 								alt='Imagen del ganador del Barranqui-IA edición 2025'
-								src='/ganadores/gecko-agent.webp'
+								src='/ganadores/gecko-agent.jpg'
 								width={400}
 								height={280}
 								className='w-full h-full object-cover'
