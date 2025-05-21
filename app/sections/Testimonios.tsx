@@ -17,47 +17,7 @@ interface Props {
 
 
 export default function Testimonios({ hackathon, year, children }: Props) {
-  const [testimonials, setTestimonials] = useState<Testimonials[]>([{
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "mentor",
-    id: 1
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "participante",
-    id: 2
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "staff",
-    id: 3
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "mentor",
-    id: 4
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "participante",
-    id: 5
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "staff",
-    id: 6
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "mentor",
-    id: 7
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "participante",
-    id: 8
-  }]);
+  const [testimonials, setTestimonials] = useState<Testimonials[]>([]);
   const [loading, setLoading] = useState(true);
   const [showAllOnMobile, setShowAllOnMobile] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
