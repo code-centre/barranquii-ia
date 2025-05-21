@@ -79,7 +79,7 @@ export default function Summary({ landing }: Props) {
                         </div>
                         <div className='md:col-span-1'>
                             <Image
-                                src="/2025/barranqui-ia-2025.webp"
+                                src="/2025/portada-hackathon.webp"
                                 alt="Barranqui-IA 2025"
                                 width={1000}
                                 height={1000}
