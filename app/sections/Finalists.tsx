@@ -13,36 +13,49 @@ export default function Finalists({ landing }: Props) {
 		id: 0,
 		show: false
 	})
-	const topSevenFinalistsStyles = 'h-[80px] w-full md:w-1/2 bg-[#d3a2fb] border-[#fbe4a2] border-2 rounded-md flex items-center justify-center text-black relative'
+	const topSevenFinalistsStyles = 'h-[80px] w-full md:w-1/2 bg-[#d3a2fb] border-[#fbe4a2] border-2 rounded-md flex items-center justify-center text-black relative cursor-pointer'
 
 	const topSevenFinalists = [
-		{
-			id: 4,
-			project: 'Edunova',
-		},
-		{
-			id: 5,
-			project: 'FlowSync',
-		},
-		{
-			id: 6,
-			project: 'Liendra AI',
-		},
-		{
-			id: 7,
-			project: 'Circula',
-		},
-		{
-			id: 8,
-			project: 'PIA-SS',
-		},
-		{
-			id: 9,
-			project: 'Hands 2 Voice',
-		},
+		[
+			{
+				id: 4,
+				project: 'Edunova',
+				description: 'Revoluciona la educación en Barranquilla con IA, detectando cómo aprende cada estudiante y creando rutas personalizadas con chatbots.',
+			},
+			{
+				id: 5,
+				project: 'Mirai',
+				description: 'Solución de visión artificial que, con gafas inteligentes y una app, brinda autonomía, conexión y orientación sonora a personas con discapacidad visual.',
+			},
+		],
+		[
+			{
+				id: 6,
+				project: 'Triasure',
+				description: 'Plataforma para coleccionistas que organiza y valora ítems físicos, con red social para conectar personas con intereses y nichos similares.',
+			},
+			{
+				id: 7,
+				project: 'Botania',
+				description: 'Aplicación que combina arte y tecnología para crear experiencias interactivas con plantas virtuales.',
+			},
+		],
+		[
+			{
+				id: 8,
+				project: 'El viaje del chigüiro',
+				description: 'App gamificada de autocuidado que promueve el bienestar emocional a través del cuidado de un personaje virtual.',
+			},
+			{
+				id: 9,
+				project: 'Signus',
+				description: 'Aplicación que facilita la comunicación mediante traducción de texto a lenguaje de señas.',
+			},
+		],
 		{
 			id: 10,
-			project: 'El viaje del chigüiero',
+			project: 'FlowSync',
+			description: 'Asistente inteligente que centraliza aplicaciones y archivos, permitiendo agendar, resumir, enviar y buscar con comandos simples para mejorar la productividad.',
 		}
 	]
 
@@ -78,7 +91,7 @@ export default function Finalists({ landing }: Props) {
 								<p className='text-xl font-mono font-bold text-white'> 2. Canvas</p>
 							</div>
 						</div>
-						<div 
+						<div
 							onMouseEnter={() => setShowDescription({ id: 1, show: true })}
 							onMouseLeave={() => setShowDescription({ id: 1, show: false })}
 							className='h-[280px] relative text-gray-900 shadow-xl rounded-md lg:-mt-5 mt-20 order-1 lg:order-2'>
@@ -128,41 +141,43 @@ export default function Finalists({ landing }: Props) {
 						</div>
 					</div>
 					<div className='flex flex-wrap justify-center mt-5 gap-5'>
-						<div className='flex flex-col md:flex-row w-full gap-4 justify-center'>
-							<div className={topSevenFinalistsStyles}>
-								<span className='absolute top-0 left-2 text-xl font-mono font-bold'>4.</span>
-								<p className='font-medium'>Edunova</p>
-							</div>
-							<div className={topSevenFinalistsStyles}>
-								<span className='absolute top-0 left-2 text-xl font-mono font-bold'>5.</span>
-								<p className='font-medium'>Mirai</p>
-							</div>
-						</div>
-						<div className='flex flex-col md:flex-row w-full gap-4 justify-center'>
-							<div className={topSevenFinalistsStyles}>
-								<span className='absolute top-0 left-2 text-xl font-mono font-bold'>6.</span>
-								<p className='font-medium'>Triasure</p>
-							</div>
-							<div className={topSevenFinalistsStyles}>
-								<span className='absolute top-0 left-2 text-xl font-mono font-bold'>7.</span>
-								<p className='font-medium'>Botania</p>
-							</div>
-						</div>
-						<div className='flex flex-col md:flex-row w-full gap-4 justify-center'>
-							<div className={topSevenFinalistsStyles}>
-								<span className='absolute top-0 left-2 text-xl font-mono font-bold'>8.</span>
-							<p className='font-medium'>El viaje del chigüiero</p>
-							</div>
-							<div className={topSevenFinalistsStyles}>
-								<span className='absolute top-0 left-2 text-xl font-mono font-bold'>9.</span>
-								<p className='font-medium'>Signus</p>
-							</div>
-						</div>
-						<div className={topSevenFinalistsStyles}>
-							<span className='absolute top-0 left-2 text-xl font-mono font-bold'>10.</span>
-								<p className='font-medium'>FlowSync</p>
-						</div>
+						{
+							topSevenFinalists.map((finalist) => {
+
+								if (finalist instanceof Array) {
+									return (
+										<div className='flex flex-col md:flex-row w-full gap-4 justify-center'>
+											{
+												finalist.map((finalist) => {
+													return (
+														<div onMouseEnter={() => setShowDescription({ id: finalist.id, show: true })} onMouseLeave={() => setShowDescription({ id: finalist.id, show: false })} className={topSevenFinalistsStyles}>
+															<span className='absolute top-0 left-2 text-xl font-mono font-bold'>{finalist.id}.</span>
+															<p className='font-medium'>{finalist.project}</p>
+															{
+																showDescription.id === finalist.id && showDescription.show && <p className='absolute bottom-0 left-0 right-0 text-center text-black px-2 py-1 text-sm bg-white'>{finalist.description}</p>
+															}
+														</div>
+													)
+												})
+											}
+										</div>
+									)
+								} else {
+									return (
+										<div onMouseEnter={() => setShowDescription({ id: finalist.id, show: true })} onMouseLeave={() => setShowDescription({ id: finalist.id, show: false })} className={topSevenFinalistsStyles}>
+											<span className='absolute top-0 left-2 text-xl font-mono font-bold'>{finalist.id}.</span>
+											<p className='font-medium'>{finalist.project}</p>
+											{
+												showDescription.id === finalist.id && showDescription.show && <p className='absolute bottom-0 left-0 right-0 text-center text-black px-2 py-1 text-sm bg-white'>{finalist.description}</p>
+											}
+										</div>
+									)
+								}
+
+							})
+						}
 					</div>
+					<a href="https://barranqui-ia-2025-25105.devpost.com/project-gallery" target="_blank" rel="noopener noreferrer" className=' text-lg text-white block mt-10 w-fit bg-principleViolet hover:bg-principleViolet/80 mx-auto py-2 px-6 rounded-md'>Ver en devpost</a>
 				</div>
 			</div>
 		</div>
