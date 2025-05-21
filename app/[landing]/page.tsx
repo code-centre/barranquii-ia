@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 };
 
 export default function LandingPage({ params }: { params: { landing: string } }) {
-	if (params.landing !== 'barranqui-ia') {
+	if (params.landing === 'barranqui-ia') {
 		return redirect('/barranqui-ia/2025')
 	}
 
