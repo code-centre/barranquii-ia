@@ -21,16 +21,6 @@ export default function Organizers({ landing }: Props) {
 						loading="lazy"
 					/>
 				</li>
-				<li>
-					<Image
-						className="w-[300px]"
-						src="/uninorte.webp"
-						height={60}
-						width={280}
-						alt="Logo de la universidad de la norte"
-						loading="lazy"
-					/>
-				</li>
 				<li className="flex items-center justify-center">
 					<Image
 						className="w-[220px] h-auto object-contain"
