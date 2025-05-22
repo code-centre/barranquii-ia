@@ -9,48 +9,15 @@ interface Testimonials {
   role?: string;
 }
 
-export default function Testimonios() {
-  const [testimonials, setTestimonials] = useState<Testimonials[]>([{
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "mentor",
-    id: 1
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "participante",
-    id: 2
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "staff",
-    id: 3
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "mentor",
-    id: 4
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "participante",
-    id: 5
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "staff",
-    id: 6
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "mentor",
-    id: 7
-  }, {
-    nameUser: "Anuar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    role: "participante",
-    id: 8
-  }]);
+interface Props {
+  hackathon: string;
+  year: string;
+	children: React.ReactNode;
+}
+
+
+export default function Testimonios({ hackathon, year, children }: Props) {
+  const [testimonials, setTestimonials] = useState<Testimonials[]>([]);
   const [loading, setLoading] = useState(true);
   const [showAllOnMobile, setShowAllOnMobile] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -86,8 +53,12 @@ export default function Testimonios() {
 
   const getTestimonials = async () => {
     try {
-      const data = await fetch(`${process.env.NEXT_PUBLIC_URL_TESTIMONIALS}/api/testimonials`);
+      const data = await fetch(`${process.env.NEXT_PUBLIC_URL_TESTIMONIALS}/api/testimonials?hackathon=${hackathon}&year=${year}`, {
+				method: "GET",
+			});
       const { testimonials } = await data.json();
+			console.log(testimonials);
+      
       setTestimonials(testimonials);
     } catch (error) {
       console.error("Error fetching testimonials:", error);
@@ -122,21 +93,16 @@ export default function Testimonios() {
     : testimonials;
 
   return (
-    <section id="Testimonios" className="gap-16 scroll-m-32 bg-black text-white w-full px-6 md:px-10 py-16">
-      
-        <h2 className="mb-10 border-principleViolet pl-2 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
-          Testimonios
-        </h2>
-
+    <section id="Testimonios" className="gap-16 scroll-m-32 bg-black text-white w-full px-6 py-16">
+			{children}
         {loading && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {Array(8)
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+            {Array(3)
               .fill(0)
               .map((_, i) => (
                 <div
                   key={i}
-                  className="bg-gray-700 animate-pulse h-[150px] md:h-[180px] rounded-lg"
-                  style={{ height: `${Math.floor(Math.random() * 50) + 150}px` }}
+                  className="bg-gray-700 animate-pulse h-full md:h-[180px] rounded-lg"
                 ></div>
               ))}
           </div>
@@ -144,14 +110,14 @@ export default function Testimonios() {
 
         {!loading && testimonials.length > 0 && (
           <>
-            <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
               {visibleTestimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className={`bg-gradient-to-br from-blue-800 to-purple-700 p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 break-inside-avoid mb-4`}
+                  className={`bg-gradient-to-br from-blue-800 to-purple-700 p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 break-inside-avoid`}
                 >
                   <div className="text-left flex gap-3 items-start">
-                    <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${getAvatarGradient(testimonial.role)} flex items-center justify-center text-white font-bold text-sm shrink-0`}>
+                    <div className={`w-10 h-10 rounded-full bg-gradient-to-r  ${getAvatarGradient(testimonial.role)} flex items-center justify-center text-white font-bold text-sm shrink-0`}>
                       {testimonial.nameUser
                         .split(" ")
                         .map(name => name[0])
@@ -191,7 +157,7 @@ export default function Testimonios() {
         )}
       
 
-      <CrearTestimonio getTestimonials={getTestimonials} />
+      <CrearTestimonio hackathon={hackathon} year={year} getTestimonials={getTestimonials} />
     </section>
   );
 }

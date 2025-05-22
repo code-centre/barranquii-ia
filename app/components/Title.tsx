@@ -70,7 +70,7 @@ export default function Title({
 				// 	WebkitBackgroundClip: 'text',
 				// 	color: 'transparent'
 				// }} 
-				className={`font-bold font-mono ${sizeClass}`}>{title}</h2>
+				className={`font-bold font-mono mb-5 lg:mb-7 ${sizeClass}`}>{title}</h2>
 		</div>
 	)
 }

@@ -40,7 +40,7 @@ export default function HackatonesNav({ landing }: Props) {
                 </div>
             </Link>
 
-            <Link href={`/barranqui-ia`} className="flex-1 xl:min-w-[350px] flex flex-col items-center justify-start py-5 ">
+            <Link href={`/2025`} className="flex-1 xl:min-w-[350px] flex flex-col items-center justify-start py-5 ">
                 <div className="flex flex-col items-center w-full space-y-2">
                     <div className="flex flex-col items-center">
                         <GradientTitle

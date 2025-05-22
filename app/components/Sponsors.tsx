@@ -9,7 +9,7 @@ interface Props {
 
 export default function Sponsors({ landing }: Props) {
   return (
-    <div className={`flex flex-col gap-10 ${landing && ' lg:pt-24'}`}>
+    <div className={`flex flex-col ${landing && ' lg:pt-24'}`}>
       {
         landing &&
         <div className="max-w-6xl mx-auto px-5 lg:px-10 w-full">
