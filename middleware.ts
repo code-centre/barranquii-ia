@@ -10,7 +10,7 @@ export function middleware(req: NextRequest) {
     const cleanHost = hostname.replace(/^www\./, '')
 
     if (cleanHost === 'barranquiia.com' && pathname === '/') {
-        const externalUrl = new URL('/barranqui-ia', 'https://caribe-ia.com');
+        const externalUrl = new URL('/barranqui-ia', 'https://www.caribe-ia.com');
         console.log(externalUrl);
         return NextResponse.redirect(externalUrl);
     }
