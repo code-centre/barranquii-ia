@@ -68,7 +68,7 @@ export const voluntarios: any = {
         "id": 8,
         "name": "Sandro",
         "lastName": "Torres",
-        "image": "/Voluntarios/Sandrotorres.webp",
+        "image": "/Voluntarios/SandroTorres.webp",
         "genre": "male",
         "description": "Desarrollador de software y estudiante de ingeniería de sistemas en séptimo semestre con dominio en lenguajes como java, python,  Javascript, y experiencia manejando react, astro, nextjs y nestjs para la creación de soluciones tecnológicas así como en el desarrollo de videojuegos con unity.",
         "confirmed": true
