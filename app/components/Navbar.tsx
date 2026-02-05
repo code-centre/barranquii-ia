@@ -114,6 +114,13 @@ export default function Navbar({ }) {
                 <ul ref={dropdownRef} className="absolute top-full z-10 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm shadow-xl rounded-lg mt-2 min-w-max transition-all duration-300 ease-in-out opacity-100 visible">
                   <div className="py-3 px-5 bg-black/70 rounded-lg shadow-md">
                     <Link
+                      href="/barranqui-ia/2026"
+                      className="block py-2 px-3 mb-2 text-white hover:text-purple-700 font-medium text-sm rounded-md transition-colors duration-200 whitespace-nowrap"
+                      onClick={() => setBarranquiaDropdownOpen(false)}
+                    >
+                      Barranqui-IA 2026
+                    </Link>
+                    <Link
                       href="/barranqui-ia/2025"
                       className="block py-2 px-3 mb-2 text-white hover:text-purple-700 font-medium text-sm rounded-md transition-colors duration-200 whitespace-nowrap"
                       onClick={() => setBarranquiaDropdownOpen(false)}
