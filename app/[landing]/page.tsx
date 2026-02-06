@@ -67,7 +67,7 @@ export function generateMetadata({ params }: { params: { landing: string } }): M
 
 export default function LandingPage({ params }: { params: { landing: string } }) {
 	if (params.landing === 'barranqui-ia') {
-		return redirect('/barranqui-ia/2025')
+		return redirect('/barranqui-ia/2026')
 	}
 
 
