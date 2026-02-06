@@ -88,6 +88,11 @@ export const FAQS_CARIBE_IA: FAQGroup[] = [
                 answer:
                     "Generalmente se priorizan proyectos surgidos en los hackatones, pero podríamos abrir convocatorias externas en casos excepcionales. ¡Mantente atento!",
             },
+            {
+                question: "¿Cómo se seleccionan los proyectos para incubación?",
+                answer:
+                    "Los proyectos se seleccionan basándose en varios criterios: potencial técnico y de negocio, viabilidad del MVP desarrollado durante el hackatón, compromiso del equipo, y alineación con los objetivos del programa. El proceso de selección es transparente y comunicado a todos los participantes.",
+            },
         ],
     },
     {
@@ -112,6 +117,16 @@ export const FAQS_CARIBE_IA: FAQGroup[] = [
                 question: "¿Qué beneficios reciben los inversionistas?",
                 answer:
                     "Los inversionistas podrán participar en la etapa temprana de una startup, con posibilidad de retorno según el modelo propuesto por cada equipo (revenue share, equity, recompensas, etc.).",
+            },
+        ],
+    },
+    {
+        title: "🏢 Empresas",
+        faqs: [
+            {
+                question: "¿Qué obtiene una empresa aliada (pilotos, talento, visibilidad)?",
+                answer:
+                    "Las empresas aliadas obtienen múltiples beneficios: acceso a soluciones de IA desarrolladas por talento del Caribe para resolver sus retos específicos, oportunidad de pilotos con startups validadas, visibilidad de marca en eventos y comunicaciones del programa, y acceso a talento técnico especializado en IA para posibles contrataciones o colaboraciones.",
             },
         ],
     },

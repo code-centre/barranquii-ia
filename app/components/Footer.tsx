@@ -131,21 +131,48 @@ export default function Footer({ landing: propLanding }: FooterProps) {
             </div>
           </address>
 
-          {/* Caribe Ventures */}
-          <div>
-            <h2 className={`${textColor} font-bold text-xl mb-6`}>Caribe Ventures</h2>
-            <p className={`${textSecondaryColor} text-sm leading-relaxed mb-4`}>
-              Aceleradora de startups tecnológicas del Caribe colombiano.
-            </p>
-            <a
-              href="https://caribeventures.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${textSecondaryColor} text-sm hover:opacity-80 transition-opacity inline-block`}
-            >
-              Visitar sitio web →
-            </a>
-          </div>
+          {/* Links */}
+          <nav aria-label="Enlaces importantes">
+            <h2 className={`${textColor} font-bold text-xl mb-6`}>Enlaces</h2>
+            <ul className={`flex flex-col space-y-3 ${textSecondaryColor} text-sm`}>
+              <li>
+                <a
+                  href="https://caribeventures.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  Caribe Ventures →
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://techcaribefest.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  TechCaribe Fest →
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  Caribe-IA
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:contacto@codigoabierto.tech"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  Contacto
+                </a>
+              </li>
+            </ul>
+          </nav>
 
           {/* Redes sociales */}
           <nav aria-label="Redes sociales">
@@ -191,8 +218,19 @@ export default function Footer({ landing: propLanding }: FooterProps) {
         {/* Línea divisoria */}
         <hr className={`border-t ${landing === 'cartagen-ia' ? 'border-gray-800' : 'border-white/20'} my-8`} />
 
-        {/* Copyright */}
-        <div className="text-center">
+        {/* Powered by & Copyright */}
+        <div className="text-center space-y-2">
+          <p className={`text-sm ${textSecondaryColor}`}>
+            Powered by{' '}
+            <a
+              href="https://caribeventures.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold hover:opacity-80 transition-opacity"
+            >
+              Caribe Ventures
+            </a>
+          </p>
           <p className={`text-sm ${textSecondaryColor}`}>
             © {new Date().getFullYear()} Fundación Código Abierto. Todos los derechos reservados.
           </p>

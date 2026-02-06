@@ -20,7 +20,7 @@ export const TITLES: Record<string, string> = {
 }
 
 const SUBTITLES: Record<string, string> = {
-  'default': 'El programa integral para crear startups de alto impacto en IA desde la región Caribe de Colombia.',
+  'default': 'El programa que transforma talento del Caribe en startups de inteligencia artificial listas para el mercado.',
   'barranqui-ia': 'El primer hackatón de inteligencia artificial en el Caribe | Segunda Edición',
   'samar-ia': 'El primer hackatón de inteligencia artificial en el Caribe | Edición Santa Marta',
   'cartagen-ia': 'El primer hackatón de inteligencia artificial en el Caribe | Edición Cartagena'
