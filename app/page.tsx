@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://www.caribe-ia.com",
     images: [
       {
-        url: "/portada-caribe.png",
+        url: "https://www.caribe-ia.com/portada-caribe.png",
         width: 1200,
         height: 630,
         alt: "Caribe-IA 2026 - Programa de startups de IA",
@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Caribe-IA 2026",
     description: "El programa que transforma talento del Caribe en startups de IA listas para el mercado.",
+    images: ["https://www.caribe-ia.com/portada-caribe.png"],
   },
   alternates: {
     canonical: "/",

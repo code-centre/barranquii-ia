@@ -60,7 +60,7 @@ export function generateMetadata({ params }: Props): Metadata {
 			type: 'website',
 			images: [
 				{
-					url: "/opengraph-image.jpg",
+					url: "https://www.caribe-ia.com/portada.png",
 					width: 1200,
 					height: 630,
 					alt: `${name} ${year}`,
@@ -71,6 +71,7 @@ export function generateMetadata({ params }: Props): Metadata {
 			card: "summary_large_image",
 			title: `${name} ${year}`,
 			description: `${name} ${year}: Hackatón de inteligencia artificial en el Caribe colombiano.`,
+			images: ["https://www.caribe-ia.com/portada.png"],
 		},
 		alternates: {
 			canonical: `/${params.landing}/${year}`,
@@ -137,7 +138,7 @@ export default function EditionPerYearPage({ params }: Props) {
 			name: "Caribe-IA",
 			url: "https://www.caribe-ia.com",
 		},
-		image: "https://www.caribe-ia.com/opengraph-image.jpg",
+		image: "https://www.caribe-ia.com/portada.png",
 		offers: {
 			"@type": "Offer",
 			url: `https://www.caribe-ia.com/${params.landing}/${year}`,
