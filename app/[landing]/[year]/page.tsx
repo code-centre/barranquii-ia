@@ -20,7 +20,6 @@ const LIST_OF_EDITION: {landing: string; editions: { [key: string]: React.ReactN
 ]
 
 export default function EditionPerYearPage({ params }: Props) {
-	console.log(params)
 	return (
 		<>
 		{LIST_OF_EDITION.find((edition) => edition.landing === params.landing)?.editions[params.year]}

@@ -1,23 +1,116 @@
-import React from 'react';
+"use client";
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function NavigationIsland() {
-    return (
-        <nav className="relative z-10 flex justify-center items-center px-8 py-4">
-            <div className="relative flex items-center space-x-8 p-2 rounded-full border border-purple-500 bg-purple-900 bg-opacity-30 backdrop-filter backdrop-blur-lg">
-                <Link href="#" className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                    Caribe-IA
+  const [activeSection, setActiveSection] = useState<string>('');
+
+  useEffect(() => {
+    const sections = ['hero', 'que-es', 'experiencia', 'boletos'];
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0.3,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    // Fallback: detectar por scroll position
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 200;
+      
+      sections.forEach((sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(sectionId);
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const navLinks = [
+    { href: '/', label: 'Caribe-IA', id: 'hero', isLogo: true },
+    { href: '#que-es', label: '¿Qué es Barranqui-IA?', id: 'que-es' },
+    { href: '#experiencia', label: 'Experiencia', id: 'experiencia' },
+    { href: '#boletos', label: 'Boletos', id: 'boletos' },
+  ];
+
+  return (
+    <nav className="z-[9999] fixed top-10 left-1/2 transform -translate-x-1/2 flex justify-center items-center px-8 py-4">
+      {/* Wrapper with animated gradient border */}
+      <div
+        className="relative rounded-full p-[2px] animate-gradient-border"
+        style={{
+          background:
+            'linear-gradient(45deg, #a855f7, #ec4899, #3b82f6, #8b5cf6, #a855f7)',
+          backgroundSize: '300% 300%',
+        }}
+      >
+        {/* Navigation container with glassmorphism - transparent background with blur */}
+        <div className="relative flex items-center space-x-6 md:space-x-8 px-6 md:px-8 py-3 md:py-4 rounded-full bg-black/90 backdrop-blur-2xl backdrop-saturate-150">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+
+            if (link.isLogo) {
+              return (
+                <Link
+                  key={link.id}
+                  href={link.href}
+                  className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent hover:from-blue-300 hover:to-purple-300 transition-all duration-300"
+                >
+                  {link.label}
                 </Link>
-                <Link href="#" className="text-white hover:text-purple-300 transition-colors">
-                    ¿Qué es Barranqui-IA?
-                </Link>
-                <Link href="#" className="text-white hover:text-purple-300 transition-colors">
-                    Experiencia
-                </Link>
-                <Link href="#" className="text-white hover:text-purple-300 transition-colors">
-                    Boletos
-                </Link>
-            </div>
-        </nav>
-    );
+              );
+            }
+
+            return (
+              <Link
+                key={link.id}
+                href={link.href}
+                className={`relative text-sm md:text-base font-medium transition-all duration-300 ${
+                  isActive
+                    ? 'text-white drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]'
+                    : 'text-white/70 hover:text-white'
+                }`}
+              >
+                {link.label}
+                {isActive && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full shadow-[0_0_8px_rgba(168,85,247,0.8)] animate-glow-pulse" />
+                )}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </nav>
+  );
 }

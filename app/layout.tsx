@@ -8,8 +8,7 @@ import {
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import GalacticCursorEffect from '@/app/cursorEffect';
+import ConditionalNavbar from "./components/ConditionalNavbar";
 
 // Definimos los pesos para las fuentes
 const poppins = Poppins({
@@ -75,7 +74,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${leagueSpartan.variable} font-sans relative w-full overflow-hidden`}
       >
-        <Navbar />
+        <ConditionalNavbar />
         {children}
         {/* <GalacticCursorEffect /> */}
         <Footer />
