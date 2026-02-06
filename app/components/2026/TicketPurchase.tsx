@@ -38,20 +38,22 @@ export default function TicketPurchase() {
 
         {/* Ticket Stages */}
         <article className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {/* Primera etapa - Preventa - Habilitada */}
+          {/* Primera etapa - Preventa - Deshabilitada */}
           <motion.section
-            className="bg-purple-900/20 backdrop-blur-sm rounded-lg p-8 border border-purple-500/50 flex flex-col items-center text-center"
+            className="bg-purple-900/10 backdrop-blur-sm rounded-lg p-8 border border-purple-500/20 flex flex-col items-center text-center opacity-50"
             initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 0.5, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
           >
-            <h3 className="text-2xl font-bold text-purple-400 mb-4">Preventa</h3>
-            <p className="text-4xl font-extrabold text-white mb-2">$120,000 COP</p>
-            <p className="text-gray-300 mb-6">5 de Febrero al 28 de Febrero</p>
-            <button className="bg-yellow-400 text-purple-900 font-bold py-3 px-8 rounded-full hover:bg-yellow-300 transition-colors duration-300">
-              Compra tu boleto
+            <h3 className="text-2xl font-bold text-gray-500 mb-4">Preventa</h3>
+            <p className="text-4xl font-extrabold text-gray-400 mb-2 line-through">$120,000 COP</p>
+            <p className="text-gray-400 mb-6">8 de Febrero al 28 de Febrero</p>
+            <button
+              className="bg-gray-600 text-gray-300 font-bold py-3 px-8 rounded-full cursor-not-allowed opacity-70"
+              disabled
+            >
+              Muy pronto
             </button>
           </motion.section>
 

@@ -44,7 +44,7 @@ function LoadingThankYouPage() {
 function ThankYouContent() {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
-  const [ticketType, setTicketType] = useState("taller");
+  const [ticketType, setTicketType] = useState("preventa");
   const [statusTransaction, setStatusTransaction] = useState("APPROVED");
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(true);
@@ -52,21 +52,25 @@ function ThankYouContent() {
 
   useEffect(() => {
     const getStatusTransaction = async () => {
-      const resp = await fetch(
-        `https://sandbox.wompi.co/v1/transactions/${id}`
-      );
-      const { data } = await resp.json();
-      setStatusTransaction(data.status);
-      setLoading(false);
+      if (!id) {
+        setLoading(false);
+        return;
+      }
+      try {
+        const resp = await fetch(
+          `https://production.wompi.co/v1/transactions/${id}`
+        );
+        const { data } = await resp.json();
+        setStatusTransaction(data.status);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching transaction:", err);
+        setLoading(false);
+      }
     };
 
     getStatusTransaction();
-
-    if (!id || statusTransaction !== "APPROVED") {
-      router.push("/");
-      return;
-    }
-  }, [statusTransaction]);
+  }, [id]);
 
   useEffect(() => {
     if (statusTransaction === "APPROVED") {
@@ -81,15 +85,18 @@ function ThankYouContent() {
               }),
             }
           );
-          const user = await resp.json();
-          setUser(user);
+          const userData = await resp.json();
+          setUser(userData);
+          if (userData.ticketType) {
+            setTicketType(userData.ticketType.toLowerCase());
+          }
         } catch (err) {
           console.log(err);
         }
       };
       updateUser();
     }
-  }, [id, user?.id, statusTransaction]);
+  }, [id, statusTransaction]);
 
   return (
     <section className="flex flex-col justify-center gap-20 mx-5 py-20 min-h-screen">
@@ -104,10 +111,9 @@ function ThankYouContent() {
               ¡Gracias!
             </h1>
             <p className="max-w-xl text-gray-300 md:text-base">
-              Felicidades, ahora eres parte de Barranqui-IA, pon en forma tu
-              habilidades con inteligencia artificial asistiendo a alguno de los
-              talleres de Pre-Hackatón y prepárate para una experiencia
-              inolvidable.
+              Felicidades, ahora eres parte de Barranqui-IA 2026. Prepárate para una experiencia
+              inolvidable del 1 al 3 de mayo, donde construirás el futuro desde el Caribe con
+              Inteligencia Artificial.
             </p>
 
             <p>
