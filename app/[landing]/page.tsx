@@ -47,7 +47,7 @@ export function generateMetadata({ params }: { params: { landing: string } }): M
 			url: `https://www.caribe-ia.com/${params.landing}`,
 			images: [
 				{
-					url: "/opengraph-image.jpg",
+					url: "/portada.png",
 					width: 1200,
 					height: 630,
 					alt: `${name} ${year}`,

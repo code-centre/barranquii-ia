@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://www.caribe-ia.com",
     images: [
       {
-        url: "/opengraph-image.jpg",
+        url: "/portada-caribe.png",
         width: 1200,
         height: 630,
         alt: "Caribe-IA 2026 - Programa de startups de IA",
