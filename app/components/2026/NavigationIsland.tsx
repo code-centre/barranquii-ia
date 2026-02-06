@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 export default function NavigationIsland() {
   const [activeSection, setActiveSection] = useState<string>('');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const sections = ['hero', 'que-es', 'experiencia', 'boletos'];
@@ -64,53 +65,123 @@ export default function NavigationIsland() {
     { href: '#boletos', label: 'Boletos', id: 'boletos' },
   ];
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <nav className="z-[9999] fixed top-10 left-1/2 transform -translate-x-1/2 flex justify-center items-center px-8 py-4">
-      {/* Wrapper with animated gradient border */}
-      <div
-        className="relative rounded-full p-[2px] animate-gradient-border"
-        style={{
-          background:
-            'linear-gradient(45deg, #a855f7, #ec4899, #3b82f6, #8b5cf6, #a855f7)',
-          backgroundSize: '300% 300%',
-        }}
-      >
-        {/* Navigation container with glassmorphism - transparent background with blur */}
-        <div className="relative flex items-center space-x-6 md:space-x-8 px-6 md:px-8 py-3 md:py-4 rounded-full bg-black/90 backdrop-blur-2xl backdrop-saturate-150">
-          {navLinks.map((link) => {
-            const isActive = activeSection === link.id;
+    <>
+      <nav className="z-[9999] fixed top-10 left-1/2 transform -translate-x-1/2 flex justify-center items-center px-4 md:px-8 py-4">
+        {/* Wrapper with animated gradient border */}
+        <div
+          className="relative rounded-full p-[2px] animate-gradient-border"
+          style={{
+            background:
+              'linear-gradient(45deg, #a855f7, #ec4899, #3b82f6, #8b5cf6, #a855f7)',
+            backgroundSize: '300% 300%',
+          }}
+        >
+          {/* Navigation container with glassmorphism - transparent background with blur */}
+          <div className="relative flex items-center space-x-4 md:space-x-8 px-4 md:px-8 py-3 md:py-4 rounded-full bg-black/90 backdrop-blur-2xl backdrop-saturate-150">
+            {/* Logo - siempre visible */}
+            <Link
+              href="/"
+              className="text-base md:text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent hover:from-blue-300 hover:to-purple-300 transition-all duration-300"
+            >
+              Caribe-IA
+            </Link>
 
-            if (link.isLogo) {
-              return (
-                <Link
-                  key={link.id}
-                  href={link.href}
-                  className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent hover:from-blue-300 hover:to-purple-300 transition-all duration-300"
-                >
-                  {link.label}
-                </Link>
-              );
-            }
+            {/* Desktop Navigation - hidden on mobile */}
+            <div className="hidden md:flex items-center space-x-6">
+              {navLinks.slice(1).map((link) => {
+                const isActive = activeSection === link.id;
+                return (
+                  <Link
+                    key={link.id}
+                    href={link.href}
+                    className={`relative text-sm md:text-base font-medium transition-all duration-300 ${
+                      isActive
+                        ? 'text-white drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]'
+                        : 'text-white/70 hover:text-white'
+                    }`}
+                  >
+                    {link.label}
+                    {isActive && (
+                      <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full shadow-[0_0_8px_rgba(168,85,247,0.8)] animate-glow-pulse" />
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
 
-            return (
-              <Link
-                key={link.id}
-                href={link.href}
-                className={`relative text-sm md:text-base font-medium transition-all duration-300 ${
-                  isActive
-                    ? 'text-white drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]'
-                    : 'text-white/70 hover:text-white'
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMobileMenu}
+              className="md:hidden flex flex-col justify-center items-center w-6 h-6 space-y-1.5 focus:outline-none"
+              aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
+            >
+              <span
+                className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+                  isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
                 }`}
-              >
-                {link.label}
-                {isActive && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full shadow-[0_0_8px_rgba(168,85,247,0.8)] animate-glow-pulse" />
-                )}
-              </Link>
-            );
-          })}
+              />
+              <span
+                className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+                  isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
+                }`}
+              />
+              <span
+                className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+                  isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                }`}
+              />
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="fixed top-24 left-1/2 transform -translate-x-1/2 z-[9998] w-[90%] max-w-sm">
+          <div className="relative rounded-2xl p-[2px] animate-gradient-border" style={{
+            background: 'linear-gradient(45deg, #a855f7, #ec4899, #3b82f6, #8b5cf6, #a855f7)',
+            backgroundSize: '300% 300%',
+          }}>
+            <div className="bg-black/95 backdrop-blur-2xl backdrop-saturate-150 rounded-2xl p-4">
+              {navLinks.slice(1).map((link) => {
+                const isActive = activeSection === link.id;
+                return (
+                  <Link
+                    key={link.id}
+                    href={link.href}
+                    onClick={handleLinkClick}
+                    className={`block py-3 px-4 text-base font-medium transition-all duration-300 rounded-lg mb-2 last:mb-0 ${
+                      isActive
+                        ? 'text-white bg-purple-500/20 drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]'
+                        : 'text-white/70 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Overlay para cerrar el menú al hacer clic fuera */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[9997] md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+    </>
   );
 }

@@ -130,25 +130,55 @@ export default function Navbar({ }) {
         {/* Botón de menú móvil */}
         <button
           onClick={() => setOpenMenu(!openMenu)}
-          className="text-white text-2xl focus:outline-none block lg:hidden"
+          className="text-white focus:outline-none block lg:hidden relative w-8 h-8 flex items-center justify-center"
+          aria-label="Toggle menu"
+          aria-expanded={openMenu}
         >
-          {openMenu ? <CloseIcon /> : <MenuIcon />}
+          <div className="flex flex-col justify-center items-center w-6 h-6 space-y-1.5">
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                openMenu ? 'rotate-45 translate-y-2' : ''
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                openMenu ? 'opacity-0' : 'opacity-100'
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                openMenu ? '-rotate-45 -translate-y-2' : ''
+              }`}
+            />
+          </div>
         </button>
       </nav>
+
+      {/* Overlay para cerrar el menú al hacer clic fuera */}
+      {openMenu && (
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[49] lg:hidden"
+          onClick={() => setOpenMenu(false)}
+        />
+      )}
 
       {/* Menú móvil: mejor adaptación a pantallas pequeñas */}
       <div
         className={`fixed top-0 right-0 ${screenWidth < 400 ? "w-4/5" : "w-3/4 sm:w-2/3"
-          } h-full bg-black/40  backdrop-blur-lg shadow-lg lg:hidden z-50 
+          } h-full bg-black/95 backdrop-blur-xl shadow-2xl lg:hidden z-50 
         transform ${openMenu ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 ease-in-out`}
       >
-        <button
-          onClick={() => setOpenMenu(false)}
-          className="absolute top-5 right-5 text-white text-3xl"
-        >
-          <CloseIcon />
-        </button>
-        <ul className="flex flex-col items-start pt-16 pl-6 space-y-6 text-lg sm:text-xl">
+        <div className="flex justify-between items-center px-6 pt-6 pb-4 border-b border-white/10">
+          <h2 className="text-white font-bold text-xl">Menú</h2>
+          <button
+            onClick={() => setOpenMenu(false)}
+            className="text-white focus:outline-none"
+            aria-label="Close menu"
+          >
+            <CloseIcon />
+          </button>
+        </div>
+        <ul className="flex flex-col items-start pt-6 pl-6 pr-6 space-y-4 text-lg sm:text-xl overflow-y-auto h-[calc(100vh-100px)]">
           {sectionsPage.map((section) => {
             return (
               <li
