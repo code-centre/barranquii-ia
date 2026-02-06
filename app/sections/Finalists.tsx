@@ -176,15 +176,15 @@ export default function Finalists({ landing }: Props) {
 						</div>
 					</div>
 					<div className='flex flex-wrap justify-center mt-5 gap-5'>
-						{
-							topSevenFinalists.map((finalist) => {
-								if (finalist instanceof Array) {
-									return (
-										<div className='flex flex-col md:flex-row w-full gap-4 justify-center mb-14'>
-											{
-												finalist.map((finalist) => {
-													return (
-														<div onMouseEnter={() => setShowDescription({ id: finalist.id, show: true })} onMouseLeave={() => setShowDescription({ id: finalist.id, show: false })} className={`${topSevenFinalistsStyles} ${finalist.videoUrl ? 'mb-12' : ''}`}>
+					{
+						topSevenFinalists.map((finalist, index) => {
+							if (finalist instanceof Array) {
+								return (
+									<div key={`group-${index}`} className='flex flex-col md:flex-row w-full gap-4 justify-center mb-14'>
+										{
+											finalist.map((finalist) => {
+												return (
+													<div key={finalist.id} onMouseEnter={() => setShowDescription({ id: finalist.id, show: true })} onMouseLeave={() => setShowDescription({ id: finalist.id, show: false })} className={`${topSevenFinalistsStyles} ${finalist.videoUrl ? 'mb-12' : ''}`}>
 															<span className='absolute top-0 left-2 text-xl font-mono font-bold'>{finalist.id}.</span>
 															<p className='font-medium'>{finalist.project}</p>
 															{
@@ -203,9 +203,9 @@ export default function Finalists({ landing }: Props) {
 											}
 										</div>
 									)
-								} else {
-									return (
-										<div onMouseEnter={() => setShowDescription({ id: finalist.id, show: true })} onMouseLeave={() => setShowDescription({ id: finalist.id, show: false })} className={topSevenFinalistsStyles}>
+							} else {
+								return (
+									<div key={finalist.id} onMouseEnter={() => setShowDescription({ id: finalist.id, show: true })} onMouseLeave={() => setShowDescription({ id: finalist.id, show: false })} className={topSevenFinalistsStyles}>
 											<span className='absolute top-0 left-2 text-xl font-mono font-bold'>{finalist.id}.</span>
 											<p className='font-medium'>{finalist.project}</p>
 											{
