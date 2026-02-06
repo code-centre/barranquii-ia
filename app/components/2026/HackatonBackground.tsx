@@ -15,7 +15,7 @@ const HackatonText = ({ text, position, rotation, variant, size }: HackatonTextP
     fontWeight: 900,
     letterSpacing: '0.1em',
     userSelect: 'none',
-    opacity: 0.15,
+    opacity: 0.2,
     transform: `rotate(${rotation}deg)`,
     ...position,
   };
@@ -25,7 +25,7 @@ const HackatonText = ({ text, position, rotation, variant, size }: HackatonTextP
       <h1
         style={{
           ...baseStyle,
-          WebkitTextStroke: '1px rgba(255, 255, 255, 0.3)',
+          WebkitTextStroke: '1px rgba(255, 255, 255, 0.4)',
           WebkitTextFillColor: 'transparent',
           color: 'transparent',
         }}
@@ -39,7 +39,7 @@ const HackatonText = ({ text, position, rotation, variant, size }: HackatonTextP
     <h1
       style={{
         ...baseStyle,
-        color: 'rgba(255, 255, 255, 0.15)',
+        color: 'rgba(255, 255, 255, 0.2)',
       }}
     >
       {text}
@@ -75,7 +75,7 @@ export default function HackatonBackground() {
   ];
 
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+    <div className="fixed inset-0 z-[1] pointer-events-none overflow-visible" style={{ position: 'fixed' }}>
       {hackatonInstances.map((instance, index) => (
         <HackatonText
           key={index}
