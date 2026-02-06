@@ -34,6 +34,7 @@ model User {
   paymentLinkId  String?          @db.VarChar(255)
   paymentAmount  Int
   ticketType     TicketType
+  year           Int              @default(2026)
 }
 
 model Testimonials {
@@ -49,6 +50,7 @@ enum TicketType {
   GENERAL
   COMPLETO
   TALLER
+  PREVENTA
 }
 
 enum IdType {

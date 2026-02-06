@@ -43,11 +43,12 @@ export default function FormContentPage() {
 function FormContent() {
   const [sleepAtPlace, setSleepAtPlace] = useState("NO");
   const [discountCoupon, setDiscountCoupon] = useState("");
-  const [price, setPrice] = useState(100000);
+  const [price, setPrice] = useState(120000);
   const router = useRouter();
   const searchParams = useSearchParams();
 
   const ticketType = searchParams.get("mode");
+  const year = searchParams.get("year");
 
   const {
     register,
@@ -57,28 +58,20 @@ function FormContent() {
   } = useForm<Inputs>();
 
   useEffect(() => {
-    const calculatePrice = () => {
-      switch (discountCoupon.toUpperCase()) {
-        case process.env.NEXT_PUBLIC_DiSCOUNT_COUPON_UNINORTE:
-          setPrice(60000);
-          break;
-        case process.env.NEXT_PUBLIC_DiSCOUNT_COUPON:
-          setPrice(80000);
-          break;
-        default:
-          setPrice(100000);
-      }
-    };
-
-    calculatePrice();
-  }, [discountCoupon]);
-
-  useEffect(() => {
-    router.push('/')
-  }, [])
+    // Set default price based on ticket type
+    if (ticketType === "preventa") {
+      setPrice(120000);
+    } else {
+      setPrice(120000);
+    }
+  }, [ticketType]);
 
   const onSubmit: SubmitHandler<Inputs> = async (data: Inputs) => {
-    let paymentLink = await createPaymentId("taller", 40000);
+    const ticketTypeValue = ticketType === "preventa" ? "PREVENTA" : "GENERAL";
+    const amount = price;
+    const eventYear = year ? parseInt(year) : 2026;
+    
+    let paymentLink = await createPaymentId(ticketTypeValue.toLowerCase(), amount, eventYear);
     await createUser(
       {
         name: data.name,
@@ -94,9 +87,10 @@ function FormContent() {
         emergencyName: data.nameEmergency,
         emergencyPhone: data.phoneEmergency,
         isStaying: sleepAtPlace,
-        paymentAmount: 40000,
-        ticketType: "TALLER",
+        paymentAmount: amount,
+        ticketType: ticketTypeValue,
         paymentLinkId: paymentLink.id,
+        year: eventYear,
       }
     );
 
@@ -430,21 +424,26 @@ const createUser = async (body: any) => {
   }
 };
 
-const createPaymentId = async (type: string, amount: number) => {
+const createPaymentId = async (type: string, amount: number, year: number = 2026) => {
   try {
+    const eventName = type === "preventa" 
+      ? "Entrada Preventa - Hackatón Barranqui-IA 2026"
+      : "Entrada General - Hackatón Barranqui-IA 2026";
+    const eventDescription = `Entrada al Hackatón Barranqui-IA ${year}. El evento tendrá lugar del 1 al 3 de mayo de ${year} en Barranquilla, Atlántico.`;
+    
     const resp = await fetch(`https://production.wompi.co/v1/payment_links`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_WOMPI_SECRET_KEY}`,
       },
       body: JSON.stringify({
-        name: "Entrada Limitada - Hackatón Barranqui-IA",
-        description: "Entrada a los 6 talleres especializados de Barranqui-IA, dictados por Google Developer Experts, el sábado 4 de 2pm a 7pm.",
+        name: eventName,
+        description: eventDescription,
         single_use: true,
         collect_shipping: false,
         amount_in_cents: amount * 100,
         currency: "COP",
-        redirect_url: "http://barranquiia.com/tickets/confirmacion",
+        redirect_url: "https://caribe-ia.com/tickets/confirmacion",
       }),
     });
     const createdLink = await resp.json();

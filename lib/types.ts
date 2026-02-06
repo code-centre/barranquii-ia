@@ -19,6 +19,7 @@ export interface User {
   paymentAmount: number;
   ticketType: TicketType;
   paymentLinkId?: String;
+  year?: number;
 }
 
 export enum IdType {
@@ -46,4 +47,6 @@ enum FoodRestriction {
 enum TicketType {
   GENERAL,
   COMPLETO,
+  TALLER,
+  PREVENTA,
 }

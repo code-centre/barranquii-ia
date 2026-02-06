@@ -1,11 +1,13 @@
-export const THEME_LANDINGS: Record<string, { gradient: { from: string; via: string; to: string }; principal: string }> = {
+export const THEME_LANDINGS: Record<string, { gradient: { from: string; via: string; to: string }; principal: string; accent?: string; bgBase?: string }> = {
 	'default': {
 		gradient: {
-			from: '#FF97EF',
-			via: '#95977D',
-			to: '#6D0EAD'
+			from: '#6D0EAD',
+			via: '#FFFFFF',
+			to: '#FF97EF'
 		},
-		principal: '#C663EA'
+		principal: '#FF97EF',
+		accent: '#FFFFFF',
+		bgBase: '#1C1F2E'
 	},
 	'barranqui-ia': {
 		gradient: {

@@ -88,7 +88,7 @@ export default function PhasesSeason({ landing }: Props) {
                                 />
                             </div>
                             <div className="space-y-4">
-                                <h2 className="text-2xl font-bold">3.- Demo Day & Crowdfunding</h2>
+                                <h2 className="text-2xl font-bold">3.- Demo Day en Tech Caribe Fest</h2>
                                 <p>
                                     El Demo Day de Caribe-IA es un evento donde los equipos presentan sus startups ante audiencia de
                                     aliados, inversionistas, medios y comunidad.
