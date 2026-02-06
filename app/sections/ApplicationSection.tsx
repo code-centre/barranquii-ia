@@ -39,7 +39,7 @@ export default function ApplicationSection({ landing = 'default' }: Props) {
   }
 
   return (
-    <section id="postulate" className='py-20 md:py-28'>
+    <section id="apply" className='py-20 md:py-28'>
       <ScrollAnimation delay={0.1}>
         <div className='max-w-2xl mx-auto'>
           <Title title="Postúlate al programa" landing={landing} />

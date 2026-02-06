@@ -1,5 +1,14 @@
 import Wrapper from "@/app/components/Wrapper";
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Términos y Condiciones | Caribe-IA",
+  description: "Términos y condiciones y declaración de privacidad para participantes de Caribe-IA.",
+  alternates: {
+    canonical: "/tickets/terminos-y-condiciones",
+  },
+};
 
 export default function TermsAndConditions() {
   return (

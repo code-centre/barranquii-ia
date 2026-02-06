@@ -40,11 +40,20 @@ export default function Phases({ landing = 'default' }: Props) {
   const theme = THEME_LANDINGS[landing]
   const isDefault = landing === 'default'
 
+  const handleScrollTo = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
-    <section id="fechas" className='py-20 md:py-28'>
+    <section id="hack" aria-label="Participa en un hackatón" className='py-20 md:py-28'>
       <Title title="Participa en un hackatón" landing={landing} />
       
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12'>
+      
+      
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8'>
         {hackathons.map((hackathon, index) => (
           <ScrollAnimation key={hackathon.id} delay={index * 0.1} direction="up">
           <div className='venture-card p-6 lg:p-8 flex flex-col'>
@@ -83,7 +92,7 @@ export default function Phases({ landing = 'default' }: Props) {
             </p>
 
             {/* Description */}
-            <p className='text-white/70 text-sm lg:text-base mb-6 leading-relaxed flex-1'>
+            <p className='text-white/80 text-sm lg:text-base mb-6 leading-relaxed flex-1'>
               {hackathon.description}
             </p>
 
@@ -111,10 +120,60 @@ export default function Phases({ landing = 'default' }: Props) {
                 Próximamente
               </button>
             )}
+            
+            {/* Helper Text */}
+            <p className='text-white/50 text-xs mt-3 text-center'>
+              Los mejores equipos pueden avanzar a incubación o pilotear con empresas aliadas.
+            </p>
           </div>
         </ScrollAnimation>
         ))}
+
       </div>
+        {/* Outcomes Panel */}
+      <ScrollAnimation delay={0.05} direction="up">
+        <div className='venture-card p-6 lg:p-8 mt-8 mb-8'>
+          <h3 className='text-xl font-bold text-white mb-3'>
+            ¿Qué pasa después del hackatón?
+          </h3>
+          <p className='text-white/80 mb-4 leading-relaxed'>
+            Los proyectos con mejor potencial pueden continuar su camino en Caribe-IA.
+          </p>
+          <ul className='space-y-2 mb-4 text-white/80'>
+            <li className='flex items-start gap-2'>
+              <span style={{ color: isDefault ? '#FF97EF' : theme.principal }} className='mt-1.5'>•</span>
+              <span>Pasar a la incubación Caribe-IA (Build)</span>
+            </li>
+            <li className='flex items-start gap-2'>
+              <span style={{ color: isDefault ? '#FF97EF' : theme.principal }} className='mt-1.5'>•</span>
+              <span>Participar con empresas aliadas que proponen retos para pilotos y validación real</span>
+            </li>
+          </ul>
+          <p className='text-white/50 text-sm mb-4'>
+            Y presentar resultados en el Demo Day de TechCaribe Fest (Show)
+          </p>
+          <div className='flex flex-wrap gap-4 mt-4'>
+            <button
+              onClick={() => handleScrollTo('build')}
+              className='btn-tertiary text-sm'
+              style={{
+                color: isDefault ? '#FF97EF' : theme.principal
+              }}
+            >
+              Conocer incubación →
+            </button>
+            <button
+              onClick={() => handleScrollTo('empresas')}
+              className='btn-tertiary text-sm'
+              style={{
+                color: isDefault ? '#FF97EF' : theme.principal
+              }}
+            >
+              Soy empresa / propongo un reto →
+            </button>
+          </div>
+        </div>
+      </ScrollAnimation>
     </section>
   )
 }

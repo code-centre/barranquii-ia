@@ -22,6 +22,7 @@ export default function HeroSection({ landing }: HeroSectionProps) {
 
   return (
     <section
+      aria-label="Caribe-IA - Programa de startups de IA"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
         backgroundColor: isDefault ? theme.bgBase || '#1C1F2E' : '#000'
@@ -155,11 +156,11 @@ export default function HeroSection({ landing }: HeroSectionProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
-          className="flex flex-col sm:flex-row items-center gap-4 mb-16"
+          className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 mb-16"
         >
           <button
-            onClick={() => handleScrollTo('postulate')}
-            className="btn-primary"
+            onClick={() => handleScrollTo('apply')}
+            className="btn-primary focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-black"
             style={{
               backgroundColor: isDefault ? '#FFFFFF' : theme.accent || theme.principal,
               color: isDefault ? '#000000' : 'white'
@@ -168,8 +169,8 @@ export default function HeroSection({ landing }: HeroSectionProps) {
             Postulate al programa
           </button>
           <button
-            onClick={() => handleScrollTo('fechas')}
-            className="btn-secondary"
+            onClick={() => handleScrollTo('hack')}
+            className="btn-secondary focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-black"
             style={{
               borderColor: isDefault ? '#FF97EF' : theme.principal,
               color: isDefault ? '#FF97EF' : theme.principal
@@ -179,7 +180,7 @@ export default function HeroSection({ landing }: HeroSectionProps) {
           </button>
           <button
             onClick={() => handleScrollTo('empresas')}
-            className="btn-tertiary"
+            className="btn-tertiary focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-black"
             style={{
               color: isDefault ? '#FF97EF' : theme.principal
             }}

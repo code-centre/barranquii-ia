@@ -1,5 +1,14 @@
 import type { Metadata } from 'next'
 import React from 'react'
+
+export function generateStaticParams() {
+	return [
+		{ landing: 'barranqui-ia' },
+		// Add other landings when available
+		// { landing: 'cartagen-ia' },
+		// { landing: 'samar-ia' },
+	];
+}
 import Summary from '../sections/Summary'
 import PromoBar from '../components/PromoBar'
 import Expectations from '../sections/Expectations'
@@ -19,42 +28,42 @@ import Topics from '../sections/Topics'
 import SponsorsSection from '../sections/SponsorsSection'
 import Organizers from '../sections/Organizers'
 
-export const metadata: Metadata = {
-	title: "Barranqui-IA",
-	description:
-		"Barranqui-IA 2025: Hackatón de inteligencia artificial en el caribe, que no te digan que aquí no se hace tecnología.",
-	authors: [
-		{
-			name: "Fundación Código Abierto",
-			url: "https://fundacioncodigoabierto.com/",
+export function generateMetadata({ params }: { params: { landing: string } }): Metadata {
+	const landingNames: Record<string, string> = {
+		'barranqui-ia': 'Barranqui-IA',
+		'cartagen-ia': 'Cartagen-IA',
+		'samar-ia': 'Samar-IA',
+	};
+	
+	const name = landingNames[params.landing] || 'Caribe-IA';
+	const year = '2026';
+	
+	return {
+		title: `${name} ${year}`,
+		description: `${name} ${year}: Hackatón de inteligencia artificial en el Caribe colombiano. Participa en el evento de tecnología e IA más importante de la región.`,
+		openGraph: {
+			title: `${name} ${year}`,
+			description: `${name} ${year}: Hackatón de inteligencia artificial en el Caribe colombiano.`,
+			url: `https://www.caribe-ia.com/${params.landing}`,
+			images: [
+				{
+					url: "/opengraph-image.jpg",
+					width: 1200,
+					height: 630,
+					alt: `${name} ${year}`,
+				},
+			],
 		},
-	],
-	keywords: [
-		"Caribe-IA",
-		"Barranqui-IA",
-		"hackatón en Barranquilla",
-		"taller de tecnología",
-		"inteligencia artificial",
-		"innovación tecnológica",
-		"evento de TI",
-		"desarrollo de software",
-		"comunidad tecnológica",
-	],
-	openGraph: {
-		type: "website",
-		url: "https://www.barranquiia.com",
-		title: "Barranqui-IA 2025",
-		description:
-			"Participa en el principal Hackatón de inteligencia artificial en el caribe, que no te digan que aquí no se hace tecnología.",
-		siteName: "Barranqui-IA 2025",
-		images: [
-			{
-				url: "https://www.barranquiia.com/poster.jpg",
-			},
-		],
-		locale: "es_ES",
-	},
-};
+		twitter: {
+			card: "summary_large_image",
+			title: `${name} ${year}`,
+			description: `${name} ${year}: Hackatón de inteligencia artificial en el Caribe colombiano.`,
+		},
+		alternates: {
+			canonical: `/${params.landing}`,
+		},
+	};
+}
 
 export default function LandingPage({ params }: { params: { landing: string } }) {
 	if (params.landing === 'barranqui-ia') {

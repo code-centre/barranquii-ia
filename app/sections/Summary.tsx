@@ -32,7 +32,7 @@ export default function Summary({ landing }: Props) {
   const isDefault = landing === 'default'
 
   return (
-    <section id="que-es" className='flex flex-col gap-10 pt-20 md:pt-28'>
+    <section id="que-es" aria-label="¿Qué es Caribe-IA?" className='flex flex-col gap-10 pt-20 md:pt-28'>
       <Title title="¿Qué es Caribe-IA?" landing={landing} />
       
       {/* Manifesto */}
