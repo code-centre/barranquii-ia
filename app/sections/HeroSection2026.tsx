@@ -8,15 +8,15 @@ interface HeroSection2026Props {
 
 export default function HeroSection2026({ landing }: HeroSection2026Props) {
   return (
-    <header className="relative py-32">
+    <header className="relative py-32 min-h-[600px] md:min-h-[700px]" id="hero">
       {/* Background abstract shapes */}
       <div className="absolute inset-0" aria-hidden="true">
         <div
-          className="absolute top-0 left-15 w-96 h-96 bg-purple-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
+          className="absolute top-0 left-15 w-96 h-96 bg-purple-400/40 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
           style={{ animationDuration: '6s' }}
         />
         <div
-          className="absolute bottom-10 right-10 w-96 h-96 bg-pink-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
+          className="absolute bottom-10 right-10 w-96 h-96 bg-pink-400/40 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
           style={{ animationDuration: '16s' }}
         />
       </div>
@@ -31,8 +31,8 @@ export default function HeroSection2026({ landing }: HeroSection2026Props) {
         <p className="text-lg text-center mb-4" style={{ fontFamily: 'var(--font-poppinss)' }}>
           3ra Edición - 1 al 3 de Mayo
         </p>
-        <h1 className="text-6xl md:text-8xl font-bold text-center mb-6 relative">
-          <span className="relative inline-block bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent bg-[length:300%_auto] animate-gradient-shift drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
+        <h1 className="text-6xl md:text-8xl font-bold text-center mb-6 relative" style={{ minHeight: '120px' }}>
+          <span className="relative bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent bg-[length:300%_auto] animate-gradient-shift drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
             Barranqui-IA
           </span>
           <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer pointer-events-none">

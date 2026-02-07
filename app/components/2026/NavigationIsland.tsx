@@ -5,8 +5,15 @@ import Link from 'next/link';
 export default function NavigationIsland() {
   const [activeSection, setActiveSection] = useState<string>('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const sections = ['hero', 'que-es', 'experiencia', 'boletos'];
     
     const observerOptions = {
@@ -25,12 +32,15 @@ export default function NavigationIsland() {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    sections.forEach((sectionId) => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        observer.observe(element);
-      }
-    });
+    // Pequeño delay para asegurar que el DOM esté completamente renderizado
+    const timeoutId = setTimeout(() => {
+      sections.forEach((sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          observer.observe(element);
+        }
+      });
+    }, 100);
 
     // Fallback: detectar por scroll position
     const handleScroll = () => {
@@ -53,10 +63,11 @@ export default function NavigationIsland() {
     window.addEventListener('scroll', handleScroll);
     
     return () => {
+      clearTimeout(timeoutId);
       observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [mounted]);
 
   const navLinks = [
     { href: '/', label: 'Caribe-IA', id: 'hero', isLogo: true },
@@ -75,7 +86,7 @@ export default function NavigationIsland() {
 
   return (
     <>
-      <nav className="z-[9999] fixed top-10 left-1/2 transform -translate-x-1/2 flex justify-center items-center px-4 md:px-8 py-4">
+      <nav className="z-[9999] fixed top-10 left-1/2 transform -translate-x-1/2 flex justify-center items-center px-4 md:px-8 py-4" style={{ willChange: 'transform' }}>
         {/* Wrapper with animated gradient border */}
         <div
           className="relative rounded-full p-[2px] animate-gradient-border"

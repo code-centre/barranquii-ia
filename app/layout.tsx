@@ -134,6 +134,7 @@ export default function RootLayout({
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_KEY || ""} />
       <body
         className={`${poppins.variable} ${leagueSpartan.variable} font-sans relative w-full overflow-x-hidden`}
+        style={{ scrollBehavior: 'smooth' }}
       >
         <JsonLd data={organizationSchema} />
         <ConditionalNavbar />

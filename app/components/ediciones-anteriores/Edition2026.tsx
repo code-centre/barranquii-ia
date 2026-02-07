@@ -15,7 +15,7 @@ export default function Edition2026({ params }: { params: { landing: string } })
 	return (
 		<>
 			<HackatonBackground />
-			<main className="py-20 lg:py-28 xl:py-32 min-h-screen flex flex-col gap-20 md:gap-28 relative z-10">
+			<main className="py-20 lg:py-28 xl:py-32 min-h-screen flex flex-col gap-20 md:gap-28 relative z-10" style={{ minHeight: '100vh' }}>
 				<HeroSection2026 landing={params.landing} />
 				<ScrollAnimation delay={0.1}>
 					<AboutBarranquiIA />

@@ -75,7 +75,14 @@ export default function HackatonBackground() {
   ];
 
   return (
-    <div className="fixed inset-0 z-[1] pointer-events-none overflow-visible" style={{ position: 'fixed' }}>
+    <div 
+      className="fixed inset-0 z-[1] pointer-events-none overflow-visible" 
+      style={{ 
+        position: 'fixed',
+        willChange: 'transform',
+        transform: 'translateZ(0)',
+      }}
+    >
       {hackatonInstances.map((instance, index) => (
         <HackatonText
           key={index}
