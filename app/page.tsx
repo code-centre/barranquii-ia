@@ -14,26 +14,27 @@ import JsonLd from "./components/JsonLd";
 export const metadata: Metadata = {
   title: "Caribe-IA 2026",
   description:
-    "El programa que transforma talento del Caribe en startups de IA listas para el mercado. Participa en hackatones, accede a incubación de 12 semanas y presenta en el Demo Day de TechCaribe Fest.",
+    "El programa de innovación abieta que transforma talento del Caribe en startups de IA listas para el mercado. Participa en hackatones, accede a incubación de 12 semanas y presenta en el Demo Day de TechCaribe Fest.",
   openGraph: {
     title: "Caribe-IA 2026",
     description:
-      "El programa que transforma talento del Caribe en startups de IA listas para el mercado. Hackatones, incubación y Demo Day.",
+      "El programa de innovación abierta que transforma talento del Caribe en startups de IA listas para el mercado. Hackatones, incubación y Demo Day.",
     url: "https://www.caribe-ia.com",
     images: [
       {
-        url: "https://www.caribe-ia.com/portada-caribe.png",
-        width: 1200,
-        height: 630,
+        url: "https://www.caribe-ia.com/opengraph-image.png",
+        width: 2056,
+        height: 1494,
         alt: "Caribe-IA 2026 - Programa de startups de IA",
+        type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Caribe-IA 2026",
-    description: "El programa que transforma talento del Caribe en startups de IA listas para el mercado.",
-    images: ["https://www.caribe-ia.com/portada-caribe.png"],
+    description: "El programa de innovación abierta que transforma talento del Caribe en startups de IA listas para el mercado.",
+    images: ["https://www.caribe-ia.com/opengraph-image.png"],
   },
   alternates: {
     canonical: "/",
@@ -45,7 +46,7 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "Caribe-IA",
   url: "https://www.caribe-ia.com",
-  description: "El programa que transforma talento del Caribe en startups de IA listas para el mercado",
+  description: "El programa de innovación abierta que transforma talento del Caribe en startups de IA listas para el mercado",
   potentialAction: {
     "@type": "SearchAction",
     target: {

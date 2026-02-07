@@ -48,9 +48,10 @@ export function generateMetadata({ params }: { params: { landing: string } }): M
 			images: [
 				{
 					url: "https://www.caribe-ia.com/portada.png",
-					width: 1200,
-					height: 630,
+					width: 2178,
+					height: 1724,
 					alt: `${name} ${year}`,
+					type: "image/png",
 				},
 			],
 		},

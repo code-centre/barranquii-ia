@@ -87,10 +87,11 @@ export const metadata: Metadata = {
     siteName: "Caribe-IA",
     images: [
       {
-        url: "https://www.caribe-ia.com/portada-caribe.png",
-        width: 1200,
-        height: 630,
+        url: "https://www.caribe-ia.com/opengraph-image.png",
+        width: 2056,
+        height: 1494,
         alt: "Caribe-IA 2026 - Programa de startups de IA",
+        type: "image/png",
       },
     ],
     locale: "es_ES",
@@ -99,7 +100,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Caribe-IA 2026",
     description: "El programa que transforma talento del Caribe en startups de IA listas para el mercado.",
-    images: ["https://www.caribe-ia.com/portada-caribe.png"],
+    images: ["https://www.caribe-ia.com/opengraph-image.png"],
   },
   alternates: {
     canonical: "/",
@@ -111,7 +112,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Caribe-IA",
   url: "https://www.caribe-ia.com",
-  logo: "https://www.caribe-ia.com/portada-caribe.png",
+  logo: "https://www.caribe-ia.com/opengraph-image.png",
   description: "Programa que transforma talento del Caribe en startups de IA listas para el mercado",
   foundingOrganization: {
     "@type": "Organization",

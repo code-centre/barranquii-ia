@@ -134,7 +134,7 @@ export default function HeroSection({ landing }: HeroSectionProps) {
           transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }}
           className="text-xl md:text-2xl text-white/80 max-w-3xl mb-8 leading-relaxed"
         >
-          El programa que transforma talento del Caribe en startups de IA listas para el mercado.
+          El programa de innovación abierta que transforma talento del Caribe en startups de IA listas para el mercado.
         </motion.p>
 
         {/* Support Line */}
