@@ -6,7 +6,7 @@ interface Params {
   params: { id: string };
 }
 
-const resend = new Resend(process.env.API_KEY_RESEND);
+const resend = new Resend(process.env.API_KEY_RESEND || "re_placeholder");
 
 export async function POST(request: Request, { params }: Params) {
   const id = await request.json();

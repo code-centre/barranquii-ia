@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     url: "https://www.caribe-ia.com",
     images: [
       {
-        url: "https://www.caribe-ia.com/opengraph-image.png",
-        width: 2056,
-        height: 1494,
-        alt: "Caribe-IA 2026 - Programa de startups de IA",
+        url: "https://www.caribe-ia.com/caribe-ia-og.png",
+        width: 960,
+        height: 540,
+        alt: "Caribe-IA - Innovación abierta con Inteligencia Artificial desde el Caribe",
         type: "image/png",
       },
     ],
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Caribe-IA 2026",
     description: "El programa de innovación abierta que transforma talento del Caribe en startups de IA listas para el mercado.",
-    images: ["https://www.caribe-ia.com/opengraph-image.png"],
+    images: ["https://www.caribe-ia.com/caribe-ia-og.png"],
   },
   alternates: {
     canonical: "/",

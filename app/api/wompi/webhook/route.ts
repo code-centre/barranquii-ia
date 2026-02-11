@@ -3,7 +3,7 @@ import { Resend } from "resend";
 import prisma from "@/lib/prisma";
 import { EmailTemplate } from "../../../components/emailTemplate";
 
-const resend = new Resend(process.env.API_KEY_RESEND);
+const resend = new Resend(process.env.API_KEY_RESEND || "re_placeholder");
 
 export async function POST(request: Request) {
   try {
