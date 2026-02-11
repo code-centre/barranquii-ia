@@ -1,5 +1,4 @@
-import HeroSection from '@/app/sections/HeroSection'
-import Organizers from '@/app/sections/Organizers'
+import HeroSection2025 from '@/app/sections/HeroSection2025'
 import Summary2025 from '../2025/Summary2025'
 import React from 'react'
 import Topics2025 from '../2025/Topics2025'
@@ -17,6 +16,9 @@ import { voluntarios } from '@/app/utils/voluntarios2025'
 import { FINAL_MENTORS } from '@/app/utils/final-mentors-barranquiia'
 import Testimonios from '@/app/sections/Testimonios'
 import Finalists from '@/app/sections/Finalists'
+import VideoSection2025 from '../2025/VideoSection2025'
+import HackatonBackground from '../2026/HackatonBackground'
+import ScrollAnimation from '../2026/ScrollAnimation'
 
 export default function Edition2025({ params }: { params: { landing: string } }) {
 	const images = [
@@ -32,80 +34,106 @@ export default function Edition2025({ params }: { params: { landing: string } })
 		"/2025/9.jpg",
 		"/2025/10.jpg",
 		"/2025/11.jpg",
+		"/2025/12.png",
+		"/2025/13.png",
+		"/2025/14.png",
 	]
 
 	return (
-		<main className="py-20 lg:py-28 xl:py-32 min-h-screen flex flex-col gap-20 md:gap-28">
-			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
-				<HeroSection landing={params.landing} />
-			</div>
-			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
-				<Summary2025 landing={params.landing} />
-			</div>
-			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
-				<Finalists landing={params.landing} />
-			</div>
-			<div className='max-w-6xl mx-auto px-5 lg:px-10
-				 w-full'>
-				<Organizers landing={params.landing} />
-			</div>
-			<div className='max-w-6xl mx-auto px-5 lg:px-10 pt-20 w-full'>
-				<div className='mb-4 lg:mb-10'>
-					<Title
-						title="Gráficas y Datos del evento"
-						landing={params.landing}
-					/>
-				</div>
-				<p className='text-base lg:text-lg mb-5'>
-					Conoce a detalle la cantidad de asistentes, participantes y talleristas, que fueron parte de esta segunda edición de Barranqui-IA, el hackatón de inteligencia artificial más grande de la costa.
-				</p>
-				<AssistantsGraphics />
-			</div>
-			<div className='max-w-6xl w-full mx-auto px-5 lg:px-10'>
-				<Title
-					title="Galería"
-					landing={params.landing}
-					size='lg'
-				/>
-				<Gallery3D autoPlay={true} images={images} />
-			</div>
-			<div className='max-w-6xl mx-auto px-5 w-full'>
-				<Testimonios hackathon="barranqui-ia" year="2025">
-					<Title
-						title="Testimonios"
+		<>
+			<HackatonBackground />
+			<main className="py-20 lg:py-28 xl:py-32 min-h-screen flex flex-col gap-20 md:gap-28 relative z-10 bg-black text-white" style={{ minHeight: '100vh' }}>
+				<HeroSection2025 landing={params.landing} />
 
-						landing={params.landing}
-					/>
-				</Testimonios>
-			</div>
-			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
-				<Topics2025 landing={params.landing} />
-			</div>
-			<Location2025 landing={params.landing} />
-			<Mentors data={FINAL_MENTORS} landing={params.landing} year='2025' role="mentor">
-				<div className='max-w-6xl mx-auto px-5 lg:px-10  w-full'>
-					<Title
-						title="Mentores"
-						landing={params.landing}
-					/>
-				</div>
-			</Mentors>
-			<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
-				<SponsorsSection landing={params.landing} />
-			</div>
-			<div className='max-w-6xl mx-auto w-full  lg:pt-24'>
-				<Workshops landing={params.landing} />
-			</div>
-			<Sponsors landing={params.landing} />
-			<Mentors landing='barranqui-ia' year='2025' data={voluntarios} role="voluntario">
-				<div className='max-w-6xl mx-auto px-5 lg:px-10  w-full'>
-					<Title
-						title="Voluntarios"
-						landing={params.landing}
-					/>
-				</div>
-			</Mentors>
-			<FAQ data={FAQS_HACKATHONES} landing={params.landing} />
-		</main>
+				<ScrollAnimation delay={0.1}>
+					<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+						<Summary2025 landing={params.landing} />
+					</div>
+				</ScrollAnimation>
+
+				<ScrollAnimation delay={0.1}>
+					<VideoSection2025 />
+				</ScrollAnimation>
+
+				<ScrollAnimation delay={0.2}>
+					<section id="galeria" className='max-w-7xl w-full mx-auto px-5 lg:px-10 scroll-mt-24'>
+						<Gallery3D autoPlay={true} images={images} title="Momentos del hackatón" />
+					</section>
+				</ScrollAnimation>
+
+				<ScrollAnimation delay={0.1}>
+					<div className='max-w-6xl mx-auto px-5 lg:px-10 pt-20 w-full'>
+						<div className='mb-4 lg:mb-10'>
+							<Title
+								title="Gráficas y Datos del evento"
+								landing={params.landing}
+							/>
+						</div>
+						<p className='text-base lg:text-lg mb-5 text-gray-300'>
+							Conoce a detalle la cantidad de asistentes, participantes y talleristas, que fueron parte de esta segunda edición de Barranqui-IA, el hackatón de inteligencia artificial más grande de la costa.
+						</p>
+						<AssistantsGraphics />
+					</div>
+				</ScrollAnimation>
+
+				<ScrollAnimation delay={0.2}>
+					<div className='max-w-6xl mx-auto px-5 w-full'>
+						<Testimonios hackathon="barranqui-ia" year="2025">
+							<Title title="Testimonios" landing={params.landing} />
+						</Testimonios>
+					</div>
+				</ScrollAnimation>
+
+				<ScrollAnimation delay={0.1}>
+					<section id="resultados" className='max-w-6xl mx-auto px-5 lg:px-10 w-full scroll-mt-24'>
+						<Finalists landing={params.landing} />
+					</section>
+				</ScrollAnimation>
+
+				<ScrollAnimation delay={0.2}>
+					<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+						<Topics2025 landing={params.landing} />
+					</div>
+				</ScrollAnimation>
+
+				<ScrollAnimation delay={0.1}>
+					<Mentors data={FINAL_MENTORS} landing={params.landing} year='2025' role="mentor">
+						<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+							<Title title="Mentores" landing={params.landing} />
+						</div>
+					</Mentors>
+				</ScrollAnimation>
+
+				<ScrollAnimation delay={0.2}>
+					<Location2025 landing={params.landing} />
+				</ScrollAnimation>
+
+				<ScrollAnimation delay={0.1}>
+					<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+						<SponsorsSection landing={params.landing} />
+					</div>
+				</ScrollAnimation>
+
+				<ScrollAnimation delay={0.2}>
+					<div className='max-w-6xl mx-auto w-full lg:pt-24'>
+						<Workshops landing={params.landing} />
+					</div>
+				</ScrollAnimation>
+
+				<Sponsors landing={params.landing} />
+
+				<ScrollAnimation delay={0.1}>
+					<Mentors landing='barranqui-ia' year='2025' data={voluntarios} role="voluntario">
+						<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+							<Title title="Voluntarios" landing={params.landing} />
+						</div>
+					</Mentors>
+				</ScrollAnimation>
+
+				<ScrollAnimation delay={0.2}>
+					<FAQ data={FAQS_HACKATHONES} landing={params.landing} />
+				</ScrollAnimation>
+			</main>
+		</>
 	)
 }

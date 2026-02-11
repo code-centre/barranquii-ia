@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function HowToLiveHackaton() {
   return (
@@ -155,6 +156,24 @@ export default function HowToLiveHackaton() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
+            </div>
+            <div className="text-center">
+              <p className="text-gray-300 mb-2">Explora ediciones anteriores</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Link
+                  href="/barranqui-ia/2025"
+                  className="text-purple-400 hover:text-purple-300 font-medium underline underline-offset-2 transition-colors"
+                >
+                  Barranqui-IA 2025
+                </Link>
+                <span className="text-gray-500">·</span>
+                <Link
+                  href="/barranqui-ia/2024"
+                  className="text-purple-400 hover:text-purple-300 font-medium underline underline-offset-2 transition-colors"
+                >
+                  Barranqui-IA 2024
+                </Link>
+              </div>
             </div>
           </motion.aside>
         </div>
