@@ -3,8 +3,10 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useTranslation } from '@/app/i18n/useTranslation';
 
 export default function AboutBarranquiIA() {
+  const { t } = useTranslation();
   return (
     <section id="que-es" className="text-white relative overflow-hidden py-20">
       {/* Background elements */}
@@ -17,13 +19,11 @@ export default function AboutBarranquiIA() {
         <header>
           <h2 className="text-4xl font-bold mb-8">
             <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-              ¿Qué es Barranqui-IA?
+              {t('about.title')}
             </span>
           </h2>
           <p className="text-xl mb-12 mx-auto">
-            Barranqui-IA es un hackatón de 48 horas donde desarrolladores,
-            diseñadores, data lovers y builders se reúnen para crear
-            soluciones reales con IA.
+            {t('about.intro')}
           </p>
         </header>
 
@@ -38,7 +38,7 @@ export default function AboutBarranquiIA() {
             <div className="w-48 h-48 rounded-full overflow-hidden mb-4 border-4 border-purple-500">
               <Image
                 src="/FOTOSBARRANQUI-IA/verano.jpg"
-                alt="Retos empresariales"
+                alt={t('about.altStep1')}
                 width={192}
                 height={192}
                 className="w-full h-full object-cover"
@@ -49,7 +49,7 @@ export default function AboutBarranquiIA() {
                 1
               </div>
               <p className="text-lg text-left">
-                Las empresas patrocinadoras definen <strong>líneas temáticas</strong>
+                {t('about.step1')}
               </p>
             </div>
           </motion.li>
@@ -64,7 +64,7 @@ export default function AboutBarranquiIA() {
             <div className="w-48 h-48 rounded-full overflow-hidden mb-4 border-4 border-pink-500">
               <Image
                 src="/FOTOSBARRANQUI-IA/9.webp"
-                alt="Prototipo funcional"
+                alt={t('about.altStep2')}
                 width={192}
                 height={192}
                 className="w-full h-full object-cover"
@@ -75,7 +75,7 @@ export default function AboutBarranquiIA() {
                 2
               </div>
               <p className="text-lg text-left">
-                Los participantes forman equipos y desarrollan <strong>prototipos funcionales</strong> en 48 horas
+                {t('about.step2')}
               </p>
             </div>
           </motion.li>
@@ -90,7 +90,7 @@ export default function AboutBarranquiIA() {
             <div className="w-48 h-48 rounded-full overflow-hidden mb-4 border-4 border-purple-500">
               <Image
                 src="/ganadores/alumbra.jpg"
-                alt="Presentación y premiación"
+                alt={t('about.altStep3')}
                 width={192}
                 height={192}
                 className="w-full h-full object-cover"
@@ -101,7 +101,7 @@ export default function AboutBarranquiIA() {
                 3
               </div>
               <p className="text-lg text-left">
-                Se presentan los proyectos finalistas y compiten hasta por <strong>$10,000,000 en premios</strong>
+                {t('about.step3')}
               </p>
             </div>
           </motion.li>
@@ -115,15 +115,7 @@ export default function AboutBarranquiIA() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <p className="text-lg text-center">
-            Los equipos participantes tendrán la oportunidad de postularse para continuar con su proyecto participando en el programa{' '}
-            <Link
-              href="/"
-              className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent hover:from-blue-300 hover:to-purple-400 transition-all duration-300 font-bold"
-            >
-              Caribe-IA
-            </Link>{' '}
-            en el cual recibirán capacitación en desarrollo de software y negocios para convertir su prototipo en una startup y presentarla en{' '}
-            <strong>Tech Caribe</strong>, el mercado tech del Caribe el próximo 25 de Julio.
+            {t('about.caribeNote')}
           </p>
         </motion.aside>
       </div>

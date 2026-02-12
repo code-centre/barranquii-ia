@@ -8,9 +8,10 @@ import Location2025 from '../2025/Location2025'
 import SponsorsSection from '@/app/sections/SponsorsSection'
 import Workshops from '@/app/sections/Workshops'
 import Sponsors from '../Sponsors'
-import Title from '../Title'
+import TranslatedTitle from '../TranslatedTitle'
 import FAQ from '@/app/sections/FAQ'
 import { AssistantsGraphics } from '../2025/AssistantsGraphics'
+import GraphicsIntro from '../2025/GraphicsIntro'
 import { FAQS_HACKATHONES } from '@/app/utils/FAQS_HACKATHONES'
 import { voluntarios } from '@/app/utils/voluntarios2025'
 import { FINAL_MENTORS } from '@/app/utils/final-mentors-barranquiia'
@@ -57,21 +58,19 @@ export default function Edition2025({ params }: { params: { landing: string } })
 
 				<ScrollAnimation delay={0.2}>
 					<section id="galeria" className='max-w-7xl w-full mx-auto px-5 lg:px-10 scroll-mt-24'>
-						<Gallery3D autoPlay={true} images={images} title="Momentos del hackatón" />
+						<Gallery3D autoPlay={true} images={images} />
 					</section>
 				</ScrollAnimation>
 
 				<ScrollAnimation delay={0.1}>
 					<div className='max-w-6xl mx-auto px-5 lg:px-10 pt-20 w-full'>
 						<div className='mb-4 lg:mb-10'>
-							<Title
-								title="Gráficas y Datos del evento"
+							<TranslatedTitle
+								titleKey="graphics2025.title"
 								landing={params.landing}
 							/>
 						</div>
-						<p className='text-base lg:text-lg mb-5 text-gray-300'>
-							Conoce a detalle la cantidad de asistentes, participantes y talleristas, que fueron parte de esta segunda edición de Barranqui-IA, el hackatón de inteligencia artificial más grande de la costa.
-						</p>
+						<GraphicsIntro />
 						<AssistantsGraphics />
 					</div>
 				</ScrollAnimation>
@@ -79,7 +78,7 @@ export default function Edition2025({ params }: { params: { landing: string } })
 				<ScrollAnimation delay={0.2}>
 					<div className='max-w-6xl mx-auto px-5 w-full'>
 						<Testimonios hackathon="barranqui-ia" year="2025">
-							<Title title="Testimonios" landing={params.landing} />
+							<TranslatedTitle titleKey="shared.testimonials" landing={params.landing} />
 						</Testimonios>
 					</div>
 				</ScrollAnimation>
@@ -99,7 +98,7 @@ export default function Edition2025({ params }: { params: { landing: string } })
 				<ScrollAnimation delay={0.1}>
 					<Mentors data={FINAL_MENTORS} landing={params.landing} year='2025' role="mentor">
 						<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
-							<Title title="Mentores" landing={params.landing} />
+							<TranslatedTitle titleKey="shared.mentors" landing={params.landing} />
 						</div>
 					</Mentors>
 				</ScrollAnimation>
@@ -125,7 +124,7 @@ export default function Edition2025({ params }: { params: { landing: string } })
 				<ScrollAnimation delay={0.1}>
 					<Mentors landing='barranqui-ia' year='2025' data={voluntarios} role="voluntario">
 						<div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
-							<Title title="Voluntarios" landing={params.landing} />
+							<TranslatedTitle titleKey="shared.volunteers" landing={params.landing} />
 						</div>
 					</Mentors>
 				</ScrollAnimation>

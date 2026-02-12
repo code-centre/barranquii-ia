@@ -5,8 +5,11 @@ import { CloseIcon, MenuIcon } from "./Icons";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { THEME_LANDINGS } from "../utils/theme";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 export default function Navbar({ }) {
+  const { t } = useTranslation();
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(0);
@@ -89,7 +92,7 @@ export default function Navbar({ }) {
                 )}
                 {!section.active && section.id !== "barranqui-ia" && (
                   <span className="text-white px-3 text-sm border border-pink-500 bg-pink-500 rounded-full">
-                    Próximamente
+                    {t('nav.comingSoon')}
                   </span>
                 )}
               </li>
@@ -98,6 +101,7 @@ export default function Navbar({ }) {
         </ul>
 
         <div className="hidden lg:flex items-center gap-4">
+          <LanguageSwitcher />
           <button
             onClick={() => {
               if (pathname === "/") {
@@ -112,10 +116,10 @@ export default function Navbar({ }) {
             className="btn-primary text-sm px-4 py-2"
             style={{ backgroundColor: landing === 'default' ? '#FFFFFF' : THEME_LANDINGS[landing].principal, color: landing === 'default' ? '#000000' : 'white' }}
           >
-            Postulate
+            {t('nav.postulate')}
           </button>
           <div className="flex items-center gap-1 text-xs text-white/70">
-            <span>Powered by</span>
+            <span>{t('nav.poweredBy')}</span>
             <a
               href="https://caribeventures.com"
               target="_blank"
@@ -169,7 +173,10 @@ export default function Navbar({ }) {
         transform ${openMenu ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 ease-in-out`}
       >
         <div className="flex justify-between items-center px-6 pt-6 pb-4 border-b border-white/10">
-          <h2 className="text-white font-bold text-xl">Menú</h2>
+          <div className="flex items-center gap-4">
+            <h2 className="text-white font-bold text-xl">{t('nav.menu')}</h2>
+            <LanguageSwitcher />
+          </div>
           <button
             onClick={() => setOpenMenu(false)}
             className="text-white focus:outline-none"
@@ -204,7 +211,7 @@ export default function Navbar({ }) {
                 )}
                 {!section.active && section.id !== "barranqui-ia" && (
                   <span className="text-white px-3 text-sm border border-pink-500 bg-pink-500 rounded-full">
-                    Próximamente
+                    {t('nav.comingSoon')}
                   </span>
                 )}
               </li>
@@ -226,11 +233,11 @@ export default function Navbar({ }) {
               className="btn-primary w-full text-sm px-4 py-2"
               style={{ backgroundColor: landing === 'default' ? '#FFFFFF' : THEME_LANDINGS[landing].principal, color: landing === 'default' ? '#000000' : 'white' }}
             >
-              Postulate
+              {t('nav.postulate')}
             </button>
           </li>
           <li className="text-xs text-white/70 pt-2">
-            <span>Powered by </span>
+            <span>{t('nav.poweredBy')} </span>
             <a
               href="https://caribeventures.com"
               target="_blank"

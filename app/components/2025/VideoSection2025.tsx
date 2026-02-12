@@ -2,8 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 export default function VideoSection2025() {
+  const { t } = useTranslation();
   return (
     <section id="video" className="pb-16 text-white relative overflow-hidden">
       {/* Background grid pattern */}
@@ -32,11 +34,11 @@ export default function VideoSection2025() {
         <header className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-bold mb-4">
             <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-              Revive la experiencia
+              {t('video2025.title')}
             </span>
           </h2>
           <p className="text-xl text-gray-300">
-            Mira cómo fue el hackatón de Barranqui-IA 2025
+            {t('video2025.subtitle')}
           </p>
         </header>
 

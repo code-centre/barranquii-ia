@@ -3,50 +3,20 @@ import React from 'react'
 import Title from '../components/Title'
 import ScrollAnimation from '../components/2026/ScrollAnimation'
 import { THEME_LANDINGS } from '../utils/theme'
+import { useTranslation } from '@/app/i18n/useTranslation'
 
 interface Props {
   landing?: string
 }
 
-const steps = [
-  {
-    label: 'HACK',
-    title: 'Temporada de Hackatones',
-    bullets: [
-      'Prototipado intensivo durante un fin de semana',
-      'Mentoría técnica y de negocio en tiempo real',
-      'Presentación ante jurado especializado',
-      'Selección de proyectos para incubación'
-    ],
-    cta: 'Ver fechas',
-    ctaLink: '#hack'
-  },
-  {
-    label: 'BUILD',
-    title: 'Incubación (12 semanas)',
-    bullets: [
-      'Acompañamiento estratégico y técnico',
-      'Talleres especializados en IA y negocio',
-      'Conexión con mentores y expertos',
-      'Preparación para Demo Day'
-    ],
-    cta: 'Conocer incubación',
-    ctaLink: '#que-es'
-  },
-  {
-    label: 'SHOW',
-    title: 'Demo Day en TechCaribe Fest',
-    bullets: [
-      'Presentación pública de tu startup',
-      'Conexión con inversionistas y aliados',
-      'Oportunidades de pilotos con empresas'
-    ],
-    cta: 'Ver Demo Day',
-    ctaLink: '#faqs'
-  }
+const stepConfig = [
+  { labelKey: 'step1Label', titleKey: 'step1Title', bullets: ['step1_1', 'step1_2', 'step1_3', 'step1_4'], ctaKey: 'step1Cta', ctaLink: '#hack' },
+  { labelKey: 'step2Label', titleKey: 'step2Title', bullets: ['step2_1', 'step2_2', 'step2_3', 'step2_4'], ctaKey: 'step2Cta', ctaLink: '#que-es', helperKey: 'step2Helper' },
+  { labelKey: 'step3Label', titleKey: 'step3Title', bullets: ['step3_1', 'step3_2', 'step3_3'], ctaKey: 'step3Cta', ctaLink: '#faqs' }
 ]
 
 export default function HowItWorks({ landing = 'default' }: Props) {
+  const { t } = useTranslation()
   const theme = THEME_LANDINGS[landing]
   const isDefault = landing === 'default'
 
@@ -58,15 +28,15 @@ export default function HowItWorks({ landing = 'default' }: Props) {
   }
 
   return (
-    <section aria-label="Fases del programa" className='py-20 md:py-28'>
-      <Title title="Así funciona" landing={landing} />
+    <section aria-label={t('howItWorks.title')} className='py-20 md:py-28'>
+      <Title title={t('howItWorks.title')} landing={landing} />
       
       <div className='mt-12 relative'>
 
         {/* Steps */}
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10'>
-          {steps.map((step, index) => {
-            const isBuild = step.label === 'BUILD'
+          {stepConfig.map((step, index) => {
+            const isBuild = step.labelKey === 'step2Label'
             const stepNumber = String(index + 1).padStart(2, '0')
             
             return (
@@ -102,7 +72,7 @@ export default function HowItWorks({ landing = 'default' }: Props) {
                           border: `1px solid ${isDefault ? 'rgba(255, 151, 239, 0.4)' : `${theme.principal}40`}`
                         }}
                       >
-                        Selección limitada
+                        {t('howItWorks.limitedSelection')}
                       </span>
                     </div>
                   )}
@@ -115,25 +85,25 @@ export default function HowItWorks({ landing = 'default' }: Props) {
                         color: isDefault ? '#FF97EF' : theme.principal
                       }}
                     >
-                      {step.label}
+                      {t(`howItWorks.${step.labelKey}`)}
                     </span>
                   </div>
 
                   {/* Title */}
                   <h3 className='text-xl lg:text-2xl font-bold text-white mb-6'>
-                    {step.title}
+                    {t(`howItWorks.${step.titleKey}`)}
                   </h3>
 
                   {/* Helper Line (BUILD only) */}
-                  {isBuild && (
+                  {isBuild && step.helperKey && (
                     <p className='text-white/60 text-sm mb-4 italic'>
-                      Solo proyectos seleccionados avanzan a esta fase.
+                      {t(`howItWorks.${step.helperKey}`)}
                     </p>
                   )}
 
                   {/* Bullets */}
                   <ul className='flex-1 space-y-3 mb-6'>
-                    {step.bullets.map((bullet, bulletIndex) => (
+                    {step.bullets.map((bulletKey, bulletIndex) => (
                       <li key={bulletIndex} className='flex items-start gap-2 text-white/80 text-sm lg:text-base'>
                         <span
                           className='mt-1.5 flex-shrink-0'
@@ -143,7 +113,7 @@ export default function HowItWorks({ landing = 'default' }: Props) {
                         >
                           •
                         </span>
-                        <span className='leading-relaxed'>{bullet}</span>
+                        <span className='leading-relaxed'>{t(`howItWorks.${bulletKey}`)}</span>
                       </li>
                     ))}
                   </ul>
@@ -157,7 +127,7 @@ export default function HowItWorks({ landing = 'default' }: Props) {
                       color: isDefault ? '#FF97EF' : theme.principal
                     }}
                   >
-                    {step.cta}
+                    {t(`howItWorks.${step.ctaKey}`)}
                   </button>
                 </div>
               </ScrollAnimation>

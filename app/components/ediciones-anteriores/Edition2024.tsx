@@ -9,6 +9,7 @@ import Ganadores from "@/app/sections/Ganadores";
 import HeroTwo from "@/app/sections/Hero2";
 import Hackathon from "@/app/sections/Hackaton";
 import { FINAL_MENTORS } from "@/app/utils/final-mentors-barranquiia";
+import TranslatedSectionTitle from "../TranslatedSectionTitle";
 
 export default function Edition2024() {
 	return (
@@ -26,9 +27,7 @@ export default function Edition2024() {
 				</div>
 				<div className=" max-w-6xl mx-auto w-full">
 					<Testimonios hackathon="barranqui-ia" year="2024">
-						<h2 className="border-principleViolet pl-2 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
-							Testimonios
-						</h2>
+						<TranslatedSectionTitle titleKey="shared.testimonials" />
 					</Testimonios>
 				</div>
 				<div className="max-w-6xl mx-auto">
@@ -37,9 +36,7 @@ export default function Edition2024() {
 
 				<Mentors landing="barranqui-ia" year="2024" data={FINAL_MENTORS} role="mentor">
 					<div className="max-w-6xl mx-auto w-full">
-						<h2 className="border-principleViolet pl-4 border-l-4 font-bold text-2xl lg:text-4xl uppercase">
-							Mentores
-						</h2>
+						<TranslatedSectionTitle titleKey="shared.mentors" className="pl-4" />
 					</div>
 				</Mentors>
 				<div className="max-w-6xl mx-auto w-full">

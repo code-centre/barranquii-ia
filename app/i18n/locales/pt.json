@@ -1,0 +1,296 @@
+{
+  "common": {
+    "learnMore": "Saiba mais",
+    "buyTicket": "Comprar ingresso",
+    "comingSoon": "Em breve",
+    "contact": "Contato"
+  },
+  "hero2026": {
+    "edition": "3ª Edição - 1 a 3 de Maio",
+    "title": "Barranqui-IA",
+    "subtitle": "Construa o futuro desde o Caribe com Inteligência Artificial",
+    "ctaLearnMore": "Saiba mais",
+    "ctaPresale": "Acesse a pré-venda",
+    "limitedSpots": "Vagas limitadas - Primeira etapa",
+    "ariaLearnMore": "Saiba mais sobre Barranqui-IA",
+    "ariaPresale": "Acesse a pré-venda de ingressos"
+  },
+  "about": {
+    "title": "O que é Barranqui-IA?",
+    "intro": "Barranqui-IA é um hackathon de 48 horas onde desenvolvedores, designers, amantes de dados e builders se reúnem para criar soluções reais com IA.",
+    "step1": "As empresas patrocinadoras definem linhas temáticas",
+    "step2": "Os participantes formam equipes e desenvolvem protótipos funcionais em 48 horas",
+    "step3": "Os projetos finalistas são apresentados e competem por até $10.000.000 em prêmios",
+    "altStep1": "Desafios empresariais",
+    "altStep2": "Protótipo funcional",
+    "altStep3": "Apresentação e premiação",
+    "caribeNote": "As equipes participantes terão a oportunidade de se candidatar para continuar seu projeto no programa Caribe-IA, onde receberão capacitação em desenvolvimento de software e negócios para transformar seu protótipo em startup e apresentá-lo no Tech Caribe, o mercado tech do Caribe em 25 de julho."
+  },
+  "howToLive": {
+    "title": "Como é viver um hackathon?",
+    "subtitle": "Prepare-se para uma experiência única.",
+    "friday": "Sexta-feira",
+    "saturday": "Sábado",
+    "sunday": "Domingo",
+    "fridayChallenges": "Exposição de desafios",
+    "fridayTeams": "Formação de equipes",
+    "saturdayProject": "Trabalho no projeto",
+    "saturdayWorkshops": "Oficinas especializadas",
+    "saturdayMentors": "Mentorias com especialistas",
+    "saturdayRecommendation": "Recomendação: venha preparado para trabalhar durante a noite",
+    "sundayPresent": "Apresentação de projetos",
+    "sundayAwards": "Premiação",
+    "videoTitle": "Como é viver um hackathon?",
+    "exploreEditions": "Explore edições anteriores",
+    "barranqui2025": "Barranqui-IA 2025",
+    "barranqui2024": "Barranqui-IA 2024"
+  },
+  "tickets": {
+    "title": "Adquira seu ingresso",
+    "presale": "Pré-venda",
+    "firstStage": "Primeira etapa",
+    "secondStage": "Segunda etapa",
+    "presaleDates": "8 de Fevereiro a 28 de Fevereiro",
+    "firstStageDates": "1 de Março a 15 de Abril",
+    "secondStageDates": "16 de Abril a 30 de Abril",
+    "whatIncludes": "O que inclui seu ingresso?",
+    "benefit1": "Acesso a todas as áreas do evento",
+    "benefit2": "Participação em oficinas e mentorias",
+    "benefit3": "Alimentação durante o evento",
+    "benefit4": "Kit de participante exclusivo",
+    "benefit5": "Certificado de participação",
+    "benefit6": "Oportunidade de ganhar prêmios",
+    "motivation": "Você não precisa de equipe ainda. Não precisa de ideia. Só vontade de construir."
+  },
+  "isItForYou": {
+    "title": "Não sabe se é para você?",
+    "intro1": "Um hackathon é um espaço seguro para explorar tecnologia, aprender e testar seus limites. Você estará rodeado de outros participantes que, como você, não têm todas as respostas, mas se atrevem a construir apoiados em inteligência artificial.",
+    "intro2": "Também haverá mentores para ajudá-lo a resolver suas dúvidas e guiá-lo para completar seu protótipo.",
+    "welcome": "Bem-vindos desenvolvedores, designers, estudantes e qualquer profissional (ou não profissional) que se atreva a quebrar seus próprios limites.",
+    "alt1": "Equipes trabalhando em seus projetos",
+    "alt2": "Participantes do hackathon Barranqui-IA",
+    "alt3": "Ambiente colaborativo do evento",
+    "alt4": "Mentorias e oficinas",
+    "alt5": "Apresentação de projetos",
+    "alt6": "Comunidade tech reunida",
+    "alt7": "Desenvolvimento de protótipos",
+    "alt8": "Networking e colaboração",
+    "alt9": "Experiência do hackathon",
+    "alt10": "Equipes inovando com IA",
+    "alt11": "Celebração e premiação"
+  },
+  "nav": {
+    "caribeIA": "Caribe-IA",
+    "whatIs": "O que é Barranqui-IA?",
+    "experience": "Experiência",
+    "tickets": "Ingressos",
+    "menu": "Menu",
+    "comingSoon": "Em breve",
+    "postulate": "Candidatar-se",
+    "poweredBy": "Powered by"
+  },
+  "sponsors": {
+    "title": "Isso é possível graças ao apoio de",
+    "visitSite": "Visitar site de {{name}}",
+    "logoOf": "Logo de {{name}}"
+  },
+  "footer": {
+    "orgName": "Fundación Código Abierto",
+    "mission": "Impulsionando a inovação tecnológica e o desenvolvimento de habilidades digitais na comunidade.",
+    "address": "Cra. 50 #72-126, Barranquilla, Colômbia",
+    "linksTitle": "Links",
+    "followTitle": "Siga-nos",
+    "caribeVentures": "Caribe Ventures",
+    "techCaribeFest": "TechCaribe Fest",
+    "caribeIA": "Caribe-IA",
+    "poweredBy": "Powered by",
+    "copyright": "© {{year}} Fundación Código Abierto. Todos os direitos reservados.",
+    "ariaLinks": "Links importantes",
+    "ariaSocial": "Redes sociais",
+    "ariaInstagram": "Siga-nos no Instagram",
+    "ariaFacebook": "Siga-nos no Facebook",
+    "ariaTwitter": "Siga-nos no Twitter"
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "general": "Geral",
+    "participants": "Participantes",
+    "incubation": "Programa de incubação",
+    "enterprises": "Empresas",
+    "investors": "Investidores / Demo Day"
+  },
+  "hero2025": {
+    "edition": "2ª Edição - 3 e 4 de Maio de 2025",
+    "title": "Barranqui-IA 2025",
+    "subtitle": "Assim foi vivido o maior hackathon de IA do Caribe",
+    "viewGallery": "Ver galeria",
+    "viewResults": "Ver resultados"
+  },
+  "video2025": {
+    "title": "Reviva a experiência",
+    "subtitle": "Veja como foi o hackathon Barranqui-IA 2025"
+  },
+  "gallery": {
+    "title": "Momentos do hackathon",
+    "prevImage": "Imagem anterior",
+    "currentImage": "Imagem atual",
+    "nextImage": "Próxima imagem",
+    "prev": "Anterior",
+    "next": "Próximo",
+    "goToSlide": "Ir para slide {{num}}"
+  },
+  "main": {
+    "tagline": "O programa de inovação aberta que transforma talento do Caribe em startups de IA prontas para o mercado.",
+    "programOf": "Um programa de",
+    "hackatones": "Hackathons",
+    "incubation": "Incubação",
+    "demoDay": "Demo Day no TechCaribe Fest",
+    "postulate": "Candidatar-se ao programa",
+    "participateHackathon": "Participar de um hackathon",
+    "empresaAlly": "Sou empresa / aliado",
+    "ariaLabel": "Caribe-IA - Programa de startups de IA"
+  },
+  "summaryMain": {
+    "title": "O que é Caribe-IA?",
+    "manifesto": "É um sistema para criar startups de base tecnológica impulsionadas por inteligência artificial desde o Caribe colombiano com projeção internacional.",
+    "card1Title": "Construa um MVP funcional",
+    "card1Desc": "Desenvolva um produto mínimo viável com tecnologias de IA de ponta.",
+    "card2Title": "Valide com mentores e usuários",
+    "card2Desc": "Obtenha feedback de especialistas e usuários reais para refinar sua solução.",
+    "card3Title": "Prepare-se para investimento e pilotos",
+    "card3Desc": "Acesse oportunidades de financiamento e pilotos com empresas parceiras."
+  },
+  "howItWorks": {
+    "title": "Como funciona",
+    "limitedSelection": "Seleção limitada",
+    "step1Label": "HACK",
+    "step1Title": "Temporada de Hackathons",
+    "step1_1": "Prototipagem intensiva durante um fim de semana",
+    "step1_2": "Mentoria técnica e de negócios em tempo real",
+    "step1_3": "Apresentação perante júri especializado",
+    "step1_4": "Seleção de projetos para incubação",
+    "step1Cta": "Ver datas",
+    "step2Label": "BUILD",
+    "step2Title": "Incubação (12 semanas)",
+    "step2Helper": "Apenas projetos selecionados avançam para esta fase.",
+    "step2_1": "Acompanhamento estratégico e técnico",
+    "step2_2": "Oficinas especializadas em IA e negócios",
+    "step2_3": "Conexão com mentores e especialistas",
+    "step2_4": "Preparação para Demo Day",
+    "step2Cta": "Conhecer incubação",
+    "step3Label": "SHOW",
+    "step3Title": "Demo Day no TechCaribe Fest",
+    "step3_1": "Apresentação pública da sua startup",
+    "step3_2": "Conexão com investidores e aliados",
+    "step3_3": "Oportunidades de pilotos com empresas",
+    "step3Cta": "Ver Demo Day"
+  },
+  "phases": {
+    "title": "Participe de um hackathon",
+    "active": "Ativo",
+    "comingSoon": "Em breve",
+    "inscribe": "Inscrever-me",
+    "barranquiDesc": "O maior hackathon de IA do Caribe colombiano",
+    "cartagenDesc": "Em breve em Cartagena",
+    "samarDesc": "Em breve em Santa Marta",
+    "helperText": "Os melhores times podem avançar para incubação ou pilotar com empresas parceiras.",
+    "afterHackTitle": "O que acontece depois do hackathon?",
+    "afterHackPara": "Projetos com maior potencial podem continuar sua jornada no Caribe-IA.",
+    "afterHack_1": "Passar para a incubação Caribe-IA (Build)",
+    "afterHack_2": "Participar com empresas parceiras que propõem desafios para pilotos e validação real",
+    "afterHackNote": "E apresentar resultados no Demo Day do TechCaribe Fest (Show)",
+    "knowIncubation": "Conhecer incubação →",
+    "empresaReto": "Sou empresa / proponho um desafio →"
+  },
+  "audience": {
+    "title": "Para quem é o Caribe-IA?",
+    "talento": "Talento",
+    "talentoDesc": "Desenvolvedores, cientistas de dados, designers e criativos que querem construir com IA.",
+    "emprendedores": "Empreendedores",
+    "emprendedoresDesc": "Com ou sem ideia, busque transformar sua visão em uma startup de IA escalável.",
+    "empresas": "Empresas",
+    "empresasDesc": "Inovação aberta, proponha desafios e acesse soluções de IA desenvolvidas por talento do Caribe.",
+    "ctaParticipate": "Quero participar",
+    "ctaReto": "Quero propor um desafio"
+  },
+  "poweredByCV": {
+    "caribeDesc": "Caribe Ventures é um venture studio focado em criar, investir e escalar startups tecnológicas do Caribe.",
+    "title": "Caribe-IA é seu programa flagship de criação de startups com IA.",
+    "para": "Através de hackathons, incubação e Demo Day, conectamos talento, empresas e investidores para construir o ecossistema de IA do Caribe.",
+    "cta": "Conheça Caribe Ventures →"
+  },
+  "summary2025": {
+    "title": "O que é Barranqui-IA?",
+    "text1": "Barranqui-IA foi o hackathon de inteligência artificial mais emocionante da Colômbia. Um espaço onde pessoas criativas, técnicas e visionárias se reuniram para resolver desafios reais usando o poder da IA. Não importava se chegavam com uma ideia, sem equipe ou com experiência prévia: todos puderam construir, aprender e transformar.",
+    "text2": "Durante o fim de semana de 3 e 4 de Maio, os participantes viveram a experiência de criar uma solução do zero, com o apoio de mentores especialistas, aliados do ecossistema e uma comunidade que acredita no poder da tecnologia para mudar o mundo. As soluções tiveram como base o uso de inteligência artificial.",
+    "text3": "No final do evento apresentaram suas soluções em um pitch perante um júri especializado para concorrer a prêmios incríveis. Foram entregues mais de $10.000.000 COP em prêmios.",
+    "imageAlt": "Barranqui-IA 2025"
+  },
+  "topics2025": {
+    "title": "Linhas temáticas",
+    "intro": "Barranqui-IA teve 7 linhas temáticas para guiar os participantes a resolver problemas relevantes com inteligência artificial.",
+    "topic1": "Desafio empresarial x Câmara de Comércio BAQ",
+    "topic2": "Saúde digital",
+    "topic3": "Educação personalizada",
+    "topic4": "Sustentabilidade ambiental",
+    "topic5": "Agentes x ShadAI",
+    "topic6": "Entretenimento e criatividade",
+    "topic7": "Segurança e privacidade"
+  },
+  "location2025": {
+    "title": "Onde foi o hackathon?",
+    "intro": "O hackathon Barranqui-IA ocorreu em dois espaços incríveis que combinaram o melhor do ecossistema tech do Caribe:",
+    "uninorte": "Universidad del Norte",
+    "fca": "Fundación Código Abierto",
+    "para1": "Demos início ao hackathon no campus da Uninorte, com apresentação de desafios, formação de equipes, mentorias e a primeira parte do desenvolvimento dos projetos.",
+    "para2": "Quando a noite caiu, nos mudamos para a sede da Fundación Código Abierto, onde a energia não parou. Continuamos trabalhando durante a madrugada em um espaço confortável, criativo e cheio de boa energia.",
+    "para3": "Havia lanches, café e dinâmicas especiais para manter o moral alto. E sim, alguns participantes trouxeram suas almofadas e descansaram algumas horas.",
+    "para4": "Nos reencontramos na Universidad del Norte para recarregar energias com um café da manhã conjunto e preparar os toques finais antes dos pitches e da premiação."
+  },
+  "graphics2025": {
+    "title": "Gráficos e dados do evento",
+    "intro": "Conheça em detalhe a quantidade de assistentes, participantes e ministrantes de oficinas que fizeram parte desta segunda edição do Barranqui-IA, o maior hackathon de IA da costa.",
+    "totalAttendees": "Total de Assistentes",
+    "participants": "Participantes no Hackathon",
+    "workshops": "Oficinas Especializadas",
+    "profilesTitle": "Perfis de Participantes no Hackathon",
+    "topicsTitle": "Projetos por Temática (Total: {{total}})",
+    "theme": "Temática",
+    "pctTotal": "% do Total",
+    "projectsByTheme": "Projetos por Temática"
+  },
+  "shared": {
+    "testimonials": "Depoimentos",
+    "mentors": "Mentores",
+    "volunteers": "Voluntários"
+  },
+  "metadata": {
+    "siteTitle": "Caribe-IA 2026",
+    "siteDescription": "Caribe-IA 2026: O programa que transforma talento do Caribe em startups de IA prontas para o mercado. Hackathons, incubação e Demo Day no TechCaribe Fest.",
+    "siteOgTitle": "Caribe-IA 2026",
+    "siteOgDescription": "O programa que transforma talento do Caribe em startups de IA prontas para o mercado. Hackathons, incubação e Demo Day.",
+    "siteOgAlt": "Caribe-IA - Inovação aberta com Inteligência Artificial desde o Caribe",
+    "eventTitle": "{{name}} {{year}} | Hackathon de IA em {{city}}",
+    "eventDescription": "{{name}} {{year}}: Hackathon de inteligência artificial no Caribe colombiano. {{dates}} Participe do evento de tecnologia e IA mais importante da região.",
+    "eventOgAlt": "{{name}} {{year}} - Hackathon de Inteligência Artificial desde o Caribe"
+  },
+  "hero2024": {
+    "videoCoverAlt": "Capa do vídeo",
+    "videoTitle": "Caribe IA 2024"
+  },
+  "hero2_2024": {
+    "sectionTitle": "Hackathon 2024",
+    "headline": "Nos dias 4 e 5 de maio de 2024, a costa vibrou com inteligência artificial",
+    "para1": "Barranqui-IA deixou sua marca na inovação do Caribe. Mais de 150 mentes brilhantes, em 21 equipes, deram vida a soluções com inteligência artificial em um ambiente dinâmico e colaborativo.",
+    "para2": "Mais que uma competição, foi uma maratona de criatividade e aprendizado, onde a paixão demonstrou que não há barreiras para inovar. Barranquilla reafirmou seu lugar como epicentro tecnológico, impulsionando talento e transformação.",
+    "cta": "Juntos transformamos ideias em futuro!",
+    "imageAlt": "Imagem Hackathon {{num}}",
+    "modalImageAlt": "Imagem em tamanho grande"
+  },
+  "hackathon2024": {
+    "title": "O que é um Hackathon?",
+    "para1": "Um Hackathon é um evento onde programadores, designers e empreendedores colaboram para desenvolver soluções inovadoras em um tempo limitado. Trata-se de um ambiente de trabalho intenso onde criatividade e inovação são fundamentais para resolver desafios tecnológicos.",
+    "para2": "Durante o evento, os participantes formarão equipes multidisciplinares e terão 48 horas para desenvolver protótipos funcionais. As temáticas podem ir desde inteligência artificial até o desenvolvimento de aplicações para solucionar problemas específicos da sociedade.",
+    "imageAlt": "Hackathon em ação"
+  }
+}

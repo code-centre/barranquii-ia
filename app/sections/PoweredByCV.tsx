@@ -3,12 +3,14 @@ import React from 'react'
 import ScrollAnimation from '../components/2026/ScrollAnimation'
 import Image from 'next/image'
 import { THEME_LANDINGS } from '../utils/theme'
+import { useTranslation } from '@/app/i18n/useTranslation'
 
 interface Props {
   landing?: string
 }
 
 export default function PoweredByCV({ landing = 'default' }: Props) {
+  const { t } = useTranslation()
   const theme = THEME_LANDINGS[landing]
   const isDefault = landing === 'default'
 
@@ -38,17 +40,17 @@ export default function PoweredByCV({ landing = 'default' }: Props) {
                 />
               </div>
               <p className='text-white/80 text-base lg:text-lg leading-relaxed'>
-                Caribe Ventures es un venture studio enfocado en crear, invertir y escalar startups tecnológicas del Caribe.
+                {t('poweredByCV.caribeDesc')}
               </p>
             </div>
 
             {/* Right Column: Program Description */}
             <div className='flex flex-col justify-center'>
               <h3 className='text-2xl lg:text-3xl font-bold text-white mb-4'>
-                Caribe-IA es su programa flagship de creación de startups con IA.
+                {t('poweredByCV.title')}
               </h3>
               <p className='text-white/70 text-base lg:text-lg mb-6 leading-relaxed'>
-                A través de hackatones, incubación y Demo Day, conectamos talento, empresas e inversionistas para construir el ecosistema de IA del Caribe.
+                {t('poweredByCV.para')}
               </p>
               <a
                 href="https://caribeventures.com"
@@ -60,7 +62,7 @@ export default function PoweredByCV({ landing = 'default' }: Props) {
                   color: isDefault ? '#FF97EF' : theme.principal
                 }}
               >
-                Conoce Caribe Ventures →
+                {t('poweredByCV.cta')}
               </a>
             </div>
           </div>

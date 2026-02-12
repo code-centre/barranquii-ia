@@ -1,8 +1,10 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from '@/app/i18n/useTranslation';
 
 export default function TicketPurchase() {
+  const { t } = useTranslation();
   return (
     <section id="boletos" className="text-white relative overflow-hidden">
       {/* Background grid pattern */}
@@ -31,7 +33,7 @@ export default function TicketPurchase() {
         <header className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-bold mb-4">
             <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-              Adquiere tu entrada
+              {t('tickets.title')}
             </span>
           </h2>
         </header>
@@ -46,16 +48,16 @@ export default function TicketPurchase() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className="text-2xl font-bold text-purple-400 mb-4">Preventa</h3>
+            <h3 className="text-2xl font-bold text-purple-400 mb-4">{t('tickets.presale')}</h3>
             <p className="text-4xl font-extrabold text-white mb-2">$120,000 COP</p>
-            <p className="text-gray-300 mb-6">8 de Febrero al 28 de Febrero</p>
+            <p className="text-gray-300 mb-6">{t('tickets.presaleDates')}</p>
             <a
               href="https://www.codigoabierto.tech/eventos/barranqui-ia-2026"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full transition-colors inline-block"
             >
-              Comprar entrada
+              {t('common.buyTicket')}
             </a>
           </motion.section>
 
@@ -67,14 +69,14 @@ export default function TicketPurchase() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold text-gray-500 mb-4">Primera etapa</h3>
+            <h3 className="text-2xl font-bold text-gray-500 mb-4">{t('tickets.firstStage')}</h3>
             <p className="text-4xl font-extrabold text-gray-400 mb-2 line-through">$150,000 COP</p>
-            <p className="text-gray-400 mb-6">1 de Marzo al 15 de Abril</p>
+            <p className="text-gray-400 mb-6">{t('tickets.firstStageDates')}</p>
             <button
               className="bg-gray-600 text-gray-300 font-bold py-3 px-8 rounded-full cursor-not-allowed opacity-70"
               disabled
             >
-              Próximamente
+              {t('common.comingSoon')}
             </button>
           </motion.section>
 
@@ -86,14 +88,14 @@ export default function TicketPurchase() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h3 className="text-2xl font-bold text-gray-500 mb-4">Segunda etapa</h3>
+            <h3 className="text-2xl font-bold text-gray-500 mb-4">{t('tickets.secondStage')}</h3>
             <p className="text-4xl font-extrabold text-gray-400 mb-2 line-through">$180,000 COP</p>
-            <p className="text-gray-400 mb-6">16 de Abril al 30 de Abril</p>
+            <p className="text-gray-400 mb-6">{t('tickets.secondStageDates')}</p>
             <button
               className="bg-gray-600 text-gray-300 font-bold py-3 px-8 rounded-full cursor-not-allowed opacity-70"
               disabled
             >
-              Próximamente
+              {t('common.comingSoon')}
             </button>
           </motion.section>
         </article>
@@ -107,16 +109,16 @@ export default function TicketPurchase() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h3 className="text-2xl font-bold text-purple-400 mb-6 text-center">
-            ¿Qué incluye tu boleto?
+            {t('tickets.whatIncludes')}
           </h3>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-6" role="list">
             {[
-              'Acceso a todas las áreas del evento',
-              'Participación en talleres y mentorías',
-              'Alimentación durante el evento',
-              'Kit de participante exclusivo',
-              'Certificado de participación',
-              'Oportunidad de ganar premios',
+              t('tickets.benefit1'),
+              t('tickets.benefit2'),
+              t('tickets.benefit3'),
+              t('tickets.benefit4'),
+              t('tickets.benefit5'),
+              t('tickets.benefit6'),
             ].map((benefit, index) => (
               <motion.li
                 key={index}
@@ -147,7 +149,7 @@ export default function TicketPurchase() {
         {/* Motivational Message */}
         <footer className="text-center">
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            No necesitas equipo aún. No necesitas idea. Solo ganas de construir.
+            {t('tickets.motivation')}
           </p>
         </footer>
       </div>

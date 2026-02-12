@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { ArrowDown } from "../components/Icons";
 import Title from "../components/Title";
 import { THEME_LANDINGS } from "../utils/theme";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 interface FAQ {
   question: string;
@@ -26,32 +27,32 @@ const BACKGROUND_FAQ: Record<string, string> = {
   'cartagen-ia': '#1e4351',
 }
 
-// Map group titles to tab labels
-const getTabLabel = (title: string | undefined): string => {
-  if (!title) return 'General';
-  if (title.includes('Hackatones')) return 'Participantes';
-  if (title.includes('Incubación')) return 'Programa de incubación';
-  if (title.includes('Empresas')) return 'Empresas';
-  if (title.includes('Demo Day') || title.includes('Crowdfunding')) return 'Inversionistas / Demo Day';
-  return title;
-}
-
 // Check if data is FAQGroup[] or FAQ[]
 const isFAQGroupArray = (data: FAQGroup[] | FAQ[]): data is FAQGroup[] => {
   return Array.isArray(data) && data.length > 0 && 'title' in data[0] && 'faqs' in data[0];
 }
 
 export default function FAQ({ landing, data }: Props) {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState(0);
   const theme = THEME_LANDINGS[landing];
   const isDefault = landing === 'default';
   const isGroupedData = isFAQGroupArray(data);
 
+  const getTabLabelTranslated = (title: string | undefined): string => {
+    if (!title) return t('faq.general');
+    if (title.includes('Hackatones')) return t('faq.participants');
+    if (title.includes('Incubación')) return t('faq.incubation');
+    if (title.includes('Empresas')) return t('faq.enterprises');
+    if (title.includes('Demo Day') || title.includes('Crowdfunding')) return t('faq.investors');
+    return title;
+  };
+
   // Only create tabs if we have grouped data and it's the default landing
   const tabs = isGroupedData && isDefault
     ? data.map((group, index) => ({
         id: index,
-        label: getTabLabel(group.title),
+        label: getTabLabelTranslated(group.title),
         group: group
       }))
     : [];
@@ -63,7 +64,7 @@ export default function FAQ({ landing, data }: Props) {
       <div style={{ background: THEME_LANDINGS[landing].principal + '40' }} className="absolute -top-20 -z-10 -left-36 w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] rounded-full blur-3xl"></div>
 
       <Title
-        title="Preguntas Frecuentes"
+        title={t('faq.title')}
         landing={landing}
       />
 

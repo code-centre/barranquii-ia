@@ -1,13 +1,15 @@
 import Edition2024 from '@/app/components/ediciones-anteriores/Edition2024'
 import Edition2025 from '@/app/components/ediciones-anteriores/Edition2025';
 import Edition2026 from '@/app/components/ediciones-anteriores/Edition2026';
-import { Miriam_Libre } from 'next/font/google';
 import React from 'react'
 import type { Metadata } from 'next';
 import JsonLd from '@/app/components/JsonLd';
+import { getLocale } from '@/app/i18n/getLocale';
+import { getTranslations, createT } from '@/app/i18n/getTranslation';
+import type { Locale } from '@/app/i18n/config';
 
 type Props = {
-  params: { landing: string; year: string };
+  params: Promise<{ landing: string; year: string }>;
 };
 
 const LIST_OF_EDITION: {landing: string; editions: { [key: string]: React.ReactNode }}[] = [
@@ -29,17 +31,27 @@ export function generateStaticParams() {
 	];
 }
 
-export function generateMetadata({ params }: Props): Metadata {
+const cityByLanding: Record<string, string> = {
+	'barranqui-ia': 'Barranquilla',
+	'cartagen-ia': 'Cartagena',
+	'samar-ia': 'Santa Marta',
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const { landing, year } = await params;
+	const locale = (await getLocale()) as Locale;
+	const translations = await getTranslations(locale);
+	const t = createT(translations);
+
 	const landingNames: Record<string, string> = {
 		'barranqui-ia': 'Barranqui-IA',
 		'cartagen-ia': 'Cartagen-IA',
 		'samar-ia': 'Samar-IA',
 	};
 	
-	const name = landingNames[params.landing] || 'Caribe-IA';
-	const year = params.year;
+	const name = landingNames[landing] || 'Caribe-IA';
+	const city = cityByLanding[landing] || 'Caribe';
 	
-	// Event dates based on year and landing
 	const eventDates: Record<string, Record<string, { start: string; end: string }>> = {
 		'barranqui-ia': {
 			'2026': { start: '2026-05-01', end: '2026-05-03' },
@@ -48,16 +60,18 @@ export function generateMetadata({ params }: Props): Metadata {
 		},
 	};
 	
-	const dates = eventDates[params.landing]?.[year] || { start: '', end: '' };
+	const dates = eventDates[landing]?.[year] || { start: '', end: '' };
+	const datesStr = dates.start ? `Del ${dates.start} al ${dates.end}. ` : '';
 	
-	// Imagen de metadata para Barranqui-IA (2024, 2025, 2026)
+	const ogAlt = t('metadata.eventOgAlt', { name, year });
+	
 	const ogImage =
-		params.landing === 'barranqui-ia'
+		landing === 'barranqui-ia'
 			? {
 					url: 'https://www.caribe-ia.com/barranqui-ia-og.png',
 					width: 960,
 					height: 540,
-					alt: `${name} ${year} - Hackatón de Inteligencia Artificial desde el Caribe`,
+					alt: ogAlt,
 					type: 'image/png' as const,
 				}
 			: {
@@ -68,37 +82,40 @@ export function generateMetadata({ params }: Props): Metadata {
 					type: 'image/png' as const,
 				};
 	
+	const title = t('metadata.eventTitle', { name, year, city });
+	const description = t('metadata.eventDescription', { name, year, dates: datesStr });
+	
 	return {
-		title: `${name} ${year} | Hackatón de IA en ${name.includes('Barranqui') ? 'Barranquilla' : name.includes('Cartagen') ? 'Cartagena' : 'Santa Marta'}`,
-		description: `${name} ${year}: Hackatón de inteligencia artificial en el Caribe colombiano. ${dates.start ? `Del ${dates.start} al ${dates.end}.` : ''} Participa en el evento de tecnología e IA más importante de la región.`,
+		title,
+		description,
 		openGraph: {
 			title: `${name} ${year}`,
-			description: `${name} ${year}: Hackatón de inteligencia artificial en el Caribe colombiano. ${dates.start ? `Del ${dates.start} al ${dates.end}.` : ''}`,
-			url: `https://www.caribe-ia.com/${params.landing}/${year}`,
+			description,
+			url: `https://www.caribe-ia.com/${landing}/${year}`,
 			type: 'website',
 			images: [ogImage],
 		},
 		twitter: {
 			card: "summary_large_image",
 			title: `${name} ${year}`,
-			description: `${name} ${year}: Hackatón de inteligencia artificial en el Caribe colombiano.`,
+			description,
 			images: [ogImage.url],
 		},
 		alternates: {
-			canonical: `/${params.landing}/${year}`,
+			canonical: `/${landing}/${year}`,
 		},
 	};
 }
 
-export default function EditionPerYearPage({ params }: Props) {
+export default async function EditionPerYearPage({ params }: Props) {
+	const { landing, year } = await params;
 	const landingNames: Record<string, string> = {
 		'barranqui-ia': 'Barranqui-IA',
 		'cartagen-ia': 'Cartagen-IA',
 		'samar-ia': 'Samar-IA',
 	};
 	
-	const name = landingNames[params.landing] || 'Caribe-IA';
-	const year = params.year;
+	const name = landingNames[landing] || 'Caribe-IA';
 	
 	// Event dates and locations
 	const eventData: Record<string, Record<string, { start: string; end: string; location: string; address: string }>> = {
@@ -124,7 +141,7 @@ export default function EditionPerYearPage({ params }: Props) {
 		},
 	};
 	
-	const eventInfo = eventData[params.landing]?.[year];
+	const eventInfo = eventData[landing]?.[year];
 	
 	const eventSchema = eventInfo ? {
 		"@context": "https://schema.org",
@@ -149,10 +166,10 @@ export default function EditionPerYearPage({ params }: Props) {
 			name: "Caribe-IA",
 			url: "https://www.caribe-ia.com",
 		},
-		image: params.landing === 'barranqui-ia' ? "https://www.caribe-ia.com/barranqui-ia-og.png" : "https://www.caribe-ia.com/portada.png",
+		image: landing === 'barranqui-ia' ? "https://www.caribe-ia.com/barranqui-ia-og.png" : "https://www.caribe-ia.com/portada.png",
 		offers: {
 			"@type": "Offer",
-			url: `https://www.caribe-ia.com/${params.landing}/${year}`,
+			url: `https://www.caribe-ia.com/${landing}/${year}`,
 			price: "0",
 			priceCurrency: "COP",
 			availability: "https://schema.org/InStock",
@@ -162,7 +179,7 @@ export default function EditionPerYearPage({ params }: Props) {
 	return (
 		<>
 			{eventSchema && <JsonLd data={eventSchema} />}
-			{LIST_OF_EDITION.find((edition) => edition.landing === params.landing)?.editions[params.year]}
+			{LIST_OF_EDITION.find((edition) => edition.landing === landing)?.editions[year]}
 		</>
 	)
 }

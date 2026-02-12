@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import { useTranslation } from "@/app/i18n/useTranslation"
 
 interface Carousel3DProps {
   images: string[]
@@ -24,7 +25,9 @@ export default function Carousel3D({
   pauseOnHover = true,
   title,
 }: Carousel3DProps) {
+  const { t } = useTranslation()
   const [currentIndex, setCurrentIndex] = useState(0)
+  const displayTitle = title ?? t('gallery.title')
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
 
@@ -89,11 +92,11 @@ export default function Carousel3D({
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4">
-      {title && (
+      {displayTitle && (
         <header className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-3">
             <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-              {title}
+              {displayTitle}
             </span>
           </h2>
         </header>
@@ -114,7 +117,7 @@ export default function Carousel3D({
           <div className="relative w-full h-full">
             <Image
               src={images[getImageIndex(-1)] || "/placeholder.svg"}
-              alt="Imagen anterior"
+              alt={t('gallery.prevImage')}
               fill
               className="object-cover"
             />
@@ -129,7 +132,7 @@ export default function Carousel3D({
                      ${isTransitioning ? "scale-95 opacity-90" : "scale-100 opacity-100"}`}
         >
           <div className="relative w-full h-full">
-            <Image src={images[currentIndex] || "/placeholder.svg"} alt="Imagen actual" fill className="object-cover" />
+            <Image src={images[currentIndex] || "/placeholder.svg"} alt={t('gallery.currentImage')} fill className="object-cover" />
           </div>
         </div>
 
@@ -143,7 +146,7 @@ export default function Carousel3D({
           <div className="relative w-full h-full">
             <Image
               src={images[getImageIndex(1)] || "/placeholder.svg"}
-              alt="Imagen siguiente"
+              alt={t('gallery.nextImage')}
               fill
               className="object-cover"
             />
@@ -159,7 +162,7 @@ export default function Carousel3D({
                    transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]"
           onClick={goToPrevious}
           disabled={isTransitioning}
-          aria-label="Anterior"
+          aria-label={t('gallery.prev')}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +186,7 @@ export default function Carousel3D({
                    transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]"
           onClick={goToNext}
           disabled={isTransitioning}
-          aria-label="Siguiente"
+          aria-label={t('gallery.next')}
         >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +214,7 @@ export default function Carousel3D({
                   : "bg-purple-500/40 w-3 h-3 hover:bg-purple-500/60"
               }`}
               onClick={() => goToSlide(index)}
-              aria-label={`Ir a diapositiva ${index + 1}`}
+              aria-label={t('gallery.goToSlide', { num: String(index + 1) })}
             />
           ))}
         </div>

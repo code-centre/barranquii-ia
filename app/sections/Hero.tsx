@@ -1,8 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { Play } from "lucide-react";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 export default function Hero() {
+  const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
 
   const startVideo = () => {
@@ -17,8 +19,8 @@ export default function Hero() {
           <div className="relative w-full h-full cursor-pointer" onClick={startVideo}>
             {/* Imagen de miniatura personalizada */}
             <img
-              src="/PortadaDoc.webp" // Ruta de la imagen en formato webp
-              alt="Portada del video"
+              src="/PortadaDoc.webp"
+              alt={t("hero2024.videoCoverAlt")}
               className="absolute inset-0 w-full h-full object-contain" // Cambiado a object-contain
             />
             {/* Botón de reproducción */}
@@ -32,7 +34,7 @@ export default function Hero() {
           <iframe
             className="w-full h-full"
             src="https://www.youtube.com/embed/rM5mmrb0bVk?start=77&autoplay=1"
-            title="Caribe IA 2024"
+            title={t("hero2024.videoTitle")}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             frameBorder="0"
             allowFullScreen

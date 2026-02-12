@@ -2,49 +2,22 @@
 import React from 'react'
 import Title from '../components/Title'
 import ScrollAnimation from '../components/2026/ScrollAnimation'
-import { Code, Lightbulb, Building2, TrendingUp, ArrowRight } from 'lucide-react'
+import { Code, Lightbulb, Building2, ArrowRight } from 'lucide-react'
 import { THEME_LANDINGS } from '../utils/theme'
+import { useTranslation } from '@/app/i18n/useTranslation'
 
 interface Props {
   landing?: string
 }
 
-const audiences = [
-  {
-    id: 'talento',
-    icon: Code,
-    title: 'Talento',
-    description: 'Desarrolladores, científicos de datos, diseñadores y creativos que quieren construir con IA.',
-    cta: 'Quiero participar',
-    ctaLink: '#postulate'
-  },
-  {
-    id: 'emprendedores',
-    icon: Lightbulb,
-    title: 'Emprendedores',
-    description: 'Con o sin idea, busca convertir tu visión en una startup de IA escalable.',
-    cta: 'Quiero participar',
-    ctaLink: '#postulate'
-  },
-  {
-    id: 'empresas',
-    icon: Building2,
-    title: 'Empresas',
-    description: 'Innovación abierta, propón retos y accede a soluciones de IA desarrolladas por talento del Caribe.',
-    cta: 'Quiero proponer un reto',
-    ctaLink: '#empresas'
-  },
-  // {
-  //   id: 'inversionistas',
-  //   icon: TrendingUp,
-  //   title: 'Inversionistas',
-  //   description: 'Accede a dealflow filtrado de startups de IA con alto potencial, validadas y listas para escalar.',
-  //   cta: 'Quiero invertir',
-  //   ctaLink: '#inversionistas'
-  // }
+const audienceConfig = [
+  { id: 'talento', icon: Code, titleKey: 'talento', descKey: 'talentoDesc', ctaKey: 'ctaParticipate', ctaLink: '#postulate' },
+  { id: 'emprendedores', icon: Lightbulb, titleKey: 'emprendedores', descKey: 'emprendedoresDesc', ctaKey: 'ctaParticipate', ctaLink: '#postulate' },
+  { id: 'empresas', icon: Building2, titleKey: 'empresas', descKey: 'empresasDesc', ctaKey: 'ctaReto', ctaLink: '#empresas' }
 ]
 
 export default function AudienceSection({ landing = 'default' }: Props) {
+  const { t } = useTranslation()
   const theme = THEME_LANDINGS[landing]
   const isDefault = landing === 'default'
 
@@ -56,11 +29,11 @@ export default function AudienceSection({ landing = 'default' }: Props) {
   }
 
   return (
-    <section aria-label="¿Para quién es Caribe-IA?" className='py-20 md:py-28'>
-      <Title title="¿Para quién es Caribe-IA?" landing={landing} />
+    <section aria-label={t('audience.title')} className='py-20 md:py-28'>
+      <Title title={t('audience.title')} landing={landing} />
       
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12'>
-        {audiences.map((audience, index) => {
+        {audienceConfig.map((audience, index) => {
           const Icon = audience.icon
           const isEmpresas = audience.id === 'empresas'
           const isInversionistas = audience.id === 'inversionistas'
@@ -99,12 +72,12 @@ export default function AudienceSection({ landing = 'default' }: Props) {
 
                 {/* Title */}
                 <h3 className='text-xl lg:text-2xl font-bold text-white mb-3'>
-                  {audience.title}
+                  {t(`audience.${audience.titleKey}`)}
                 </h3>
 
                 {/* Description */}
                 <p className='text-white/80 text-sm lg:text-base mb-6 leading-relaxed flex-1'>
-                  {audience.description}
+                  {t(`audience.${audience.descKey}`)}
                 </p>
 
                 {/* CTA */}
@@ -116,7 +89,7 @@ export default function AudienceSection({ landing = 'default' }: Props) {
                     color: isDefault ? '#FF97EF' : theme.principal
                   }}
                 >
-                  {audience.cta}
+                  {t(`audience.${audience.ctaKey}`)}
                   <ArrowRight size={16} />
                 </button>
               </div>

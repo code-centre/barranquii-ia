@@ -1,10 +1,14 @@
+"use client";
+
 import React from 'react';
+import { useTranslation } from '@/app/i18n/useTranslation';
 
 interface HeroSection2025Props {
   landing: string;
 }
 
 export default function HeroSection2025({ landing }: HeroSection2025Props) {
+  const { t } = useTranslation();
   return (
     <header className="relative py-32 min-h-[600px] md:min-h-[700px]" id="hero">
       {/* Background abstract shapes */}
@@ -22,19 +26,19 @@ export default function HeroSection2025({ landing }: HeroSection2025Props) {
       {/* Main Content */}
       <section className="relative z-10 flex flex-col items-center justify-center px-4">
         <p className="text-lg text-center mb-4" style={{ fontFamily: 'var(--font-poppinss)' }}>
-          2da Edición - 3 y 4 de Mayo 2025
+          {t('hero2025.edition')}
         </p>
         <h1 className="text-6xl md:text-8xl font-bold text-center mb-6 relative" style={{ minHeight: '120px' }}>
           <span className="relative bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent bg-[length:300%_auto] animate-gradient-shift drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
-            Barranqui-IA 2025
+            {t('hero2025.title')}
           </span>
           <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer pointer-events-none">
-            Barranqui-IA 2025
+            {t('hero2025.title')}
           </span>
         </h1>
 
         <p className="text-xl md:text-2xl text-white text-center mb-12 max-w-3xl" style={{ fontFamily: 'var(--font-poppinss)' }}>
-          Así se vivió el hackatón de IA más grande del Caribe
+          {t('hero2025.subtitle')}
         </p>
 
         {/* Call to Action */}
@@ -43,17 +47,17 @@ export default function HeroSection2025({ landing }: HeroSection2025Props) {
             href="#galeria"
             className="px-8 py-3 border-2 border-purple-600 hover:border-purple-500 hover:bg-purple-600/10 text-white rounded-lg font-semibold transition-all duration-300 inline-block text-center"
             style={{ fontFamily: 'var(--font-poppinss)' }}
-            aria-label="Ver galería de fotos"
+            aria-label={t('hero2025.viewGallery')}
           >
-            Ver galería
+            {t('hero2025.viewGallery')}
           </a>
           <a
             href="#resultados"
             className="px-8 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-lg font-semibold transition-colors inline-block text-center"
             style={{ fontFamily: 'var(--font-poppinss)' }}
-            aria-label="Ver resultados y finalistas"
+            aria-label={t('hero2025.viewResults')}
           >
-            Ver resultados
+            {t('hero2025.viewResults')}
           </a>
         </div>
       </section>

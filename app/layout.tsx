@@ -10,6 +10,9 @@ import "./globals.css";
 import Footer from "./components/Footer";
 import ConditionalNavbar from "./components/ConditionalNavbar";
 import JsonLd from "./components/JsonLd";
+import { LanguageProvider } from "./i18n/LanguageProvider";
+import { getLocale } from "./i18n/getLocale";
+import type { Locale } from "./i18n/config";
 
 // Definimos los pesos para las fuentes
 const poppins = Poppins({
@@ -126,21 +129,29 @@ const organizationSchema = {
   ],
 };
 
-export default function RootLayout({
+const LOCALE_HTML: Record<Locale, string> = {
+  es: "es",
+  en: "en",
+  pt: "pt",
+};
+
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const locale = (await getLocale()) as Locale;
   return (
-    <html lang="es" className="overflow-x-hidden scroll-smooth">
+    <html lang={LOCALE_HTML[locale] || "es"} className="overflow-x-hidden scroll-smooth">
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_KEY || ""} />
       <body
         className={`${poppins.variable} ${leagueSpartan.variable} font-sans relative w-full overflow-x-hidden`}
         style={{ scrollBehavior: 'smooth' }}
       >
-        <JsonLd data={organizationSchema} />
-        <ConditionalNavbar />
-        {children}
-        {/* <GalacticCursorEffect /> */}
-        <Footer />
+        <LanguageProvider locale={locale}>
+          <JsonLd data={organizationSchema} />
+          <ConditionalNavbar />
+          {children}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

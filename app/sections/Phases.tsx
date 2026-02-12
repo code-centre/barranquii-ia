@@ -4,39 +4,20 @@ import Title from '../components/Title'
 import ScrollAnimation from '../components/2026/ScrollAnimation'
 import Link from 'next/link'
 import { THEME_LANDINGS } from '../utils/theme'
+import { useTranslation } from '@/app/i18n/useTranslation'
 
 interface Props {
   landing?: string
 }
 
 const hackathons = [
-  {
-    id: 'barranqui-ia',
-    name: 'Barranqui-IA',
-    date: '1-3 Mayo',
-    status: 'active',
-    description: 'El hackatón de IA más grande del Caribe colombiano',
-    link: '/barranqui-ia/2026'
-  },
-  {
-    id: 'cartagen-ia',
-    name: 'Cartagen-IA',
-    date: '15-17 Mayo',
-    status: 'coming-soon',
-    description: 'Próximamente en la Heroica',
-    link: '#'
-  },
-  {
-    id: 'samar-ia',
-    name: 'Samar-IA',
-    date: '29-31 Mayo',
-    status: 'coming-soon',
-    description: 'Próximamente en Santa Marta',
-    link: '#'
-  }
+  { id: 'barranqui-ia', name: 'Barranqui-IA', date: '1-3 Mayo', status: 'active', descKey: 'barranquiDesc', link: '/barranqui-ia/2026' },
+  { id: 'cartagen-ia', name: 'Cartagen-IA', date: '15-17 Mayo', status: 'coming-soon', descKey: 'cartagenDesc', link: '#' },
+  { id: 'samar-ia', name: 'Samar-IA', date: '29-31 Mayo', status: 'coming-soon', descKey: 'samarDesc', link: '#' }
 ]
 
 export default function Phases({ landing = 'default' }: Props) {
+  const { t } = useTranslation()
   const theme = THEME_LANDINGS[landing]
   const isDefault = landing === 'default'
 
@@ -48,8 +29,8 @@ export default function Phases({ landing = 'default' }: Props) {
   }
 
   return (
-    <section id="hack" aria-label="Participa en un hackatón" className='py-20 md:py-28'>
-      <Title title="Participa en un hackatón" landing={landing} />
+    <section id="hack" aria-label={t('phases.title')} className='py-20 md:py-28'>
+      <Title title={t('phases.title')} landing={landing} />
       
       
       
@@ -67,11 +48,11 @@ export default function Phases({ landing = 'default' }: Props) {
                     color: isDefault ? '#000000' : theme.accent || theme.principal
                   }}
                 >
-                  Activo
+                  {t('phases.active')}
                 </span>
               ) : (
                 <span className='inline-block px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white/70 border border-white/20'>
-                  Próximamente
+                  {t('phases.comingSoon')}
                 </span>
               )}
             </div>
@@ -93,7 +74,7 @@ export default function Phases({ landing = 'default' }: Props) {
 
             {/* Description */}
             <p className='text-white/80 text-sm lg:text-base mb-6 leading-relaxed flex-1'>
-              {hackathon.description}
+              {t(`phases.${hackathon.descKey}`)}
             </p>
 
             {/* CTA */}
@@ -106,7 +87,7 @@ export default function Phases({ landing = 'default' }: Props) {
                   color: isDefault ? '#000000' : 'white'
                 }}
               >
-                Inscribirme
+                {t('phases.inscribe')}
               </Link>
             ) : (
               <button
@@ -117,13 +98,13 @@ export default function Phases({ landing = 'default' }: Props) {
                   color: isDefault ? '#FF97EF' : theme.principal
                 }}
               >
-                Próximamente
+                {t('phases.comingSoon')}
               </button>
             )}
             
             {/* Helper Text */}
             <p className='text-white/50 text-xs mt-3 text-center'>
-              Los mejores equipos pueden avanzar a incubación o pilotear con empresas aliadas.
+              {t('phases.helperText')}
             </p>
           </div>
         </ScrollAnimation>
@@ -134,23 +115,23 @@ export default function Phases({ landing = 'default' }: Props) {
       <ScrollAnimation delay={0.05} direction="up">
         <div className='venture-card p-6 lg:p-8 mt-8 mb-8'>
           <h3 className='text-xl font-bold text-white mb-3'>
-            ¿Qué pasa después del hackatón?
+            {t('phases.afterHackTitle')}
           </h3>
           <p className='text-white/80 mb-4 leading-relaxed'>
-            Los proyectos con mejor potencial pueden continuar su camino en Caribe-IA.
+            {t('phases.afterHackPara')}
           </p>
           <ul className='space-y-2 mb-4 text-white/80'>
             <li className='flex items-start gap-2'>
               <span style={{ color: isDefault ? '#FF97EF' : theme.principal }} className='mt-1.5'>•</span>
-              <span>Pasar a la incubación Caribe-IA (Build)</span>
+              <span>{t('phases.afterHack_1')}</span>
             </li>
             <li className='flex items-start gap-2'>
               <span style={{ color: isDefault ? '#FF97EF' : theme.principal }} className='mt-1.5'>•</span>
-              <span>Participar con empresas aliadas que proponen retos para pilotos y validación real</span>
+              <span>{t('phases.afterHack_2')}</span>
             </li>
           </ul>
           <p className='text-white/50 text-sm mb-4'>
-            Y presentar resultados en el Demo Day de TechCaribe Fest (Show)
+            {t('phases.afterHackNote')}
           </p>
           <div className='flex flex-wrap gap-4 mt-4'>
             <button
@@ -160,7 +141,7 @@ export default function Phases({ landing = 'default' }: Props) {
                 color: isDefault ? '#FF97EF' : theme.principal
               }}
             >
-              Conocer incubación →
+              {t('phases.knowIncubation')}
             </button>
             <button
               onClick={() => handleScrollTo('empresas')}
@@ -169,7 +150,7 @@ export default function Phases({ landing = 'default' }: Props) {
                 color: isDefault ? '#FF97EF' : theme.principal
               }}
             >
-              Soy empresa / propongo un reto →
+              {t('phases.empresaReto')}
             </button>
           </div>
         </div>

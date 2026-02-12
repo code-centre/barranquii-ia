@@ -10,36 +10,42 @@ import ApplicationSection from "./sections/ApplicationSection";
 import { FAQS_CARIBE_IA } from "./utils/FAQS_CARIBE_IA";
 import type { Metadata } from "next";
 import JsonLd from "./components/JsonLd";
+import { getLocale } from "./i18n/getLocale";
+import { getTranslations, createT } from "./i18n/getTranslation";
+import type { Locale } from "./i18n/config";
 
-export const metadata: Metadata = {
-  title: "Caribe-IA 2026",
-  description:
-    "El programa de innovación abieta que transforma talento del Caribe en startups de IA listas para el mercado. Participa en hackatones, accede a incubación de 12 semanas y presenta en el Demo Day de TechCaribe Fest.",
-  openGraph: {
-    title: "Caribe-IA 2026",
-    description:
-      "El programa de innovación abierta que transforma talento del Caribe en startups de IA listas para el mercado. Hackatones, incubación y Demo Day.",
-    url: "https://www.caribe-ia.com",
-    images: [
-      {
-        url: "https://www.caribe-ia.com/caribe-ia-og.png",
-        width: 960,
-        height: 540,
-        alt: "Caribe-IA - Innovación abierta con Inteligencia Artificial desde el Caribe",
-        type: "image/png",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Caribe-IA 2026",
-    description: "El programa de innovación abierta que transforma talento del Caribe en startups de IA listas para el mercado.",
-    images: ["https://www.caribe-ia.com/caribe-ia-og.png"],
-  },
-  alternates: {
-    canonical: "/",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = (await getLocale()) as Locale;
+  const translations = await getTranslations(locale);
+  const t = createT(translations);
+  return {
+    title: t("metadata.siteTitle"),
+    description: t("metadata.siteDescription"),
+    openGraph: {
+      title: t("metadata.siteOgTitle"),
+      description: t("metadata.siteOgDescription"),
+      url: "https://www.caribe-ia.com",
+      images: [
+        {
+          url: "https://www.caribe-ia.com/caribe-ia-og.png",
+          width: 960,
+          height: 540,
+          alt: t("metadata.siteOgAlt"),
+          type: "image/png",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("metadata.siteOgTitle"),
+      description: t("metadata.siteOgDescription"),
+      images: ["https://www.caribe-ia.com/caribe-ia-og.png"],
+    },
+    alternates: {
+      canonical: "/",
+    },
+  };
+}
 
 const websiteSchema = {
   "@context": "https://schema.org",

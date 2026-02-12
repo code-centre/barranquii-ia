@@ -4,49 +4,39 @@ import Title from '../components/Title'
 import ScrollAnimation from '../components/2026/ScrollAnimation'
 import { Code2, Users, TrendingUp } from 'lucide-react'
 import { THEME_LANDINGS } from '../utils/theme'
+import { useTranslation } from '@/app/i18n/useTranslation'
 
 interface Props {
   landing: string
 }
 
-const outcomeCards = [
-  {
-    icon: Code2,
-    title: 'Construye un MVP funcional',
-    description: 'Desarrolla un producto mínimo viable con tecnologías de IA de vanguardia.'
-  },
-  {
-    icon: Users,
-    title: 'Valida con mentores y usuarios',
-    description: 'Obtén feedback de expertos y usuarios reales para refinar tu solución.'
-  },
-  {
-    icon: TrendingUp,
-    title: 'Prepárate para inversión y pilotos',
-    description: 'Accede a oportunidades de financiamiento y pilotos con empresas aliadas.'
-  }
+const outcomeCardKeys = [
+  { icon: Code2, titleKey: 'card1Title', descKey: 'card1Desc' },
+  { icon: Users, titleKey: 'card2Title', descKey: 'card2Desc' },
+  { icon: TrendingUp, titleKey: 'card3Title', descKey: 'card3Desc' }
 ]
 
 export default function Summary({ landing }: Props) {
+  const { t } = useTranslation()
   const theme = THEME_LANDINGS[landing]
   const isDefault = landing === 'default'
 
   return (
-    <section id="que-es" aria-label="¿Qué es Caribe-IA?" className='flex flex-col gap-10 pt-20 md:pt-28'>
-      <Title title="¿Qué es Caribe-IA?" landing={landing} />
+    <section id="que-es" aria-label={t('summaryMain.title')} className='flex flex-col gap-10 pt-20 md:pt-28'>
+      <Title title={t('summaryMain.title')} landing={landing} />
       
       {/* Manifesto */}
       <ScrollAnimation delay={0.1}>
         <div className='mx-auto'>
           <p className='text-xl md:text-2xl lg:text-3xl text-white/90 leading-relaxed'>
-            Es un sistema para crear startups de base tecnológica potenciadas por inteligencia artificial desde el Caribe colombiano con una proyección internacional.
+            {t('summaryMain.manifesto')}
           </p>
         </div>
       </ScrollAnimation>
 
       {/* Outcome Cards */}
       <div className='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12'>
-        {outcomeCards.map((card, index) => {
+        {outcomeCardKeys.map((card, index) => {
           const Icon = card.icon
           return (
             <ScrollAnimation key={index} delay={0.2 + index * 0.1} direction="up">
@@ -65,8 +55,8 @@ export default function Summary({ landing }: Props) {
                     }}
                   />
                 </div>
-                <h3 className='text-xl font-bold text-white mb-3'>{card.title}</h3>
-                <p className='text-white/70 text-sm lg:text-base leading-relaxed'>{card.description}</p>
+                <h3 className='text-xl font-bold text-white mb-3'>{t(`summaryMain.${card.titleKey}`)}</h3>
+                <p className='text-white/70 text-sm lg:text-base leading-relaxed'>{t(`summaryMain.${card.descKey}`)}</p>
               </div>
             </ScrollAnimation>
           )

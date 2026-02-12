@@ -2,20 +2,22 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useTranslation } from '@/app/i18n/useTranslation';
 
 export default function IsItForYou() {
+  const { t } = useTranslation();
   const galleryImages = [
-    { src: '/FOTOSBARRANQUI-IA/2.webp', alt: 'Equipos trabajando en sus proyectos' },
-    { src: '/FOTOSBARRANQUI-IA/1.webp', alt: 'Participantes del hackatón Barranqui-IA' },
-    { src: '/FOTOSBARRANQUI-IA/3.webp', alt: 'Ambiente colaborativo del evento' },
-    { src: '/FOTOSBARRANQUI-IA/4.webp', alt: 'Mentorías y talleres' },
-    { src: '/FOTOSBARRANQUI-IA/6.webp', alt: 'Presentación de proyectos' },
-    { src: '/FOTOSBARRANQUI-IA/7.webp', alt: 'Comunidad tecnológica reunida' },
-    { src: '/FOTOSBARRANQUI-IA/8.webp', alt: 'Desarrollo de prototipos' },
-    { src: '/FOTOSBARRANQUI-IA/9.webp', alt: 'Networking y colaboración' },
-    { src: '/FOTOSBARRANQUI-IA/10.webp', alt: 'Experiencia del hackatón' },
-    { src: '/FOTOSBARRANQUI-IA/11.webp', alt: 'Equipos innovando con IA' },
-    { src: '/FOTOSBARRANQUI-IA/12.webp', alt: 'Celebración y premiación' },
+    { src: '/FOTOSBARRANQUI-IA/2.webp', altKey: 'isItForYou.alt1' },
+    { src: '/FOTOSBARRANQUI-IA/1.webp', altKey: 'isItForYou.alt2' },
+    { src: '/FOTOSBARRANQUI-IA/3.webp', altKey: 'isItForYou.alt3' },
+    { src: '/FOTOSBARRANQUI-IA/4.webp', altKey: 'isItForYou.alt4' },
+    { src: '/FOTOSBARRANQUI-IA/6.webp', altKey: 'isItForYou.alt5' },
+    { src: '/FOTOSBARRANQUI-IA/7.webp', altKey: 'isItForYou.alt6' },
+    { src: '/FOTOSBARRANQUI-IA/8.webp', altKey: 'isItForYou.alt7' },
+    { src: '/FOTOSBARRANQUI-IA/9.webp', altKey: 'isItForYou.alt8' },
+    { src: '/FOTOSBARRANQUI-IA/10.webp', altKey: 'isItForYou.alt9' },
+    { src: '/FOTOSBARRANQUI-IA/11.webp', altKey: 'isItForYou.alt10' },
+    { src: '/FOTOSBARRANQUI-IA/12.webp', altKey: 'isItForYou.alt11' },
   ];
 
   return (
@@ -34,16 +36,14 @@ export default function IsItForYou() {
         <header className="mb-12">
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-              ¿No sabes si es para ti?
+              {t('isItForYou.title')}
             </span>
           </h2>
           <p className="text-xlg text-gray-300 mb-4">
-            Un hackatón es un espacio seguro para explorar la tecnología, aprender y probar tus límites.
-            Estarás rodeado de otros participantes que, al igual que tú, no tienen todas las respuestas,
-            pero se atreven a construir apoyados de inteligencia artificial.
+            {t('isItForYou.intro1')}
           </p>
           <p className="text-lg text-gray-300">
-            También habrá mentores para ayudarte a resolver tus dudas y guiarte para completar tu prototipo.
+            {t('isItForYou.intro2')}
           </p>
         </header>
 
@@ -59,7 +59,7 @@ export default function IsItForYou() {
           >
             <Image
               src={galleryImages[0].src}
-              alt={galleryImages[0].alt}
+              alt={t(galleryImages[0].altKey)}
               fill
               className="object-cover transition-transform duration-500 hover:scale-105"
               priority
@@ -77,7 +77,7 @@ export default function IsItForYou() {
             >
               <Image
                 src={galleryImages[1].src}
-                alt={galleryImages[1].alt}
+                alt={t(galleryImages[1].altKey)}
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
               />
@@ -91,7 +91,7 @@ export default function IsItForYou() {
             >
               <Image
                 src={galleryImages[2].src}
-                alt={galleryImages[2].alt}
+                alt={t(galleryImages[2].altKey)}
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
               />
@@ -112,7 +112,7 @@ export default function IsItForYou() {
             >
               <Image
                 src={image.src}
-                alt={image.alt}
+                alt={t(image.altKey)}
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
               />
@@ -122,8 +122,7 @@ export default function IsItForYou() {
 
         <footer className="text-center">
           <p className="text-2xl font-semibold text-purple-300 max-w-4xl mx-auto">
-            Bienvenidos developers, diseñadores, estudiantes y cualquier profesional (o no profesional) que
-            se atreva a romper sus propios límites.
+            {t('isItForYou.welcome')}
           </p>
         </footer>
       </div>

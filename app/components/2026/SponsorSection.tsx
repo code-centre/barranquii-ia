@@ -2,8 +2,10 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useTranslation } from '@/app/i18n/useTranslation';
 
 export default function SponsorsSection2026() {
+  const { t } = useTranslation();
   const mainSponsors = [
     { name: 'FCA', logo: '/images/sponsors/fca.webp', link: 'https://codigoabierto.tech' },
     { name: 'Tech Centre', logo: '/images/sponsors/tech-centre.png', link: 'https://techcentre.co' },
@@ -29,7 +31,7 @@ export default function SponsorsSection2026() {
         <header className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-              Esto es posible gracias al impulso de
+              {t('sponsors.title')}
             </span>
           </h2>
         </header>
@@ -50,11 +52,11 @@ export default function SponsorsSection2026() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex justify-center items-center p-4 group"
-                  aria-label={`Visitar sitio web de ${sponsor.name}`}
+                  aria-label={t('sponsors.visitSite', { name: sponsor.name })}
                 >
                   <Image
                     src={sponsor.logo}
-                    alt={`Logo de ${sponsor.name}`}
+                    alt={t('sponsors.logoOf', { name: sponsor.name })}
                     width={150}
                     height={80}
                     className="object-contain h-20 grayscale hover:grayscale-0 transition-all duration-300 group-hover:scale-105"

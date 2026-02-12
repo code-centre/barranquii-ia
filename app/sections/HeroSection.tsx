@@ -4,12 +4,14 @@ import { THEME_LANDINGS } from '../utils/theme'
 import Image from 'next/image'
 import { Meteors } from '../components/Meteors'
 import { ArrowDown } from '../components/Icons'
+import { useTranslation } from '@/app/i18n/useTranslation'
 
 interface HeroSectionProps {
   landing: string
 }
 
 export default function HeroSection({ landing }: HeroSectionProps) {
+  const { t } = useTranslation()
   const theme = THEME_LANDINGS[landing]
   const isDefault = landing === 'default'
 
@@ -22,7 +24,7 @@ export default function HeroSection({ landing }: HeroSectionProps) {
 
   return (
     <section
-      aria-label="Caribe-IA - Programa de startups de IA"
+      aria-label={t('main.ariaLabel')}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
         backgroundColor: isDefault ? theme.bgBase || '#1C1F2E' : '#000'
@@ -97,7 +99,7 @@ export default function HeroSection({ landing }: HeroSectionProps) {
           transition={{ delay: 0, duration: 0.8, ease: 'easeOut' }}
           className="flex items-center gap-2 mb-6 text-sm text-white/60"
         >
-          <span>Un programa de</span>
+          <span>{t('main.programOf')}</span>
           <Image
             src="/images/sponsors/caribe-ventures.png"
             alt="Caribe Ventures"
@@ -134,7 +136,7 @@ export default function HeroSection({ landing }: HeroSectionProps) {
           transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }}
           className="text-xl md:text-2xl text-white/80 max-w-3xl mb-8 leading-relaxed"
         >
-          El programa de innovación abierta que transforma talento del Caribe en startups de IA listas para el mercado.
+          {t('main.tagline')}
         </motion.p>
 
         {/* Support Line */}
@@ -144,11 +146,11 @@ export default function HeroSection({ landing }: HeroSectionProps) {
           transition={{ delay: 0.45, duration: 0.8, ease: 'easeOut' }}
           className="flex items-center gap-3 mb-12 text-white/70"
         >
-          <span className="text-sm md:text-base">Hackatones</span>
+          <span className="text-sm md:text-base">{t('main.hackatones')}</span>
           <span style={{ color: isDefault ? '#FF97EF' : theme.principal }}>—</span>
-          <span className="text-sm md:text-base">Incubación</span>
+          <span className="text-sm md:text-base">{t('main.incubation')}</span>
           <span style={{ color: isDefault ? '#FF97EF' : theme.principal }}>—</span>
-          <span className="text-sm md:text-base">Demo Day en TechCaribe Fest</span>
+          <span className="text-sm md:text-base">{t('main.demoDay')}</span>
         </motion.div>
 
         {/* CTAs */}
@@ -166,7 +168,7 @@ export default function HeroSection({ landing }: HeroSectionProps) {
               color: isDefault ? '#000000' : 'white'
             }}
           >
-            Postulate al programa
+            {t('main.postulate')}
           </button>
           <button
             onClick={() => handleScrollTo('hack')}
@@ -176,7 +178,7 @@ export default function HeroSection({ landing }: HeroSectionProps) {
               color: isDefault ? '#FF97EF' : theme.principal
             }}
           >
-            Participar en un hackatón
+            {t('main.participateHackathon')}
           </button>
           <button
             onClick={() => handleScrollTo('empresas')}
@@ -185,7 +187,7 @@ export default function HeroSection({ landing }: HeroSectionProps) {
               color: isDefault ? '#FF97EF' : theme.principal
             }}
           >
-            Soy empresa / aliado
+            {t('main.empresaAlly')}
           </button>
         </motion.div>
 

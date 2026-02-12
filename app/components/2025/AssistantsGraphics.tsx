@@ -296,6 +296,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 import { Doughnut } from "react-chartjs-2"
 import { UsersIcon, UserIcon, GraduationCapIcon } from "lucide-react"
 import { useEffect, useState } from "react"
+import { useTranslation } from "@/app/i18n/useTranslation"
 
 // Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement)
@@ -323,6 +324,7 @@ const attendanceData = {
 }
 
 export const AssistantsGraphics = () => {
+  const { t } = useTranslation()
   const [windowWidth, setWindowWidth] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 1200)
 
   // Track window size for responsive adjustments
@@ -411,7 +413,7 @@ export const AssistantsGraphics = () => {
       },
       title: {
         display: true,
-        text: "Perfiles de Participantes en el Hackatón",
+        text: t("graphics2025.profilesTitle"),
         color: "#e9d5ff",
         font: {
           size: windowWidth < 640 ? 14 : 16,
@@ -448,7 +450,7 @@ export const AssistantsGraphics = () => {
       },
       title: {
         display: true,
-        text: "Proyectos por Temática",
+        text: t("graphics2025.projectsByTheme"),
         color: "#e9d5ff",
         font: {
           size: windowWidth < 640 ? 14 : 16,
@@ -502,19 +504,19 @@ export const AssistantsGraphics = () => {
       {/* Stat Cards - Responsive grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
         <StatCard
-          title="Total de Asistentes"
+          title={t("graphics2025.totalAttendees")}
           value={attendanceData.total}
           icon={<UsersIcon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-blue-400" />}
           color="bg-[#1a103a]"
         />
         <StatCard
-          title="Participantes en el Hackatón"
+          title={t("graphics2025.participants")}
           value={attendanceData.participants}
           icon={<UserIcon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-pink-400" />}
           color="bg-[#1a103a]"
         />
         <StatCard
-          title="Talleres Especializados"
+          title={t("graphics2025.workshops")}
           value={attendanceData.talleres}
           icon={<GraduationCapIcon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-purple-400" />}
           color="bg-[#1a103a]"
@@ -534,17 +536,17 @@ export const AssistantsGraphics = () => {
         {/* Table container with responsive design */}
         <div className="bg-[#1a103a] p-3 sm:p-4 rounded-lg shadow-lg border border-purple-500/20">
           <h3 className="text-base sm:text-lg font-medium mb-2 sm:mb-4 text-purple-300 text-center lg:text-left">
-            Proyectos por Temática (Total: {attendanceData.totalProyectos})
+            {t("graphics2025.topicsTitle", { total: String(attendanceData.totalProyectos) })}
           </h3>
           <div className="overflow-x-auto -mx-3 sm:mx-0">
             <table className="w-full divide-y divide-purple-500/20">
               <thead>
                 <tr>
                   <th className="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left text-xs font-medium text-purple-300 uppercase tracking-wider">
-                    Temática
+                    {t("graphics2025.theme")}
                   </th>
                   <th className="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right text-xs font-medium text-purple-300 uppercase tracking-wider">
-                    % del Total
+                    {t("graphics2025.pctTotal")}
                   </th>
                 </tr>
               </thead>

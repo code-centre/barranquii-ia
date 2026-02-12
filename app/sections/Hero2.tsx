@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 export default function HeroTwo() {
+  const { t } = useTranslation();
   const [mounted, setMounted] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -69,30 +71,21 @@ export default function HeroTwo() {
   return (
     <section id="Hero2" className="flex flex-col scroll-mt-32 items-center gap-12 bg-black text-white w-full px-6 lg:pt-20 sm:px-10">
       <h2 className="border-l-4 border-principleViolet pl-4 font-bold text-2xl md:text-3xl lg:text-4xl uppercase self-start">
-        Hackaton 2024
+        {t("hero2_2024.sectionTitle")}
       </h2>
       <div className="container mx-auto text-center px-4 max-w-7xl">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
-          El pasado{" "}
-          <span className="text-purple-500">4 y 5 de mayo de 2024,</span> la
-          costa vibró con inteligencia artificial
+          {t("hero2_2024.headline")}
         </h2>
         <div className="bg-black text-white p-4 mx-auto max-w-6xl">
           <p className="text-lg md:text-lg">
-            <strong className="text-purple-500">Barranqui-IA</strong > dejó huella en la innovación del
-            Caribe. Más de <strong className="text-purple-500">150 mentes brillantes</strong>, en
-            <strong className="text-purple-500"> 21 equipos</strong>, dieron vida a soluciones con
-            inteligencia artificial en un ambiente dinámico y colaborativo.
+            {t("hero2_2024.para1")}
           </p>
           <p className="mt-2 text-lg md:text-lg pb-0">
-            Más que una competencia, fue un{" "}
-            <strong className="text-purple-500"> maratón de creatividad y aprendizaje</strong>, donde la
-            pasión demostró que no hay barreras para innovar. Barranquilla
-            reafirmó su lugar como epicentro tecnológico, impulsando talento y
-            transformación.
+            {t("hero2_2024.para2")}
           </p>
           <p className="font-bold text-2xl mt-2">
-            ¡Juntos convertimos ideas en futuro!
+            {t("hero2_2024.cta")}
           </p>
         </div>
       </div>
@@ -135,7 +128,7 @@ export default function HeroTwo() {
                     >
                       <Image
                         src={src}
-                        alt={`Hackathon Imagen ${index + 1}`}
+                        alt={t("hero2_2024.imageAlt", { num: String(slideIndex * imagesPerSlide + index + 1) })}
                         width={300}
                         height={200}
                         className="w-full h-full object-cover rounded-lg"
@@ -174,7 +167,7 @@ export default function HeroTwo() {
           <div className="relative w-11/12 sm:w-3/4 md:w-2/3 lg:w-1/2 h-3/4">
             <Image
               src={images[modalIndex]}
-              alt="Imagen en grande"
+              alt={t("hero2_2024.modalImageAlt")}
               fill
               className="object-contain rounded-lg"
             />

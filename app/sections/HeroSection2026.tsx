@@ -1,12 +1,16 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
 import NavigationIsland from '../components/2026/NavigationIsland';
+import { useTranslation } from '@/app/i18n/useTranslation';
 
 interface HeroSection2026Props {
   landing: string;
 }
 
 export default function HeroSection2026({ landing }: HeroSection2026Props) {
+  const { t } = useTranslation();
   return (
     <header className="relative py-32 min-h-[600px] md:min-h-[700px]" id="hero">
       {/* Background abstract shapes */}
@@ -29,19 +33,19 @@ export default function HeroSection2026({ landing }: HeroSection2026Props) {
       {/* Main Content */}
       <section className="relative z-10 flex flex-col items-center justify-center px-4">
         <p className="text-lg text-center mb-4" style={{ fontFamily: 'var(--font-poppinss)' }}>
-          3ra Edición - 1 al 3 de Mayo
+          {t('hero2026.edition')}
         </p>
         <h1 className="text-6xl md:text-8xl font-bold text-center mb-6 relative" style={{ minHeight: '120px' }}>
           <span className="relative bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent bg-[length:300%_auto] animate-gradient-shift drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
-            Barranqui-IA
+            {t('hero2026.title')}
           </span>
           <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer pointer-events-none">
-            Barranqui-IA
+            {t('hero2026.title')}
           </span>
         </h1>
 
         <p className="text-xl md:text-2xl text-white text-center mb-12 max-w-3xl" style={{ fontFamily: 'var(--font-poppinss)' }}>
-          Construye el futuro desde el Caribe con Inteligencia artificial
+          {t('hero2026.subtitle')}
         </p>
 
         {/* Call to Action */}
@@ -50,22 +54,22 @@ export default function HeroSection2026({ landing }: HeroSection2026Props) {
             href="#que-es"
             className="px-8 py-3 border-2 border-purple-600 hover:border-purple-500 hover:bg-purple-600/10 text-white rounded-lg font-semibold transition-all duration-300 inline-block text-center"
             style={{ fontFamily: 'var(--font-poppinss)' }}
-            aria-label="Conoce más sobre Barranqui-IA"
+            aria-label={t('hero2026.ariaLearnMore')}
           >
-            Conoce más
+            {t('hero2026.ctaLearnMore')}
           </a>
           <a
             href="#boletos"
             className="px-8 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-lg font-semibold transition-colors inline-block text-center"
             style={{ fontFamily: 'var(--font-poppinss)' }}
-            aria-label="Accede a la preventa de boletos"
+            aria-label={t('hero2026.ariaPresale')}
           >
-            Accede a la preventa
+            {t('hero2026.ctaPresale')}
           </a>
         </div>
 
         <p className="text-sm text-purple-200" style={{ fontFamily: 'var(--font-poppinss)' }}>
-          Cupos limitados - Primera etapa
+          {t('hero2026.limitedSpots')}
         </p>
       </section>
     </header>

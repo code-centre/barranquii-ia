@@ -4,12 +4,14 @@ import { Facebook, Instagram, Twitter } from "./Icons";
 import { THEME_LANDINGS } from "../utils/theme";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 interface FooterProps {
   landing?: string;
 }
 
 export default function Footer({ landing: propLanding }: FooterProps) {
+  const { t } = useTranslation();
   const pathname = usePathname();
   const [landing, setLanding] = useState("default");
 
@@ -48,10 +50,10 @@ export default function Footer({ landing: propLanding }: FooterProps) {
           <address className="flex flex-col space-y-6 not-italic">
             <div>
               <h2 className={`${textColor} font-bold text-2xl mb-4`}>
-                Fundación Código Abierto
+                {t('footer.orgName')}
               </h2>
               <p className={`${textSecondaryColor} text-sm leading-relaxed max-w-md`}>
-                Impulsando la innovación tecnológica y el desarrollo de habilidades digitales en la comunidad.
+                {t('footer.mission')}
               </p>
             </div>
 
@@ -78,7 +80,7 @@ export default function Footer({ landing: propLanding }: FooterProps) {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span>Cra. 50 #72-126, Barranquilla, Colombia</span>
+                <span>{t('footer.address')}</span>
               </div>
               <div className="flex items-start">
                 <svg
@@ -132,8 +134,8 @@ export default function Footer({ landing: propLanding }: FooterProps) {
           </address>
 
           {/* Links */}
-          <nav aria-label="Enlaces importantes">
-            <h2 className={`${textColor} font-bold text-xl mb-6`}>Enlaces</h2>
+          <nav aria-label={t('footer.ariaLinks')}>
+            <h2 className={`${textColor} font-bold text-xl mb-6`}>{t('footer.linksTitle')}</h2>
             <ul className={`flex flex-col space-y-3 ${textSecondaryColor} text-sm`}>
               <li>
                 <a
@@ -142,7 +144,7 @@ export default function Footer({ landing: propLanding }: FooterProps) {
                   rel="noopener noreferrer"
                   className="hover:opacity-80 transition-opacity"
                 >
-                  Caribe Ventures →
+                  {t('footer.caribeVentures')} →
                 </a>
               </li>
               <li>
@@ -152,7 +154,7 @@ export default function Footer({ landing: propLanding }: FooterProps) {
                   rel="noopener noreferrer"
                   className="hover:opacity-80 transition-opacity"
                 >
-                  TechCaribe Fest →
+                  {t('footer.techCaribeFest')} →
                 </a>
               </li>
               <li>
@@ -160,7 +162,7 @@ export default function Footer({ landing: propLanding }: FooterProps) {
                   href="/"
                   className="hover:opacity-80 transition-opacity"
                 >
-                  Caribe-IA
+                  {t('footer.caribeIA')}
                 </a>
               </li>
               <li>
@@ -168,15 +170,15 @@ export default function Footer({ landing: propLanding }: FooterProps) {
                   href="mailto:contacto@codigoabierto.tech"
                   className="hover:opacity-80 transition-opacity"
                 >
-                  Contacto
+                  {t('common.contact')}
                 </a>
               </li>
             </ul>
           </nav>
 
           {/* Redes sociales */}
-          <nav aria-label="Redes sociales">
-            <h2 className={`${textColor} font-bold text-xl mb-6`}>Síguenos</h2>
+          <nav aria-label={t('footer.ariaSocial')}>
+            <h2 className={`${textColor} font-bold text-xl mb-6`}>{t('footer.followTitle')}</h2>
             <ul className="flex gap-6" role="list">
               <li>
                 <a
@@ -184,7 +186,7 @@ export default function Footer({ landing: propLanding }: FooterProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`${textSecondaryColor} hover:opacity-80 transition-all duration-300 hover:scale-110 inline-block`}
-                  aria-label="Síguenos en Instagram"
+                  aria-label={t('footer.ariaInstagram')}
                 >
                   <Instagram />
                 </a>
@@ -195,7 +197,7 @@ export default function Footer({ landing: propLanding }: FooterProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`${textSecondaryColor} hover:opacity-80 transition-all duration-300 hover:scale-110 inline-block`}
-                  aria-label="Síguenos en Facebook"
+                  aria-label={t('footer.ariaFacebook')}
                 >
                   <Facebook />
                 </a>
@@ -206,7 +208,7 @@ export default function Footer({ landing: propLanding }: FooterProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`${textSecondaryColor} hover:opacity-80 transition-all duration-300 hover:scale-110 inline-block`}
-                  aria-label="Síguenos en Twitter"
+                  aria-label={t('footer.ariaTwitter')}
                 >
                   <Twitter />
                 </a>
@@ -221,18 +223,18 @@ export default function Footer({ landing: propLanding }: FooterProps) {
         {/* Powered by & Copyright */}
         <div className="text-center space-y-2">
           <p className={`text-sm ${textSecondaryColor}`}>
-            Powered by{' '}
+            {t('footer.poweredBy')}{' '}
             <a
               href="https://caribeventures.com"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold hover:opacity-80 transition-opacity"
             >
-              Caribe Ventures
+              {t('footer.caribeVentures')}
             </a>
           </p>
           <p className={`text-sm ${textSecondaryColor}`}>
-            © {new Date().getFullYear()} Fundación Código Abierto. Todos los derechos reservados.
+            {t('footer.copyright', { year: String(new Date().getFullYear()) })}
           </p>
         </div>
       </div>

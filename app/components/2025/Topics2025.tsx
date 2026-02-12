@@ -1,57 +1,47 @@
+"use client";
+
 import React from "react";
 import Topic from "../../components/Topic";
 import "../../globals.css";
 import Title from "../../components/Title";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 interface Props {
   landing: string;
 }
 
-const TOPICS = [
-    {
-        title: "Reto empresarial x Cámara de Comercio BAQ",
-        img: "/cities.webp"
-    },
-    {
-        title: "Salud digital",
-        img: "/health.webp"
-    },
-    {
-        title: "Educación personalizada",
-        img: "/education.webp"
-    },
-    {
-        title: "Sostenibilidad ambiental",
-        img: "/environment.webp"
-    },
-    {
-        title: "Agentes x ShadAI",
-        img: "/assistant.webp"
-    },
-    {
-        title: "Entretenimiento y creatividad",
-        img: "/entertainment.webp"
-    },
-    {
-        title: "Seguridad y privacidad",
-        img: "/security.webp"
-    }
-]
+const TOPIC_KEYS = [
+  "topic1", "topic2", "topic3", "topic4", "topic5", "topic6", "topic7"
+];
+
+const TOPIC_IMGS = [
+  "/cities.webp",
+  "/health.webp",
+  "/education.webp",
+  "/environment.webp",
+  "/assistant.webp",
+  "/entertainment.webp",
+  "/security.webp"
+];
 
 export default function Topics({ landing }: Props) {
+  const { t } = useTranslation();
+  const topics = TOPIC_KEYS.map((key, i) => ({
+    title: t(`topics2025.${key}`),
+    img: TOPIC_IMGS[i]
+  }));
+
   return (
     <section id="topics" className="pt-10 relative">
-      <Title landing={landing} title="Lineas temáticas" />
+      <Title landing={landing} title={t('topics2025.title')} />
 
     <p className="mt-3 text-gray-300">
-      Barranqui-IA contó con 7 lineas temáticas para guiar a los
-      participantes a resolver problemas relevantes con inteligencia
-      artificial.
+      {t('topics2025.intro')}
     </p>
 
       <div className="flex flex-wrap justify-center items-center gap-5 md:gap-3 mt-10">
                 {
-                    TOPICS.map((topic, i) => (
+                    topics.map((topic, i) => (
                         <Topic key={topic.title} img={topic.img} title={topic.title} index={i + 1} />
                     ))
                 }

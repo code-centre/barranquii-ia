@@ -1,8 +1,11 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import LanguageSwitcher from '../LanguageSwitcher';
+import { useTranslation } from '@/app/i18n/useTranslation';
 
 export default function NavigationIsland() {
+  const { t } = useTranslation();
   const [activeSection, setActiveSection] = useState<string>('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -70,10 +73,10 @@ export default function NavigationIsland() {
   }, [mounted]);
 
   const navLinks = [
-    { href: '/', label: 'Caribe-IA', id: 'hero', isLogo: true },
-    { href: '#que-es', label: '¿Qué es Barranqui-IA?', id: 'que-es' },
-    { href: '#experiencia', label: 'Experiencia', id: 'experiencia' },
-    { href: '#boletos', label: 'Boletos', id: 'boletos' },
+    { href: '/', label: t('nav.caribeIA'), id: 'hero', isLogo: true },
+    { href: '#que-es', label: t('nav.whatIs'), id: 'que-es' },
+    { href: '#experiencia', label: t('nav.experience'), id: 'experiencia' },
+    { href: '#boletos', label: t('nav.tickets'), id: 'boletos' },
   ];
 
   const toggleMobileMenu = () => {
@@ -127,6 +130,7 @@ export default function NavigationIsland() {
                   </Link>
                 );
               })}
+              <LanguageSwitcher />
             </div>
 
             {/* Mobile Menu Button */}
@@ -181,6 +185,9 @@ export default function NavigationIsland() {
                   </Link>
                 );
               })}
+              <div className="pt-3 mt-3 border-t border-white/20">
+                <LanguageSwitcher />
+              </div>
             </div>
           </div>
         </div>
