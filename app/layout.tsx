@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Plus_Jakarta_Sans,
-  Noto_Sans,
-  Poppins,
-  League_Spartan,
-} from "next/font/google";
+import { Poppins, League_Spartan } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import Footer from "./components/Footer";
@@ -25,12 +20,6 @@ const leagueSpartan = League_Spartan({
   subsets: ["latin"],
   variable: "--font-league_spartan",
 });
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-const noto = Noto_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.caribe-ia.com'),
