@@ -10,10 +10,10 @@
     "title": "Barranqui-IA",
     "subtitle": "Build the future from the Caribbean with Artificial Intelligence",
     "ctaLearnMore": "Learn more",
-    "ctaPresale": "Access presale",
+    "ctaPresale": "Buy tickets - First stage",
     "limitedSpots": "Limited spots - First stage",
     "ariaLearnMore": "Learn more about Barranqui-IA",
-    "ariaPresale": "Access ticket presale"
+    "ariaPresale": "Buy first stage tickets"
   },
   "about": {
     "title": "What is Barranqui-IA?",
@@ -54,12 +54,12 @@
     "firstStageDates": "March 1 to April 15",
     "secondStageDates": "April 16 to April 30",
     "whatIncludes": "What does your ticket include?",
-    "benefit1": "Access to all event areas",
-    "benefit2": "Participation in workshops and mentoring",
-    "benefit3": "Meals during the event",
-    "benefit4": "Exclusive participant kit",
+    "benefit1": "General participation in the hackathon",
+    "benefit2": "Access to workshops and mentoring",
+    "benefit3": "Unlimited coffee and snacks",
+    "benefit4": "Exclusive kit and commemorative t-shirt",
     "benefit5": "Participation certificate",
-    "benefit6": "Chance to win prizes",
+    "benefit6": "Cloud credits and AI tools",
     "motivation": "You don't need a team yet. You don't need an idea. Just the desire to build."
   },
   "isItForYou": {

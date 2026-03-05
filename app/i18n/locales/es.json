@@ -10,10 +10,10 @@
     "title": "Barranqui-IA",
     "subtitle": "Construye el futuro desde el Caribe con Inteligencia artificial",
     "ctaLearnMore": "Conoce más",
-    "ctaPresale": "Accede a la preventa",
+    "ctaPresale": "Comprar boletos - Primera etapa",
     "limitedSpots": "Cupos limitados - Primera etapa",
     "ariaLearnMore": "Conoce más sobre Barranqui-IA",
-    "ariaPresale": "Accede a la preventa de boletos"
+    "ariaPresale": "Comprar boletos de la primera etapa"
   },
   "about": {
     "title": "¿Qué es Barranqui-IA?",
@@ -54,12 +54,12 @@
     "firstStageDates": "1 de Marzo al 15 de Abril",
     "secondStageDates": "16 de Abril al 30 de Abril",
     "whatIncludes": "¿Qué incluye tu boleto?",
-    "benefit1": "Acceso a todas las áreas del evento",
-    "benefit2": "Participación en talleres y mentorías",
-    "benefit3": "Alimentación durante el evento",
-    "benefit4": "Kit de participante exclusivo",
+    "benefit1": "Participación general en el hackatón",
+    "benefit2": "Acceso a talleres y mentorías",
+    "benefit3": "Café y snacks ilimitado",
+    "benefit4": "Kit exclusivo y camiseta conmemorativa",
     "benefit5": "Certificado de participación",
-    "benefit6": "Oportunidad de ganar premios",
+    "benefit6": "Créditos de cloud y herramientas de IA",
     "motivation": "No necesitas equipo aún. No necesitas idea. Solo ganas de construir."
   },
   "isItForYou": {

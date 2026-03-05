@@ -40,17 +40,36 @@ export default function TicketPurchase() {
 
         {/* Ticket Stages */}
         <article className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {/* Primera etapa - Preventa - Habilitada */}
+          {/* Preventa - Deshabilitada */}
+          <motion.section
+            className="bg-purple-900/10 backdrop-blur-sm rounded-lg p-8 border border-purple-500/20 flex flex-col items-center text-center opacity-50"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 0.5, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <h3 className="text-2xl font-bold text-gray-500 mb-4">{t('tickets.presale')}</h3>
+            <p className="text-4xl font-extrabold text-gray-400 mb-2 line-through">$120,000 COP</p>
+            <p className="text-gray-400 mb-6">{t('tickets.presaleDates')}</p>
+            <button
+              className="bg-gray-600 text-gray-300 font-bold py-3 px-8 rounded-full cursor-not-allowed opacity-70"
+              disabled
+            >
+              {t('common.comingSoon')}
+            </button>
+          </motion.section>
+
+          {/* Primera etapa - Habilitada */}
           <motion.section
             className="bg-purple-900/10 backdrop-blur-sm rounded-lg p-8 border border-purple-500/30 flex flex-col items-center text-center"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold text-purple-400 mb-4">{t('tickets.presale')}</h3>
-            <p className="text-4xl font-extrabold text-white mb-2">$120,000 COP</p>
-            <p className="text-gray-300 mb-6">{t('tickets.presaleDates')}</p>
+            <h3 className="text-2xl font-bold text-purple-400 mb-4">{t('tickets.firstStage')}</h3>
+            <p className="text-4xl font-extrabold text-white mb-2">$150,000 COP</p>
+            <p className="text-gray-300 mb-6">{t('tickets.firstStageDates')}</p>
             <a
               href="https://www.codigoabierto.tech/eventos/barranqui-ia-2026"
               target="_blank"
@@ -59,25 +78,6 @@ export default function TicketPurchase() {
             >
               {t('common.buyTicket')}
             </a>
-          </motion.section>
-
-          {/* Segunda etapa - Deshabilitada */}
-          <motion.section
-            className="bg-purple-900/10 backdrop-blur-sm rounded-lg p-8 border border-purple-500/20 flex flex-col items-center text-center opacity-50"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 0.5, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <h3 className="text-2xl font-bold text-gray-500 mb-4">{t('tickets.firstStage')}</h3>
-            <p className="text-4xl font-extrabold text-gray-400 mb-2 line-through">$150,000 COP</p>
-            <p className="text-gray-400 mb-6">{t('tickets.firstStageDates')}</p>
-            <button
-              className="bg-gray-600 text-gray-300 font-bold py-3 px-8 rounded-full cursor-not-allowed opacity-70"
-              disabled
-            >
-              {t('common.comingSoon')}
-            </button>
           </motion.section>
 
           {/* Tercera etapa - Deshabilitada */}
