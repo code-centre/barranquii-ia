@@ -7,8 +7,8 @@ import { useTranslation } from '@/app/i18n/useTranslation'
 const BACKERS = [
   { name: 'FCA', logo: '/images/sponsors/fca.webp', link: 'https://codigoabierto.tech' },
   { name: 'Tech Centre', logo: '/logos/tech-centre-dark.png', link: 'https://techcentre.co' },
-  { name: 'Shelv', logo: '/logos/shelv.png', link: 'https://shelv.ai' },
-  { name: 'Synergy', logo: '/logos/logo-synergy-fondo.png', link: 'https://www.synergytech.com.co' },
+  { name: 'Shelv', logo: '/logos/shelv.png', link: 'https://shelv.io/' },
+  { name: 'Synergy', logo: '/logos/logo-synergy-fondo.png', link: 'https://app.snrg.lat' },
   { name: 'Ciudad Inmersiva', logo: '/logos/ciudad-inmersiva.png', link: 'https://ciudadinmersiva.com', invert: true },
 ]
 
