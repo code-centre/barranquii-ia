@@ -41,10 +41,10 @@ export default function FAQ({ landing, data }: Props) {
 
   const getTabLabelTranslated = (title: string | undefined): string => {
     if (!title) return t('faq.general');
-    if (title.includes('Hackatones')) return t('faq.participants');
-    if (title.includes('Incubación')) return t('faq.incubation');
-    if (title.includes('Empresas')) return t('faq.enterprises');
-    if (title.includes('Demo Day') || title.includes('Crowdfunding')) return t('faq.investors');
+    if (title.includes('Participantes') || title.includes('Hackatón')) return t('faq.participants');
+    if (title.includes('Incubación') || title.includes('Equipos')) return t('faq.incubation');
+    if (title.includes('Empresas') || title.includes('Retos')) return t('faq.enterprises');
+    if (title.includes('Inversión') || title.includes('Demo Day') || title.includes('Crowdfunding')) return t('faq.investors');
     return title;
   };
 

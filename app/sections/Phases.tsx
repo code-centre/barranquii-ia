@@ -1,19 +1,21 @@
 'use client'
 import React from 'react'
-import Title from '../components/Title'
 import ScrollAnimation from '../components/2026/ScrollAnimation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { THEME_LANDINGS } from '../utils/theme'
 import { useTranslation } from '@/app/i18n/useTranslation'
+import { ArrowRight } from 'lucide-react'
 
 interface Props {
   landing?: string
 }
 
-const hackathons = [
-  { id: 'barranqui-ia', name: 'Barranqui-IA', date: '1-3 Mayo', status: 'active', descKey: 'barranquiDesc', link: '/barranqui-ia/2026' },
-  { id: 'cartagen-ia', name: 'Cartagen-IA', date: '15-17 Mayo', status: 'coming-soon', descKey: 'cartagenDesc', link: '#' },
-  { id: 'samar-ia', name: 'Samar-IA', date: '29-31 Mayo', status: 'coming-soon', descKey: 'samarDesc', link: '#' }
+const PAST_EVENT_IMAGES = [
+  '/FOTOSBARRANQUI-IA/1.webp',
+  '/FOTOSBARRANQUI-IA/3.webp',
+  '/FOTOSBARRANQUI-IA/6.webp',
+  '/FOTOSBARRANQUI-IA/8.webp',
 ]
 
 export default function Phases({ landing = 'default' }: Props) {
@@ -29,132 +31,80 @@ export default function Phases({ landing = 'default' }: Props) {
   }
 
   return (
-    <section id="hack" aria-label={t('phases.title')} className='py-20 md:py-28'>
-      <Title title={t('phases.title')} landing={landing} />
-      
-      
-      
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8'>
-        {hackathons.map((hackathon, index) => (
-          <ScrollAnimation key={hackathon.id} delay={index * 0.1} direction="up">
-          <div className='venture-card p-6 lg:p-8 flex flex-col'>
-            {/* Status Badge */}
-            <div className='mb-4'>
-              {hackathon.status === 'active' ? (
+    <section id="phases" aria-label={t('phases.titlePrefix') + t('phases.titleBrand') + t('phases.titleSuffix')} className='py-20 md:py-28'>
+      <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+        {/* Main CTA Card */}
+        <ScrollAnimation delay={0.1} direction="up">
+          <div className='venture-card p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8'>
+            <div className='flex-1'>
+              <h2 className='text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3'>
+                {t('phases.titlePrefix')}
                 <span
-                  className='inline-block px-3 py-1 rounded-full text-xs font-semibold'
+                  className='bg-clip-text text-transparent'
                   style={{
-                    backgroundColor: isDefault ? '#FFFFFF' : theme.accent || theme.principal,
-                    color: isDefault ? '#000000' : theme.accent || theme.principal
+                    background: `linear-gradient(to right, ${theme.gradient.from}, ${theme.gradient.via}, ${theme.gradient.to})`,
+                    WebkitBackgroundClip: 'text',
+                    backgroundSize: '200% 100%',
+                    animation: isDefault ? 'gradient-shift 6s ease infinite' : undefined
                   }}
                 >
-                  {t('phases.active')}
+                  {t('phases.titleBrand')}
                 </span>
-              ) : (
-                <span className='inline-block px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white/70 border border-white/20'>
-                  {t('phases.comingSoon')}
-                </span>
-              )}
-            </div>
-
-            {/* City Name */}
-            <h3 className='text-2xl lg:text-3xl font-bold text-white mb-2'>
-              {hackathon.name}
-            </h3>
-
-            {/* Date */}
-            <p
-              className='text-lg mb-4'
+                {t('phases.titleSuffix')}
+              </h2>
+            <p className='text-lg text-white/80 mb-6'>
+              {t('phases.subtitle')}
+            </p>
+            <Link
+              href="/barranqui-ia/2026"
+              className='btn-primary inline-flex items-center justify-center text-base px-8 py-4 font-semibold'
               style={{
-                color: theme.principal
+                backgroundColor: isDefault ? '#FFFFFF' : theme.accent || theme.principal,
+                color: isDefault ? '#000000' : 'white'
               }}
             >
-              {hackathon.date}
-            </p>
-
-            {/* Description */}
-            <p className='text-white/80 text-sm lg:text-base mb-6 leading-relaxed flex-1'>
-              {t(`phases.${hackathon.descKey}`)}
-            </p>
-
-            {/* CTA */}
-            {hackathon.status === 'active' ? (
-              <Link
-                href={hackathon.link}
-                className='btn-primary text-center text-sm'
-                style={{
-                  backgroundColor: isDefault ? '#FFFFFF' : theme.accent || theme.principal,
-                  color: isDefault ? '#000000' : 'white'
-                }}
-              >
-                {t('phases.inscribe')}
-              </Link>
-            ) : (
-              <button
-                disabled
-                className='btn-secondary text-center text-sm opacity-50 cursor-not-allowed'
-                style={{
-                  borderColor: isDefault ? '#FF97EF' : theme.principal,
-                  color: isDefault ? '#FF97EF' : theme.principal
-                }}
-              >
-                {t('phases.comingSoon')}
-              </button>
-            )}
-            
-            {/* Helper Text */}
-            <p className='text-white/50 text-xs mt-3 text-center'>
-              {t('phases.helperText')}
-            </p>
+              {t('phases.cta')}
+            </Link>
+            </div>
+            <div className='flex-1 w-full lg:max-w-md'>
+              <div className='grid grid-cols-2 gap-2'>
+                {PAST_EVENT_IMAGES.map((src, i) => (
+                  <div
+                    key={src}
+                    className='relative aspect-[4/3] rounded-lg overflow-hidden'
+                  >
+                    <Image
+                      src={src}
+                      alt={`Barranqui-IA ${i + 1}`}
+                      fill
+                      className='object-cover'
+                      sizes="(max-width: 768px) 50vw, 200px"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </ScrollAnimation>
-        ))}
+
+        {/* Reto Card */}
+        <ScrollAnimation delay={0.15} direction="up">
+          <button
+            onClick={() => handleScrollTo('empresas')}
+            className='venture-card p-6 lg:p-8 mt-6 w-full text-left flex items-center justify-between gap-4 hover:border-[rgba(255,151,239,0.6)] transition-colors group'
+          >
+            <span className='text-lg md:text-xl font-semibold text-white group-hover:text-white/95'>
+              {t('phases.retoCard')}
+            </span>
+            <ArrowRight
+              size={24}
+              className='flex-shrink-0'
+              style={{ color: isDefault ? '#FF97EF' : theme.principal }}
+            />
+          </button>
+        </ScrollAnimation>
 
       </div>
-        {/* Outcomes Panel */}
-      <ScrollAnimation delay={0.05} direction="up">
-        <div className='venture-card p-6 lg:p-8 mt-8 mb-8'>
-          <h3 className='text-xl font-bold text-white mb-3'>
-            {t('phases.afterHackTitle')}
-          </h3>
-          <p className='text-white/80 mb-4 leading-relaxed'>
-            {t('phases.afterHackPara')}
-          </p>
-          <ul className='space-y-2 mb-4 text-white/80'>
-            <li className='flex items-start gap-2'>
-              <span style={{ color: isDefault ? '#FF97EF' : theme.principal }} className='mt-1.5'>•</span>
-              <span>{t('phases.afterHack_1')}</span>
-            </li>
-            <li className='flex items-start gap-2'>
-              <span style={{ color: isDefault ? '#FF97EF' : theme.principal }} className='mt-1.5'>•</span>
-              <span>{t('phases.afterHack_2')}</span>
-            </li>
-          </ul>
-          <p className='text-white/50 text-sm mb-4'>
-            {t('phases.afterHackNote')}
-          </p>
-          <div className='flex flex-wrap gap-4 mt-4'>
-            <button
-              onClick={() => handleScrollTo('build')}
-              className='btn-tertiary text-sm'
-              style={{
-                color: isDefault ? '#FF97EF' : theme.principal
-              }}
-            >
-              {t('phases.knowIncubation')}
-            </button>
-            <button
-              onClick={() => handleScrollTo('empresas')}
-              className='btn-tertiary text-sm'
-              style={{
-                color: isDefault ? '#FF97EF' : theme.principal
-              }}
-            >
-              {t('phases.empresaReto')}
-            </button>
-          </div>
-        </div>
-      </ScrollAnimation>
     </section>
   )
 }

@@ -161,24 +161,24 @@ export default function HeroSection({ landing }: HeroSectionProps) {
           className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 mb-16"
         >
           <button
-            onClick={() => handleScrollTo('apply')}
+            onClick={() => handleScrollTo('hack')}
             className="btn-primary focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-black"
             style={{
               backgroundColor: isDefault ? '#FFFFFF' : theme.accent || theme.principal,
               color: isDefault ? '#000000' : 'white'
             }}
           >
-            {t('main.postulate')}
+            {t('main.participateHackathon')}
           </button>
           <button
-            onClick={() => handleScrollTo('hack')}
+            onClick={() => handleScrollTo('empresas')}
             className="btn-secondary focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-black"
             style={{
               borderColor: isDefault ? '#FF97EF' : theme.principal,
               color: isDefault ? '#FF97EF' : theme.principal
             }}
           >
-            {t('main.participateHackathon')}
+            {t('main.empresaAlly')}
           </button>
           <button
             onClick={() => handleScrollTo('empresas')}
@@ -187,7 +187,7 @@ export default function HeroSection({ landing }: HeroSectionProps) {
               color: isDefault ? '#FF97EF' : theme.principal
             }}
           >
-            {t('main.empresaAlly')}
+            {t('main.wantToBeAlly')}
           </button>
         </motion.div>
 

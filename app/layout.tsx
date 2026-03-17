@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Caribe-IA"
   },
   description:
-    "Caribe-IA 2026: El programa que transforma talento del Caribe en startups de IA listas para el mercado. Hackatones, incubación y Demo Day en TechCaribe Fest.",
+    "Caribe-IA 2026: El programa que transforma talento del Caribe en startups de IA listas para el mercado. Hackatones, aceleración y Demo Day en TechCaribe Fest.",
   authors: [
     {
       name: "Caribe Ventures",
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     "hackatón inteligencia artificial",
     "hackatón IA Barranquilla",
     "hackatón IA Caribe colombiano",
-    "incubación startups IA",
+    "aceleración startups IA",
     "aceleradora startups inteligencia artificial",
-    "programa incubación IA Colombia",
+    "programa aceleración IA Colombia",
     "Demo Day TechCaribe Fest",
     "startups IA Caribe",
     "emprendimiento inteligencia artificial",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     url: "https://www.caribe-ia.com",
     title: "Caribe-IA 2026",
     description:
-      "El programa que transforma talento del Caribe en startups de IA listas para el mercado. Hackatones, incubación y Demo Day.",
+      "El programa que transforma talento del Caribe en startups de IA listas para el mercado. Hackatones, aceleración y Demo Day.",
     siteName: "Caribe-IA",
     images: [
       {

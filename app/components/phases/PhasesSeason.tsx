@@ -44,7 +44,7 @@ export default function PhasesSeason({ landing }: Props) {
                             <p>
                                 Estos espacios intensivos de co-creación no solo son una oportunidad para materializar ideas en
                                 prototipos funcionales, sino también para identificar talentos, equipos y proyectos con alto potencial,
-                                que podrán ser seleccionados para avanzar en el proceso de incubación de Caribe-IA.
+                                que podrán ser seleccionados para avanzar en el proceso de aceleración de Caribe-IA.
                             </p>
                         </div>
                     </div>
@@ -54,13 +54,13 @@ export default function PhasesSeason({ landing }: Props) {
                         <HackatonesNav landing={landing} />
                     </div>
 
-                    {/* Sección 2: Programa de Incubación */}
+                    {/* Sección 2: Programa de Aceleración */}
                     <div>
                         <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-10">
                             <div className="space-y-4">
-                                <h2 className="text-2xl font-bold">2.- Programa de Incubación</h2>
+                                <h2 className="text-2xl font-bold">2.- Programa de Aceleración</h2>
                                 <p>
-                                    El Programa de Incubación de Caribe-IA es la siguiente etapa del viaje para los equipos más
+                                    El Programa de Aceleración de Caribe-IA es la siguiente etapa del viaje para los equipos más
                                     prometedores surgidos durante la temporada de hackatones.
                                 </p>
                                 <p>

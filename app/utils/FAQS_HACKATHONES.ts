@@ -53,6 +53,6 @@ export const FAQS_HACKATHONES: FAQ[] = [
   {
     question: "¿Qué pasa después del hackatón?",
     answer:
-      "Los proyectos más destacados serán invitados a postularse al Programa de Incubación Caribe-IA, donde durante 12 semanas podrán desarrollar su idea como una startup real, con acompañamiento técnico, estratégico y acceso a inversión vía crowdfunding.",
+      "Los proyectos más destacados serán invitados a postularse al Programa de Aceleración Caribe-IA, donde durante 12 semanas podrán desarrollar su idea como una startup real, con acompañamiento técnico, estratégico y acceso a inversión vía crowdfunding.",
   },
 ];

@@ -32,16 +32,13 @@ export default function PoweredByCV({ landing = 'default' }: Props) {
             <div className='flex flex-col'>
               <div className='mb-6'>
                 <Image
-                  src="/images/sponsors/caribe-ventures.png"
-                  alt="Caribe Ventures"
+                  src="/logos/costa-digital.png"
+                  alt="Costa Digital"
                   width={250}
                   height={80}
                   className="h-auto w-auto object-contain"
                 />
               </div>
-              <p className='text-white/80 text-base lg:text-lg leading-relaxed'>
-                {t('poweredByCV.caribeDesc')}
-              </p>
             </div>
 
             {/* Right Column: Program Description */}
@@ -53,7 +50,7 @@ export default function PoweredByCV({ landing = 'default' }: Props) {
                 {t('poweredByCV.para')}
               </p>
               <a
-                href="https://caribeventures.com"
+                href="https://www.costadigital.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className='btn-secondary inline-block text-center w-fit'

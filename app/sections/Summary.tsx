@@ -1,66 +1,94 @@
 'use client'
 import React from 'react'
-import Title from '../components/Title'
 import ScrollAnimation from '../components/2026/ScrollAnimation'
-import { Code2, Users, TrendingUp } from 'lucide-react'
 import { THEME_LANDINGS } from '../utils/theme'
 import { useTranslation } from '@/app/i18n/useTranslation'
+import { ChevronUp } from 'lucide-react'
 
 interface Props {
   landing: string
 }
 
-const outcomeCardKeys = [
-  { icon: Code2, titleKey: 'card1Title', descKey: 'card1Desc' },
-  { icon: Users, titleKey: 'card2Title', descKey: 'card2Desc' },
-  { icon: TrendingUp, titleKey: 'card3Title', descKey: 'card3Desc' }
+const phases = [
+  { num: '01', titleKey: 'phase1Title', descKey: 'phase1Desc', statusKey: 'statusOpen', isOpen: true },
+  { num: '02', titleKey: 'phase2Title', descKey: 'phase2Desc', statusKey: 'statusNext', isOpen: false },
+  { num: '03', titleKey: 'phase3Title', descKey: 'phase3Desc', statusKey: 'statusNext', isOpen: false },
 ]
 
 export default function Summary({ landing }: Props) {
   const { t } = useTranslation()
   const theme = THEME_LANDINGS[landing]
   const isDefault = landing === 'default'
+  const accent = isDefault ? '#FF97EF' : theme.principal
+
+  const headline = t('summaryMain.headline')
+  const highlight = t('summaryMain.headlineHighlight')
+  const headlineParts = headline.split(new RegExp(`(${highlight})`, 'i'))
 
   return (
     <section id="que-es" aria-label={t('summaryMain.title')} className='flex flex-col gap-10 pt-20 md:pt-28'>
-      <Title title={t('summaryMain.title')} landing={landing} />
-      
-      {/* Manifesto */}
-      <ScrollAnimation delay={0.1}>
-        <div className='mx-auto'>
-          <p className='text-xl md:text-2xl lg:text-3xl text-white/90 leading-relaxed'>
-            {t('summaryMain.manifesto')}
-          </p>
-        </div>
-      </ScrollAnimation>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start'>
+        {/* Left: Title + Subtitle */}
+        <ScrollAnimation delay={0.1}>
+          <div className='flex flex-col gap-6'>
+            <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight'>
+              {headlineParts.map((part, i) =>
+                part.toLowerCase() === highlight.toLowerCase() ? (
+                  <span key={i} style={{ color: accent }}>{part}</span>
+                ) : (
+                  <span key={i}>{part}</span>
+                )
+              )}
+            </h2>
+            <p className='text-lg md:text-xl text-white/80 leading-relaxed'>
+              {t('summaryMain.subtitle')}
+            </p>
+          </div>
+        </ScrollAnimation>
 
-      {/* Outcome Cards */}
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12'>
-        {outcomeCardKeys.map((card, index) => {
-          const Icon = card.icon
-          return (
-            <ScrollAnimation key={index} delay={0.2 + index * 0.1} direction="up">
-              <div className='venture-card p-6 lg:p-8 flex flex-col items-center text-center'>
-                <div
-                  className='mb-4 p-4 rounded-full'
-                  style={{
-                    backgroundColor: isDefault ? 'rgba(255, 151, 239, 0.1)' : `rgba(${theme.principal}, 0.1)`,
-                    border: `2px solid ${isDefault ? 'rgba(255, 151, 239, 0.3)' : `${theme.principal}40`}`
-                  }}
-                >
-                  <Icon
-                    size={32}
-                    style={{
-                      color: isDefault ? '#FF97EF' : theme.principal
-                    }}
-                  />
+        {/* Right: Phases Card */}
+        <ScrollAnimation delay={0.2} direction="up">
+          <div className='venture-card p-6 lg:p-8 flex flex-col relative overflow-hidden'>
+            {/* Decorative orb */}
+            <div
+              className='absolute -top-20 -right-20 w-40 h-40 rounded-full blur-3xl opacity-40'
+              style={{ background: `radial-gradient(circle, ${accent} 0%, transparent 70%)` }}
+            />
+            <p className='text-xs font-semibold tracking-wider text-white/60 uppercase mb-6'>
+              {t('summaryMain.programHeader')}
+            </p>
+            <div className='flex flex-col divide-y divide-white/10'>
+              {phases.map((phase) => (
+                <div key={phase.num} className='py-5 first:pt-0 last:pb-0 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3'>
+                  <div className='flex gap-4 items-start'>
+                    <span
+                      className='text-2xl font-bold tabular-nums'
+                      style={{ color: accent }}
+                    >
+                      {phase.num}
+                    </span>
+                    <div>
+                      <h3 className='font-bold text-white text-lg'>{t(`summaryMain.${phase.titleKey}`)}</h3>
+                      <p className='text-white/60 text-sm mt-0.5'>{t(`summaryMain.${phase.descKey}`)}</p>
+                    </div>
+                  </div>
+                  <span
+                    className={`inline-flex px-3 py-1 rounded-full text-xs font-semibold shrink-0 w-fit ${
+                      phase.isOpen ? 'text-white' : 'bg-white/10 text-white/80'
+                    }`}
+                    style={phase.isOpen ? { backgroundColor: accent } : {}}
+                  >
+                    {t(`summaryMain.${phase.statusKey}`)}
+                  </span>
                 </div>
-                <h3 className='text-xl font-bold text-white mb-3'>{t(`summaryMain.${card.titleKey}`)}</h3>
-                <p className='text-white/70 text-sm lg:text-base leading-relaxed'>{t(`summaryMain.${card.descKey}`)}</p>
-              </div>
-            </ScrollAnimation>
-          )
-        })}
+              ))}
+            </div>
+            <div className='flex items-center gap-2 mt-6 pt-6 border-t border-white/10 text-white/60 text-sm'>
+              <ChevronUp size={16} style={{ color: '#22c55e' }} />
+              <span>{t('summaryMain.backedBy')}</span>
+            </div>
+          </div>
+        </ScrollAnimation>
       </div>
     </section>
   )

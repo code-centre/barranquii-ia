@@ -1,7 +1,9 @@
 import Summary from "./sections/Summary";
+import BackedByRibbon from "./components/BackedByRibbon";
 import HeroSection from "./sections/HeroSection";
 import HowItWorks from "./sections/HowItWorks";
 import Phases from "./sections/Phases";
+import CaribeVenturesCapitalSection from "./sections/CaribeVenturesCapitalSection";
 import AudienceSection from "./sections/AudienceSection";
 import PoweredByCV from "./sections/PoweredByCV";
 import Organizers from "./sections/Organizers";
@@ -68,7 +70,7 @@ const educationalOrganizationSchema = {
   "@type": "EducationalOrganization",
   name: "Caribe-IA",
   url: "https://www.caribe-ia.com",
-  description: "Programa de incubación y aceleración de startups de inteligencia artificial en el Caribe colombiano",
+  description: "Programa de aceleración de startups de inteligencia artificial en el Caribe colombiano",
   educationalCredentialAwarded: "Certificado de participación",
   hasProgram: [
     {
@@ -78,8 +80,8 @@ const educationalOrganizationSchema = {
     },
     {
       "@type": "EducationalProgram",
-      name: "Incubación Caribe-IA",
-      description: "Programa de incubación de 12 semanas para startups de IA",
+      name: "Aceleración Caribe-IA",
+      description: "Programa de aceleración de 12 semanas para startups de IA",
     },
   ],
 };
@@ -115,15 +117,19 @@ export default function Home() {
         <Summary landing='default' />
       </div>
 
-      {/* 3. HowItWorks (nuevo -- Hack/Build/Show) */}
-      <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
-        <HowItWorks landing='default' />
-      </div>
+      {/* 2b. Backed by ribbon */}
+      <BackedByRibbon />
+
+      {/* 3. HowItWorks (nuevo -- Hack/Build/Show) - EL PROGRAMA con fondo hero */}
+      <HowItWorks landing='default' />
 
       {/* 4. Phases / HackatonCards (reescrito -- 3 event cards) */}
       <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
         <Phases landing='default' />
       </div>
+
+      {/* 4b. Caribe Ventures - Capital real (con fondo hero) */}
+      <CaribeVenturesCapitalSection landing='default' />
 
       {/* 5. AudienceSection (nuevo -- "Para quien es?") */}
       <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>

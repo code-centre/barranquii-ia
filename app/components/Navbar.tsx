@@ -69,55 +69,20 @@ export default function Navbar({ }) {
           className={`hidden lg:flex justify-center items-center gap-4 ${isSmallDesktop ? "xl:gap-6 text-lg" : "xl:gap-10 text-xl"
             }`}
         >
-          {sectionsPage.map((section) => {
-            return (
-              <li
-                key={section.id}
-                className="flex flex-col items-center"
+          {sectionsPage.map((section) => (
+            <li key={section.id} className="flex flex-col items-center">
+              <Link
+                href={section.link || `#${section.id}`}
+                className={`text-white text-lg ${stylesLi} text-base`}
               >
-                {section.id === "barranqui-ia" ? (
-                  <Link
-                    href="/barranqui-ia/2026"
-                    className={`text-white text-lg ${stylesLi} text-base ${!section.active && 'text-gray-400 opacity-80 line-through cursor-not-allowed hover:text-gray-400 hover:line-through'}`}
-                  >
-                    {section.name}
-                  </Link>
-                ) : (
-                  <Link
-                    className={`${pathname === `/${section.id}` ? 'text-white' : ''} text-lg ${stylesLi} text-base ${!section.active && 'text-gray-400 opacity-80 line-through cursor-not-allowed hover:text-gray-400 hover:line-through'}`}
-                    href={`${section.active ? `/${section.id}` : ''}`}
-                  >
-                    {section.name}
-                  </Link>
-                )}
-                {!section.active && section.id !== "barranqui-ia" && (
-                  <span className="text-white px-3 text-sm border border-pink-500 bg-pink-500 rounded-full">
-                    {t('nav.comingSoon')}
-                  </span>
-                )}
-              </li>
-            );
-          })}
+                {t(section.nameKey)}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         <div className="hidden lg:flex items-center gap-4">
           <LanguageSwitcher />
-          <button
-            onClick={() => {
-              if (pathname === "/") {
-                const element = document.getElementById("postulate");
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth", block: "start" });
-                }
-              } else {
-                window.location.href = "/#postulate";
-              }
-            }}
-            className="btn-primary text-sm px-4 py-2"
-            style={{ backgroundColor: landing === 'default' ? '#FFFFFF' : THEME_LANDINGS[landing].principal, color: landing === 'default' ? '#000000' : 'white' }}
-          >
-            {t('nav.postulate')}
-          </button>
           <div className="flex items-center gap-1 text-xs text-white/70">
             <span>{t('nav.poweredBy')}</span>
             <a
@@ -186,57 +151,18 @@ export default function Navbar({ }) {
           </button>
         </div>
         <ul className="flex flex-col items-start pt-6 pl-6 pr-6 space-y-4 text-lg sm:text-xl overflow-y-auto h-[calc(100vh-100px)]">
-          {sectionsPage.map((section) => {
-            return (
-              <li
-                key={section.id}
-                className={`${stylesLi} text-white flex flex-col items-center`}
+          {sectionsPage.map((section) => (
+            <li key={section.id} className={`${stylesLi} text-white flex flex-col items-center`}>
+              <Link
+                href={section.link || `#${section.id}`}
+                onClick={() => setOpenMenu(false)}
+                className="text-white text-base"
               >
-                {section.id === "barranqui-ia" ? (
-                  <Link
-                    href="/barranqui-ia/2026"
-                    onClick={() => setOpenMenu(false)}
-                    className={`text-white text-lg ${stylesLi} text-base ${!section.active && 'text-gray-400 opacity-80 line-through cursor-not-allowed hover:text-gray-400 hover:line-through'}`}
-                  >
-                    {section.name}
-                  </Link>
-                ) : (
-                  <Link
-                    onClick={() => setOpenMenu(false)}
-                    className={`${pathname === `/${section.id}` ? 'text-white' : ''} text-lg ${stylesLi} text-base ${!section.active && 'text-gray-400 opacity-80 line-through cursor-not-allowed hover:text-gray-400 hover:line-through'}`}
-                    href={`${section.active ? `/${section.id}` : ''}`}
-                  >
-                    {section.name}
-                  </Link>
-                )}
-                {!section.active && section.id !== "barranqui-ia" && (
-                  <span className="text-white px-3 text-sm border border-pink-500 bg-pink-500 rounded-full">
-                    {t('nav.comingSoon')}
-                  </span>
-                )}
-              </li>
-            );
-          })}
-          <li className="w-full pt-4 border-t border-white/20">
-            <button
-              onClick={() => {
-                setOpenMenu(false);
-                if (pathname === "/") {
-                  const element = document.getElementById("postulate");
-                  if (element) {
-                    element.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }
-                } else {
-                  window.location.href = "/#postulate";
-                }
-              }}
-              className="btn-primary w-full text-sm px-4 py-2"
-              style={{ backgroundColor: landing === 'default' ? '#FFFFFF' : THEME_LANDINGS[landing].principal, color: landing === 'default' ? '#000000' : 'white' }}
-            >
-              {t('nav.postulate')}
-            </button>
-          </li>
-          <li className="text-xs text-white/70 pt-2">
+                {t(section.nameKey)}
+              </Link>
+            </li>
+          ))}
+          <li className="text-xs text-white/70 pt-4 border-t border-white/20">
             <span>{t('nav.poweredBy')} </span>
             <a
               href="https://caribeventures.com"

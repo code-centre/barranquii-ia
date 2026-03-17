@@ -10,123 +10,72 @@ interface FAQGroup {
 
 export const FAQS_CARIBE_IA: FAQGroup[] = [
     {
-        title: "🚀 Hackatones Caribe-IA",
+        title: "🎯 Participantes del Hackatón",
         faqs: [
             {
-                question: "¿Quiénes pueden participar en los hackatones?",
+                question: "¿Quién puede participar?",
                 answer:
-                    "Estudiantes, desarrolladores, diseñadores, emprendedores, creativos o cualquier persona interesada en construir soluciones con tecnología e inteligencia artificial. Puedes venir solo/a o en equipo.",
+                    "Cualquier persona con ganas de construir: desarrolladores, diseñadores, científicos de datos, emprendedores o creativos. No importa tu nivel de experiencia ni si vienes solo o en equipo. Lo que buscamos es actitud y disposición para crear.",
             },
             {
-                question: "¿Debo tener una idea antes de llegar?",
+                question: "¿Necesito tener una idea o equipo antes de llegar?",
                 answer:
-                    "No. Puedes llegar sin idea, sin equipo, o con una idea que quieras explorar. Durante el evento habrá espacios para formar equipos, descubrir retos y construir desde cero.",
+                    "Para nada. Puedes llegar con una idea, con un equipo, con ambas cosas, o con ninguna. Al inicio del evento habrá espacios para formar equipos, explorar retos y construir desde cero. Muchos de los mejores proyectos nacen ahí mismo.",
             },
             {
-                question: "¿Qué pasa si ya tengo una idea o un reto definido?",
+                question: "¿Hay que saber de inteligencia artificial?",
                 answer:
-                    "¡También puedes participar! Solo recuerda que todo lo que se presente debe construirse desde cero durante el hackatón, sin traer soluciones previamente desarrolladas.",
+                    "No es requisito. Si no tienes experiencia con IA, durante el evento encontrarás talleres introductorios y mentores que te guiarán. Lo que importa es que quieras aprender y construir algo real.",
             },
             {
-                question:
-                    "¿Cómo se aseguran de que la competencia sea justa entre los que llegan con idea y los que no?",
+                question: "¿Qué pasa si ya tengo un proyecto avanzado?",
                 answer:
-                    "Nuestro equipo de mentores y jurados evaluará el proceso, el esfuerzo y el avance técnico en función del punto de partida de cada equipo. No premiamos solo el resultado, sino el camino recorrido durante el evento.",
-            },
-            {
-                question: "¿Puedo venir sin equipo?",
-                answer:
-                    "¡Sí! Tendremos dinámicas para formar equipos al inicio del hackatón. Si vienes solo/a, es una gran oportunidad para conectar con otras personas con intereses afines.",
-            },
-            {
-                question: "¿Qué tipo de premios se entregan?",
-                answer:
-                    "Habrá premios por creatividad, impacto, ejecución técnica, colaboración y otras categorías especiales. Todos los equipos tienen oportunidades de ser reconocidos, sin importar su nivel previo de experiencia.",
-            },
-            {
-                question: "¿Dónde se realizan los hackatones?",
-                answer:
-                    "En distintas ciudades del Caribe colombiano, como Barranquilla, Cartagena y Santa Marta. Puedes revisar las fechas y sedes actualizadas en nuestras redes o sitio web.",
-            },
-            {
-                question: "¿Necesito saber de inteligencia artificial para participar?",
-                answer:
-                    "No es un requisito, pero sí una ventaja. Si no tienes experiencia, podrás aprender durante el evento gracias a los talleres introductorios y el acompañamiento de mentores.",
-            },
-            {
-                question: "¿Habrá mentores?",
-                answer:
-                    "Sí. Contaremos con un equipo de expertos que te guiarán tanto en lo técnico como en estrategia, diseño, pitch y validación de tu idea.",
+                    "Todo lo que se presente debe construirse durante el hackatón, partiendo desde cero. Puedes traer una idea clara y contexto del problema, pero la solución debe desarrollarse en el evento. Esto garantiza que la competencia sea justa para todos.",
             },
         ],
     },
     {
-        title: "🌱 Programa de Incubación",
+        title: "🏗️ Equipos en Incubación",
         faqs: [
             {
-                question: "¿Qué incluye el programa de incubación?",
+                question: "¿Cómo se seleccionan los equipos para la incubación?",
                 answer:
-                    "Durante 12 semanas recibirás acompañamiento estratégico y profundización técnica. Tendrás mentoría, talleres, retos semanales, espacios de co-creación y preparación para levantar inversión.",
+                    "Los mejores proyectos del hackatón son evaluados por un jurado con criterios de impacto, viabilidad técnica y potencial de crecimiento. La selección es rigurosa porque queremos que los equipos que entren tengan las mejores condiciones para crecer en serio.",
             },
             {
-                question: "¿En qué fechas se realiza el programa?",
-                answer: "De septiembre a noviembre de 2025.",
+                question: "¿Qué incluye el proceso de incubación?",
+                answer:
+                    "Doce semanas de acompañamiento intensivo donde el objetivo no es aprender, es construir. Los equipos reciben mentorías semanales, acceso a expertos en tecnología, negocios y VC, y acompañamiento directo para llevar su prototipo del hackatón hasta un MVP listo para el mercado. Salís del programa con un producto real, no con una presentación.",
             },
             {
-                question:
-                    "¿El enfoque es solo en negocio o también en desarrollo tecnológico?",
+                question: "¿Los equipos tienen que estar en Barranquilla durante la incubación?",
                 answer:
-                    "Ambos. Nuestro enfoque técnico es clave: trabajamos contigo para mejorar tu arquitectura de software, experiencia de usuario, modelo de IA y escalabilidad, al tiempo que fortalecemos el modelo de negocio.",
-            },
-            {
-                question: "¿Tiene algún costo participar en la incubadora?",
-                answer:
-                    "No. Caribe-IA es un programa sin costo para los equipos seleccionados, gracias al apoyo de nuestros aliados y patrocinadores.",
-            },
-            {
-                question: "¿Puedo aplicar si no participé en los hackatones?",
-                answer:
-                    "Generalmente se priorizan proyectos surgidos en los hackatones, pero podríamos abrir convocatorias externas en casos excepcionales. ¡Mantente atento!",
-            },
-            {
-                question: "¿Cómo se seleccionan los proyectos para incubación?",
-                answer:
-                    "Los proyectos se seleccionan basándose en varios criterios: potencial técnico y de negocio, viabilidad del MVP desarrollado durante el hackatón, compromiso del equipo, y alineación con los objetivos del programa. El proceso de selección es transparente y comunicado a todos los participantes.",
+                    "El programa está diseñado para founders del Caribe, pero el modelo de trabajo combina sesiones presenciales con acompañamiento remoto. Los detalles de formato se comunican a los equipos seleccionados.",
             },
         ],
     },
     {
-        title: "💡 Demo Day & Crowdfunding",
+        title: "🏭 Empresas con Retos",
         faqs: [
             {
-                question: "¿Qué es el Demo Day?",
+                question: "¿Cómo puede participar una empresa con un reto?",
                 answer:
-                    "Es el evento final del programa de incubación, donde los equipos presentan públicamente sus startups frente a una audiencia de comunidad, aliados e inversionistas.",
-            },
-            {
-                question: "¿Qué es el crowdfunding y cómo funciona?",
-                answer:
-                    "Es una forma de inversión colectiva donde cualquier persona puede apoyar económicamente un proyecto. En Caribe-IA, usamos este mecanismo para que friends & family, comunidad local e inversionistas ángeles puedan aportar desde montos pequeños hasta grandes inversiones.",
-            },
-            {
-                question: "¿Cómo se asegura la transparencia del proceso de inversión?",
-                answer:
-                    "Trabajamos con plataformas aliadas de crowdfunding autorizadas que garantizan trazabilidad, seguridad y transparencia en el proceso.",
-            },
-            {
-                question: "¿Qué beneficios reciben los inversionistas?",
-                answer:
-                    "Los inversionistas podrán participar en la etapa temprana de una startup, con posibilidad de retorno según el modelo propuesto por cada equipo (revenue share, equity, recompensas, etc.).",
+                    "Las empresas pueden proponer retos reales que los equipos del hackatón intentarán resolver durante el evento. Es una forma directa de conectar con talento tech de la región y explorar soluciones innovadoras. Para participar, llena el formulario de propuesta de reto y te contactamos para coordinar los detalles.",
             },
         ],
     },
     {
-        title: "🏢 Empresas",
+        title: "💰 Inversión",
         faqs: [
             {
-                question: "¿Qué obtiene una empresa aliada (pilotos, talento, visibilidad)?",
+                question: "¿Pueden los equipos recibir inversión al terminar el programa?",
                 answer:
-                    "Las empresas aliadas obtienen múltiples beneficios: acceso a soluciones de IA desarrolladas por talento del Caribe para resolver sus retos específicos, oportunidad de pilotos con startups validadas, visibilidad de marca en eventos y comunicaciones del programa, y acceso a talento técnico especializado en IA para posibles contrataciones o colaboraciones.",
+                    "Sí. Los equipos que completen la incubación y presenten en el Demo Day durante Tech Caribe Weekend tendrán acceso a una audiencia de inversionistas que incluye a Caribe Ventures y a fondos de venture capital de toda Latinoamérica que asisten al festival. No es una garantía automática, pero sí la oportunidad más real que existe hoy en la región para un founder caribeño.",
+            },
+            {
+                question: "¿Qué es Caribe Ventures y qué tipo de startups financia?",
+                answer:
+                    "Caribe Ventures es el primer fondo de inversión pre-seed enfocado en founders del Caribe colombiano que usan IA para transformar industrias tradicionales. Apostamos por builders con tracción temprana, no solo por ideas. Caribe-IA es el pipeline natural hacia el fondo.",
             },
         ],
     },
