@@ -45,6 +45,22 @@ h1, h2, h3, h4, h5 {
   animation: marquee 30s linear infinite; /* Adjust animation duration, timing, etc. */
 }
 
+/* BackedByRibbon: logos sliding in a row (4 copies for seamless loop, no gap) */
+@keyframes ribbon-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+.animate-ribbon-scroll {
+  animation: ribbon-scroll 30s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(-30%);
