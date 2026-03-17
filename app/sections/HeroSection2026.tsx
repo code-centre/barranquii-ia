@@ -35,13 +35,23 @@ export default function HeroSection2026({ landing }: HeroSection2026Props) {
         <p className="text-lg text-center mb-4" style={{ fontFamily: 'var(--font-poppinss)' }}>
           {t('hero2026.edition')}
         </p>
-        <h1 className="text-6xl md:text-8xl font-bold text-center mb-6 relative" style={{ minHeight: '120px' }}>
-          <span className="relative bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent bg-[length:300%_auto] animate-gradient-shift drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
-            {t('hero2026.title')}
-          </span>
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer pointer-events-none">
-            {t('hero2026.title')}
-          </span>
+        <h1 className="text-center mb-6 relative" style={{ minHeight: '120px' }}>
+          <p className="text-4xl md:text-6xl font-bold mb-2 relative inline-block">
+            <span className="relative bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent bg-[length:300%_auto] animate-gradient-shift drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
+              {t('hero2026.hackathon')}
+            </span>
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer pointer-events-none">
+              {t('hero2026.hackathon')}
+            </span>
+          </p>
+          <p className="text-6xl md:text-8xl font-bold relative block">
+            <span className="relative bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent bg-[length:300%_auto] animate-gradient-shift drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
+              {t('hero2026.title')}
+            </span>
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer pointer-events-none">
+              {t('hero2026.title')}
+            </span>
+          </p>
         </h1>
 
         <p className="text-xl md:text-2xl text-white text-center mb-12 max-w-3xl" style={{ fontFamily: 'var(--font-poppinss)' }}>
