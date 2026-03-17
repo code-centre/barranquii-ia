@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | Caribe-IA"
   },
   description:
-    "Caribe-IA 2026: El programa que transforma talento del Caribe en startups de IA listas para el mercado. Hackatones, aceleración y Demo Day en TechCaribe Fest.",
+    "Caribe-IA 2026: El programa de innovación abierta que lleva equipos del Caribe desde una idea hasta una startup financiada. Hackatones de IA, 12 semanas de aceleración y Demo Day ante inversionistas en TechCaribe Fest. Respaldado por Caribe Ventures.",
   authors: [
     {
       name: "Caribe Ventures",
@@ -59,6 +59,16 @@ export const metadata: Metadata = {
     "eventos tecnología IA",
     "mentoría startups IA",
     "inversión startups inteligencia artificial",
+    "innovación abierta IA",
+    "Costa Digital",
+    "TechCaribe Fest",
+    "Tech Caribe Weekend",
+    "Caribe Ventures",
+    "capital pre-seed Caribe",
+    "fondo inversión IA Colombia",
+    "prototipo a startup",
+    "hackathon AI Colombia",
+    "AI startups Caribbean",
   ],
   robots: {
     index: true,
@@ -76,7 +86,7 @@ export const metadata: Metadata = {
     url: "https://www.caribe-ia.com",
     title: "Caribe-IA 2026",
     description:
-      "El programa que transforma talento del Caribe en startups de IA listas para el mercado. Hackatones, aceleración y Demo Day.",
+      "De la idea al capital, en el Caribe. Hackatones de IA, 12 semanas de aceleración y Demo Day ante inversionistas. Respaldado por Caribe Ventures.",
     siteName: "Caribe-IA",
     images: [
       {
@@ -92,7 +102,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Caribe-IA 2026",
-    description: "El programa que transforma talento del Caribe en startups de IA listas para el mercado.",
+    description: "De la idea al capital, en el Caribe. Hackatones de IA, aceleración y Demo Day ante inversionistas en TechCaribe Fest.",
     images: ["https://www.caribe-ia.com/caribe-ia-og.png"],
   },
   alternates: {
@@ -106,16 +116,18 @@ const organizationSchema = {
   name: "Caribe-IA",
   url: "https://www.caribe-ia.com",
   logo: "https://www.caribe-ia.com/caribe-ia-og.png",
-  description: "Programa que transforma talento del Caribe en startups de IA listas para el mercado",
+  description: "Programa de innovación abierta que lleva equipos del Caribe desde una idea hasta una startup financiada a través de hackatones de IA, aceleración y Demo Day.",
   foundingOrganization: {
     "@type": "Organization",
     name: "Caribe Ventures",
+    url: "https://www.linkedin.com/company/caribe-ventures",
   },
   sameAs: [
-    // Add social media URLs when available
-    // "https://twitter.com/caribeia",
-    // "https://www.linkedin.com/company/caribe-ia",
-    // "https://www.instagram.com/caribeia",
+    "https://www.instagram.com/caribe.ventures",
+    "https://www.linkedin.com/company/caribe-ventures",
+    "https://www.instagram.com/codigoabierto.tech/",
+    "https://twitter.com/CodigoAbiertoBQ",
+    "https://www.facebook.com/profile.php?id=61562090332916",
   ],
 };
 

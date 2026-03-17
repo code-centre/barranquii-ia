@@ -38,27 +38,29 @@ export function generateMetadata({ params }: { params: { landing: string } }): M
 	const name = landingNames[params.landing] || 'Caribe-IA';
 	const year = '2026';
 	
+	const description = `${name} ${year}: Hackatón de IA en el Caribe colombiano. Prototipa con IA, accede a 12 semanas de aceleración y presenta ante inversionistas en TechCaribe Fest.`;
+	const ogDescription = `${name} ${year}: Hackatón de IA en el Caribe. Construye, acelera y presenta tu startup.`;
 	return {
-		title: `${name} ${year}`,
-		description: `${name} ${year}: Hackatón de inteligencia artificial en el Caribe colombiano. Participa en el evento de tecnología e IA más importante de la región.`,
+		title: `${name} ${year} | Hackatón de IA`,
+		description,
 		openGraph: {
-			title: `${name} ${year}`,
-			description: `${name} ${year}: Hackatón de inteligencia artificial en el Caribe colombiano.`,
+			title: `${name} ${year} — Hackatón de IA en el Caribe`,
+			description: ogDescription,
 			url: `https://www.caribe-ia.com/${params.landing}`,
 			images: [
 				{
 					url: "https://www.caribe-ia.com/portada.png",
 					width: 2178,
 					height: 1724,
-					alt: `${name} ${year}`,
+					alt: `${name} ${year} — Hackatón de IA en el Caribe colombiano`,
 					type: "image/png",
 				},
 			],
 		},
 		twitter: {
 			card: "summary_large_image",
-			title: `${name} ${year}`,
-			description: `${name} ${year}: Hackatón de inteligencia artificial en el Caribe colombiano.`,
+			title: `${name} ${year} — Hackatón de IA en el Caribe`,
+			description: ogDescription,
 			images: ["https://www.caribe-ia.com/portada.png"],
 		},
 		alternates: {

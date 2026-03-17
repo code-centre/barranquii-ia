@@ -350,14 +350,14 @@
     "volunteers": "Volunteers"
   },
   "metadata": {
-    "siteTitle": "Caribe-IA 2026",
-    "siteDescription": "Caribe-IA 2026: The program that transforms Caribbean talent into market-ready AI startups. Hackathons, acceleration and Demo Day at TechCaribe Fest.",
-    "siteOgTitle": "Caribe-IA 2026",
-    "siteOgDescription": "The program that transforms Caribbean talent into market-ready AI startups. Hackathons, acceleration and Demo Day.",
-    "siteOgAlt": "Caribe-IA - Open innovation with Artificial Intelligence from the Caribbean",
+    "siteTitle": "Caribe-IA 2026 | From Idea to Funding, in the Caribbean",
+    "siteDescription": "Caribe-IA 2026: The open innovation program that takes Caribbean teams from an idea to a funded startup. AI hackathons, 12-week acceleration and Demo Day before investors at TechCaribe Fest.",
+    "siteOgTitle": "Caribe-IA 2026 — From Idea to Funding, in the Caribbean",
+    "siteOgDescription": "From idea to funding, in the Caribbean. AI hackathons, acceleration and Demo Day before investors. Backed by Caribe Ventures.",
+    "siteOgAlt": "Caribe-IA — Open innovation program: AI hackathons, acceleration and Demo Day in the Colombian Caribbean",
     "eventTitle": "{{name}} {{year}} | AI Hackathon in {{city}}",
-    "eventDescription": "{{name}} {{year}}: Artificial intelligence hackathon in the Colombian Caribbean. {{dates}} Participate in the most important technology and AI event in the region.",
-    "eventOgAlt": "{{name}} {{year}} - Artificial Intelligence Hackathon from the Caribbean"
+    "eventDescription": "{{name}} {{year}}: AI hackathon in the Colombian Caribbean. {{dates}} Prototype with AI, access acceleration and pitch to investors at TechCaribe Fest.",
+    "eventOgAlt": "{{name}} {{year}} — AI Hackathon in the Colombian Caribbean"
   },
   "hero2024": {
     "videoCoverAlt": "Video cover",

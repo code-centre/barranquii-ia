@@ -363,14 +363,14 @@
     "modalImageAlt": "Imagen en grande"
   },
   "metadata": {
-    "siteTitle": "Caribe-IA 2026",
-    "siteDescription": "Caribe-IA 2026: El programa que transforma talento del Caribe en startups de IA listas para el mercado. Hackatones, aceleración y Demo Day en TechCaribe Fest.",
-    "siteOgTitle": "Caribe-IA 2026",
-    "siteOgDescription": "El programa que transforma talento del Caribe en startups de IA listas para el mercado. Hackatones, aceleración y Demo Day.",
-    "siteOgAlt": "Caribe-IA - Innovación abierta con Inteligencia Artificial desde el Caribe",
+    "siteTitle": "Caribe-IA 2026 | De la idea al capital, en el Caribe",
+    "siteDescription": "Caribe-IA 2026: El programa de innovación abierta que lleva equipos del Caribe desde una idea hasta una startup financiada. Hackatones de IA, 12 semanas de aceleración y Demo Day ante inversionistas en TechCaribe Fest.",
+    "siteOgTitle": "Caribe-IA 2026 — De la idea al capital, en el Caribe",
+    "siteOgDescription": "De la idea al capital, en el Caribe. Hackatones de IA, aceleración y Demo Day ante inversionistas. Respaldado por Caribe Ventures.",
+    "siteOgAlt": "Caribe-IA — Programa de innovación abierta: hackatones de IA, aceleración y Demo Day en el Caribe colombiano",
     "eventTitle": "{{name}} {{year}} | Hackatón de IA en {{city}}",
-    "eventDescription": "{{name}} {{year}}: Hackatón de inteligencia artificial en el Caribe colombiano. {{dates}} Participa en el evento de tecnología e IA más importante de la región.",
-    "eventOgAlt": "{{name}} {{year}} - Hackatón de Inteligencia Artificial desde el Caribe"
+    "eventDescription": "{{name}} {{year}}: Hackatón de inteligencia artificial en el Caribe colombiano. {{dates}} Prototipa con IA, accede a aceleración y presenta ante inversionistas en TechCaribe Fest.",
+    "eventOgAlt": "{{name}} {{year}} — Hackatón de IA en el Caribe colombiano"
   },
   "proponReto": {
     "back": "Volver al inicio",

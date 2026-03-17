@@ -54,7 +54,7 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "Caribe-IA",
   url: "https://www.caribe-ia.com",
-  description: "El programa de innovación abierta que transforma talento del Caribe en startups de IA listas para el mercado",
+  description: "Programa de innovación abierta que lleva equipos del Caribe desde una idea hasta una startup financiada. Hackatones de IA, 12 semanas de aceleración y Demo Day ante inversionistas en TechCaribe Fest.",
   potentialAction: {
     "@type": "SearchAction",
     target: {
@@ -70,18 +70,23 @@ const educationalOrganizationSchema = {
   "@type": "EducationalOrganization",
   name: "Caribe-IA",
   url: "https://www.caribe-ia.com",
-  description: "Programa de aceleración de startups de inteligencia artificial en el Caribe colombiano",
+  description: "Programa de innovación abierta del Caribe colombiano que convierte talento regional en startups de IA a través de un pipeline de tres fases: hackatones, aceleración y Demo Day.",
   educationalCredentialAwarded: "Certificado de participación",
   hasProgram: [
     {
       "@type": "EducationalProgram",
-      name: "Hackatones de IA",
-      description: "Eventos de prototipado intensivo durante un fin de semana",
+      name: "Hackatones de IA (Hack)",
+      description: "Prototipado intensivo de 48 horas donde equipos multidisciplinarios construyen soluciones con IA para retos reales de la región.",
     },
     {
       "@type": "EducationalProgram",
-      name: "Aceleración Caribe-IA",
-      description: "Programa de aceleración de 12 semanas para startups de IA",
+      name: "Aceleración Caribe-IA (Build)",
+      description: "12 semanas de acompañamiento estratégico y técnico para convertir prototipos en startups listas para el mercado.",
+    },
+    {
+      "@type": "EducationalProgram",
+      name: "Demo Day en TechCaribe Fest (Show)",
+      description: "Presentación pública ante inversionistas, aliados y comunidad en el festival de tecnología más grande del Caribe.",
     },
   ],
 };

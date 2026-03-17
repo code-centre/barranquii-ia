@@ -10,13 +10,30 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = (await getLocale()) as Locale;
   const translations = await getTranslations(locale);
   const t = createT(translations);
+  const title = t("pages.demoDay.title");
+  const description = t("pages.demoDay.description");
   return {
-    title: t("pages.demoDay.title"),
-    description: t("pages.demoDay.subtitle"),
+    title,
+    description,
     openGraph: {
-      title: t("pages.demoDay.title"),
-      description: t("pages.demoDay.subtitle"),
+      title,
+      description,
       url: "https://www.caribe-ia.com/demo-day",
+      images: [
+        {
+          url: "https://www.caribe-ia.com/caribe-ia-og.png",
+          width: 960,
+          height: 540,
+          alt: title,
+          type: "image/png",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://www.caribe-ia.com/caribe-ia-og.png"],
     },
     alternates: {
       canonical: "/demo-day",
