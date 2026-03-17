@@ -101,9 +101,12 @@
   "footer": {
     "orgName": "Fundación Código Abierto",
     "mission": "Impulsando la innovación tecnológica y el desarrollo de habilidades digitales en la comunidad.",
+    "caribeVenturesName": "Caribe Ventures",
+    "caribeVenturesMission": "El primer fondo pre-seed del Caribe colombiano enfocado en founders que usan IA para transformar industrias.",
     "address": "Cra. 50 #72-126, Barranquilla, Colombia",
     "linksTitle": "Enlaces",
     "followTitle": "Síguenos",
+    "followCaribeVentures": "Síguenos",
     "caribeVentures": "Caribe Ventures",
     "techCaribeFest": "TechCaribe Fest",
     "caribeIA": "Caribe-IA",
@@ -113,7 +116,8 @@
     "ariaSocial": "Redes sociales",
     "ariaInstagram": "Síguenos en Instagram",
     "ariaFacebook": "Síguenos en Facebook",
-    "ariaTwitter": "Síguenos en Twitter"
+    "ariaTwitter": "Síguenos en Twitter",
+    "ariaCaribeVenturesSocial": "Redes sociales Caribe Ventures"
   },
   "backedByRibbon": {
     "label": "Con el apoyo de",

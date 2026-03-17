@@ -36,18 +36,23 @@ const I18nContext = createContext<I18nContextValue | null>(null);
 interface LanguageProviderProps {
   children: React.ReactNode;
   locale: Locale;
+  initialTranslations?: Translations;
 }
 
-export function LanguageProvider({ children, locale: initialLocale }: LanguageProviderProps) {
+export function LanguageProvider({ children, locale: initialLocale, initialTranslations }: LanguageProviderProps) {
   const [locale, setLocaleState] = useState<Locale>(initialLocale);
-  const [translations, setTranslations] = useState<Translations | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [translations, setTranslations] = useState<Translations | null>(initialTranslations ?? null);
+  const [isLoading, setIsLoading] = useState(!initialTranslations);
 
   useEffect(() => {
     setLocaleState(initialLocale);
   }, [initialLocale]);
 
   useEffect(() => {
+    // Si ya tenemos initialTranslations y el locale no cambió, no recargar
+    if (initialTranslations && locale === initialLocale) {
+      return;
+    }
     let cancelled = false;
     setIsLoading(true);
     import(`./locales/${locale}.json`)
@@ -67,7 +72,7 @@ export function LanguageProvider({ children, locale: initialLocale }: LanguagePr
     return () => {
       cancelled = true;
     };
-  }, [locale]);
+  }, [locale, initialLocale, initialTranslations]);
 
   const t = useCallback(
     (key: string, vars?: Record<string, string | number>): string => {

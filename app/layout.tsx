@@ -7,6 +7,7 @@ import ConditionalNavbar from "./components/ConditionalNavbar";
 import JsonLd from "./components/JsonLd";
 import { LanguageProvider } from "./i18n/LanguageProvider";
 import { getLocale } from "./i18n/getLocale";
+import { getTranslations } from "./i18n/getTranslation";
 import type { Locale } from "./i18n/config";
 
 // Definimos los pesos para las fuentes
@@ -128,6 +129,7 @@ export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const locale = (await getLocale()) as Locale;
+  const initialTranslations = await getTranslations(locale);
   return (
     <html lang={LOCALE_HTML[locale] || "es"} className="overflow-x-hidden scroll-smooth">
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_KEY || ""} />
@@ -135,7 +137,7 @@ export default async function RootLayout({
         className={`${poppins.variable} ${leagueSpartan.variable} font-sans relative w-full overflow-x-hidden`}
         style={{ scrollBehavior: 'smooth' }}
       >
-        <LanguageProvider locale={locale}>
+        <LanguageProvider locale={locale} initialTranslations={initialTranslations}>
           <JsonLd data={organizationSchema} />
           <ConditionalNavbar />
           {children}

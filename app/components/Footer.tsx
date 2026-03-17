@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Facebook, Instagram, Twitter } from "./Icons";
+import { Facebook, Instagram, Linkedin, Twitter } from "./Icons";
 import { THEME_LANDINGS } from "../utils/theme";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -133,48 +133,68 @@ export default function Footer({ landing: propLanding }: FooterProps) {
             </div>
           </address>
 
-          {/* Links */}
-          <nav aria-label={t('footer.ariaLinks')}>
-            <h2 className={`${textColor} font-bold text-xl mb-6`}>{t('footer.linksTitle')}</h2>
-            <ul className={`flex flex-col space-y-3 ${textSecondaryColor} text-sm`}>
-              <li>
-                <a
-                  href="https://caribeventures.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  {t('footer.caribeVentures')} →
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://techcaribefest.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  {t('footer.techCaribeFest')} →
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  {t('footer.caribeIA')}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:contacto@codigoabierto.tech"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  {t('common.contact')}
-                </a>
-              </li>
-            </ul>
-          </nav>
+          {/* Caribe Ventures */}
+          <section aria-labelledby="footer-caribe-ventures">
+            <h2 id="footer-caribe-ventures" className={`${textColor} font-bold text-2xl mb-4`}>
+              {t('footer.caribeVenturesName')}
+            </h2>
+            <p className={`${textSecondaryColor} text-sm leading-relaxed max-w-md mb-4`}>
+              {t('footer.caribeVenturesMission')}
+            </p>
+            <a
+              href="https://caribe.ventures"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${textSecondaryColor} text-sm hover:opacity-80 transition-opacity inline-flex items-center`}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                />
+              </svg>
+              caribe.ventures
+            </a>
+            <p className={`${textColor} font-semibold text-sm mt-6 mb-2`}>{t('footer.followCaribeVentures')}</p>
+            <nav aria-label={t('footer.ariaCaribeVenturesSocial')} className="flex gap-4">
+              <a
+                href="https://www.instagram.com/caribe.ventures"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${textSecondaryColor} hover:opacity-80 transition-all duration-300 hover:scale-110 inline-block`}
+                aria-label="Instagram Caribe Ventures"
+              >
+                <Instagram />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/caribe-ventures"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${textSecondaryColor} hover:opacity-80 transition-all duration-300 hover:scale-110 inline-block`}
+                aria-label="LinkedIn Caribe Ventures"
+              >
+                <Linkedin />
+              </a>
+              <a
+                href="https://x.com/caribe_ventures"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${textSecondaryColor} hover:opacity-80 transition-all duration-300 hover:scale-110 inline-block`}
+                aria-label="X Caribe Ventures"
+              >
+                <Twitter />
+              </a>
+            </nav>
+          </section>
 
           {/* Redes sociales */}
           <nav aria-label={t('footer.ariaSocial')}>
@@ -225,7 +245,7 @@ export default function Footer({ landing: propLanding }: FooterProps) {
           <p className={`text-sm ${textSecondaryColor}`}>
             {t('footer.poweredBy')}{' '}
             <a
-              href="https://caribeventures.com"
+              href="https://caribe.ventures"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold hover:opacity-80 transition-opacity"
