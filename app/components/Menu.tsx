@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import sectionsPage from "../utils/sections.json";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 interface Props {
     openMenu: boolean;
@@ -7,6 +10,7 @@ interface Props {
 }
 
 export default function Menu({ openMenu, setOpenMenu }: Props) {
+  const { t } = useTranslation();
   const stylesLi =
     "text-white hover: cursor-pointer hover:underline font-semibold";
 
@@ -15,11 +19,21 @@ export default function Menu({ openMenu, setOpenMenu }: Props) {
 
       <nav className="">
         <ul className="flex flex-col gap-10 py-4">
-          {sectionsPage.map((section) => (
-            <li onClick={() => setOpenMenu(false)} key={section.id} className={`${stylesLi}`}>
-              <a href={`#${section.id}`}>{section.name}</a>
-            </li>
-          ))}
+          {sectionsPage.map((section) => {
+            const href = section.link || `#${section.id}`;
+            const isExternal = href.startsWith('http');
+            return (
+              <li onClick={() => setOpenMenu(false)} key={section.id} className={`${stylesLi}`}>
+                {isExternal ? (
+                  <a href={href} target="_blank" rel="noopener noreferrer">
+                    {t(section.nameKey)}
+                  </a>
+                ) : (
+                  <a href={href}>{t(section.nameKey)}</a>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </div>
