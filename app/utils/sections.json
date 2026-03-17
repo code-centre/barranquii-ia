@@ -7,11 +7,11 @@
   {
     "id": "build",
     "nameKey": "nav.acceleration",
-    "link": "/aceleracion"
+    "link": "https://caribe.ventures"
   },
   {
     "id": "show",
     "nameKey": "nav.demoDay",
-    "link": "/demo-day"
+    "link": "https://techcaribe.co"
   }
 ]

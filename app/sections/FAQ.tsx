@@ -101,8 +101,10 @@ export default function FAQ({ landing, data }: Props) {
               <div
                 key={i}
                 style={{
-                  background: BACKGROUND_FAQ[landing],
-                  border: `1px solid ${isDefault ? 'rgba(255, 151, 239, 0.3)' : `${theme.principal}66`}`
+                  backgroundColor: BACKGROUND_FAQ[landing],
+                  backgroundImage: 'none',
+                  border: `1px solid ${isDefault ? 'rgba(255, 151, 239, 0.3)' : `${theme.principal}66`}`,
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
                 }}
                 className="py-4 px-4 rounded-2xl text-white venture-card"
               >
@@ -135,8 +137,9 @@ export default function FAQ({ landing, data }: Props) {
                 <div
                   key={i}
                   style={{
-                    background: BACKGROUND_FAQ[landing],
-                    border: `1px solid ${THEME_LANDINGS[landing].principal}`
+                    backgroundColor: BACKGROUND_FAQ[landing],
+                    border: `1px solid ${THEME_LANDINGS[landing].principal}`,
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
                   }}
                   className="py-4 mb-5 border px-4 rounded-2xl text-white"
                 >
@@ -163,8 +166,9 @@ export default function FAQ({ landing, data }: Props) {
               <div
                 key={i}
                 style={{
-                  background: BACKGROUND_FAQ[landing],
-                  border: `1px solid ${THEME_LANDINGS[landing].principal}`
+                  backgroundColor: BACKGROUND_FAQ[landing],
+                  border: `1px solid ${THEME_LANDINGS[landing].principal}`,
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
                 }}
                 className="py-4 mb-5 border px-4 rounded-2xl text-white"
               >

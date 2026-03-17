@@ -69,16 +69,31 @@ export default function Navbar({ }) {
           className={`hidden lg:flex justify-center items-center gap-4 ${isSmallDesktop ? "xl:gap-6 text-lg" : "xl:gap-10 text-xl"
             }`}
         >
-          {sectionsPage.map((section) => (
-            <li key={section.id} className="flex flex-col items-center">
-              <Link
-                href={section.link || `#${section.id}`}
-                className={`text-white text-lg ${stylesLi} text-base`}
-              >
-                {t(section.nameKey)}
-              </Link>
-            </li>
-          ))}
+          {sectionsPage.map((section) => {
+            const href = section.link || `#${section.id}`
+            const isExternal = href.startsWith('http')
+            return (
+              <li key={section.id} className="flex flex-col items-center">
+                {isExternal ? (
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-white text-lg ${stylesLi} text-base`}
+                  >
+                    {t(section.nameKey)}
+                  </a>
+                ) : (
+                  <Link
+                    href={href}
+                    className={`text-white text-lg ${stylesLi} text-base`}
+                  >
+                    {t(section.nameKey)}
+                  </Link>
+                )}
+              </li>
+            )
+          })}
         </ul>
 
         <div className="hidden lg:flex items-center gap-4">
@@ -151,17 +166,33 @@ export default function Navbar({ }) {
           </button>
         </div>
         <ul className="flex flex-col items-start pt-6 pl-6 pr-6 space-y-4 text-lg sm:text-xl overflow-y-auto h-[calc(100vh-100px)]">
-          {sectionsPage.map((section) => (
-            <li key={section.id} className={`${stylesLi} text-white flex flex-col items-center`}>
-              <Link
-                href={section.link || `#${section.id}`}
-                onClick={() => setOpenMenu(false)}
-                className="text-white text-base"
-              >
-                {t(section.nameKey)}
-              </Link>
-            </li>
-          ))}
+          {sectionsPage.map((section) => {
+            const href = section.link || `#${section.id}`
+            const isExternal = href.startsWith('http')
+            return (
+              <li key={section.id} className={`${stylesLi} text-white flex flex-col items-center`}>
+                {isExternal ? (
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setOpenMenu(false)}
+                    className="text-white text-base"
+                  >
+                    {t(section.nameKey)}
+                  </a>
+                ) : (
+                  <Link
+                    href={href}
+                    onClick={() => setOpenMenu(false)}
+                    className="text-white text-base"
+                  >
+                    {t(section.nameKey)}
+                  </Link>
+                )}
+              </li>
+            )
+          })}
           <li className="text-xs text-white/70 pt-4 border-t border-white/20">
             <span>{t('nav.poweredBy')} </span>
             <a

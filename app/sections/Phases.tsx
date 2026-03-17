@@ -23,19 +23,40 @@ export default function Phases({ landing = 'default' }: Props) {
   const theme = THEME_LANDINGS[landing]
   const isDefault = landing === 'default'
 
-  const handleScrollTo = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
-
   return (
-    <section id="phases" aria-label={t('phases.titlePrefix') + t('phases.titleBrand') + t('phases.titleSuffix')} className='py-20 md:py-28'>
-      <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
+    <section
+      id="phases"
+      aria-label={t('phases.titlePrefix') + t('phases.titleBrand') + t('phases.titleSuffix')}
+      className="relative py-20 md:py-28 overflow-hidden"
+    >
+      {/* Background image with black tint */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'url(/FOTOSBARRANQUI-IA/2.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        }}
+      />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-5 lg:px-10 w-full">
         {/* Main CTA Card */}
         <ScrollAnimation delay={0.1} direction="up">
-          <div className='venture-card p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8'>
+          <div
+            className="venture-card p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8"
+            style={{
+              backgroundColor: isDefault ? 'rgba(28, 31, 46, 0.95)' : 'rgba(0, 0, 0, 0.85)',
+              border: `2px solid ${isDefault ? 'rgba(255, 151, 239, 0.5)' : `${theme.principal}50`}`,
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+            }}
+          >
             <div className='flex-1'>
               <h2 className='text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3'>
                 {t('phases.titlePrefix')}
@@ -71,7 +92,7 @@ export default function Phases({ landing = 'default' }: Props) {
                 {PAST_EVENT_IMAGES.map((src, i) => (
                   <div
                     key={src}
-                    className='relative aspect-[4/3] rounded-lg overflow-hidden'
+                    className="relative aspect-[4/3] rounded-lg overflow-hidden"
                   >
                     <Image
                       src={src}
@@ -89,19 +110,24 @@ export default function Phases({ landing = 'default' }: Props) {
 
         {/* Reto Card */}
         <ScrollAnimation delay={0.15} direction="up">
-          <button
-            onClick={() => handleScrollTo('empresas')}
-            className='venture-card p-6 lg:p-8 mt-6 w-full text-left flex items-center justify-between gap-4 hover:border-[rgba(255,151,239,0.6)] transition-colors group'
+          <Link
+            href="/propon-un-reto"
+            className="venture-card p-6 lg:p-8 mt-6 w-full text-left flex items-center justify-between gap-4 hover:border-[rgba(255,151,239,0.6)] transition-colors group"
+            style={{
+              backgroundColor: isDefault ? 'rgba(28, 31, 46, 0.95)' : 'rgba(0, 0, 0, 0.85)',
+              border: `2px solid ${isDefault ? 'rgba(255, 151, 239, 0.5)' : `${theme.principal}50`}`,
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+            }}
           >
-            <span className='text-lg md:text-xl font-semibold text-white group-hover:text-white/95'>
+            <span className="text-lg md:text-xl font-semibold text-white group-hover:text-white/95">
               {t('phases.retoCard')}
             </span>
             <ArrowRight
               size={24}
-              className='flex-shrink-0'
+              className="flex-shrink-0"
               style={{ color: isDefault ? '#FF97EF' : theme.principal }}
             />
-          </button>
+          </Link>
         </ScrollAnimation>
 
       </div>

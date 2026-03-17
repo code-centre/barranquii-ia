@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { THEME_LANDINGS } from '../utils/theme'
 import Image from 'next/image'
 import { Meteors } from '../components/Meteors'
@@ -14,13 +15,6 @@ export default function HeroSection({ landing }: HeroSectionProps) {
   const { t } = useTranslation()
   const theme = THEME_LANDINGS[landing]
   const isDefault = landing === 'default'
-
-  const handleScrollTo = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
 
   return (
     <section
@@ -160,8 +154,8 @@ export default function HeroSection({ landing }: HeroSectionProps) {
           transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
           className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 mb-16"
         >
-          <button
-            onClick={() => handleScrollTo('hack')}
+          <Link
+            href="/barranqui-ia/2026"
             className="btn-primary focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-black"
             style={{
               backgroundColor: isDefault ? '#FFFFFF' : theme.accent || theme.principal,
@@ -169,9 +163,9 @@ export default function HeroSection({ landing }: HeroSectionProps) {
             }}
           >
             {t('main.participateHackathon')}
-          </button>
-          <button
-            onClick={() => handleScrollTo('empresas')}
+          </Link>
+          <Link
+            href="/propon-un-reto"
             className="btn-secondary focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-black"
             style={{
               borderColor: isDefault ? '#FF97EF' : theme.principal,
@@ -179,16 +173,16 @@ export default function HeroSection({ landing }: HeroSectionProps) {
             }}
           >
             {t('main.empresaAlly')}
-          </button>
-          <button
-            onClick={() => handleScrollTo('empresas')}
+          </Link>
+          <Link
+            href="/propon-un-reto"
             className="btn-tertiary focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-black"
             style={{
               color: isDefault ? '#FF97EF' : theme.principal
             }}
           >
             {t('main.wantToBeAlly')}
-          </button>
+          </Link>
         </motion.div>
 
         {/* Scroll Indicator */}

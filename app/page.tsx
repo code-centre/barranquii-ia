@@ -112,10 +112,8 @@ export default function Home() {
       {/* 1. HeroSection (dramatico, sin 3D) */}
       <HeroSection landing='default' />
 
-      {/* 2. Summary / "Que es Caribe-IA?" (manifesto + 3 cards) */}
-      <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
-        <Summary landing='default' />
-      </div>
+      {/* 2. Summary / "Que es Caribe-IA?" (manifesto + 3 cards) - fondo foto con tinte */}
+      <Summary landing='default' />
 
       {/* 2b. Backed by ribbon */}
       <BackedByRibbon />
@@ -123,18 +121,14 @@ export default function Home() {
       {/* 3. HowItWorks (nuevo -- Hack/Build/Show) - EL PROGRAMA con fondo hero */}
       <HowItWorks landing='default' />
 
-      {/* 4. Phases / HackatonCards (reescrito -- 3 event cards) */}
-      <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
-        <Phases landing='default' />
-      </div>
+      {/* 4. Phases / Inscríbete en Barranqui-IA 2026 (fondo foto) */}
+      <Phases landing='default' />
 
       {/* 4b. Caribe Ventures - Capital real (con fondo hero) */}
       <CaribeVenturesCapitalSection landing='default' />
 
-      {/* 5. AudienceSection (nuevo -- "Para quien es?") */}
-      <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>
-        <AudienceSection landing='default' />
-      </div>
+      {/* 5. AudienceSection - Si construyes, aquí es. (fondo foto) */}
+      <AudienceSection landing='default' />
 
       {/* 6. PoweredByCV (nuevo -- brand bridge) */}
       <div className='max-w-6xl mx-auto px-5 lg:px-10 w-full'>

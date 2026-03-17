@@ -1,0 +1,575 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0d1117;--surface:#f7f5f0;--coral:#E8543A;--coral-l:#f4795f;
+  --teal:#00796B;--sand:#F5F0E8;--muted:#7a7670;--border:rgba(13,17,23,0.1);
+  --white:#ffffff;--gold:#C99B2A;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--ink);line-height:1.6}
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:0.5px solid var(--border);background:rgba(247,245,240,0.96)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;letter-spacing:-0.5px;color:var(--ink)}
+.nav-logo span{color:var(--coral)}
+.nav-back{font-size:13px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:6px}
+.nav-back:hover{color:var(--ink)}
+
+.hero{padding:72px 40px 56px;max-width:820px;margin:0 auto;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:0.5px solid var(--border);padding:5px 14px;border-radius:100px;font-size:12px;color:var(--muted);margin-bottom:24px}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--coral);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,5vw,50px);line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px}
+h1 em{color:var(--coral);font-style:normal}
+.hero-sub{font-size:17px;color:var(--muted);max-width:600px;margin:0 auto 32px;line-height:1.65}
+.hero-pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.pill{background:var(--white);border:0.5px solid var(--border);padding:7px 16px;border-radius:100px;font-size:13px;color:var(--ink)}
+.pill.accent{background:#fff5f3;border-color:rgba(232,84,58,0.25);color:var(--coral)}
+
+.tax-banner{background:var(--ink);color:var(--white);padding:18px 40px;text-align:center;font-size:14px}
+.tax-banner strong{color:var(--coral)}
+
+.section-wrap{max-width:1100px;margin:0 auto;padding:72px 40px}
+.section-tag{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--coral);margin-bottom:14px;font-weight:500}
+h2{font-family:'Syne',sans-serif;font-size:clamp(24px,3.5vw,38px);font-weight:800;letter-spacing:-1px;line-height:1.12;margin-bottom:12px}
+.section-sub{font-size:16px;color:var(--muted);line-height:1.65;max-width:580px}
+
+.packages-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
+.pkg-card{background:var(--white);border:0.5px solid var(--border);border-radius:16px;padding:32px;position:relative;transition:transform .2s}
+.pkg-card:hover{transform:translateY(-2px)}
+.pkg-card.featured{border:2px solid var(--coral)}
+.pkg-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--coral);color:var(--white);font-size:11px;padding:4px 16px;border-radius:100px;white-space:nowrap;font-weight:500}
+.pkg-name{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:6px}
+.pkg-price{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:4px}
+.pkg-price span{font-size:14px;font-weight:400;color:var(--muted)}
+.pkg-neto{background:var(--sand);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--teal);font-weight:500;margin-bottom:20px;display:flex;align-items:center;gap:6px}
+.pkg-neto-icon{width:16px;height:16px;border-radius:50%;background:var(--teal);color:white;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0}
+.pkg-divider{height:0.5px;background:var(--border);margin:18px 0}
+.pkg-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.pkg-list li{font-size:14px;display:flex;gap:10px;align-items:flex-start;line-height:1.45}
+.pkg-list li::before{content:'✓';color:var(--teal);font-size:12px;margin-top:2px;flex-shrink:0;font-weight:700}
+.pkg-list li.muted-item{color:var(--muted)}
+.pkg-list li.muted-item::before{content:'—';color:var(--border)}
+.pkg-cta{width:100%;margin-top:24px;padding:13px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:all .2s}
+.pkg-cta.primary{background:var(--ink);color:var(--white);border:none}
+.pkg-cta.primary:hover{background:var(--coral)}
+.pkg-cta.outline{background:transparent;border:0.5px solid var(--border);color:var(--ink)}
+.pkg-cta.outline:hover{background:var(--sand)}
+
+.stages-wrap{background:var(--ink);padding:72px 40px;color:var(--white)}
+.stages-inner{max-width:1100px;margin:0 auto}
+.stages-wrap .section-tag{color:var(--coral)}
+.stages-wrap h2{color:var(--white)}
+.stages-wrap .section-sub{color:rgba(255,255,255,0.45)}
+.stages-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:48px}
+.stage{padding:24px 20px;background:rgba(255,255,255,0.04);border-top:0.5px solid rgba(255,255,255,0.1);transition:background .2s}
+.stage:hover{background:rgba(255,255,255,0.08)}
+.stage-num{font-family:'Syne',sans-serif;font-size:11px;font-weight:800;color:var(--coral);margin-bottom:12px}
+.stage-period{font-size:11px;color:rgba(255,255,255,0.3);margin-bottom:8px}
+.stage-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;margin-bottom:8px;line-height:1.2}
+.stage-desc{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.5}
+.stage-outcome{margin-top:12px;padding-top:10px;border-top:0.5px solid rgba(255,255,255,0.08);font-size:11px;color:var(--coral)}
+
+.sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+.sector-card{background:var(--white);border:0.5px solid var(--border);border-radius:10px;padding:20px;transition:all .2s;cursor:default}
+.sector-card:hover{border-color:var(--coral);background:var(--sand)}
+.sector-icon{font-size:22px;margin-bottom:10px}
+.sector-name{font-weight:500;font-size:15px;margin-bottom:4px}
+.sector-desc{font-size:13px;color:var(--muted);line-height:1.5}
+
+.options-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:40px}
+.option-card{border:0.5px solid var(--border);border-radius:12px;padding:24px;background:var(--white)}
+.option-letter{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--coral);margin-bottom:12px}
+.option-title{font-weight:500;font-size:16px;margin-bottom:8px}
+.option-desc{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:16px}
+.option-tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:100px;background:var(--sand);color:var(--muted)}
+
+.esg-banner{background:var(--sand);border:0.5px solid var(--border);border-radius:12px;padding:28px 32px;margin-top:48px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.esg-text{font-size:15px;line-height:1.65;color:var(--ink)}
+.esg-text strong{color:var(--teal)}
+.esg-badge{background:var(--teal);color:var(--white);padding:10px 20px;border-radius:8px;font-size:13px;font-weight:500;white-space:nowrap;text-align:center}
+.esg-badge span{display:block;font-size:20px;font-weight:800;font-family:'Syne',sans-serif}
+
+.main-grid{display:grid;grid-template-columns:1fr 400px;gap:32px;max-width:1100px;margin:0 auto;padding:0 40px 80px;align-items:start}
+.faq-item{border-bottom:0.5px solid var(--border)}
+.faq-btn{width:100%;text-align:left;background:none;border:none;padding:16px 0;font-size:15px;font-family:'DM Sans',sans-serif;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .15s}
+.faq-btn:hover{color:var(--coral)}
+.faq-chevron{font-size:18px;color:var(--muted);transition:transform .2s;flex-shrink:0}
+.faq-item.open .faq-chevron{transform:rotate(45deg);color:var(--coral)}
+.faq-answer{font-size:14px;color:var(--muted);max-height:0;overflow:hidden;transition:max-height .3s ease,padding .2s;line-height:1.65}
+.faq-item.open .faq-answer{max-height:200px;padding-bottom:16px}
+
+.form-card{background:var(--white);border:0.5px solid var(--border);border-radius:16px;padding:32px;position:sticky;top:80px}
+.form-title{font-family:'Syne',sans-serif;font-size:19px;font-weight:800;margin-bottom:4px}
+.form-sub{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:24px}
+.field{margin-bottom:16px}
+label{display:block;font-size:11px;font-weight:500;color:var(--muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:0.8px}
+input,select,textarea{width:100%;background:var(--surface);border:0.5px solid var(--border);border-radius:8px;padding:10px 14px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--ink);outline:none;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--coral);background:var(--white)}
+textarea{resize:vertical;min-height:80px;line-height:1.5}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%237a7670' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn-submit{width:100%;background:var(--ink);color:var(--white);border:none;padding:14px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:background .2s,transform .15s;margin-top:8px}
+.btn-submit:hover{background:var(--coral);transform:translateY(-1px)}
+.btn-submit:disabled{background:var(--muted);transform:none;cursor:not-allowed}
+.form-note{font-size:11px;color:var(--muted);text-align:center;margin-top:10px;line-height:1.5}
+.success-state{display:none;text-align:center;padding:16px 0}
+.success-icon{font-size:32px;margin-bottom:12px}
+.success-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin-bottom:8px}
+.success-desc{font-size:14px;color:var(--muted);line-height:1.6}
+
+.chat-section{max-width:1100px;margin:0 auto;padding:0 40px 80px}
+.chat-container{background:var(--white);border:0.5px solid var(--border);border-radius:16px;overflow:hidden}
+.chat-header{padding:18px 24px;border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:12px}
+.chat-avatar{width:34px;height:34px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.chat-avatar-dot{width:9px;height:9px;border-radius:50%;background:var(--coral)}
+.chat-name{font-weight:500;font-size:14px}
+.chat-status{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.status-dot{width:6px;height:6px;border-radius:50%;background:#22c55e}
+.chat-messages{padding:20px 24px;display:flex;flex-direction:column;gap:14px;min-height:260px;max-height:380px;overflow-y:auto}
+.msg{display:flex;gap:10px;align-items:flex-start}
+.msg.user{flex-direction:row-reverse}
+.msg-avatar{width:26px;height:26px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;font-weight:500;color:white}
+.msg.user .msg-avatar{background:var(--coral)}
+.msg-bubble{background:var(--surface);border:0.5px solid var(--border);border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.55;max-width:84%;color:var(--ink)}
+.msg.user .msg-bubble{background:var(--ink);color:white;border-color:transparent}
+.typing span{width:7px;height:7px;border-radius:50%;background:var(--muted);display:inline-block;animation:bounce 1.2s infinite;margin-right:2px}
+.typing span:nth-child(2){animation-delay:.2s}
+.typing span:nth-child(3){animation-delay:.4s}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+.quick-questions{padding:0 24px 14px;display:flex;gap:8px;flex-wrap:wrap}
+.quick-q{background:var(--surface);border:0.5px solid var(--border);border-radius:100px;padding:6px 14px;font-size:12px;color:var(--muted);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.quick-q:hover{background:var(--sand);color:var(--ink);border-color:var(--coral)}
+.chat-input-area{padding:14px 24px;border-top:0.5px solid var(--border);display:flex;gap:10px}
+.chat-input{flex:1;background:var(--surface);border:0.5px solid var(--border);border-radius:8px;padding:10px 14px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--ink);outline:none;transition:border-color .2s}
+.chat-input:focus{border-color:var(--coral);background:var(--white)}
+.chat-send{background:var(--ink);color:white;border:none;border-radius:8px;padding:10px 18px;font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background .2s}
+.chat-send:hover{background:var(--coral)}
+.chat-send:disabled{background:var(--muted);cursor:not-allowed}
+</style>
+
+<nav>
+  <div class="nav-logo">Caribe<span>-IA</span></div>
+  <a class="nav-back" href="#">← Volver al programa</a>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow"><span class="eyebrow-dot"></span>Programa de Innovación Abierta · Barranqui-IA 2026</div>
+  <h1>Convierte un reto real<br>de tu negocio en una<br><em>startup que lo resuelva.</em></h1>
+  <p class="hero-sub">Innovación medible. Beneficio fiscal. Impacto regional. Lo que Google, Samsung y GE hicieron a escala global, tu empresa puede liderarlo en el Caribe.</p>
+  <div class="hero-pills">
+    <div class="pill accent">25% descuento tributario Art. 257</div>
+    <div class="pill">Prototipos funcionales en 48h</div>
+    <div class="pill">+450 participantes</div>
+    <div class="pill">Cobertura Telecaribe</div>
+  </div>
+</div>
+
+<div class="tax-banner">
+  <strong>Beneficio fiscal:</strong> Al canalizar tu aporte a través de Fundación Código Abierto (ESAL, Régimen Tributario Especial), obtienes un <strong>descuento del 25% directo sobre tu impuesto de renta</strong> — no una deducción, un descuento. Art. 257 del Estatuto Tributario.
+</div>
+
+<div class="section-wrap" style="padding-bottom:0">
+  <div class="section-tag">Paquetes de participación</div>
+  <h2>Elige tu nivel de participación.</h2>
+  <p class="section-sub">Dos paquetes diseñados para simplificar la aprobación presupuestal y dimensionar el retorno desde el día uno.</p>
+  <div class="packages-grid">
+    <div class="pkg-card">
+      <div class="pkg-name">Explorador</div>
+      <div class="pkg-price">$20M <span>COP</span></div>
+      <div class="pkg-neto"><div class="pkg-neto-icon">↓</div>Costo neto real: <strong style="color:var(--teal)">$15.000.000 COP</strong> tras beneficio tributario</div>
+      <p style="font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:16px">Ideal para empresas que quieren probar el modelo y evaluar el talento antes de comprometer un apadrinamiento.</p>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-list">
+        <li>Formulación asistida del reto con Costa Digital</li>
+        <li>Línea temática propia en Barranqui-IA</li>
+        <li>Premio $5M COP para el equipo ganador (incluido)</li>
+        <li>5 accesos al hackatón para tu equipo</li>
+        <li>Cobertura Telecaribe + amplificación en redes</li>
+        <li>Reporte post-evento con métricas</li>
+        <li class="muted-item">Apadrinamiento y aceleración</li>
+        <li class="muted-item">Keynote en Tech Caribe Weekend</li>
+      </ul>
+      <button class="pkg-cta outline" onclick="scrollToForm()">Solicitar información →</button>
+    </div>
+    <div class="pkg-card featured">
+      <div class="pkg-badge">Recomendado</div>
+      <div class="pkg-name">Transformación</div>
+      <div class="pkg-price">$40M <span>COP</span></div>
+      <div class="pkg-neto"><div class="pkg-neto-icon">↓</div>Costo neto real: <strong style="color:var(--teal)">$30.000.000 COP</strong> tras beneficio tributario</div>
+      <p style="font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:16px">El paquete completo: propón un reto, apadrina al mejor equipo, acelera el producto y posiciónate como empresa innovadora con IA.</p>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-list">
+        <li>Todo lo del Paquete Explorador</li>
+        <li>Apadrinamiento de 1 equipo (12 semanas con Caribe Ventures)</li>
+        <li>Champion interno: enlace permanente empresa-startup</li>
+        <li>Servicios a precio preferencial por 6 meses</li>
+        <li>Derecho preferente a las 3 opciones de relación con la startup</li>
+        <li>12 boletos VIP para Tech Caribe Weekend</li>
+        <li>Keynote 15 min en escenario principal ante 3.000+ personas</li>
+        <li>Sello "Empresa Innovadora con IA" en todos los materiales</li>
+        <li>Caso de estudio en video co-producido por Costa Digital</li>
+        <li>Lounge de demos brandeado (4×3m) en el festival</li>
+      </ul>
+      <button class="pkg-cta primary" onclick="scrollToForm()">Proponer mi reto →</button>
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--muted);margin-top:16px;text-align:center">¿Necesitas apadrinar más de un equipo? Cada equipo adicional: $10M COP (neto $7.5M tras beneficio tributario). Sin límite de equipos.</p>
+</div>
+
+<div class="stages-wrap" style="margin-top:72px">
+  <div class="stages-inner">
+    <div class="section-tag">El proceso</div>
+    <h2>5 etapas, un resultado concreto.</h2>
+    <p class="section-sub">Desde que propones tu reto hasta que presentas tu startup ante 3.000 personas y Telecaribe.</p>
+    <div class="stages-grid">
+      <div class="stage">
+        <div class="stage-num">01</div>
+        <div class="stage-period">Marzo–Abril</div>
+        <div class="stage-title">Inscripción y formulación</div>
+        <div class="stage-desc">Defines tu reto con acompañamiento de Costa Digital y Caribe Ventures.</div>
+        <div class="stage-outcome">→ Reto aprobado como línea temática</div>
+      </div>
+      <div class="stage">
+        <div class="stage-num">02</div>
+        <div class="stage-period">15–17 Mayo</div>
+        <div class="stage-title">Hackatón Barranqui-IA</div>
+        <div class="stage-desc">450+ participantes compiten en 48h para resolver tu reto con IA.</div>
+        <div class="stage-outcome">→ Prototipos funcionales</div>
+      </div>
+      <div class="stage">
+        <div class="stage-num">03</div>
+        <div class="stage-period">Mayo–Junio</div>
+        <div class="stage-title">Selección y apadrinamiento</div>
+        <div class="stage-desc">Revisas los prototipos y eliges qué equipos acelerar. Sin límite.</div>
+        <div class="stage-outcome">→ Equipos seleccionados</div>
+      </div>
+      <div class="stage">
+        <div class="stage-num">04</div>
+        <div class="stage-period">Mayo–Agosto</div>
+        <div class="stage-title">Aceleración con Caribe Ventures</div>
+        <div class="stage-desc">12 semanas para convertir el prototipo en un MVP listo para el mercado.</div>
+        <div class="stage-outcome">→ MVP alineado a tu negocio</div>
+      </div>
+      <div class="stage">
+        <div class="stage-num">05</div>
+        <div class="stage-period">7 Agosto</div>
+        <div class="stage-title">Demo Day en Tech Caribe</div>
+        <div class="stage-desc">Tu startup presenta ante 3.000+ asistentes y cámaras de Telecaribe.</div>
+        <div class="stage-outcome">→ Startup lista para el mercado</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-wrap">
+  <div class="section-tag">Sectores estratégicos</div>
+  <h2>¿En qué sector opera tu empresa?</h2>
+  <p class="section-sub">Los retos se alinean con los sectores clave de la región. Tu problema se convierte en la línea temática del hackatón.</p>
+  <div class="sectors-grid">
+    <div class="sector-card">
+      <div class="sector-icon" style="font-size:20px">🏙</div>
+      <div class="sector-name">Smart City</div>
+      <div class="sector-desc">Gestión inteligente del Malecón del Río, turismo, seguridad y experiencia ciudadana.</div>
+    </div>
+    <div class="sector-card">
+      <div class="sector-icon" style="font-size:20px">🚢</div>
+      <div class="sector-name">Logística portuaria</div>
+      <div class="sector-desc">Optimización con IA para la cadena logística del Río Magdalena y la zona portuaria.</div>
+    </div>
+    <div class="sector-card">
+      <div class="sector-icon" style="font-size:20px">🏥</div>
+      <div class="sector-name">Salud pública</div>
+      <div class="sector-desc">Diagnóstico temprano, salud mental juvenil, atención primaria y vigilancia epidemiológica.</div>
+    </div>
+    <div class="sector-card">
+      <div class="sector-icon" style="font-size:20px">💳</div>
+      <div class="sector-name">Inclusión financiera</div>
+      <div class="sector-desc">Bancarización, microcrédito y educación financiera en poblaciones vulnerables.</div>
+    </div>
+    <div class="sector-card">
+      <div class="sector-icon" style="font-size:20px">🎓</div>
+      <div class="sector-name">Educación</div>
+      <div class="sector-desc">Personalización del aprendizaje, reducción de deserción y cierre de brechas digitales.</div>
+    </div>
+    <div class="sector-card">
+      <div class="sector-icon" style="font-size:20px">⚙️</div>
+      <div class="sector-name">Otro sector</div>
+      <div class="sector-desc">¿Tu empresa opera en un sector diferente? Los retos no se limitan a estos cinco.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:64px">
+    <div class="section-tag">Al finalizar el programa</div>
+    <h2>Tres caminos con tu startup.</h2>
+    <p class="section-sub">Al concluir la aceleración, tu empresa elige cómo continuar la relación con el equipo.</p>
+    <div class="options-grid" style="margin-top:32px">
+      <div class="option-card">
+        <div class="option-letter">A</div>
+        <div class="option-title">Licenciamiento o adquisición de PI</div>
+        <div class="option-desc">Adquieres los derechos sobre el producto mediante licencia exclusiva o transferencia de propiedad intelectual. Puedes incorporar al equipo fundador.</div>
+        <div class="option-tag">Control total del producto</div>
+      </div>
+      <div class="option-card">
+        <div class="option-letter">B</div>
+        <div class="option-title">Inversión estratégica pre-seed</div>
+        <div class="option-desc">Inviertes en la startup a través de una ronda co-liderada con Caribe Ventures. Obtienes participación accionaria y asiento en el advisory board.</div>
+        <div class="option-tag">Alto potencial de retorno</div>
+      </div>
+      <div class="option-card">
+        <div class="option-letter">C</div>
+        <div class="option-title">Proveedor preferencial</div>
+        <div class="option-desc">Contratas a la startup como proveedor tecnológico por 12 meses con tarifas preferenciales. Sin compromisos de propiedad ni inversión.</div>
+        <div class="option-tag">Menor riesgo</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="esg-banner">
+    <div class="esg-text">Tu participación genera <strong>impacto ESG documentable y verificable</strong>: formación de 450+ jóvenes en IA, retención de talento regional, creación de startups y empleo cualificado. Fundación Código Abierto expide certificado de donación con todos los requisitos de ley para tus reportes anuales de sostenibilidad.</div>
+    <div class="esg-badge"><span>25%</span>descuento en<br>impuesto de renta</div>
+  </div>
+</div>
+
+<div class="main-grid">
+  <div>
+    <div class="section-tag">Preguntas frecuentes</div>
+    <h2>Lo que las empresas suelen preguntar.</h2>
+    <div style="margin-top:28px">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">¿Qué gana mi empresa al proponer un reto?<span class="faq-chevron">+</span></button>
+        <div class="faq-answer">Accedes a 450+ personas trabajando en tu problema durante 48 horas, obtienes prototipos funcionales con IA, visibilidad ante el ecosistema tech y la posibilidad de reclutar talento. Todo con un costo neto de $15M o $30M COP gracias al beneficio tributario del Art. 257 — una fracción de lo que costaría un proyecto de consultoría convencional.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">¿Qué pasa si ningún equipo elige mi reto?<span class="faq-chevron">+</span></button>
+        <div class="faq-answer">Costa Digital trabaja contigo en la formulación para maximizar el atractivo del reto. Los retos con premios competitivos y problemas claros atraen múltiples equipos. En caso de participación baja, Costa Digital puede redirigir equipos interesados en áreas afines.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">¿Mi empresa se queda con la propiedad de las soluciones?<span class="faq-chevron">+</span></button>
+        <div class="faq-answer">El código y la idea del hackatón son públicos (open source). El prototipo como producto pertenece al equipo. Si apadrinas al equipo, defines la relación de propiedad al finalizar la aceleración: puedes licenciar, invertir o contratar como proveedor. Las tres opciones están disponibles para el Paquete Transformación.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">¿Qué es el "champion interno"?<span class="faq-chevron">+</span></button>
+        <div class="faq-answer">Es una persona de tu empresa que actúa como enlace permanente con el equipo acelerado durante las 12 semanas. Participa en sesiones de retroalimentación, asegura que el MVP se alinee con las necesidades reales del negocio y garantiza que el proceso tenga visibilidad dentro de tu organización.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">¿Puedo apadrinar más de un equipo?<span class="faq-chevron">+</span></button>
+        <div class="faq-answer">Sí, sin límite. Cada equipo adicional tiene un costo de $10M COP (neto $7.5M tras beneficio tributario) y requiere un champion asignado. Si al ver los prototipos del Paquete Explorador quieres apadrinar un equipo, puedes contratarlo por separado.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">¿Cómo se protege la confidencialidad de mi reto?<span class="faq-chevron">+</span></button>
+        <div class="faq-answer">El reto se formula en términos generales que permitan participación abierta sin revelar información estratégica sensible. Trabajamos contigo para encontrar el balance entre claridad del problema y protección de información competitiva.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="form-anchor">
+    <div class="form-card">
+      <div id="form-view">
+        <div class="form-title">Propón tu reto</div>
+        <div class="form-sub">Te contactamos en menos de 48 horas para coordinar los detalles y confirmar tu paquete.</div>
+        <div class="field">
+          <label>Empresa</label>
+          <input type="text" id="f-empresa" placeholder="Nombre de tu empresa">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Sector</label>
+            <select id="f-sector">
+              <option value="">Selecciona...</option>
+              <option>Smart City / Gobierno</option>
+              <option>Logística y transporte</option>
+              <option>Salud</option>
+              <option>Inclusión financiera / Fintech</option>
+              <option>Educación</option>
+              <option>Manufactura</option>
+              <option>Retail / Comercio</option>
+              <option>Turismo</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Tamaño</label>
+            <select id="f-tamano">
+              <option value="">Selecciona...</option>
+              <option>1–50 personas</option>
+              <option>51–200 personas</option>
+              <option>200+ personas</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Tu nombre</label>
+            <input type="text" id="f-nombre" placeholder="Nombre completo">
+          </div>
+          <div class="field">
+            <label>Cargo</label>
+            <input type="text" id="f-cargo" placeholder="Ej. CTO, Gerente">
+          </div>
+        </div>
+        <div class="field">
+          <label>Email de contacto</label>
+          <input type="email" id="f-email" placeholder="tu@empresa.com">
+        </div>
+        <div class="field">
+          <label>Paquete de interés</label>
+          <select id="f-paquete">
+            <option value="">Selecciona...</option>
+            <option>Explorador — $20M COP (neto $15M)</option>
+            <option>Transformación — $40M COP (neto $30M)</option>
+            <option>Aún no lo tengo claro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Descripción del reto</label>
+          <textarea id="f-reto" placeholder="Describe el problema que enfrenta tu empresa. ¿Cuál es el dolor? ¿Qué datos o contexto tienes disponibles? Cuanto más específico, mejores serán las propuestas."></textarea>
+        </div>
+        <button class="btn-submit" id="btn-enviar" onclick="enviarFormulario()">Enviar propuesta →</button>
+        <div class="form-note">Al enviar, nuestro equipo revisa tu propuesta y te contacta en máximo 48 horas hábiles. Contacto directo: anuar@codigoabierto.tech</div>
+      </div>
+      <div class="success-state" id="success-view">
+        <div class="success-icon">✓</div>
+        <div class="success-title">Propuesta recibida</div>
+        <div class="success-desc">Revisaremos tu reto y te contactaremos en menos de 48 horas para afinar los detalles, confirmar tu paquete y arrancar la formulación del reto.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="chat-section">
+  <div style="text-align:center;margin-bottom:28px">
+    <div class="section-tag" style="display:inline-block">Asistente IA</div>
+    <h2 style="margin-top:10px">¿Tienes dudas sobre el programa?</h2>
+    <p style="font-size:15px;color:var(--muted);margin-top:8px">Entrenado con todo el contexto del Programa de Innovación Abierta de Caribe-IA.</p>
+  </div>
+  <div class="chat-container">
+    <div class="chat-header">
+      <div class="chat-avatar"><div class="chat-avatar-dot"></div></div>
+      <div>
+        <div class="chat-name">Asistente Caribe-IA</div>
+        <div class="chat-status"><span class="status-dot"></span>En línea</div>
+      </div>
+    </div>
+    <div class="chat-messages" id="chat-msgs">
+      <div class="msg">
+        <div class="msg-avatar">C</div>
+        <div class="msg-bubble">Hola. Soy el asistente del Programa de Innovación Abierta de Caribe-IA. Puedo explicarte cómo funcionan los paquetes, el beneficio tributario, qué pasa en cada etapa del proceso o cómo formular un buen reto. ¿En qué te ayudo?</div>
+      </div>
+    </div>
+    <div class="quick-questions">
+      <button class="quick-q" onclick="sendQuick('¿En qué se diferencia el Paquete Explorador del Transformación?')">Explorador vs Transformación</button>
+      <button class="quick-q" onclick="sendQuick('¿Cómo funciona exactamente el beneficio tributario del 25%?')">Beneficio tributario</button>
+      <button class="quick-q" onclick="sendQuick('¿Qué tipo de reto debo proponer para que los equipos lo elijan?')">¿Qué reto proponer?</button>
+      <button class="quick-q" onclick="sendQuick('¿Qué pasa después del hackatón con mi equipo apadrinado?')">¿Qué pasa después?</button>
+    </div>
+    <div class="chat-input-area">
+      <input class="chat-input" id="chat-input" placeholder="Escribe tu pregunta..." onkeydown="if(event.key==='Enter')sendChat()">
+      <button class="chat-send" id="chat-send-btn" onclick="sendChat()">Enviar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleFaq(btn){
+  const item=btn.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+function scrollToForm(){
+  document.getElementById('form-anchor').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function enviarFormulario(){
+  const empresa=document.getElementById('f-empresa').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const reto=document.getElementById('f-reto').value.trim();
+  if(!empresa||!email||!reto){alert('Por favor completa al menos: empresa, email y descripción del reto.');return;}
+  const btn=document.getElementById('btn-enviar');
+  btn.disabled=true;btn.textContent='Enviando...';
+  setTimeout(()=>{
+    document.getElementById('form-view').style.display='none';
+    document.getElementById('success-view').style.display='block';
+  },1200);
+}
+
+const SYSTEM=`Eres el asistente oficial del Programa de Innovación Abierta de Costa Digital / Caribe-IA. Responde siempre en español, de forma cercana, clara y breve (máximo 3 párrafos cortos).
+
+CONTEXTO DEL PROGRAMA:
+El Programa de Innovación Abierta conecta retos reales de empresas con talento tech del Caribe colombiano para generar soluciones con IA. Operado por Fundación Código Abierto con Caribe Ventures.
+
+PAQUETES:
+- Explorador: $20M COP. Costo neto real $15M tras beneficio tributario 25%. Incluye: formulación del reto, línea temática en hackatón Barranqui-IA, premio $5M para ganador, 5 accesos al evento, cobertura Telecaribe, amplificación redes (3 posts + 5 stories), reporte post-evento. NO incluye apadrinamiento ni aceleración.
+- Transformación: $40M COP. Costo neto real $30M. Incluye todo lo del Explorador más: apadrinamiento de 1 equipo en aceleración 12 semanas, champion interno, servicios a precio preferencial 6 meses, 12 boletos VIP Tech Caribe Weekend, keynote 15 min escenario principal ante 3.000+ personas, sello "Empresa Innovadora con IA", caso de estudio en video, lounge de demos 4x3m, campaña amplificada.
+- Equipo adicional: $10M COP (neto $7.5M). Sin límite de equipos adicionales.
+
+BENEFICIO TRIBUTARIO:
+Fundación Código Abierto es ESAL en Régimen Tributario Especial. Art. 257 Estatuto Tributario: descuento del 25% del valor donado DIRECTAMENTE sobre el impuesto de renta (no deducción, es descuento). Si no se aplica todo en el año, el excedente va hasta 4 años siguientes.
+
+LAS 5 ETAPAS:
+1. Inscripción/formulación (Marzo-Abril): empresa define reto con acompañamiento
+2. Hackatón Barranqui-IA (15-17 Mayo): 450+ participantes en 48h, Pabellón de Cristal, Barranquilla
+3. Selección y apadrinamiento (Mayo-Junio): empresa elige qué equipos acelerar
+4. Aceleración con Caribe Ventures (Mayo-Agosto): 12 semanas, prototipo a MVP
+5. Demo Day en Tech Caribe Weekend (7 Agosto): presentación ante 3.000+ y Telecaribe
+
+OPCIONES AL FINALIZAR:
+A) Licenciamiento/adquisición de PI - Caribe Ventures facilita valoración
+B) Inversión estratégica pre-seed co-liderada con Caribe Ventures - empresa obtiene equity
+C) Contrato proveedor preferencial - 12 meses, sin compromisos de propiedad
+
+CHAMPION INTERNO: persona de la empresa que actúa como enlace permanente con el equipo durante la aceleración. Participa en sesiones de retroalimentación. Cada equipo adicional requiere un champion.
+
+RETOS IDEALES: problemas concretos atacables con IA en 48h, con datos o contexto disponible. Sectores prioritarios: Smart City/Malecón, Logística portuaria, Salud pública, Inclusión financiera/fintech, Educación.
+
+PROPIEDAD INTELECTUAL: código e idea del hackatón son open source y pertenecen al equipo. Si la empresa apadrina, la relación de propiedad se define según la opción elegida al final.
+
+ESG: participación genera impacto documentable: 450+ jóvenes formados en IA, retención de talento, creación de startups, empleo cualificado. FCA expide certificado de donación para reportes de sostenibilidad.
+
+Contacto: anuar@codigoabierto.tech / 3103900986. Si no tienes información sobre algo, di que no tienes ese dato y sugiere escribir directamente.`;
+
+let history=[];
+async function callClaude(msg){
+  history.push({role:'user',content:msg});
+  const res=await fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:SYSTEM,messages:history})
+  });
+  const data=await res.json();
+  const reply=data.content?.[0]?.text||'Hubo un error. Por favor intenta de nuevo.';
+  history.push({role:'assistant',content:reply});
+  return reply;
+}
+function addMsg(text,isUser){
+  const msgs=document.getElementById('chat-msgs');
+  const div=document.createElement('div');
+  div.className='msg'+(isUser?' user':'');
+  div.innerHTML=`<div class="msg-avatar">${isUser?'T':'C'}</div><div class="msg-bubble">${text}</div>`;
+  msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
+}
+function addTyping(){
+  const msgs=document.getElementById('chat-msgs');
+  const div=document.createElement('div');
+  div.className='msg';div.id='typing-ind';
+  div.innerHTML=`<div class="msg-avatar">C</div><div class="msg-bubble"><div class="typing"><span></span><span></span><span></span></div></div>`;
+  msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
+}
+async function sendChat(){
+  const input=document.getElementById('chat-input');
+  const btn=document.getElementById('chat-send-btn');
+  const text=input.value.trim();
+  if(!text)return;
+  input.value='';btn.disabled=true;
+  addMsg(text,true);addTyping();
+  try{
+    const reply=await callClaude(text);
+    document.getElementById('typing-ind')?.remove();
+    addMsg(reply,false);
+  }catch(e){
+    document.getElementById('typing-ind')?.remove();
+    addMsg('Error de conexión. Por favor intenta de nuevo.',false);
+  }
+  btn.disabled=false;input.focus();
+}
+function sendQuick(q){document.getElementById('chat-input').value=q;sendChat();}
+</script>
