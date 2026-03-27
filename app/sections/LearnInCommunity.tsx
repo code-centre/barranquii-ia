@@ -201,7 +201,7 @@ export default function LearnInCommunity() {
       </div> */}
       <Wrapper styles="w-full flex flex-col gap-5 relative mask pt-10">
         <p className="text-center text-gray-300">
-          Durante Abril y hasta el 3 de Mayo las comunidades de Barranquilla nos
+          Durante Abril y hasta el 24 de Mayo las comunidades de Barranquilla nos
           unimos para organizar talleres, platicas y eventos especiales para que
           pueda aprender sobre inteligencia artificial y llegues preparando al
           hackatón.

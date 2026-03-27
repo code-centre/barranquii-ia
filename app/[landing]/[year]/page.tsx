@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	
 	const eventDates: Record<string, Record<string, { start: string; end: string }>> = {
 		'barranqui-ia': {
-			'2026': { start: '2026-05-01', end: '2026-05-03' },
+			'2026': { start: '2026-05-22', end: '2026-05-24' },
 			'2025': { start: '2025-05-01', end: '2025-05-03' },
 			'2024': { start: '2024-05-01', end: '2024-05-03' },
 		},
@@ -121,8 +121,8 @@ export default async function EditionPerYearPage({ params }: Props) {
 	const eventData: Record<string, Record<string, { start: string; end: string; location: string; address: string }>> = {
 		'barranqui-ia': {
 			'2026': { 
-				start: '2026-05-01T08:00:00-05:00', 
-				end: '2026-05-03T18:00:00-05:00',
+				start: '2026-05-22T08:00:00-05:00', 
+				end: '2026-05-24T18:00:00-05:00',
 				location: 'Barranquilla, Atlántico, Colombia',
 				address: 'Universidad del Norte, Barranquilla'
 			},

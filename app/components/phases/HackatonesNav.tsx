@@ -12,11 +12,11 @@ export default function HackatonesNav({ landing }: Props) {
       <Link 
         href="/2025" 
         className="flex-1 xl:min-w-[350px] flex flex-col items-center justify-start py-5"
-        aria-label="Barranqui-IA - 1 al 3 de Mayo"
+        aria-label="Barranqui-IA - 22 al 24 de Mayo"
       >
         <article className="flex flex-col items-center w-full space-y-2">
           <GradientTitle
-            title="1 al 3 de Mayo"
+            title="22 al 24 de Mayo"
             landing="barranqui-ia"
             size="sm"
           />

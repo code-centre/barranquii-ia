@@ -112,7 +112,7 @@ function ThankYouContent() {
             </h1>
             <p className="max-w-xl text-gray-300 md:text-base">
               Felicidades, ahora eres parte de Barranqui-IA 2026. Prepárate para una experiencia
-              inolvidable del 1 al 3 de mayo, donde construirás el futuro desde el Caribe con
+              inolvidable del 22 al 24 de mayo, donde construirás el futuro desde el Caribe con
               Inteligencia Artificial.
             </p>
 

@@ -9,7 +9,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       description: 'En este taller descubrirás cómo transformar tu forma de trabajar aprovechando las herramientas de IA para escribir mejor código, automatizar tareas repetitivas, y potenciar tu creatividad como desarrollador. No se trata de competir con la IA, sino de convertirla en tu mejor aliada.',
       image: '/mentores/anuar.webp',
       time: 'Sala A - 2:00pm',
-      day: 'Sábado 3 de Mayo'
+      day: 'Sábado 23 de Mayo'
     },
     {
       title: '2:45pm - ShadAI Framework: Crea agentes con tecnología de la costa',
@@ -20,7 +20,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       description: 'En esta charla aprenderás cómo aprovechar el poder del ShadAI Framework para desarrollar agentes. Si estás participando en el reto de "Agentes x ShadAI", esta charla te dará las herramientas clave para llevar tu idea al siguiente nivel... y competir por ese premio extra de 1 millón de pesos 💸.',
       image: '/mentores/angie.webp',
       time: 'Por confirmar',
-      day: 'Sábado 3 de Mayo'
+      day: 'Sábado 23 de Mayo'
     },
     {
       title: '3:30pm - Fullstack IA Development Multi Cloud y Gemini',
@@ -31,7 +31,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       description: 'En esta charla aprenderas a construir aplicaciones fullstack potenciadas por inteligencia artificial usando AWS Amplify y Gemini de Google. Aprenderas a integrar servicios multi-cloud para crear soluciones inteligentes, escalables y modernas.',
       image: '/mentores/luis-reyes.webp',
       time: 'Sala A - 3:30pm',
-      day: 'Sábado 3 de Mayo'
+      day: 'Sábado 23 de Mayo'
     },
     {
       title: '4:15pm - Integra IA con Python',
@@ -42,7 +42,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       description: 'Pendiente',
       image: '/mystery-mentor.png',
       time: 'Sala A - 4:15pm',
-      day: 'Sábado 3 de Mayo'
+      day: 'Sábado 23 de Mayo'
     },
     {
       title: '4:15pm - Agentes IA Potenciados por LLM: Diseñando Soluciones Autónomas e Inteligentes',
@@ -53,7 +53,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       description: 'Descubre cómo los agentes de IA, potenciados por LLMs y arquitecturas como ReAct y Chain-of-Thought, están revolucionando el desarrollo de aplicaciones. Aprende a integrar razonamiento, herramientas externas y autonomía con frameworks como LangChain y Vertex AI para construir agentes capaces de resolver problemas de forma eficiente y en tiempo real.',
       image: '/mentores/carlos-alarcon.webp',
       time: 'Sala A - 4:15pm',
-      day: 'Sábado 3 de Mayo'
+      day: 'Sábado 23 de Mayo'
     },
     {
       title: '5:00pm - Despliega tu Agente de IA: Python + Docker en acción',
@@ -64,7 +64,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       description: 'En esta charla aprenderás cómo crear y desplegar tu propio agente de inteligencia artificial utilizando Python y Docker. Exploraremos buenas prácticas para el desarrollo, la contenedorización y la ejecución de modelos en entornos reales, todo con un enfoque práctico y aplicable a proyectos del mundo actual.',
       image: '/mentores/Andres-duque.webp',
       time: 'Sala A - 5:00pm',
-      day: 'Sábado 3 de Mayo'
+      day: 'Sábado 23 de Mayo'
     },
     {
       title: '5:45pm - Conecta tu Agente AI con el futuro usando MCP',
@@ -75,7 +75,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       description: 'En esta charla revelaremos cómo cualquier proyecto, idea o agente de inteligencia artificial puede conectarse a flujos reales de trabajo a través del Model Context Protocol (MCP) y la plataforma Raudoc, que convierte documentos en acciones automatizables. Además, lanzaremos un reto especial para los participantes del hackatón: construir el mejor Agente AI conectado a Raudoc. El equipo ganador recibirá un premio especial de integración, visibilidad en el ecosistema de Raudoc y mentoría exclusiva para seguir escalando su agente al marketplace.',
       image: '/mentores/luis-charris.webp',
       time: 'Sala A - 5:45pm',
-      day: 'Sábado 3 de Mayo'
+      day: 'Sábado 23 de Mayo'
     },
 
     // No-Code Workshops
@@ -90,7 +90,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       image: '/mentores/santiago-carrillo.webp',
       type: 'no-code',
       time: 'Por confirmar',
-      day: 'Sábado 3 de Mayo'
+      day: 'Sábado 23 de Mayo'
     },
     {
       title: '2:45pm - Cómo detonar la creatividad en la era de la IA',
@@ -102,7 +102,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       image: '/mentores/maria-davila.webp',
       type: 'no-code',
       time: 'Por confirmar',
-      day: 'Sábado 3 de Mayo'
+      day: 'Sábado 23 de Mayo'
     },
     {
       title: '3:30pm - De la idea al negocio: en minutos',
@@ -114,7 +114,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       image: '/mentores/andres-salcedo.webp',
       type: 'no-code',
       time: 'Por confirmar',
-      day: 'Sábado 3 de Mayo'
+      day: 'Sábado 23 de Mayo'
     },
     {
       title: '4:15pm - La importancia del análisis de datos para las empresas',
@@ -126,7 +126,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       image: '/mentores/gian-castro.webp',
       type: 'no-code',
       time: 'Sala B - 5:00pm',
-      day: 'Sábado 3 de Mayo'
+      day: 'Sábado 23 de Mayo'
     },
     {
       title: '5:00pm - Duplica tus ventas con IA',
@@ -138,7 +138,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       image: '/mentores/mauro.webp',
       type: 'no-code',
       time: 'Sala B - 5:00pm',
-      day: 'Sábado 3 de Mayo'
+      day: 'Sábado 23 de Mayo'
     },
     {
       title: '5:30pm - Cómo levantar capital para tu startup',
@@ -150,7 +150,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       image: '/mentores/jorge-nieto.webp',
       type: 'no-code',
       time: 'Por confirmar',
-      day: 'Sábado 3 de Mayo'
+      day: 'Sábado 23 de Mayo'
     },
     {
       title: '10:30am - Del código al corazón El arte de contar lo que programaste para que conecte y convenza.',
@@ -162,7 +162,7 @@ export const WORKSHOPS: Record<string, { title: string; name: string; role: stri
       image: '/mentores/diego.webp',
       type: 'no-code',
       time: 'Por confirmar',
-      day: 'Domingo 4 de Mayo'
+      day: 'Domingo 24 de Mayo'
     },
   ],
 }

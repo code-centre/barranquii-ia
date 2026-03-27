@@ -429,7 +429,7 @@ const createPaymentId = async (type: string, amount: number, year: number = 2026
     const eventName = type === "preventa" 
       ? "Entrada Preventa - Hackatón Barranqui-IA 2026"
       : "Entrada General - Hackatón Barranqui-IA 2026";
-    const eventDescription = `Entrada al Hackatón Barranqui-IA ${year}. El evento tendrá lugar del 1 al 3 de mayo de ${year} en Barranquilla, Atlántico.`;
+    const eventDescription = `Entrada al Hackatón Barranqui-IA ${year}. El evento tendrá lugar del 22 al 24 de mayo de ${year} en Barranquilla, Atlántico.`;
     
     const resp = await fetch(`https://production.wompi.co/v1/payment_links`, {
       method: "POST",

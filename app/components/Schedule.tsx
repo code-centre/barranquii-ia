@@ -7,17 +7,17 @@ import { THEME_LANDINGS } from "../utils/theme";
 const DAYS_EVENT = [
   {
     title: "Inauguración",
-    number: "02",
+    number: "22",
     day: "Mayo, viernes",
   },
   {
     title: "Primer Día",
-    number: "03",
+    number: "23",
     day: "Mayo, sábado",
   },
   {
     title: "Segundo Día",
-    number: "04",
+    number: "24",
     day: "Mayo, domingo",
   },
 ];

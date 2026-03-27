@@ -35,7 +35,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         {type === "TALLER"
           ? "El Hackatón tendrá lugar el 4 y 5 de mayo, con tu boleto tienes acceso para los talleres del 4 de mayo desde las 2 pm hasta las 7 pm. Asegúrate de llegar a tiempo para aprovechar cada minuto de esta experiencia enriquecedora."
           : type === "PREVENTA" || type === "GENERAL"
-          ? "El evento tendrá lugar del 1 al 3 de mayo de 2026 y comenzará a las 8:00 AM. Asegúrate de llegar a tiempo para aprovechar cada minuto de esta experiencia enriquecedora."
+          ? "El evento tendrá lugar del 22 al 24 de mayo de 2026 y comenzará a las 8:00 AM. Asegúrate de llegar a tiempo para aprovechar cada minuto de esta experiencia enriquecedora."
           : "El evento tendrá lugar el 4 y 5 de mayo y comenzará a las 8:00 AM. Asegúrate de llegar a tiempo para aprovechar cada minuto de esta experiencia enriquecedora."}
       </p>
       <p>
@@ -126,7 +126,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
           {type === "TALLER" 
             ? "04 de abril de 2024" 
             : type === "PREVENTA" || type === "GENERAL"
-            ? "1 al 3 de mayo de 2026"
+            ? "22 al 24 de mayo de 2026"
             : "04 y 05 de abril de 2024"}
           
         </p>

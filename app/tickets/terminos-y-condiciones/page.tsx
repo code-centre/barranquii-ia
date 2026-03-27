@@ -62,8 +62,8 @@ export default function TermsAndConditions() {
           <li className="text-gray-300">
             <span className="font-bold text-white">Asistentes nocturnos:</span>{" "}
             Los asistentes que tomen la opción de permanecer en el evento
-            trabajando en sus proyectos durante la noche del sábado 4 de mayo
-            hasta el domingo 5 de mayo , aceptan y se ajustan a la delimitación
+            trabajando en sus proyectos durante la noche del sábado 23 de mayo
+            hasta el domingo 24 de mayo , aceptan y se ajustan a la delimitación
             espacial del evento y a la condición de no salir ni ingresar a la
             Universidad del Norte a partir de 10:00 pm y hasta las 6:00 am del
             dia siguiente
