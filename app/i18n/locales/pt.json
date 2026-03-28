@@ -9,7 +9,7 @@
     "edition": "3ª Edição - 22 a 24 de Maio",
     "hackathon": "Hackathon",
     "title": "Barranqui-IA",
-    "subtitle": "Construa o futuro desde o Caribe com Inteligência Artificial",
+    "subtitle": "Construa o futuro desde o Caribe com Inteligência Artificial | Cubo de Cristal, Barranquilla",
     "ctaLearnMore": "Saiba mais",
     "ctaPresale": "Comprar ingressos - Primeira etapa",
     "limitedSpots": "Vagas limitadas - Primeira etapa",
@@ -19,9 +19,9 @@
   "about": {
     "title": "O que é Barranqui-IA?",
     "intro": "Barranqui-IA é um hackathon de 48 horas onde desenvolvedores, designers, amantes de dados e builders se reúnem para criar soluções reais com IA.",
-    "step1": "As empresas patrocinadoras definem linhas temáticas",
+    "step1": "As empresas patrocinadoras definirão 4 linhas temáticas com desafios de inovação",
     "step2": "Os participantes formam equipes e desenvolvem protótipos funcionais em 48 horas",
-    "step3": "Os projetos finalistas são apresentados e competem por até $10.000.000 em prêmios",
+    "step3": "Os projetos finalistas são apresentados e competem por mais de +20M COP em prêmios",
     "altStep1": "Desafios empresariais",
     "altStep2": "Protótipo funcional",
     "altStep3": "Apresentação e premiação",
@@ -45,6 +45,14 @@
     "exploreEditions": "Explore edições anteriores",
     "barranqui2025": "Barranqui-IA 2025",
     "barranqui2024": "Barranqui-IA 2024"
+  },
+  "location2026": {
+    "title": "Local do evento",
+    "venueName": "Cubo de Cristal",
+    "address": "Cubo de Cristal de la Plaza de la Paz, Barranquilla, Colômbia",
+    "mapsCta": "Ver no Google Maps",
+    "mapAlt": "Mapa da Colômbia com a localização de Barranquilla (BAQ)",
+    "venueImageAlt": "Fachada do Cubo de Cristal na Plaza de la Paz em Barranquilla"
   },
   "tickets": {
     "title": "Adquira seu ingresso",
@@ -84,6 +92,7 @@
     "caribeIA": "Caribe-IA",
     "whatIs": "O que é Barranqui-IA?",
     "experience": "Experiência",
+    "venue": "Local",
     "tickets": "Ingressos",
     "menu": "Menu",
     "comingSoon": "Em breve",
@@ -308,7 +317,7 @@
     "title": "O que é Barranqui-IA?",
     "text1": "Barranqui-IA foi o hackathon de inteligência artificial mais emocionante da Colômbia. Um espaço onde pessoas criativas, técnicas e visionárias se reuniram para resolver desafios reais usando o poder da IA. Não importava se chegavam com uma ideia, sem equipe ou com experiência prévia: todos puderam construir, aprender e transformar.",
     "text2": "Durante o fim de semana de 3 e 4 de Maio, os participantes viveram a experiência de criar uma solução do zero, com o apoio de mentores especialistas, aliados do ecossistema e uma comunidade que acredita no poder da tecnologia para mudar o mundo. As soluções tiveram como base o uso de inteligência artificial.",
-    "text3": "No final do evento apresentaram suas soluções em um pitch perante um júri especializado para concorrer a prêmios incríveis. Foram entregues mais de $10.000.000 COP em prêmios.",
+    "text3": "No final do evento apresentaram suas soluções em um pitch perante um júri especializado para concorrer a prêmios incríveis. Em disputa: mais de +20M COP em prêmios.",
     "imageAlt": "Barranqui-IA 2025"
   },
   "topics2025": {

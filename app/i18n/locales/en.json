@@ -9,7 +9,7 @@
     "edition": "3rd Edition - May 22-24",
     "hackathon": "Hackathon",
     "title": "Barranqui-IA",
-    "subtitle": "Build the future from the Caribbean with Artificial Intelligence",
+    "subtitle": "Build the future from the Caribbean with Artificial Intelligence | Glass Cube, Barranquilla",
     "ctaLearnMore": "Learn more",
     "ctaPresale": "Buy tickets - First stage",
     "limitedSpots": "Limited spots - First stage",
@@ -19,9 +19,9 @@
   "about": {
     "title": "What is Barranqui-IA?",
     "intro": "Barranqui-IA is a 48-hour hackathon where developers, designers, data lovers and builders come together to create real solutions with AI.",
-    "step1": "Sponsor companies define thematic lines",
+    "step1": "Sponsor companies will define 4 thematic lines with innovation challenges",
     "step2": "Participants form teams and develop functional prototypes in 48 hours",
-    "step3": "Finalist projects are presented and compete for up to $10,000,000 in prizes",
+    "step3": "Finalist projects are presented and compete for over +20M COP in prizes",
     "altStep1": "Business challenges",
     "altStep2": "Functional prototype",
     "altStep3": "Presentation and awards",
@@ -45,6 +45,14 @@
     "exploreEditions": "Explore previous editions",
     "barranqui2025": "Barranqui-IA 2025",
     "barranqui2024": "Barranqui-IA 2024"
+  },
+  "location2026": {
+    "title": "Venue",
+    "venueName": "Glass Cube (Cubo de Cristal)",
+    "address": "Glass Cube at Plaza de la Paz, Barranquilla, Colombia",
+    "mapsCta": "Open in Google Maps",
+    "mapAlt": "Map of Colombia showing Barranquilla (BAQ)",
+    "venueImageAlt": "Exterior of the Glass Cube at Plaza de la Paz in Barranquilla"
   },
   "tickets": {
     "title": "Get your ticket",
@@ -84,6 +92,7 @@
     "caribeIA": "Caribe-IA",
     "whatIs": "What is Barranqui-IA?",
     "experience": "Experience",
+    "venue": "Venue",
     "tickets": "Tickets",
     "menu": "Menu",
     "comingSoon": "Coming soon",
@@ -308,7 +317,7 @@
     "title": "What is Barranqui-IA?",
     "text1": "Barranqui-IA was the most exciting artificial intelligence hackathon in Colombia. A space where creative, technical and visionary people came together to solve real challenges using the power of AI. It didn't matter if they came with an idea, without a team or with prior experience: everyone was able to build, learn and transform.",
     "text2": "During the weekend of May 3-4, participants experienced creating a solution from scratch, with the support of expert mentors, ecosystem allies and a community that believes in the power of technology to change the world. Solutions were based on the use of artificial intelligence.",
-    "text3": "At the end of the event they presented their solutions in a pitch before a specialized jury to compete for amazing prizes. More than $10,000,000 COP in prizes were awarded.",
+    "text3": "At the end of the event they presented their solutions in a pitch before a specialized jury to compete for amazing prizes. On the line: over +20M COP in prizes.",
     "imageAlt": "Barranqui-IA 2025"
   },
   "topics2025": {

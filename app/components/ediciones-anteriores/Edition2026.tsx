@@ -6,6 +6,7 @@ import FAQ from '@/app/sections/FAQ'
 import { FAQS_HACKATHONES } from '@/app/utils/FAQS_HACKATHONES'
 import HackatonBackground from '../2026/HackatonBackground';
 import HowToLiveHackaton from '../2026/HowToLiveHackaton';
+import Location2026 from '../2026/Location2026';
 import TicketPurchase from '../2026/TicketPurchase';
 import IsItForYou from '../2026/ItsForYou';
 import SponsorsSection2026 from '../2026/SponsorSection';
@@ -22,6 +23,9 @@ export default function Edition2026({ params }: { params: { landing: string } })
 				</ScrollAnimation>
 				<ScrollAnimation delay={0.2}>
 					<HowToLiveHackaton />
+				</ScrollAnimation>
+				<ScrollAnimation delay={0.1}>
+					<Location2026 />
 				</ScrollAnimation>
 				<ScrollAnimation delay={0.1}>
 					<TicketPurchase />

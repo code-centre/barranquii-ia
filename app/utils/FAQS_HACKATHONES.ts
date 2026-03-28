@@ -33,12 +33,12 @@ export const FAQS_HACKATHONES: FAQ[] = [
   {
     question: "¿Qué tipo de premios se entregan?",
     answer:
-      "Habrá premios por creatividad, impacto, ejecución técnica, colaboración y otras categorías especiales. Todos los equipos tienen oportunidades de ser reconocidos, sin importar su nivel previo de experiencia.",
+      "Habrá premios por creatividad, impacto, ejecución técnica, colaboración y otras categorías especiales. Se destinarán más de +20M COP en premios. Todos los equipos tienen oportunidades de ser reconocidos, sin importar su nivel previo de experiencia.",
   },
   {
     question: "¿Dónde se realizan los hackatones?",
     answer:
-      "En distintas ciudades del Caribe colombiano, como Barranquilla, Cartagena y Santa Marta. Puedes revisar las fechas y sedes actualizadas en nuestras redes o sitio web.",
+      "Barranqui-IA 2026 será en el Cubo de Cristal de la Plaza de la Paz, Barranquilla, Colombia. Puedes ver la ubicación en Google Maps: https://www.google.com/maps/search/?api=1&query=Cubo+de+Cristal+Plaza+de+la+Paz+Barranquilla+Colombia — Otras ciudades del Caribe (Cartagena, Santa Marta, etc.) tendrán sus propias fechas y sedes; revísalas en el sitio y redes.",
   },
   {
     question: "¿Necesito saber de inteligencia artificial para participar?",

@@ -34,13 +34,13 @@ const TEXTS: Record<string, (string | { text: string, items: string[] })[]> = {
     'samar-ia': [
         'Samar-IA es el hackatón de inteligencia artificial más emocionante de Colombia. Un espacio donde personas creativas, técnicas y visionarias se reúnen para resolver retos reales usando el poder de la IA. No importa si vienes con una idea, sin equipo o con experiencia previa: aquí todos pueden construir, aprender y transformar.',
         'Durante el fin de semana del 23 y 24 de Mayo, vivirás la experiencia de crear una solución desde cero, con el apoyo de mentores expertos, aliados del ecosistema y una comunidad que cree en el poder de la tecnología para cambiar el mundo. Tu solución deberá tener como base el uso de inteligencia artificial.',
-        'Al final del evento presentarás tu solución en un pitch frente a un jurado especializado para concursar por premios increibles. Este año tenemos más de $10,000,000 COP en premios.'
+        'Al final del evento presentarás tu solución en un pitch frente a un jurado especializado para concursar por premios increibles. Este año se destinarán más de +20M COP en premios.'
 
     ],
     'cartagen-ia': [
         'Cartagen-IA es el hackatón de inteligencia artificial más emocionante de Colombia. Un espacio donde personas creativas, técnicas y visionarias se reúnen para resolver retos reales usando el poder de la IA. No importa si vienes con una idea, sin equipo o con experiencia previa: aquí todos pueden construir, aprender y transformar.',
         'Durante el fin de semana de Junio, vivirás la experiencia de crear una solución desde cero, con el apoyo de mentores expertos, aliados del ecosistema y una comunidad que cree en el poder de la tecnología para cambiar el mundo. Tu solución deberá tener como base el uso de inteligencia artificial.',
-        'Al final del evento presentarás tu solución en un pitch frente a un jurado especializado para concursar por premios increibles. Este año tenemos más de $10,000,000 COP en premios.'
+        'Al final del evento presentarás tu solución en un pitch frente a un jurado especializado para concursar por premios increibles. Este año se destinarán más de +20M COP en premios.'
     ]
 }
 

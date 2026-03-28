@@ -18,7 +18,7 @@ export default function HowIs() {
           El último día presentaras tu proyecto ante un jurado de expertos que
           evaluará los proyectos según su implementación técnica y el uso de la
           inteligencia artificial. Los mejores 3 equipos serán nombrados
-          ganadores y ¡Recibirán premios espectaculares!
+          ganadores y ¡Recibirán premios espectaculares: más de +20M COP en premios!
         </p>
       </div>
       <div className="gap-4 grid grid-cols-1 md:grid-cols-3">
@@ -36,7 +36,7 @@ export default function HowIs() {
         <CardHowIs
           icon="/icon-presentation.png"
           title="Presentación"
-          description="Presenta tu demo para ganar increíbles premios."
+          description="Presenta tu demo para ganar increíbles premios: más de +20M COP en juego."
         />
       </div>
     </section>

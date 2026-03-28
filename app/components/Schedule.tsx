@@ -119,7 +119,7 @@ const SCHEDULE_EVENT = [
       time: "4:00 PM - 6:00 PM",
       title: "Presentaciones",
       description:
-        "¡Llegó el momento, registra tu demo, practica tu pitch e impresiona a los jueces para llevarte los premios a casa!",
+        "¡Llegó el momento, registra tu demo, practica tu pitch e impresiona a los jueces para llevarte parte de los más de +20M COP en premios!",
     },
     {
       time: "6:00 PM",

@@ -28,7 +28,7 @@ const ITEMS = [
   },
   {
     title: '5.- Premiación',
-    description: 'Los proyectos destacados recibirán premios y podrán postularse al programa de aceleración Caribe-IA, donde tendrán la oportunidad de convertirse en startups reales.'
+    description: 'Los proyectos destacados recibirán premios por más de +20M COP y podrán postularse al programa de aceleración Caribe-IA, donde tendrán la oportunidad de convertirse en startups reales.'
   }
 
 ]

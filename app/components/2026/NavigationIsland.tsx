@@ -17,7 +17,7 @@ export default function NavigationIsland() {
   useEffect(() => {
     if (!mounted) return;
 
-    const sections = ['hero', 'que-es', 'experiencia', 'boletos'];
+    const sections = ['hero', 'que-es', 'experiencia', 'lugar', 'boletos'];
     
     const observerOptions = {
       root: null,
@@ -76,6 +76,7 @@ export default function NavigationIsland() {
     { href: '/', label: t('nav.caribeIA'), id: 'hero', isLogo: true },
     { href: '#que-es', label: t('nav.whatIs'), id: 'que-es' },
     { href: '#experiencia', label: t('nav.experience'), id: 'experiencia' },
+    { href: '#lugar', label: t('nav.venue'), id: 'lugar' },
     { href: '#boletos', label: t('nav.tickets'), id: 'boletos' },
   ];
 
