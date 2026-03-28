@@ -6,11 +6,22 @@ import { useTranslation } from '@/app/i18n/useTranslation';
 
 export default function SponsorsSection2026() {
   const { t } = useTranslation();
-  const mainSponsors = [
+  const mainSponsors: {
+    name: string;
+    logo: string;
+    link: string;
+    noGrayscale?: boolean;
+  }[] = [
     { name: 'FCA', logo: '/images/sponsors/fca.webp', link: 'https://codigoabierto.tech' },
     { name: 'Tech Centre', logo: '/images/sponsors/tech-centre.png', link: 'https://techcentre.co' },
     { name: 'Caribe Ventures', logo: '/images/sponsors/caribe-ventures.png', link: 'https://caribe.ventures' },
     { name: 'Ciudad Inmersiva', logo: '/images/sponsors/ciudad-inmersiva.png', link: 'https://ciudadinmersiva.com' },
+    {
+      name: 'GDG Barranquilla',
+      logo: '/logos/gdg-logo-blanco.png',
+      link: 'https://gdg.community.dev/gdg-barranquilla/',
+      noGrayscale: true,
+    },
   ];
 
   return (
@@ -38,7 +49,7 @@ export default function SponsorsSection2026() {
 
         {/* Main Sponsors */}
         <article>
-          <ul className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center mb-12" role="list">
+          <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center justify-center mb-12" role="list">
             {mainSponsors.map((sponsor, index) => (
               <motion.li
                 key={sponsor.name}
@@ -59,7 +70,9 @@ export default function SponsorsSection2026() {
                     alt={t('sponsors.logoOf', { name: sponsor.name })}
                     width={150}
                     height={80}
-                    className="object-contain h-20 grayscale hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
+                    className={`object-contain h-20 transition-all duration-300 group-hover:scale-105 ${
+                      sponsor.noGrayscale ? '' : 'grayscale hover:grayscale-0'
+                    }`}
                   />
                 </a>
               </motion.li>

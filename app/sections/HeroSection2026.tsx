@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import NavigationIsland from '../components/2026/NavigationIsland';
 import { useTranslation } from '@/app/i18n/useTranslation';
 

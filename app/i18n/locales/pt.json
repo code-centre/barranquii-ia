@@ -9,7 +9,7 @@
     "edition": "3ª Edição - 22 a 24 de Maio",
     "hackathon": "Hackathon",
     "title": "Barranqui-IA",
-    "subtitle": "Construa o futuro desde o Caribe com Inteligência Artificial | Cubo de Cristal, Barranquilla",
+    "subtitle": "Ponto de encontro nacional para construir o futuro da Colômbia com inteligência artificial",
     "ctaLearnMore": "Saiba mais",
     "ctaPresale": "Comprar ingressos - Primeira etapa",
     "limitedSpots": "Vagas limitadas - Primeira etapa",
@@ -46,11 +46,24 @@
     "barranqui2025": "Barranqui-IA 2025",
     "barranqui2024": "Barranqui-IA 2024"
   },
+  "buildWithAI": {
+    "title": "Build with AI",
+    "subtitle": "Oficinas práticas de inteligência artificial",
+    "dateTime": "Sábado, 23 de maio | 10:00 – 17:00",
+    "description": "Estas oficinas práticas servem para apoiar quem participa do hackathon, mas você também pode participar de forma independente se quiser aprender a construir com IA. Os temas e horários exatos serão anunciados em breve.",
+    "workshopsHeading": "Programa de oficinas",
+    "workshopSlotLabel": "Oficina {{num}}",
+    "workshopTba": "A anunciar",
+    "poweredBy": "Powered by",
+    "googleLogoAlt": "Google",
+    "imageAlt": "Build with AI 2026"
+  },
   "location2026": {
     "title": "Local do evento",
     "venueName": "Cubo de Cristal",
     "address": "Cubo de Cristal de la Plaza de la Paz, Barranquilla, Colômbia",
     "mapsCta": "Ver no Google Maps",
+    "mapTagline": "Ponto de encontro nacional para construir o futuro da Colômbia com inteligência artificial",
     "mapAlt": "Mapa da Colômbia com a localização de Barranquilla (BAQ)",
     "venueImageAlt": "Fachada do Cubo de Cristal na Plaza de la Paz em Barranquilla"
   },

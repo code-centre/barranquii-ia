@@ -9,7 +9,7 @@
     "edition": "3ra Edición - 22 al 24 de Mayo",
     "hackathon": "Hackatón",
     "title": "Barranqui-IA",
-    "subtitle": "Construye el futuro desde el Caribe con Inteligencia Artificial | Cubo de Cristal, Barranquilla",
+    "subtitle": "El punto de encuentro nacional para construir el futuro de Colombia con inteligencia artificial",
     "ctaLearnMore": "Conoce más",
     "ctaPresale": "Comprar boletos - Primera etapa",
     "limitedSpots": "Cupos limitados - Primera etapa",
@@ -46,11 +46,24 @@
     "barranqui2025": "Barranqui-IA 2025",
     "barranqui2024": "Barranqui-IA 2024"
   },
+  "buildWithAI": {
+    "title": "Build with AI",
+    "subtitle": "Talleres prácticos de inteligencia artificial",
+    "dateTime": "Sábado 23 de mayo | 10:00 a. m. – 5:00 p. m.",
+    "description": "Estos talleres prácticos están pensados para apoyar a quienes participan en el hackatón, pero también podrás asistir de forma independiente si quieres aprender a construir con IA. Los temas y horarios exactos se anunciarán próximamente.",
+    "workshopsHeading": "Programa de talleres",
+    "workshopSlotLabel": "Taller {{num}}",
+    "workshopTba": "Por anunciar",
+    "poweredBy": "Powered by",
+    "googleLogoAlt": "Google",
+    "imageAlt": "Build with AI 2026"
+  },
   "location2026": {
     "title": "Lugar del evento",
     "venueName": "Cubo de Cristal",
     "address": "Cubo de Cristal de la Plaza de la Paz, Barranquilla, Colombia",
     "mapsCta": "Ver en Google Maps",
+    "mapTagline": "Punto de encuentro nacional para construir el futuro de Colombia con inteligencia artificial",
     "mapAlt": "Mapa de Colombia con la ubicación de Barranquilla (BAQ)",
     "venueImageAlt": "Fachada del Cubo de Cristal de la Plaza de la Paz en Barranquilla"
   },
@@ -65,7 +78,7 @@
     "whatIncludes": "¿Qué incluye tu boleto?",
     "benefit1": "Participación general en el hackatón",
     "benefit2": "Acceso a talleres y mentorías",
-    "benefit3": "Café y snacks ilimitado",
+    "benefit3": "Alimentación, snacks y café ilimitado",
     "benefit4": "Kit exclusivo y camiseta conmemorativa",
     "benefit5": "Certificado de participación",
     "benefit6": "Créditos de cloud y herramientas de IA",

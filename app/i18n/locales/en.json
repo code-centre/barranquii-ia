@@ -9,7 +9,7 @@
     "edition": "3rd Edition - May 22-24",
     "hackathon": "Hackathon",
     "title": "Barranqui-IA",
-    "subtitle": "Build the future from the Caribbean with Artificial Intelligence | Glass Cube, Barranquilla",
+    "subtitle": "National meeting point to build Colombia's future with artificial intelligence",
     "ctaLearnMore": "Learn more",
     "ctaPresale": "Buy tickets - First stage",
     "limitedSpots": "Limited spots - First stage",
@@ -46,11 +46,24 @@
     "barranqui2025": "Barranqui-IA 2025",
     "barranqui2024": "Barranqui-IA 2024"
   },
+  "buildWithAI": {
+    "title": "Build with AI",
+    "subtitle": "Hands-on artificial intelligence workshops",
+    "dateTime": "Saturday, May 23 | 10:00 AM – 5:00 PM",
+    "description": "These hands-on workshops are designed to support hackathon participants, but you can also attend independently if you want to learn to build with AI. Topics and exact times will be announced soon.",
+    "workshopsHeading": "Workshop schedule",
+    "workshopSlotLabel": "Workshop {{num}}",
+    "workshopTba": "To be announced",
+    "poweredBy": "Powered by",
+    "googleLogoAlt": "Google",
+    "imageAlt": "Build with AI 2026"
+  },
   "location2026": {
     "title": "Venue",
     "venueName": "Glass Cube (Cubo de Cristal)",
     "address": "Glass Cube at Plaza de la Paz, Barranquilla, Colombia",
     "mapsCta": "Open in Google Maps",
+    "mapTagline": "National meeting point to build Colombia's future with artificial intelligence",
     "mapAlt": "Map of Colombia showing Barranquilla (BAQ)",
     "venueImageAlt": "Exterior of the Glass Cube at Plaza de la Paz in Barranquilla"
   },
@@ -65,7 +78,7 @@
     "whatIncludes": "What does your ticket include?",
     "benefit1": "General participation in the hackathon",
     "benefit2": "Access to workshops and mentoring",
-    "benefit3": "Unlimited coffee and snacks",
+    "benefit3": "Food, unlimited coffee and snacks",
     "benefit4": "Exclusive kit and commemorative t-shirt",
     "benefit5": "Participation certificate",
     "benefit6": "Cloud credits and AI tools",

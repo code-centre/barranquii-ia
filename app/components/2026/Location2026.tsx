@@ -47,20 +47,25 @@ export default function Location2026() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <motion.figure
-            className="relative w-full min-h-[240px] aspect-[4/3] rounded-xl overflow-hidden border border-purple-500/30 bg-black/40"
+            className="flex flex-col gap-4 w-full"
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Image
-              src="/mapa.png"
-              alt={t("location2026.mapAlt")}
-              fill
-              className="object-contain p-4"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority={false}
-            />
+            <div className="relative w-full min-h-[240px] aspect-[4/3] rounded-xl overflow-hidden border border-purple-500/30 bg-black/40">
+              <Image
+                src="/mapa.png"
+                alt={t("location2026.mapAlt")}
+                fill
+                className="object-contain p-4"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority={false}
+              />
+            </div>
+            <figcaption className="text-center text-base sm:text-lg md:text-xl font-semibold leading-snug max-w-xl mx-auto bg-gradient-to-r from-cyan-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">
+              {t("location2026.mapTagline")}
+            </figcaption>
           </motion.figure>
 
           <motion.article
