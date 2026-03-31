@@ -23,12 +23,13 @@ export default function CardTicket({
   styles,
   children,
   landing,
-  idEvent,
-  ticketId,
+  idEvent: _idEvent,
+  ticketId: _ticketId,
   disabled
 }: Props) {
 
-	const newTickectId = ticketId === 1 ? 2 : ticketId === 2 ? 1 : 0
+  const purchaseUrl =
+    "https://www.codigoabierto.tech/eventos/hackaton-barranqui-ia-2026";
 
   return (
     <div
@@ -61,7 +62,7 @@ export default function CardTicket({
             {disabled ? (
               'Sold out'
             ) : (
-              <Link target="_blank" href={`https://codigoabierto.tech/checkout?eventId=${idEvent}&ticket=${newTickectId}`}>
+              <Link target="_blank" rel="noopener noreferrer" href={purchaseUrl}>
                 Comprar
               </Link>
             )}

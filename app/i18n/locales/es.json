@@ -73,8 +73,8 @@
     "firstStage": "Primera etapa",
     "secondStage": "Segunda etapa",
     "presaleDates": "8 de Febrero al 28 de Febrero",
-    "firstStageDates": "1 de Marzo al 15 de Abril",
-    "secondStageDates": "16 de Abril al 30 de Abril",
+    "firstStageDates": "Todo abril de 2026",
+    "secondStageDates": "Del 1 de mayo hasta el inicio del hackatón (22 de mayo de 2026)",
     "whatIncludes": "¿Qué incluye tu boleto?",
     "benefit1": "Participación general en el hackatón",
     "benefit2": "Acceso a talleres y mentorías",
@@ -116,7 +116,11 @@
     "demoDay": "Demo Day"
   },
   "sponsors": {
-    "title": "Esto es posible gracias al impulso de",
+    "organizersLabel": "Quienes lo hacen posible",
+    "organizersTitle": "Organizadores",
+    "patronsLabel": "Con el apoyo de",
+    "patronsTitle": "Patrocinadores",
+    "alliedCommunitiesTitle": "Aliados",
     "visitSite": "Visitar sitio web de {{name}}",
     "logoOf": "Logo de {{name}}"
   },

@@ -33,6 +33,7 @@ const config: Config = {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         "meteor-effect": "meteor 5s linear infinite",
+        "spin-slow": "spin 4s linear infinite",
       },
       keyframes: {
         scroll: {
