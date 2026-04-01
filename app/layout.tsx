@@ -143,10 +143,10 @@ export default async function RootLayout({
   const locale = (await getLocale()) as Locale;
   const initialTranslations = await getTranslations(locale);
   return (
-    <html lang={LOCALE_HTML[locale] || "es"} className="overflow-x-hidden scroll-smooth">
+    <html lang={LOCALE_HTML[locale] || "es"} className="overflow-x-clip scroll-smooth">
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_KEY || ""} />
       <body
-        className={`${poppins.variable} ${leagueSpartan.variable} font-sans relative w-full overflow-x-hidden`}
+        className={`${poppins.variable} ${leagueSpartan.variable} font-sans relative w-full overflow-x-clip`}
         style={{ scrollBehavior: 'smooth' }}
       >
         <LanguageProvider locale={locale} initialTranslations={initialTranslations}>

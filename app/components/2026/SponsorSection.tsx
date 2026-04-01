@@ -40,6 +40,11 @@ const sponsors: SponsorEntry[] = [
     logo: "/images/sponsors/tech-centre.png",
     link: "https://techcentre.co",
     noGrayscale: true,
+  }, {
+    name: "ORA Producciones",
+    logo: "/logos/ora-blanco.jpeg",
+    link: "https://www.instagram.com/oraproducciones/",
+    noGrayscale: true,
   },
   {
     name: "Ciudad Inmersiva",
@@ -55,12 +60,18 @@ const sponsors: SponsorEntry[] = [
   },{
     name: "CooWeb",
     logo: "/logos/Logo_Cooweb_White.webp",
-    link: "https://www.epam.com",
+    link: "https://www.cooweb.ai/",
     noGrayscale: true,
   },
 ];
 
 const communities: SponsorEntry[] = [
+  {
+    name: "Founder Institute",
+    logo: "/logos/fi-blanco.png",
+    link: "https://fi.co",
+    noGrayscale: true,
+  },
   { name: "Shelv", logo: "/logos/shelv.png", noGrayscale: true },
   { name: "Synergy", logo: "/logos/synergy-blanco.png", noGrayscale: true },
   {
@@ -73,7 +84,7 @@ const communities: SponsorEntry[] = [
     noGrayscale: true,
   }, {
     name: "AWS",
-    logo: "/logos/aws.webp",
+    logo: "/logos/aws-blanco.png",
     noGrayscale: true,
   }, {
     name: "Red Team",
