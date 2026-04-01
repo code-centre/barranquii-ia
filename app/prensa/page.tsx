@@ -60,27 +60,9 @@ const TRAJECTORY = [
   },
 ];
 
-const VERTICALS = [
-  { name: "Finanzas", desc: "Soluciones de IA aplicadas al sector financiero" },
-  { name: "Salud", desc: "Innovación con IA para el sector salud y bienestar" },
-  {
-    name: "Sostenibilidad",
-    desc: "Herramientas de IA para desarrollo sostenible y medio ambiente",
-  },
-  {
-    name: "Atención al Cliente",
-    desc: "Agentes y sistemas inteligentes para mejorar la experiencia del cliente. Patrocinada por Serfinanzas",
-  },
-  {
-    name: "Innovación Libre",
-    desc: "Propuestas abiertas en cualquier sector o industria",
-  },
-];
-
 const SPONSORS_TABLE = [
   { name: "EPAM", role: "Patrocinador principal" },
   { name: "Google (Build with AI)", role: "Patrocinador de talleres prácticos" },
-  { name: "Serfinanzas", role: "Patrocinador de vertical — Atención al Cliente" },
   { name: "Cooweb", role: "Patrocinador" },
   { name: "Ciudad Inmersiva", role: "Aliado estratégico" },
   { name: "Tech Centre", role: "Aliado estratégico" },
@@ -478,8 +460,7 @@ export default function PrensaPage() {
             <article className="rounded-xl border border-white/10 bg-white/5 p-6">
               <h3 className="mb-4 font-semibold text-white">Premio por vertical</h3>
               <p className="text-gray-300">
-                $2,000,000 COP por cada vertical temática (Finanzas, Salud,
-                Sostenibilidad, Atención al Cliente)
+                $2,000,000 COP por cada una de las cuatro verticales temáticas.
               </p>
               <p className="mt-4 font-semibold text-purple-300">
                 Total en premios: $20,000,000 COP
@@ -498,22 +479,21 @@ export default function PrensaPage() {
             eyebrow="5"
             title="Líneas temáticas (verticales)"
           />
-          <p className="mb-6 text-gray-300">
-            Los equipos participantes podrán desarrollar soluciones de IA en cuatro
-            verticales definidas por empresas patrocinadoras, además de una línea de
-            innovación libre:
+          <p className="mb-6 text-gray-300 leading-relaxed">
+            Habrá cuatro verticales temáticas cuyos nombres y enfoques específicos se irán
+            revelando en las próximas semanas. La idea es que respondan a retos de
+            Colombia en sectores y ámbitos como salud, finanzas, logística y otros, sin
+            cerrar la puerta a propuestas creativas alineadas con esos desafíos. Además,
+            contaremos con una línea de innovación libre para equipos que quieran
+            proponer soluciones abiertas a cualquier industria.
           </p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {VERTICALS.map((v) => (
-              <article
-                key={v.name}
-                className="rounded-xl border border-white/10 bg-white/5 p-5"
-              >
-                <h3 className="font-semibold text-pink-400">{v.name}</h3>
-                <p className="mt-2 text-sm text-gray-300">{v.desc}</p>
-              </article>
-            ))}
-          </div>
+          <article className="rounded-xl border border-white/10 bg-white/5 p-5">
+            <h3 className="font-semibold text-pink-400">Innovación libre</h3>
+            <p className="mt-2 text-sm text-gray-300">
+              Propuestas abiertas en cualquier sector o industria, para quienes prefieren
+              explorar fuera de las verticales anunciadas.
+            </p>
+          </article>
         </section>
 
         <section
@@ -583,6 +563,20 @@ export default function PrensaPage() {
                 lugar. Hoy, Geko Agent es una empresa de visión artificial que presta
                 servicios a empresas del sector de empaques, demostrando que un
                 prototipo de 48 horas puede convertirse en un negocio real.
+              </p>
+            </article>
+            <article className="rounded-xl border border-white/10 bg-white/5 p-6">
+              <h3 className="text-lg font-semibold text-white">
+                Kelly Toro y Arissa — Del hackatón a incubación y escenario regional
+              </h3>
+              <p className="mt-3 text-sm text-gray-300 leading-relaxed">
+                Kelly Toro y su equipo Arissa, tras su paso por Barranqui-IA, entraron a un
+                proceso de incubación con 51 Labs. Allí consolidaron su proyecto y se
+                hicieron acreedores a 5.000 USD de capital semilla no reembolsable.
+                Además presentaron su solución en Tech Caribe Fest, el evento de
+                innovación y tecnología de la región, mostrando cómo una idea nacida en el
+                hackatón puede seguir creciendo con acompañamiento y proyección en el
+                ecosistema caribeño.
               </p>
             </article>
             <article className="rounded-xl border border-white/10 bg-white/5 p-6">
@@ -874,10 +868,11 @@ export default function PrensaPage() {
                 soluciones basadas en inteligencia artificial.
               </p>
               <p>
-                Los equipos competirán en cuatro verticales temáticas: Finanzas, Salud,
-                Sostenibilidad y Atención al Cliente, además de una línea de innovación
-                libre. El premio total supera los $20,000,000 COP, con $6 millones para el
-                primer lugar de la categoría general.
+                Los equipos competirán en cuatro verticales temáticas que se irán dando a
+                conocer próximamente, pensadas como retos relevantes para Colombia —por
+                ejemplo en ámbitos como salud, finanzas, logística y otros— además de una
+                línea de innovación libre. El premio total supera los $20,000,000 COP, con
+                $6 millones para el primer lugar de la categoría general.
               </p>
               <p>
                 Como parte de la programación, el sábado 23 de mayo se realizarán
@@ -888,9 +883,11 @@ export default function PrensaPage() {
             </div>
             <blockquote className="my-8 border-l-4 border-purple-500 pl-4 text-sm italic text-gray-300">
               <p>
-                «La IA ya la tenemos en las manos. La pregunta no es si va a transformar a
-                Colombia, sino qué vamos a construir con ella. Barranqui-IA es el espacio
-                donde esa pregunta se responde con código, no con especulación»,
+                «Estamos creando espacios para que las personas tomen acción y no solo
+                usen IA, sino que construyan con inteligencia artificial de manera educada
+                para transformar el país y que mejor que el punto de encuentro sea el
+                Caribe, una región que está creciendo exponencialmente y tiene mucho que
+                ofrecer»,
               </p>
               <footer className="mt-2 not-italic text-gray-500">
                 — Anuar Harb, Director de Fundación Código Abierto y fundador de
@@ -902,11 +899,13 @@ export default function PrensaPage() {
                 En dos ediciones anteriores, Barranqui-IA ha demostrado su capacidad de
                 generar impacto real. Geko Agent, equipo ganador de la primera edición con
                 un detector de armas con IA para transporte público, es hoy una empresa
-                de visión artificial operando en el sector de empaques. Dávila
-                Publicidad participó en la segunda edición y terminó contratando a uno
-                de los participantes del hackatón. Historias como la de Paulo Estrada,
-                quien llegó sin saber programar y hoy es desarrollador activo, reflejan
-                el poder transformador del evento.
+                de visión artificial operando en el sector de empaques. Kelly Toro y su
+                equipo Arissa, tras el hackatón, pasaron por incubación en 51 Labs,
+                obtuvieron 5.000 USD de capital semilla no reembolsable y se presentaron
+                en Tech Caribe Fest. Dávila Publicidad participó en la segunda edición y
+                terminó contratando a uno de los participantes del hackatón. Historias
+                como la de Paulo Estrada, quien llegó sin saber programar y hoy es
+                desarrollador activo, reflejan el poder transformador del evento.
               </p>
               <p>
                 Los proyectos más destacados del hackatón serán invitados a postularse al
