@@ -4,6 +4,8 @@ import React, { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "@/app/i18n/useTranslation";
+import WhatsAppFloatButton from "@/app/components/WhatsAppFloatButton";
+import ContactDudasAddress from "@/app/components/ContactDudasAddress";
 
 const LOGOS = [
   { src: "/images/sponsors/fca.webp", label: "Fundación Código Abierto" },
@@ -77,6 +79,7 @@ const NAV_LINKS = [
   { href: "#fundadores", label: "Fundadores" },
   { href: "#comunicado-prensa", label: "Comunicado" },
   { href: "#recursos-descargables", label: "Descargas" },
+  { href: "#contacto-dudas", label: "Dudas" },
   { href: "#contacto-prensa", label: "Contacto" },
 ];
 
@@ -261,6 +264,7 @@ export default function PrensaPage() {
 
   return (
     <main className="relative min-h-screen bg-[#0a0a0a] text-white">
+      <WhatsAppFloatButton />
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"
         aria-hidden="true"
@@ -1005,11 +1009,24 @@ export default function PrensaPage() {
         </section>
 
         <section
+          id="contacto-dudas"
+          className="mb-16 scroll-mt-28"
+          aria-labelledby="heading-dudas"
+        >
+          <SectionHeading
+            id="heading-dudas"
+            eyebrow="12"
+            title="¿Tienes alguna duda?"
+          />
+          <ContactDudasAddress intro="Escríbenos y con gusto te orientamos sobre el kit de prensa, el evento o cualquier consulta general." />
+        </section>
+
+        <section
           id="contacto-prensa"
           className="scroll-mt-28"
           aria-labelledby="heading-contacto"
         >
-          <SectionHeading id="heading-contacto" eyebrow="12" title="Contacto de prensa" />
+          <SectionHeading id="heading-contacto" eyebrow="13" title="Contacto de prensa" />
           <address className="not-italic rounded-xl border border-purple-500/30 bg-purple-950/30 p-6">
             <ul className="space-y-3 text-gray-300">
               <li>

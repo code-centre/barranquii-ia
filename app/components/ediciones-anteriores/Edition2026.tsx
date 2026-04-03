@@ -3,6 +3,9 @@ import AboutBarranquiIA from '@/app/components/2026/AboutBarranquiIA';
  
 import React from 'react'
 import FAQ from '@/app/sections/FAQ'
+import Title from '@/app/components/Title'
+import WhatsAppFloatButton from '@/app/components/WhatsAppFloatButton'
+import ContactDudasAddress from '@/app/components/ContactDudasAddress'
 import { FAQS_HACKATHONES } from '@/app/utils/FAQS_HACKATHONES'
 import HackatonBackground from '../2026/HackatonBackground';
 import HowToLiveHackaton from '../2026/HowToLiveHackaton';
@@ -16,6 +19,7 @@ import ScrollAnimation from '../2026/ScrollAnimation';
 export default function Edition2026({ params }: { params: { landing: string } }) {
 	return (
 		<>
+			<WhatsAppFloatButton />
 			<HackatonBackground />
 			<main className="py-20 lg:py-28 xl:py-32 min-h-screen flex flex-col gap-20 md:gap-28 relative z-10" style={{ minHeight: '100vh' }}>
 				<HeroSection2026 landing={params.landing} />
@@ -39,6 +43,16 @@ export default function Edition2026({ params }: { params: { landing: string } })
 				</ScrollAnimation>
 				<ScrollAnimation delay={0.1}>
 					<SponsorsSection2026 />
+				</ScrollAnimation>
+				<ScrollAnimation delay={0.15}>
+					<section
+						id="contacto-dudas"
+						className="max-w-6xl mx-auto px-5 lg:px-10 w-full scroll-mt-28"
+						aria-label="¿Tienes alguna duda? Contacto general"
+					>
+						<Title title="¿Tienes alguna duda?" landing={params.landing} />
+						<ContactDudasAddress intro="Escríbenos y con gusto te orientamos sobre el hackatón, las inscripciones o cualquier consulta general." />
+					</section>
 				</ScrollAnimation>
 				<ScrollAnimation delay={0.2}>
 					<FAQ data={FAQS_HACKATHONES} landing={params.landing} />

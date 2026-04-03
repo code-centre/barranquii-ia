@@ -106,7 +106,15 @@ const communities: SponsorEntry[] = [
     name: "Life Your Coaching",
     logo: "/logos/life-your-coaching.jpg",
     noGrayscale: true,
-  },
+  }, {
+    name: "Boyacá Dev",
+    logo: "/logos/boyaca-dev-blanco.png",
+    noGrayscale: true,
+  }, {
+    name: "GDG Boyacá",
+    logo: "/logos/gdg-boyaca.jpg",
+    noGrayscale: true,
+  }
 ];
 
 function SponsorImage({
