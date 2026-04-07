@@ -71,7 +71,7 @@ export default function TicketPurchase() {
             <p className="text-4xl font-extrabold text-white mb-2">$150,000 COP</p>
             <p className="text-gray-300 mb-6">{t('tickets.firstStageDates')}</p>
             <a
-              href="https://www.codigoabierto.tech/eventos/hackaton-barranqui-ia-2026"
+              href="https://www.codigoabierto.tech/eventos/hackaton-barranqui-ia-2026#boletos"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full transition-colors inline-block"
