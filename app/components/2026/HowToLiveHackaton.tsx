@@ -58,6 +58,13 @@ export default function HowToLiveHackaton() {
                     className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
                     aria-hidden="true"
                   />
+                  <p className="text-gray-300">{t('howToLive.fridayOpening')}</p>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div
+                    className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
+                    aria-hidden="true"
+                  />
                   <p className="text-gray-300">{t('howToLive.fridayChallenges')}</p>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -113,6 +120,13 @@ export default function HowToLiveHackaton() {
                     className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
                     aria-hidden="true"
                   />
+                  <p className="text-gray-300">{t('howToLive.saturdayFood')}</p>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div
+                    className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
+                    aria-hidden="true"
+                  />
                   <p className="text-gray-300">{t('howToLive.saturdayRecommendation')}</p>
                 </li>
               </ul>
@@ -141,6 +155,13 @@ export default function HowToLiveHackaton() {
                     aria-hidden="true"
                   />
                   <p className="text-gray-300">{t('howToLive.sundayAwards')}</p>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div
+                    className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <p className="text-gray-300">{t('howToLive.sundayClosing')}</p>
                 </li>
               </ul>
             </motion.section>

@@ -1,7 +1,6 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/app/i18n/useTranslation';
 
@@ -115,7 +114,16 @@ export default function AboutBarranquiIA() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <p className="text-lg text-center">
-            {t('about.caribeNote')}
+            {t('about.caribeNoteBefore')}
+            <a
+              href="https://www.techcaribe.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-400 underline underline-offset-2 hover:text-pink-300"
+            >
+              {t('about.caribeNoteLinkLabel')}
+            </a>
+            {t('about.caribeNoteAfter')}
           </p>
         </motion.aside>
       </div>

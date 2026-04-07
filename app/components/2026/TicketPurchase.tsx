@@ -78,6 +78,7 @@ export default function TicketPurchase() {
             >
               {t('common.buyTicket')}
             </a>
+						<p className="text-gray-300 text-xs mt-6">{t('tickets.firstStageNote')}</p>
           </motion.section>
 
           {/* Tercera etapa - Deshabilitada */}

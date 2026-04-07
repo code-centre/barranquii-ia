@@ -90,7 +90,7 @@ export default function NavigationIsland() {
 
   return (
     <>
-      <nav className="z-[9999] fixed top-10 left-1/2 transform -translate-x-1/2 flex justify-center items-center px-4 md:px-8 py-4" style={{ willChange: 'transform' }}>
+      <nav className="z-[9999] fixed top-10 left-1/2 transform -translate-x-1/2 flex justify-center items-center px-4 md:px-8 py-4 w-full" style={{ willChange: 'transform' }}>
         {/* Wrapper with animated gradient border */}
         <div
           className="relative rounded-full p-[2px] animate-gradient-border"
