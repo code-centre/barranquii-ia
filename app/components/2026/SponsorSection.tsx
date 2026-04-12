@@ -9,9 +9,28 @@ type SponsorEntry = {
   logo: string;
   link?: string;
   noGrayscale?: boolean;
-  /** Escala cuando el arte tiene mucho padding o proporción extrema */
-  logoScale?: number;
+  /**
+   * Solo comunidades/instituciones: escala respecto al tamaño base (1 = igual que organizadores).
+   * Útil cuando el PNG tiene mucho aire en blanco o proporción muy extrema.
+   */
+  partnersScale?: number;
+  /** Solo organizadores: logo y tarjeta al tamaño “principal” (ej. Costa Digital) */
+  organizerPrimary?: boolean;
 };
+
+/** Huella base del logo (comunidades + organizador principal) */
+const ORGANIZER_LOGO_SLOT_CLASS =
+  "mx-auto flex min-h-[140px] w-full min-w-0 max-w-[280px] items-center justify-center sm:min-h-[158px]";
+/** Tarjeta de organizador secundario: más compacta */
+const ORGANIZER_CARD_SLOT_COMPACT =
+  "mx-auto flex min-h-[104px] w-full min-w-0 max-w-[200px] items-center justify-center sm:min-h-[118px] sm:max-w-[220px]";
+/** Instituciones: más ancho para marcas dobles o muy horizontales */
+const PARTNER_INSTITUTIONAL_SLOT_CLASS =
+  "mx-auto flex min-h-[156px] w-full min-w-0 max-w-[min(100%,24rem)] items-center justify-center sm:min-h-[172px] sm:max-w-[26rem]";
+const ORGANIZER_LOGO_IMG_CLASS =
+  "h-16 sm:h-20 md:h-[5.25rem] w-auto max-w-[210px] sm:max-w-[250px] md:max-w-[270px] group-hover:scale-110 transition-all duration-500";
+const ORGANIZER_LOGO_IMG_COMPACT_CLASS =
+  "h-11 sm:h-14 md:h-16 w-auto max-w-[130px] sm:max-w-[160px] md:max-w-[180px] group-hover:scale-110 transition-all duration-500";
 
 const organizers: SponsorEntry[] = [
   {
@@ -19,6 +38,7 @@ const organizers: SponsorEntry[] = [
     logo: "/logos/costa-digital.png",
     link: "https://costadigital.org",
     noGrayscale: true,
+    organizerPrimary: true,
   },
   {
     name: "FCA",
@@ -82,44 +102,58 @@ const institutionalAllies: SponsorEntry[] = [
     name: "Universidad Simón Bolívar — Audacia",
     logo: "/logos/LOGO-UNISIMON-AUDACIA-BLANCO.webp",
     noGrayscale: true,
-    logoScale: 1.32,
+    partnersScale: 1.58,
   },
 ];
 
 const techCommunities: SponsorEntry[] = [
-  { name: "Shelv", logo: "/logos/shelv.png", noGrayscale: true },
-  { name: "Synergy", logo: "/logos/synergy-blanco.png", noGrayscale: true },
+  {
+    name: "Shelv",
+    logo: "/logos/shelv.png",
+    noGrayscale: true,
+    partnersScale: 0.72,
+  },
+  {
+    name: "Synergy",
+    logo: "/logos/synergy-blanco.png",
+    noGrayscale: true,
+    partnersScale: 1.14,
+  },
   {
     name: "IEEE CUC Student Branch",
     logo: "/logos/ieee-blanco.png",
     noGrayscale: true,
-    logoScale: 1.14,
+    partnersScale: 1.5,
   },
   {
     name: "AWS",
     logo: "/logos/aws-blanco.png",
     noGrayscale: true,
+    partnersScale: 1.5,
   },
   {
     name: "Red Team",
     logo: "/logos/rtb.jpg",
     noGrayscale: true,
+    partnersScale: 1.5,
   },
   {
     name: "ACM Uninorte",
     logo: "/logos/Logo-ACM-uninorte.webp",
     noGrayscale: true,
-    logoScale: 1.12,
+    partnersScale: 1.4,
   },
   {
     name: "Tech Queens",
     logo: "/logos/tech-queens.png",
     noGrayscale: true,
+    partnersScale: 1.3,
   },
   {
     name: "Notion",
     logo: "/logos/notion-blanco.png",
     noGrayscale: true,
+    partnersScale: 0.92,
   },
   {
     name: "Life Your Coaching",
@@ -196,11 +230,16 @@ function PartnerSubsection({
 }: PartnerSubsectionProps) {
   const gridClass =
     layout === "pair"
-      ? "mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8"
-      : "mx-auto grid max-w-6xl grid-cols-2 gap-6 sm:grid-cols-3 sm:gap-7 md:grid-cols-4 lg:grid-cols-5 lg:gap-8";
+      ? "mx-auto grid max-w-4xl grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12"
+      : "mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-8 md:grid-cols-3 md:gap-7 lg:grid-cols-4 lg:gap-8 xl:grid-cols-5";
+  const slotClass =
+    layout === "pair" ? PARTNER_INSTITUTIONAL_SLOT_CLASS : ORGANIZER_LOGO_SLOT_CLASS;
 
   return (
-    <section className="max-w-6xl mx-auto px-4 mb-20" aria-labelledby={headingId}>
+    <section
+      className="max-w-6xl mx-auto px-4 mb-20 overflow-x-visible"
+      aria-labelledby={headingId}
+    >
       <motion.header
         className="text-center mb-10"
         initial={{ opacity: 0, y: 20 }}
@@ -216,31 +255,36 @@ function PartnerSubsection({
         </h2>
       </motion.header>
 
-      <ul className={gridClass} role="list">
-        {entries.map((c) => (
-          <li key={c.name} className="min-w-0 w-full">
-            <div className="flex min-h-[148px] w-full flex-col items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] px-4 py-6 sm:min-h-[158px] sm:px-5 sm:py-7">
-              <div
-                className="flex w-full max-w-[240px] flex-1 items-center justify-center"
-                style={
-                  c.logoScale
-                    ? {
-                        transform: `scale(${c.logoScale})`,
-                        transformOrigin: "center center",
-                      }
-                    : undefined
-                }
-              >
-                <SponsorImage
-                  sponsor={c}
-                  sizes="(max-width: 640px) 45vw, 220px"
-                  className="h-auto w-auto max-h-[5.25rem] max-w-full object-contain opacity-90 group-hover:opacity-100 brightness-110 group-hover:brightness-125 transition-all duration-300 sm:max-h-[6.25rem] md:max-h-[6.75rem]"
-                  t={t}
-                />
+      <ul className={`${gridClass} overflow-x-visible`} role="list">
+        {entries.map((c) => {
+          const s = c.partnersScale ?? 1;
+          return (
+            <li
+              key={c.name}
+              className="flex min-w-0 w-full items-center justify-center overflow-visible py-4 sm:py-5"
+            >
+              <div className={slotClass}>
+                <div
+                  className="flex items-center justify-center"
+                  style={
+                    s !== 1
+                      ? {
+                          transform: `scale(${s})`,
+                          transformOrigin: "center center",
+                        }
+                      : undefined
+                  }
+                >
+                  <SponsorImage
+                    sponsor={c}
+                    className={ORGANIZER_LOGO_IMG_CLASS}
+                    t={t}
+                  />
+                </div>
               </div>
-            </div>
-          </li>
-        ))}
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
@@ -250,7 +294,7 @@ export default function SponsorsSection2026() {
   const { t } = useTranslation();
 
   return (
-    <div className="py-20 text-white relative overflow-x-hidden">
+    <div className="py-20 text-white relative overflow-x-visible">
       {/* ── Organizadores (jerarquía por debajo de patrocinadores) ── */}
       <section
         className="max-w-6xl mx-auto px-4 mb-20 md:mb-24"
@@ -293,10 +337,20 @@ export default function SponsorsSection2026() {
                     animationDuration: "4s",
                   }}
                 />
-                <div className="relative bg-[#0a0a0a] rounded-2xl px-8 py-7 flex items-center justify-center min-h-[108px] min-w-[180px] sm:min-h-[120px] sm:min-w-[200px]">
+                <div
+                  className={`relative bg-[#0a0a0a] rounded-2xl ${
+                    org.organizerPrimary
+                      ? `px-8 py-7 ${ORGANIZER_LOGO_SLOT_CLASS}`
+                      : `px-6 py-5 ${ORGANIZER_CARD_SLOT_COMPACT}`
+                  }`}
+                >
                   <SponsorImage
                     sponsor={org}
-                    className="h-12 sm:h-14 w-auto max-w-[160px] sm:max-w-[180px] group-hover:scale-110"
+                    className={
+                      org.organizerPrimary
+                        ? ORGANIZER_LOGO_IMG_CLASS
+                        : ORGANIZER_LOGO_IMG_COMPACT_CLASS
+                    }
                     t={t}
                   />
                 </div>
