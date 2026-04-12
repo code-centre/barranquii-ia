@@ -123,7 +123,7 @@ const techCommunities: SponsorEntry[] = [
     name: "IEEE CUC Student Branch",
     logo: "/logos/ieee-blanco.png",
     noGrayscale: true,
-    partnersScale: 1.5,
+    partnersScale: 1.3,
   },
   {
     name: "AWS",
@@ -164,6 +164,7 @@ const techCommunities: SponsorEntry[] = [
     name: "Boyacá Dev",
     logo: "/logos/boyaca-dev-blanco.png",
     noGrayscale: true,
+    partnersScale: 0.8,
   },
   {
     name: "GDG Boyacá",
