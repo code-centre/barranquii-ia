@@ -128,7 +128,8 @@
     "organizersTitle": "Organizadores",
     "patronsLabel": "Con el apoyo de",
     "patronsTitle": "Patrocinadores",
-    "alliedCommunitiesTitle": "Aliados",
+    "techCommunitiesTitle": "Comunidades que impulsan la tecnología",
+    "institutionalAlliesTitle": "Instituciones aliadas",
     "visitSite": "Visitar sitio web de {{name}}",
     "logoOf": "Logo de {{name}}"
   },

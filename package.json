@@ -21,6 +21,7 @@
     "@react-three/fiber": "^8.13.5",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^1.9.68",
+    "@supabase/supabase-js": "^2.102.1",
     "@types/chart.js": "^2.9.41",
     "@types/swiper": "^6.0.0",
     "bootstrap": "^5.3.3",

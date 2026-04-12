@@ -128,7 +128,8 @@
     "organizersTitle": "Organizers",
     "patronsLabel": "Supported by",
     "patronsTitle": "Sponsors",
-    "alliedCommunitiesTitle": "Allies",
+    "techCommunitiesTitle": "Communities driving technology",
+    "institutionalAlliesTitle": "Partner institutions",
     "visitSite": "Visit {{name}} website",
     "logoOf": "{{name}} logo"
   },

@@ -9,6 +9,8 @@ type SponsorEntry = {
   logo: string;
   link?: string;
   noGrayscale?: boolean;
+  /** Escala cuando el arte tiene mucho padding o proporción extrema */
+  logoScale?: number;
 };
 
 const organizers: SponsorEntry[] = [
@@ -17,11 +19,13 @@ const organizers: SponsorEntry[] = [
     logo: "/logos/costa-digital.png",
     link: "https://costadigital.org",
     noGrayscale: true,
-  }, {
+  },
+  {
     name: "FCA",
     logo: "/images/sponsors/fca.webp",
     link: "https://codigoabierto.tech",
-  }, {
+  },
+  {
     name: "Caribe Ventures",
     logo: "/images/sponsors/caribe-ventures.png",
     link: "https://caribe.ventures",
@@ -40,7 +44,8 @@ const sponsors: SponsorEntry[] = [
     logo: "/images/sponsors/tech-centre.png",
     link: "https://techcentre.co",
     noGrayscale: true,
-  }, {
+  },
+  {
     name: "ORA Producciones",
     logo: "/logos/ora-blanco.jpeg",
     link: "https://www.instagram.com/oraproducciones/",
@@ -57,7 +62,8 @@ const sponsors: SponsorEntry[] = [
     logo: "/logos/epam-blanco.png",
     link: "https://www.epam.com",
     noGrayscale: true,
-  },{
+  },
+  {
     name: "CooWeb",
     logo: "/logos/Logo_Cooweb_White.webp",
     link: "https://www.cooweb.ai/",
@@ -65,73 +71,91 @@ const sponsors: SponsorEntry[] = [
   },
 ];
 
-const communities: SponsorEntry[] = [
+const institutionalAllies: SponsorEntry[] = [
   {
     name: "Founder Institute",
     logo: "/logos/fi-blanco.png",
     link: "https://fi.co",
     noGrayscale: true,
   },
+  {
+    name: "Universidad Simón Bolívar — Audacia",
+    logo: "/logos/LOGO-UNISIMON-AUDACIA-BLANCO.webp",
+    noGrayscale: true,
+    logoScale: 1.32,
+  },
+];
+
+const techCommunities: SponsorEntry[] = [
   { name: "Shelv", logo: "/logos/shelv.png", noGrayscale: true },
   { name: "Synergy", logo: "/logos/synergy-blanco.png", noGrayscale: true },
   {
     name: "IEEE CUC Student Branch",
     logo: "/logos/ieee-blanco.png",
     noGrayscale: true,
-  }, {
-    name: "Audacia",
-    logo: "/logos/LOGO-UNISIMON-AUDACIA-BLANCO.webp",
-    noGrayscale: true,
-  }, {
+    logoScale: 1.14,
+  },
+  {
     name: "AWS",
     logo: "/logos/aws-blanco.png",
     noGrayscale: true,
-  }, {
+  },
+  {
     name: "Red Team",
     logo: "/logos/rtb.jpg",
     noGrayscale: true,
-  }, {
+  },
+  {
     name: "ACM Uninorte",
     logo: "/logos/Logo-ACM-uninorte.webp",
     noGrayscale: true,
-  }, {
+    logoScale: 1.12,
+  },
+  {
     name: "Tech Queens",
     logo: "/logos/tech-queens.png",
     noGrayscale: true,
-  }, {
+  },
+  {
     name: "Notion",
     logo: "/logos/notion-blanco.png",
     noGrayscale: true,
-  }, {
+  },
+  {
     name: "Life Your Coaching",
     logo: "/logos/life-your-coaching.jpg",
     noGrayscale: true,
-  }, {
+  },
+  {
     name: "Boyacá Dev",
     logo: "/logos/boyaca-dev-blanco.png",
     noGrayscale: true,
-  }, {
+  },
+  {
     name: "GDG Boyacá",
     logo: "/logos/gdg-boyaca.jpg",
     noGrayscale: true,
-  }
+  },
 ];
 
 function SponsorImage({
   sponsor,
   className,
   t,
+  sizes,
 }: {
   sponsor: SponsorEntry;
   className: string;
   t: (key: string, values?: Record<string, string>) => string;
+  sizes?: string;
 }) {
   const img = (
     <Image
       src={sponsor.logo}
       alt={t("sponsors.logoOf", { name: sponsor.name })}
-      width={220}
-      height={120}
+      width={280}
+      height={140}
+      sizes={sizes}
       className={`object-contain transition-all duration-500 ${className} ${
         sponsor.noGrayscale ? "" : "grayscale group-hover:grayscale-0"
       }`}
@@ -154,35 +178,103 @@ function SponsorImage({
   return <div className="group flex items-center justify-center">{img}</div>;
 }
 
+type PartnerSubsectionProps = {
+  headingId: string;
+  title: string;
+  entries: SponsorEntry[];
+  /** "dense" = muchas celdas; "pair" = pocas logos, fila centrada */
+  layout: "dense" | "pair";
+  t: (key: string, values?: Record<string, string>) => string;
+};
+
+function PartnerSubsection({
+  headingId,
+  title,
+  entries,
+  layout,
+  t,
+}: PartnerSubsectionProps) {
+  const gridClass =
+    layout === "pair"
+      ? "mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8"
+      : "mx-auto grid max-w-6xl grid-cols-2 gap-6 sm:grid-cols-3 sm:gap-7 md:grid-cols-4 lg:grid-cols-5 lg:gap-8";
+
+  return (
+    <section className="max-w-6xl mx-auto px-4 mb-20" aria-labelledby={headingId}>
+      <motion.header
+        className="text-center mb-10"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2
+          id={headingId}
+          className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent"
+        >
+          {title}
+        </h2>
+      </motion.header>
+
+      <ul className={gridClass} role="list">
+        {entries.map((c) => (
+          <li key={c.name} className="min-w-0 w-full">
+            <div className="flex min-h-[148px] w-full flex-col items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] px-4 py-6 sm:min-h-[158px] sm:px-5 sm:py-7">
+              <div
+                className="flex w-full max-w-[240px] flex-1 items-center justify-center"
+                style={
+                  c.logoScale
+                    ? {
+                        transform: `scale(${c.logoScale})`,
+                        transformOrigin: "center center",
+                      }
+                    : undefined
+                }
+              >
+                <SponsorImage
+                  sponsor={c}
+                  sizes="(max-width: 640px) 45vw, 220px"
+                  className="h-auto w-auto max-h-[5.25rem] max-w-full object-contain opacity-90 group-hover:opacity-100 brightness-110 group-hover:brightness-125 transition-all duration-300 sm:max-h-[6.25rem] md:max-h-[6.75rem]"
+                  t={t}
+                />
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export default function SponsorsSection2026() {
   const { t } = useTranslation();
 
   return (
-    <div className="py-20 text-white relative overflow-hidden">
-      {/* ── Organizadores ── */}
+    <div className="py-20 text-white relative overflow-x-hidden">
+      {/* ── Organizadores (jerarquía por debajo de patrocinadores) ── */}
       <section
-        className="max-w-6xl mx-auto px-4 mb-24"
+        className="max-w-6xl mx-auto px-4 mb-20 md:mb-24"
         aria-labelledby="sponsors-org-heading"
       >
         <motion.header
-          className="text-center mb-4"
+          className="text-center mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="uppercase tracking-[0.3em] text-purple-400 text-xs font-semibold mb-3">
+          <p className="uppercase tracking-[0.28em] text-purple-400/75 text-[10px] sm:text-xs font-semibold mb-2">
             {t("sponsors.organizersLabel")}
           </p>
           <h2
             id="sponsors-org-heading"
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-500/95 to-purple-600/95 bg-clip-text text-transparent"
           >
             {t("sponsors.organizersTitle")}
           </h2>
         </motion.header>
 
-        <ul className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 mt-12" role="list">
+        <ul className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8 mt-10" role="list">
           {organizers.map((org, i) => (
             <motion.li
               key={org.name}
@@ -192,7 +284,6 @@ export default function SponsorsSection2026() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
             >
-              {/* Animated gradient border card */}
               <div className="relative p-[1px] rounded-2xl overflow-hidden">
                 <div
                   className="absolute inset-0 animate-spin-slow"
@@ -202,10 +293,10 @@ export default function SponsorsSection2026() {
                     animationDuration: "4s",
                   }}
                 />
-                <div className="relative bg-[#0a0a0a] rounded-2xl px-10 py-8 flex items-center justify-center min-h-[120px] min-w-[200px]">
+                <div className="relative bg-[#0a0a0a] rounded-2xl px-8 py-7 flex items-center justify-center min-h-[108px] min-w-[180px] sm:min-h-[120px] sm:min-w-[200px]">
                   <SponsorImage
                     sponsor={org}
-                    className="h-14 sm:h-16 w-auto max-w-[180px] group-hover:scale-110"
+                    className="h-12 sm:h-14 w-auto max-w-[160px] sm:max-w-[180px] group-hover:scale-110"
                     t={t}
                   />
                 </div>
@@ -215,30 +306,30 @@ export default function SponsorsSection2026() {
         </ul>
       </section>
 
-      {/* ── Patrocinadores ── */}
+      {/* ── Patrocinadores (máxima jerarquía visual) ── */}
       <section
-        className="max-w-5xl mx-auto px-4 mb-24"
+        className="max-w-6xl mx-auto px-4 mb-20 md:mb-28"
         aria-labelledby="sponsors-patrons-heading"
       >
         <motion.header
-          className="text-center mb-10"
+          className="text-center mb-12 md:mb-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="uppercase tracking-[0.3em] text-purple-400/70 text-xs font-semibold mb-2">
+          <p className="uppercase tracking-[0.35em] text-purple-300 text-xs sm:text-sm font-semibold mb-3">
             {t("sponsors.patronsLabel")}
           </p>
           <h2
             id="sponsors-patrons-heading"
-            className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-400 via-fuchsia-500 to-purple-500 bg-clip-text text-transparent drop-shadow-sm"
           >
             {t("sponsors.patronsTitle")}
           </h2>
         </motion.header>
 
-        <ul className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8" role="list">
+        <ul className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-7 sm:gap-9" role="list">
           {sponsors.map((sp, i) => (
             <motion.li
               key={sp.name}
@@ -248,10 +339,10 @@ export default function SponsorsSection2026() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.12 }}
             >
-              <div className="bg-white/[0.04] backdrop-blur-sm border border-white/10 rounded-xl px-10 py-8 flex items-center justify-center min-h-[130px] min-w-[220px] hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-300">
+              <div className="bg-white/[0.06] backdrop-blur-sm border border-white/15 rounded-xl px-10 py-9 flex items-center justify-center min-h-[150px] min-w-[240px] sm:min-h-[160px] sm:min-w-[260px] hover:bg-white/[0.1] hover:border-purple-400/40 transition-all duration-300 shadow-lg shadow-purple-950/20">
                 <SponsorImage
                   sponsor={sp}
-                  className="h-16 sm:h-20 w-auto max-w-[200px] group-hover:scale-105"
+                  className="h-[4.25rem] sm:h-24 md:h-[5.5rem] w-auto max-w-[220px] sm:max-w-[240px] group-hover:scale-105"
                   t={t}
                 />
               </div>
@@ -260,60 +351,21 @@ export default function SponsorsSection2026() {
         </ul>
       </section>
 
-      {/* ── Aliados – ribbon carousel ── */}
-      <section
-        className="px-4"
-        aria-labelledby="sponsors-allied-heading"
-      >
-        <motion.header
-          className="text-center mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2
-            id="sponsors-allied-heading"
-            className="text-lg md:text-xl font-medium text-gray-400 tracking-wide"
-          >
-            {t("sponsors.alliedCommunitiesTitle")}
-          </h2>
-          <div
-            className="mt-2 mx-auto h-px w-24 bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"
-            aria-hidden="true"
-          />
-        </motion.header>
+      <PartnerSubsection
+        headingId="sponsors-tech-communities-heading"
+        title={t("sponsors.techCommunitiesTitle")}
+        entries={techCommunities}
+        layout="dense"
+        t={t}
+      />
 
-        {/* Fade edges */}
-        <div className="relative overflow-hidden max-w-5xl mx-auto">
-          <div
-            className="pointer-events-none absolute inset-y-0 left-0 w-20 z-10 bg-gradient-to-r from-[#0a0a0a] to-transparent"
-            aria-hidden="true"
-          />
-          <div
-            className="pointer-events-none absolute inset-y-0 right-0 w-20 z-10 bg-gradient-to-l from-[#0a0a0a] to-transparent"
-            aria-hidden="true"
-          />
-
-          <div
-            className="flex w-max animate-scroll hover:[animation-play-state:paused]"
-            style={{ "--animation-duration": "20s" } as React.CSSProperties}
-          >
-            {[...communities, ...communities].map((c, i) => (
-              <div
-                key={`${c.name}-${i}`}
-                className="flex-shrink-0 mx-10 flex items-center justify-center"
-              >
-                <SponsorImage
-                  sponsor={c}
-                  className="h-16 sm:h-20 w-auto max-w-[180px] opacity-80 group-hover:opacity-100 brightness-110 group-hover:brightness-125 transition-all duration-300"
-                  t={t}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PartnerSubsection
+        headingId="sponsors-institutional-heading"
+        title={t("sponsors.institutionalAlliesTitle")}
+        entries={institutionalAllies}
+        layout="pair"
+        t={t}
+      />
     </div>
   );
 }
