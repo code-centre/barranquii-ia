@@ -8,6 +8,7 @@ import WhatsAppFloatButton from "@/app/components/WhatsAppFloatButton";
 import ContactDudasAddress from "@/app/components/ContactDudasAddress";
 
 const LOGOS = [
+  { src: "/logos/barranqui-ia.png", label: "Barranqui-IA" },
   { src: "/images/sponsors/fca.webp", label: "Fundación Código Abierto" },
   { src: "/images/sponsors/caribe-ventures.png", label: "Caribe Ventures" },
   { src: "/logos/gdg-logo-blanco.png", label: "Google Developer Groups" },

@@ -145,7 +145,8 @@ Aliado estratégico. Comunidad de desarrolladores respaldada por Google que impu
 
 Los siguientes recursos están disponibles para medios de comunicación y aliados:
 
-- Logos de Barranqui-IA, FCA, Caribe Ventures y patrocinadores (PNG, fondo transparente)
+- **Logo Barranqui-IA:** ![Logo Barranqui-IA](/logos/barranqui-ia.png)
+- Logos de FCA, Caribe Ventures y patrocinadores (PNG, fondo transparente)
 - Galería fotográfica de ediciones 2024 y 2025 (alta resolución)
 - Videos recap de ediciones anteriores
 - Canción oficial de Barranqui-IA 2026 (disponible próximamente en YouTube)
