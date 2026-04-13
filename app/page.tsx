@@ -1,5 +1,6 @@
 import Summary from "./sections/Summary";
 import BackedByRibbon from "./components/BackedByRibbon";
+import VideoHighlight from "./sections/VideoHighlight";
 import HeroSection from "./sections/HeroSection";
 import HowItWorks from "./sections/HowItWorks";
 import Phases from "./sections/Phases";
@@ -122,6 +123,9 @@ export default function Home() {
 
       {/* 2b. Backed by ribbon */}
       <BackedByRibbon />
+
+      {/* 2c. Video highlight */}
+      <VideoHighlight />
 
       {/* 3. HowItWorks (nuevo -- Hack/Build/Show) - EL PROGRAMA con fondo hero */}
       <HowItWorks landing='default' />

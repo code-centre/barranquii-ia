@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useTranslation } from '@/app/i18n/useTranslation'
 import { ArrowLeft, ChevronDown } from 'lucide-react'
 
@@ -101,41 +102,64 @@ export default function ProponUnRetoPage() {
             </div>
           </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight max-w-3xl">
-            {t('proponReto.title').replace(t('proponReto.titleHighlight'), '')}
-            <em className="not-italic text-[#FF97EF]">{t('proponReto.titleHighlight')}</em>
-          </h1>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl leading-relaxed">
-            {t('proponReto.subtitle')}
-          </p>
+          <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
+            <div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                {t('proponReto.title').replace(t('proponReto.titleHighlight'), '')}
+                <em className="not-italic text-[#FF97EF]">{t('proponReto.titleHighlight')}</em>
+              </h1>
+              <p className="text-lg text-white/80 mb-8 max-w-2xl leading-relaxed">
+                {t('proponReto.subtitle')}
+              </p>
 
-          <div className="flex flex-wrap gap-3 mb-10">
-            <button
-              type="button"
-              onClick={scrollToForm}
-              className="btn-primary px-6 py-3 text-base"
-            >
-              {t('proponReto.heroCta')} →
-            </button>
-            <button
-              type="button"
-              onClick={scrollToStages}
-              className="px-6 py-3 rounded-lg border border-white/20 text-white hover:bg-white/10 transition-colors text-base"
-            >
-              {t('proponReto.heroCtaSecondary')}
-            </button>
-          </div>
+              <div className="flex flex-wrap gap-3 mb-8">
+                <button
+                  type="button"
+                  onClick={scrollToForm}
+                  className="btn-primary px-6 py-3 text-base"
+                >
+                  {t('proponReto.heroCta')} →
+                </button>
+                <button
+                  type="button"
+                  onClick={scrollToStages}
+                  className="px-6 py-3 rounded-lg border border-white/20 text-white hover:bg-white/10 transition-colors text-base"
+                >
+                  {t('proponReto.heroCtaSecondary')}
+                </button>
+              </div>
 
-          <div className="flex flex-wrap gap-2">
-            <span className="px-4 py-2 rounded-full bg-[#FF97EF]/10 border border-[#FF97EF]/30 text-[#FF97EF] text-sm">
-              {t('proponReto.pillTax')}
-            </span>
-            <span className="px-4 py-2 rounded-full bg-white/5 border border-white/20 text-white/90 text-sm">
-              {t('proponReto.pillPrototypes')}
-            </span>
-            <span className="px-4 py-2 rounded-full bg-white/5 border border-white/20 text-white/90 text-sm">
-              {t('proponReto.pillParticipants')}
-            </span>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-4 py-2 rounded-full bg-[#FF97EF]/10 border border-[#FF97EF]/30 text-[#FF97EF] text-sm">
+                  {t('proponReto.pillTax')}
+                </span>
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/20 text-white/90 text-sm">
+                  {t('proponReto.pillPrototypes')}
+                </span>
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/20 text-white/90 text-sm">
+                  {t('proponReto.pillParticipants')}
+                </span>
+              </div>
+            </div>
+
+            <div className="hidden lg:block relative w-[340px] h-[400px] shrink-0">
+              <Image
+                src="/FOTOSBARRANQUI-IA/7.webp"
+                alt="Hackatón Barranqui-IA"
+                fill
+                className="object-cover rounded-2xl border-2 border-white/10"
+                sizes="340px"
+              />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 rounded-xl overflow-hidden border-2 border-[#FF97EF]/30">
+                <Image
+                  src="/FOTOSBARRANQUI-IA/3.webp"
+                  alt="Equipos trabajando"
+                  fill
+                  className="object-cover"
+                  sizes="128px"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </header>
@@ -188,21 +212,46 @@ export default function ProponUnRetoPage() {
             {t('proponReto.shiftTitle').replace(t('proponReto.shiftTitleHighlight'), '')}
             <em className="not-italic text-[#FF97EF]">{t('proponReto.shiftTitleHighlight')}</em>
           </h2>
-          <p className="text-lg text-white/70 mb-12 max-w-2xl leading-relaxed">
-            {t('proponReto.shiftDesc')}
-          </p>
+          <div className="grid lg:grid-cols-[1fr_1fr] gap-10 items-center mb-10">
+            <div>
+              <p className="text-lg text-white/70 mb-8 leading-relaxed">
+                {t('proponReto.shiftDesc')}
+              </p>
 
-          <div className="grid grid-cols-3 gap-4 mb-10">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="text-center p-6 rounded-xl bg-white/5 border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-[#FF97EF] mb-1">
-                  {t(`proponReto.shiftStat${i}`)}
-                </div>
-                <div className="text-sm text-white/60">
-                  {t(`proponReto.shiftStat${i}Label`)}
-                </div>
+              <div className="grid grid-cols-3 gap-3">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="text-center p-4 rounded-xl bg-white/5 border border-white/10">
+                    <div className="text-2xl md:text-3xl font-bold text-[#FF97EF] mb-1">
+                      {t(`proponReto.shiftStat${i}`)}
+                    </div>
+                    <div className="text-xs text-white/60">
+                      {t(`proponReto.shiftStat${i}Label`)}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <div className="hidden lg:grid grid-cols-2 gap-3 h-[320px]">
+              <div className="relative rounded-xl overflow-hidden">
+                <Image
+                  src="/FOTOSBARRANQUI-IA/1.webp"
+                  alt="Participantes del hackatón"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
+              <div className="relative rounded-xl overflow-hidden">
+                <Image
+                  src="/2025/portada-hackathon.webp"
+                  alt="Hackatón 2025"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
+            </div>
           </div>
 
           <button
@@ -295,6 +344,17 @@ export default function ProponUnRetoPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Photo strip ── */}
+      <div className="w-full overflow-x-auto py-6 scrollbar-hide" style={{ backgroundColor: '#0d1117' }}>
+        <div className="flex gap-4 px-5 lg:px-10 w-max">
+          {['/FOTOSBARRANQUI-IA/4.webp', '/FOTOSBARRANQUI-IA/6.webp', '/FOTOSBARRANQUI-IA/8.webp', '/FOTOSBARRANQUI-IA/10.webp', '/FOTOSBARRANQUI-IA/11.webp', '/FOTOSBARRANQUI-IA/2.webp'].map((src) => (
+            <div key={src} className="relative w-64 md:w-80 h-44 md:h-52 shrink-0 rounded-xl overflow-hidden opacity-70 hover:opacity-100 transition-opacity">
+              <Image src={src} alt="" fill className="object-cover" sizes="320px" />
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* ── 5. PACKAGES: How to participate ── */}
       <section

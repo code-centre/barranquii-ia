@@ -175,23 +175,58 @@ export default function HowToLiveHackaton() {
           </article>
 
           {/* Video Section */}
-          <motion.aside
-            className="space-y-6"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="relative aspect-video bg-black/50 rounded-lg overflow-hidden border border-purple-500/30">
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/rM5mmrb0bVk?start=2"
-                title={t('howToLive.videoTitle')}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-            <div className="text-center">
+          <aside className="space-y-8">
+            {/* Promo 2026 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-2 h-2 rounded-full bg-[#FF97EF] animate-pulse" />
+                <span className="text-xs uppercase tracking-widest text-[#FF97EF] font-medium">
+                  {t('howToLive.promoTag')}
+                </span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3">{t('howToLive.promoTitle')}</h3>
+              <div className="relative aspect-video bg-black/50 rounded-xl overflow-hidden border-2 border-[#FF97EF]/40 shadow-[0_0_30px_rgba(255,151,239,0.15)]">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/3IKBGPhi3YA"
+                  title={t('howToLive.promoTitle')}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </motion.div>
+
+            {/* Documentary 2025 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-2 h-2 rounded-full bg-purple-400" />
+                <span className="text-xs uppercase tracking-widest text-purple-400 font-medium">
+                  {t('howToLive.docTag')}
+                </span>
+              </div>
+              <h3 className="text-lg font-bold text-white/80 mb-3">{t('howToLive.docTitle')}</h3>
+              <div className="relative aspect-video bg-black/50 rounded-xl overflow-hidden border border-purple-500/30">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/rM5mmrb0bVk?start=2"
+                  title={t('howToLive.docTitle')}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </motion.div>
+
+            <div className="text-center pt-2">
               <p className="text-gray-300 mb-2">{t('howToLive.exploreEditions')}</p>
               <div className="flex flex-wrap justify-center gap-3">
                 <Link
@@ -209,7 +244,7 @@ export default function HowToLiveHackaton() {
                 </Link>
               </div>
             </div>
-          </motion.aside>
+          </aside>
         </div>
       </div>
     </section>

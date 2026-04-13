@@ -49,6 +49,10 @@
     "sundayAwards": "Awards ceremony (from 5:00 p.m.)",
     "sundayClosing": "Event closing (6:00 p.m.)",
     "sundayFood": "Breakfast and lunch included.",
+    "promoTag": "What's coming",
+    "promoTitle": "Barranqui-IA 2026 — Official trailer",
+    "docTag": "What we already lived",
+    "docTitle": "Barranqui-IA 2025 Documentary",
     "videoTitle": "How do you experience a hackathon?",
     "exploreEditions": "Explore previous editions",
     "barranqui2025": "Barranqui-IA 2025",
@@ -418,6 +422,11 @@
     "cta": "Together we turned ideas into the future!",
     "imageAlt": "Hackathon Image {{num}}",
     "modalImageAlt": "Full size image"
+  },
+  "videoSection": {
+    "tag": "See what's coming",
+    "title": "Barranqui-IA 2026",
+    "subtitle": "The largest AI hackathon in the Colombian Caribbean. 48 hours, 450+ participants, real solutions."
   },
   "proponReto": {
     "back": "Back to home",
