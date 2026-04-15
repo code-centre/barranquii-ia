@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useTranslation } from "@/app/i18n/useTranslation";
 import WhatsAppFloatButton from "@/app/components/WhatsAppFloatButton";
 import ContactDudasAddress from "@/app/components/ContactDudasAddress";
+import { jsPDF } from "jspdf";
 
 const LOGOS = [
   { src: "/logos/barranqui-ia.png", label: "Barranqui-IA" },
@@ -247,6 +248,225 @@ export default function PrensaPage() {
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
+  }, []);
+
+  const handleDownloadPDF = useCallback(() => {
+    const doc = new jsPDF({ unit: "mm", format: "a4" });
+    const pageW = doc.internal.pageSize.getWidth();
+    const pageH = doc.internal.pageSize.getHeight();
+    const marginL = 20;
+    const marginR = 20;
+    const contentW = pageW - marginL - marginR;
+    let y = 0;
+
+    const PURPLE = [124, 58, 237] as const;
+    const PINK = [236, 72, 153] as const;
+    const DARK = [30, 30, 30] as const;
+    const GRAY = [100, 100, 100] as const;
+    const LIGHT_GRAY = [140, 140, 140] as const;
+
+    function checkPage(needed: number) {
+      if (y + needed > pageH - 20) {
+        doc.addPage();
+        y = 20;
+      }
+    }
+
+    function writeWrapped(
+      text: string,
+      fontSize: number,
+      color: readonly [number, number, number],
+      style: "normal" | "bold" | "italic" | "bolditalic" = "normal",
+      lineHeight = 1.5
+    ) {
+      doc.setFontSize(fontSize);
+      doc.setFont("helvetica", style);
+      doc.setTextColor(color[0], color[1], color[2]);
+      const lines = doc.splitTextToSize(text, contentW);
+      const lineH = (fontSize * lineHeight * 0.3528);
+      for (const line of lines) {
+        checkPage(lineH);
+        doc.text(line, marginL, y);
+        y += lineH;
+      }
+    }
+
+    // Header bar
+    doc.setFillColor(PURPLE[0], PURPLE[1], PURPLE[2]);
+    doc.rect(0, 0, pageW, 3, "F");
+
+    const gradient_steps = 20;
+    const barH = 3;
+    const stepW = pageW / gradient_steps;
+    for (let i = 0; i < gradient_steps; i++) {
+      const ratio = i / gradient_steps;
+      const r = Math.round(PINK[0] + (PURPLE[0] - PINK[0]) * ratio);
+      const g = Math.round(PINK[1] + (PURPLE[1] - PINK[1]) * ratio);
+      const b = Math.round(PINK[2] + (PURPLE[2] - PINK[2]) * ratio);
+      doc.setFillColor(r, g, b);
+      doc.rect(i * stepW, 0, stepW + 0.5, barH, "F");
+    }
+    y = 18;
+
+    // "Para publicación inmediata"
+    doc.setFontSize(8);
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(PURPLE[0], PURPLE[1], PURPLE[2]);
+    doc.text("PARA PUBLICACIÓN INMEDIATA", marginL, y);
+    y += 10;
+
+    // Title
+    writeWrapped(
+      "Barranquilla se convierte en el epicentro nacional de la inteligencia artificial con la tercera edición de Barranqui-IA",
+      16,
+      DARK,
+      "bold",
+      1.35
+    );
+    y += 4;
+
+    // Subtitle
+    writeWrapped(
+      "Más de 450 participantes de todo Colombia se reunirán del 22 al 24 de mayo para construir soluciones con IA, competir por $20 millones en premios y acceder a talleres gratuitos de Build with AI de Google",
+      10,
+      GRAY,
+      "italic",
+      1.5
+    );
+    y += 6;
+
+    // Thin separator
+    doc.setDrawColor(PURPLE[0], PURPLE[1], PURPLE[2]);
+    doc.setLineWidth(0.5);
+    doc.line(marginL, y, marginL + 40, y);
+    y += 8;
+
+    // Body paragraphs
+    const paragraphs = [
+      "Barranquilla, Colombia — La Fundación Código Abierto, Caribe Ventures y Google Developer Groups Barranquilla anuncian la tercera edición del Hackatón Barranqui-IA, el punto de encuentro nacional para construir el futuro de Colombia con inteligencia artificial. El evento se realizará del 22 al 24 de mayo de 2026 en el Cubo de Cristal de la Plaza de la Paz, en el corazón de Barranquilla.",
+      "Con una convocatoria que por primera vez alcanza escala nacional, Barranqui-IA 2026 espera reunir a más de 450 participantes —desarrolladores, diseñadores, estudiantes y emprendedores— que durante 48 horas formarán equipos para crear prototipos funcionales de soluciones basadas en inteligencia artificial.",
+      "Los equipos competirán en cuatro verticales temáticas que se irán dando a conocer próximamente, pensadas como retos relevantes para Colombia —por ejemplo en ámbitos como salud, finanzas, logística y otros— además de una línea de innovación libre. El premio total supera los $20,000,000 COP, con $6 millones para el primer lugar de la categoría general.",
+      "Como parte de la programación, el sábado 23 de mayo se realizarán talleres prácticos en el marco de la iniciativa Build with AI de Google, abiertos gratuitamente a la comunidad con una capacidad adicional de 300 asistentes.",
+    ];
+
+    for (const p of paragraphs) {
+      writeWrapped(p, 10, DARK, "normal", 1.55);
+      y += 4;
+    }
+
+    // Blockquote
+    y += 2;
+    checkPage(30);
+    const quoteX = marginL + 6;
+    const quoteW = contentW - 8;
+    const quoteText =
+      "«Estamos creando espacios para que las personas tomen acción y no solo usen IA, sino que construyan con inteligencia artificial de manera educada para transformar el país y que mejor que el punto de encuentro sea el Caribe, una región que está creciendo exponencialmente y tiene mucho que ofrecer»";
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "italic");
+    const quoteLines = doc.splitTextToSize(quoteText, quoteW);
+    const quoteLineH = 10 * 1.55 * 0.3528;
+    const quoteBlockH = quoteLines.length * quoteLineH + 8;
+    checkPage(quoteBlockH);
+
+    doc.setDrawColor(PURPLE[0], PURPLE[1], PURPLE[2]);
+    doc.setLineWidth(1);
+    const quoteStartY = y;
+    doc.line(marginL + 2, y - 2, marginL + 2, y + quoteBlockH - 4);
+
+    doc.setTextColor(DARK[0], DARK[1], DARK[2]);
+    for (const line of quoteLines) {
+      doc.text(line, quoteX, y);
+      y += quoteLineH;
+    }
+    y += 3;
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(8);
+    doc.setTextColor(LIGHT_GRAY[0], LIGHT_GRAY[1], LIGHT_GRAY[2]);
+    doc.text(
+      "— Anuar Harb, Director de Fundación Código Abierto y fundador de Barranqui-IA",
+      quoteX,
+      y
+    );
+    y += 10;
+
+    // More body
+    const body2 = [
+      "En dos ediciones anteriores, Barranqui-IA ha demostrado su capacidad de generar impacto real. Geko Agent, equipo ganador de la primera edición con un detector de armas con IA para transporte público, es hoy una empresa de visión artificial operando en el sector de empaques. Kelly Toro y su equipo Arissa, tras el hackatón, pasaron por incubación en 51 Labs, obtuvieron 5.000 USD de capital semilla no reembolsable y se presentaron en Tech Caribe Fest. Dávila Publicidad participó en la segunda edición y terminó contratando a uno de los participantes del hackatón. Historias como la de Paulo Estrada, quien llegó sin saber programar y hoy es desarrollador activo, reflejan el poder transformador del evento.",
+      "Los proyectos más destacados del hackatón serán invitados a postularse al Programa de Aceleración de Caribe Ventures, un proceso de 12 semanas para convertir prototipos en startups de base tecnológica con acompañamiento técnico, estratégico y acceso a inversión. La colaboración con Google Developer Groups tiene alcance nacional: GDGs de distintas ciudades de Colombia participan en la difusión y los talleres Build with AI, posicionando a Barranquilla como el punto de convergencia de la comunidad tech colombiana.",
+    ];
+    for (const p of body2) {
+      writeWrapped(p, 10, DARK, "normal", 1.55);
+      y += 4;
+    }
+
+    // Footer separator
+    y += 4;
+    checkPage(12);
+    doc.setDrawColor(200, 200, 200);
+    doc.setLineWidth(0.3);
+    doc.line(marginL, y, pageW - marginR, y);
+    y += 8;
+
+    // "Sobre" sections
+    const aboutSections = [
+      {
+        title: "Sobre Fundación Código Abierto",
+        text: "Fundación con la misión de convertir a la región Caribe en un epicentro tech, impulsando la innovación tecnológica y el desarrollo de habilidades digitales en Colombia. Con sede en Barranquilla, es organizadora de Barranqui-IA desde 2024. codigoabierto.tech",
+      },
+      {
+        title: "Sobre Caribe Ventures",
+        text: "Primer fondo de inversión pre-seed del Caribe colombiano, enfocado en founders que usan IA para transformar industrias. En Barranqui-IA, Caribe Ventures identifica los mejores proyectos para acompañarlos con un programa de aceleración hacia su consolidación como startups de base tecnológica. caribe.ventures",
+      },
+    ];
+
+    for (const section of aboutSections) {
+      checkPage(20);
+      writeWrapped(section.title, 10, DARK, "bold", 1.4);
+      y += 1;
+      writeWrapped(section.text, 9, GRAY, "normal", 1.5);
+      y += 5;
+    }
+
+    // Contact footer
+    y += 2;
+    checkPage(30);
+    doc.setFillColor(248, 245, 255);
+    doc.roundedRect(marginL, y - 2, contentW, 32, 2, 2, "F");
+    y += 4;
+
+    doc.setFontSize(9);
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(PURPLE[0], PURPLE[1], PURPLE[2]);
+    doc.text("Contacto de prensa", marginL + 4, y);
+    y += 5;
+
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(DARK[0], DARK[1], DARK[2]);
+    doc.setFontSize(8.5);
+    const contactLines = [
+      "Anuar Harb — Director de Fundación Código Abierto y Fundador de Barranqui-IA",
+      "Correo: anuar@codigoabierto.tech  |  Teléfono: +57 310 390 0986",
+      "Web: barranquiia.com  |  #BarranquiIA2026",
+    ];
+    for (const cl of contactLines) {
+      doc.text(cl, marginL + 4, y);
+      y += 4.5;
+    }
+
+    // Bottom bar
+    doc.setFillColor(PURPLE[0], PURPLE[1], PURPLE[2]);
+    const barY = pageH - 3;
+    const stepW2 = pageW / gradient_steps;
+    for (let i = 0; i < gradient_steps; i++) {
+      const ratio = i / gradient_steps;
+      const r = Math.round(PINK[0] + (PURPLE[0] - PINK[0]) * ratio);
+      const g = Math.round(PINK[1] + (PURPLE[1] - PINK[1]) * ratio);
+      const b = Math.round(PINK[2] + (PURPLE[2] - PINK[2]) * ratio);
+      doc.setFillColor(r, g, b);
+      doc.rect(i * stepW2, barY, stepW2 + 0.5, 3, "F");
+    }
+
+    doc.save("comunicado-barranquia-2026.pdf");
   }, []);
 
   const bulkDownload = useCallback((assets: Asset[]) => {
@@ -814,7 +1034,7 @@ export default function PrensaPage() {
             id="heading-comunicado"
             title="Comunicado de prensa"
           />
-          <div className="mb-4 flex gap-2">
+          <div className="mb-4 flex flex-wrap gap-2">
             <button
               type="button"
               onClick={handleCopyComunicado}
@@ -830,6 +1050,16 @@ export default function PrensaPage() {
                 </svg>
               )}
               {copied ? "Copiado" : "Copiar texto"}
+            </button>
+            <button
+              type="button"
+              onClick={handleDownloadPDF}
+              className="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-purple-700"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Descargar PDF
             </button>
             <button
               type="button"
