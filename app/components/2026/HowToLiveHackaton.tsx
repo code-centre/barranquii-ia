@@ -51,7 +51,10 @@ export default function HowToLiveHackaton() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <h3 className="text-2xl font-bold text-purple-400 mb-4">{t('howToLive.friday')}</h3>
+              <header className="mb-4">
+                <h3 className="text-2xl font-bold text-purple-400">{t('howToLive.friday')}</h3>
+                <p className="text-sm text-purple-300/80 mt-1">{t('howToLive.fridayTime')}</p>
+              </header>
               <ul className="space-y-3" role="list">
                 <li className="flex items-start space-x-3">
                   <div
@@ -72,13 +75,6 @@ export default function HowToLiveHackaton() {
                     className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
                     aria-hidden="true"
                   />
-                  <p className="text-gray-300">{t('howToLive.fridayTeams')}</p>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <div
-                    className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
-                    aria-hidden="true"
-                  />
                   <p className="text-gray-300">{t('howToLive.fridayMeetGreet')}</p>
                 </li>
               </ul>
@@ -92,14 +88,17 @@ export default function HowToLiveHackaton() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h3 className="text-2xl font-bold text-purple-400 mb-4">{t('howToLive.saturday')}</h3>
+              <header className="mb-4">
+                <h3 className="text-2xl font-bold text-purple-400">{t('howToLive.saturday')}</h3>
+                <p className="text-sm text-purple-300/80 mt-1">{t('howToLive.saturdayTime')}</p>
+              </header>
               <ul className="space-y-3" role="list">
                 <li className="flex items-start space-x-3">
                   <div
                     className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
                     aria-hidden="true"
                   />
-                  <p className="text-gray-300">{t('howToLive.saturdayProject')}</p>
+                  <p className="text-gray-300">{t('howToLive.saturdayCheckIn')}</p>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div
@@ -120,14 +119,42 @@ export default function HowToLiveHackaton() {
                     className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
                     aria-hidden="true"
                   />
-                  <p className="text-gray-300">{t('howToLive.saturdayFood')}</p>
+                  <p className="text-gray-300">{t('howToLive.saturdayLunch')}</p>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div
                     className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
                     aria-hidden="true"
                   />
-                  <p className="text-gray-300">{t('howToLive.saturdayRecommendation')}</p>
+                  <p className="text-gray-300">{t('howToLive.saturdayAfternoon')}</p>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div
+                    className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <p className="text-gray-300">{t('howToLive.saturdayDinner')}</p>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div
+                    className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <p className="text-gray-300">{t('howToLive.saturdayClosing')}</p>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div
+                    className="w-2 h-2 bg-pink-400 rounded-full mt-2 flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <p className="text-gray-300">{t('howToLive.saturdayActivations')}</p>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div
+                    className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <p className="text-gray-300">{t('howToLive.saturdayFood')}</p>
                 </li>
               </ul>
             </motion.section>
@@ -140,14 +167,45 @@ export default function HowToLiveHackaton() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <h3 className="text-2xl font-bold text-purple-400 mb-4">{t('howToLive.sunday')}</h3>
+              <header className="mb-4">
+                <h3 className="text-2xl font-bold text-purple-400">{t('howToLive.sunday')}</h3>
+                <p className="text-sm text-purple-300/80 mt-1">{t('howToLive.sundayTime')}</p>
+              </header>
               <ul className="space-y-3" role="list">
+                <li className="flex items-start space-x-3">
+                  <div
+                    className="w-2 h-2 bg-pink-400 rounded-full mt-2 flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <p className="text-gray-300">{t('howToLive.sundayOvernight')}</p>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div
+                    className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <p className="text-gray-300">{t('howToLive.sundayDoors')}</p>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div
+                    className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <p className="text-gray-300">{t('howToLive.sundayPitchWorkshop')}</p>
+                </li>
                 <li className="flex items-start space-x-3">
                   <div
                     className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
                     aria-hidden="true"
                   />
                   <p className="text-gray-300">{t('howToLive.sundayFinalists')}</p>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div
+                    className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <p className="text-gray-300">{t('howToLive.sundayLunch')}</p>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div

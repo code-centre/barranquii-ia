@@ -9,6 +9,7 @@ import ContactDudasAddress from '@/app/components/ContactDudasAddress'
 import { FAQS_HACKATHONES } from '@/app/utils/FAQS_HACKATHONES'
 import HackatonBackground from '../2026/HackatonBackground';
 import HowToLiveHackaton from '../2026/HowToLiveHackaton';
+import ThematicLines from '../2026/ThematicLines';
 import BuildWithAI from '../2026/BuildWithAI';
 import Location2026 from '../2026/Location2026';
 import TicketPurchase from '../2026/TicketPurchase';
@@ -25,6 +26,9 @@ export default function Edition2026({ params }: { params: { landing: string } })
 				<HeroSection2026 landing={params.landing} />
 				<ScrollAnimation delay={0.1}>
 					<AboutBarranquiIA />
+				</ScrollAnimation>
+				<ScrollAnimation delay={0.15}>
+					<ThematicLines />
 				</ScrollAnimation>
 				<ScrollAnimation delay={0.2}>
 					<HowToLiveHackaton />

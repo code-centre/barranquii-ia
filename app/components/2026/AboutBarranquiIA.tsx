@@ -116,6 +116,15 @@ export default function AboutBarranquiIA() {
           <p className="text-lg text-center">
             {t('about.caribeNoteBefore')}
             <a
+              href="https://caribe.ventures"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-400 underline underline-offset-2 hover:text-pink-300"
+            >
+              {t('about.caribeVenturesLinkLabel')}
+            </a>
+            {t('about.caribeNoteMiddle')}
+            <a
               href="https://www.techcaribe.co/"
               target="_blank"
               rel="noopener noreferrer"

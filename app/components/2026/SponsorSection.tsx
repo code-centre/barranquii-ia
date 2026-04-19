@@ -60,27 +60,33 @@ const organizers: SponsorEntry[] = [
 
 const sponsors: SponsorEntry[] = [
   {
-    name: "Tech Centre",
-    logo: "/images/sponsors/tech-centre.png",
-    link: "https://techcentre.co",
+    name: "Banco Serfinanza",
+    logo: "/logos/serfinanza.png",
+    link: "https://bancoserfinanza.com/",
     noGrayscale: true,
   },
   {
     name: "ORA Producciones",
-    logo: "/logos/ora-blanco.jpeg",
-    link: "https://www.instagram.com/oraproducciones/",
-    noGrayscale: true,
-  },
-  {
-    name: "Ciudad Inmersiva",
-    logo: "/logos/ciudad-inmersiva.png",
-    link: "https://ciudadinmersiva.com",
+    logo: "/logos/ora-producciones-blanco.png",
+    link: "https://www.instagram.com/oraproducciones.co/",
     noGrayscale: true,
   },
   {
     name: "EPAM",
     logo: "/logos/epam-blanco.png",
     link: "https://www.epam.com",
+    noGrayscale: true,
+  },
+  {
+    name: "Tech Centre",
+    logo: "/images/sponsors/tech-centre.png",
+    link: "https://techcentre.co",
+    noGrayscale: true,
+  },
+  {
+    name: "Ciudad Inmersiva",
+    logo: "/logos/ciudad-inmersiva.png",
+    link: "https://ciudadinmersiva.com",
     noGrayscale: true,
   },
   {
