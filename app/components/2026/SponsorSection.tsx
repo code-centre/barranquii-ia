@@ -99,6 +99,13 @@ const sponsors: SponsorEntry[] = [
 
 const institutionalAllies: SponsorEntry[] = [
   {
+    name: "Alcaldía de Barranquilla",
+    logo: "/logos/alcaldia-baq-logo.png",
+    link: "https://www.barranquilla.gov.co/",
+    noGrayscale: true,
+    partnersScale: 1.2,
+  },
+  {
     name: "Founder Institute",
     logo: "/logos/fi-blanco.png",
     link: "https://fi.co",
@@ -177,6 +184,11 @@ const techCommunities: SponsorEntry[] = [
     logo: "/logos/gdg-boyaca.jpg",
     noGrayscale: true,
   },
+  {
+    name: "Java",
+    logo: "/logos/java.png",
+    noGrayscale: true,
+  },
 ];
 
 function SponsorImage({
@@ -237,7 +249,7 @@ function PartnerSubsection({
 }: PartnerSubsectionProps) {
   const gridClass =
     layout === "pair"
-      ? "mx-auto grid max-w-4xl grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12"
+      ? "mx-auto grid max-w-5xl grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 md:grid-cols-3 md:gap-12"
       : "mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-8 md:grid-cols-3 md:gap-7 lg:grid-cols-4 lg:gap-8 xl:grid-cols-5";
   const slotClass =
     layout === "pair" ? PARTNER_INSTITUTIONAL_SLOT_CLASS : ORGANIZER_LOGO_SLOT_CLASS;
