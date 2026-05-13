@@ -88,11 +88,13 @@
   "buildWithAI": {
     "title": "Build with AI",
     "subtitle": "Talleres prácticos de inteligencia artificial",
-    "dateTime": "Sábado 23 de mayo | 10:00 a. m. – 5:00 p. m.",
-    "description": "Estos talleres prácticos están pensados para apoyar a quienes participan en el hackatón, pero también podrás asistir de forma independiente si quieres aprender a construir con IA. Los temas y horarios exactos se anunciarán próximamente.",
+    "dateTime": "Sábado 23 de mayo | 10:00 a. m. – 6:00 p. m.",
+    "description": "Seis talleres prácticos pensados para apoyar a quienes participan en el hackatón, pero también podrás asistir de forma independiente si quieres aprender a construir con IA junto a expertos de la industria.",
     "workshopsHeading": "Programa de talleres",
     "workshopSlotLabel": "Taller {{num}}",
     "workshopTba": "Por anunciar",
+    "venue": "Universidad Libre Sede Centro",
+    "entry": "Entrada libre para participantes del hackatón · $25.000 público general (incluye snacks y kit de Google)",
     "poweredBy": "Powered by",
     "googleLogoAlt": "Google",
     "imageAlt": "Build with AI 2026"
@@ -105,6 +107,15 @@
     "mapTagline": "Punto de encuentro nacional para construir el futuro de Colombia con inteligencia artificial",
     "mapAlt": "Mapa de Colombia con la ubicación de Barranquilla (BAQ)",
     "venueImageAlt": "Fachada del Cubo de Cristal de la Plaza de la Paz en Barranquilla"
+  },
+  "mentors2026": {
+    "label": "Equipo de expertos",
+    "title": "Mentores 2026",
+    "subtitle": "Conoce a las personas que acompañarán a los equipos durante el hackatón. Toca cada tarjeta para ver el perfil completo.",
+    "openCard": "Ver tarjeta de {{name}} en grande",
+    "cardAlt": "Tarjeta de mentor de {{name}}",
+    "closeModal": "Cerrar",
+    "modalLabel": "Vista ampliada de la tarjeta del mentor"
   },
   "tickets": {
     "title": "Adquiere tu entrada",

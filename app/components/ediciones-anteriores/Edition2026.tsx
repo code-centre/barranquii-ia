@@ -12,6 +12,7 @@ import HowToLiveHackaton from '../2026/HowToLiveHackaton';
 import ThematicLines from '../2026/ThematicLines';
 import BuildWithAI from '../2026/BuildWithAI';
 import Location2026 from '../2026/Location2026';
+import Mentors2026 from '../2026/Mentors2026';
 import TicketPurchase from '../2026/TicketPurchase';
 import IsItForYou from '../2026/ItsForYou';
 import SponsorsSection2026 from '../2026/SponsorSection';
@@ -38,6 +39,9 @@ export default function Edition2026({ params }: { params: { landing: string } })
 				</ScrollAnimation>
 				<ScrollAnimation delay={0.1}>
 					<Location2026 />
+				</ScrollAnimation>
+				<ScrollAnimation delay={0.15}>
+					<Mentors2026 />
 				</ScrollAnimation>
 				<ScrollAnimation delay={0.1}>
 					<TicketPurchase />

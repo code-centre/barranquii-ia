@@ -88,11 +88,13 @@
   "buildWithAI": {
     "title": "Build with AI",
     "subtitle": "Hands-on artificial intelligence workshops",
-    "dateTime": "Saturday, May 23 | 10:00 AM – 5:00 PM",
-    "description": "These hands-on workshops are designed to support hackathon participants, but you can also attend independently if you want to learn to build with AI. Topics and exact times will be announced soon.",
+    "dateTime": "Saturday, May 23 | 10:00 AM – 6:00 PM",
+    "description": "Six hands-on workshops designed to support hackathon participants — you can also attend independently if you want to learn to build with AI alongside industry experts.",
     "workshopsHeading": "Workshop schedule",
     "workshopSlotLabel": "Workshop {{num}}",
     "workshopTba": "To be announced",
+    "venue": "Universidad Libre Sede Centro",
+    "entry": "Free entry for hackathon participants · $25,000 COP general public (includes snacks and Google kit)",
     "poweredBy": "Powered by",
     "googleLogoAlt": "Google",
     "imageAlt": "Build with AI 2026"
@@ -105,6 +107,15 @@
     "mapTagline": "National meeting point to build Colombia's future with artificial intelligence",
     "mapAlt": "Map of Colombia showing Barranquilla (BAQ)",
     "venueImageAlt": "Exterior of the Glass Cube at Plaza de la Paz in Barranquilla"
+  },
+  "mentors2026": {
+    "label": "Expert lineup",
+    "title": "2026 Mentors",
+    "subtitle": "Meet the people who will guide the teams during the hackathon. Tap any card to view the full profile.",
+    "openCard": "View {{name}}'s card in full size",
+    "cardAlt": "Mentor card for {{name}}",
+    "closeModal": "Close",
+    "modalLabel": "Enlarged view of the mentor card"
   },
   "tickets": {
     "title": "Get your ticket",

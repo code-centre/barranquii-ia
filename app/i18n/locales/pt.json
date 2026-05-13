@@ -88,11 +88,13 @@
   "buildWithAI": {
     "title": "Build with AI",
     "subtitle": "Oficinas práticas de inteligência artificial",
-    "dateTime": "Sábado, 23 de maio | 10:00 – 17:00",
-    "description": "Estas oficinas práticas servem para apoiar quem participa do hackathon, mas você também pode participar de forma independente se quiser aprender a construir com IA. Os temas e horários exatos serão anunciados em breve.",
+    "dateTime": "Sábado, 23 de maio | 10:00 – 18:00",
+    "description": "Seis oficinas práticas pensadas para apoiar quem participa do hackathon — você também pode participar de forma independente se quiser aprender a construir com IA junto a especialistas da indústria.",
     "workshopsHeading": "Programa de oficinas",
     "workshopSlotLabel": "Oficina {{num}}",
     "workshopTba": "A anunciar",
+    "venue": "Universidad Libre Sede Centro",
+    "entry": "Entrada gratuita para participantes do hackathon · COP $25.000 público geral (inclui snacks e kit Google)",
     "poweredBy": "Powered by",
     "googleLogoAlt": "Google",
     "imageAlt": "Build with AI 2026"
@@ -105,6 +107,15 @@
     "mapTagline": "Ponto de encontro nacional para construir o futuro da Colômbia com inteligência artificial",
     "mapAlt": "Mapa da Colômbia com a localização de Barranquilla (BAQ)",
     "venueImageAlt": "Fachada do Cubo de Cristal na Plaza de la Paz em Barranquilla"
+  },
+  "mentors2026": {
+    "label": "Equipe de especialistas",
+    "title": "Mentores 2026",
+    "subtitle": "Conheça as pessoas que acompanharão os times durante o hackathon. Toque em cada card para ver o perfil completo.",
+    "openCard": "Ver o card de {{name}} ampliado",
+    "cardAlt": "Card de mentor de {{name}}",
+    "closeModal": "Fechar",
+    "modalLabel": "Visualização ampliada do card do mentor"
   },
   "tickets": {
     "title": "Adquira seu ingresso",

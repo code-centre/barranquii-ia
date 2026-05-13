@@ -66,9 +66,9 @@ const sponsors: SponsorEntry[] = [
     noGrayscale: true,
   },
   {
-    name: "ORA Producciones",
-    logo: "/logos/ora-producciones-blanco.png",
-    link: "https://www.instagram.com/oraproducciones.co/",
+    name: "Flash Olímpica",
+    logo: "/logos/Flash-Olimpica.jpg",
+    link: "https://www.flasholimpica.com/",
     noGrayscale: true,
   },
   {
@@ -141,12 +141,6 @@ const techCommunities: SponsorEntry[] = [
   {
     name: "AWS",
     logo: "/logos/aws-blanco.png",
-    noGrayscale: true,
-    partnersScale: 1.5,
-  },
-  {
-    name: "Red Team",
-    logo: "/logos/rtb.jpg",
     noGrayscale: true,
     partnersScale: 1.5,
   },
