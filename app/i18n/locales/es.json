@@ -93,8 +93,10 @@
     "workshopsHeading": "Programa de talleres",
     "workshopSlotLabel": "Taller {{num}}",
     "workshopTba": "Por anunciar",
+    "workshopCta": "Adquirir",
+    "workshopCtaAria": "Adquirir entradas para el taller: {{title}}. Abre el sitio de entradas en una nueva pestaña.",
     "venue": "Universidad Libre Sede Centro",
-    "entry": "Entrada libre para participantes del hackatón · $25.000 público general (incluye snacks y kit de Google)",
+    "entry": "Participantes del hackatón: entrada libre · Público general: $25.000 por taller o $70.000 por pase a los seis talleres (snacks y kit de Google incluidos)",
     "poweredBy": "Powered by",
     "googleLogoAlt": "Google",
     "imageAlt": "Build with AI 2026"
