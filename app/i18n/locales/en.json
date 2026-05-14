@@ -93,8 +93,10 @@
     "workshopsHeading": "Workshop schedule",
     "workshopSlotLabel": "Workshop {{num}}",
     "workshopTba": "To be announced",
+    "workshopCta": "Acquire",
+    "workshopCtaAria": "Acquire tickets for the workshop: {{title}}. Opens the tickets site in a new tab.",
     "venue": "Universidad Libre Sede Centro",
-    "entry": "Free entry for hackathon participants · $25,000 COP general public (includes snacks and Google kit)",
+    "entry": "Hackathon participants: free entry · General public: $25,000 COP per workshop or $70,000 COP for a pass to all six workshops (snacks and Google kit included)",
     "poweredBy": "Powered by",
     "googleLogoAlt": "Google",
     "imageAlt": "Build with AI 2026"

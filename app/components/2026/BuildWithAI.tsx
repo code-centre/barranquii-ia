@@ -64,6 +64,9 @@ const WORKSHOPS_2026: Workshop[] = [
   },
 ];
 
+const WORKSHOP_BUILD_WITH_AI_URL =
+  "https://www.codigoabierto.tech/eventos/talleres-barranqui-ia-construye-con-ia-#boletos";
+
 export default function BuildWithAI() {
   const { t } = useTranslation();
 
@@ -203,16 +206,35 @@ export default function BuildWithAI() {
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     </div>
-                    <figcaption className="px-4 py-3 flex items-center justify-between gap-2 text-sm border-t border-purple-500/30 bg-purple-950/40">
-                      <span
-                        className="font-semibold text-white truncate"
-                        title={workshop.speaker}
+                    <figcaption className="px-4 py-3 flex flex-wrap items-center justify-between gap-2 text-sm border-t border-purple-500/30 bg-purple-950/40">
+                      <div className="flex min-w-0 flex-1 items-center gap-2">
+                        <span
+                          className="min-w-0 truncate font-semibold text-white"
+                          title={workshop.speaker}
+                        >
+                          {workshop.speaker}
+                        </span>
+                        <span
+                          className="text-purple-400/80 flex-shrink-0"
+                          aria-hidden="true"
+                        >
+                          |
+                        </span>
+                        <time className="whitespace-nowrap font-medium text-cyan-300">
+                          {workshop.time}
+                        </time>
+                      </div>
+                      <a
+                        href={WORKSHOP_BUILD_WITH_AI_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={t("buildWithAI.workshopCtaAria", {
+                          title: workshop.title,
+                        })}
+                        className="inline-flex flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-pink-600 to-purple-600 px-3.5 py-1.5 text-xs font-semibold text-white shadow-md shadow-pink-900/35 ring-1 ring-white/10 transition-all duration-300 hover:from-pink-500 hover:to-purple-500 hover:shadow-lg hover:shadow-purple-900/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-400 active:scale-[0.98]"
                       >
-                        {workshop.speaker}
-                      </span>
-                      <time className="text-cyan-300 whitespace-nowrap font-medium">
-                        {workshop.time}
-                      </time>
+                        {t("buildWithAI.workshopCta")}
+                      </a>
                     </figcaption>
                   </figure>
                 </article>

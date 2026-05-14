@@ -93,8 +93,10 @@
     "workshopsHeading": "Programa de oficinas",
     "workshopSlotLabel": "Oficina {{num}}",
     "workshopTba": "A anunciar",
+    "workshopCta": "Adquirir",
+    "workshopCtaAria": "Adquirir entradas para a oficina: {{title}}. Abre o site de entradas numa nova aba.",
     "venue": "Universidad Libre Sede Centro",
-    "entry": "Entrada gratuita para participantes do hackathon · COP $25.000 público geral (inclui snacks e kit Google)",
+    "entry": "Participantes do hackathon: entrada gratuita · Público geral: COP $25.000 por oficina ou COP $70.000 por passe para as seis oficinas (snacks e kit Google incluídos)",
     "poweredBy": "Powered by",
     "googleLogoAlt": "Google",
     "imageAlt": "Build with AI 2026"
