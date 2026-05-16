@@ -9,10 +9,12 @@ type RevealedLine = {
   status: 'revealed';
   title: string;
   description: string;
-  sponsorName: string;
-  sponsorLogo: string;
-  sponsorAlt: string;
-  sponsorHref: string;
+  sponsor?: {
+    name: string;
+    logo: string;
+    alt: string;
+    href: string;
+  };
 };
 
 type IncognitoLine = {
@@ -31,14 +33,31 @@ export default function ThematicLines() {
       status: 'revealed',
       title: t('thematicLines.fintechTitle'),
       description: t('thematicLines.fintechDescription'),
-      sponsorName: t('thematicLines.fintechSponsor'),
-      sponsorLogo: '/logos/serfinanza.png',
-      sponsorAlt: t('thematicLines.fintechSponsorAlt'),
-      sponsorHref: 'https://bancoserfinanza.com/',
+      sponsor: {
+        name: t('thematicLines.fintechSponsor'),
+        logo: '/logos/serfinanza.png',
+        alt: t('thematicLines.fintechSponsorAlt'),
+        href: 'https://bancoserfinanza.com/',
+      },
     },
-    { id: 'line-2', status: 'coming' },
-    { id: 'line-3', status: 'coming' },
-    { id: 'line-4', status: 'coming' },
+    {
+      id: 'health',
+      status: 'revealed',
+      title: t('thematicLines.healthTitle'),
+      description: t('thematicLines.healthDescription'),
+    },
+    {
+      id: 'sustainability',
+      status: 'revealed',
+      title: t('thematicLines.sustainabilityTitle'),
+      description: t('thematicLines.sustainabilityDescription'),
+    },
+    {
+      id: 'youth-income',
+      status: 'revealed',
+      title: t('thematicLines.youthIncomeTitle'),
+      description: t('thematicLines.youthIncomeDescription'),
+    },
   ];
 
   return (
@@ -110,21 +129,27 @@ export default function ThematicLines() {
                     <p className="text-[10px] uppercase tracking-widest text-pink-300/80 mb-3">
                       {t('thematicLines.poweredBy')}
                     </p>
-                    <a
-                      href={line.sponsorHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={line.sponsorName}
-                      className="flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-lg p-3 transition-colors"
-                    >
-                      <Image
-                        src={line.sponsorLogo}
-                        alt={line.sponsorAlt}
-                        width={200}
-                        height={80}
-                        className="h-12 w-auto object-contain"
-                      />
-                    </a>
+                    {line.sponsor ? (
+                      <a
+                        href={line.sponsor.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={line.sponsor.name}
+                        className="flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-lg p-3 transition-colors"
+                      >
+                        <Image
+                          src={line.sponsor.logo}
+                          alt={line.sponsor.alt}
+                          width={200}
+                          height={80}
+                          className="h-12 w-auto object-contain"
+                        />
+                      </a>
+                    ) : (
+                      <p className="flex items-center justify-center bg-white/5 rounded-lg p-3 text-sm text-pink-200/90 italic text-center min-h-[72px]">
+                        {t('thematicLines.sponsorTBA')}
+                      </p>
+                    )}
                   </footer>
                 </article>
               ) : (
