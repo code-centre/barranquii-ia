@@ -212,6 +212,12 @@ const techCommunities: SponsorEntry[] = [
     logo: "/logos/java.png",
     noGrayscale: true,
   },
+  {
+    name: "AI Tinkerers",
+    logo: "/logos/asi-thinkerers.png",
+    link: "https://barranquilla.aitinkerers.org/",
+    noGrayscale: true,
+  },
 ];
 
 function SponsorImage({

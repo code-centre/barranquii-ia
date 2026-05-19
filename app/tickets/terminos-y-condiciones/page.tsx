@@ -39,7 +39,9 @@ export default function TermsAndConditions() {
             corresponda. Las transferencias de boletos están sujetas a las
             fechas y tarifas especificadas en los distintos medios de
             información del evento. No se efectuarán reembolso si el usuario no
-            se presenta al evento. Las solicitudes de transferencias de boleto
+            se presenta al evento. Durante la semana del evento (del 19 al 25
+            de mayo de 2026) no se efectuarán devoluciones. Las solicitudes de
+            transferencias de boleto
             deberán ser realizadas por escrito al correo{" "}
             <span className="text-principleViolet">
               contacto@fundacioncodigoabierto.com
