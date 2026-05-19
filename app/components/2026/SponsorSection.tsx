@@ -146,12 +146,6 @@ const institutionalAllies: SponsorEntry[] = [
     link: "https://fi.co",
     noGrayscale: true,
   },
-  {
-    name: "Universidad Simón Bolívar — Audacia",
-    logo: "/logos/LOGO-UNISIMON-AUDACIA-BLANCO.webp",
-    noGrayscale: true,
-    partnersScale: 1.58,
-  },
 ];
 
 const techCommunities: SponsorEntry[] = [
