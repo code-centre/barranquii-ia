@@ -95,6 +95,41 @@ const sponsors: SponsorEntry[] = [
     link: "https://www.cooweb.ai/",
     noGrayscale: true,
   },
+  {
+    name: "Macondo Lab",
+    logo: "/logos/macondo-lab.png",
+    link: "https://macondolab.com/",
+    noGrayscale: true,
+  },
+  {
+    name: "Universidad Libre",
+    logo: "/logos/universidad-libre.png",
+    link: "https://www.unilibre.edu.co/barranquilla/",
+    noGrayscale: true,
+  },
+  {
+    name: "Zumati",
+    logo: "/logos/zumati.png",
+    link: "https://zumati.co/",
+    noGrayscale: true,
+  },
+  {
+    name: "GOyn",
+    logo: "/logos/goyn.png",
+    link: "https://goynbarranquilla.com/",
+    noGrayscale: true,
+  },
+  {
+    name: "ACOPI",
+    logo: "/logos/acopi.png",
+    link: "https://acopi.org.co/",
+    noGrayscale: true,
+  },
+  {
+    name: "Sonia-IA",
+    logo: "/logos/sonia-ia.png",
+    noGrayscale: true,
+  },
 ];
 
 const institutionalAllies: SponsorEntry[] = [

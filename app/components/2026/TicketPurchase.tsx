@@ -36,6 +36,9 @@ export default function TicketPurchase() {
               {t('tickets.title')}
             </span>
           </h2>
+          <p className="text-base md:text-lg text-pink-200/90 max-w-2xl mx-auto">
+            {t('tickets.purchaseDeadline')}
+          </p>
         </header>
 
         {/* Ticket Stages */}
@@ -88,7 +91,8 @@ export default function TicketPurchase() {
           >
             <h3 className="text-2xl font-bold text-purple-400 mb-4">{t('tickets.secondStage')}</h3>
             <p className="text-4xl font-extrabold text-white mb-2">$180,000 COP</p>
-            <p className="text-gray-300 mb-6">{t('tickets.secondStageDates')}</p>
+            <p className="text-gray-300 mb-2">{t('tickets.secondStageDates')}</p>
+            <p className="text-pink-300/90 text-sm font-medium mb-6">{t('tickets.purchaseDeadline')}</p>
             <a
               href="https://www.codigoabierto.tech/eventos/hackaton-barranqui-ia-2026#boletos"
               target="_blank"

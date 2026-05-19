@@ -4,17 +4,19 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/app/i18n/useTranslation';
 
+type LineSponsor = {
+  name: string;
+  logo: string;
+  alt: string;
+  href?: string;
+};
+
 type RevealedLine = {
   id: string;
   status: 'revealed';
   title: string;
   description: string;
-  sponsor?: {
-    name: string;
-    logo: string;
-    alt: string;
-    href: string;
-  };
+  sponsors?: LineSponsor[];
 };
 
 type IncognitoLine = {
@@ -33,12 +35,14 @@ export default function ThematicLines() {
       status: 'revealed',
       title: t('thematicLines.fintechTitle'),
       description: t('thematicLines.fintechDescription'),
-      sponsor: {
-        name: t('thematicLines.fintechSponsor'),
-        logo: '/logos/serfinanza.png',
-        alt: t('thematicLines.fintechSponsorAlt'),
-        href: 'https://bancoserfinanza.com/',
-      },
+      sponsors: [
+        {
+          name: t('thematicLines.fintechSponsor'),
+          logo: '/logos/serfinanza.png',
+          alt: t('thematicLines.fintechSponsorAlt'),
+          href: 'https://bancoserfinanza.com/',
+        },
+      ],
     },
     {
       id: 'health',
@@ -57,6 +61,26 @@ export default function ThematicLines() {
       status: 'revealed',
       title: t('thematicLines.youthIncomeTitle'),
       description: t('thematicLines.youthIncomeDescription'),
+      sponsors: [
+        {
+          name: t('thematicLines.youthSponsorMacondo'),
+          logo: '/logos/macondo-lab.png',
+          alt: t('thematicLines.youthSponsorMacondoAlt'),
+          href: 'https://macondolab.com/',
+        },
+        {
+          name: t('thematicLines.youthSponsorGoyn'),
+          logo: '/logos/goyn.png',
+          alt: t('thematicLines.youthSponsorGoynAlt'),
+          href: 'https://goynbarranquilla.com/',
+        },
+        {
+          name: t('thematicLines.youthSponsorAcopi'),
+          logo: '/logos/acopi.png',
+          alt: t('thematicLines.youthSponsorAcopiAlt'),
+          href: 'https://acopi.org.co/',
+        },
+      ],
     },
   ];
 
@@ -121,36 +145,53 @@ export default function ThematicLines() {
                   <h3 className="text-2xl font-bold text-white mb-3">
                     {line.title}
                   </h3>
-                  <p className="text-gray-200 text-sm leading-relaxed mb-6 flex-grow">
+                  <p className={`text-gray-200 text-sm leading-relaxed flex-grow ${line.sponsors?.length ? 'mb-6' : ''}`}>
                     {line.description}
                   </p>
 
-                  <footer className="mt-auto border-t border-pink-500/30 pt-4">
-                    <p className="text-[10px] uppercase tracking-widest text-pink-300/80 mb-3">
-                      {t('thematicLines.poweredBy')}
-                    </p>
-                    {line.sponsor ? (
-                      <a
-                        href={line.sponsor.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={line.sponsor.name}
-                        className="flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-lg p-3 transition-colors"
-                      >
-                        <Image
-                          src={line.sponsor.logo}
-                          alt={line.sponsor.alt}
-                          width={200}
-                          height={80}
-                          className="h-12 w-auto object-contain"
-                        />
-                      </a>
-                    ) : (
-                      <p className="flex items-center justify-center bg-white/5 rounded-lg p-3 text-sm text-pink-200/90 italic text-center min-h-[72px]">
-                        {t('thematicLines.sponsorTBA')}
+                  {line.sponsors && line.sponsors.length > 0 && (
+                    <footer className="mt-auto border-t border-pink-500/30 pt-4">
+                      <p className="text-[10px] uppercase tracking-widest text-pink-300/80 mb-3">
+                        {t('thematicLines.poweredBy')}
                       </p>
-                    )}
-                  </footer>
+                      <ul
+                        className={`grid gap-2 list-none ${line.sponsors.length > 1 ? 'grid-cols-1' : ''}`}
+                        role="list"
+                      >
+                        {line.sponsors.map((sponsor) => (
+                          <li key={sponsor.name}>
+                            {sponsor.href ? (
+                              <a
+                                href={sponsor.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={sponsor.name}
+                                className="flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-lg p-2 transition-colors"
+                              >
+                                <Image
+                                  src={sponsor.logo}
+                                  alt={sponsor.alt}
+                                  width={200}
+                                  height={80}
+                                  className={`w-auto object-contain ${line.sponsors!.length > 1 ? 'h-9' : 'h-12'}`}
+                                />
+                              </a>
+                            ) : (
+                              <div className="flex items-center justify-center bg-white/5 rounded-lg p-2">
+                                <Image
+                                  src={sponsor.logo}
+                                  alt={sponsor.alt}
+                                  width={200}
+                                  height={80}
+                                  className={`w-auto object-contain ${line.sponsors!.length > 1 ? 'h-9' : 'h-12'}`}
+                                />
+                              </div>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </footer>
+                  )}
                 </article>
               ) : (
                 <article className="h-full flex flex-col bg-purple-900/20 backdrop-blur-sm rounded-xl p-6 border border-purple-500/30">

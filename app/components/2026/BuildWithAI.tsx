@@ -14,6 +14,9 @@ type Workshop = {
   time: string;
 };
 
+const WORKSHOPS_ONLY_URL =
+  "https://www.codigoabierto.tech/eventos/talleres-barranqui-ia-construye-con-ia-";
+
 const WORKSHOPS_2026: Workshop[] = [
   {
     src: "/talleres-2026/2.jpg",
@@ -172,6 +175,24 @@ export default function BuildWithAI() {
                 height={30}
                 className="h-7 w-auto object-contain object-left opacity-95"
               />
+            </div>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 pt-1">
+              <a
+                href="#boletos"
+                aria-label={t("buildWithAI.hackathonAria")}
+                className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full transition-colors text-center"
+              >
+                {t("buildWithAI.hackathonCta")}
+              </a>
+              <a
+                href={WORKSHOPS_ONLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t("buildWithAI.workshopsOnlyAria")}
+                className="inline-flex items-center justify-center border-2 border-purple-500/80 hover:border-purple-400 hover:bg-purple-600/10 text-white font-bold py-3 px-8 rounded-full transition-colors text-center"
+              >
+                {t("buildWithAI.workshopsOnlyCta")}
+              </a>
             </div>
           </motion.article>
         </div>
