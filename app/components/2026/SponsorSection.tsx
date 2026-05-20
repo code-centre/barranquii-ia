@@ -159,7 +159,6 @@ const techCommunities: SponsorEntry[] = [
     name: "Synergy",
     logo: "/logos/synergy-blanco.png",
     noGrayscale: true,
-    partnersScale: 1.14,
   },
   {
     name: "IEEE CUC Student Branch",
