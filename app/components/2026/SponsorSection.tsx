@@ -133,7 +133,7 @@ const sponsors: SponsorEntry[] = [
   {
     name: "Incapacidades",
     logo: "/logos/incapacidades.png",
-    link: "https://incapacidades.com.co/",
+    link: "https://incapacidades.ai/",
     noGrayscale: true,
   },
 ];

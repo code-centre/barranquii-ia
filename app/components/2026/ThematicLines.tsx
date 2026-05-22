@@ -54,7 +54,7 @@ export default function ThematicLines() {
           name: t('thematicLines.healthSponsor'),
           logo: '/logos/incapacidades.png',
           alt: t('thematicLines.healthSponsorAlt'),
-          href: 'https://incapacidades.com.co/',
+          href: 'https://incapacidades.ai/',
         },
       ],
     },
