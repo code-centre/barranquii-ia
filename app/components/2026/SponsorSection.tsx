@@ -130,6 +130,12 @@ const sponsors: SponsorEntry[] = [
     logo: "/logos/sonia-ia.png",
     noGrayscale: true,
   },
+  {
+    name: "Incapacidades",
+    logo: "/logos/incapacidades.png",
+    link: "https://incapacidades.com.co/",
+    noGrayscale: true,
+  },
 ];
 
 const institutionalAllies: SponsorEntry[] = [
@@ -144,6 +150,12 @@ const institutionalAllies: SponsorEntry[] = [
     name: "Founder Institute",
     logo: "/logos/fi-blanco.png",
     link: "https://fi.co",
+    noGrayscale: true,
+  },
+  {
+    name: "Ultracem",
+    logo: "/logos/ultracem.webp",
+    link: "https://ultracem.co/",
     noGrayscale: true,
   },
 ];

@@ -49,12 +49,28 @@ export default function ThematicLines() {
       status: 'revealed',
       title: t('thematicLines.healthTitle'),
       description: t('thematicLines.healthDescription'),
+      sponsors: [
+        {
+          name: t('thematicLines.healthSponsor'),
+          logo: '/logos/incapacidades.png',
+          alt: t('thematicLines.healthSponsorAlt'),
+          href: 'https://incapacidades.com.co/',
+        },
+      ],
     },
     {
       id: 'sustainability',
       status: 'revealed',
       title: t('thematicLines.sustainabilityTitle'),
       description: t('thematicLines.sustainabilityDescription'),
+      sponsors: [
+        {
+          name: t('thematicLines.sustainabilitySponsor'),
+          logo: '/logos/ultracem.webp',
+          alt: t('thematicLines.sustainabilitySponsorAlt'),
+          href: 'https://ultracem.co/',
+        },
+      ],
     },
     {
       id: 'youth-income',
