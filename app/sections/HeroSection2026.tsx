@@ -60,25 +60,25 @@ export default function HeroSection2026({ landing }: HeroSection2026Props) {
         {/* Call to Action */}
         <div className="flex flex-col sm:flex-row gap-4 mb-6">
           <a
-            href="#que-es"
-            className="px-8 py-3 border-2 border-purple-600 hover:border-purple-500 hover:bg-purple-600/10 text-white rounded-lg font-semibold transition-all duration-300 inline-block text-center"
-            style={{ fontFamily: 'var(--font-poppinss)' }}
-            aria-label={t('hero2026.ariaLearnMore')}
-          >
-            {t('hero2026.ctaLearnMore')}
-          </a>
-          <a
-            href="#boletos"
+            href="#resultados"
             className="px-8 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-lg font-semibold transition-colors inline-block text-center"
             style={{ fontFamily: 'var(--font-poppinss)' }}
-            aria-label={t('hero2026.ariaPresale')}
+            aria-label={t('hero2026.ariaResults')}
           >
-            {t('hero2026.ctaPresale')}
+            {t('hero2026.ctaResults')}
+          </a>
+          <a
+            href="#galeria"
+            className="px-8 py-3 border-2 border-purple-600 hover:border-purple-500 hover:bg-purple-600/10 text-white rounded-lg font-semibold transition-all duration-300 inline-block text-center"
+            style={{ fontFamily: 'var(--font-poppinss)' }}
+            aria-label={t('hero2026.ariaGallery')}
+          >
+            {t('hero2026.ctaGallery')}
           </a>
         </div>
 
         <p className="text-sm text-purple-200" style={{ fontFamily: 'var(--font-poppinss)' }}>
-          {t('hero2026.limitedSpots')}
+          {t('hero2026.closingLine')}
         </p>
       </section>
     </header>

@@ -17,7 +17,7 @@ export default function NavigationIsland() {
   useEffect(() => {
     if (!mounted) return;
 
-    const sections = ['hero', 'que-es', 'experiencia', 'lugar', 'boletos'];
+    const sections = ['hero', 'resultados', 'ganadores', 'galeria', 'que-es'];
     
     const observerOptions = {
       root: null,
@@ -74,10 +74,10 @@ export default function NavigationIsland() {
 
   const navLinks = [
     { href: '/', label: t('nav.caribeIA'), id: 'hero', isLogo: true },
+    { href: '#resultados', label: t('nav.results'), id: 'resultados' },
+    { href: '#ganadores', label: t('nav.winners'), id: 'ganadores' },
+    { href: '#galeria', label: t('nav.gallery'), id: 'galeria' },
     { href: '#que-es', label: t('nav.whatIs'), id: 'que-es' },
-    { href: '#experiencia', label: t('nav.experience'), id: 'experiencia' },
-    { href: '#lugar', label: t('nav.venue'), id: 'lugar' },
-    { href: '#boletos', label: t('nav.tickets'), id: 'boletos' },
   ];
 
   const toggleMobileMenu = () => {

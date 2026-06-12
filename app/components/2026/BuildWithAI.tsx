@@ -14,9 +14,6 @@ type Workshop = {
   time: string;
 };
 
-const WORKSHOPS_ONLY_URL =
-  "https://www.codigoabierto.tech/eventos/talleres-barranqui-ia-construye-con-ia-";
-
 const WORKSHOPS_2026: Workshop[] = [
   {
     src: "/talleres-2026/2.jpg",
@@ -66,9 +63,6 @@ const WORKSHOPS_2026: Workshop[] = [
     time: "5:00 p. m.",
   },
 ];
-
-const WORKSHOP_BUILD_WITH_AI_URL =
-  "https://www.codigoabierto.tech/eventos/talleres-barranqui-ia-construye-con-ia-#boletos";
 
 export default function BuildWithAI() {
   const { t } = useTranslation();
@@ -176,24 +170,6 @@ export default function BuildWithAI() {
                 className="h-7 w-auto object-contain object-left opacity-95"
               />
             </div>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 pt-1">
-              <a
-                href="#boletos"
-                aria-label={t("buildWithAI.hackathonAria")}
-                className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full transition-colors text-center"
-              >
-                {t("buildWithAI.hackathonCta")}
-              </a>
-              <a
-                href={WORKSHOPS_ONLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={t("buildWithAI.workshopsOnlyAria")}
-                className="inline-flex items-center justify-center border-2 border-purple-500/80 hover:border-purple-400 hover:bg-purple-600/10 text-white font-bold py-3 px-8 rounded-full transition-colors text-center"
-              >
-                {t("buildWithAI.workshopsOnlyCta")}
-              </a>
-            </div>
           </motion.article>
         </div>
 
@@ -245,17 +221,6 @@ export default function BuildWithAI() {
                           {workshop.time}
                         </time>
                       </div>
-                      <a
-                        href={WORKSHOP_BUILD_WITH_AI_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={t("buildWithAI.workshopCtaAria", {
-                          title: workshop.title,
-                        })}
-                        className="inline-flex flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-pink-600 to-purple-600 px-3.5 py-1.5 text-xs font-semibold text-white shadow-md shadow-pink-900/35 ring-1 ring-white/10 transition-all duration-300 hover:from-pink-500 hover:to-purple-500 hover:shadow-lg hover:shadow-purple-900/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-400 active:scale-[0.98]"
-                      >
-                        {t("buildWithAI.workshopCta")}
-                      </a>
                     </figcaption>
                   </figure>
                 </article>

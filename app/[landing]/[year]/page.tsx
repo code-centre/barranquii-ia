@@ -124,7 +124,7 @@ export default async function EditionPerYearPage({ params }: Props) {
 				start: '2026-05-22T08:00:00-05:00', 
 				end: '2026-05-24T18:00:00-05:00',
 				location: 'Barranquilla, Atlántico, Colombia',
-				address: 'Universidad del Norte, Barranquilla'
+				address: 'Cubo de Cristal, Plaza de la Paz, Barranquilla'
 			},
 			'2025': { 
 				start: '2025-05-01T08:00:00-05:00', 
