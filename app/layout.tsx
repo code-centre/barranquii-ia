@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | Caribe-IA"
   },
   description:
-    "Caribe-IA 2026: El programa de innovación abierta que lleva equipos del Caribe desde una idea hasta una startup financiada. Hackatones de IA, 12 semanas de aceleración y Demo Day ante inversionistas en TechCaribe Fest. Respaldado por Caribe Ventures.",
+    "Caribe-IA 2026: El hackatón reunió 300 participantes y 70 proyectos de IA. Ahora 10 equipos entran a 12 semanas de aceleración rumbo al Demo Day en TechCaribe Capital Summit en octubre. Respaldado por Caribe Ventures.",
   authors: [
     {
       name: "Caribe Ventures",
@@ -51,7 +51,8 @@ export const metadata: Metadata = {
     "aceleración startups IA",
     "aceleradora startups inteligencia artificial",
     "programa aceleración IA Colombia",
-    "Demo Day TechCaribe Fest",
+    "Demo Day TechCaribe Capital Summit",
+    "TechCaribe Capital Summit",
     "startups IA Caribe",
     "emprendimiento inteligencia artificial",
     "innovación tecnológica Caribe",
@@ -102,7 +103,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Caribe-IA 2026",
-    description: "De la idea al capital, en el Caribe. Hackatones de IA, aceleración y Demo Day ante inversionistas en TechCaribe Fest.",
+    description: "De la idea al capital, en el Caribe. Hackatones de IA, aceleración y Demo Day ante inversionistas en TechCaribe Capital Summit.",
     images: ["https://www.caribe-ia.com/caribe-ia-og.png"],
   },
   alternates: {

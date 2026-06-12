@@ -14,7 +14,7 @@ const HACKATHON_URL = '/barranqui-ia/2026'
 
 const audienceConfig = [
   { id: 'talento', icon: Laptop, titleKey: 'talento', descKey: 'talentoDesc', ctaKey: 'ctaHackathon', ctaLink: HACKATHON_URL },
-  { id: 'emprendedores', icon: Rocket, titleKey: 'emprendedores', descKey: 'emprendedoresDesc', ctaKey: 'ctaHackathon', ctaLink: HACKATHON_URL },
+  { id: 'emprendedores', icon: Rocket, titleKey: 'emprendedores', descKey: 'emprendedoresDesc', ctaKey: 'ctaAcceleration', ctaLink: '/aceleracion' },
   { id: 'empresas', icon: Building2, titleKey: 'empresas', descKey: 'empresasDesc', ctaKey: 'ctaReto', ctaLink: '/propon-un-reto' }
 ]
 

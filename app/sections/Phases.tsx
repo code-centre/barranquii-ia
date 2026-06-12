@@ -12,10 +12,10 @@ interface Props {
 }
 
 const PAST_EVENT_IMAGES = [
-  '/FOTOSBARRANQUI-IA/1.webp',
-  '/FOTOSBARRANQUI-IA/3.webp',
-  '/FOTOSBARRANQUI-IA/6.webp',
-  '/FOTOSBARRANQUI-IA/8.webp',
+  '/2026/galeria/5.jpg',
+  '/2026/galeria/8.jpg',
+  '/2026/galeria/15.jpg',
+  '/2026/galeria/13.jpg',
 ]
 
 export default function Phases({ landing = 'default' }: Props) {
@@ -33,7 +33,7 @@ export default function Phases({ landing = 'default' }: Props) {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: 'url(/FOTOSBARRANQUI-IA/2.webp)',
+          backgroundImage: 'url(/2026/galeria/4.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

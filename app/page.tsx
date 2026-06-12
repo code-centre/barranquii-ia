@@ -4,6 +4,7 @@ import VideoHighlight from "./sections/VideoHighlight";
 import HeroSection from "./sections/HeroSection";
 import HowItWorks from "./sections/HowItWorks";
 import Phases from "./sections/Phases";
+import AccelerationTeams from "./sections/AccelerationTeams";
 import CaribeVenturesCapitalSection from "./sections/CaribeVenturesCapitalSection";
 import AudienceSection from "./sections/AudienceSection";
 import PoweredByCV from "./sections/PoweredByCV";
@@ -55,7 +56,7 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "Caribe-IA",
   url: "https://www.caribe-ia.com",
-  description: "Programa de innovación abierta que lleva equipos del Caribe desde una idea hasta una startup financiada. Hackatones de IA, 12 semanas de aceleración y Demo Day ante inversionistas en TechCaribe Fest.",
+  description: "Programa de innovación abierta que lleva equipos del Caribe desde una idea hasta una startup financiada. Hackatones de IA, 12 semanas de aceleración y Demo Day ante inversionistas en TechCaribe Capital Summit.",
   potentialAction: {
     "@type": "SearchAction",
     target: {
@@ -77,17 +78,17 @@ const educationalOrganizationSchema = {
     {
       "@type": "EducationalProgram",
       name: "Hackatones de IA (Hack)",
-      description: "Prototipado intensivo de 48 horas donde equipos multidisciplinarios construyen soluciones con IA para retos reales de la región.",
+      description: "Prototipado intensivo de 48 horas donde equipos multidisciplinarios construyen soluciones con IA para retos reales de la región. La edición 2026 reunió a 300 participantes y produjo 70 proyectos.",
     },
     {
       "@type": "EducationalProgram",
       name: "Aceleración Caribe-IA (Build)",
-      description: "12 semanas de acompañamiento estratégico y técnico para convertir prototipos en startups listas para el mercado.",
+      description: "12 semanas de acompañamiento estratégico y técnico para convertir prototipos en startups listas para el mercado. 10 cupos abiertos a equipos del hackatón y proyectos externos.",
     },
     {
       "@type": "EducationalProgram",
-      name: "Demo Day en TechCaribe Fest (Show)",
-      description: "Presentación pública ante inversionistas, aliados y comunidad en el festival de tecnología más grande del Caribe.",
+      name: "Demo Day en TechCaribe Capital Summit (Show)",
+      description: "Presentación pública ante inversionistas, aliados y comunidad en TechCaribe Capital Summit, la cita de capital del Caribe colombiano en octubre.",
     },
   ],
 };
@@ -115,25 +116,28 @@ export default function Home() {
       <JsonLd data={educationalOrganizationSchema} />
       <JsonLd data={faqPageSchema} />
       <main className="min-h-screen flex flex-col">
-      {/* 1. HeroSection (dramatico, sin 3D) */}
+      {/* 1. HeroSection (dramatico, sin 3D) - estado: aceleración en curso */}
       <HeroSection landing='default' />
 
-      {/* 2. Summary / "Que es Caribe-IA?" (manifesto + 3 cards) - fondo foto con tinte */}
+      {/* 2. Summary / "Que es Caribe-IA?" (manifesto + fases con estado) - fondo foto con tinte */}
       <Summary landing='default' />
 
       {/* 2b. Backed by ribbon */}
       <BackedByRibbon />
 
-      {/* 2c. Video highlight */}
+      {/* 3. Aceleración: 70 equipos del hackatón, 10 cupos (abierto a externos) */}
+      <AccelerationTeams />
+
+      {/* 3b. Video highlight */}
       <VideoHighlight />
 
-      {/* 3. HowItWorks (nuevo -- Hack/Build/Show) - EL PROGRAMA con fondo hero */}
+      {/* 4. HowItWorks (Hack/Build/Show) - EL PROGRAMA con fondo hero */}
       <HowItWorks landing='default' />
 
-      {/* 4. Phases / Inscríbete en Barranqui-IA 2026 (fondo foto) */}
+      {/* 5. Phases / Así fue Barranqui-IA 2026 (fondo foto) */}
       <Phases landing='default' />
 
-      {/* 4b. Caribe Ventures - Capital real (con fondo hero) */}
+      {/* 5b. Caribe Ventures - Capital real (con fondo hero) */}
       <CaribeVenturesCapitalSection landing='default' />
 
       {/* 5. AudienceSection - Si construyes, aquí es. (fondo foto) */}

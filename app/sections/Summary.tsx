@@ -10,9 +10,9 @@ interface Props {
 }
 
 const phases = [
-  { num: '01', titleKey: 'phase1Title', descKey: 'phase1Desc', statusKey: 'statusOpen', isOpen: true },
-  { num: '02', titleKey: 'phase2Title', descKey: 'phase2Desc', statusKey: 'statusNext', isOpen: false },
-  { num: '03', titleKey: 'phase3Title', descKey: 'phase3Desc', statusKey: 'statusNext', isOpen: false },
+  { num: '01', titleKey: 'phase1Title', descKey: 'phase1Desc', statusKey: 'statusDone', status: 'done' as const },
+  { num: '02', titleKey: 'phase2Title', descKey: 'phase2Desc', statusKey: 'statusCurrent', status: 'current' as const },
+  { num: '03', titleKey: 'phase3Title', descKey: 'phase3Desc', statusKey: 'statusNext', status: 'next' as const },
 ]
 
 export default function Summary({ landing }: Props) {
@@ -102,11 +102,24 @@ export default function Summary({ landing }: Props) {
                     </div>
                   </div>
                   <span
-                    className={`inline-flex px-3 py-1 rounded-full text-xs font-semibold shrink-0 w-fit ${
-                      phase.isOpen ? 'text-white' : 'bg-white/10 text-white/80'
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold shrink-0 w-fit ${
+                      phase.status === 'current' ? 'text-white' : phase.status === 'done' ? '' : 'bg-white/10 text-white/80'
                     }`}
-                    style={phase.isOpen ? { backgroundColor: accent } : {}}
+                    style={
+                      phase.status === 'current'
+                        ? { backgroundColor: accent }
+                        : phase.status === 'done'
+                          ? { backgroundColor: 'rgba(34, 197, 94, 0.15)', color: '#4ade80', border: '1px solid rgba(34, 197, 94, 0.4)' }
+                          : {}
+                    }
                   >
+                    {phase.status === 'done' && <span aria-hidden="true">✓</span>}
+                    {phase.status === 'current' && (
+                      <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white" />
+                      </span>
+                    )}
                     {t(`summaryMain.${phase.statusKey}`)}
                   </span>
                 </div>

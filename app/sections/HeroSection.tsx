@@ -86,11 +86,36 @@ export default function HeroSection({ landing }: HeroSectionProps) {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-10 w-full flex flex-col items-center text-center">
-        {/* Tag: Powered by Caribe Ventures */}
+        {/* Live status badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0, duration: 0.8, ease: 'easeOut' }}
+          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold mb-6"
+          style={{
+            backgroundColor: 'rgba(255, 151, 239, 0.1)',
+            border: '1px solid rgba(255, 151, 239, 0.4)',
+            color: isDefault ? '#FF97EF' : theme.principal,
+          }}
+        >
+          <span className="relative flex h-2 w-2" aria-hidden="true">
+            <span
+              className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
+              style={{ backgroundColor: isDefault ? '#FF97EF' : theme.principal }}
+            />
+            <span
+              className="relative inline-flex rounded-full h-2 w-2"
+              style={{ backgroundColor: isDefault ? '#FF97EF' : theme.principal }}
+            />
+          </span>
+          {t('main.statusBadge')}
+        </motion.div>
+
+        {/* Tag: Powered by Caribe Ventures */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.05, duration: 0.8, ease: 'easeOut' }}
           className="flex items-center gap-2 mb-6 text-sm text-white/60"
         >
           <span>{t('main.programOf')}</span>
@@ -133,16 +158,24 @@ export default function HeroSection({ landing }: HeroSectionProps) {
           {t('main.tagline')}
         </motion.p>
 
-        {/* Support Line */}
+        {/* Support Line: pipeline status */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.8, ease: 'easeOut' }}
-          className="flex items-center gap-3 mb-12 text-white/70"
+          className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mb-12 text-white/70"
         >
-          <span className="text-sm md:text-base">{t('main.hackatones')}</span>
+          <span className="inline-flex items-center gap-1.5 text-sm md:text-base line-through decoration-white/40 text-white/50">
+            <span aria-hidden="true" style={{ color: '#22c55e' }}>✓</span>
+            {t('main.hackatones')}
+          </span>
           <span style={{ color: isDefault ? '#FF97EF' : theme.principal }}>—</span>
-          <span className="text-sm md:text-base">{t('main.incubation')}</span>
+          <span
+            className="text-sm md:text-base font-bold"
+            style={{ color: isDefault ? '#FF97EF' : theme.principal }}
+          >
+            {t('main.incubation')}
+          </span>
           <span style={{ color: isDefault ? '#FF97EF' : theme.principal }}>—</span>
           <span className="text-sm md:text-base">{t('main.demoDay')}</span>
         </motion.div>
@@ -155,24 +188,24 @@ export default function HeroSection({ landing }: HeroSectionProps) {
           className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 mb-16"
         >
           <Link
-            href="/barranqui-ia/2026"
+            href="#aceleracion"
             className="btn-primary focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-black"
             style={{
               backgroundColor: isDefault ? '#FFFFFF' : theme.accent || theme.principal,
               color: isDefault ? '#000000' : 'white'
             }}
           >
-            {t('main.participateHackathon')}
+            {t('main.ctaAcceleration')}
           </Link>
           <Link
-            href="/propon-un-reto"
+            href="/barranqui-ia/2026"
             className="btn-secondary focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-black"
             style={{
               borderColor: isDefault ? '#FF97EF' : theme.principal,
               color: isDefault ? '#FF97EF' : theme.principal
             }}
           >
-            {t('main.empresaAlly')}
+            {t('main.ctaResults')}
           </Link>
           <Link
             href="/propon-un-reto"
